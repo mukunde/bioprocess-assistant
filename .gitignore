@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+build/
+dist/
+
+# Environnement / secrets — NE JAMAIS committer
+.env
+.env.local
+*.local
+
+# Chainlit
+.chainlit/
+.files/
+
+# OS / éditeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

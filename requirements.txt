@@ -1,2 +1,4 @@
 neo4j>=5.0,<6.0
 python-dotenv>=1.0,<2.0
+chainlit>=1.0
+anthropic>=0.40

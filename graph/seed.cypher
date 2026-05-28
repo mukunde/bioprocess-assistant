@@ -7,6 +7,10 @@
 // fichier dans la barre de requête, exécuter. Puis valider avec la requête de
 // vérification en bas du fichier.
 
+// --- Nettoyage défensif : supprime tout nœud sans label, séquelle possible
+// d'un seed antérieur où un MERGE de relation sans rebind créait des orphelins. ---
+MATCH (n) WHERE labels(n) = [] DETACH DELETE n;
+
 // --- Symptôme ---
 MERGE (s:Symptom {name: "Chute du rendement de capture"})
 SET s.description = "Le rendement de l'étape de capture sur Protein A est inférieur à l'historique attendu sur le pool de production : une part significative du produit est perdue dans le flow-through ou dans les fractions de lavage.",
@@ -31,6 +35,14 @@ SET a2.description = "Diminuer la vitesse linéaire de chargement pour augmenter
     a2.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — loading conditions";
 
 // --- Relations causales ---
+// MATCH rebind chaque nœud à sa variable (les variables d'un MERGE précédent
+// ne survivent pas à un `;`). Ensuite les MERGE créent les arêtes entre nœuds
+// nommés, pas entre nœuds anonymes.
+MATCH (s:Symptom {name: "Chute du rendement de capture"}),
+      (c1:Cause {name: "Résine Protein A dégradée"}),
+      (c2:Cause {name: "Débit de chargement trop élevé"}),
+      (a1:Action {name: "Mesurer la DBC actuelle et remplacer la résine si dégradée"}),
+      (a2:Action {name: "Réduire le débit de chargement"})
 MERGE (s)-[:INDIQUE]->(c1)
 MERGE (s)-[:INDIQUE]->(c2)
 MERGE (c1)-[:RESOLU_PAR]->(a1)

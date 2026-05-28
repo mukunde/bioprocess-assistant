@@ -15,7 +15,7 @@ SEED_FILE = PROJECT_ROOT / "graph" / "seed.cypher"
 
 
 def read_statements(file_path: Path) -> list[str]:
-    # Strip // line comments (syntaxe Cypher) puis découpe sur `;`.
+    # Strip // line comments (Cypher syntax) then split on `;`.
     text = file_path.read_text(encoding="utf-8")
     lines = [line for line in text.splitlines() if not line.strip().startswith("//")]
     return [s.strip() for s in "\n".join(lines).split(";") if s.strip()]
@@ -77,13 +77,13 @@ def main() -> int:
         print("      Chemins symptome -> cause -> action :")
         paths = session.run(
             """
-            MATCH (s:Symptom)-[:INDIQUE]->(c:Cause)-[:RESOLU_PAR]->(a:Action)
-            RETURN s.name AS symptome, c.name AS cause, a.name AS action
-            ORDER BY symptome, cause
+            MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
+            RETURN s.name AS symptom, c.name AS cause, a.name AS action
+            ORDER BY symptom, cause
             """
         )
         for r in paths:
-            print(f"        - {r['symptome']}")
+            print(f"        - {r['symptom']}")
             print(f"            -> {r['cause']}")
             print(f"                -> {r['action']}")
 

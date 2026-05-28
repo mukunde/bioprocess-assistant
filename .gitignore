@@ -18,6 +18,9 @@ dist/
 .chainlit/
 .files/
 
+# Sources / PDFs de référence (consultés en local, jamais redistribués)
+references/
+
 # OS / éditeurs
 .DS_Store
 Thumbs.db

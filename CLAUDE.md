@@ -15,10 +15,10 @@ Agent LLM ancré sur un **knowledge graph Neo4j** comme source de vérité uniqu
 ## Stack
 
 - Python 3.11+
-- **Neo4j** en local (Neo4j Desktop / Community Edition). Driver : `neo4j` (officiel Python).
+- **Neo4j AuraDB Free** (cloud, offre gratuite illimitée). Driver : `neo4j` (officiel Python). Repli possible vers Neo4j Community Edition en local.
 - **Chainlit** pour l'UI conversationnelle.
 - **Anthropic SDK** (`anthropic`) — agent Claude avec tool use. Modèle : un Claude récent (vérifier le nom de modèle courant dans la doc API).
-- Config via variables d'environnement (`.env`) : `NEO4J_URI`, `NEO4J_USER`, `NEO4J_PASSWORD`, `ANTHROPIC_API_KEY`. **Ne jamais committer le `.env`.**
+- Config via variables d'environnement (`.env`) : `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`, `NEO4J_DATABASE`, `ANTHROPIC_API_KEY`. **Ne jamais committer le `.env`.**
 
 ## Modèle du graphe
 
@@ -34,7 +34,7 @@ Le champ `source` (note d'application / handbook d'origine) est obligatoire sur 
 
 ## Contrat de l'agent (anti-hallucination — NON NÉGOCIABLE)
 
-L'agent expose **un seul outil** : `query_graph(symptome: str)` qui traduit la requête en Cypher, récupère les causes classées + leurs actions, et renvoie un résultat structuré.
+L'agent expose **un seul outil** : `query_graph(symptom: str)` qui traduit la requête en Cypher, récupère les causes classées + leurs actions, et renvoie un résultat structuré.
 
 Règles du prompt système :
 - Répondre **uniquement** à partir des données retournées par le graphe.

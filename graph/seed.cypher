@@ -187,6 +187,40 @@ MERGE (s5)-[:INDICATES]->(c10)
 MERGE (c9)-[:RESOLVED_BY]->(a9)
 MERGE (c10)-[:RESOLVED_BY]->(a10);
 
+// =================================================================
+// === Symptom #6: Bioburden / contamination microbienne          ===
+// =================================================================
+
+MERGE (s6:Symptom {name: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"})
+SET s6.description = "Détection de croissance microbienne (bactéries, levures, moisissures) dans la colonne entre cycles ou dans le pool d'élution. Dépassement de la spec bioburden process (typiquement <1 CFU/10 mL en biopharma). Risque procédé et qualité, à traiter avant tout redémarrage.",
+    s6.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p3, Low risk of host cell protein contamination or carryover (mention de microbial growth in the packed column); p4, Cleaning and sanitization";
+
+MERGE (c11:Cause {name: "Sanitization en routine insuffisante pour le feedstock"})
+SET c11.description = "Pour des feedstocks particulièrement riches en charge microbienne ou en contaminants difficiles (lipides, débris cellulaires non éliminés par clarification), le NaOH 0.1-0.5 M seul peut ne pas suffire. Le Data File MabSelect SuRe le reconnaît explicitement et propose des protocoles alternatifs.",
+    c11.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p4, Cleaning and sanitization (mention explicite des challenging feedstocks avec recommandation d'agent réducteur ou combinaison NaOH + IPA)";
+
+MERGE (c12:Cause {name: "Stockage de la colonne inadapté entre runs"})
+SET c12.description = "Colonne stockée hors conditions recommandées (sans bactériostat type éthanol ou benzyl alcohol, hors plage de température 2-8°C, ou pour une durée non documentée) → croissance microbienne pendant le hold. Risque accru sur les longues campagnes avec arrêts intermédiaires.",
+    c12.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p4, Storage (20% ethanol ou 2% benzyl alcohol à 2-8°C); Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p168, Storage of biological samples (Appendix 6)";
+
+MERGE (a11:Action {name: "Renforcer le protocole de sanitization (NaOH + IPA ou ajout d'agent réducteur)"})
+SET a11.description = "Passer à une sanitization combinée 0.1 M NaOH + 40% isopropanol (efficacité démontrée par Cytiva sur MabSelect SuRe). Pour les feedstocks très challengers, ajouter un cycle préalable avec agent réducteur (thioglycerol ou DTT) suivi du NaOH 0.1-0.5 M. Documenter contact time, concentration et fréquence des cycles dans la procédure CIP.",
+    a11.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p4, Cleaning and sanitization (recommandations textuelles 0.1 M NaOH + 40% IPA; option DTT/thioglycerol pour challenging feedstocks)";
+
+MERGE (a12:Action {name: "Standardiser le stockage en 20% éthanol ou 2% benzyl alcohol à 2-8°C"})
+SET a12.description = "Avant tout arrêt prolongé, rincer la colonne avec ≥5 CV de la solution de stockage (20% éthanol ou 2% benzyl alcohol). Maintenir à 2-8°C, documenter la durée. Au redémarrage : rincer avec 3-5 CV d'eau distillée puis re-équilibrer avant chargement. Ne pas stocker à température ambiante ni à sec.",
+    a12.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p4, Storage; Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p168, Storage of biological samples";
+
+MATCH (s6:Symptom {name: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"}),
+      (c11:Cause {name: "Sanitization en routine insuffisante pour le feedstock"}),
+      (c12:Cause {name: "Stockage de la colonne inadapté entre runs"}),
+      (a11:Action {name: "Renforcer le protocole de sanitization (NaOH + IPA ou ajout d'agent réducteur)"}),
+      (a12:Action {name: "Standardiser le stockage en 20% éthanol ou 2% benzyl alcohol à 2-8°C"})
+MERGE (s6)-[:INDICATES]->(c11)
+MERGE (s6)-[:INDICATES]->(c12)
+MERGE (c11)-[:RESOLVED_BY]->(a11)
+MERGE (c12)-[:RESOLVED_BY]->(a12);
+
 // --- Check (run separately after the seed) ---
 // MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
 // RETURN s.name AS symptom, c.name AS cause, a.name AS action;

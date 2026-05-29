@@ -12,6 +12,13 @@ _driver: Driver | None = None
 
 _LUCENE_SPECIALS = r'+-&|!(){}[]^"~*?:\/'
 
+# Minimum Lucene relevance score required for a symptom match.
+# Without this floor, the full-text search returns the top match even when only
+# generic terms like "pool" or "élution" overlap — leading to spurious matches
+# (e.g. a query about endotoxines matching the HCP symptom on shared common words).
+# Tunable: lower if legitimate queries are being rejected, raise if weak matches still leak.
+_MIN_MATCH_SCORE = 2.5
+
 
 def _get_driver() -> Driver:
     global _driver
@@ -40,6 +47,7 @@ def query_graph(symptom: str) -> dict:
 
     query = """
     CALL db.index.fulltext.queryNodes('symptom_text', $q) YIELD node AS s, score
+    WHERE score >= $threshold
     WITH s ORDER BY score DESC LIMIT 1
     MATCH (s)-[:INDICATES]->(c:Cause)
     OPTIONAL MATCH (c)-[:RESOLVED_BY]->(a:Action)
@@ -55,7 +63,7 @@ def query_graph(symptom: str) -> dict:
     """
     driver = _get_driver()
     with driver.session(database=os.environ["NEO4J_DATABASE"]) as session:
-        rows = list(session.run(query, q=sanitized))
+        rows = list(session.run(query, q=sanitized, threshold=_MIN_MATCH_SCORE))
 
     if not rows:
         return {"found": False, "symptom": None, "causes": []}

@@ -16,7 +16,7 @@ SEED_FILE = PROJECT_ROOT / "graph" / "seed.cypher"
 
 def read_statements(file_path: Path) -> list[str]:
     # Strip // line comments (Cypher syntax) then split on `;` *outside* string
-    # literals — sources may contain `;` between citations and break a naive split.
+    # literals - sources may contain `;` between citations and break a naive split.
     text = file_path.read_text(encoding="utf-8")
     lines = [line for line in text.splitlines() if not line.strip().startswith("//")]
     cleaned = "\n".join(lines)

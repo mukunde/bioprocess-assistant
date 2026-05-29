@@ -1,4 +1,4 @@
-# ADR-001 — Ancrer mon agent de troubleshooting sur un knowledge graph
+# ADR-001 - Ancrer mon agent de troubleshooting sur un knowledge graph
 
 **Statut :** Accepté
 **Date :** 2026-05
@@ -24,7 +24,7 @@ Le contexte d'usage que je vise est la biopharma, un environnement régulé. J'e
    *Rejeté :* aucune traçabilité, hallucinations non bornées, connaissance figée et non auditable. Disqualifiant en contexte régulé.
 
 2. **RAG vectoriel sur documents.** On indexe des notes d'application, l'agent récupère les chunks proches sémantiquement de la question.
-   *Rejeté comme socle :* le RAG vectoriel renvoie des fragments de texte sans structure causale explicite. Or la connaissance de troubleshooting est intrinsèquement relationnelle — un symptôme a *plusieurs* causes, une cause a *plusieurs* actions. Le découpage en chunks casse ces relations et peut mélanger des sources sans que l'agent en ait conscience.
+   *Rejeté comme socle :* le RAG vectoriel renvoie des fragments de texte sans structure causale explicite. Or la connaissance de troubleshooting est intrinsèquement relationnelle - un symptôme a *plusieurs* causes, une cause a *plusieurs* actions. Le découpage en chunks casse ces relations et peut mélanger des sources sans que l'agent en ait conscience.
 
 3. **Knowledge graph structuré (retenu).** Je modélise explicitement la connaissance en `Symptôme → Cause → Action`, je la stocke dans Neo4j, et l'agent l'interroge via un outil dédié.
 
@@ -32,7 +32,7 @@ Le contexte d'usage que je vise est la biopharma, un environnement régulé. J'e
 
 J'ancre l'agent sur un **knowledge graph Neo4j** comme source de vérité unique.
 
-- **Hébergement : Neo4j AuraDB Free.** Offre gratuite sans limite de durée, largement dimensionnée pour le volume cible du POC (~6 symptômes / ~12 causes / ~15 actions, vs. 200k nœuds autorisés). Ça m'évite l'install locale et rend la base accessible depuis n'importe quelle machine. Je note qu'AuraDB Free met l'instance en pause après ~3 jours d'inactivité — réveillable en un clic, mais à prendre en compte côté démo (la vidéo de secours déjà prévue couvre ce risque).
+- **Hébergement : Neo4j AuraDB Free.** Offre gratuite sans limite de durée, largement dimensionnée pour le volume cible du POC (~6 symptômes / ~12 causes / ~15 actions, vs. 200k nœuds autorisés). Ça m'évite l'install locale et rend la base accessible depuis n'importe quelle machine. Je note qu'AuraDB Free met l'instance en pause après ~3 jours d'inactivité - réveillable en un clic, mais à prendre en compte côté démo (la vidéo de secours déjà prévue couvre ce risque).
 - **Un seul outil exposé à l'agent**, `interroger_graphe(symptôme)`, qui traduit la question en requête Cypher et renvoie les causes classées et leurs actions correctives.
 - **Prompt système strict.** J'impose la règle suivante : **répondre uniquement à partir du graphe, citer la source de chaque nœud, et déclarer explicitement « je n'ai pas cette information » hors périmètre.** Mon ancrage anti-hallucination tient dans cette contrainte.
 - **Chaque nœud porte un champ `source`** (la note d'application d'origine), que je fais remonter dans la réponse.
@@ -45,7 +45,7 @@ Le modèle relationnel correspond à la nature causale du domaine : c'est le gra
 - Auditabilité native : chaque réponse remonte à une source identifiée.
 - Anti-hallucination par construction : l'agent ne peut affirmer que ce que le graphe contient.
 - Extensible : les experts métier enrichissent le graphe (nœuds, relations, sources) sans toucher au code.
-- Les relations causales — le cœur du raisonnement de troubleshooting — sont explicites et requêtables.
+- Les relations causales - le cœur du raisonnement de troubleshooting - sont explicites et requêtables.
 
 **Limites assumées**
 - La qualité des réponses dépend entièrement de la curation du graphe : *garbage in, garbage out*.
@@ -54,5 +54,5 @@ Le modèle relationnel correspond à la nature causale du domaine : c'est le gra
 - Dépendance à AuraDB Free : si Neo4j change les conditions de l'offre gratuite, je bascule sur Neo4j Community en local (seul l'URI change, le reste du code agent reste identique).
 
 **Dette / évolutions futures**
-- L'extension à d'autres opérations unitaires posera la question de l'**alignement d'entités** entre représentations (cf. le pattern ChatP&ID pour la topologie d'installation + une couche ontologique type Fabric IQ pour l'état opérationnel). C'est un vrai travail d'architecture, à ne pas sous-estimer — et c'est exactement pourquoi je le laisse hors scope ici.
-- Une couche RAG vectoriel pourra *compléter* le graphe pour les questions ouvertes non couvertes par le modèle relationnel — en complément, jamais en remplacement de la vérité structurée.
+- L'extension à d'autres opérations unitaires posera la question de l'**alignement d'entités** entre représentations (cf. le pattern ChatP&ID pour la topologie d'installation + une couche ontologique type Fabric IQ pour l'état opérationnel). C'est un vrai travail d'architecture, à ne pas sous-estimer - et c'est exactement pourquoi je le laisse hors scope ici.
+- Une couche RAG vectoriel pourra *compléter* le graphe pour les questions ouvertes non couvertes par le modèle relationnel - en complément, jamais en remplacement de la vérité structurée.

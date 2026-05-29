@@ -9,7 +9,7 @@ env/
 build/
 dist/
 
-# Environnement / secrets — NE JAMAIS committer
+# Environnement / secrets - NE JAMAIS committer
 .env
 .env.local
 *.local

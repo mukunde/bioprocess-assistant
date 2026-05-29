@@ -1,4 +1,4 @@
-// === Schema — uniqueness constraints ===
+// === Schema - uniqueness constraints ===
 // Uniqueness on `name` (per label) keeps the seed's MERGE operations idempotent
 // and prevents duplicate nodes representing the same domain entity.
 // Run once before the seed.

@@ -14,7 +14,7 @@ _LUCENE_SPECIALS = r'+-&|!(){}[]^"~*?:\/'
 
 # Default minimum Lucene relevance score required for a symptom match.
 # Without this floor, the full-text search returns the top match even when only
-# generic terms like "pool" or "élution" overlap — leading to spurious matches
+# generic terms like "pool" or "élution" overlap - leading to spurious matches
 # (e.g. a query about endotoxines matching the HCP symptom on shared common words).
 # Tunable at runtime via the Chainlit Settings slider; this value is the default
 # used by direct callers (e.g. the __main__ smoke test).

@@ -32,7 +32,7 @@ async def start():
     cl.user_session.set("min_score", DEFAULT_MIN_MATCH_SCORE)
     await cl.Message(
         content=(
-            "**Bioprocess Troubleshooting Assistant** — capture Protein A.\n\n"
+            "**Bioprocess Troubleshooting Assistant** - capture Protein A.\n\n"
             "Décris un symptôme observé sur ton étape de capture (par ex. "
             "*« mon rendement de capture a chuté »*) et je te propose les causes "
             "probables et les actions correctives, chacune sourcée sur un handbook.\n\n"

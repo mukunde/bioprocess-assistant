@@ -119,6 +119,40 @@ MERGE (s3)-[:INDICATES]->(c6)
 MERGE (c5)-[:RESOLVED_BY]->(a5)
 MERGE (c6)-[:RESOLVED_BY]->(a6);
 
+// =================================================================
+// === Symptom #4: Fuite de Protein A (leaching) élevée dans l'éluat ===
+// =================================================================
+
+MERGE (s4:Symptom {name: "Fuite de Protein A (leaching) élevée dans l'éluat"})
+SET s4.description = "Concentration de ligand Protein A leaching dans le pool d'élution > spec produit. Mesurable par ELISA non-compétitif. Plage normale typique sur MabSelect SuRe : 5-20 ppm (ng ligand/mg IgG). Au-delà, un déterminant procédé ou résine est en cause.",
+    s4.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Protease stability and low ligand leakage + Fig 5 (low leakage over 100 cycles)";
+
+MERGE (c7:Cause {name: "Forte activité protéolytique dans le feedstock"})
+SET c7.description = "Les protéases présentes dans le feedstock clarifié dégradent progressivement le ligand Protein A pendant la phase de chargement. L'intensité dépend de la lignée cellulaire, de l'âge de culture, et du hold time entre clarification et capture. Le Data File MabSelect SuRe cite ce mécanisme comme l'une des contributions principales au ligand leakage des résines Protein A.",
+    c7.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Protease stability and low ligand leakage + Fig 4 (impact des protéases démontré par electrophorèse rProtein A vs SuRe)";
+
+MERGE (c8:Cause {name: "Conditions CIP trop agressives (NaOH concentré ou contact prolongé)"})
+SET c8.description = "MabSelect SuRe tolère NaOH 0.1-0.5 M jusqu'à 200 cycles, mais une concentration NaOH élevée combinée à un contact time long accélère la dégradation du ligand et corrèle avec un leaching accru. Fig 2 montre la perte de DBC selon la sévérité (0.1 M / 15 min vs 0.5 M / 60 min) — le leaching suit la même tendance.",
+    c8.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p1-2, High stability in alkaline conditions + Fig 2 (DBC vs cycles CIP à différents NaOH et contact times)";
+
+MERGE (a7:Action {name: "Réduire l'activité protéolytique pré-colonne"})
+SET a7.description = "Minimiser le hold time entre clarification et capture (idéal <24h à 2-8°C). Conserver le feedstock clarifié à basse température pendant tout le hold. Évaluer l'ajout d'inhibiteurs de protéases si le feedstock est particulièrement chargé (à valider sur la compatibilité downstream). Si possible, sélectionner une lignée cellulaire à faible activité protéolytique.",
+    a7.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Protease stability and low ligand leakage + Fig 4";
+
+MERGE (a8:Action {name: "Resserrer le CIP et planifier un polishing CEX downstream"})
+SET a8.description = "Utiliser la concentration NaOH la plus faible compatible avec l'efficacité du nettoyage testée — typiquement viser 0.1 M plutôt que 0.5 M, contact time 10-15 min plutôt que 60 min. Indépendamment, planifier une étape downstream de chromatographie échangeuse de cations (ex. HiTrap SP HP en step ou gradient à pH 5.2) qui élimine le Protein A leaching résiduel, démontré dans Fig 4.5 du Handbook.",
+    a8.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p1-2, High stability in alkaline conditions + Fig 2; Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p124, Affinity ligands + Fig 4.5 (removal of leached Protein A by HiTrap SP HP CEX)";
+
+MATCH (s4:Symptom {name: "Fuite de Protein A (leaching) élevée dans l'éluat"}),
+      (c7:Cause {name: "Forte activité protéolytique dans le feedstock"}),
+      (c8:Cause {name: "Conditions CIP trop agressives (NaOH concentré ou contact prolongé)"}),
+      (a7:Action {name: "Réduire l'activité protéolytique pré-colonne"}),
+      (a8:Action {name: "Resserrer le CIP et planifier un polishing CEX downstream"})
+MERGE (s4)-[:INDICATES]->(c7)
+MERGE (s4)-[:INDICATES]->(c8)
+MERGE (c7)-[:RESOLVED_BY]->(a7)
+MERGE (c8)-[:RESOLVED_BY]->(a8);
+
 // --- Check (run separately after the seed) ---
 // MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
 // RETURN s.name AS symptom, c.name AS cause, a.name AS action;

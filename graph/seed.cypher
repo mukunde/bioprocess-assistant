@@ -153,6 +153,40 @@ MERGE (s4)-[:INDICATES]->(c8)
 MERGE (c7)-[:RESOLVED_BY]->(a7)
 MERGE (c8)-[:RESOLVED_BY]->(a8);
 
+// =================================================================
+// === Symptom #5: HCP résiduels élevés dans le pool d'élution    ===
+// =================================================================
+
+MERGE (s5:Symptom {name: "HCP résiduels élevés dans le pool d'élution"})
+SET s5.description = "Taux de host cell proteins (CHO HCP typiquement, dosé par ELISA HCP) dans le pool d'élution > spec produit. Risque immunogénicité connu en biopharma, à éliminer impérativement avant release. La capture Protein A est moyennement sélective pour ce contaminant.",
+    s5.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p124, Host cell proteins (HCP)";
+
+MERGE (c9:Cause {name: "Wash intermédiaire post-chargement insuffisant ou inadapté"})
+SET c9.description = "Les HCPs peuvent se lier non-spécifiquement à la résine Protein A ou directement au mAb pendant le chargement. Si le wash entre chargement et élution est trop court, à conductivité trop basse, ou sans agent disruptif, ces HCPs co-éluent avec le mAb dans le pool d'élution.",
+    c9.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p58, Optimization of parameters; Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p3, Low risk of host cell protein contamination";
+
+MERGE (c10:Cause {name: "CIP insuffisant entre cycles avec carryover HCP"})
+SET c10.description = "Lorsque le CIP est sous-dimensionné (NaOH dilué, contact trop court), les HCPs accumulées sur la résine ne sont pas désorbées et reviennent dans le pool d'élution du cycle suivant. Le Data File MabSelect SuRe cite explicitement que le CIP rigoureux réduit ce risque de contamination HCP et de carryover dans les product pools.",
+    c10.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Low risk of host cell protein contamination or carryover + Fig 6 (Western blot confirmant absence de HCP après 100 cycles avec CIP rigoureux)";
+
+MERGE (a9:Action {name: "Cribler en haut-débit les conditions de wash optimales"})
+SET a9.description = "Utiliser des PreDictor 96-well filter plates ou HiTrap/HiScreen prepacked en HTS pour cribler différentes conditions de wash post-chargement : variations de conductivité (NaCl 150-500 mM), additifs disruptifs des interactions non-spécifiques (arginine 250 mM, caprylate de sodium 100 mM). Sélectionner les conditions qui réduisent les HCPs résiduelles sans dégrader le recovery mAb.",
+    a9.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p4, Method development (PreDictor 96-well plates et HiTrap/HiScreen recommandés pour HTS optimization)";
+
+MERGE (a10:Action {name: "Resserrer le CIP et ajouter une polishing AEX multimodale en aval"})
+SET a10.description = "Sur MabSelect SuRe : laver entre cycles avec 2 CV de NaOH 0.1-0.5 M, contact 10-15 min, puis ≥5 CV de buffer de binding stérile filtré. Indépendamment, planifier une étape downstream de chromatographie échangeuse d'anions multimodale (Capto adhere ou Capto adhere ImpRes) qui élimine HCP + DNA + leached Protein A + agrégats en une seule étape — recommandation explicite Cytiva pour le polishing post-capture.",
+    a10.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Low risk of host cell protein contamination or carryover; Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p124, Host cell proteins (Capto adhere comme polishing recommandé) + p166-167, Cleaning sections (paramètres CIP)";
+
+MATCH (s5:Symptom {name: "HCP résiduels élevés dans le pool d'élution"}),
+      (c9:Cause {name: "Wash intermédiaire post-chargement insuffisant ou inadapté"}),
+      (c10:Cause {name: "CIP insuffisant entre cycles avec carryover HCP"}),
+      (a9:Action {name: "Cribler en haut-débit les conditions de wash optimales"}),
+      (a10:Action {name: "Resserrer le CIP et ajouter une polishing AEX multimodale en aval"})
+MERGE (s5)-[:INDICATES]->(c9)
+MERGE (s5)-[:INDICATES]->(c10)
+MERGE (c9)-[:RESOLVED_BY]->(a9)
+MERGE (c10)-[:RESOLVED_BY]->(a10);
+
 // --- Check (run separately after the seed) ---
 // MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
 // RETURN s.name AS symptom, c.name AS cause, a.name AS action;

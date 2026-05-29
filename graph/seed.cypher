@@ -22,7 +22,7 @@ SET s.description = "Le rendement de l'étape de capture sur Protein A est infé
 // --- Causes ---
 MERGE (c1:Cause {name: "Résine Protein A dégradée"})
 SET c1.description = "Perte progressive de la capacité de liaison dynamique (DBC) de la résine après cycles répétés et exposition aux conditions de nettoyage (CIP). La résine ne fixe plus assez d'anticorps par mL, d'où la fuite dans le flow-through.",
-    c1.source = "Cytiva, MabSelect SuRe Data File — section lifetime / DBC characterization";
+    c1.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — section lifetime / DBC characterization";
 
 MERGE (c2:Cause {name: "Débit de chargement trop élevé"})
 SET c2.description = "Vitesse linéaire de chargement supérieure à celle pour laquelle la résine a un temps de résidence suffisant : les anticorps traversent la colonne avant d'avoir saturé les sites de liaison Protein A, d'où une fuite dans le flow-through indépendamment de l'état de la résine.",
@@ -31,7 +31,7 @@ SET c2.description = "Vitesse linéaire de chargement supérieure à celle pour 
 // --- Actions ---
 MERGE (a1:Action {name: "Mesurer la DBC actuelle et remplacer la résine si dégradée"})
 SET a1.description = "Effectuer un test de capacité dynamique de liaison (typiquement DBC à 10% de percée) et comparer à la spec d'origine du lot de résine. En cas de dégradation significative, planifier le remplacement. En parallèle, revoir le protocole de CIP (concentration NaOH, durée de contact) pour prolonger la durée de vie du prochain lot.",
-    a1.source = "Cytiva, MabSelect SuRe Data File — section lifetime / DBC characterization";
+    a1.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — section lifetime / DBC characterization";
 
 MERGE (a2:Action {name: "Réduire le débit de chargement"})
 SET a2.description = "Diminuer la vitesse linéaire de chargement pour augmenter le temps de résidence sur la colonne et restaurer la capacité utile. Vérifier que le temps de résidence respecte la valeur recommandée par le fournisseur de la résine.",

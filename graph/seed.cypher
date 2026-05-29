@@ -51,6 +51,40 @@ MERGE (s)-[:INDICATES]->(c2)
 MERGE (c1)-[:RESOLVED_BY]->(a1)
 MERGE (c2)-[:RESOLVED_BY]->(a2);
 
+// =================================================================
+// === Symptom #2: Pression élevée sur la colonne                ===
+// =================================================================
+
+MERGE (s2:Symptom {name: "Pression élevée sur la colonne"})
+SET s2.description = "La pression mesurée en entrée de colonne augmente significativement par rapport au profil pression/débit historique du même bloc capture, soit sur plusieurs cycles consécutifs, soit pendant un même chargement.",
+    s2.source = "Cytiva, Antibody Purification Handbook, CY13981-25Jan21-HB (2021) — p166, Cleaning of Protein G and Protein A Sepharose media (Cleaning in place)";
+
+MERGE (c3:Cause {name: "Encrassement de la résine par protéines dénaturées ou lipides"})
+SET c3.description = "Substances qui ne s'éluent pas pendant la régénération standard restent fixées sur la résine et obstruent progressivement le lit. Signe typique sur procédés avec feedstock riche en lipides ou en protéines partiellement dénaturées.",
+    c3.source = "Cytiva, Antibody Purification Handbook, CY13981-25Jan21-HB (2021) — p166, Cleaning in place";
+
+MERGE (c4:Cause {name: "Packing du lit dégradé ou débit excédant la spec"})
+SET c4.description = "Lit qui s'est compacté avec les cycles (mauvaise flow distribution, asymétrie de l'écoulement) ou débit appliqué supérieur à 70% du packing flow rate de référence. Vérifiable via un test d'efficacité par injection d'acétone : facteur d'asymétrie hors plage 0.80-1.80.",
+    c4.source = "Cytiva, Antibody Purification Handbook, CY13981-25Jan21-HB (2021) — p162-164, Column packing and efficiency (Appendix 5)";
+
+MERGE (a3:Action {name: "Effectuer un CIP renforcé adapté à la résine"})
+SET a3.description = "Pour MabSelect SuRe / SuRe LX : laver avec 2 CV de NaOH 100-500 mM, contact 10-15 min, puis ≥5 CV de buffer de binding stérile filtré. Pour Protein A Sepharose non-alkali-tolerant : 6 M guanidine HCl ou 70% éthanol à débit réduit. Si encrassement lipidique sévère : ajouter une étape détergent non-ionique 0.1% (ex. Triton X-100).",
+    a3.source = "Cytiva, Antibody Purification Handbook, CY13981-25Jan21-HB (2021) — p166-167, Cleaning sections; Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — Cleaning and sanitization (p4)";
+
+MERGE (a4:Action {name: "Tester l'efficacité colonne et re-packer si nécessaire"})
+SET a4.description = "Injecter de l'acétone (qui n'interagit pas avec la résine) et mesurer le facteur d'asymétrie A_s = b/a sur le pic à 10% de la hauteur. Cible : 0.80 ≤ A_s ≤ 1.80. Si hors plage, dépacker et repacker selon la procédure standard. Vérifier que le débit de chargement ne dépasse pas 70% du packing flow rate de référence.",
+    a4.source = "Cytiva, Antibody Purification Handbook, CY13981-25Jan21-HB (2021) — p164, Column packing and efficiency; Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — Fig 11 et p5 bed heights 10-30 cm";
+
+MATCH (s2:Symptom {name: "Pression élevée sur la colonne"}),
+      (c3:Cause {name: "Encrassement de la résine par protéines dénaturées ou lipides"}),
+      (c4:Cause {name: "Packing du lit dégradé ou débit excédant la spec"}),
+      (a3:Action {name: "Effectuer un CIP renforcé adapté à la résine"}),
+      (a4:Action {name: "Tester l'efficacité colonne et re-packer si nécessaire"})
+MERGE (s2)-[:INDICATES]->(c3)
+MERGE (s2)-[:INDICATES]->(c4)
+MERGE (c3)-[:RESOLVED_BY]->(a3)
+MERGE (c4)-[:RESOLVED_BY]->(a4);
+
 // --- Check (run separately after the seed) ---
 // MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
 // RETURN s.name AS symptom, c.name AS cause, a.name AS action;

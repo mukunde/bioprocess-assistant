@@ -27,14 +27,14 @@ Trois types de nœuds, deux relations :
 - `(:Symptom {name, description, source})`
 - `(:Cause {name, description, source})`
 - `(:Action {name, description, source})`
-- `(:Symptom)-[:INDIQUE]->(:Cause)`
-- `(:Cause)-[:RESOLU_PAR]->(:Action)`
+- `(:Symptom)-[:INDICATES]->(:Cause)`
+- `(:Cause)-[:RESOLVED_BY]->(:Action)`
 
 Le champ `source` (note d'application / handbook d'origine) est obligatoire sur chaque nœud et doit remonter dans les réponses de l'agent. Cible de volume après épaississement : ~6 symptômes, ~12 causes, ~15 actions. Sources publiques uniquement (handbooks Protein A type Cytiva/Merck-Millipore). **Pas de niveau GxP — c'est un POC.**
 
 ## Contrat de l'agent (anti-hallucination — NON NÉGOCIABLE)
 
-L'agent expose **un seul outil** : `interroger_graphe(symptome: str)` qui traduit la requête en Cypher, récupère les causes classées + leurs actions, et renvoie un résultat structuré.
+L'agent expose **un seul outil** : `query_graph(symptome: str)` qui traduit la requête en Cypher, récupère les causes classées + leurs actions, et renvoie un résultat structuré.
 
 Règles du prompt système :
 - Répondre **uniquement** à partir des données retournées par le graphe.
@@ -47,7 +47,7 @@ Règles du prompt système :
 Construire dans cet ordre, valider chaque étape avant la suivante :
 
 1. **Seed minimal + schéma** : script Cypher avec 1 symptôme, 2 causes, 2 actions (toutes sourcées). Vérifier le graphe dans le navigateur Neo4j.
-2. **Balle traçante end-to-end** : agent Chainlit + outil `interroger_graphe` + prompt anti-hallucination. Objectif : une question traverse le graphe et revient en réponse sourcée. C'est le « wow moment » à sécuriser en premier.
+2. **Balle traçante end-to-end** : agent Chainlit + outil `query_graph` + prompt anti-hallucination. Objectif : une question traverse le graphe et revient en réponse sourcée. C'est le « wow moment » à sécuriser en premier.
 3. **Épaissir le graphe** jusqu'à la cible de volume.
 4. **Polish** : soigner les 3 premières interactions, préparer 2-3 questions de démo qui marchent à coup sûr, faire une **capture vidéo de secours** (démo hors-ligne, wifi invité non fiable).
 

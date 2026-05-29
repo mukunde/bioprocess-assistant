@@ -8,7 +8,7 @@ from pathlib import Path
 from anthropic import Anthropic
 from dotenv import load_dotenv
 
-from tools import query_graph
+from tools import DEFAULT_MIN_MATCH_SCORE, query_graph
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 MODEL = "claude-sonnet-4-6"
@@ -53,11 +53,19 @@ TOOLS = [
 ]
 
 
-def run_agent(user_message: str) -> str:
+def run_agent(
+    user_message: str,
+    min_score: float = DEFAULT_MIN_MATCH_SCORE,
+) -> tuple[str, float | None, float]:
+    """Run the agent and return (text, last_match_score, threshold_used).
+
+    `last_match_score` is the highest score returned by the tool across this
+    turn's tool calls (None if no candidate was returned at all)."""
     load_dotenv(PROJECT_ROOT / ".env")
     client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     messages = [{"role": "user", "content": user_message}]
+    last_score: float | None = None
 
     for _ in range(MAX_TURNS):
         response = client.messages.create(
@@ -69,13 +77,18 @@ def run_agent(user_message: str) -> str:
         )
 
         if response.stop_reason != "tool_use":
-            return "\n".join(b.text for b in response.content if b.type == "text").strip()
+            text = "\n".join(b.text for b in response.content if b.type == "text").strip()
+            return text, last_score, min_score
 
         messages.append({"role": "assistant", "content": response.content})
         tool_results = []
         for block in response.content:
             if block.type == "tool_use" and block.name == "query_graph":
-                result = query_graph(block.input["symptom"])
+                result = query_graph(block.input["symptom"], min_score=min_score)
+                # Track the highest seen score, even when it falls under threshold.
+                score = result.get("match_score")
+                if score is not None and (last_score is None or score > last_score):
+                    last_score = score
                 tool_results.append({
                     "type": "tool_result",
                     "tool_use_id": block.id,
@@ -83,4 +96,8 @@ def run_agent(user_message: str) -> str:
                 })
         messages.append({"role": "user", "content": tool_results})
 
-    return "Désolé, je n'ai pas pu produire de réponse dans le temps imparti."
+    return (
+        "Désolé, je n'ai pas pu produire de réponse dans le temps imparti.",
+        last_score,
+        min_score,
+    )

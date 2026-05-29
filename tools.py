@@ -12,12 +12,13 @@ _driver: Driver | None = None
 
 _LUCENE_SPECIALS = r'+-&|!(){}[]^"~*?:\/'
 
-# Minimum Lucene relevance score required for a symptom match.
+# Default minimum Lucene relevance score required for a symptom match.
 # Without this floor, the full-text search returns the top match even when only
 # generic terms like "pool" or "élution" overlap — leading to spurious matches
 # (e.g. a query about endotoxines matching the HCP symptom on shared common words).
-# Tunable: lower if legitimate queries are being rejected, raise if weak matches still leak.
-_MIN_MATCH_SCORE = 2.5
+# Tunable at runtime via the Chainlit Settings slider; this value is the default
+# used by direct callers (e.g. the __main__ smoke test).
+DEFAULT_MIN_MATCH_SCORE = 2.5
 
 
 def _get_driver() -> Driver:
@@ -38,21 +39,30 @@ def _sanitize_for_lucene(q: str) -> str:
     return " ".join(q.split())
 
 
-def query_graph(symptom: str) -> dict:
+def query_graph(symptom: str, min_score: float = DEFAULT_MIN_MATCH_SCORE) -> dict:
     """Return the best-matching symptom (Neo4j full-text, french analyzer)
-    with its causes and corrective actions, all sourced."""
+    with its causes and corrective actions, all sourced.
+
+    The score filter is applied Python-side so the caller can observe the top
+    score even when it falls under the threshold (useful for the UI footer)."""
     sanitized = _sanitize_for_lucene(symptom)
     if not sanitized:
-        return {"found": False, "symptom": None, "causes": []}
+        return {
+            "found": False,
+            "match_score": None,
+            "threshold": min_score,
+            "symptom": None,
+            "causes": [],
+        }
 
     query = """
     CALL db.index.fulltext.queryNodes('symptom_text', $q) YIELD node AS s, score
-    WHERE score >= $threshold
-    WITH s ORDER BY score DESC LIMIT 1
+    WITH s, score ORDER BY score DESC LIMIT 1
     MATCH (s)-[:INDICATES]->(c:Cause)
     OPTIONAL MATCH (c)-[:RESOLVED_BY]->(a:Action)
     RETURN s.name AS symptom_name,
            s.source AS symptom_source,
+           score AS match_score,
            c.name AS cause_name,
            c.description AS cause_description,
            c.source AS cause_source,
@@ -63,10 +73,26 @@ def query_graph(symptom: str) -> dict:
     """
     driver = _get_driver()
     with driver.session(database=os.environ["NEO4J_DATABASE"]) as session:
-        rows = list(session.run(query, q=sanitized, threshold=_MIN_MATCH_SCORE))
+        rows = list(session.run(query, q=sanitized))
 
     if not rows:
-        return {"found": False, "symptom": None, "causes": []}
+        return {
+            "found": False,
+            "match_score": None,
+            "threshold": min_score,
+            "symptom": None,
+            "causes": [],
+        }
+
+    top_score = rows[0]["match_score"]
+    if top_score < min_score:
+        return {
+            "found": False,
+            "match_score": top_score,
+            "threshold": min_score,
+            "symptom": None,
+            "causes": [],
+        }
 
     causes: dict[str, dict] = {}
     for row in rows:
@@ -87,6 +113,8 @@ def query_graph(symptom: str) -> dict:
 
     return {
         "found": True,
+        "match_score": top_score,
+        "threshold": min_score,
         "symptom": {
             "name": rows[0]["symptom_name"],
             "source": rows[0]["symptom_source"],

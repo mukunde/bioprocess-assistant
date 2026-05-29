@@ -27,5 +27,3 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Chainlit welcome page (à personnaliser et committer pendant le polish)
-chainlit.md

@@ -138,11 +138,18 @@ Le seuil 2.5 a été calibré empiriquement sur les 6 symptômes du graphe pour 
 
 ### Trois comportements distincts côté agent
 
-Le prompt système (voir `agent.py`) ancre 4 règles, qui produisent trois comportements observables en démo :
+Le prompt système (voir `agent.py`) ancre **4 règles non-négociables** :
+
+1. **Données du tool uniquement** : jamais de cause, action, ou source ajoutée depuis la connaissance générale du LLM
+2. **Citer la `source`** de chaque cause et chaque action mentionnée dans la réponse
+3. **Si l'outil renvoie `found: false`**, dire explicitement *« Je n'ai pas cette information dans ma base de connaissance »*, ne rien inventer
+4. **Si la question sort du périmètre** (autre opération unitaire que la capture Protein A, sujet hors troubleshooting), le signaler et ne pas répondre sur le fond
+
+Les règles **1 et 2** gouvernent *comment* l'agent répond quand il a un match (format et traçabilité). Les règles **3 et 4** gouvernent *quand* l'agent refuse de répondre. Ensemble, elles produisent trois comportements observables en démo :
 
 | Cas | Mécanisme | Réponse |
 |---|---|---|
-| **Match valide** | Score BM25 ≥ seuil → tool retourne `found: true` | Causes + actions structurées avec citations des sources |
+| **Match valide** | Score BM25 ≥ seuil → tool retourne `found: true` | Causes + actions structurées avec citations des sources (Règles 1 et 2) |
 | **In-domain miss** | Tool retourne `found: false` (graphe ne contient rien au-dessus du seuil) | « Je n'ai pas cette information dans ma base de connaissance » (Règle 3) |
 | **Hors périmètre** | LLM juge sémantiquement que la question sort du domaine (autre unit op, sujet non-troubleshooting) | « Cette question sort de mon périmètre » (Règle 4) |
 

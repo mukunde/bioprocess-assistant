@@ -15,10 +15,29 @@ SEED_FILE = PROJECT_ROOT / "graph" / "seed.cypher"
 
 
 def read_statements(file_path: Path) -> list[str]:
-    # Strip // line comments (Cypher syntax) then split on `;`.
+    # Strip // line comments (Cypher syntax) then split on `;` *outside* string
+    # literals — sources may contain `;` between citations and break a naive split.
     text = file_path.read_text(encoding="utf-8")
     lines = [line for line in text.splitlines() if not line.strip().startswith("//")]
-    return [s.strip() for s in "\n".join(lines).split(";") if s.strip()]
+    cleaned = "\n".join(lines)
+    statements: list[str] = []
+    buf: list[str] = []
+    in_string = False
+    for c in cleaned:
+        if c == '"':
+            in_string = not in_string
+            buf.append(c)
+        elif c == ";" and not in_string:
+            stmt = "".join(buf).strip()
+            if stmt:
+                statements.append(stmt)
+            buf = []
+        else:
+            buf.append(c)
+    stmt = "".join(buf).strip()
+    if stmt:
+        statements.append(stmt)
+    return statements
 
 
 def execute(driver, database: str, statements: list[str]) -> None:

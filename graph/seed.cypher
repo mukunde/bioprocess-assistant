@@ -85,6 +85,40 @@ MERGE (s2)-[:INDICATES]->(c4)
 MERGE (c3)-[:RESOLVED_BY]->(a3)
 MERGE (c4)-[:RESOLVED_BY]->(a4);
 
+// =================================================================
+// === Symptom #3: Présence d'agrégats / HMW dans le pool d'élution ===
+// =================================================================
+
+MERGE (s3:Symptom {name: "Présence d'agrégats / HMW dans le pool d'élution"})
+SET s3.description = "Le pool d'élution de l'étape de capture Protein A contient une fraction significative d'agrégats (HMW, dimers, polymères) au-dessus de la spec produit, détectable par SEC analytique. Risque structurel de la capture Protein A à cause du pH acide nécessaire pour décrocher le mAb du ligand.",
+    s3.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p4, Method development (mAb élué pH 3-4); Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p122, Dimers and aggregates";
+
+MERGE (c5:Cause {name: "Élution à pH trop bas ou temps de contact acide prolongé"})
+SET c5.description = "L'élution Protein A se fait en milieu acide (typiquement pH 3.0-3.5 sur MabSelect SuRe). Plus le pH est bas et plus le mAb reste exposé à ce pH, plus la fraction d'agrégats augmente. La sensibilité varie avec la séquence du mAb.",
+    c5.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Generic elution conditions et Fig 10 (distribution des pH d'élution MabSelect vs MabSelect SuRe)";
+
+MERGE (c6:Cause {name: "Absence de neutralisation rapide du pool d'élution"})
+SET c6.description = "Une fois collecté, le pool reste à pH acide jusqu'à neutralisation. Plus le hold à pH bas est long, a fortiori à concentration élevée (typiquement >10 g/L sur capture), plus la formation d'agrégats progresse en post-colonne.",
+    c6.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p122, Dimers and aggregates (aggregates often formed at higher concentrations)";
+
+MERGE (a5:Action {name: "Optimiser le pH d'élution au plus haut tolérable et privilégier une step elution"})
+SET a5.description = "Tester l'élution à pH 3.5 puis monter par paliers de 0.1 unité pour identifier le pH le plus haut qui élue toujours quantitativement (>95% recovery). Privilégier une élution en step (volume défini au pH cible) plutôt qu'un gradient continu, qui prolonge le temps d'exposition au pH acide.",
+    a5.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) — p2-3, Generic elution conditions et Fig 10; p4, Method development";
+
+MERGE (a6:Action {name: "Collecter dans un buffer neutralisant et prévoir un polissage IEX/SEC"})
+SET a6.description = "Collecter les fractions d'élution directement dans un buffer neutralisant pré-déposé dans le pool tank (ex. 1 M Tris-HCl pH 8.0 ou 1 M acétate de sodium pH 5.5, environ 10% v/v du volume d'élution) pour ramener le pH à 5-6 en quelques minutes. Si la spec agrégats reste non tenue, ajouter en aval une chromatographie échangeuse d'ions multimodale (ex. Capto adhere) ou une SEC (Superdex 200) en polishing step.",
+    a6.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) — p122, Dimers and aggregates (SEC + IEX recommandés en aval) + Chapter 7 polishing";
+
+MATCH (s3:Symptom {name: "Présence d'agrégats / HMW dans le pool d'élution"}),
+      (c5:Cause {name: "Élution à pH trop bas ou temps de contact acide prolongé"}),
+      (c6:Cause {name: "Absence de neutralisation rapide du pool d'élution"}),
+      (a5:Action {name: "Optimiser le pH d'élution au plus haut tolérable et privilégier une step elution"}),
+      (a6:Action {name: "Collecter dans un buffer neutralisant et prévoir un polissage IEX/SEC"})
+MERGE (s3)-[:INDICATES]->(c5)
+MERGE (s3)-[:INDICATES]->(c6)
+MERGE (c5)-[:RESOLVED_BY]->(a5)
+MERGE (c6)-[:RESOLVED_BY]->(a6);
+
 // --- Check (run separately after the seed) ---
 // MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
 // RETURN s.name AS symptom, c.name AS cause, a.name AS action;

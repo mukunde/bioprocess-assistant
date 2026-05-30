@@ -1,11 +1,24 @@
 """Chainlit UI for the Protein A troubleshooting agent."""
 import asyncio
+import os
 
 import chainlit as cl
 from chainlit.input_widget import Slider
 
 from agent import run_agent
 from tools import DEFAULT_MIN_MATCH_SCORE
+
+
+@cl.password_auth_callback
+def auth_callback(username: str, password: str):
+    """Gate the public demo behind a single shared credential.
+    Credentials live in env vars (never in code); requires CHAINLIT_AUTH_SECRET
+    to be set so Chainlit can sign the session JWT."""
+    expected_user = os.environ.get("DEMO_USERNAME")
+    expected_pass = os.environ.get("DEMO_PASSWORD")
+    if expected_user and expected_pass and username == expected_user and password == expected_pass:
+        return cl.User(identifier=username, metadata={"role": "demo"})
+    return None
 
 
 @cl.on_chat_start

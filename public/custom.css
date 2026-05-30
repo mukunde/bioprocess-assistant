@@ -1,0 +1,80 @@
+/* ===================================================================
+   Thème global - harmonise l'UI Chainlit sur la palette teal du logo.
+   Chainlit (frontend shadcn) lit des variables CSS en HSL "H S% L%".
+   Teal primaire #0E7C7B = 179 80% 27%.
+   =================================================================== */
+
+:root {
+  --primary: 179 80% 27% !important;          /* boutons, liens, bulle user, focus */
+  --primary-foreground: 0 0% 100% !important; /* texte sur fond primary (blanc) */
+  --ring: 179 80% 27% !important;             /* anneau de focus */
+}
+
+.dark {
+  --primary: 175 68% 52% !important;          /* teal vif pour bien contraster sur fond sombre */
+  --primary-foreground: 0 0% 10% !important;  /* texte foncé sur teal vif = meilleur contraste */
+  --ring: 175 68% 52% !important;
+}
+
+/* Logo du header : la taille par défaut vient de classes Tailwind. On la force
+   par la hauteur (largeur auto) pour que le wordmark soit lisible, le ratio
+   de l'image (plus large que le logo Chainlit par défaut) ne l'écrase plus. */
+img[alt="logo"],
+img.logo {
+  height: 2rem !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* Bouton d'envoi du prompt : par défaut il prend une couleur neutre qui se fond
+   dans le fond (sombre en thème sombre, clair en thème clair). On le force sur
+   la couleur de marque (--primary), qui contraste avec le fond dans les 2 modes. */
+#chat-submit:not(:disabled) {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  opacity: 1 !important;
+}
+
+#chat-submit:not(:disabled) svg {
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Bouton d'envoi du prompt : par défaut il suit une couleur neutre qui se fond
+   dans le fond. On le force sur la couleur de marque (teal) pour qu'il soit
+   bien visible dans les deux thèmes. L'état désactivé reste neutre. */
+#chat-submit:not(:disabled) {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+#chat-submit:not(:disabled):hover {
+  opacity: 0.9 !important;
+}
+
+/* ===================================================================
+   Encart de contact injecté sur la page de login (cf. public/login.js)
+   =================================================================== */
+
+#demo-contact-note {
+  max-width: 24rem;
+  margin: 1.5rem auto 0;
+  padding: 1rem 1.25rem;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  text-align: center;
+  opacity: 0.95;
+}
+
+#demo-contact-note p {
+  margin: 0 0 0.5rem;
+}
+
+#demo-contact-note p:last-child {
+  margin-bottom: 0;
+}
+
+#demo-contact-note a {
+  text-decoration: underline;
+}

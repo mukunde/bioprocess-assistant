@@ -14,8 +14,9 @@ dist/
 .env.local
 *.local
 
-# Chainlit
-.chainlit/
+# Chainlit (on versionne config.toml pour le déploiement, on ignore le reste)
+.chainlit/*
+!.chainlit/config.toml
 .files/
 
 # Sources / PDFs de référence (consultés en local, jamais redistribués)

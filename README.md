@@ -4,6 +4,28 @@ Démonstrateur d'assistant IA pour le **troubleshooting de la chromatographie de
 
 Le projet valide une hypothèse simple : *peut-on produire un agent crédible pour un ingénieur procédé, avec citations vérifiables et zéro hallucination tolérée, dans le contexte régulé de la biopharma ?*
 
+## Démo en ligne
+
+L'assistant est déployé et accessible : **https://bioprocess-assistant.onrender.com**
+
+L'accès est protégé par mot de passe pour préserver une utilisation maîtrisée (l'agent consomme des tokens API à chaque requête). **Les identifiants de démonstration sont disponibles sur demande** - contactez-moi par email ([gaelmukunde@gmail.com](mailto:gaelmukunde@gmail.com)) ou sur [LinkedIn](https://www.linkedin.com/in/gaelmukunde/).
+
+> ℹ️ Hébergé sur l'offre gratuite Render : le premier accès après une période d'inactivité peut prendre ~30 s (réveil du conteneur), de même que l'instance AuraDB peut nécessiter un réveil.
+
+## Aperçu
+
+**Réponse sourcée** - à partir d'un symptôme en langage naturel, l'agent renvoie les causes probables et les actions correctives, chacune citant sa source (page du handbook). Le pied de réponse affiche le score du match et le seuil courant.
+
+![Réponse sourcée de l'agent](docs/screenshots/01-sourced-answer.png)
+
+**Garde-fou anti-hallucination** - sur un symptôme absent du graphe (ici les endotoxines), l'agent refuse explicitement plutôt que d'inventer.
+
+![Refus anti-hallucination](docs/screenshots/02-anti-hallucination-refusal.png)
+
+**Seuil de match ajustable** - le slider expose le seuil de score Lucene en runtime, pour illustrer le compromis précision / rappel du retrieval.
+
+![Slider de seuil de match](docs/screenshots/04-score-threshold-slider.png)
+
 ## Trois couches d'architecture cibles
 
 Ce POC implémente uniquement la couche causale. Les deux autres sont l'évolution naturelle pour un usage industriel réel.
@@ -24,6 +46,10 @@ Walking skeleton minimal en trois briques découplées :
 2. **Agent Claude** (Anthropic SDK, Sonnet 4.6) avec un seul outil exposé : `query_graph(symptom)`. Le prompt système impose : *répondre uniquement à partir des données retournées par l'outil, citer chaque source, déclarer explicitement « je n'ai pas cette information » hors périmètre.*
 3. **UI Chainlit** qui route les messages utilisateur vers l'agent.
 
+Le knowledge graph visualisé dans le navigateur Neo4j - chaque symptôme pointe vers ses causes (`INDICATES`), chaque cause vers ses actions correctives (`RESOLVED_BY`) :
+
+![Knowledge graph Symptom → Cause → Action](docs/screenshots/03-knowledge-graph.png)
+
 Le détail des choix d'architecture est dans [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR-001-knowledge-graph-grounding.md).
 
 ## Stack
@@ -31,7 +57,8 @@ Le détail des choix d'architecture est dans [`docs/ADR-001-knowledge-graph-grou
 - Python 3.11+ (testé 3.10+)
 - Neo4j AuraDB Free (offre gratuite illimitée, ~200k nœuds autorisés - largement au-dessus du besoin POC)
 - Anthropic SDK + Claude Sonnet 4.6
-- Chainlit pour l'UI conversationnelle
+- Chainlit pour l'UI conversationnelle (auth par mot de passe + thème et branding personnalisés)
+- Déploiement : Docker + Render (offre gratuite, auto-deploy sur push)
 - Configuration via variables d'environnement (`.env`, non commité)
 
 ## Setup
@@ -45,7 +72,7 @@ Le détail des choix d'architecture est dans [`docs/ADR-001-knowledge-graph-grou
 ### 2. Cloner et installer
 
 ```bash
-git clone <ce-repo>
+git clone https://github.com/mukunde/bioprocess-assistant.git
 cd bioprocess-assistant
 python3 -m venv .venv
 source .venv/bin/activate          # sur Windows : .venv\Scripts\activate
@@ -59,6 +86,14 @@ cp .env.example .env
 ```
 
 Éditer `.env` avec les valeurs de l'instance AuraDB et la clé Anthropic (depuis [console.anthropic.com](https://console.anthropic.com)).
+
+Pour l'authentification Chainlit, générer un secret JWT et définir les identifiants de démo :
+
+```bash
+chainlit create-secret        # copier la valeur dans CHAINLIT_AUTH_SECRET du .env
+```
+
+Puis renseigner `DEMO_USERNAME` / `DEMO_PASSWORD` (les identifiants partagés à la connexion).
 
 ### 4. Charger le graphe
 
@@ -77,6 +112,21 @@ chainlit run app.py -w
 L'app s'ouvre sur [http://localhost:8000](http://localhost:8000).
 
 Sous chaque réponse, l'UI affiche le **score Lucene du match** et le **seuil actuel**. Le seuil est ajustable en runtime via l'icône ⚙️ Settings dans la boîte de saisie - pratique en démo pour illustrer le trade-off précision / rappel (voir *Sous le capot* plus bas).
+
+## Déploiement
+
+L'app tourne en conteneur Docker (voir `Dockerfile`). Le déploiement de référence est sur **Render** (Web Service, runtime Docker, offre gratuite) :
+
+- Build automatique depuis le repo GitHub, redéploiement à chaque push (`Auto-Deploy: On Commit`)
+- Les secrets (Neo4j, Anthropic, auth Chainlit) sont fournis via les variables d'environnement du service - jamais commités
+- `.chainlit/config.toml` et le dossier `public/` (logo, favicon, CSS/JS de thème) sont versionnés pour que le branding suive en production
+
+Build local de l'image :
+
+```bash
+docker build -t bioprocess-assistant .
+docker run -p 8000:8000 --env-file .env bioprocess-assistant
+```
 
 ## Questions de démo
 
@@ -188,15 +238,20 @@ Trois raisons (détails dans [`docs/ADR-001-knowledge-graph-grounding.md`](docs/
 ```
 bioprocess-assistant/
 ├── agent.py                                # boucle agent Claude + prompt anti-hallucination
-├── app.py                                  # UI Chainlit
+├── app.py                                  # UI Chainlit + auth par mot de passe
 ├── chainlit.md                             # welcome page Chainlit
-├── tools.py                                # outil query_graph (full-text Neo4j)
+├── tools.py                                # outil query_graph (full-text Neo4j, seuil de score)
 ├── requirements.txt
+├── Dockerfile                              # image de déploiement (Render)
+├── .dockerignore
 ├── scripts/
 │   └── load_graph.py                       # loader schema + seed Cypher (idempotent)
 ├── graph/
 │   ├── schema.cypher                       # contraintes d'unicité + index full-text français
 │   └── seed.cypher                         # 6 symptômes × 2 causes × 2 actions, sourcés
+├── public/                                 # branding : logo/favicon/avatar SVG, custom.css, login.js
+├── .chainlit/
+│   └── config.toml                         # thème, avatar, custom CSS/JS, page de login
 ├── docs/
 │   └── ADR-001-knowledge-graph-grounding.md  # décision d'architecture
 ├── references/                             # PDFs handbooks (gitignoré)

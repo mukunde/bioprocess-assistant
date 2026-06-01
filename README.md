@@ -1,263 +1,265 @@
 # Bioprocess Troubleshooting Assistant
 
-Démonstrateur d'assistant IA pour le **troubleshooting de la chromatographie de capture sur Protein A** (étape downstream du bioprocédé). À partir d'un symptôme décrit en langage naturel, l'agent renvoie les causes probables et les actions correctives - chaque réponse ancrée dans un knowledge graph et sourcée sur un handbook public.
+An AI assistant demonstrator for **troubleshooting Protein A capture chromatography** (a downstream bioprocess unit operation). Given a symptom described in natural language, the agent returns the probable causes and corrective actions - every answer grounded in a knowledge graph and sourced from a public handbook.
 
-Le projet valide une hypothèse simple : *peut-on produire un agent crédible pour un ingénieur procédé, avec citations vérifiables et zéro hallucination tolérée, dans le contexte régulé de la biopharma ?*
+The project validates a simple hypothesis: *can we build an agent a process engineer would find credible, with verifiable citations and zero tolerated hallucination, in the regulated context of biopharma?*
 
-## Démo en ligne
+> **Language note:** the docs are in English, while the assistant itself operates in **French**. The curated graph content (symptoms, causes, actions) is written in French for the French-speaking biopharma context, even though the Cytiva handbooks it cites as sources are in English. The example prompts below are therefore in French.
 
-L'assistant est déployé et accessible : **https://bioprocess-assistant.onrender.com**
+## Live demo
 
-L'accès est protégé par mot de passe pour préserver une utilisation maîtrisée (l'agent consomme des tokens API à chaque requête). **Les identifiants de démonstration sont disponibles sur demande** - contactez-moi par email ([gaelmukunde@gmail.com](mailto:gaelmukunde@gmail.com)) ou sur [LinkedIn](https://www.linkedin.com/in/gaelmukunde/).
+The assistant is deployed and accessible: **https://bioprocess-assistant.onrender.com**
 
-> ℹ️ Hébergé sur l'offre gratuite Render : le premier accès après une période d'inactivité peut prendre ~30 s (réveil du conteneur), de même que l'instance AuraDB peut nécessiter un réveil.
+Access is password-protected to keep usage under control (the agent consumes API tokens on every request). **Demo credentials are available on request** - reach me by email ([gaelmukunde@gmail.com](mailto:gaelmukunde@gmail.com)) or on [LinkedIn](https://www.linkedin.com/in/gaelmukunde/).
 
-## Aperçu
+> ℹ️ Hosted on Render's free tier: the first request after a period of inactivity can take ~30 s (container cold start), and the AuraDB instance may also need to wake up.
 
-**Réponse sourcée** - à partir d'un symptôme en langage naturel, l'agent renvoie les causes probables et les actions correctives, chacune citant sa source (page du handbook). Le pied de réponse affiche le score du match et le seuil courant.
+## Preview
 
-![Réponse sourcée de l'agent](docs/screenshots/01-sourced-answer.png)
+**Sourced answer** - from a natural-language symptom, the agent returns the probable causes and corrective actions, each citing its source (handbook page). The answer footer shows the match score and the current threshold.
 
-**Garde-fou anti-hallucination** - sur un symptôme absent du graphe (ici les endotoxines), l'agent refuse explicitement plutôt que d'inventer.
+![Agent sourced answer](docs/screenshots/01-sourced-answer.png)
 
-![Refus anti-hallucination](docs/screenshots/02-anti-hallucination-refusal.png)
+**Anti-hallucination guardrail** - for a symptom absent from the graph (here, endotoxins), the agent explicitly declines rather than inventing an answer.
 
-**Seuil de match ajustable** - le slider expose le seuil de score Lucene en runtime, pour illustrer le compromis précision / rappel du retrieval.
+![Anti-hallucination refusal](docs/screenshots/02-anti-hallucination-refusal.png)
 
-![Slider de seuil de match](docs/screenshots/04-score-threshold-slider.png)
+**Adjustable match threshold** - the slider exposes the Lucene score threshold at runtime, illustrating the retrieval precision / recall trade-off.
 
-## Trois couches d'architecture cibles
+![Match threshold slider](docs/screenshots/04-score-threshold-slider.png)
 
-Ce POC implémente uniquement la couche causale. Les deux autres sont l'évolution naturelle pour un usage industriel réel.
+## Three target architecture layers
 
-| Couche | Ce qu'elle modélise | Approche | Statut |
+This POC implements only the causal layer. The other two are the natural evolution toward a real industrial use.
+
+| Layer | What it models | Approach | Status |
 |---|---|---|---|
-| **Causale** | Symptôme → Cause → Action | Knowledge graph Neo4j manuel + agent Claude | ✅ ce POC |
-| **Topologique** | Équipements, connexions, instrumentation | Pattern ChatP&ID (extraction depuis P&ID) | À venir |
-| **Opérationnelle** | Phases, états, KPI, alarmes | Ontologie type *Fabric IQ* sur data fabric industriel | À venir |
+| **Causal** | Symptom → Cause → Action | Hand-curated Neo4j knowledge graph + Claude agent | ✅ this POC |
+| **Topological** | Equipment, connections, instrumentation | ChatP&ID pattern (extraction from P&IDs) | Future |
+| **Operational** | Phases, states, KPIs, alarms | *Fabric IQ*-style ontology over an industrial data fabric | Future |
 
-Le défi central pour passer d'un POC mono-couche à un système multi-couches est l'**alignement d'entités** : faire en sorte que la même colonne C-101 soit le même nœud (ou des nœuds explicitement liés) dans les trois couches, avec une identité partagée non ambiguë.
+The central challenge in moving from a single-layer POC to a multi-layer system is **entity alignment**: ensuring the same column C-101 is the same node (or explicitly linked nodes) across all three layers, with an unambiguous shared identity.
 
-## Architecture du POC
+## POC architecture
 
-Walking skeleton minimal en trois briques découplées :
+A minimal walking skeleton in three decoupled bricks:
 
-1. **Knowledge graph Neo4j** (AuraDB Free) - connaissance métier modélisée comme `(:Symptom)-[:INDICATES]->(:Cause)-[:RESOLVED_BY]->(:Action)`. Chaque nœud porte un champ `source` obligatoire pointant vers une page précise d'un handbook public.
-2. **Agent Claude** (Anthropic SDK, Sonnet 4.6) avec un seul outil exposé : `query_graph(symptom)`. Le prompt système impose : *répondre uniquement à partir des données retournées par l'outil, citer chaque source, déclarer explicitement « je n'ai pas cette information » hors périmètre.*
-3. **UI Chainlit** qui route les messages utilisateur vers l'agent.
+1. **Neo4j knowledge graph** (AuraDB Free) - domain knowledge modeled as `(:Symptom)-[:INDICATES]->(:Cause)-[:RESOLVED_BY]->(:Action)`. Every node carries a mandatory `source` field pointing to a precise page of a public handbook.
+2. **Claude agent** (Anthropic SDK, Sonnet 4.6) with a single exposed tool: `query_graph(symptom)`. The system prompt enforces: *answer only from the data returned by the tool, cite every source, and explicitly state "I don't have this information" when out of scope.*
+3. **Chainlit UI** that routes user messages to the agent.
 
-Le knowledge graph visualisé dans le navigateur Neo4j - chaque symptôme pointe vers ses causes (`INDICATES`), chaque cause vers ses actions correctives (`RESOLVED_BY`) :
+The knowledge graph visualized in the Neo4j browser - each symptom points to its causes (`INDICATES`), each cause to its corrective actions (`RESOLVED_BY`):
 
 ![Knowledge graph Symptom → Cause → Action](docs/screenshots/03-knowledge-graph.png)
 
-Le détail des choix d'architecture est dans [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR-001-knowledge-graph-grounding.md).
+Architecture decisions are detailed in [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR-001-knowledge-graph-grounding.md).
 
 ## Stack
 
-- Python 3.11+ (testé 3.10+)
-- Neo4j AuraDB Free (offre gratuite illimitée, ~200k nœuds autorisés - largement au-dessus du besoin POC)
+- Python 3.11+ (tested on 3.10+)
+- Neo4j AuraDB Free (free tier, ~200k nodes allowed - well above the POC need)
 - Anthropic SDK + Claude Sonnet 4.6
-- Chainlit pour l'UI conversationnelle (auth par mot de passe + thème et branding personnalisés)
-- Déploiement : Docker + Render (offre gratuite, auto-deploy sur push)
-- Configuration via variables d'environnement (`.env`, non commité)
+- Chainlit for the conversational UI (password auth + custom theme and branding)
+- Deployment: Docker + Render (free tier, auto-deploy on push)
+- Configuration via environment variables (`.env`, never committed)
 
 ## Setup
 
-### 1. Provisionner une instance Neo4j AuraDB Free
+### 1. Provision a Neo4j AuraDB Free instance
 
-- Aller sur [console.neo4j.io](https://console.neo4j.io/), créer un compte
-- Créer une instance **AuraDB Free**
-- ⚠️ Le password n'est affiché qu'une seule fois à la création - sauvegarder le fichier `.txt` de connexion
+- Go to [console.neo4j.io](https://console.neo4j.io/) and create an account
+- Create an **AuraDB Free** instance
+- ⚠️ The password is shown only once at creation - save the connection `.txt` file
 
-### 2. Cloner et installer
+### 2. Clone and install
 
 ```bash
 git clone https://github.com/mukunde/bioprocess-assistant.git
 cd bioprocess-assistant
 python3 -m venv .venv
-source .venv/bin/activate          # sur Windows : .venv\Scripts\activate
+source .venv/bin/activate          # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-### 3. Configurer
+### 3. Configure
 
 ```bash
 cp .env.example .env
 ```
 
-Éditer `.env` avec les valeurs de l'instance AuraDB et la clé Anthropic (depuis [console.anthropic.com](https://console.anthropic.com)).
+Edit `.env` with the AuraDB instance values and your Anthropic key (from [console.anthropic.com](https://console.anthropic.com)).
 
-Pour l'authentification Chainlit, générer un secret JWT et définir les identifiants de démo :
+For Chainlit authentication, generate a JWT secret and set the demo credentials:
 
 ```bash
-chainlit create-secret        # copier la valeur dans CHAINLIT_AUTH_SECRET du .env
+chainlit create-secret        # copy the value into CHAINLIT_AUTH_SECRET in .env
 ```
 
-Puis renseigner `DEMO_USERNAME` / `DEMO_PASSWORD` (les identifiants partagés à la connexion).
+Then set `DEMO_USERNAME` / `DEMO_PASSWORD` (the shared login credentials).
 
-### 4. Charger le graphe
+### 4. Load the graph
 
 ```bash
 python scripts/load_graph.py
 ```
 
-Le script applique le schéma (contraintes d'unicité + index full-text avec analyseur français) puis le seed (6 symptômes / 12 causes / 12 actions, tous sourcés). Il valide en sortie en affichant les 12 chemins causaux.
+The script applies the schema (uniqueness constraints + a full-text index with a French analyzer) then the seed (6 symptoms / 12 causes / 12 actions, all sourced). It validates on exit by printing the 12 causal paths.
 
-## Démarrer
+## Run
 
 ```bash
 chainlit run app.py -w
 ```
 
-L'app s'ouvre sur [http://localhost:8000](http://localhost:8000).
+The app opens at [http://localhost:8000](http://localhost:8000).
 
-Sous chaque réponse, l'UI affiche le **score Lucene du match** et le **seuil actuel**. Le seuil est ajustable en runtime via l'icône ⚙️ Settings dans la boîte de saisie - pratique en démo pour illustrer le trade-off précision / rappel (voir *Sous le capot* plus bas).
+Under each answer, the UI shows the **Lucene match score** and the **current threshold**. The threshold is adjustable at runtime via the ⚙️ Settings icon in the input box - handy in a demo to illustrate the precision / recall trade-off (see *Under the hood* below).
 
-## Déploiement
+## Deployment
 
-L'app tourne en conteneur Docker (voir `Dockerfile`). Le déploiement de référence est sur **Render** (Web Service, runtime Docker, offre gratuite) :
+The app runs in a Docker container (see `Dockerfile`). The reference deployment is on **Render** (Web Service, Docker runtime, free tier):
 
-- Build automatique depuis le repo GitHub, redéploiement à chaque push (`Auto-Deploy: On Commit`)
-- Les secrets (Neo4j, Anthropic, auth Chainlit) sont fournis via les variables d'environnement du service - jamais commités
-- `.chainlit/config.toml` et le dossier `public/` (logo, favicon, CSS/JS de thème) sont versionnés pour que le branding suive en production
+- Automatic build from the GitHub repo, redeploy on every push (`Auto-Deploy: On Commit`)
+- Secrets (Neo4j, Anthropic, Chainlit auth) are provided via the service's environment variables - never committed
+- `.chainlit/config.toml` and the `public/` folder (logo, favicon, theme CSS/JS) are version-controlled so the branding follows into production
 
-Build local de l'image :
+Local image build:
 
 ```bash
 docker build -t bioprocess-assistant .
 docker run -p 8000:8000 --env-file .env bioprocess-assistant
 ```
 
-## Questions de démo
+## Demo questions
 
-L'agent couvre six symptômes types de la capture Protein A :
+The agent covers six typical Protein A capture symptoms:
 
-- Chute du rendement de capture
-- Pression élevée sur la colonne
-- Agrégats / HMW dans le pool d'élution
-- Fuite de Protein A (leaching) dans l'éluat
-- HCP résiduels dans le pool d'élution
-- Bioburden / contamination microbienne
+- Chute du rendement de capture *(capture yield drop)*
+- Pression élevée sur la colonne *(high column pressure)*
+- Agrégats / HMW dans le pool d'élution *(aggregates / HMW in the elution pool)*
+- Fuite de Protein A (leaching) dans l'éluat *(Protein A leaching in the eluate)*
+- HCP résiduels dans le pool d'élution *(residual HCP in the elution pool)*
+- Bioburden / contamination microbienne *(bioburden / microbial contamination)*
 
-Prompts qui marchent :
+Prompts that work (in French):
 
 - *« Mon rendement de capture a chuté, qu'est-ce qui peut le causer ? »*
 - *« La pression de ma colonne est anormalement élevée, comment je règle ça ? »*
 - *« J'ai trop d'agrégats dans mon pool d'élution. »*
 
-Pour stresser la garantie anti-hallucination - trois patterns de refus distincts, tous testés :
+To stress the anti-hallucination guarantee - three distinct refusal patterns, all tested:
 
-- *« J'ai un taux d'endotoxines élevé dans mon pool d'élution, comment je le réduis ? »* → **in-domain miss** : symptôme non couvert par le graphe, l'agent répond « Je n'ai pas cette information dans ma base de connaissance »
-- *« Comment optimiser mon procédé d'ultrafiltration / diafiltration ? »* → **autre opération unitaire** : l'agent signale le hors-scope
-- *« Quelle est la météo aujourd'hui ? »* → **hors sujet total** : l'agent refuse poliment
+- *« J'ai un taux d'endotoxines élevé dans mon pool d'élution, comment je le réduis ? »* → **in-domain miss**: symptom not covered by the graph, the agent replies "I don't have this information in my knowledge base"
+- *« Comment optimiser mon procédé d'ultrafiltration / diafiltration ? »* → **another unit operation**: the agent flags it as out of scope
+- *« Quelle est la météo aujourd'hui ? »* → **fully off-topic**: the agent politely declines
 
-## Sous le capot - comment fonctionne le retrieval
+## Under the hood - how retrieval works
 
-### Matching : full-text Lucene avec analyseur français
+### Matching: full-text Lucene with a French analyzer
 
-Le knowledge graph est interrogé via un **index full-text Neo4j** posé sur `Symptom.name` et `Symptom.description`, avec l'**analyseur Lucene `french`** qui applique :
+The knowledge graph is queried through a **Neo4j full-text index** over `Symptom.name` and `Symptom.description`, using the **`french` Lucene analyzer**, which applies:
 
-- Tokenization sur whitespace + ponctuation
-- Suppression des stop-words français (`de`, `le`, `à`, `ou`, ...)
-- Stemming (`rendement` ≡ `rendements` ; `chuter` ≡ `chuté` ≡ `chute`)
-- Normalisation des accents
+- Tokenization on whitespace + punctuation
+- French stop-word removal (`de`, `le`, `à`, `ou`, ...)
+- Stemming (`rendement` ≡ `rendements`; `chuter` ≡ `chuté` ≡ `chute`)
+- Accent normalization
 
-C'est ce qui permet à une question naturelle comme *« Mon rendement de capture a chuté »* de matcher le nœud `"Chute du rendement de capture"` sans formulation strictement identique.
+This lets a natural question like *« Mon rendement de capture a chuté »* match the node `"Chute du rendement de capture"` without strictly identical phrasing.
 
-### Score BM25 - pertinence d'un match
+### BM25 score - relevance of a match
 
-Chaque match reçoit un **score BM25** (algorithme par défaut de Lucene moderne), qui combine :
+Each match gets a **BM25 score** (modern Lucene's default algorithm), combining:
 
-- **TF** (term frequency) - fréquence de chaque terme de la requête dans le document indexé
-- **IDF** (inverse document frequency) - les termes rares pèsent plus que les communs
-- **Normalisation de longueur** - les documents très longs sont légèrement pénalisés
+- **TF** (term frequency) - how often each query term occurs in the indexed document
+- **IDF** (inverse document frequency) - rare terms weigh more than common ones
+- **Length normalization** - very long documents are slightly penalized
 
-En pratique sur ce graphe :
+In practice on this graph:
 
-- *« rendement chute »* sur le nœud yield drop → 2 termes rares matchent → score ~5
-- *« endotoxines pool »* sur le nœud HCP → 0 terme rare matche (`endotoxine` n'est dans aucun document), seul `pool` matche (terme commun) → score ~2
+- *« rendement chute »* against the yield-drop node → 2 rare terms match → score ~5
+- *« endotoxines pool »* against the HCP node → 0 rare term matches (`endotoxine` is in no document), only `pool` matches (a common term) → score ~2
 
-### Le seuil de match (`min_score`)
+### The match threshold (`min_score`)
 
-`query_graph` applique un **seuil minimum** (par défaut 2.5, ajustable via le slider Settings dans l'UI) :
+`query_graph` applies a **minimum threshold** (default 2.5, adjustable via the Settings slider in the UI):
 
-- Score **≥** seuil → match retenu, l'outil retourne le nœud avec causes + actions
-- Score **<** seuil → l'outil retourne `found: false`, l'agent applique la règle anti-hallucination
+- Score **≥** threshold → match accepted, the tool returns the node with causes + actions
+- Score **<** threshold → the tool returns `found: false`, and the agent applies the anti-hallucination rule
 
-Le seuil 2.5 a été calibré empiriquement sur les 6 symptômes du graphe pour rejeter les faux positifs faibles (type endotoxines→HCP via mots-clés génériques partagés) sans rejeter les questions in-scope reformulées librement.
+The 2.5 threshold was calibrated empirically over the 6 symptoms of the graph to reject weak false positives (e.g. endotoxins→HCP via shared generic keywords) without rejecting in-scope questions phrased freely.
 
-### Trois comportements distincts côté agent
+### Three distinct agent behaviors
 
-Le prompt système (voir `agent.py`) ancre **4 règles non-négociables** :
+The system prompt (see `agent.py`) anchors **4 non-negotiable rules**:
 
-1. **Données du tool uniquement** : jamais de cause, action, ou source ajoutée depuis la connaissance générale du LLM
-2. **Citer la `source`** de chaque cause et chaque action mentionnée dans la réponse
-3. **Si l'outil renvoie `found: false`**, dire explicitement *« Je n'ai pas cette information dans ma base de connaissance »*, ne rien inventer
-4. **Si la question sort du périmètre** (autre opération unitaire que la capture Protein A, sujet hors troubleshooting), le signaler et ne pas répondre sur le fond
+1. **Tool data only**: never add a cause, action, or source from the LLM's general knowledge
+2. **Cite the `source`** of every cause and action mentioned in the answer
+3. **If the tool returns `found: false`**, explicitly say *"I don't have this information in my knowledge base"*, invent nothing
+4. **If the question is out of scope** (a unit operation other than Protein A capture, or a non-troubleshooting topic), flag it and don't answer on the merits
 
-Les règles **1 et 2** gouvernent *comment* l'agent répond quand il a un match (format et traçabilité). Les règles **3 et 4** gouvernent *quand* l'agent refuse de répondre. Ensemble, elles produisent trois comportements observables en démo :
+Rules **1 and 2** govern *how* the agent answers when it has a match (format and traceability). Rules **3 and 4** govern *when* the agent declines. Together they produce three observable behaviors:
 
-| Cas | Mécanisme | Réponse |
+| Case | Mechanism | Response |
 |---|---|---|
-| **Match valide** | Score BM25 ≥ seuil → tool retourne `found: true` | Causes + actions structurées avec citations des sources (Règles 1 et 2) |
-| **In-domain miss** | Tool retourne `found: false` (graphe ne contient rien au-dessus du seuil) | « Je n'ai pas cette information dans ma base de connaissance » (Règle 3) |
-| **Hors périmètre** | LLM juge sémantiquement que la question sort du domaine (autre unit op, sujet non-troubleshooting) | « Cette question sort de mon périmètre » (Règle 4) |
+| **Valid match** | BM25 score ≥ threshold → tool returns `found: true` | Structured causes + actions with source citations (Rules 1 & 2) |
+| **In-domain miss** | Tool returns `found: false` (graph holds nothing above the threshold) | "I don't have this information in my knowledge base" (Rule 3) |
+| **Out of scope** | The LLM judges semantically that the question is outside the domain | "This question is out of my scope" (Rule 4) |
 
-La distinction in-domain miss vs hors périmètre repose sur **deux mécanismes différents** :
+The in-domain miss vs out-of-scope distinction rests on **two different mechanisms**:
 
-- **Score Lucene** déclenche la Règle 3 - décision *numérique* sur la qualité du match.
-- **Jugement sémantique du LLM** déclenche la Règle 4 - décision *qualitative* sur la nature de la question.
+- The **Lucene score** triggers Rule 3 - a *numerical* decision on match quality.
+- The **LLM's semantic judgment** triggers Rule 4 - a *qualitative* decision on the nature of the question.
 
-Les deux peuvent coexister (une question hors périmètre ne match probablement rien non plus), mais le LLM prioritise la Règle 4 quand c'est sémantiquement net (par exemple *« quelle est la météo aujourd'hui ? »* est refusée comme hors périmètre avant même un appel au tool).
+Both can co-occur (an out-of-scope question probably matches nothing either), but the LLM prioritizes Rule 4 when it's semantically clear (e.g. *« quelle est la météo aujourd'hui ? »* is declined as out of scope before a tool call is even made).
 
-### Pourquoi un knowledge graph et pas un RAG vectoriel ?
+### Why a knowledge graph and not vector RAG?
 
-Trois raisons (détails dans [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR-001-knowledge-graph-grounding.md)) :
+Three reasons (details in [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR-001-knowledge-graph-grounding.md)):
 
-1. **Auditabilité** : chaque réponse remonte à une page identifiée d'un PDF, pas à un chunk parmi N
-2. **Structure causale explicite** : `symptôme → cause → action` est une relation, pas une proximité sémantique
-3. **Anti-hallucination par construction** : l'agent n'a accès au monde qu'au travers du tool ; il ne peut pas *« compléter avec ses connaissances générales »* sans violer le prompt système
+1. **Auditability**: every answer traces back to an identified PDF page, not to one chunk among N
+2. **Explicit causal structure**: `symptom → cause → action` is a relation, not a semantic proximity
+3. **Anti-hallucination by construction**: the agent only reaches the world through the tool; it cannot *"fill in from its general knowledge"* without violating the system prompt
 
-## Limites assumées
+## Assumed limitations
 
-- POC démonstrateur, **pas un système de niveau GxP**
-- Périmètre restreint à **une seule opération unitaire** (capture Protein A)
-- Sources publiques uniquement (handbooks Cytiva), pas de données internes
-- AuraDB Free met l'instance en pause après quelques jours d'inactivité - réveillable en un clic depuis la console
-- La qualité des réponses dépend entièrement de la curation du graphe : *garbage in, garbage out*
+- A demonstrator POC, **not a GxP-grade system**
+- Scope restricted to **a single unit operation** (Protein A capture)
+- Public sources only (Cytiva handbooks), no internal data
+- AuraDB Free pauses the instance after a few days of inactivity - wakeable in one click from the console
+- Answer quality depends entirely on graph curation: *garbage in, garbage out*
 
 ## Roadmap
 
-- **Court terme** : épaissir le graphe avec d'autres handbooks publics (Merck-Millipore, Sartorius)
-- **Moyen terme** : ajouter la couche **topologique** (pattern ChatP&ID - extraction de P&ID en KG)
-- **Moyen terme** : ajouter la couche **opérationnelle** (ontologie sur data fabric industriel), avec gestion d'identité partagée entre couches
-- **Évolution complémentaire possible** : couche RAG vectoriel par-dessus le graphe pour traiter les questions ouvertes non couvertes par le modèle relationnel - en complément, jamais en remplacement de la vérité structurée
+- **Short term**: thicken the graph with other public handbooks (Merck-Millipore, Sartorius)
+- **Medium term**: add the **topological** layer (ChatP&ID pattern - extracting P&IDs into a KG)
+- **Medium term**: add the **operational** layer (ontology over an industrial data fabric), with shared identity management across layers
+- **Possible complementary evolution**: a vector RAG layer on top of the graph for open questions not covered by the relational model - as a complement, never a replacement for the structured truth
 
-## Structure du repo
+## Repo structure
 
 ```
 bioprocess-assistant/
-├── agent.py                                # boucle agent Claude + prompt anti-hallucination
-├── app.py                                  # UI Chainlit + auth par mot de passe
-├── chainlit.md                             # welcome page Chainlit
-├── tools.py                                # outil query_graph (full-text Neo4j, seuil de score)
+├── agent.py                                # Claude agent loop + anti-hallucination prompt
+├── app.py                                  # Chainlit UI + password auth
+├── chainlit.md                             # Chainlit welcome page
+├── tools.py                                # query_graph tool (Neo4j full-text, score threshold)
 ├── requirements.txt
-├── Dockerfile                              # image de déploiement (Render)
+├── Dockerfile                              # deployment image (Render)
 ├── .dockerignore
 ├── scripts/
-│   └── load_graph.py                       # loader schema + seed Cypher (idempotent)
+│   └── load_graph.py                       # schema + seed Cypher loader (idempotent)
 ├── graph/
-│   ├── schema.cypher                       # contraintes d'unicité + index full-text français
-│   └── seed.cypher                         # 6 symptômes × 2 causes × 2 actions, sourcés
-├── public/                                 # branding : logo/favicon/avatar SVG, custom.css, login.js
+│   ├── schema.cypher                       # uniqueness constraints + French full-text index
+│   └── seed.cypher                         # 6 symptoms × 2 causes × 2 actions, sourced
+├── public/                                 # branding: logo/favicon/avatar SVG, custom.css, login.js
 ├── .chainlit/
-│   └── config.toml                         # thème, avatar, custom CSS/JS, page de login
+│   └── config.toml                         # theme, avatar, custom CSS/JS, login page
 ├── docs/
-│   └── ADR-001-knowledge-graph-grounding.md  # décision d'architecture
-├── references/                             # PDFs handbooks (gitignoré)
-└── CLAUDE.md                               # contexte projet pour Claude Code
+│   └── ADR-001-knowledge-graph-grounding.md  # architecture decision
+├── references/                             # handbook PDFs (gitignored)
+└── CLAUDE.md                               # project context for Claude Code
 ```
 
 ---
 
-*Projet créé comme démonstrateur d'entretien - fabricant d'équipements de bioprocédé.*
+*Project built as an interview demonstrator - bioprocess equipment manufacturer.*

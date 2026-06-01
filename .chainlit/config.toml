@@ -117,7 +117,7 @@ default_theme = "light"
 confirm_new_chat = true
 
 # Description of the assistant. This is used for HTML tags.
-description = "Agent IA de troubleshooting de la capture Protein A, ancré sur un knowledge graph Neo4j — réponses sourcées, zéro hallucination."
+description = "Agent IA de troubleshooting de la capture Protein A, ancré sur un knowledge graph Neo4j - réponses sourcées, zéro hallucination."
 
 # Chain of Thought (CoT) display mode. Can be "hidden", "tool_call" or "full".
 cot = "full"

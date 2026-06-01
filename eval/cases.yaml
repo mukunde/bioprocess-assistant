@@ -1,0 +1,113 @@
+# Evaluation dataset for the Protein A troubleshooting agent.
+#
+# Questions are in French (the agent operates in French); the schema and comments
+# are in English to match the codebase convention.
+#
+# type:
+#   in_scope        -> a symptom present in the graph; query_graph must return `expected_symptom`
+#   in_domain_miss  -> a real Protein A capture symptom NOT in the graph; the agent must refuse (Rule 3)
+#   out_of_scope    -> another unit operation / non-troubleshooting topic; the agent must refuse (Rule 4)
+#   off_topic       -> unrelated to the domain; the agent must refuse
+#
+# `expected_symptom` (exact node name) is required for in_scope cases only.
+# Several paraphrases per symptom deliberately stress the full-text matching
+# (synonyms, free phrasing, description-based hits).
+
+cases:
+  # --- Symptom 1: capture yield drop ---
+  - id: yield-1
+    question: "Mon rendement de capture a chuté, qu'est-ce qui peut le causer ?"
+    type: in_scope
+    expected_symptom: "Chute du rendement de capture"
+  - id: yield-2
+    question: "Le rendement de mon étape de capture Protein A est faible."
+    type: in_scope
+    expected_symptom: "Chute du rendement de capture"
+  - id: yield-3
+    question: "Je perds beaucoup de produit dans le flow-through pendant la capture."
+    type: in_scope
+    expected_symptom: "Chute du rendement de capture"
+
+  # --- Symptom 2: high column pressure ---
+  - id: pressure-1
+    question: "La pression de ma colonne de capture est anormalement élevée."
+    type: in_scope
+    expected_symptom: "Pression élevée sur la colonne"
+  - id: pressure-2
+    question: "J'ai une surpression sur ma colonne Protein A, comment je règle ça ?"
+    type: in_scope
+    expected_symptom: "Pression élevée sur la colonne"
+  - id: pressure-3
+    question: "La contre-pression de la colonne augmente cycle après cycle."
+    type: in_scope
+    expected_symptom: "Pression élevée sur la colonne"
+
+  # --- Symptom 3: aggregates / HMW in elution pool ---
+  - id: aggregates-1
+    question: "J'ai trop d'agrégats dans mon pool d'élution."
+    type: in_scope
+    expected_symptom: "Présence d'agrégats / HMW dans le pool d'élution"
+  - id: aggregates-2
+    question: "Taux de HMW élevé dans l'éluat de capture, que faire ?"
+    type: in_scope
+    expected_symptom: "Présence d'agrégats / HMW dans le pool d'élution"
+
+  # --- Symptom 4: Protein A leaching in eluate ---
+  - id: leaching-1
+    question: "Comment réduire le leaching de Protein A dans mon éluat ?"
+    type: in_scope
+    expected_symptom: "Fuite de Protein A (leaching) élevée dans l'éluat"
+  - id: leaching-2
+    question: "J'ai une fuite de ligand Protein A élevée dans le pool d'élution."
+    type: in_scope
+    expected_symptom: "Fuite de Protein A (leaching) élevée dans l'éluat"
+
+  # --- Symptom 5: residual HCP in elution pool ---
+  - id: hcp-1
+    question: "J'ai des HCP résiduels au-dessus de la spec dans mon pool d'élution."
+    type: in_scope
+    expected_symptom: "HCP résiduels élevés dans le pool d'élution"
+  - id: hcp-2
+    question: "Trop de protéines de cellule hôte dans l'éluat après la capture."
+    type: in_scope
+    expected_symptom: "HCP résiduels élevés dans le pool d'élution"
+
+  # --- Symptom 6: bioburden / microbial contamination ---
+  - id: bioburden-1
+    question: "J'ai détecté du bioburden dans ma colonne après plusieurs cycles."
+    type: in_scope
+    expected_symptom: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"
+  - id: bioburden-2
+    question: "Contamination microbienne sur ma colonne de capture, comment je gère ?"
+    type: in_scope
+    expected_symptom: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"
+
+  # --- In-domain misses: real Protein A symptoms absent from the graph (must refuse) ---
+  - id: miss-endotoxins
+    question: "J'ai un taux d'endotoxines élevé dans mon pool d'élution, comment je le réduis ?"
+    type: in_domain_miss
+  - id: miss-discoloration
+    question: "J'observe une coloration brune anormale dans mon pool d'élution."
+    type: in_domain_miss
+  - id: miss-dna
+    question: "Mon taux d'ADN résiduel est trop élevé après l'étape de capture."
+    type: in_domain_miss
+
+  # --- Out of scope: other unit operations / non-troubleshooting (must refuse) ---
+  - id: oos-ufdf
+    question: "Comment optimiser mon procédé d'ultrafiltration / diafiltration ?"
+    type: out_of_scope
+  - id: oos-viral
+    question: "Quels paramètres pour mon étape d'inactivation virale à pH bas ?"
+    type: out_of_scope
+  - id: oos-cex
+    question: "Comment régler ma chromatographie échangeuse de cations en polissage ?"
+    type: out_of_scope
+
+  # --- Off topic: unrelated to the domain (must refuse) ---
+  - id: off-weather
+    question: "Quelle est la météo à Strasbourg aujourd'hui ?"
+    type: off_topic
+  - id: off-recipe
+    question: "Donne-moi une recette de tarte aux pommes."
+    type: off_topic

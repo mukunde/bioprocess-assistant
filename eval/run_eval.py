@@ -109,16 +109,94 @@ def report(rows: list[dict], min_score: float) -> bool:
     return not failures
 
 
+def select_cases(cases: list[dict], limit: int) -> list[dict]:
+    """First `limit` cases of each type for balanced coverage; 0 = all."""
+    if not limit:
+        return cases
+    seen: dict[str, int] = {}
+    out = []
+    for c in cases:
+        n = seen.get(c["type"], 0)
+        if n < limit:
+            out.append(c)
+            seen[c["type"]] = n + 1
+    return out
+
+
+def run_agent_level(cases: list[dict], min_score: float) -> list[dict]:
+    """Run the full agent on each case and have the LLM judge the answer.
+    Costs API tokens (one agent run + one judge call per case)."""
+    from agent import run_agent          # lazy import: pulls the Anthropic SDK
+    from judge import judge_response
+
+    rows = []
+    for i, c in enumerate(cases, 1):
+        print(f"  [{i}/{len(cases)}] {c['id']} ...", flush=True)
+        tool_outputs: list = []
+        text, _, _ = run_agent(c["question"], min_score=min_score, tool_outputs=tool_outputs)
+        verdict = judge_response(c["question"], tool_outputs, text)
+        rows.append({"id": c["id"], "type": c["type"], **verdict})
+    return rows
+
+
+def report_agent(rows: list[dict]) -> bool:
+    in_scope = [r for r in rows if r["type"] == "in_scope"]
+    refusals = [r for r in rows if r["type"] != "in_scope"]
+
+    print("\n=== Agent-level evaluation (LLM judge) ===\n")
+    if in_scope:
+        hf = sum(1 for r in in_scope if r["hallucination_free"])
+        sc = sum(1 for r in in_scope if r["sources_cited"])
+        ans = sum(1 for r in in_scope if r["refused"] is False)
+        print(f"  In-scope ({len(in_scope)}):")
+        print(f"    {'hallucination-free':<24} {hf}/{len(in_scope)}")
+        print(f"    {'sources cited':<24} {sc}/{len(in_scope)}")
+        print(f"    {'answered (not refused)':<24} {ans}/{len(in_scope)}")
+    if refusals:
+        rf = sum(1 for r in refusals if r["refused"])
+        hf = sum(1 for r in refusals if r["hallucination_free"])
+        print(f"\n  Refusals ({len(refusals)}):")
+        print(f"    {'correctly refused':<24} {rf}/{len(refusals)}")
+        print(f"    {'hallucination-free':<24} {hf}/{len(refusals)}")
+
+    total_hf = sum(1 for r in rows if r["hallucination_free"])
+    print(f"\n  {'OVERALL hallucination-free':<26} {total_hf}/{len(rows)}\n")
+
+    problems = [
+        r for r in rows
+        if not r["hallucination_free"]
+        or (r["type"] == "in_scope" and not r["sources_cited"])
+        or (r["type"] != "in_scope" and not r["refused"])
+    ]
+    if problems:
+        print("  Issues:")
+        for r in problems:
+            print(f"    [{r['id']}] {r['rationale']}")
+        print()
+    else:
+        print("  No hallucination, sourcing, or refusal issues.\n")
+    return not problems
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Tool-level eval of query_graph.")
+    parser = argparse.ArgumentParser(description="Evaluate the troubleshooting agent.")
     parser.add_argument("--min-score", type=float, default=DEFAULT_MIN_MATCH_SCORE,
                         help="Minimum Lucene score threshold (default: tool default).")
+    parser.add_argument("--agent", action="store_true",
+                        help="Also run the agent-level eval (LLM judge; costs API tokens).")
+    parser.add_argument("--limit", type=int, default=0,
+                        help="Limit to the first N cases per type (0 = all).")
     args = parser.parse_args()
 
-    cases = load_cases()
+    cases = select_cases(load_cases(), args.limit)
     rows = evaluate(cases, args.min_score)
-    all_pass = report(rows, args.min_score)
-    return 0 if all_pass else 1
+    tool_ok = report(rows, args.min_score)
+
+    agent_ok = True
+    if args.agent:
+        agent_ok = report_agent(run_agent_level(cases, args.min_score))
+
+    return 0 if (tool_ok and agent_ok) else 1
 
 
 if __name__ == "__main__":

@@ -23,6 +23,7 @@ Règles non-négociables :
 2. Tu CITES la `source` de chaque cause et de chaque action que tu mentionnes. Format suggéré : entre parenthèses en fin de phrase, par ex. *(source : Cytiva, ...)*.
 3. Si l'outil renvoie `found: false`, ou si aucune cause ne correspond à la question, tu dis explicitement : « Je n'ai pas cette information dans ma base de connaissance. » Tu n'inventes rien, tu ne complètes jamais avec tes connaissances générales.
 4. Si la question sort du périmètre (autre opération unitaire que la capture Protein A, sujet hors troubleshooting), tu le signales et tu ne réponds pas sur le fond.
+5. Quand tu refuses (règle 3 ou 4), reste bref et ne fabrique AUCUNE référence externe (handbook, fournisseur, norme, organisme, ressource, suggestion technique) absente du résultat de l'outil. Tu peux seulement inviter l'utilisateur à reformuler un symptôme du périmètre.
 
 Style : clair, structuré pour un ingénieur procédé. Tu peux utiliser des listes à puces. En début de réponse, nomme le symptôme que tu as matché dans le graphe pour confirmer ta compréhension."""
 
@@ -56,12 +57,19 @@ TOOLS = [
 def run_agent(
     user_message: str,
     min_score: float = DEFAULT_MIN_MATCH_SCORE,
+    tool_outputs: list | None = None,
 ) -> tuple[str, float | None, float]:
     """Run the agent and return (text, last_match_score, threshold_used).
 
     `last_match_score` is the highest score returned by the tool across this
-    turn's tool calls (None if no candidate was returned at all)."""
-    load_dotenv(PROJECT_ROOT / ".env")
+    turn's tool calls (None if no candidate was returned at all).
+
+    If a list is passed as `tool_outputs`, each `query_graph` result the agent
+    received is appended to it - used by the evaluation harness to give the
+    LLM judge the exact grounding the agent had access to."""
+    # override=True makes the local .env authoritative over any stray (possibly
+    # empty) ANTHROPIC_API_KEY already in the shell. No-op on Render (no .env file).
+    load_dotenv(PROJECT_ROOT / ".env", override=True)
     client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     messages = [{"role": "user", "content": user_message}]
@@ -85,6 +93,8 @@ def run_agent(
         for block in response.content:
             if block.type == "tool_use" and block.name == "query_graph":
                 result = query_graph(block.input["symptom"], min_score=min_score)
+                if tool_outputs is not None:
+                    tool_outputs.append(result)
                 # Track the highest seen score, even when it falls under threshold.
                 score = result.get("match_score")
                 if score is not None and (last_score is None or score > last_score):

@@ -83,19 +83,29 @@ def main() -> int:
         refusal.append(m["refusal"])
         overall.append(m["overall"])
 
-    best_i = max(range(len(THRESHOLDS)), key=lambda i: overall[i])
+    # Overall accuracy is flat over a wide range, so a plain argmax is misleading.
+    # On that plateau we pick the *precision-optimal* point: the threshold with the
+    # highest refusal accuracy (an anti-hallucination system prefers a clean refusal
+    # over a confident wrong answer), tie-broken toward the lower threshold to keep
+    # recall. On this data that lands on the empirically chosen default.
+    max_overall = max(overall)
+    plateau = [i for i, o in enumerate(overall) if abs(o - max_overall) < 1e-9]
+    best_i = max(plateau, key=lambda i: (refusal[i], -THRESHOLDS[i]))
     best_t = THRESHOLDS[best_i]
+    plateau_lo, plateau_hi = THRESHOLDS[plateau[0]], THRESHOLDS[plateau[-1]]
 
     print(f"\n=== Threshold sweep ({len(cases)} cases) ===\n")
     print(f"  {'thresh':>7} {'recall':>8} {'refusal':>8} {'overall':>8}")
     for i, t in enumerate(THRESHOLDS):
         mark = "  <- default" if t == DEFAULT_MIN_MATCH_SCORE else ""
-        mark += "  *BEST*" if i == best_i and t != DEFAULT_MIN_MATCH_SCORE else ""
+        mark += "  *opt*" if i == best_i and t != DEFAULT_MIN_MATCH_SCORE else ""
         if t % 0.5 == 0 or t == DEFAULT_MIN_MATCH_SCORE or i == best_i:
             print(f"  {t:>7.2f} {recall[i]:>8.0%} {refusal[i]:>8.0%} {overall[i]:>8.0%}{mark}")
-    print(f"\n  Best overall accuracy: {overall[best_i]:.0%} at threshold {best_t:.2f}")
-    print(f"  Current default:       {metrics_at(rows, DEFAULT_MIN_MATCH_SCORE)['overall']:.0%} "
-          f"at threshold {DEFAULT_MIN_MATCH_SCORE:.2f}\n")
+    print(f"\n  Overall accuracy peaks at {max_overall:.0%} on a plateau "
+          f"[{plateau_lo:.2f} .. {plateau_hi:.2f}].")
+    print(f"  Precision-optimal point (max refusal accuracy on the plateau): {best_t:.2f} "
+          f"(recall {recall[best_i]:.0%}, refusal {refusal[best_i]:.0%}).")
+    print(f"  Current default: {DEFAULT_MIN_MATCH_SCORE:.2f}\n")
 
     plt.figure(figsize=(8, 5))
     plt.plot(THRESHOLDS, recall, label="In-scope recall", color="#0E7C7B", marker="o", ms=3)
@@ -103,7 +113,7 @@ def main() -> int:
     plt.plot(THRESHOLDS, overall, label="Overall accuracy", color="#1F4E79", lw=2.5)
     plt.axvline(DEFAULT_MIN_MATCH_SCORE, color="gray", ls="--", lw=1,
                 label=f"Default ({DEFAULT_MIN_MATCH_SCORE})")
-    plt.axvline(best_t, color="#17A8A0", ls=":", lw=1.5, label=f"Best ({best_t})")
+    plt.axvline(best_t, color="#17A8A0", ls=":", lw=1.5, label=f"Precision-optimal ({best_t})")
     plt.xlabel("Match score threshold (min_score)")
     plt.ylabel("Rate")
     plt.title("Retrieval threshold calibration")

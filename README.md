@@ -325,7 +325,3 @@ bioprocess-assistant/
 ├── references/                             # handbook PDFs (gitignored)
 └── CLAUDE.md                               # project context for Claude Code
 ```
-
----
-
-*Project built as an interview demonstrator - bioprocess equipment manufacturer.*

@@ -1,0 +1,6 @@
+# Extra dependencies for the evaluation suite only (not needed by the app).
+# Install with: pip install -r eval/requirements.txt
+# The eval also imports the app modules, so install the app requirements too:
+#   pip install -r requirements.txt
+pyyaml>=6.0          # parse eval/cases.yaml
+matplotlib>=3.7      # threshold calibration plot

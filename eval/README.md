@@ -19,6 +19,12 @@ and sourcing - so the "zero hallucination" claim is **measured, not asserted**.
 
 ## Running
 
+The eval needs a few extra packages (kept out of the app's `requirements.txt`):
+
+```bash
+pip install -r eval/requirements.txt   # pyyaml + matplotlib (app deps assumed installed)
+```
+
 ```bash
 python eval/run_eval.py                      # tool-level (free, deterministic, CI-friendly)
 python eval/run_eval.py --agent              # + agent-level LLM judge (costs API tokens)

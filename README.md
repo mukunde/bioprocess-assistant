@@ -270,6 +270,15 @@ python eval/threshold_sweep.py               # regenerate the calibration plot
 
 See [`eval/README.md`](eval/README.md) for details.
 
+### Tooling: why a custom suite (considered alternatives)
+
+I considered standard LLM-eval frameworks (Ragas, Giskard) and chose a custom suite deliberately:
+
+- **Ragas** targets vector-RAG pipelines (question → retrieved text chunks → answer). This agent is grounded on a *structured knowledge graph*, not retrieved chunks, so Ragas' context-precision/recall metrics don't map cleanly - and the grounding it would measure (faithfulness) is already covered, more transparently, by the LLM-judge here.
+- **Giskard** brings a different axis - adversarial robustness and security (prompt injection, jailbreaks) - that this *correctness* suite does not cover. That's genuinely complementary, and it's on the roadmap.
+
+A hand-built suite also keeps the metrics legible and tailored to the domain contract, rather than bending generic RAG metrics to fit a graph-grounded agent.
+
 ## Assumed limitations
 
 - A demonstrator POC, **not a GxP-grade system**
@@ -280,7 +289,8 @@ See [`eval/README.md`](eval/README.md) for details.
 
 ## Roadmap
 
-- **Short term**: thicken the graph with other public handbooks (Merck-Millipore, Sartorius)
+- **Short term**: an **ingestion pipeline** (handbook PDF → LLM extraction of `Symptom/Cause/Action` triples → graph), with a human-in-the-loop review step - to thicken the graph from more public handbooks (Merck-Millipore, Sartorius) without hand-writing Cypher
+- **Short term**: **adversarial / robustness evaluation** (Giskard-style) - prompt-injection and jailbreak resistance, a security axis the current correctness suite does not cover (especially relevant in a regulated context)
 - **Medium term**: add the **topological** layer (ChatP&ID pattern - extracting P&IDs into a KG)
 - **Medium term**: add the **operational** layer (ontology over an industrial data fabric), with shared identity management across layers
 - **Possible complementary evolution**: a vector RAG layer on top of the graph for open questions not covered by the relational model - as a complement, never a replacement for the structured truth

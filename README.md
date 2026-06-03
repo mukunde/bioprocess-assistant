@@ -220,6 +220,56 @@ Three reasons (details in [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR
 2. **Explicit causal structure**: `symptom → cause → action` is a relation, not a semantic proximity
 3. **Anti-hallucination by construction**: the agent only reaches the world through the tool; it cannot *"fill in from its general knowledge"* without violating the system prompt
 
+## Evaluation
+
+A reproducible suite (`eval/`) measures the agent's contract - retrieval, refusals, anti-hallucination, and sourcing - at two levels:
+
+| Level | What it checks | Cost |
+|---|---|---|
+| **Tool-level** | `query_graph` returns the right symptom (or correctly nothing) | Free, deterministic |
+| **Agent-level** | Full agent answers: no hallucination, sources cited, correct refusals | LLM-as-judge (API tokens) |
+
+The dataset (`eval/cases.yaml`) holds 22 cases: 14 in-scope questions (several French paraphrases per symptom) and 8 that must be refused (in-domain misses, other unit operations, off-topic).
+
+### Results
+
+**Tool-level retrieval** - refusals are perfect; two in-scope paraphrases ("surpression", "HMW ... éluat") land just under the threshold, at the recall frontier:
+
+```
+Retrieval (in-scope)   12/14
+Refusals               8/8
+```
+
+**Threshold calibration** - sweeping the match threshold shows overall accuracy *plateaus* across a wide band (~1.25-3.0); within it, refusal accuracy reaches 100% around 2.25-2.5. The empirically chosen default **2.5 sits squarely in this precision-optimal region** - a deliberate bias: in a regulated setting a confident wrong answer is worse than an honest refusal, so the threshold favors clean refusals over squeezing out the last bit of recall.
+
+![Threshold calibration](eval/threshold_calibration.png)
+
+**Agent-level (LLM-as-judge)** - the headline: the agent is *measurably* grounded.
+
+```
+In-scope:   hallucination-free 14/14  ·  sources cited 14/14
+Refusals:   correctly refused 8/8     ·  hallucination-free 8/8
+Overall hallucination-free:  22/22
+```
+
+### Eval-driven engineering
+
+The suite didn't just score the agent - it drove two fixes, visible in the git history:
+
+1. **Recall gaps.** The baseline missed paraphrases like "surpression" or "protéines de cellule hôte". Fix: a curated, *discriminative* `keywords` field per symptom, added to the full-text index. Generic terms ("Protein A", "pool d'élution") were deliberately excluded - the eval caught that they restored recall but **regressed precision** (false matches on out-of-scope questions).
+2. **Refusal-path fabrication.** The judge caught the agent inventing external references (vendor handbooks, standards) while *correctly* declining an out-of-scope question. Fix: a system-prompt rule forbidding any fabricated reference in a refusal. Refusals are now 8/8 clean.
+
+### Running it
+
+```bash
+python eval/run_eval.py                      # tool-level (free, deterministic)
+python eval/run_eval.py --agent              # + agent-level LLM judge (API tokens)
+python eval/run_eval.py --agent --limit 1    # smoke test: 1 case per type
+python eval/threshold_sweep.py               # regenerate the calibration plot
+```
+
+See [`eval/README.md`](eval/README.md) for details.
+
 ## Assumed limitations
 
 - A demonstrator POC, **not a GxP-grade system**
@@ -250,7 +300,13 @@ bioprocess-assistant/
 │   └── load_graph.py                       # schema + seed Cypher loader (idempotent)
 ├── graph/
 │   ├── schema.cypher                       # uniqueness constraints + French full-text index
-│   └── seed.cypher                         # 6 symptoms × 2 causes × 2 actions, sourced
+│   └── seed.cypher                         # 6 symptoms × 2 causes × 2 actions, sourced + keywords
+├── eval/
+│   ├── cases.yaml                          # evaluation dataset (in-scope + refusal cases)
+│   ├── run_eval.py                         # tool-level + agent-level (LLM-judge) runner
+│   ├── judge.py                            # LLM-as-judge (hallucination + sourcing)
+│   ├── threshold_sweep.py                  # threshold calibration sweep + plot
+│   └── threshold_calibration.png
 ├── public/                                 # branding: logo/favicon/avatar SVG, custom.css, login.js
 ├── .chainlit/
 │   └── config.toml                         # theme, avatar, custom CSS/JS, login page

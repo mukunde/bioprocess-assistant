@@ -17,7 +17,8 @@ MATCH ()-[r:RESOLU_PAR]->() DELETE r;
 // --- Symptom ---
 MERGE (s:Symptom {name: "Chute du rendement de capture"})
 SET s.description = "Le rendement de l'étape de capture sur Protein A est inférieur à l'historique attendu sur le pool de production : une part significative du produit est perdue dans le flow-through ou dans les fractions de lavage.",
-    s.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p1-2, Key performance characteristics (recovery >95% démontré en Table 2)";
+    s.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p1-2, Key performance characteristics (recovery >95% démontré en Table 2)",
+    s.keywords = "rendement faible chute baisse perte flow-through percée DBC capacité de liaison dynamique recovery yield";
 
 // --- Causes ---
 MERGE (c1:Cause {name: "Résine Protein A dégradée"})
@@ -57,7 +58,8 @@ MERGE (c2)-[:RESOLVED_BY]->(a2);
 
 MERGE (s2:Symptom {name: "Pression élevée sur la colonne"})
 SET s2.description = "La pression mesurée en entrée de colonne augmente significativement par rapport au profil pression/débit historique du même bloc capture, soit sur plusieurs cycles consécutifs, soit pendant un même chargement.",
-    s2.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) - p166, Cleaning of Protein G and Protein A Sepharose media (Cleaning in place)";
+    s2.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) - p166, Cleaning of Protein G and Protein A Sepharose media (Cleaning in place)",
+    s2.keywords = "pression surpression contre-pression backpressure packing compaction encrassement fouling";
 
 MERGE (c3:Cause {name: "Encrassement de la résine par protéines dénaturées ou lipides"})
 SET c3.description = "Substances qui ne s'éluent pas pendant la régénération standard restent fixées sur la résine et obstruent progressivement le lit. Signe typique sur procédés avec feedstock riche en lipides ou en protéines partiellement dénaturées.",
@@ -91,7 +93,8 @@ MERGE (c4)-[:RESOLVED_BY]->(a4);
 
 MERGE (s3:Symptom {name: "Présence d'agrégats / HMW dans le pool d'élution"})
 SET s3.description = "Le pool d'élution de l'étape de capture Protein A contient une fraction significative d'agrégats (HMW, dimers, polymères) au-dessus de la spec produit, détectable par SEC analytique. Risque structurel de la capture Protein A à cause du pH acide nécessaire pour décrocher le mAb du ligand.",
-    s3.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p4, Method development (mAb élué pH 3-4); Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) - p122, Dimers and aggregates";
+    s3.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p4, Method development (mAb élué pH 3-4); Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) - p122, Dimers and aggregates",
+    s3.keywords = "agrégats agglomérats HMW high molecular weight haut poids moléculaire dimères polymères SEC aggregates";
 
 MERGE (c5:Cause {name: "Élution à pH trop bas ou temps de contact acide prolongé"})
 SET c5.description = "L'élution Protein A se fait en milieu acide (typiquement pH 3.0-3.5 sur MabSelect SuRe). Plus le pH est bas et plus le mAb reste exposé à ce pH, plus la fraction d'agrégats augmente. La sensibilité varie avec la séquence du mAb.",
@@ -125,7 +128,8 @@ MERGE (c6)-[:RESOLVED_BY]->(a6);
 
 MERGE (s4:Symptom {name: "Fuite de Protein A (leaching) élevée dans l'éluat"})
 SET s4.description = "Concentration de ligand Protein A leaching dans le pool d'élution > spec produit. Mesurable par ELISA non-compétitif. Plage normale typique sur MabSelect SuRe : 5-20 ppm (ng ligand/mg IgG). Au-delà, un déterminant procédé ou résine est en cause.",
-    s4.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p2-3, Protease stability and low ligand leakage + Fig 5 (low leakage over 100 cycles)";
+    s4.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p2-3, Protease stability and low ligand leakage + Fig 5 (low leakage over 100 cycles)",
+    s4.keywords = "leaching fuite relargage ligand ppm leakage";
 
 MERGE (c7:Cause {name: "Forte activité protéolytique dans le feedstock"})
 SET c7.description = "Les protéases présentes dans le feedstock clarifié dégradent progressivement le ligand Protein A pendant la phase de chargement. L'intensité dépend de la lignée cellulaire, de l'âge de culture, et du hold time entre clarification et capture. Le Data File MabSelect SuRe cite ce mécanisme comme l'une des contributions principales au ligand leakage des résines Protein A.",
@@ -159,7 +163,8 @@ MERGE (c8)-[:RESOLVED_BY]->(a8);
 
 MERGE (s5:Symptom {name: "HCP résiduels élevés dans le pool d'élution"})
 SET s5.description = "Taux de host cell proteins (CHO HCP typiquement, dosé par ELISA HCP) dans le pool d'élution > spec produit. Risque immunogénicité connu en biopharma, à éliminer impérativement avant release. La capture Protein A est moyennement sélective pour ce contaminant.",
-    s5.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) - p124, Host cell proteins (HCP)";
+    s5.source = "Cytiva, Affinity Chromatography Vol. 1: Antibodies Handbook, CY13981-25Jan21-HB (2021) - p124, Host cell proteins (HCP)",
+    s5.keywords = "HCP protéines de cellule hôte host cell proteins CHO";
 
 MERGE (c9:Cause {name: "Wash intermédiaire post-chargement insuffisant ou inadapté"})
 SET c9.description = "Les HCPs peuvent se lier non-spécifiquement à la résine Protein A ou directement au mAb pendant le chargement. Si le wash entre chargement et élution est trop court, à conductivité trop basse, ou sans agent disruptif, ces HCPs co-éluent avec le mAb dans le pool d'élution.",
@@ -193,7 +198,8 @@ MERGE (c10)-[:RESOLVED_BY]->(a10);
 
 MERGE (s6:Symptom {name: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"})
 SET s6.description = "Détection de croissance microbienne (bactéries, levures, moisissures) dans la colonne entre cycles ou dans le pool d'élution. Dépassement de la spec bioburden process (typiquement <1 CFU/10 mL en biopharma). Risque procédé et qualité, à traiter avant tout redémarrage.",
-    s6.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p3, Low risk of host cell protein contamination or carryover (mention de microbial growth in the packed column); p4, Cleaning and sanitization";
+    s6.source = "Cytiva, MabSelect SuRe Data File, CY12754-10Jul20-DF (2020) - p3, Low risk of host cell protein contamination or carryover (mention de microbial growth in the packed column); p4, Cleaning and sanitization",
+    s6.keywords = "bioburden biocharge contamination microbienne croissance microbienne bactéries levures moisissures microbes";
 
 MERGE (c11:Cause {name: "Sanitization en routine insuffisante pour le feedstock"})
 SET c11.description = "Pour des feedstocks particulièrement riches en charge microbienne ou en contaminants difficiles (lipides, débris cellulaires non éliminés par clarification), le NaOH 0.1-0.5 M seul peut ne pas suffire. Le Data File MabSelect SuRe le reconnaît explicitement et propose des protocoles alternatifs.",

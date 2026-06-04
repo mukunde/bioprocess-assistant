@@ -1,7 +1,9 @@
 # Evaluation dataset for the Protein A troubleshooting agent.
 #
-# Questions are in French (the agent operates in French); the schema and comments
-# are in English to match the codebase convention.
+# The knowledge graph is in English; user questions can be French or English.
+# This dataset is bilingual on purpose: French cases exercise the cross-lingual
+# bridge (FR question -> EN search term / EN node), English cases exercise the
+# native path. Schema and comments are in English.
 #
 # type:
 #   in_scope        -> a symptom present in the graph; query_graph must return `expected_symptom`
@@ -9,105 +11,155 @@
 #   out_of_scope    -> another unit operation / non-troubleshooting topic; the agent must refuse (Rule 4)
 #   off_topic       -> unrelated to the domain; the agent must refuse
 #
-# `expected_symptom` (exact node name) is required for in_scope cases only.
-# Several paraphrases per symptom deliberately stress the full-text matching
-# (synonyms, free phrasing, description-based hits).
+# `expected_symptom` (exact English node name) is required for in_scope cases only.
+# `lang` is informational (fr / en) for per-language breakdowns.
 
 cases:
   # --- Symptom 1: capture yield drop ---
-  - id: yield-1
+  - id: yield-fr-1
     question: "Mon rendement de capture a chuté, qu'est-ce qui peut le causer ?"
     type: in_scope
-    expected_symptom: "Chute du rendement de capture"
-  - id: yield-2
+    lang: fr
+    expected_symptom: "Capture step yield drop"
+  - id: yield-fr-2
     question: "Le rendement de mon étape de capture Protein A est faible."
     type: in_scope
-    expected_symptom: "Chute du rendement de capture"
-  - id: yield-3
+    lang: fr
+    expected_symptom: "Capture step yield drop"
+  - id: yield-fr-3
     question: "Je perds beaucoup de produit dans le flow-through pendant la capture."
     type: in_scope
-    expected_symptom: "Chute du rendement de capture"
+    lang: fr
+    expected_symptom: "Capture step yield drop"
+  - id: yield-en-1
+    question: "My capture step yield has dropped, what could cause it?"
+    type: in_scope
+    lang: en
+    expected_symptom: "Capture step yield drop"
 
   # --- Symptom 2: high column pressure ---
-  - id: pressure-1
+  - id: pressure-fr-1
     question: "La pression de ma colonne de capture est anormalement élevée."
     type: in_scope
-    expected_symptom: "Pression élevée sur la colonne"
-  - id: pressure-2
+    lang: fr
+    expected_symptom: "High column pressure"
+  - id: pressure-fr-2
     question: "J'ai une surpression sur ma colonne Protein A, comment je règle ça ?"
     type: in_scope
-    expected_symptom: "Pression élevée sur la colonne"
-  - id: pressure-3
-    question: "La contre-pression de la colonne augmente cycle après cycle."
+    lang: fr
+    expected_symptom: "High column pressure"
+  - id: pressure-en-1
+    question: "The inlet pressure on my Protein A column is abnormally high."
     type: in_scope
-    expected_symptom: "Pression élevée sur la colonne"
+    lang: en
+    expected_symptom: "High column pressure"
 
   # --- Symptom 3: aggregates / HMW in elution pool ---
-  - id: aggregates-1
+  - id: aggregates-fr-1
     question: "J'ai trop d'agrégats dans mon pool d'élution."
     type: in_scope
-    expected_symptom: "Présence d'agrégats / HMW dans le pool d'élution"
-  - id: aggregates-2
+    lang: fr
+    expected_symptom: "Aggregates / HMW in the elution pool"
+  - id: aggregates-fr-2
     question: "Taux de HMW élevé dans l'éluat de capture, que faire ?"
     type: in_scope
-    expected_symptom: "Présence d'agrégats / HMW dans le pool d'élution"
+    lang: fr
+    expected_symptom: "Aggregates / HMW in the elution pool"
+  - id: aggregates-en-1
+    question: "High level of aggregates / HMW species in my elution pool."
+    type: in_scope
+    lang: en
+    expected_symptom: "Aggregates / HMW in the elution pool"
 
   # --- Symptom 4: Protein A leaching in eluate ---
-  - id: leaching-1
+  - id: leaching-fr-1
     question: "Comment réduire le leaching de Protein A dans mon éluat ?"
     type: in_scope
-    expected_symptom: "Fuite de Protein A (leaching) élevée dans l'éluat"
-  - id: leaching-2
+    lang: fr
+    expected_symptom: "High Protein A leaching in the eluate"
+  - id: leaching-fr-2
     question: "J'ai une fuite de ligand Protein A élevée dans le pool d'élution."
     type: in_scope
-    expected_symptom: "Fuite de Protein A (leaching) élevée dans l'éluat"
+    lang: fr
+    expected_symptom: "High Protein A leaching in the eluate"
+  - id: leaching-en-1
+    question: "High Protein A ligand leaching in my eluate, how do I reduce it?"
+    type: in_scope
+    lang: en
+    expected_symptom: "High Protein A leaching in the eluate"
 
   # --- Symptom 5: residual HCP in elution pool ---
-  - id: hcp-1
+  - id: hcp-fr-1
     question: "J'ai des HCP résiduels au-dessus de la spec dans mon pool d'élution."
     type: in_scope
-    expected_symptom: "HCP résiduels élevés dans le pool d'élution"
-  - id: hcp-2
+    lang: fr
+    expected_symptom: "High residual HCP in the elution pool"
+  - id: hcp-fr-2
     question: "Trop de protéines de cellule hôte dans l'éluat après la capture."
     type: in_scope
-    expected_symptom: "HCP résiduels élevés dans le pool d'élution"
+    lang: fr
+    expected_symptom: "High residual HCP in the elution pool"
+  - id: hcp-en-1
+    question: "Residual host cell proteins above spec in my elution pool."
+    type: in_scope
+    lang: en
+    expected_symptom: "High residual HCP in the elution pool"
 
   # --- Symptom 6: bioburden / microbial contamination ---
-  - id: bioburden-1
+  - id: bioburden-fr-1
     question: "J'ai détecté du bioburden dans ma colonne après plusieurs cycles."
     type: in_scope
-    expected_symptom: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"
-  - id: bioburden-2
+    lang: fr
+    expected_symptom: "Bioburden or microbial contamination in the column or elution pool"
+  - id: bioburden-fr-2
     question: "Contamination microbienne sur ma colonne de capture, comment je gère ?"
     type: in_scope
-    expected_symptom: "Bioburden ou contamination microbienne détectée dans la colonne ou le pool d'élution"
+    lang: fr
+    expected_symptom: "Bioburden or microbial contamination in the column or elution pool"
+  - id: bioburden-en-1
+    question: "I detected microbial contamination in my column between cycles."
+    type: in_scope
+    lang: en
+    expected_symptom: "Bioburden or microbial contamination in the column or elution pool"
 
   # --- In-domain misses: real Protein A symptoms absent from the graph (must refuse) ---
-  - id: miss-endotoxins
+  - id: miss-endotoxins-fr
     question: "J'ai un taux d'endotoxines élevé dans mon pool d'élution, comment je le réduis ?"
     type: in_domain_miss
-  - id: miss-discoloration
+    lang: fr
+  - id: miss-endotoxins-en
+    question: "High endotoxin level in my elution pool, how do I reduce it?"
+    type: in_domain_miss
+    lang: en
+  - id: miss-discoloration-fr
     question: "J'observe une coloration brune anormale dans mon pool d'élution."
     type: in_domain_miss
-  - id: miss-dna
+    lang: fr
+  - id: miss-dna-fr
     question: "Mon taux d'ADN résiduel est trop élevé après l'étape de capture."
     type: in_domain_miss
+    lang: fr
 
   # --- Out of scope: other unit operations / non-troubleshooting (must refuse) ---
-  - id: oos-ufdf
+  - id: oos-ufdf-fr
     question: "Comment optimiser mon procédé d'ultrafiltration / diafiltration ?"
     type: out_of_scope
-  - id: oos-viral
+    lang: fr
+  - id: oos-viral-fr
     question: "Quels paramètres pour mon étape d'inactivation virale à pH bas ?"
     type: out_of_scope
-  - id: oos-cex
-    question: "Comment régler ma chromatographie échangeuse de cations en polissage ?"
+    lang: fr
+  - id: oos-cex-en
+    question: "How should I set up my cation-exchange polishing chromatography?"
     type: out_of_scope
+    lang: en
 
   # --- Off topic: unrelated to the domain (must refuse) ---
-  - id: off-weather
+  - id: off-weather-fr
     question: "Quelle est la météo à Strasbourg aujourd'hui ?"
     type: off_topic
-  - id: off-recipe
-    question: "Donne-moi une recette de tarte aux pommes."
+    lang: fr
+  - id: off-recipe-en
+    question: "Give me a recipe for apple pie."
     type: off_topic
+    lang: en

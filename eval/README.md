@@ -12,10 +12,10 @@ and sourcing - so the "zero hallucination" claim is **measured, not asserted**.
 
 ## Files
 
-- `cases.yaml` - the dataset: 22 typed cases (`in_scope`, `in_domain_miss`, `out_of_scope`, `off_topic`). In-scope cases carry the exact `expected_symptom`. Several paraphrases per symptom stress the matching.
+- `cases.yaml` - the dataset: 28 typed, **bilingual** cases (`in_scope`, `in_domain_miss`, `out_of_scope`, `off_topic`; each tagged `lang: fr|en`). In-scope cases carry the exact (English) `expected_symptom`. French and English paraphrases per symptom stress both the matching and the agent's cross-lingual bridge.
 - `run_eval.py` - the runner (tool-level always; agent-level with `--agent`).
 - `judge.py` - the LLM-as-judge: given `(question, tool output, agent answer)`, returns `hallucination_free`, `sources_cited`, `refused`.
-- `threshold_sweep.py` - sweeps the match threshold and plots the precision/recall frontier.
+- `threshold_sweep.py` - sweeps the match threshold and plots the precision/recall frontier of the BM25 retrieval component (calibrated on English, the input the agent feeds `query_graph`).
 
 ## Running
 
@@ -45,10 +45,12 @@ on any failure, so the tool-level pass can gate CI.
 
 ## Latest results
 
-Tool-level: 12/14 in-scope (two paraphrases sit at the recall frontier, just under the
-2.5 threshold), 8/8 refusals. Agent-level: 22/22 hallucination-free, 14/14 sourced,
-8/8 refusals clean. The threshold sweep shows overall accuracy plateaus across a
-wide band; the default 2.5 sits in the precision-optimal region (refusals at 100%).
+Agent-level (the bilingual system): **19/19 in-scope answered with sources** (French and
+English), refusals clean, **~27-28/28 hallucination-free**. The threshold sweep - run on
+the BM25 component's actual input (English; the agent bridges French) - shows **100%
+recall and 100% refusal across a wide plateau**, with the default 2.5 inside it.
 
-> Note: Neo4j full-text BM25 scores have minor run-to-run variability near the
-> threshold, so counts at the recall frontier can shift by ±1 case.
+> Notes: the tool-level pass scores `query_graph` on the *raw* question, so raw French
+> in-scope cases intentionally fall through (no cross-lingual lexical match) - they are
+> the agent's job, covered at the agent level. LLM judging has minor run-to-run
+> variance (±1 case).

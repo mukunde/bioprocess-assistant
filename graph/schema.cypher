@@ -13,15 +13,14 @@ CREATE CONSTRAINT action_name_unique IF NOT EXISTS
 FOR (a:Action) REQUIRE a.name IS UNIQUE;
 
 // Full-text index on Symptom (name + description + keywords).
-// 'french' analyzer: stemming + French stop-word removal so queries like
-// "rendement faible" or "perte rendement" match the node
-// "Chute du rendement de capture" without requiring exact phrasing.
-// The `keywords` field holds curated FR/EN synonyms to boost recall on
-// paraphrases (e.g. "surpression", "HMW", "protéines de cellule hôte") - added
-// after the evaluation suite (eval/) revealed recall gaps at threshold 2.5.
+// 'english' analyzer: stemming + English stop-word removal. The graph content is
+// English (the source handbooks are English); French user questions are bridged
+// to English at retrieval time. The `keywords` field holds curated discriminative
+// EN synonyms to boost recall on paraphrases (e.g. "overpressure", "HMW") - added
+// after the evaluation suite (eval/) revealed recall gaps.
 // DROP first: a fulltext index definition cannot be updated in place
 // (CREATE ... IF NOT EXISTS is a no-op when the index already exists).
 DROP INDEX symptom_text IF EXISTS;
 CREATE FULLTEXT INDEX symptom_text IF NOT EXISTS
 FOR (s:Symptom) ON EACH [s.name, s.description, s.keywords]
-OPTIONS {indexConfig: {`fulltext.analyzer`: 'french'}};
+OPTIONS {indexConfig: {`fulltext.analyzer`: 'english'}};

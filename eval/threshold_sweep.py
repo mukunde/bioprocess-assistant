@@ -73,7 +73,12 @@ def metrics_at(rows: list[dict], t: float) -> dict:
 
 
 def main() -> int:
-    cases = load_cases()
+    # The BM25 component is calibrated on the input it actually receives: English.
+    # The agent bridges any-language questions to an English search phrase, so raw
+    # French in-scope questions are not query_graph's job - keep English in-scope
+    # cases plus all refusal cases (which must be rejected in any language).
+    cases = [c for c in load_cases()
+             if c["type"] != "in_scope" or c.get("lang") == "en"]
     rows = raw_scores(cases)
 
     recall, refusal, overall = [], [], []

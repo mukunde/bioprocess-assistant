@@ -4,7 +4,7 @@ An AI assistant demonstrator for **troubleshooting Protein A capture chromatogra
 
 The project validates a simple hypothesis: *can we build an agent a process engineer would find credible, with verifiable citations and zero tolerated hallucination, in the regulated context of biopharma?*
 
-> **Language note:** the docs are in English, while the assistant itself operates in **French**. The curated graph content (symptoms, causes, actions) is written in French for the French-speaking biopharma context, even though the Cytiva handbooks it cites as sources are in English. The example prompts below are therefore in French.
+> **Language note:** the docs, the code, and the **knowledge graph content are all in English** (the source Cytiva handbooks are English). The assistant **answers in the user's language** - ask in French or English. The example prompts below are in French to mirror the original demo; English works identically. How the bilingual behavior is achieved is covered under *Under the hood*.
 
 ## Live demo
 
@@ -103,7 +103,7 @@ Then set `DEMO_USERNAME` / `DEMO_PASSWORD` (the shared login credentials).
 python scripts/load_graph.py
 ```
 
-The script applies the schema (uniqueness constraints + a full-text index with a French analyzer) then the seed (6 symptoms / 12 causes / 12 actions, all sourced). It validates on exit by printing the 12 causal paths.
+The script applies the schema (uniqueness constraints + a full-text index with an English analyzer) then the seed (6 symptoms / 12 causes / 12 actions, all sourced). It validates on exit by printing the 12 causal paths.
 
 ## Run
 
@@ -132,16 +132,16 @@ docker run -p 8000:8000 --env-file .env bioprocess-assistant
 
 ## Demo questions
 
-The agent covers six typical Protein A capture symptoms:
+The agent covers six typical Protein A capture symptoms (graph nodes, in English):
 
-- Chute du rendement de capture *(capture yield drop)*
-- Pression élevée sur la colonne *(high column pressure)*
-- Agrégats / HMW dans le pool d'élution *(aggregates / HMW in the elution pool)*
-- Fuite de Protein A (leaching) dans l'éluat *(Protein A leaching in the eluate)*
-- HCP résiduels dans le pool d'élution *(residual HCP in the elution pool)*
-- Bioburden / contamination microbienne *(bioburden / microbial contamination)*
+- Capture step yield drop
+- High column pressure
+- Aggregates / HMW in the elution pool
+- High Protein A leaching in the eluate
+- High residual HCP in the elution pool
+- Bioburden or microbial contamination
 
-Prompts that work (in French):
+Ask in French or English - the agent answers in your language. Prompts that work (French shown):
 
 - *« Mon rendement de capture a chuté, qu'est-ce qui peut le causer ? »*
 - *« La pression de ma colonne est anormalement élevée, comment je règle ça ? »*
@@ -155,16 +155,13 @@ To stress the anti-hallucination guarantee - three distinct refusal patterns, al
 
 ## Under the hood - how retrieval works
 
-### Matching: full-text Lucene with a French analyzer
+### Bilingual matching: the agent bridges to English, then BM25 full-text
 
-The knowledge graph is queried through a **Neo4j full-text index** over `Symptom.name` and `Symptom.description`, using the **`french` Lucene analyzer**, which applies:
+The graph content is English. The system handles French (or English) questions through the **agent itself**: the LLM reads the question in any language and extracts an **English search phrase** for the `query_graph` tool (e.g. *« Mon rendement de capture a chuté »* → `capture yield drop`), then answers in the user's language. So `query_graph` always receives English - the multilingual capability lives where it is cheapest and most reliable, in the agent's tool-use.
 
-- Tokenization on whitespace + punctuation
-- French stop-word removal (`de`, `le`, `à`, `ou`, ...)
-- Stemming (`rendement` ≡ `rendements`; `chuter` ≡ `chuté` ≡ `chute`)
-- Accent normalization
+`query_graph` then queries a **Neo4j full-text index** over `Symptom.name`, `Symptom.description`, and a curated `Symptom.keywords` field, using the **`english` Lucene analyzer** (tokenization, English stop-word removal, stemming). The `keywords` field holds discriminative English synonyms (e.g. "overpressure", "HMW") to widen recall on paraphrases.
 
-This lets a natural question like *« Mon rendement de capture a chuté »* match the node `"Chute du rendement de capture"` without strictly identical phrasing.
+> A multilingual **vector** retrieval layer was prototyped as an alternative bridge and measured - then *not* shipped, because it weakened refusal precision for no recall gain. See [ADR-002](docs/ADR-002-multilingual-retrieval.md).
 
 ### BM25 score - relevance of a match
 
@@ -174,10 +171,10 @@ Each match gets a **BM25 score** (modern Lucene's default algorithm), combining:
 - **IDF** (inverse document frequency) - rare terms weigh more than common ones
 - **Length normalization** - very long documents are slightly penalized
 
-In practice on this graph:
+In practice on this graph (the agent's extracted English phrase is what gets scored):
 
-- *« rendement chute »* against the yield-drop node → 2 rare terms match → score ~5
-- *« endotoxines pool »* against the HCP node → 0 rare term matches (`endotoxine` is in no document), only `pool` matches (a common term) → score ~2
+- `capture yield drop` against the yield-drop node → rare terms ("yield", "drop") match → score ~5
+- `endotoxin in elution pool` against the HCP node → "endotoxin" is in no document, only "elution/pool" (common terms) match → score ~2 → below threshold → correctly refused
 
 ### The match threshold (`min_score`)
 
@@ -190,12 +187,14 @@ The 2.5 threshold was calibrated empirically over the 6 symptoms of the graph to
 
 ### Three distinct agent behaviors
 
-The system prompt (see `agent.py`) anchors **4 non-negotiable rules**:
+The system prompt (see `agent.py`) anchors **6 non-negotiable rules**:
 
 1. **Tool data only**: never add a cause, action, or source from the LLM's general knowledge
 2. **Cite the `source`** of every cause and action mentioned in the answer
 3. **If the tool returns `found: false`**, explicitly say *"I don't have this information in my knowledge base"*, invent nothing
 4. **If the question is out of scope** (a unit operation other than Protein A capture, or a non-troubleshooting topic), flag it and don't answer on the merits
+5. **When declining** (rule 3 or 4), keep it brief and fabricate no external reference (vendor, handbook, standard) beyond the tool output
+6. **Answer in the user's language** (French or English)
 
 Rules **1 and 2** govern *how* the agent answers when it has a match (format and traceability). Rules **3 and 4** govern *when* the agent declines. Together they produce three observable behaviors:
 
@@ -220,6 +219,14 @@ Three reasons (details in [`docs/ADR-001-knowledge-graph-grounding.md`](docs/ADR
 2. **Explicit causal structure**: `symptom → cause → action` is a relation, not a semantic proximity
 3. **Anti-hallucination by construction**: the agent only reaches the world through the tool; it cannot *"fill in from its general knowledge"* without violating the system prompt
 
+### A vector experiment that didn't ship
+
+To bridge French questions to the English graph, I prototyped a multilingual **vector** retrieval layer (Voyage embeddings + a Neo4j-native vector index, fused with BM25) as an alternative to the agent bridge - and measured it against the evaluation suite.
+
+It was the wrong trade. The vector arm could not separate **near-domain misses** from in-scope questions: an out-of-graph *"endotoxins"* query scored as similar to the graph (cosine ~0.75) as a real symptom, so no similarity threshold could refuse it without also rejecting legitimate questions. That directly weakens the refusal guarantee - the core of the anti-hallucination thesis - while the agent bridge already delivered **100% in-scope recall** without any of it. So I kept the simpler design and did not ship vectors.
+
+The full data and reasoning - including why, *if* vectors are ever revisited, they belong **inside** Neo4j rather than a separate vector store (so one Cypher query does both the similarity search and the graph traversal, no second source of truth to sync) - are in [ADR-002](docs/ADR-002-multilingual-retrieval.md). Knowing when *not* to add complexity is part of the design.
+
 ## Evaluation
 
 A reproducible suite (`eval/`) measures the agent's contract - retrieval, refusals, anti-hallucination, and sourcing - at two levels:
@@ -229,35 +236,31 @@ A reproducible suite (`eval/`) measures the agent's contract - retrieval, refusa
 | **Tool-level** | `query_graph` returns the right symptom (or correctly nothing) | Free, deterministic |
 | **Agent-level** | Full agent answers: no hallucination, sources cited, correct refusals | LLM-as-judge (API tokens) |
 
-The dataset (`eval/cases.yaml`) holds 22 cases: 14 in-scope questions (several French paraphrases per symptom) and 8 that must be refused (in-domain misses, other unit operations, off-topic).
+The dataset (`eval/cases.yaml`) holds 28 **bilingual** cases: 19 in-scope questions (French *and* English paraphrases per symptom) and 9 that must be refused (in-domain misses, other unit operations, off-topic).
 
 ### Results
 
-**Tool-level retrieval** - refusals are perfect; two in-scope paraphrases ("surpression", "HMW ... éluat") land just under the threshold, at the recall frontier:
+**Agent-level (LLM-as-judge)** - the headline: the full bilingual system, measurably grounded.
 
 ```
-Retrieval (in-scope)   12/14
-Refusals               8/8
+In-scope (19, FR + EN):   answered 19/19  ·  sources cited 19/19
+Refusals (9):             clean (no fabricated cause / action / source)
+Hallucination-free:       ~27-28 / 28
 ```
 
-**Threshold calibration** - sweeping the match threshold shows overall accuracy *plateaus* across a wide band (~1.25-3.0); within it, refusal accuracy reaches 100% around 2.25-2.5. The empirically chosen default **2.5 sits squarely in this precision-optimal region** - a deliberate bias: in a regulated setting a confident wrong answer is worse than an honest refusal, so the threshold favors clean refusals over squeezing out the last bit of recall.
+In-scope questions in both languages are answered with sources; out-of-graph and out-of-scope questions are refused. Hallucination-free hovers at 27-28/28 across runs (LLM judging has minor run-to-run variance; the rare flag is an over-helpful embellishment, not an invented cause, action, or source).
+
+**Threshold calibration (BM25 retrieval component)** - `query_graph` always receives English (the agent bridges), so the BM25 threshold is calibrated on English queries. Sweeping it shows **100% recall *and* 100% refusal across a wide plateau** - the default **2.5 sits squarely in it**. The threshold is deliberately biased toward clean refusals: in a regulated setting a confident wrong answer is worse than an honest "I don't know".
 
 ![Threshold calibration](eval/threshold_calibration.png)
 
-**Agent-level (LLM-as-judge)** - the headline: the agent is *measurably* grounded.
-
-```
-In-scope:   hallucination-free 14/14  ·  sources cited 14/14
-Refusals:   correctly refused 8/8     ·  hallucination-free 8/8
-Overall hallucination-free:  22/22
-```
-
 ### Eval-driven engineering
 
-The suite didn't just score the agent - it drove two fixes, visible in the git history:
+The suite didn't just score the agent - it drove the design, visible in the git history:
 
-1. **Recall gaps.** The baseline missed paraphrases like "surpression" or "protéines de cellule hôte". Fix: a curated, *discriminative* `keywords` field per symptom, added to the full-text index. Generic terms ("Protein A", "pool d'élution") were deliberately excluded - the eval caught that they restored recall but **regressed precision** (false matches on out-of-scope questions).
-2. **Refusal-path fabrication.** The judge caught the agent inventing external references (vendor handbooks, standards) while *correctly* declining an out-of-scope question. Fix: a system-prompt rule forbidding any fabricated reference in a refusal. Refusals are now 8/8 clean.
+1. **Recall gaps → discriminative keywords.** The baseline missed paraphrases (e.g. "overpressure", "host cell proteins"). Fix: a curated, *discriminative* `keywords` field per symptom in the full-text index. Generic terms ("Protein A", "elution pool") were deliberately excluded - the eval caught that they restored recall but **regressed precision** (false matches on out-of-scope questions).
+2. **Refusal-path fabrication → prompt hardening.** The judge caught the agent inventing external references (vendor handbooks, standards) while *correctly* declining. Fix: a system-prompt rule forbidding any fabricated reference in a refusal.
+3. **Vector retrieval → measured and dropped.** A multilingual vector layer was prototyped to bridge French questions; the eval showed it weakened refusal precision for no recall gain, so it was not shipped ([ADR-002](docs/ADR-002-multilingual-retrieval.md)).
 
 ### Running it
 
@@ -309,8 +312,8 @@ bioprocess-assistant/
 ├── scripts/
 │   └── load_graph.py                       # schema + seed Cypher loader (idempotent)
 ├── graph/
-│   ├── schema.cypher                       # uniqueness constraints + French full-text index
-│   └── seed.cypher                         # 6 symptoms × 2 causes × 2 actions, sourced + keywords
+│   ├── schema.cypher                       # uniqueness constraints + English full-text index
+│   └── seed.cypher                         # 6 symptoms × 2 causes × 2 actions (English), sourced + keywords
 ├── eval/
 │   ├── cases.yaml                          # evaluation dataset (in-scope + refusal cases)
 │   ├── run_eval.py                         # tool-level + agent-level (LLM-judge) runner
@@ -321,7 +324,8 @@ bioprocess-assistant/
 ├── .chainlit/
 │   └── config.toml                         # theme, avatar, custom CSS/JS, login page
 ├── docs/
-│   └── ADR-001-knowledge-graph-grounding.md  # architecture decision
+│   ├── ADR-001-knowledge-graph-grounding.md  # architecture decision: KG grounding
+│   └── ADR-002-multilingual-retrieval.md     # decision: bilingual via agent, vectors not shipped
 ├── references/                             # handbook PDFs (gitignored)
 └── CLAUDE.md                               # project context for Claude Code
 ```

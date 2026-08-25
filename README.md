@@ -327,5 +327,10 @@ bioprocess-assistant/
 │   ├── ADR-001-knowledge-graph-grounding.md  # architecture decision: KG grounding
 │   └── ADR-002-multilingual-retrieval.md     # decision: bilingual via agent, vectors not shipped
 ├── references/                             # handbook PDFs (gitignored)
+├── LICENSE                                 # MIT
 └── CLAUDE.md                               # project context for Claude Code
 ```
+
+## License
+
+[MIT](LICENSE)

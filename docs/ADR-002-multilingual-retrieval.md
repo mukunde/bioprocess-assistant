@@ -6,6 +6,13 @@
 
 ---
 
+## Reliability amendment (2026-10-17)
+
+The vector comparison and agent scores below are historical. Query translation
+remains model-based, but final descriptions are now rendered directly in canonical
+English, with French/English headings and refusals. Rerun live evaluation before
+reporting scores for this revision; see [../eval/README.md](../eval/README.md).
+
 ## Context
 
 I considered adding a **multilingual vector retrieval** layer: embed each symptom node with a multilingual model, store the vectors in a Neo4j vector index, and run a **hybrid** (BM25 + vector, fused with RRF). The appeal: a French question would match an English node directly in a shared embedding space, and semantic matching would also close the lexical recall gaps the evaluation had surfaced (e.g. "surpression", "HMW").

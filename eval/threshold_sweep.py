@@ -31,6 +31,7 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from tools import DEFAULT_MIN_MATCH_SCORE, query_graph  # noqa: E402
+from eval.run_eval import retrieval_cases  # noqa: E402
 
 CASES_FILE = Path(__file__).resolve().parent / "cases.yaml"
 PLOT_FILE = Path(__file__).resolve().parent / "threshold_calibration.png"
@@ -46,7 +47,7 @@ def raw_scores(cases: list[dict]) -> list[dict]:
     independent of any decision threshold."""
     out = []
     for c in cases:
-        r = query_graph(c["question"], min_score=0.0)
+        r = query_graph(c.get("retrieval_query", c["question"]), min_score=0.0)
         out.append({
             "type": c["type"],
             "expected": c.get("expected_symptom"),
@@ -73,12 +74,8 @@ def metrics_at(rows: list[dict], t: float) -> dict:
 
 
 def main() -> int:
-    # The BM25 component is calibrated on the input it actually receives: English.
-    # The agent bridges any-language questions to an English search phrase, so raw
-    # French in-scope questions are not query_graph's job - keep English in-scope
-    # cases plus all refusal cases (which must be rejected in any language).
-    cases = [c for c in load_cases()
-             if c["type"] != "in_scope" or c.get("lang") == "en"]
+    # Use the same English/explicit-query subset for positives AND negatives.
+    cases = retrieval_cases(load_cases())
     rows = raw_scores(cases)
 
     recall, refusal, overall = [], [], []

@@ -18,9 +18,8 @@ FOR (a:Action) REQUIRE a.name IS UNIQUE;
 // to English at retrieval time. The `keywords` field holds curated discriminative
 // EN synonyms to boost recall on paraphrases (e.g. "overpressure", "HMW") - added
 // after the evaluation suite (eval/) revealed recall gaps.
-// DROP first: a fulltext index definition cannot be updated in place
-// (CREATE ... IF NOT EXISTS is a no-op when the index already exists).
-DROP INDEX symptom_text IF EXISTS;
+// Existing index definitions are preserved. Changing the analyzer/properties of
+// an existing deployment requires an explicit migration, not a destructive seed.
 CREATE FULLTEXT INDEX symptom_text IF NOT EXISTS
 FOR (s:Symptom) ON EACH [s.name, s.description, s.keywords]
 OPTIONS {indexConfig: {`fulltext.analyzer`: 'english'}};

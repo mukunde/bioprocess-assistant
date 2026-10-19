@@ -1,56 +1,69 @@
 # Evaluation suite
 
-Measures the troubleshooting agent's contract - retrieval, refusals, anti-hallucination,
-and sourcing - so the "zero hallucination" claim is **measured, not asserted**.
+## Offline regressions
 
-## Two levels
-
-| Level | What it checks | How | Cost |
-|---|---|---|---|
-| **Tool-level** | `query_graph` returns the expected symptom for in-scope questions, and nothing for refusal cases | direct call, score vs threshold | free, deterministic |
-| **Agent-level** | the full agent answer is grounded (no claim outside the tool output), cites sources, and refuses when it should | runs `run_agent`, then an LLM-as-judge (`judge.py`) | API tokens |
-
-## Files
-
-- `cases.yaml` - the dataset: 28 typed, **bilingual** cases (`in_scope`, `in_domain_miss`, `out_of_scope`, `off_topic`; each tagged `lang: fr|en`). In-scope cases carry the exact (English) `expected_symptom`. French and English paraphrases per symptom stress both the matching and the agent's cross-lingual bridge.
-- `run_eval.py` - the runner (tool-level always; agent-level with `--agent`).
-- `judge.py` - the LLM-as-judge: given `(question, tool output, agent answer)`, returns `hallucination_free`, `sources_cited`, `refused`.
-- `threshold_sweep.py` - sweeps the match threshold and plots the precision/recall frontier of the BM25 retrieval component (calibrated on English, the input the agent feeds `query_graph`).
-
-## Running
-
-The eval needs a few extra packages (kept out of the app's `requirements.txt`):
+Install the app dependencies plus `eval/requirements.txt`, then run:
 
 ```bash
-pip install -r eval/requirements.txt   # pyyaml + matplotlib (app deps assumed installed)
+python -m unittest discover -s tests -v
 ```
+
+These tests mock API/Neo4j boundaries. They check grounded rendering, required
+sources, invalid model output, truncation, unexpected refusals, wrong symptoms,
+invalid judge verdicts, threshold zero and managed seed transactions. They do not
+establish scientific correctness, live retrieval quality or real database rollback.
+
+The lot 1 checks can also be run separately:
 
 ```bash
-python eval/run_eval.py                      # tool-level (free, deterministic, CI-friendly)
-python eval/run_eval.py --agent              # + agent-level LLM judge (costs API tokens)
-python eval/run_eval.py --agent --limit 1    # smoke test: first case of each type
-python eval/run_eval.py --min-score 2.0      # try a different decision threshold
-python eval/threshold_sweep.py               # regenerate threshold_calibration.png
+python -m unittest discover -s tests -p test_reliability.py -v
+python -m unittest discover -s tests -p test_app.py -v
 ```
 
-Requires the same `.env` as the app (Neo4j + Anthropic). `run_eval.py` exits non-zero
-on any failure, so the tool-level pass can gate CI.
+The Chainlit regressions cover model connection/rate-limit failures and Neo4j
+connection/authentication failures, a safe user-facing fallback, cancellation,
+and the successful zero-threshold path. Operational failures are logged server-side
+and are not presented as knowledge refusals or sourced answers.
 
-## Metrics
+## Live retrieval and agent evaluation
 
-- **Retrieval accuracy** (in-scope): the correct symptom is returned above the threshold.
-- **Refusal accuracy**: refusal cases correctly return nothing (tool) / decline (agent).
-- **Hallucination-free rate** (agent): no factual claim outside the tool output.
-- **Source-citation rate** (agent): every cause/action cites a source from the tool output.
+```bash
+python eval/run_eval.py
+python eval/run_eval.py --agent
+python eval/run_eval.py --agent --limit 1
+python eval/threshold_sweep.py
+```
 
-## Latest results
+Requires a configured Neo4j database. `--agent` also requires Anthropic credentials
+and consumes tokens for both the agent and judge. No live evaluation was run as
+part of the reliability patch. Exit status is non-zero on a failed contract.
 
-Agent-level (the bilingual system): **19/19 in-scope answered with sources** (French and
-English), refusals clean, **~27-28/28 hallucination-free**. The threshold sweep - run on
-the BM25 component's actual input (English; the agent bridges French) - shows **100%
-recall and 100% refusal across a wide plateau**, with the default 2.5 inside it.
+The lexical pass and threshold sweep use the same subset: English cases or cases
+with an explicit English `retrieval_query`, excluding `agent_only` cases. Raw
+French questions and semantic scope decisions belong to the end-to-end agent
+pass. The current dataset has 33 cases: 21 in scope and 12 expected refusals;
+9 cases belong to the lexical subset. `--limit` is applied separately to each
+pass after choosing its eligible cases.
 
-> Notes: the tool-level pass scores `query_graph` on the *raw* question, so raw French
-> in-scope cases intentionally fall through (no cross-lingual lexical match) - they are
-> the agent's job, covered at the agent level. LLM judging has minor run-to-run
-> variance (±1 case).
+The agent pass checks deterministic metadata from the response renderer:
+- in-scope: an actual answer selecting exactly the expected symptom;
+- refusal: an intentional refusal, not a protocol failure or exhausted loop.
+
+The LLM judge additionally checks grounding, citations, refusal and whether the
+answer addresses the actual question (`answers_question`). Every verdict field
+must have the expected type. Missing/invalid judgments fail closed; unexpected
+refusals, irrelevant answers and missing citations fail the report. Empty suites
+are not successful evaluations. A judge is still fallible and should be calibrated
+against expert annotations.
+
+## Interpretation
+
+The original 19/19 and approximately 27-28/28 results describe an older prompt and
+free-form response pipeline. They are not validation of this version. The existing
+`threshold_calibration.png` is historical and must be regenerated using the new
+English-only subset before reporting current calibration results.
+
+The case set is a development/regression set. Threshold tuning on these cases is
+not independent validation. Reserve a separate held-out set for deployment, repeat
+stochastic agent runs, and review recommendations and evidence with a domain
+expert. Graph fidelity does not establish source accuracy or GxP suitability.

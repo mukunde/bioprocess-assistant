@@ -36,11 +36,17 @@ Le champ `source` (note d'application / handbook d'origine) est obligatoire sur 
 
 L'agent expose **un seul outil** : `query_graph(symptom: str)` qui traduit la requête en Cypher, récupère les causes classées + leurs actions, et renvoie un résultat structuré.
 
-Règles du prompt système :
-- Répondre **uniquement** à partir des données retournées par le graphe.
-- **Citer la `source`** de chaque cause/action mentionnée.
-- Si le graphe ne contient rien de pertinent, dire explicitement « je n'ai pas cette information dans ma base » - **ne jamais inventer**.
-- Ton clair, structuré, pour un ingénieur procédé.
+Contrat actuel (amendement du 17 octobre 2026) :
+- Le modèle renvoie uniquement un JSON `status`, `language`, `result_ids`.
+- `grounding.py` valide les identifiants et les sources puis affiche les faits du
+  graphe. Aucun conseil libre du modèle n'est affiché.
+- Les titres/refus sont bilingues ; les descriptions restent en anglais tant que
+  des traductions relues ne sont pas disponibles.
+- Un échec du protocole est une erreur d'évaluation, pas un refus réussi.
+- La fidélité au graphe ne garantit pas l'exactitude scientifique ni la pertinence.
+- Le seed est additif et transactionnel ; ne pas réintroduire de suppression
+  globale. Les changements d'index nécessitent une migration explicite.
+- Voir `docs/ROADMAP.md` pour l'ingestion Docling Graph, le monitoring et KAG.
 
 ## Plan de build (walking skeleton / tracer bullet)
 

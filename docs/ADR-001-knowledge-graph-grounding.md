@@ -1,10 +1,19 @@
 # ADR-001 - Grounding my troubleshooting agent on a knowledge graph
 
-**Status:** Accepted
+**Status:** Accepted; grounding enforcement amended 2026-10-17
 **Date:** 2026-05
 **Project context:** Prototype AI assistant for troubleshooting Protein A capture chromatography (a *downstream* bioprocess unit operation).
 
 ---
+
+## Reliability amendment (2026-10-17)
+
+The original prompt-only enforcement below is historical. `grounding.py` now
+validates selected tool-result IDs and renders graph facts and citations directly.
+Model prose, unknown IDs and incomplete paths are rejected. Headings/refusals are
+bilingual; technical facts remain canonical English pending reviewed translations.
+This does not establish semantic relevance, factual correctness or GxP suitability.
+See [ROADMAP.md](ROADMAP.md) for evidence validation and ingestion milestones.
 
 ## Context
 

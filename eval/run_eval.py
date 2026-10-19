@@ -1,7 +1,7 @@
 """Tool-level evaluation of the troubleshooting agent's retrieval.
 
-Deterministic and free: it calls `query_graph` directly (no LLM) and checks,
-for every case in cases.yaml:
+Deterministic and free: it calls `query_graph` directly (no LLM) and checks
+eligible English/explicit-query cases (excluding agent_only cases):
   - in_scope        -> the expected symptom is returned (found == True, right name)
   - in_domain_miss  -> nothing is returned (found == False, score under threshold)
   - out_of_scope    -> nothing is returned (the agent also refuses semantically, Rule 4)
@@ -33,6 +33,12 @@ CASES_FILE = Path(__file__).resolve().parent / "cases.yaml"
 REFUSAL_TYPES = {"in_domain_miss", "out_of_scope", "off_topic"}
 
 
+def retrieval_cases(cases: list[dict]) -> list[dict]:
+    """BM25 receives English phrases, not raw French or semantic scope decisions."""
+    return [c for c in cases if not c.get("agent_only")
+            and (c.get("lang") == "en" or c.get("retrieval_query"))]
+
+
 def load_cases() -> list[dict]:
     data = yaml.safe_load(CASES_FILE.read_text(encoding="utf-8"))
     return data["cases"]
@@ -41,7 +47,7 @@ def load_cases() -> list[dict]:
 def evaluate(cases: list[dict], min_score: float) -> list[dict]:
     rows = []
     for c in cases:
-        result = query_graph(c["question"], min_score=min_score)
+        result = query_graph(c.get("retrieval_query", c["question"]), min_score=min_score)
         found = result["found"]
         score = result["match_score"]
         matched = result["symptom"]["name"] if found else None
@@ -106,7 +112,7 @@ def report(rows: list[dict], min_score: float) -> bool:
     else:
         print("  All cases pass.\n")
 
-    return not failures
+    return bool(rows) and not failures
 
 
 def select_cases(cases: list[dict], limit: int) -> list[dict]:
@@ -127,15 +133,22 @@ def run_agent_level(cases: list[dict], min_score: float) -> list[dict]:
     """Run the full agent on each case and have the LLM judge the answer.
     Costs API tokens (one agent run + one judge call per case)."""
     from agent import run_agent          # lazy import: pulls the Anthropic SDK
-    from judge import judge_response
+    from eval.judge import judge_response
 
     rows = []
     for i, c in enumerate(cases, 1):
         print(f"  [{i}/{len(cases)}] {c['id']} ...", flush=True)
         tool_outputs: list = []
-        text, _, _ = run_agent(c["question"], min_score=min_score, tool_outputs=tool_outputs)
+        metadata: dict = {}
+        text, _, _ = run_agent(c["question"], min_score=min_score,
+                              tool_outputs=tool_outputs, answer_metadata=metadata)
         verdict = judge_response(c["question"], tool_outputs, text)
-        rows.append({"id": c["id"], "type": c["type"], **verdict})
+        contract_ok = (
+            metadata.get("status") == "answer"
+            and metadata.get("symptoms") == [c["expected_symptom"]]
+        ) if c["type"] == "in_scope" else metadata.get("status") == "refuse"
+        rows.append({**verdict, "id": c["id"], "type": c["type"],
+                     "contract_ok": contract_ok})
     return rows
 
 
@@ -164,18 +177,21 @@ def report_agent(rows: list[dict]) -> bool:
 
     problems = [
         r for r in rows
-        if not r["hallucination_free"]
-        or (r["type"] == "in_scope" and not r["sources_cited"])
-        or (r["type"] != "in_scope" and not r["refused"])
+        if r.get("hallucination_free") is not True
+        or r.get("sources_cited") is not True
+        or r.get("contract_ok") is not True
+        or (r["type"] == "in_scope" and (r.get("refused") is not False
+                                             or r.get("answers_question") is not True))
+        or (r["type"] != "in_scope" and r.get("refused") is not True)
     ]
     if problems:
         print("  Issues:")
         for r in problems:
-            print(f"    [{r['id']}] {r['rationale']}")
+            print(f"    [{r['id']}] contract_ok={r.get('contract_ok')}: {r.get('rationale', 'Missing verdict')}")
         print()
     else:
         print("  No hallucination, sourcing, or refusal issues.\n")
-    return not problems
+    return bool(rows) and not problems
 
 
 def main() -> int:
@@ -187,9 +203,15 @@ def main() -> int:
     parser.add_argument("--limit", type=int, default=0,
                         help="Limit to the first N cases per type (0 = all).")
     args = parser.parse_args()
+    if args.limit < 0:
+        parser.error("--limit must be non-negative")
 
-    cases = select_cases(load_cases(), args.limit)
-    rows = evaluate(cases, args.min_score)
+    all_cases = load_cases()
+    cases = select_cases(all_cases, args.limit)
+    lexical_cases = select_cases(retrieval_cases(all_cases), args.limit)
+    print(f"Lexical retrieval: {len(lexical_cases)} English/explicit-query cases; "
+          f"bilingual and agent-only cases are evaluated with --agent.")
+    rows = evaluate(lexical_cases, args.min_score)
     tool_ok = report(rows, args.min_score)
 
     agent_ok = True

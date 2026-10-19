@@ -1,0 +1,2 @@
+# Only the archived v0.1 structural comparison uses jsonschema directly.
+jsonschema>=4,<5

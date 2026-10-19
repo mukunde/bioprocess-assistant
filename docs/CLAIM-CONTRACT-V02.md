@@ -1,6 +1,6 @@
 # Claim contract v0.2 — extraction before human review
 
-Selected strong extractor: **GPT‑6.1 Sol**, medium effort, provisionally based on the documentary review of pages 97–99. Everyday inference remains a separate model decision. The first test using this contract is prepared on pages 100–102, via the existing subscription interface; no API execution is included.
+Selected strong extractor: **GPT‑6.1 Sol**, medium effort, provisionally based on the documentary review of pages 97–99. Everyday inference remains a separate model decision. An earlier-prompt package on pages 100–102 is archived and unexecuted. The corrected-prompt test must be prepared in a new versioned directory, via the existing subscription workflow; no API execution is included.
 
 Lot 3 implementation: `ingestion/claim_contract.py`, `ingestion/claim_prompt_v02.txt`, `ingestion/claim_validation.py`. The PDF preparation command `ingestion/prepare_claim_test.py` belongs to lot 4 and is not included in lot 3. Frozen-input integrity lives in `ingestion/claim_bundle.py`, independently of PDF conversion. The generated JSON schema is obtained from `ClaimExtraction.model_json_schema()`, so the test input uses the same definitions as local validation.
 
@@ -41,17 +41,17 @@ The validator checks unique IDs, evidence existence, domain/range, product/phase
 From the repository directory, after lot 4 is available, with the existing ingestion environment:
 
 ```powershell
-& '.\.venv-ingestion\Scripts\python.exe' -m ingestion.prepare_claim_test 'references/manual.pdf' --output 'data/experiments/cytiva/pages-100-102-v02' --pages 100 101 102
+& '.\.venv-ingestion\Scripts\python.exe' -m ingestion.prepare_claim_test 'references/manual.pdf' --output 'data/experiments/cytiva/pages-100-102-v02-r2' --pages 100 101 102 --document-reference 'CY13981-25Jan21-HB' --document-version '25Jan21' --selection-reason 'Next complete product section; scope, conditions, negation and quantities'
 ```
 
-This refuses an existing output directory. `--resume-failed` is restricted to an identical incomplete preparation with no prepared inputs. The existing preloaded artifacts are read from `.local-tools/docling-models`; `--artifacts` can select another existing directory. The converter uses CPU and embedded text, with OCR and table inference disabled for these three non-tabular, born-digital pages; the profile is recorded. No fallback to a different converter or network download happens silently.
+Read the document reference and edition from the PDF before supplying `--document-reference` and `--document-version`; they are marked operator-supplied, not independently verified. `--selection-reason` is required, and the preparation date is generated in UTC. Metadata is frozen in the source map, corpus and plan. This refuses an existing output directory. `--resume-failed` is restricted to an identical source, pages and metadata in an incomplete preparation with no prepared inputs. The existing preloaded artifacts are read from `.local-tools/docling-models`; `--artifacts` can select another existing directory. The converter uses CPU and embedded text, with OCR and table inference disabled for these three non-tabular, born-digital pages; the profile is recorded. No fallback to a different converter or network download happens silently.
 
 The package contains its PDF excerpt, original-page mapping, full Docling document, raw item provenance/bounding boxes, body tree, groups and ordered elements. The model input has the source text and contract, without previous extractions or reference answers. A manifest freezes their hashes; a changed input or contract fails verification. Updated prompts must be used in a new versioned package; do not overwrite the prompt or manifest of an existing frozen experiment. The preparation command makes no LLM calls and includes no API launcher.
 
 After saving the single subscription response as a new `resultat-sol.json` in that package:
 
 ```powershell
-& '.\.venv-ingestion\Scripts\python.exe' -m ingestion.claim_validation 'data/experiments/cytiva/pages-100-102-v02\resultat-sol.json' --corpus 'data/experiments/cytiva/pages-100-102-v02\input.json' --output 'data/experiments/cytiva/pages-100-102-v02\validation-sol.json'
+& '.\.venv-ingestion\Scripts\python.exe' -m ingestion.claim_validation 'data/experiments/cytiva/pages-100-102-v02-r2/resultat-sol.json' --corpus 'data/experiments/cytiva/pages-100-102-v02-r2/input.json' --output 'data/experiments/cytiva/pages-100-102-v02-r2/validation-sol.json'
 ```
 
 The report must be a new file. A valid report provides a review queue, a quarantine queue and resolved source items; `publication_allowed` remains false. An empty result is labeled `empty_candidate`, not a successful extraction. The new PDF pages have been selected and inspected during preparation, so this is a fresh development test, not a blinded held-out evaluation. One generation is planned, with no automatic retry. API use is not authorized by preparing this subscription test.

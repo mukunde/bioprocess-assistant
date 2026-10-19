@@ -1,0 +1,286 @@
+{
+  "status": "lots_1_to_3_merged_readme_pushed_lot_4_pending_review",
+  "base_commit": "fdd949252ce48dc88c888eb7e6c92cf4f24f9ad2",
+  "order": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "total_files": 69,
+  "lots": [
+    {
+      "id": 1,
+      "title": "Fiabilité et évaluations",
+      "subject": "fix: enforce grounded answers and reliable evaluations",
+      "body": "Render only validated graph selections, fail malformed evaluations and make seed loading additive and transactional. Preserve explicit refusal and threshold behavior.",
+      "files": [
+        ".chainlit/config.toml",
+        "AGENTS.md",
+        "CLAUDE.md",
+        "agent.py",
+        "app.py",
+        "chainlit.md",
+        "docs/ADR-001-knowledge-graph-grounding.md",
+        "docs/ADR-002-multilingual-retrieval.md",
+        "eval/README.md",
+        "eval/cases.yaml",
+        "eval/judge.py",
+        "eval/requirements.txt",
+        "eval/run_eval.py",
+        "eval/threshold_sweep.py",
+        "graph/schema.cypher",
+        "graph/seed.cypher",
+        "grounding.py",
+        "scripts/load_graph.py",
+        "tests/test_reliability.py",
+        "tests/test_app.py",
+        "tools.py",
+        "compose.neo4j.yaml",
+        "docs/LOCAL-NEO4J.md"
+      ],
+      "checks": [
+        "python -m unittest discover -s tests -p test_reliability.py -v",
+        "python -m unittest discover -s tests -p test_app.py -v"
+      ],
+      "dependencies": [],
+      "message": "fix: enforce grounded answers and reliable evaluations\n\nRender only validated graph selections, fail malformed evaluations and make seed loading additive and transactional. Preserve explicit refusal and threshold behavior."
+    },
+    {
+      "id": 2,
+      "title": "Ingestion PDF, provenance et revue",
+      "subject": "feat: stage PDF extractions with provenance and manual review",
+      "body": "Isolate the optional Docling Graph runtime, ground extraction evidence in immutable PDF conversions and require append-only manual review before exporting a separate evidence graph.",
+      "files": [
+        ".dockerignore",
+        ".gitignore",
+        "docs/INGESTION.md",
+        "ingestion/__init__.py",
+        "ingestion/__main__.py",
+        "ingestion/evidence.py",
+        "ingestion/local.example.json",
+        "ingestion/pipeline.py",
+        "ingestion/publish.py",
+        "ingestion/review.html",
+        "ingestion/review.py",
+        "ingestion/schema.py",
+        "ingestion/store.py",
+        "requirements-ingestion.txt",
+        "tests/test_ingestion.py"
+      ],
+      "checks": [
+        "python -m unittest discover -s tests -p test_ingestion.py -v"
+      ],
+      "dependencies": [
+        1
+      ],
+      "message": "feat: stage PDF extractions with provenance and manual review\n\nIsolate the optional Docling Graph runtime, ground extraction evidence in immutable PDF conversions and require append-only manual review before exporting a separate evidence graph."
+    },
+    {
+      "id": 3,
+      "title": "Ontologie, contrat v0.2 et quarantaine",
+      "subject": "feat: define versioned troubleshooting claims and source quarantine",
+      "body": "Separate normative force, purpose, applicability and quantities. Validate evidence and typed conditions, block source conflicts per claim, and keep all candidates pending human review.",
+      "files": [
+        "docs/CLAIM-CONTRACT-V02.md",
+        "docs/ontology/examples-v0.1.md",
+        "docs/ontology/v0.1.md",
+        "ingestion/claim_bundle.py",
+        "ingestion/claim_contract.py",
+        "ingestion/claim_prompt_v02.txt",
+        "ingestion/claim_validation.py",
+        "tests/test_claim_contract.py"
+      ],
+      "checks": [
+        "python -m unittest discover -s tests -p test_claim_contract.py -v"
+      ],
+      "dependencies": [
+        1,
+        2
+      ],
+      "message": "feat: define versioned troubleshooting claims and source quarantine\n\nSeparate normative force, purpose, applicability and quantities. Validate evidence and typed conditions, block source conflicts per claim, and keep all candidates pending human review."
+    },
+    {
+      "id": 4,
+      "title": "Expérimentations et documentation consolidées",
+      "subject": "test: consolidate Cytiva experiments and prepare the v0.2 benchmark",
+      "body": "Keep experiment tooling and curated reports in the repository, move local evidence into ignored data directories, archive duplicate captures and prepare a frozen new-page test without model calls.",
+      "files": [
+        "README.md",
+        "docs/CONSOLIDATION.md",
+        "docs/README.md",
+        "docs/ROADMAP.md",
+        "docs/commit-lots.json",
+        "docs/decisions/2026-10-roadmap-review.md",
+        "docs/experiments/cytiva-local-extraction-diagnostic.md",
+        "docs/experiments/cytiva-v01-fidelity.md",
+        "docs/experiments/cytiva-v01-results.md",
+        "experiments/__init__.py",
+        "experiments/cytiva/README.md",
+        "experiments/cytiva/__init__.py",
+        "experiments/cytiva/build_reference_cards.py",
+        "experiments/cytiva/paths.py",
+        "experiments/cytiva/requirements.txt",
+        "experiments/cytiva/v01/__init__.py",
+        "experiments/cytiva/v01/build_fidelity_audit.py",
+        "experiments/cytiva/v01/check_result.py",
+        "experiments/cytiva/v01/compare_saved.py",
+        "experiments/cytiva/v01/prepare.py",
+        "experiments/cytiva/v01/test_preparation.py",
+        "ingestion/prepare_claim_test.py",
+        "tests/test_experiment_preparation.py"
+      ],
+      "checks": [
+        "python -m unittest discover -s tests -v",
+        "python -m unittest discover -s experiments/cytiva/v01 -p test_*.py -v"
+      ],
+      "dependencies": [
+        1,
+        2,
+        3
+      ],
+      "message": "test: consolidate Cytiva experiments and prepare the v0.2 benchmark\n\nKeep experiment tooling and curated reports in the repository, move local evidence into ignored data directories, archive duplicate captures and prepare a frozen new-page test without model calls."
+    }
+  ],
+  "excluded": [
+    "data/ingestion/",
+    "data/experiments/",
+    "data/consolidation/",
+    "references/",
+    ".local-tools/",
+    ".venv-ingestion/"
+  ],
+  "note": "Original file assignments are historical. pending_review_files is the remaining lot 4 scope, including the claim-contract command compatibility update. Every future commit and push requires explicit user approval.",
+  "validation": {
+    "status": "historical_snapshot_see_current_validation",
+    "cumulative_batch_tests": [
+      {
+        "lot": 1,
+        "returncode": 0,
+        "reused_verified_copy": true,
+        "tests": 34,
+        "clean_head_plus_lots": [
+          1
+        ],
+        "database_calls": "mocked; no live graph",
+        "model_calls": 0
+      },
+      {
+        "lot": 2,
+        "returncode": 0,
+        "reused_verified_copy": true,
+        "tests": 58,
+        "clean_head_plus_lots": [
+          1,
+          2
+        ],
+        "database_calls": "mocked; no live graph",
+        "model_calls": 0
+      },
+      {
+        "lot": 3,
+        "returncode": 0,
+        "reused_verified_copy": true,
+        "tests": 81,
+        "clean_head_plus_lots": [
+          1,
+          2,
+          3
+        ],
+        "database_calls": "mocked; no live graph",
+        "model_calls": 0
+      },
+      {
+        "lot": 4,
+        "returncode": 0,
+        "reused_verified_copy": true,
+        "tests": 82,
+        "clean_head_plus_lots": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "database_calls": "mocked; no live graph",
+        "model_calls": 0
+      }
+    ],
+    "ignored_paths": [
+      "data/experiments/",
+      "data/consolidation/",
+      ".local-tools/",
+      "references/",
+      ".venv-ingestion/"
+    ],
+    "frozen_v01_input_hashes": "unchanged",
+    "original_model_response_hashes": "unchanged",
+    "frozen_v02_bundle": "verified",
+    "new_generation_launched": false,
+    "git_staged_files": 0,
+    "git_commits_created": 0,
+    "git_pushes": 0,
+    "known_exact_duplicate": "archived, original retained",
+    "mutable_guides": "Only paths/navigation changed; original responses and frozen inputs unchanged."
+  },
+  "lot_1_revision": {
+    "change": "Handle operational failures in Chainlit with a safe fallback and server-side diagnostics. Add UI regressions.",
+    "historical_validation_note": "Cumulative batch snapshots predate this revision; their results are historical.",
+    "local_neo4j": "User selected persistent local Docker; compose and local setup guide included.",
+    "local_integration": "16 checks passed on temporary Neo4j 5.26.32; 9/9 lexical cases. Temporary container removed. No paid model calls."
+  },
+  "delivery_status": {
+    "1": {
+      "status": "merged",
+      "pr": 3
+    },
+    "2": {
+      "status": "merged",
+      "pr": 4
+    },
+    "3": {
+      "status": "merged",
+      "pr": 5
+    },
+    "readme": {
+      "status": "pushed_not_merged",
+      "commit": "521088a712fd800b24ca30825800507558673a1a",
+      "branch": "codex/readme-project-status"
+    },
+    "4": {
+      "status": "local_pending_approval"
+    }
+  },
+  "pending_review_files": [
+    "docs/CONSOLIDATION.md",
+    "docs/README.md",
+    "docs/ROADMAP.md",
+    "docs/commit-lots.json",
+    "docs/decisions/2026-10-roadmap-review.md",
+    "docs/experiments/cytiva-local-extraction-diagnostic.md",
+    "docs/experiments/cytiva-v01-fidelity.md",
+    "docs/experiments/cytiva-v01-results.md",
+    "experiments/__init__.py",
+    "experiments/cytiva/README.md",
+    "experiments/cytiva/__init__.py",
+    "experiments/cytiva/build_reference_cards.py",
+    "experiments/cytiva/paths.py",
+    "experiments/cytiva/requirements.txt",
+    "experiments/cytiva/v01/__init__.py",
+    "experiments/cytiva/v01/build_fidelity_audit.py",
+    "experiments/cytiva/v01/check_result.py",
+    "experiments/cytiva/v01/compare_saved.py",
+    "experiments/cytiva/v01/prepare.py",
+    "experiments/cytiva/v01/test_preparation.py",
+    "ingestion/prepare_claim_test.py",
+    "tests/test_experiment_preparation.py",
+    "docs/CLAIM-CONTRACT-V02.md"
+  ],
+  "current_validation": {
+    "date": "2026-10-19",
+    "main_tests": 106,
+    "historical_local_tests": 7,
+    "historical_tests_without_private_bundle": "7 skipped",
+    "result_artifact": "data/consolidation/lot-4-fixed-review.json",
+    "no_model_calls": true
+  }
+}

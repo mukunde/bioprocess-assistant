@@ -9,8 +9,9 @@ Phase 0 is implemented. A first phase 3 ingestion/review implementation is now a
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
 strong-model extraction. Claim contract v0.2 and per-claim quarantine are implemented. The earlier-prompt
-100–102 package remains archived; a new corrected-prompt subscription test must
-be prepared in `pages-100-102-v02-r2`; see CLAIM-CONTRACT-V02.md.
+100–102 package remains archived. The local `pages-100-102-v02-r2` package is
+now prepared and verified with 59 elements and the corrected prompt. Generation
+and human review remain pending; see CLAIM-CONTRACT-V02.md.
 The 97–99 comparison remains a development result, not a general model ranking.
 Migration from the legacy dense template/review database is still pending.
 
@@ -30,8 +31,9 @@ Migration from the legacy dense template/review database is still pending.
   [the fidelity review](experiments/cytiva-v01-fidelity.md).
 - Contract v0.2 separates purpose/conditions, force, quantities and source
   quarantine. The archived 100–102 package contains 59 Docling items from the earlier prompt;
-  it is unexecuted. New versioned preparation with the corrected prompt, generation,
-  documentary review and migration into the existing UI are pending.
+  it is unexecuted. The corrected-prompt `pages-100-102-v02-r2` package is also
+  prepared and verified (59 elements); generation, documentary review and migration
+  into the existing UI remain pending.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 - Each commit and push requires explicit user approval. See AGENTS.md.
@@ -133,6 +135,25 @@ Exit: independent held-out bilingual and adversarial cases covering near-domain
 misses, contradictory manuals, negation, multiple symptoms, missing context,
 invalid instructions and unsupported numerical claims. Compare with phase 0 on
 accuracy, false acceptances, refusal quality, latency and cost.
+
+### Candidate evaluation: LightRAG versus simpler retrieval
+
+LightRAG is a candidate for evaluation, not an adopted dependency or a replacement
+for the v0.2 contract, manual review, quarantine or Neo4j service graph. Follow the
+[three-arm retrieval protocol](experiments/retrieval-comparison-protocol.md):
+current lexical/graph retrieval family, simple passage retrieval, and LightRAG on
+the same reviewed corpus and canonical passages. Keep the unchanged legacy app
+as a separate coverage witness; do not rank its six-symptom seed directly against
+a larger indexed manual.
+
+First compare retrieval alone, then use a common answer model and validated
+renderer only after the required adapters exist. Freeze questions, input hashes,
+chunking, context budgets and configurations; measure evidence quality, refusal,
+conditions/quantities, latency, tokens and RAM on the local PC. Use local models
+with zero additional API spend. Compare chunking/extraction variants separately.
+Only consider adoption if the measured gain over the simpler alternatives survives
+resource, provenance and quarantine checks. No installation or benchmark execution
+has been performed by preparing this plan.
 
 ## Phase 5 — Decide whether an OpenSPG KAG experiment is justified
 

@@ -7,12 +7,9 @@
 // Usage (Neo4j Browser / AuraDB or scripts/load_graph.py): run schema.cypher first
 // (constraints + full-text index), then this file.
 
-// --- Language migration cleanup ---
-// Node names changed FR -> EN, so MERGE on the new English names would leave the
-// old French nodes orphaned. Wipe all domain nodes first, then recreate; the seed
-// is the authoritative source for graph content. (Also drop any unlabeled orphans.)
-MATCH (n) WHERE n:Symptom OR n:Cause OR n:Action DETACH DELETE n;
-MATCH (n) WHERE labels(n) = [] DETACH DELETE n;
+// Additive seed: preserve domain nodes and relations added outside this file.
+// MERGE/SET updates the named seed records. Renames and obsolete records require
+// an explicit, reviewed migration; never reset the database during normal import.
 
 // =================================================================
 // === Symptom #1: Capture step yield drop                       ===

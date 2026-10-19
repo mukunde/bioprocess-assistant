@@ -4,3 +4,7 @@
 #   pip install -r requirements.txt
 pyyaml>=6.0          # parse eval/cases.yaml
 matplotlib>=3.7      # threshold calibration plot
+# Offline ingestion regression tests (no model/runtime required)
+pydantic>=2,<3
+pypdf>=5,<7
+pypdfium2==5.14.0

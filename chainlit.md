@@ -6,9 +6,9 @@ Démonstrateur d'assistant IA spécialisé sur le **troubleshooting de la chroma
 
 Décris un symptôme observé sur ton étape de capture. L'assistant te propose les causes probables et les actions correctives, **chacune sourcée sur un handbook public** - Cytiva *Affinity Chromatography Vol. 1: Antibodies Handbook* (CY13981-25Jan21-HB, 2021) et *MabSelect SuRe Data File* (CY12754-10Jul20-DF, 2020).
 
-## Garanties par construction
+## Fonctionnement et limites
 
-- **Zéro hallucination** : l'agent ne répond qu'à partir d'un knowledge graph Neo4j de connaissance métier curée. Hors périmètre, il le dit explicitement plutôt que d'inventer.
+- **Réponse encadrée** : le modèle sélectionne des résultats du graphe. L'application vérifie cette sélection et affiche les faits et leurs citations. La pertinence du résultat et l'exactitude scientifique des connaissances demandent une validation métier.
 - **Auditabilité native** : chaque cause et chaque action remontent à la page précise du PDF source.
 - **Périmètre actuel** : 6 symptômes types de la capture Protein A - chute de rendement, pression élevée, agrégats dans le pool d'élution, leaching de Protein A, HCP résiduels, bioburden.
 
@@ -21,7 +21,7 @@ Décris un symptôme observé sur ton étape de capture. L'assistant te propose 
 - *« J'ai des HCP résiduels au-dessus de la spec. »*
 - *« J'ai détecté du bioburden dans ma colonne. »*
 
-Formule librement en français.
+Formule ta question en français ou en anglais. Les titres et refus suivent ta langue ; les descriptions techniques restent en anglais, la langue du graphe.
 
 ---
 

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import os
+import math
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -19,6 +20,16 @@ _LUCENE_SPECIALS = r'+-&|!(){}[]^"~*?:\/'
 # Tunable at runtime via the Chainlit Settings slider; this value is the default
 # used by direct callers (e.g. the __main__ smoke test).
 DEFAULT_MIN_MATCH_SCORE = 2.5
+
+
+def validate_min_score(value: float) -> float:
+    if isinstance(value, bool) or not isinstance(value, (int, float)) or not math.isfinite(value) or value < 0:
+        raise ValueError("min_score must be a finite, non-negative number")
+    return float(value)
+
+
+def resolve_min_score(value: float | None) -> float:
+    return validate_min_score(DEFAULT_MIN_MATCH_SCORE if value is None else value)
 
 
 def _get_driver() -> Driver:
@@ -40,11 +51,12 @@ def _sanitize_for_lucene(q: str) -> str:
 
 
 def query_graph(symptom: str, min_score: float = DEFAULT_MIN_MATCH_SCORE) -> dict:
-    """Return the best-matching symptom (Neo4j full-text, french analyzer)
+    """Return the best-matching symptom (Neo4j full-text, English analyzer)
     with its causes and corrective actions, all sourced.
 
     The score filter is applied Python-side so the caller can observe the top
     score even when it falls under the threshold (useful for the UI footer)."""
+    validate_min_score(min_score)
     sanitized = _sanitize_for_lucene(symptom)
     if not sanitized:
         return {

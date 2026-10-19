@@ -43,7 +43,22 @@ def read_statements(file_path: Path) -> list[str]:
 def execute(driver, database: str, statements: list[str]) -> None:
     with driver.session(database=database) as session:
         for stmt in statements:
-            session.run(stmt)
+            session.run(stmt).consume()
+
+
+def publish_seed(driver, database: str, statements: list[str]) -> None:
+    """Commit the whole seed together; a failure rolls back all seed changes."""
+    def write(tx):
+        for stmt in statements:
+            tx.run(stmt).consume()
+
+    with driver.session(database=database) as session:
+        session.execute_write(write)
+
+
+def wait_for_indexes(driver, database: str) -> None:
+    with driver.session(database=database) as session:
+        session.run("CALL db.awaitIndexes(120)").consume()
 
 
 def main() -> int:
@@ -61,52 +76,52 @@ def main() -> int:
     database = os.environ["NEO4J_DATABASE"]
 
     print(f"[1/4] Connexion a {uri} ...")
-    driver = GraphDatabase.driver(uri, auth=(user, password))
-    try:
-        driver.verify_connectivity()
-    except AuthError:
-        print("[ERR] Authentification refusee. Verifie NEO4J_USERNAME / NEO4J_PASSWORD dans .env.")
-        return 1
-    except ServiceUnavailable:
-        print("[ERR] Instance injoignable. Si elle est en pause AuraDB, reveille-la depuis la console.")
-        return 1
+    with GraphDatabase.driver(uri, auth=(user, password)) as driver:
+        try:
+            driver.verify_connectivity()
+        except AuthError:
+            print("[ERR] Authentification refusee. Verifie NEO4J_USERNAME / NEO4J_PASSWORD dans .env.")
+            return 1
+        except ServiceUnavailable:
+            print("[ERR] Instance injoignable. Si elle est en pause AuraDB, reveille-la depuis la console.")
+            return 1
 
-    schema_stmts = read_statements(SCHEMA_FILE)
-    print(f"[2/4] Schema : {len(schema_stmts)} contrainte(s) ...")
-    execute(driver, database, schema_stmts)
+        schema_stmts = read_statements(SCHEMA_FILE)
+        print(f"[2/4] Schema : {len(schema_stmts)} contrainte(s) ...")
+        execute(driver, database, schema_stmts)
+        wait_for_indexes(driver, database)
 
-    seed_stmts = read_statements(SEED_FILE)
-    print(f"[3/4] Seed   : {len(seed_stmts)} instruction(s) ...")
-    execute(driver, database, seed_stmts)
+        seed_stmts = read_statements(SEED_FILE)
+        print(f"[3/4] Seed   : {len(seed_stmts)} instruction(s) ...")
+        publish_seed(driver, database, seed_stmts)
 
-    print("[4/4] Validation du graphe :")
-    with driver.session(database=database) as session:
-        counts = session.run(
-            """
-            MATCH (n)
-            WHERE n:Symptom OR n:Cause OR n:Action
-            RETURN labels(n)[0] AS label, count(*) AS n
-            ORDER BY label
-            """
-        )
-        for r in counts:
-            print(f"      - {r['label']:<10} {r['n']} noeud(s)")
+        print("[4/4] Validation du graphe :")
+        with driver.session(database=database) as session:
+            counts = session.run(
+                """
+                MATCH (n)
+                WHERE n:Symptom OR n:Cause OR n:Action
+                RETURN labels(n)[0] AS label, count(*) AS n
+                ORDER BY label
+                """
+            )
+            for r in counts:
+                print(f"      - {r['label']:<10} {r['n']} noeud(s)")
 
-        print()
-        print("      Chemins symptome -> cause -> action :")
-        paths = session.run(
-            """
-            MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
-            RETURN s.name AS symptom, c.name AS cause, a.name AS action
-            ORDER BY symptom, cause
-            """
-        )
-        for r in paths:
-            print(f"        - {r['symptom']}")
-            print(f"            -> {r['cause']}")
-            print(f"                -> {r['action']}")
+            print()
+            print("      Chemins symptome -> cause -> action :")
+            paths = session.run(
+                """
+                MATCH (s:Symptom)-[:INDICATES]->(c:Cause)-[:RESOLVED_BY]->(a:Action)
+                RETURN s.name AS symptom, c.name AS cause, a.name AS action
+                ORDER BY symptom, cause
+                """
+            )
+            for r in paths:
+                print(f"        - {r['symptom']}")
+                print(f"            -> {r['cause']}")
+                print(f"                -> {r['action']}")
 
-    driver.close()
     print()
     print("[OK] Graphe charge. Walking skeleton etape 1 validee.")
     return 0

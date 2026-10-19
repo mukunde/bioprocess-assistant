@@ -1,5 +1,5 @@
 {
-  "status": "lots_1_to_3_merged_readme_pushed_lot_4_pending_review",
+  "status": "all_four_lots_and_readme_merged",
   "base_commit": "fdd949252ce48dc88c888eb7e6c92cf4f24f9ad2",
   "order": [
     1,
@@ -150,7 +150,7 @@
     ".local-tools/",
     ".venv-ingestion/"
   ],
-  "note": "Original file assignments are historical. pending_review_files is the remaining lot 4 scope, including the claim-contract command compatibility update. Every future commit and push requires explicit user approval.",
+  "note": "Original file assignments and initial validation are historical. lot_4_delivery_files records the exact 23-file delivery; README was merged separately. pending_review_files is empty for these delivered lots. Future commits and pushes, including post-merge documentation updates, require explicit user approval.",
   "validation": {
     "status": "historical_snapshot_see_current_validation",
     "cumulative_batch_tests": [
@@ -242,15 +242,32 @@
       "pr": 5
     },
     "readme": {
-      "status": "pushed_not_merged",
+      "status": "merged",
       "commit": "521088a712fd800b24ca30825800507558673a1a",
-      "branch": "codex/readme-project-status"
+      "branch": "codex/readme-project-status",
+      "pr": 7,
+      "merge_commit": "937a656dc478e14c91f1c3e92321cf6f520a5e0a"
     },
     "4": {
-      "status": "local_pending_approval"
+      "status": "merged",
+      "pr": 6,
+      "commit": "0f76d143f19c99c142048ddfffea08422e686df2",
+      "merge_commit": "daa2587c6aa893ee911176c9de0fb9568a7b1639"
     }
   },
-  "pending_review_files": [
+  "pending_review_files": [],
+  "current_validation": {
+    "date": "2026-10-19",
+    "main_tests": 106,
+    "historical_local_tests": 7,
+    "historical_tests_without_private_bundle": "7 skipped",
+    "result_artifact": "data/consolidation/main-final-verification.json",
+    "no_model_calls": true,
+    "main_commit": "937a656dc478e14c91f1c3e92321cf6f520a5e0a",
+    "checked_delivery_files": 69,
+    "status": "passed_on_merged_main"
+  },
+  "lot_4_delivery_files": [
     "docs/CONSOLIDATION.md",
     "docs/README.md",
     "docs/ROADMAP.md",
@@ -274,13 +291,5 @@
     "ingestion/prepare_claim_test.py",
     "tests/test_experiment_preparation.py",
     "docs/CLAIM-CONTRACT-V02.md"
-  ],
-  "current_validation": {
-    "date": "2026-10-19",
-    "main_tests": 106,
-    "historical_local_tests": 7,
-    "historical_tests_without_private_bundle": "7 skipped",
-    "result_artifact": "data/consolidation/lot-4-fixed-review.json",
-    "no_model_calls": true
-  }
+  ]
 }

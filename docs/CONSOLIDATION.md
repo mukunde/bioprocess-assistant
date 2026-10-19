@@ -1,18 +1,20 @@
 # Consolidation en quatre lots — état et historique
 
-**Lots 1–3 fusionnés ; lot 4 en revue locale.** Le README a été committé et poussé séparément. Aucun nouveau commit ni push pendant la correction du lot 4 ; chaque opération ultérieure nécessite l’accord explicite de Gaël.
+**Les quatre lots et le README sont fusionnés dans `main`.** Les modifications documentaires post-fusion restent locales jusqu’à accord explicite pour un commit et un push.
 
 | Livraison | État | Référence |
 |---|---|---|
-| Lot 1 | Fusionné | PR #3 |
-| Lot 2 | Fusionné | PR #4 |
-| Lot 3 | Fusionné | PR #5 |
-| README | Commit et push, pas de fusion | `521088a`, branche `codex/readme-project-status` |
-| Lot 4 restant | Corrigé localement, en attente de validation | 22 fichiers initiaux + mise à jour de commande dans `docs/CLAIM-CONTRACT-V02.md` |
+| Lot 1 | Fusionné | [PR #3](https://github.com/mukunde/bioprocess-assistant/pull/3) |
+| Lot 2 | Fusionné | [PR #4](https://github.com/mukunde/bioprocess-assistant/pull/4) |
+| Lot 3 | Fusionné | [PR #5](https://github.com/mukunde/bioprocess-assistant/pull/5) |
+| Lot 4 | Fusionné, 23 fichiers | [PR #6](https://github.com/mukunde/bioprocess-assistant/pull/6), commit `0f76d14` |
+| README | Fusionné séparément, un fichier | [PR #7](https://github.com/mukunde/bioprocess-assistant/pull/7), commit `521088a` |
 
-Le README reste dans la liste historique du lot 4, mais ne fait pas partie des fichiers à committer une seconde fois. Le document du contrat, livré au lot 3, reçoit une mise à jour de compatibilité avec les nouveaux arguments du lanceur PDF au lot 4. La liste `pending_review_files` du manifeste décrit ce périmètre de 23 fichiers.
+Le README figurait dans la liste initiale du lot 4 ; il a été livré séparément et n’a pas été recommitté dans ce lot. La PR #6 contient les 22 autres fichiers initiaux et la mise à jour de compatibilité de `docs/CLAIM-CONTRACT-V02.md` avec les arguments du lanceur PDF. Le manifeste conserve ce périmètre dans `lot_4_delivery_files` ; `pending_review_files` est vide pour les quatre lots livrés.
 
-Les lots sont à appliquer dans l’ordre 1 → 2 → 3 → 4. Les listes initiales affectaient chaque fichier une seule fois ; les livraisons et la correction de compatibilité ci-dessus explicitent les écarts ultérieurs. Les fichiers transversaux sont affectés en entier : les règles d’exclusion au lot 2, le README et le plan général au lot 4. Les liens documentaires vers les lots ultérieurs sont donc complets à la fin de la série.
+Vérification finale de main au commit `937a656dc478e14c91f1c3e92321cf6f520a5e0a` : les cinq commits de livraison sont présents et le contenu attendu des 69 fichiers est confirmé. Les 106 tests principaux passent sur une copie propre ; les sept contrôles historiques passent avec le jeu local et sont ignorés sans ce jeu. Aucun appel modèle/API payant ni écriture de base pendant cette vérification. Détails locaux : `data/consolidation/main-final-verification.json`.
+
+Les lots ont été intégrés dans l’ordre 1 → 2 → 3 → 4. Les listes initiales affectaient chaque fichier une seule fois ; les livraisons et la correction de compatibilité ci-dessus explicitent les écarts ultérieurs. Dans ce découpage initial, les règles d’exclusion relevaient du lot 2, le README et le plan général du lot 4 ; le README a ensuite été livré séparément. Les liens documentaires entre lots sont désormais disponibles sur main.
 
 ## Rangement effectué
 
@@ -187,7 +189,7 @@ Vérifications :
 - Génération des fiches uniquement dans un nouveau dossier `--output`, sans écrasement des annotations ni du document d’ontologie du dépôt.
 - Métadonnées de document/version et justification des pages obligatoires, enregistrées comme fournies par l’opérateur ; date calculée en UTC. La reprise exige la même source, les mêmes pages et métadonnées.
 - Ancien paquet `pages-100-102-v02` conservé sans changement ; nouvelle préparation `pages-100-102-v02-r2` à réaliser avec le prompt corrigé. Aucun nouveau modèle lancé.
-- Suite actuelle : 106 tests principaux (34 fiabilité, 6 Chainlit, 29 ingestion, 29 contrat, 8 préparation/audit/fiches). Sept contrôles historiques supplémentaires utilisent le jeu local ; ils sont ignorés explicitement sans ce jeu. Voir le rapport local `data/consolidation/lot-4-fixed-review.json` pour les résultats et environnements exacts.
+- Suite actuelle : 106 tests principaux (34 fiabilité, 6 Chainlit, 29 ingestion, 29 contrat, 8 préparation/audit/fiches). Sept contrôles historiques supplémentaires utilisent le jeu local ; ils sont ignorés explicitement sans ce jeu. La contre-revue est conservée dans `data/consolidation/lot-4-fixed-review.json` ; la vérification après fusion est dans `data/consolidation/main-final-verification.json`.
 
 ## Validation historique (à ne pas confondre avec la suite actuelle)
 

@@ -2,7 +2,7 @@
 
 Selected strong extractor: **GPT‑6.1 Sol**, medium effort, provisionally based on the documentary review of pages 97–99. Everyday inference remains a separate model decision. An earlier-prompt package on pages 100–102 is archived and unexecuted. The corrected-prompt test must be prepared in a new versioned directory, via the existing subscription workflow; no API execution is included.
 
-Lot 3 implementation: `ingestion/claim_contract.py`, `ingestion/claim_prompt_v02.txt`, `ingestion/claim_validation.py`. The PDF preparation command `ingestion/prepare_claim_test.py` belongs to lot 4 and is not included in lot 3. Frozen-input integrity lives in `ingestion/claim_bundle.py`, independently of PDF conversion. The generated JSON schema is obtained from `ClaimExtraction.model_json_schema()`, so the test input uses the same definitions as local validation.
+Lot 3 implementation: `ingestion/claim_contract.py`, `ingestion/claim_prompt_v02.txt`, `ingestion/claim_validation.py`. The PDF preparation command `ingestion/prepare_claim_test.py` was delivered in lot 4; both lots are now merged into `main`. Frozen-input integrity lives in `ingestion/claim_bundle.py`, independently of PDF conversion. The generated JSON schema is obtained from `ClaimExtraction.model_json_schema()`, so the test input uses the same definitions as local validation.
 
 ## Changes from the first comparison
 
@@ -36,9 +36,9 @@ The validator checks unique IDs, evidence existence, domain/range, product/phase
 
 ## Fresh test preparation and validation
 
-**Dependency on lot 4:** lot 3 can validate an existing frozen corpus and candidate without PDF conversion. It does not include the preparation launcher, PDF assets or experiment packaging. The preparation command below requires lot 4 (`ingestion/prepare_claim_test.py`) and its documented ingestion environment/model artifacts. On a checkout containing only lots 1–3, skip preparation and use an existing compatible frozen package; the validation command below remains available.
+**Preparation and validation dependencies:** the preparation launcher delivered in lot 4 (`ingestion/prepare_claim_test.py`) is available on `main`. It requires the documented ingestion environment, cached model artifacts and a local PDF. Manuals, model weights and frozen experiment packages are not bundled in Git. The validator delivered in lot 3 can independently validate an existing compatible frozen corpus and candidate without PDF conversion.
 
-From the repository directory, after lot 4 is available, with the existing ingestion environment:
+From the repository directory, with the ingestion environment and cached conversion weights installed:
 
 ```powershell
 & '.\.venv-ingestion\Scripts\python.exe' -m ingestion.prepare_claim_test 'references/manual.pdf' --output 'data/experiments/cytiva/pages-100-102-v02-r2' --pages 100 101 102 --document-reference 'CY13981-25Jan21-HB' --document-version '25Jan21' --selection-reason 'Next complete product section; scope, conditions, negation and quantities'

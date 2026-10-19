@@ -10,13 +10,16 @@ The project validates a simple hypothesis: *can we build an agent a process engi
 
 ## Project documentation and experiments
 
-The first three implementation lots are merged into `main`:
+All four implementation lots are merged into `main`:
 
 | Lot | Available functionality | Pull request |
 |---|---|---|
 | 1 | Validated graph-only rendering, reliable evaluation, model/Neo4j error handling and local Neo4j setup | [#3](https://github.com/mukunde/bioprocess-assistant/pull/3) |
 | 2 | Optional Docling Graph PDF ingestion, immutable provenance, manual review and separate evidence-graph publication | [#4](https://github.com/mukunde/bioprocess-assistant/pull/4) |
 | 3 | Minimal documentary ontology, v0.2 extraction contract, evidence checks and explicit source quarantine | [#5](https://github.com/mukunde/bioprocess-assistant/pull/5) |
+| 4 | Consolidated documentation, Cytiva experiment tooling and safe v0.2 PDF test preparation | [#6](https://github.com/mukunde/bioprocess-assistant/pull/6) |
+
+The README update is also merged through [#7](https://github.com/mukunde/bioprocess-assistant/pull/7).
 
 Start with [PDF ingestion and review](docs/INGESTION.md), the
 [local Neo4j guide](docs/LOCAL-NEO4J.md), the
@@ -28,10 +31,10 @@ based on the initial comparison. The interactive assistant's model remains a
 separate configuration. Subscription-based extraction experiments do not configure
 or fund the chatbot's API calls.
 
-**Lot 4 remains local and uncommitted:** consolidated roadmap/documentation,
-Cytiva experiment tooling and the `ingestion.prepare_claim_test` PDF test launcher.
-Those files are not available in a fresh clone of merged `main`. The local pages
-100–102 package was prepared with the earlier prompt; it has not been executed.
+**Included in a fresh clone:** consolidated [documentation](docs/README.md),
+[Cytiva experiment tooling](experiments/cytiva/README.md) and the
+`ingestion.prepare_claim_test` PDF test launcher. The local pages 100–102 package
+was prepared with the earlier prompt; it has not been executed.
 The updated prompt requires a new versioned package, preserving previous frozen
 inputs. Manuals, conversions and model responses stay in ignored local directories.
 
@@ -314,7 +317,8 @@ fidelity, completeness or the correct association of a number with a table row.
 This contract is a separate staging path: it does not replace the original
 `INDICATES` / `RESOLVED_BY` graph or feed v0.2 candidates into the existing review
 UI/publisher. That adapter remains to be implemented. The PDF preparation launcher
-requires lot 4; lot 3 can validate an existing compatible frozen package without it.
+was delivered in lot 4 and is available on `main`. Validation of an existing
+compatible frozen package remains independent of PDF conversion.
 
 Run the 29 offline contract tests after installing the optional
 [ingestion dependencies](docs/INGESTION.md):
@@ -328,18 +332,17 @@ python -m unittest discover -s tests -p test_claim_contract.py -v
 The reliability, PDF staging/review and v0.2 contract foundations are merged.
 Next steps are:
 
-1. Review and integrate lot 4's experiment tooling and consolidated documentation.
-2. Prepare a new frozen package with the corrected prompt, extract new pages and
+1. Prepare a new frozen package with the corrected prompt, extract new pages and
    verify the ontology examples, relations, conditions and quantities manually.
-3. Build a reviewed adapter from v0.2 claims to immutable review records and the
+2. Build a reviewed adapter from v0.2 claims to immutable review records and the
    service graph; candidates must not bypass quarantine or human approval.
-4. Add OpenTelemetry traces for retrieval, model calls, latency, tokens and
+3. Add OpenTelemetry traces for retrieval, model calls, latency, tokens and
    estimated cost, plus Ragas evaluation and targeted red-teaming.
-5. Benchmark contextual retrieval and lightweight local inference against the
+4. Benchmark contextual retrieval and lightweight local inference against the
    current baseline. Investigate KAG only if representative tasks justify it.
 
 Monitoring, Ragas and the v0.2 integration into the chatbot remain planned. The
-consolidated roadmap belongs to the still-uncommitted lot 4.
+consolidated [roadmap](docs/ROADMAP.md) is available on `main`.
 
 ## Repo structure
 

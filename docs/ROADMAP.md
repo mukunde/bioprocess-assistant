@@ -38,11 +38,11 @@ Migration from the legacy dense template/review database is still pending.
 
 ## Delivery status (2026-10-19)
 
-Lots 1, 2 and 3 are merged into main through PRs #3, #4 and #5. The README update
-is committed and pushed separately on `codex/readme-project-status` (`521088a`),
-not merged. Lot 4 remains under local review; no commit or push is authorized by
-this status. See [the consolidation record](CONSOLIDATION.md) for the current file
-list and historical test counts.
+All four lots are merged into main through PRs #3, #4, #5 and #6. The README
+update is merged separately through PR #7. Integrated main at `937a656` passed
+106 principal tests plus seven historical checks with local evidence (skipped
+without it). See [the consolidation record](CONSOLIDATION.md) for delivery history
+and validation scope. Future commits and pushes still require explicit approval.
 
 ## Phase 0 — Repair the reliability baseline (now)
 

@@ -9,7 +9,7 @@
 | What do the troubleshooting concepts mean? | [Ontology draft](ontology/v0.1.md), [documentary examples](ontology/examples-v0.1.md) |
 | What is the current extraction format and quarantine rule? | [Claim contract v0.2](CLAIM-CONTRACT-V02.md) |
 | Where is the reproducible experiment code? | [Cytiva tooling](../experiments/cytiva/README.md) |
-| What should be committed, in which order? | [Delivery status and pending lot 4](CONSOLIDATION.md), [machine-readable lists](commit-lots.json) |
+| What has been delivered and verified? | [Delivery history and verification](CONSOLIDATION.md), [machine-readable lists](commit-lots.json) |
 
 ## Historical evidence, not competing roadmaps
 
@@ -27,4 +27,4 @@ therefore has the code and curated findings, not the author's local evidence bun
 The experiment documentation distinguishes synthetic tests from checks requiring
 that bundle. No prior human approval is transferred by moving files.
 
-Lots 1–3 are merged (PRs #3–#5). The README has its own pushed branch; the remaining lot 4 files and the claim-contract command compatibility update are awaiting approval. The old pages 100–102 bundle uses the earlier prompt; prepare and validate a new `pages-100-102-v02-r2` package using the matching commands in the [experiment guide](../experiments/cytiva/README.md).
+All four lots are merged (PRs #3–#6), including the claim-contract command compatibility update. The README is merged through PR #7. The final integrated revision passed 106 principal tests; seven historical checks also passed with the local evidence bundle and explicitly skip without it. The old pages 100–102 bundle uses the earlier prompt; prepare and validate a new `pages-100-102-v02-r2` package using the matching commands in the [experiment guide](../experiments/cytiva/README.md).

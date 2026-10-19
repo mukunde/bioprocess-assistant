@@ -1,0 +1,1555 @@
+{
+  "package_version": 1,
+  "created_at_utc": "2026-10-19T22:35:45.262256+00:00",
+  "role": "curated documentary development review; not an exhaustive gold benchmark",
+  "files": {
+    "README.md": "0a9390b47f149a8e4b6be106a3a1d517c14d47563a8cc13ddf4221620449b142",
+    "claims.json": "f6eff88b886fb7c5698c28f9ef34e36e21af89c0e9c8cac0d8287e2a497b27e1",
+    "review.json": "649a101474feff051b22afac23f1b484d8b30842c0c89aba56041665040fddd4"
+  },
+  "counts": {
+    "claims": 33,
+    "entities": 47,
+    "validated": 19,
+    "validated_with_reservation": 14,
+    "pending": 0
+  },
+  "source": {
+    "document_reference": "CY13981-25Jan21-HB",
+    "document_version": "25Jan21",
+    "original_pages": [
+      100,
+      101,
+      102
+    ],
+    "original_pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "excerpt_sha256": "aff5c8b77da8290ba659396445e86cf5d203ba36992d8a3a9a58629db6d20db7",
+    "input_sha256": "b5d930d3c3bed684f5e331bf539f000dc428d72196c17e3600f08225d582a92b",
+    "source_map_sha256": "d3a6d38cce07e7987470a6c260c4ef50ffedfc2df21ad26b5b044e2f9cb6bdb8",
+    "conversion_profile_sha256": "2e883a091d61cd06c8a3d093937275197a9475bd46b687db2469f7efb808f7a1",
+    "evidence_index": {
+      "#/texts/1": {
+        "original_pages": [
+          100
+        ],
+        "excerpt_pages": [
+          1
+        ],
+        "text_sha256": "6ef5025f5ab4cf14e91a4e0aa4751d0edac1a53404a49271b45f983c82aa4cf2",
+        "provenance": [
+          {
+            "page_no": 1,
+            "bbox": {
+              "l": 80.0,
+              "t": 888.9327000000001,
+              "r": 785.9156000000002,
+              "b": 868.1813919642857,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              57
+            ]
+          }
+        ]
+      },
+      "#/texts/2": {
+        "original_pages": [
+          100
+        ],
+        "excerpt_pages": [
+          1
+        ],
+        "text_sha256": "3dc699533406cada7097f1ce3dc0142143cf12fb3b965746d382aa1654943e46",
+        "provenance": [
+          {
+            "page_no": 1,
+            "bbox": {
+              "l": 80.0,
+              "t": 851.0567,
+              "r": 1020.4080000000022,
+              "b": 811.1109388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              213
+            ]
+          }
+        ]
+      },
+      "#/texts/6": {
+        "original_pages": [
+          100
+        ],
+        "excerpt_pages": [
+          1
+        ],
+        "text_sha256": "69e09074227e0ac16c0d44757a0473f48006f785abb2fb2ba1b3fbb199b85bad",
+        "provenance": [
+          {
+            "page_no": 1,
+            "bbox": {
+              "l": 130.0,
+              "t": 542.0567,
+              "r": 1048.3559999999989,
+              "b": 478.1109388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              222
+            ]
+          }
+        ]
+      },
+      "#/texts/9": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "3820a669275e4c6330b7a14a3347b8e9b9e2ef68b2133ef1d1f36bc255bbd8d3",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 80.0,
+              "t": 939.6534,
+              "r": 505.66700000000014,
+              "b": 922.0946008928572,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              39
+            ]
+          }
+        ]
+      },
+      "#/texts/10": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "ade38f7024d412cf5b3ea5d18242ebfcd4b25ee0ee35393261d65ab0fffb5cb0",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 130.0,
+              "t": 908.3614,
+              "r": 941.4160000000019,
+              "b": 892.4156388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              95
+            ]
+          }
+        ]
+      },
+      "#/texts/11": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "54fc5fbea710e0875ea50cdf3277bb9b0da409bf3b9e4323fb0c46be609ce400",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 130.0,
+              "t": 869.3614,
+              "r": 1018.1980000000025,
+              "b": 829.4156388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              170
+            ]
+          }
+        ]
+      },
+      "#/texts/12": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "f52f676689df9a413c494dcddeff5fe59489623efc539715e68e577137b6c935",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 784.8457,
+              "r": 410.59999999999985,
+              "b": 768.8831553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              32
+            ]
+          }
+        ]
+      },
+      "#/texts/13": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "2f771840384a839e3fb49d46e986b5f82b134dc4a10b5d3745009b5d47b5defa",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 750.8457,
+              "r": 461.50199999999984,
+              "b": 734.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              40
+            ]
+          }
+        ]
+      },
+      "#/texts/14": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "3992198c350e399be52ed8ba4ed5f75967ef18f1efb07801867f039ff227e337",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 720.8457,
+              "r": 464.73999999999967,
+              "b": 704.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              42
+            ]
+          }
+        ]
+      },
+      "#/texts/15": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "99eb58d5485cef25c3fc2fae04d1c0ef760eaca80b1a2cac6b0bd48da8a9b14c",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 690.8457,
+              "r": 373.4899999999998,
+              "b": 674.8831553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              28
+            ]
+          }
+        ]
+      },
+      "#/texts/16": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "a829585bfd067480a4834dc2f47d73dcdb2b0a30b5c5e52f9c8d9ad836f3e48c",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 656.8457,
+              "r": 796.1780000000011,
+              "b": 640.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              81
+            ]
+          }
+        ]
+      },
+      "#/texts/17": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "38db589939b386bfeb8ad3a6eaeb1e7dbbb7dc84911e04e76ea9e1496ab329bc",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 626.8457,
+              "r": 1026.6360000000025,
+              "b": 586.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              120
+            ]
+          }
+        ]
+      },
+      "#/texts/18": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "87629bec94b8d50f365633ce614d5951dc7e8a06da7879d22154665876d619b1",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 572.8457,
+              "r": 806.5120000000011,
+              "b": 556.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              81
+            ]
+          }
+        ]
+      },
+      "#/texts/19": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "12aa3f89aae76cc9b50efefd52c4427366c643b3f1e7498633e91f139ae41f90",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 542.8457,
+              "r": 263.486,
+              "b": 526.8831553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              18
+            ]
+          }
+        ]
+      },
+      "#/texts/20": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "f5e53fb7d3b48c15be45860296e0275b54520c8fa477859ee1ecd55f56129e3c",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 508.8457000000001,
+              "r": 755.8600000000007,
+              "b": 492.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              77
+            ]
+          }
+        ]
+      },
+      "#/texts/21": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "c513391cdc2713bdf44408f9888ff0a21d4e346762405e4111d6fe99b9394fbd",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 478.8457000000001,
+              "r": 718.2200000000007,
+              "b": 462.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              72
+            ]
+          }
+        ]
+      },
+      "#/texts/22": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "015bae14b6001b74dc83e3c8d3d97e03762647496a1e079214dffa883f2886f1",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 448.8457000000001,
+              "r": 1011.8760000000021,
+              "b": 408.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              193
+            ]
+          }
+        ]
+      },
+      "#/texts/23": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "e1d2caccd6489f2e17e939b8c01d7a10c5dbc463de834307f90339741a4fabf0",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 394.8457000000001,
+              "r": 256.288,
+              "b": 378.88315535714287,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              16
+            ]
+          }
+        ]
+      },
+      "#/texts/24": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "1e8ae9a3499c28f6159cc2e3a0b531f7e19d686ea8b07510b52f425f1f6d46ea",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 360.8457000000001,
+              "r": 1063.2739999999983,
+              "b": 320.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              151
+            ]
+          }
+        ]
+      },
+      "#/texts/25": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "9902803446d139304d911b52008fb6f6d7e29fbba63ef704d7c55dfb179053b7",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 306.8457000000001,
+              "r": 1024.9620000000027,
+              "b": 266.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              184
+            ]
+          }
+        ]
+      },
+      "#/texts/26": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "b84538a01266cd28ed9067019d2bf84831e7e478cb8fb97f2cb5d9b3f92c98e4",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 252.84569999999997,
+              "r": 1024.3280000000025,
+              "b": 212.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              119
+            ]
+          }
+        ]
+      },
+      "#/texts/27": {
+        "original_pages": [
+          101
+        ],
+        "excerpt_pages": [
+          2
+        ],
+        "text_sha256": "ef8ffff7721b537ef6fbc092f12c3d745ae1111d88af2eff525524216015c9d6",
+        "provenance": [
+          {
+            "page_no": 2,
+            "bbox": {
+              "l": 105.0,
+              "t": 198.84569999999997,
+              "r": 626.73,
+              "b": 182.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              65
+            ]
+          }
+        ]
+      },
+      "#/texts/29": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "48d866ffeb81a07b83910a263841458fff4e02cd4e7002b0f9dd865bad70fc64",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 80.0,
+              "t": 943.1534,
+              "r": 276.45120000000003,
+              "b": 925.5946008928572,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              18
+            ]
+          }
+        ]
+      },
+      "#/texts/31": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "5efb0553a41505c1d0d8fa57ae9e70e88b077bff3b49522aae29549c9967a664",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 130.0,
+              "t": 877.8614,
+              "r": 1091.6720000000028,
+              "b": 813.9156388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              303
+            ]
+          }
+        ]
+      },
+      "#/texts/32": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "118d7d43424501611d336bb40c77ac87f6186b2a904df87e0997b0fbad58724e",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 130.0,
+              "t": 795.8614,
+              "r": 726.9380000000012,
+              "b": 779.9156388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              72
+            ]
+          }
+        ]
+      },
+      "#/texts/33": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 80.0,
+              "t": 761.1534,
+              "r": 264.4744,
+              "b": 743.5946008928572,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              18
+            ]
+          }
+        ]
+      },
+      "#/texts/34": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "5616abe619be97656348638613aa4fae5d56b7c8e9909f331914e4a71efda654",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 690.8457,
+              "r": 1041.4940000000015,
+              "b": 650.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              148
+            ]
+          }
+        ]
+      },
+      "#/texts/35": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "24f74cdc1a65851e9a5765968dfd65dd7a0ee681262ac6ba16936bbe68bdf4bc",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 642.8457,
+              "r": 459.50199999999944,
+              "b": 626.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              42
+            ]
+          }
+        ]
+      },
+      "#/texts/36": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "b5e32785d77e3a8634f5686f945d0dbee1be3dc24ffd1f2cd7073db835d0a7fb",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 618.8457,
+              "r": 434.4459999999993,
+              "b": 602.8999388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              41
+            ]
+          }
+        ]
+      },
+      "#/texts/37": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "c221866e12fabee0b9ec20a015347bdcb79708a81ccee7d38fbb95fbf846a0ab",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 130.0,
+              "t": 551.1284999999999,
+              "r": 1052.120000000003,
+              "b": 511.18273887587816,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              125
+            ]
+          }
+        ]
+      },
+      "#/texts/38": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "3b1327f218699fcc3536a4d93c5f11868c45cf761bdb0e6154ecb1a37981df7d",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 80.0,
+              "t": 491.42869999999994,
+              "r": 196.31180000000003,
+              "b": 473.8699008928571,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              12
+            ]
+          }
+        ]
+      },
+      "#/texts/39": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "c24a2c0ea0b3267c97ae49b9d89caefaf92c2d1b461ab7e425326b5f515f3b56",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 80.0,
+              "t": 460.1367,
+              "r": 544.6859999999997,
+              "b": 444.19093887587815,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              58
+            ]
+          }
+        ]
+      },
+      "#/texts/40": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "c93f183cc2b4f7239c5aa3995aed8105c0c14b77aa1260f3294393c64b9fc338",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 394.6210000000001,
+              "r": 350.156,
+              "b": 378.6584553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              25
+            ]
+          }
+        ]
+      },
+      "#/texts/41": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "5ab277b6dbf151388ca0e4e6b27f2b322153bb473c8eb4504e3efc955f4fde09",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 360.6210000000001,
+              "r": 1060.807999999998,
+              "b": 344.6752388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              114
+            ]
+          }
+        ]
+      },
+      "#/texts/42": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "2348918864f816a301f7bef2fa2042050c79ffdb5820308f1b26d4a90747e012",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 326.6210000000001,
+              "r": 728.3480000000006,
+              "b": 310.6752388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              73
+            ]
+          }
+        ]
+      },
+      "#/texts/43": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "7886c7a6a3651fc1c1d5b9a0d27ca4fce801dbbe1f29b25437548670b2f3f7ed",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 292.6210000000001,
+              "r": 374.43199999999973,
+              "b": 276.6752388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              31
+            ]
+          }
+        ]
+      },
+      "#/texts/44": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "a39312bc532503c87b54e775d6f57a867ef0f9e98460078a432e6034068eb849",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 258.621,
+              "r": 221.9,
+              "b": 242.65845535714288,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              13
+            ]
+          }
+        ]
+      },
+      "#/texts/45": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "07572ed7b875d426de9f10d2211890547c31fddbd2073ff202ce2b1c1b12af23",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 224.62099999999998,
+              "r": 349.1899999999997,
+              "b": 208.67523887587822,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              29
+            ]
+          }
+        ]
+      },
+      "#/texts/46": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "7841421050fc92a985394fd7b8172f6bc6b6ef43130f0cf98447e42c957a4152",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 190.62099999999998,
+              "r": 330.9599999999998,
+              "b": 174.67523887587822,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              24
+            ]
+          }
+        ]
+      },
+      "#/texts/47": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "0c267f8b677ec283bfeebdb3b792312193ac777e109ec138faa3063ed0143885",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 105.0,
+              "t": 156.62099999999998,
+              "r": 283.9599999999998,
+              "b": 140.67523887587822,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              21
+            ]
+          }
+        ]
+      },
+      "#/texts/48": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "a42a997cc91228f569510cd5f0fb4d33615b1d76e6cf759565dd0f06056eb142",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 914.9122,
+              "r": 1328.9874000000011,
+              "b": 898.9496553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              18
+            ]
+          }
+        ]
+      },
+      "#/texts/49": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "ffa23462ffcdc7d3a603c169a92fa948663316418b39e1b5718e2659a84e7301",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 880.9122,
+              "r": 1814.1634000000056,
+              "b": 840.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              138
+            ]
+          }
+        ]
+      },
+      "#/texts/50": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "685e9553cab94cff5cfb0f1fe67fbd9750da72ca977180f1fb7d8e1108fcd684",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 822.9122,
+              "r": 1781.8734000000047,
+              "b": 782.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              108
+            ]
+          }
+        ]
+      },
+      "#/texts/51": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "0c267f8b677ec283bfeebdb3b792312193ac777e109ec138faa3063ed0143885",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 764.9122,
+              "r": 1336.0434000000014,
+              "b": 748.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              21
+            ]
+          }
+        ]
+      },
+      "#/texts/52": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "6a8590acf456deba3f1304a2cfed19ff635b69f00a70bbca1a12f8ec7fa4da53",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 730.9122,
+              "r": 1565.8674000000024,
+              "b": 714.9496553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              45
+            ]
+          }
+        ]
+      },
+      "#/texts/53": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "07572ed7b875d426de9f10d2211890547c31fddbd2073ff202ce2b1c1b12af23",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 696.9122,
+              "r": 1401.263400000002,
+              "b": 680.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              30
+            ]
+          }
+        ]
+      },
+      "#/texts/54": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "7841421050fc92a985394fd7b8172f6bc6b6ef43130f0cf98447e42c957a4152",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 662.9122,
+              "r": 1383.043400000002,
+              "b": 646.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              25
+            ]
+          }
+        ]
+      },
+      "#/texts/55": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "0c267f8b677ec283bfeebdb3b792312193ac777e109ec138faa3063ed0143885",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 628.9122,
+              "r": 1336.0434000000014,
+              "b": 612.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              22
+            ]
+          }
+        ]
+      },
+      "#/texts/56": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "1b8e439050610278c11e96577c30d43717e9faac66fb142fb77ccc46c5e99a0a",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 594.9122,
+              "r": 1217.4434000000003,
+              "b": 578.9496553571429,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              7
+            ]
+          }
+        ]
+      },
+      "#/texts/57": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "a8ecb131bb39498a49e3dad614a6888301520eb04b9a16c7777f73dac06f38b5",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 560.9122,
+              "r": 1417.7494000000024,
+              "b": 544.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              33
+            ]
+          }
+        ]
+      },
+      "#/texts/58": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "7841421050fc92a985394fd7b8172f6bc6b6ef43130f0cf98447e42c957a4152",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 526.9122,
+              "r": 1383.043400000002,
+              "b": 510.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              25
+            ]
+          }
+        ]
+      },
+      "#/texts/59": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "143a338b0f5172b0025a96bc3e766d1ddc6088379daf1d2dcbc3e012b31ee318",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1152.0834,
+              "t": 492.9122,
+              "r": 1811.135399999995,
+              "b": 452.9664388758782,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              156
+            ]
+          }
+        ]
+      },
+      "#/texts/60": {
+        "original_pages": [
+          102
+        ],
+        "excerpt_pages": [
+          3
+        ],
+        "text_sha256": "1606470dd318b8f8b13f9ebbc6c221e5e6bc6732c9fc5d799171d90e5b98bfd5",
+        "provenance": [
+          {
+            "page_no": 3,
+            "bbox": {
+              "l": 1177.0828000000001,
+              "t": 400.2341,
+              "r": 1803.7614000000044,
+              "b": 336.28833887587825,
+              "coord_origin": "BOTTOMLEFT"
+            },
+            "charspan": [
+              0,
+              182
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "execution": {
+    "observed_model": "GPT-6.1 Sol",
+    "observed_effort": "Moyen / Moyenne, 2 sur 5",
+    "generation_attempts": 1,
+    "fast_mode": false,
+    "execution_mode": "subscription_interface"
+  },
+  "local_artifacts": {
+    "raw_extraction_sha256": "90b49c5674024ffcb68dd6ca7e2339f9b16f8c7b0b0c0f54c382dd6a0fb6751b",
+    "raw_extraction_claim_count": 32,
+    "prompt_sha256": "2c0e6670ab0600f337cea9a8260fc721f4ca133a2129c78963f992e8faf763ff",
+    "manual_prompt_sha256": "523753cf4b8601730365a9259cee22a3e6cf9aebf744aa1a735324fb2e6b7e0f",
+    "human_review_sha256": "e34d2aac2c2490ad0a6382e935ce5d11c2e7744a7d60903b347867042ce0341f",
+    "assistant_audit_sha256": "de31e24a7737ef9e8c42340ac885c53ff75446025520b1244a8265687d4579e6",
+    "final_checks_sha256": "f8ccdac080e07498abb53a82d9e0636e91a3adebe0810bca095c5d0869febcb8",
+    "reviewed_candidate_bytes_sha256": "dce4da6a210dafb65980d978cf94ad39bafda1186ad74e879743a4373494e2eb"
+  },
+  "lineage": {
+    "candidate_version_sha256": {
+      "v2": "121f503d7e13447a0fa488b83f12ba7ea133d0551523da13d6937be26b1c2661",
+      "v3": "01951cfc9df074e2a0d52caae80de9ed86820f4468f39350999056855990acfa",
+      "v4": "7bc8e8751b204c9541a573055d2298ecd16ac88b00fd375e5fe4767a8ab5a10c",
+      "v5": "dce4da6a210dafb65980d978cf94ad39bafda1186ad74e879743a4373494e2eb"
+    },
+    "modified_original_claim_ids": [
+      "c1",
+      "c3",
+      "c4",
+      "c12",
+      "c13",
+      "c16",
+      "c23",
+      "c27",
+      "c28",
+      "c31",
+      "c32"
+    ],
+    "added_claim_ids": [
+      "c33"
+    ],
+    "review_notes": [
+      {
+        "claim_id": "c1",
+        "source_ref": "#/texts/6",
+        "original_page": 100,
+        "note_type": "editorial_observation_not_source_statement",
+        "note": "Les produits sont nommés sans le suffixe Xtra dans ce passage. Il s’agit d’une observation sur les noms, pas d’une affirmation textuelle de Cytiva ; elle est retirée du statement et conservée uniquement comme note de revue."
+      },
+      {
+        "claim_id": "c13",
+        "source_ref": "#/texts/26",
+        "original_page": 101,
+        "note_type": "editorial_observation_not_source_statement",
+        "note": "Le passage ne précise aucun seuil numérique pour faible concentration ou grand volume, ni la durée supplémentaire. Cette observation de revue est retirée du statement ; elle n’est pas une phrase du manuel."
+      },
+      {
+        "claim_id": "c23",
+        "source_refs": [
+          "#/texts/40",
+          "#/texts/41",
+          "#/texts/42",
+          "#/texts/43"
+        ],
+        "original_page": 102,
+        "note_type": "editorial_observation_not_source_statement",
+        "note": "Ces étapes sont celles de la préparation des billes, et non un protocole complet de purification. Il s’agit d’une observation de revue sur la portée, pas d’une phrase du manuel ; elle est retirée du statement. La portée structurée préparation des billes reste inchangée."
+      }
+    ],
+    "curation": "Candidate content copied with LF line endings for Git; original byte hash retained separately. Human decisions selected without messages/events or machine-specific paths. Per-claim hashes and previous decisions unchanged."
+  },
+  "checks": {
+    "local_structural_validation": {
+      "structural_pass": true,
+      "errors": [],
+      "semantic_validation": "not_performed",
+      "publication_allowed": false
+    },
+    "condition_probes": [
+      {
+        "claim_id": "c4",
+        "context": {
+          "liquid_volume": {
+            "value": "1.49",
+            "unit": "mL"
+          }
+        },
+        "expected": false,
+        "actual": false
+      },
+      {
+        "claim_id": "c4",
+        "context": {
+          "liquid_volume": {
+            "value": "1.5",
+            "unit": "mL"
+          }
+        },
+        "expected": false,
+        "actual": false
+      },
+      {
+        "claim_id": "c4",
+        "context": {
+          "liquid_volume": {
+            "value": "1.51",
+            "unit": "mL"
+          }
+        },
+        "expected": true,
+        "actual": true
+      },
+      {
+        "claim_id": "c26",
+        "context": {
+          "sample_volume": {
+            "value": "299",
+            "unit": "µL"
+          }
+        },
+        "expected": true,
+        "actual": true
+      },
+      {
+        "claim_id": "c26",
+        "context": {
+          "sample_volume": {
+            "value": "300",
+            "unit": "µL"
+          }
+        },
+        "expected": false,
+        "actual": false
+      },
+      {
+        "claim_id": "c26",
+        "context": {
+          "sample_volume": {
+            "value": "301",
+            "unit": "µL"
+          }
+        },
+        "expected": false,
+        "actual": false
+      },
+      {
+        "claim_id": "c3",
+        "context": {},
+        "expected": null,
+        "actual": null
+      },
+      {
+        "claim_id": "c12",
+        "context": {},
+        "expected": null,
+        "actual": null
+      },
+      {
+        "claim_id": "c13",
+        "context": {},
+        "expected": null,
+        "actual": null
+      },
+      {
+        "claim_id": "c14",
+        "context": {},
+        "expected": null,
+        "actual": null
+      },
+      {
+        "claim_id": "c16",
+        "context": {},
+        "expected": null,
+        "actual": null
+      },
+      {
+        "claim_id": "c17",
+        "context": {},
+        "expected": null,
+        "actual": null
+      },
+      {
+        "claim_id": "c31",
+        "context": {},
+        "expected": null,
+        "actual": null
+      }
+    ],
+    "source_text_redistributed": false
+  },
+  "limitations": {
+    "publication_allowed": false,
+    "scientific_validation": "not_performed",
+    "exhaustiveness_validation": "not_performed",
+    "independent_held_out_test": false,
+    "source_corpus_required_for_lexical_replay": true
+  },
+  "package_hash_policy": "sha256_utf8_lf"
+}

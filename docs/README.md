@@ -23,9 +23,12 @@
   revising the plan. Only ROADMAP.md is the active plan.
 
 Manuals, raw conversions, source excerpts, full model responses, detailed generated
-audits and review decisions remain in local ignored directories. A fresh clone
-therefore has the code and curated findings, not the author's local evidence bundle.
+audits and full review journals remain in local ignored directories. A selected
+[r2 review export](../experiments/cytiva/reviewed-r2/README.md) contains the corrected
+candidate, 33 decisions with reservations and provenance hashes, without PDF or full
+source text. A fresh clone has that curated evidence, not the local source bundle.
 The experiment documentation distinguishes synthetic tests from checks requiring
-that bundle. No prior human approval is transferred by moving files.
+that bundle. Decisions apply only to the candidate and individual claim hashes
+recorded in the export; they do not authorize publication or approve modified claims.
 
-All four lots are merged (PRs #3–#6), including the claim-contract command compatibility update. The README is merged through PR #7. The final integrated revision passed 106 principal tests; seven historical checks also passed with the local evidence bundle and explicitly skip without it. The old pages 100–102 bundle uses the earlier prompt. The local `pages-100-102-v02-r2` package is now prepared and verified with the corrected prompt; generation and human review remain pending. See the [experiment guide](../experiments/cytiva/README.md) for the workflow.
+All four lots are merged (PRs #3–#6), including the claim-contract command compatibility update. The README is merged through PR #7. That integrated revision passed 106 principal tests; seven historical checks also passed with the local evidence bundle and explicitly skip without it. The old pages 100–102 bundle uses the earlier prompt and remains unexecuted. The corrected-prompt r2 generation and human review are complete (19 validated, 14 with reservations, none pending). Migration into the review UI and publication remain pending. See the [experiment guide](../experiments/cytiva/README.md) for verification commands.

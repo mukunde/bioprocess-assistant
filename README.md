@@ -33,10 +33,13 @@ or fund the chatbot's API calls.
 
 **Included in a fresh clone:** consolidated [documentation](docs/README.md),
 [Cytiva experiment tooling](experiments/cytiva/README.md) and the
-`ingestion.prepare_claim_test` PDF test launcher. The local pages 100–102 package
-was prepared with the earlier prompt; it has not been executed.
-The updated prompt requires a new versioned package, preserving previous frozen
-inputs. Manuals, conversions and model responses stay in ignored local directories.
+`ingestion.prepare_claim_test` PDF test launcher. The corrected-prompt r2 test on
+pages 100–102 is complete: **33 reviewed claims, 19 validated and 14 validated with
+reservations**. The [curated review package](experiments/cytiva/reviewed-r2/README.md)
+includes the final candidate, decisions, provenance hashes and offline checks.
+It is development evidence, without scientific validation, exhaustive recall scores
+or publication authorization. The earlier-prompt package remains unexecuted.
+Manuals, conversions, raw responses and full review journals remain local and ignored.
 
 ## Live demo
 

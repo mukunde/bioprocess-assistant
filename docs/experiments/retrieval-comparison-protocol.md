@@ -10,7 +10,7 @@ Les décisions admissibles sont : conserver la recherche actuelle ; ajouter une 
 
 ## 2. Prérequis et périmètre réellement comparable
 
-- Terminer la génération puis la revue humaine des extractions du paquet `pages-100-102-v02-r2`. Ce paquet est préparé avec 59 éléments, mais aucune réponse n'a encore été produite. Les pages 97–99 et les fiches déjà rédigées sont des données de développement, pas des références humaines approuvées.
+- Génération et revue humaine du paquet `pages-100-102-v02-r2` terminées le 20 octobre 2026 : 33 claims corrigés, 19 validés et 14 avec réserves. Le [paquet sélectionné](../../experiments/cytiva/reviewed-r2/README.md) conserve les décisions et les empreintes ; aucune publication n'est autorisée. Ces pages restent des données de développement, sans référence exhaustive des omissions. Les pages 97–99 et les anciennes fiches ne deviennent pas approuvées par cette revue r2.
 - Constituer un ensemble de claims approuvés et de preuves localisées, incluant de vrais symptômes/causes/actions. Les pages 100–102, principalement procédurales, ne suffisent pas à mesurer la couverture causale ; ajouter des pages de dépannage pertinentes si nécessaire, avant de figer les questions.
 - Ne pas assimiler un contrôle lexical réussi à une approbation scientifique. L'utilisateur vérifie la fidélité documentaire ; l'aptitude opérationnelle industrielle reste hors périmètre.
 - Figer PDF/édition, conversion, pages, sources ambiguës, claims, décisions humaines et liens claim-preuve par SHA-256. Aucun résultat de référence ni verdict de test n'entre dans les index.

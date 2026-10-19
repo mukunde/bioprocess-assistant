@@ -1,0 +1,2447 @@
+{
+  "schema_version": "0.2",
+  "entities": [
+    {
+      "id": "p1",
+      "kind": "Product",
+      "name": "Protein A Mag Sepharose Xtra",
+      "product_kind": "magnetic_beads",
+      "evidence_refs": [
+        "#/texts/1",
+        "#/texts/2"
+      ]
+    },
+    {
+      "id": "p2",
+      "kind": "Product",
+      "name": "Protein G Mag Sepharose Xtra",
+      "product_kind": "magnetic_beads",
+      "evidence_refs": [
+        "#/texts/1",
+        "#/texts/2"
+      ]
+    },
+    {
+      "id": "p3",
+      "kind": "Product",
+      "name": "Protein A Mag Sepharose",
+      "product_kind": "magnetic_beads",
+      "evidence_refs": [
+        "#/texts/6"
+      ]
+    },
+    {
+      "id": "p4",
+      "kind": "Product",
+      "name": "Protein G Mag Sepharose",
+      "product_kind": "magnetic_beads",
+      "evidence_refs": [
+        "#/texts/6"
+      ]
+    },
+    {
+      "id": "p5",
+      "kind": "Product",
+      "name": "PD MiniTrap G-25",
+      "product_kind": "prepacked_column",
+      "evidence_refs": [
+        "#/texts/31"
+      ]
+    },
+    {
+      "id": "p6",
+      "kind": "Product",
+      "name": "HiTrap Desalting",
+      "product_kind": "prepacked_column",
+      "evidence_refs": [
+        "#/texts/31"
+      ]
+    },
+    {
+      "id": "s1",
+      "kind": "ProcessStep",
+      "name": "Immunoprecipitation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/6"
+      ]
+    },
+    {
+      "id": "s2",
+      "kind": "ProcessStep",
+      "name": "Antibody purification",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/2",
+        "#/texts/38",
+        "#/texts/39"
+      ]
+    },
+    {
+      "id": "s3",
+      "kind": "ProcessStep",
+      "name": "General magnetic separation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/12"
+      ]
+    },
+    {
+      "id": "s4",
+      "kind": "ProcessStep",
+      "name": "Dispensing the medium slurry",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/15"
+      ]
+    },
+    {
+      "id": "s5",
+      "kind": "ProcessStep",
+      "name": "Handling of liquid",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/19"
+      ]
+    },
+    {
+      "id": "s6",
+      "kind": "ProcessStep",
+      "name": "Incubation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/23"
+      ]
+    },
+    {
+      "id": "s7",
+      "kind": "ProcessStep",
+      "name": "Sample preparation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/29"
+      ]
+    },
+    {
+      "id": "s8",
+      "kind": "ProcessStep",
+      "name": "Buffer preparation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/33"
+      ]
+    },
+    {
+      "id": "s9",
+      "kind": "ProcessStep",
+      "name": "Magnetic bead preparation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/40"
+      ]
+    },
+    {
+      "id": "s10",
+      "kind": "ProcessStep",
+      "name": "Equilibration",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/44"
+      ]
+    },
+    {
+      "id": "s11",
+      "kind": "ProcessStep",
+      "name": "Sample application",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/48"
+      ]
+    },
+    {
+      "id": "s12",
+      "kind": "ProcessStep",
+      "name": "Washing",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/52"
+      ]
+    },
+    {
+      "id": "s13",
+      "kind": "ProcessStep",
+      "name": "Elution",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/56"
+      ]
+    },
+    {
+      "id": "a1",
+      "kind": "Action",
+      "name": "Use the specified non-Xtra beads for immunoprecipitation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/6"
+      ]
+    },
+    {
+      "id": "a2",
+      "kind": "Action",
+      "name": "Use Xtra magnetic beads only once",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/10"
+      ]
+    },
+    {
+      "id": "a3",
+      "kind": "Action",
+      "name": "Use the specified tubes and magnetic rack",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/11"
+      ]
+    },
+    {
+      "id": "a4",
+      "kind": "Action",
+      "name": "Remove the magnet before adding liquid",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/13",
+        "#/texts/21"
+      ]
+    },
+    {
+      "id": "a5",
+      "kind": "Action",
+      "name": "Insert and retain the magnet for liquid removal",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/14",
+        "#/texts/20"
+      ]
+    },
+    {
+      "id": "a6",
+      "kind": "Action",
+      "name": "Homogenize and dispense the medium slurry",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/16",
+        "#/texts/17",
+        "#/texts/18"
+      ]
+    },
+    {
+      "id": "a7",
+      "kind": "Action",
+      "name": "Resuspend beads after adding liquid",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/22"
+      ]
+    },
+    {
+      "id": "a8",
+      "kind": "Action",
+      "name": "Manually invert the magnetic rack when processing multiple samples",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/22"
+      ]
+    },
+    {
+      "id": "a9",
+      "kind": "Action",
+      "name": "Keep beads resuspended during incubation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/24"
+      ]
+    },
+    {
+      "id": "a10",
+      "kind": "Action",
+      "name": "Incubate at the stated temperature and duration",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/25"
+      ]
+    },
+    {
+      "id": "a11",
+      "kind": "Action",
+      "name": "Increase incubation time if necessary for low-concentration or large-volume samples",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/26"
+      ]
+    },
+    {
+      "id": "a12",
+      "kind": "Action",
+      "name": "Use a pipette to remove liquid from the lid if needed",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/27"
+      ]
+    },
+    {
+      "id": "a13",
+      "kind": "Action",
+      "name": "Check sample pH before application",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/31"
+      ]
+    },
+    {
+      "id": "a14",
+      "kind": "Action",
+      "name": "Adjust sample pH if necessary",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/31"
+      ]
+    },
+    {
+      "id": "a15",
+      "kind": "Action",
+      "name": "Clarify the sample if needed before application",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/32"
+      ]
+    },
+    {
+      "id": "a16",
+      "kind": "Action",
+      "name": "Use buffers with the stated compositions",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/34",
+        "#/texts/35",
+        "#/texts/36"
+      ]
+    },
+    {
+      "id": "a17",
+      "kind": "Action",
+      "name": "Use high-purity water and chemicals for buffer preparation",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/37"
+      ]
+    },
+    {
+      "id": "a18",
+      "kind": "Action",
+      "name": "Filter buffers before use",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/37"
+      ]
+    },
+    {
+      "id": "a19",
+      "kind": "Action",
+      "name": "Prepare magnetic beads following protocol steps 1–3",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/41",
+        "#/texts/42",
+        "#/texts/43"
+      ]
+    },
+    {
+      "id": "a20",
+      "kind": "Action",
+      "name": "Equilibrate following protocol steps 4–6",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/45",
+        "#/texts/46",
+        "#/texts/47"
+      ]
+    },
+    {
+      "id": "a21",
+      "kind": "Action",
+      "name": "Apply sample immediately after equilibration",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/49"
+      ]
+    },
+    {
+      "id": "a22",
+      "kind": "Action",
+      "name": "Dilute samples below the specified volume before application",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/49"
+      ]
+    },
+    {
+      "id": "a23",
+      "kind": "Action",
+      "name": "Resuspend, incubate and remove liquid following protocol steps 8–9",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/50",
+        "#/texts/51"
+      ]
+    },
+    {
+      "id": "a24",
+      "kind": "Action",
+      "name": "Perform the washing sequence twice in total",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/52",
+        "#/texts/53",
+        "#/texts/54",
+        "#/texts/55"
+      ]
+    },
+    {
+      "id": "a25",
+      "kind": "Action",
+      "name": "Elute and collect following protocol steps 13–15",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/57",
+        "#/texts/58",
+        "#/texts/59"
+      ]
+    },
+    {
+      "id": "a26",
+      "kind": "Action",
+      "name": "Repeat elution if desired",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/59"
+      ]
+    },
+    {
+      "id": "a27",
+      "kind": "Action",
+      "name": "Add Tris-HCl to antibody-fraction collection tubes",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/60"
+      ]
+    },
+    {
+      "id": "a28",
+      "kind": "Action",
+      "name": "Match the sample pH to the binding-buffer pH",
+      "product_kind": null,
+      "evidence_refs": [
+        "#/texts/31"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "c1",
+      "subject_id": "a1",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "For immunoprecipitation, use of Protein A Mag Sepharose and Protein G Mag Sepharose is recommended.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p3",
+          "p4"
+        ],
+        "process_step_ids": [
+          "s1"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/6"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/6"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c2",
+      "subject_id": "a2",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Protein A Mag Sepharose Xtra and Protein G Mag Sepharose Xtra are intended for single use only.",
+      "force": "required",
+      "source_role": "precaution",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s2"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/2",
+          "#/texts/9",
+          "#/texts/10"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/10"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c3",
+      "subject_id": "a3",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "The protocol recommends 1.5 mL Eppendorf tubes and MagRack 6; this recommendation must be read together with the same paragraph's recommendation of MagRack maxi for volumes above 1.5 mL.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s2"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/2",
+          "#/texts/9",
+          "#/texts/11"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "equipment_selection_context",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "1.5 mL Eppendorf tubes and MagRack 6 should be used in the protocol. When using volumes above 1.5 mL, for example larger volumes up to 50 mL, MagRack maxi is recommended."
+              ],
+              "unit": null,
+              "source_text": "1.5 mL Eppendorf tubes and MagRack 6 should be used in the protocol. When using volumes above 1.5 mL, for example larger volumes up to 50 mL, MagRack maxi is recommended.",
+              "evidence_refs": [
+                "#/texts/11"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c3p1",
+          "name": "Tube capacity",
+          "value_text": "1.5 mL Eppendorf tubes",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "1.5"
+              ],
+              "unit": "mL",
+              "denominator": null,
+              "material": null,
+              "evidence_refs": [
+                "#/texts/11"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/11"
+          ]
+        },
+        {
+          "id": "c3p2",
+          "name": "Magnetic rack",
+          "value_text": "MagRack 6",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/11"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/11"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c4",
+      "subject_id": "a3",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "When using volumes above 1.5 mL, for example larger volumes up to 50 mL, MagRack maxi is recommended.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s2"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/2",
+          "#/texts/9",
+          "#/texts/11"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "liquid_volume",
+              "role": "applicability",
+              "operator": "gt",
+              "value_kind": "decimal",
+              "values": [
+                "1.5"
+              ],
+              "unit": "mL",
+              "source_text": "When using volumes above 1.5 mL",
+              "evidence_refs": [
+                "#/texts/11"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c4p1",
+          "name": "Magnetic rack",
+          "value_text": "MagRack maxi",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/11"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/11"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c5",
+      "subject_id": "a4",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Remove the magnet from the magnetic rack before adding or applying liquid.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s3",
+          "s5"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/12",
+          "#/texts/19"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/13",
+        "#/texts/21"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c6",
+      "subject_id": "a5",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Insert the magnet before removing liquid; use the magnetic rack with the magnet in place for each liquid removal step.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s3",
+          "s5"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/12",
+          "#/texts/19"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/14",
+        "#/texts/20"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c7",
+      "subject_id": "a6",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Before dispensing, make the medium slurry homogeneous by vortexing. Immediately after resuspension, pipette the required amount into the desired tube. Repeat resuspension between each pipetting from the medium slurry vial.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s4"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/15"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c7p1",
+          "name": "First operation",
+          "value_text": "Prior to dispensing the medium slurry, make sure it is homogeneous by vortexing",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/16"
+          ]
+        },
+        {
+          "id": "c7p2",
+          "name": "Next operation and timing",
+          "value_text": "When the medium slurry is resuspended, immediately pipette the required amount of medium slurry into the desired tube",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/17"
+          ]
+        },
+        {
+          "id": "c7p3",
+          "name": "Resuspension between withdrawals",
+          "value_text": "Repeat the resuspension step between each pipetting from the medium slurry vial",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/18"
+          ]
+        }
+      ],
+      "parameter_logic": "sequence",
+      "evidence_refs": [
+        "#/texts/16",
+        "#/texts/17",
+        "#/texts/18"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c8",
+      "subject_id": "a7",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "After adding liquid, resuspend the beads by vortexing or manual inversion of the tube.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s5"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/19"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c8p1",
+          "name": "Resuspension method",
+          "value_text": "vortexing after addition of liquid",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/22"
+          ]
+        },
+        {
+          "id": "c8p2",
+          "name": "Resuspension method",
+          "value_text": "manual inversion of the tube after addition of liquid",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/22"
+          ]
+        }
+      ],
+      "parameter_logic": "any",
+      "evidence_refs": [
+        "#/texts/22"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c9",
+      "subject_id": "a8",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "When processing multiple samples, manual inversion of the magnetic rack is recommended for resuspension after adding liquid.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s5"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/19"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "sample_processing",
+              "role": "applicability",
+              "operator": "equals",
+              "value_kind": "categorical",
+              "values": [
+                "multiple_samples"
+              ],
+              "unit": null,
+              "source_text": "When processing multiple samples",
+              "evidence_refs": [
+                "#/texts/22"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/22"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c10",
+      "subject_id": "a9",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "During incubation, make sure the magnetic beads are well resuspended and kept in solution by end-over-end mixing or a benchtop shaker.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s6"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/23"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c10p1",
+          "name": "Mixing method",
+          "value_text": "end-over-end mixing during incubation",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/24"
+          ]
+        },
+        {
+          "id": "c10p2",
+          "name": "Mixing method",
+          "value_text": "using a benchtop shaker during incubation",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/24"
+          ]
+        }
+      ],
+      "parameter_logic": "any",
+      "evidence_refs": [
+        "#/texts/24"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c11",
+      "subject_id": "a10",
+      "predicate": "DESCRIPTIVE",
+      "object_id": null,
+      "statement": "Incubation steps generally take place at room temperature.",
+      "force": "descriptive",
+      "source_role": "general_description",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s6"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/23"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c11p1",
+          "name": "Usual incubation temperature",
+          "value_text": "generally at room temperature",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/25"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/25"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c12",
+      "subject_id": "a10",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Incubation can take place at +4°C overnight if this is the recommended storage condition for the specific sample.",
+      "force": "possible",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s6"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/23"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "sample_recommended_storage_condition",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "if this is the recommended storage condition for the specific sample"
+              ],
+              "unit": null,
+              "source_text": "if this is the recommended storage condition for the specific sample",
+              "evidence_refs": [
+                "#/texts/25"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c12p1",
+          "name": "Conditional incubation temperature and duration",
+          "value_text": "+4°C over night",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "4"
+              ],
+              "unit": "°C",
+              "denominator": null,
+              "material": null,
+              "evidence_refs": [
+                "#/texts/25"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/25"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/25"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c13",
+      "subject_id": "a11",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "When purifying samples of low concentrations or large volumes, an increase of incubation time might be necessary.",
+      "force": "possible",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s6"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/23"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "sample_concentration",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "low concentrations"
+              ],
+              "unit": null,
+              "source_text": "When purifying samples of low concentrations",
+              "evidence_refs": [
+                "#/texts/26"
+              ]
+            }
+          ]
+        },
+        {
+          "all_of": [
+            {
+              "field": "sample_volume",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "large volumes"
+              ],
+              "unit": null,
+              "source_text": "or large volumes",
+              "evidence_refs": [
+                "#/texts/26"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/26"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c14",
+      "subject_id": "a12",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "If needed, a pipette can be used to remove liquid from the lid.",
+      "force": "possible",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s6"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/9",
+          "#/texts/23"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "need_for_lid_liquid_removal",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "If needed"
+              ],
+              "unit": null,
+              "source_text": "If needed",
+              "evidence_refs": [
+                "#/texts/27"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/27"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c15",
+      "subject_id": "a13",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Check the pH of the sample before applying it to the beads.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s7"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/29"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/31"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c16",
+      "subject_id": "a14",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "If necessary, adjust the sample pH before applying the sample to the beads. Adjustment could be done by diluting with binding buffer, or by buffer exchange using PD MiniTrap G-25 or HiTrap Desalting.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s7"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/29",
+          "#/texts/31"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "need_for_sample_pH_adjustment",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "if necessary"
+              ],
+              "unit": null,
+              "source_text": "adjust if necessary before applying the sample to the beads",
+              "evidence_refs": [
+                "#/texts/31"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c16p1",
+          "name": "Adjustment alternative",
+          "value_text": "diluting the sample with binding buffer",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/31"
+          ]
+        },
+        {
+          "id": "c16p2",
+          "name": "Adjustment alternative",
+          "value_text": "buffer exchange using PD MiniTrap G-25",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/31"
+          ]
+        },
+        {
+          "id": "c16p3",
+          "name": "Adjustment alternative",
+          "value_text": "buffer exchange using HiTrap Desalting",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/31"
+          ]
+        }
+      ],
+      "parameter_logic": "any",
+      "evidence_refs": [
+        "#/texts/31"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c17",
+      "subject_id": "a15",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Clarification of the sample might be needed before applying it to the beads.",
+      "force": "possible",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s7"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/29"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "need_for_sample_clarification",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "Clarification of sample might be needed"
+              ],
+              "unit": null,
+              "source_text": "Clarification of sample might be needed before applying it to the beads.",
+              "evidence_refs": [
+                "#/texts/32"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/32"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c18",
+      "subject_id": "a16",
+      "predicate": "DESCRIPTIVE",
+      "object_id": null,
+      "statement": "The stated binding buffer is PBS: 137 mM sodium chloride, 2.7 mM potassium chloride, 100 mM sodium hydrogen phosphate and 2 mM potassium hydrogen phosphate, pH 7.4.",
+      "force": "descriptive",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s8"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/33"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c18p1",
+          "name": "Binding-buffer sodium chloride",
+          "value_text": "137 mM sodium chloride",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "137"
+              ],
+              "unit": "mM",
+              "denominator": null,
+              "material": "sodium chloride",
+              "evidence_refs": [
+                "#/texts/34"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/34"
+          ]
+        },
+        {
+          "id": "c18p2",
+          "name": "Binding-buffer potassium chloride",
+          "value_text": "2.7 mM potassium chloride",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "2.7"
+              ],
+              "unit": "mM",
+              "denominator": null,
+              "material": "potassium chloride",
+              "evidence_refs": [
+                "#/texts/34"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/34"
+          ]
+        },
+        {
+          "id": "c18p3",
+          "name": "Binding-buffer sodium hydrogen phosphate",
+          "value_text": "100 mM sodium hydrogen phosphate",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "100"
+              ],
+              "unit": "mM",
+              "denominator": null,
+              "material": "sodium hydrogen phosphate",
+              "evidence_refs": [
+                "#/texts/34"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/34"
+          ]
+        },
+        {
+          "id": "c18p4",
+          "name": "Binding-buffer potassium hydrogen phosphate",
+          "value_text": "2 mM potassium hydrogen phosphate",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "2"
+              ],
+              "unit": "mM",
+              "denominator": null,
+              "material": "potassium hydrogen phosphate",
+              "evidence_refs": [
+                "#/texts/34"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/34"
+          ]
+        },
+        {
+          "id": "c18p5",
+          "name": "Binding-buffer pH",
+          "value_text": "pH 7.4",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "7.4"
+              ],
+              "unit": "pH",
+              "denominator": null,
+              "material": "binding buffer",
+              "evidence_refs": [
+                "#/texts/34"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/34"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/34"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c19",
+      "subject_id": "a16",
+      "predicate": "DESCRIPTIVE",
+      "object_id": null,
+      "statement": "The stated elution buffer is 100 mM glycine-HCl, pH 2.8.",
+      "force": "descriptive",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s8"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/33"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c19p1",
+          "name": "Elution-buffer composition",
+          "value_text": "100 mM glycine-HCl, pH 2.8",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "100"
+              ],
+              "unit": "mM",
+              "denominator": null,
+              "material": "glycine-HCl",
+              "evidence_refs": [
+                "#/texts/35"
+              ]
+            },
+            {
+              "comparator": "eq",
+              "values": [
+                "2.8"
+              ],
+              "unit": "pH",
+              "denominator": null,
+              "material": "elution buffer",
+              "evidence_refs": [
+                "#/texts/35"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/35"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/35"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c20",
+      "subject_id": "a16",
+      "predicate": "DESCRIPTIVE",
+      "object_id": null,
+      "statement": "The stated neutralizing buffer is 1 M Tris-HCl, pH 9.0.",
+      "force": "descriptive",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s8"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/33"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c20p1",
+          "name": "Neutralizing-buffer composition",
+          "value_text": "1 M Tris-HCl, pH 9.0",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "1"
+              ],
+              "unit": "M",
+              "denominator": null,
+              "material": "Tris-HCl",
+              "evidence_refs": [
+                "#/texts/36"
+              ]
+            },
+            {
+              "comparator": "eq",
+              "values": [
+                "9.0"
+              ],
+              "unit": "pH",
+              "denominator": null,
+              "material": "neutralizing buffer",
+              "evidence_refs": [
+                "#/texts/36"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/36"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/36"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c21",
+      "subject_id": "a17",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Water and chemicals used for buffer preparation should be of high purity.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s8"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/33"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/37"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c22",
+      "subject_id": "a18",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Filter buffers through a 0.45 μm filter before use.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s8"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/33"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c22p1",
+          "name": "Filter specification",
+          "value_text": "through a 0.45 μm filter before use",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "0.45"
+              ],
+              "unit": "μm",
+              "denominator": null,
+              "material": null,
+              "evidence_refs": [
+                "#/texts/37"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/37"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/37"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c23",
+      "subject_id": "a19",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Protocol steps 1–3: thoroughly mix the medium slurry by vortexing and dispense 100 µL homogeneous slurry into an Eppendorf tube; place the tube in a magnetic rack, for example MagRack 6; then remove the storage solution.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s9"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/40"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c23p1",
+          "name": "Step 1",
+          "value_text": "Mix the medium slurry thoroughly by vortexing. Dispense 100 µL homogenous medium slurry into an Eppendorf tube.",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "100"
+              ],
+              "unit": "µL",
+              "denominator": null,
+              "material": "homogenous medium slurry",
+              "evidence_refs": [
+                "#/texts/41"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/41"
+          ]
+        },
+        {
+          "id": "c23p2",
+          "name": "Step 2",
+          "value_text": "Place the Eppendorf tube in the magnetic rack, for example, MagRack 6.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/42"
+          ]
+        },
+        {
+          "id": "c23p3",
+          "name": "Step 3",
+          "value_text": "Remove the storage solution.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/43"
+          ]
+        }
+      ],
+      "parameter_logic": "sequence",
+      "evidence_refs": [
+        "#/texts/41",
+        "#/texts/42",
+        "#/texts/43"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c24",
+      "subject_id": "a20",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Protocol steps 4–6: add 500 µL binding buffer, resuspend the medium, then remove the liquid.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s10"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/44"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c24p1",
+          "name": "Step 4",
+          "value_text": "Add 500 µL binding buffer.",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "500"
+              ],
+              "unit": "µL",
+              "denominator": null,
+              "material": "binding buffer",
+              "evidence_refs": [
+                "#/texts/45"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/45"
+          ]
+        },
+        {
+          "id": "c24p2",
+          "name": "Step 5",
+          "value_text": "Resuspend the medium.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/46"
+          ]
+        },
+        {
+          "id": "c24p3",
+          "name": "Step 6",
+          "value_text": "Remove the liquid.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/47"
+          ]
+        }
+      ],
+      "parameter_logic": "sequence",
+      "evidence_refs": [
+        "#/texts/45",
+        "#/texts/46",
+        "#/texts/47"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c25",
+      "subject_id": "a21",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Protocol step 7: immediately after equilibration, add 300 µL of sample.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s11"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/48"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c25p1",
+          "name": "Sample application volume and timing",
+          "value_text": "Immediately after equilibration, add 300 µL of sample.",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "300"
+              ],
+              "unit": "µL",
+              "denominator": null,
+              "material": "sample",
+              "evidence_refs": [
+                "#/texts/49"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/49"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/49"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c26",
+      "subject_id": "a22",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "As specified in protocol step 7, if the sample volume is less than 300 µL, dilute it to 300 µL with binding buffer.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s11"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/48"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "sample_volume",
+              "role": "applicability",
+              "operator": "lt",
+              "value_kind": "decimal",
+              "values": [
+                "300"
+              ],
+              "unit": "µL",
+              "source_text": "If the sample volume is less than 300 µL",
+              "evidence_refs": [
+                "#/texts/49"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c26p1",
+          "name": "Final diluted sample volume",
+          "value_text": "dilute to 300 µL with binding buffer",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "300"
+              ],
+              "unit": "µL",
+              "denominator": null,
+              "material": "sample diluted with binding buffer",
+              "evidence_refs": [
+                "#/texts/49"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/49"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/49"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c27",
+      "subject_id": "a23",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Protocol steps 8–9: resuspend the medium and incubate for 30 min with slow end-over-end mixing or by using a benchtop shaker; then remove the liquid.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s11"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/48",
+          "#/texts/50"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c27p1",
+          "name": "Compound instruction: sample application steps 8–9",
+          "value_text": "Resuspend the medium and incubate for 30 min with slow end-over-end mixing or by using a benchtop shaker. Then Remove the liquid.",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "30"
+              ],
+              "unit": "min",
+              "denominator": null,
+              "material": null,
+              "evidence_refs": [
+                "#/texts/50"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/50",
+            "#/texts/51"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/50",
+        "#/texts/51"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c28",
+      "subject_id": "a24",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Perform the washing sequence in protocol steps 10–12 twice in total: add 500 µL binding buffer, resuspend the medium, then remove the liquid.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s12"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/52"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c28p1",
+          "name": "Compound washing instruction: two total cycles of steps 10–12",
+          "value_text": "Washing (perform this step two times totally) Add 500 µL binding buffer. Resuspend the medium. Remove the liquid.",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "2"
+              ],
+              "unit": "times",
+              "denominator": null,
+              "material": null,
+              "evidence_refs": [
+                "#/texts/52"
+              ]
+            },
+            {
+              "comparator": "eq",
+              "values": [
+                "500"
+              ],
+              "unit": "µL",
+              "denominator": null,
+              "material": "binding buffer",
+              "evidence_refs": [
+                "#/texts/53"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/52",
+            "#/texts/53",
+            "#/texts/54",
+            "#/texts/55"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/52",
+        "#/texts/53",
+        "#/texts/54",
+        "#/texts/55"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c29",
+      "subject_id": "a25",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "Protocol steps 13–15: add 100 µL elution buffer, resuspend the medium, then remove and collect the elution fraction.",
+      "force": "required",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s13"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/56"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c29p1",
+          "name": "Step 13",
+          "value_text": "Add 100 µL of elution buffer.",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "100"
+              ],
+              "unit": "µL",
+              "denominator": null,
+              "material": "elution buffer",
+              "evidence_refs": [
+                "#/texts/57"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/57"
+          ]
+        },
+        {
+          "id": "c29p2",
+          "name": "Step 14",
+          "value_text": "Resuspend the medium.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/58"
+          ]
+        },
+        {
+          "id": "c29p3",
+          "name": "Step 15, collection",
+          "value_text": "Remove and collect the elution fraction.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/59"
+          ]
+        }
+      ],
+      "parameter_logic": "sequence",
+      "evidence_refs": [
+        "#/texts/57",
+        "#/texts/58",
+        "#/texts/59"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c30",
+      "subject_id": "a25",
+      "predicate": "DESCRIPTIVE",
+      "object_id": null,
+      "statement": "The collected elution fraction contains the main part of the purified antibody.",
+      "force": "descriptive",
+      "source_role": "general_description",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s13"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/56"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/59"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c31",
+      "subject_id": "a26",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "If desired, repeat the elution.",
+      "force": "possible",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s13"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/56"
+        ]
+      },
+      "condition_groups": [
+        {
+          "all_of": [
+            {
+              "field": "desire_to_repeat_elution",
+              "role": "applicability",
+              "operator": "source_text",
+              "value_kind": "text",
+              "values": [
+                "If desired"
+              ],
+              "unit": null,
+              "source_text": "If desired, repeat the elution.",
+              "evidence_refs": [
+                "#/texts/59"
+              ]
+            }
+          ]
+        }
+      ],
+      "purposes": [],
+      "parameters": [],
+      "parameter_logic": "not_applicable",
+      "evidence_refs": [
+        "#/texts/59"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c32",
+      "subject_id": "a27",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "As a safety measure to preserve the activity of acid-labile antibodies, addition of 1 M Tris-HCl, pH 9.0 to tubes used for collecting antibody-containing fractions is recommended.",
+      "force": "recommended",
+      "source_role": "precaution",
+      "symptom_context": "potential_risk",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s13"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/38",
+          "#/texts/56"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [
+        {
+          "text": "As a safety measure to preserve the activity of acid-labile antibodies.",
+          "evidence_refs": [
+            "#/texts/60"
+          ]
+        }
+      ],
+      "parameters": [
+        {
+          "id": "c32p1",
+          "name": "Collection-tube additive: stock concentration and pH (not an addition volume)",
+          "value_text": "addition of 1 M Tris-HCl, pH 9.0 to tubes used for collecting antibody-containing fractions",
+          "quantities": [
+            {
+              "comparator": "eq",
+              "values": [
+                "1"
+              ],
+              "unit": "M",
+              "denominator": null,
+              "material": "Tris-HCl",
+              "evidence_refs": [
+                "#/texts/60"
+              ]
+            },
+            {
+              "comparator": "eq",
+              "values": [
+                "9.0"
+              ],
+              "unit": "pH",
+              "denominator": null,
+              "material": "Tris-HCl solution",
+              "evidence_refs": [
+                "#/texts/60"
+              ]
+            }
+          ],
+          "evidence_refs": [
+            "#/texts/60"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/60"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    },
+    {
+      "id": "c33",
+      "subject_id": "a28",
+      "predicate": "PROCEDURE",
+      "object_id": null,
+      "statement": "The pH of the sample should equal the pH of the binding buffer.",
+      "force": "recommended",
+      "source_role": "protocol",
+      "symptom_context": "not_applicable",
+      "scope": {
+        "product_ids": [
+          "p1",
+          "p2"
+        ],
+        "process_step_ids": [
+          "s7"
+        ],
+        "status": "resolved",
+        "evidence_refs": [
+          "#/texts/1",
+          "#/texts/29",
+          "#/texts/31"
+        ]
+      },
+      "condition_groups": [],
+      "purposes": [],
+      "parameters": [
+        {
+          "id": "c33p1",
+          "name": "Recommended sample pH target",
+          "value_text": "The pH of the sample should equal the pH of the binding buffer.",
+          "quantities": [],
+          "evidence_refs": [
+            "#/texts/31"
+          ]
+        }
+      ],
+      "parameter_logic": "all",
+      "evidence_refs": [
+        "#/texts/31"
+      ],
+      "disposition": "review_required",
+      "issue_ids": []
+    }
+  ],
+  "source_issues": []
+}

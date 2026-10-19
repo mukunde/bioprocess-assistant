@@ -10,8 +10,10 @@ Phase 0 is implemented. A first phase 3 ingestion/review implementation is now a
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
 strong-model extraction. Claim contract v0.2 and per-claim quarantine are implemented. The earlier-prompt
 100–102 package remains archived. The local `pages-100-102-v02-r2` package is
-now prepared and verified with 59 elements and the corrected prompt. Generation
-and human review remain pending; see CLAIM-CONTRACT-V02.md.
+reviewed after one subscription generation on 59 source elements: 33 final claims,
+19 validated and 14 validated with reservations (20 October 2026). See the
+[curated review package](../experiments/cytiva/reviewed-r2/README.md).
+Publication, scientific validation and migration into the existing UI remain pending.
 The 97–99 comparison remains a development result, not a general model ranking.
 Migration from the legacy dense template/review database is still pending.
 
@@ -31,9 +33,11 @@ Migration from the legacy dense template/review database is still pending.
   [the fidelity review](experiments/cytiva-v01-fidelity.md).
 - Contract v0.2 separates purpose/conditions, force, quantities and source
   quarantine. The archived 100–102 package contains 59 Docling items from the earlier prompt;
-  it is unexecuted. The corrected-prompt `pages-100-102-v02-r2` package is also
-  prepared and verified (59 elements); generation, documentary review and migration
-  into the existing UI remain pending.
+  it is unexecuted. The corrected-prompt `pages-100-102-v02-r2` package has completed
+  generation and per-claim human documentary review (33 final claims, none pending).
+  This development review is not an exhaustive gold benchmark or a causal retrieval
+  evaluation. Next: preserve decisions/reservations in the migration adapter, annotate
+  coverage and add new passages containing troubleshooting symptoms/causes/actions.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 - Each commit and push requires explicit user approval. See AGENTS.md.

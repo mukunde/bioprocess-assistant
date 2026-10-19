@@ -1,0 +1,315 @@
+{
+  "review_record_version": "1",
+  "candidate": "claims.json",
+  "candidate_sha256": "f6eff88b886fb7c5698c28f9ef34e36e21af89c0e9c8cac0d8287e2a497b27e1",
+  "source_journal_sha256": "e34d2aac2c2490ad0a6382e935ce5d11c2e7744a7d60903b347867042ce0341f",
+  "review_scope": "Documentary fidelity of the identified candidate only; no automated procedure execution or publication authorization.",
+  "review_complete": true,
+  "completed_at_utc": "2026-10-19T22:26:44.881610+00:00",
+  "publication_allowed": false,
+  "summary": {
+    "validated": 19,
+    "validated_with_reservation": 14,
+    "pending": 0
+  },
+  "claims": [
+    {
+      "claim_id": "c1",
+      "claim_sha256": "0837700ebf6a3349bf439337e48d2bde78a60de4a1036f9fd498b00277336608",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T21:55:35.755497+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c2",
+      "claim_sha256": "98ac4450eda16eabdf3d82a25c313e1e49c5e5d25a3fc8f382e9342a03e538fa",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:05:34.945188+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c3",
+      "claim_sha256": "6bab4da5541b46360a6dde9bff45e95d1199a8feb77137e72f64d991b74e5d59",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:16:10.942360+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Limite de représentation : condition textuelle non calculable ; c3 doit être lu avec c4. Le schéma ne porte pas de lien conditionnel formel entre ces claims. Aucune plage opératoire validée n’est déduite de la capacité du tube."
+      ]
+    },
+    {
+      "claim_id": "c4",
+      "claim_sha256": "1ca5b4a4dc86b9a140f7ca7f7e77a3cc470f0ef97a625eca0d024882d16ba880",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:19:17.930203+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "50 mL reste un exemple dans le texte, pas un paramètre obligatoire. La condition est strictement > 1,5 mL. Ce claim n’autorise pas des volumes supérieurs à 50 mL et se lit avec c3."
+      ]
+    },
+    {
+      "claim_id": "c5",
+      "claim_sha256": "41688af649cf82f8b01f271328897103c3aebe03afdc46bd998fe43b929c2f94",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:06:05.797268+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c6",
+      "claim_sha256": "bb1827b926f3b26d3a8402cb1a867938101494deede153289e9a1d30a6966933",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:06:38.638881+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c7",
+      "claim_sha256": "f2264f05cf265c3d9ebd346f4655688b0154b2f031cf4a3f1e43954f8ec7a000",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T22:07:48.012504+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Limite de représentation de la répétition : sequence conserve l’ordre général mais ne formalise pas la remise en suspension entre les prélèvements successifs comme une boucle exécutable. Homogénéiser avant le pipetage puis prélever immédiatement ; aucun volume, temps de vortex ou délai chiffré n’est ajouté."
+      ]
+    },
+    {
+      "claim_id": "c8",
+      "claim_sha256": "39178e514c3175c77f8bde3505b213b537e4398aa63d5b0c60c31bdca9368e11",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:08:21.252448+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c9",
+      "claim_sha256": "7607b88b86e96b60154cdf9027dc4abf7d6d6e34caf94bbe0f7d8e22ecc83878",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:09:35.879895+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c10",
+      "claim_sha256": "01d06e2dbc8920321afb7a270c8b8c0088cd720bc3a24cd927787193cb9906b9",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:11:07.597545+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c11",
+      "claim_sha256": "6d74452a8541c4da0d07642bc5aef699c5f6e65db316ea0f801f8eafeface708",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:11:41.486499+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c12",
+      "claim_sha256": "8fd8158f44fdf4ef4a8df3a8e04f63aa3c0cb9009c11b56502fc69a44be0a603",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:23:34.128200+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Possibilité conditionnelle, non une recommandation générale. La condition de stockage propre à l’échantillon reste inconnue pour l’évaluation automatique ; conserver la clause source sans résoudre le pronom this. +4 °C est conservé ; pendant la nuit reste textuel, sans conversion en heures. Ce claim seul n’autorise pas l’incubation pour un échantillon donné."
+      ]
+    },
+    {
+      "claim_id": "c13",
+      "claim_sha256": "17258b2620144438ce7c229286f7343619f59e3ba7468f2b955d55353f10d111",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T22:14:54.683366+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Les critères faible concentration OU grand volume restent qualitatifs et non calculables ; aucun seuil ni temps d’incubation supplémentaire n’est inventé. L’allongement pourrait être nécessaire, sans obligation systématique."
+      ]
+    },
+    {
+      "claim_id": "c14",
+      "claim_sha256": "972446a235d77380e335a12e0d8e45c46e84a284f5da3c1c26787d9bdd56b812",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T22:15:40.773296+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "La nécessité de retirer le liquide du couvercle doit être appréciée par l’utilisateur. Si nécessaire reste une condition textuelle non calculable ; l’action est une possibilité conditionnelle et non une étape systématique. Aucun volume, type de pipette ou critère déclencheur n’est ajouté."
+      ]
+    },
+    {
+      "claim_id": "c15",
+      "claim_sha256": "7730ace41eb77e6e59982e97eff154875a719a063ba716d5ce298164a2737458",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:16:26.817645+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c16",
+      "claim_sha256": "35bf8d3f5db9e8d4c58fb7a33f666546a5e5c92f57fd8757e823377fc967e11d",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:27:24.103811+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "La nécessité d’ajuster le pH reste une condition textuelle inconnue ; aucune tolérance de pH ni règle de déclenchement n’est inventée. La portée est limitée aux billes Xtra ; les colonnes de dessalage restent des moyens alternatifs. La cible de pH est examinée séparément dans c33, encore en attente."
+      ]
+    },
+    {
+      "claim_id": "c17",
+      "claim_sha256": "170229ccc3ac0f7c4a0b7c063364ecc7ba27516ef92669c5d367c822b8f5d81b",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T22:17:16.406618+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "La nécessité et la méthode de clarification ne peuvent pas être déterminées à partir de ce seul passage. La clarification reste éventuelle, avant application aux billes ; la condition textuelle est non calculable. Aucune méthode, vitesse de centrifugation ou porosité de filtre n’est ajoutée."
+      ]
+    },
+    {
+      "claim_id": "c18",
+      "claim_sha256": "9c667efa697911b1c0ffb81499788efa93e8852f504b4d2fd99f1b1373a37c00",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T22:18:05.469190+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Validation de la fidélité documentaire uniquement, sans validation scientifique indépendante de la formulation. Les quatre concentrations et le pH sont conservés tels qu’imprimés, dont 100 mM de sodium hydrogen phosphate ; aucun remplacement par une autre recette, volume de préparation, état d’hydratation ou calcul de masse n’est ajouté."
+      ]
+    },
+    {
+      "claim_id": "c19",
+      "claim_sha256": "abdbc8e92a08a3a5eb008d447f11d8c21e2654359aa95c157bd45b107666c5ac",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:19:13.940688+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c20",
+      "claim_sha256": "f184f69d27c89f8396aa4f773ee811a6f721eb8562f69b7fa6345a9459818748",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:19:57.586237+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c21",
+      "claim_sha256": "60f9ca09bd4feffcb68720440a8d294470983051fbf9ad98c146378f26a677a6",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:20:56.941734+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c22",
+      "claim_sha256": "8ed15e4585334604fc76a21ff8dc9d6d43e5be050f465301a00afb2748ff410d",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:21:26.966118+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c23",
+      "claim_sha256": "f60789071f3b0c3a53e746034149ee0b87ec7d77010c96ae5999ac4f67936e9b",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:22:41.433580+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c24",
+      "claim_sha256": "60b059d11b104de618281a0f044c66fb9558ee3edd2c006929d4c095dcef52cb",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:23:22.523902+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c25",
+      "claim_sha256": "7c9e676df6686a69e772829ee36ade90af830a319ded5b5f7d113e87b27f1410",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:24:15.148465+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c26",
+      "claim_sha256": "40f1ff0da19dc579ce5eeb94d86ddead5d01870202b0d32706aacb3c14ecfa2a",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:24:54.785591+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c27",
+      "claim_sha256": "8580e8b59096c14cf55660cdd5f0ef951e459a5a65cadb212eb4bfe6430a1abf",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:28:13.099395+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Limite de représentation : instruction composée dans un seul paramètre textuel ; all porte sur cet unique paramètre et ne formalise pas les opérations internes. Le schéma ne représente pas un workflow automatiquement exécutable. Les 30 minutes concernent cette étape d’application de l’échantillon ; les méthodes d’agitation restent alternatives, puis le liquide est retiré."
+      ]
+    },
+    {
+      "claim_id": "c28",
+      "claim_sha256": "5690935c20bfac9a2d344a748dc603cb6cee9cd850241415ba80bfe413e2456c",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:29:26.000272+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Limite de représentation de la boucle : instruction composée dans un unique paramètre textuel ; les valeurs 2 times et 500 µL sont conservées, mais le schéma ne formalise ni la boucle ni son corps comme workflow automatiquement exécutable. Deux cycles au total des étapes 10–12, avec 500 µL de tampon de liaison par cycle ; aucun temps ni volume total calculé ajouté."
+      ]
+    },
+    {
+      "claim_id": "c29",
+      "claim_sha256": "1f2bd9fcde0f2d005426954366dbb49a67435e120a1052f86a0b80f148fe81d2",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:25:24.713203+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c30",
+      "claim_sha256": "937be5b3d0a771026123adf0ed4a21d17d2afcf1fdf90ce1b885deffa5177eac",
+      "decision": "validated",
+      "decided_at_utc": "2026-10-19T22:26:44.881610+00:00",
+      "reviewer": "user",
+      "reservations": []
+    },
+    {
+      "claim_id": "c31",
+      "claim_sha256": "c27609a2067156ad57333ecbc8dc32c940b2ee33a635ea85784321d6de133021",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:30:15.141197+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "La répétition de l’élution reste facultative et soumise au choix explicite de l’utilisateur. La condition If desired reste textuelle, sans décision automatique, nombre de répétitions, objectif de rendement ou seuil déclencheur inventé."
+      ]
+    },
+    {
+      "claim_id": "c32",
+      "claim_sha256": "12b509e1c330b0608346966a88357fe79df22189e828cdbc0bb7d1f4c7055431",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:31:00.265448+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Ce claim seul ne permet pas de calculer un dosage de neutralisation. Les valeurs 1 M et pH 9,0 caractérisent la solution de Tris-HCl ajoutée, pas la concentration ni le pH final de la fraction. Le passage ne précise ni volume à ajouter ni pH final cible ; aucun dosage provenant d’un autre protocole n’est transféré. La préservation de l’activité des anticorps acidolabiles reste une finalité, sans condition exclusive inventée."
+      ]
+    },
+    {
+      "claim_id": "c33",
+      "claim_sha256": "0069aca467f4acaf24588ea9b6633b5dfe62f59cab18c33d3ee7bbdca8be3ce4",
+      "decision": "validated_with_reservation",
+      "decided_at_utc": "2026-10-19T21:31:57.786327+00:00",
+      "reviewer": "user",
+      "reservations": [
+        "Cible documentaire recommandée : pH de l’échantillon égal au pH du tampon de liaison, sans tolérance numérique ni règle automatique d’ajustement. Aucun pH numérique n’est ajouté. La cible reste distincte de l’ajustement conditionnel de c16 et ne rend pas cet ajustement systématique."
+      ]
+    }
+  ],
+  "completion_notes": [
+    "Documentary review completed by the user for these 33 candidate claims; all recorded reservations remain in force.",
+    "This does not establish exhaustive claim recall, independent scientific validation, runtime safety guards or permission to publish/import/execute.",
+    "The c16 reservation records that c33 was pending at that historical decision. c33 has since been explicitly validated with reservation; the original wording and event are preserved."
+  ],
+  "source_candidate_bytes_sha256": "dce4da6a210dafb65980d978cf94ad39bafda1186ad74e879743a4373494e2eb"
+}

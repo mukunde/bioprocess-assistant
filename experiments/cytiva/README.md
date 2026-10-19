@@ -1,8 +1,9 @@
 # Cytiva experiments
 
-Code and curated reports are versioned. Manuals, conversions, model responses,
-review data and machine-specific settings are local under `data/experiments/`
-and excluded from Git and the chatbot image. They must not be staged wholesale.
+Code, curated reports and the selected [r2 review package](reviewed-r2/README.md)
+are versioned. Manuals, conversions, raw model responses, full review journals and
+machine-specific settings remain local under `data/experiments/` and excluded from
+Git and the chatbot image. They must not be staged wholesale.
 
 | Role | Location |
 |---|---|
@@ -15,12 +16,21 @@ and excluded from Git and the chatbot image. They must not be staged wholesale.
 | Reference cards, machine-readable | `data/experiments/cytiva/reference-v01/` |
 | Archived v0.2 package (earlier prompt) | `data/experiments/cytiva/pages-100-102-v02/` |
 
-## Next test: pages 100–102 with the corrected prompt
+## Completed r2 development test: pages 100–102
 
-GPT-6.1 Sol, medium effort, one subscription-interface generation planned.
+GPT-6.1 Sol, medium effort, one subscription-interface generation completed.
+Human documentary review is complete for the corrected v5 candidate: 19 validated
+claims and 14 validated with reservations, none pending. The selected export and
+verification commands are in [reviewed-r2](reviewed-r2/README.md). No exhaustive
+recall score, scientific validation, import or publication is implied.
+
+### Preparation and raw-response validation workflow
+
 The old `pages-100-102-v02` package is an immutable archive made with the earlier
-prompt. Generation has not been launched. It is not the corrected-prompt test.
-Prepare a new package such as `pages-100-102-v02-r2`; do not overwrite the old one. No API purchase or execution is
+prompt. Its generation was not launched. It is not the corrected-prompt test.
+The commands below document the r2 workflow, not an instruction to overwrite or
+repeat it. Future tests must use a new directory; the existing r2 directory is
+immutable. No API purchase or execution is
 authorized by these scripts. The preparation defaults to cached local Docling
 weights and creates a new output directory. Example from the repository root:
 
@@ -34,8 +44,9 @@ records operator-supplied metadata and does not authenticate it automatically.
 The preparation date is generated in UTC. Resuming an incomplete preparation
 requires identical source, pages and metadata.
 
-After the one response has been saved in the new package, validate against that
-same frozen corpus:
+For a new test, save its response and validate against that same frozen corpus.
+The example below concerns the original r2 response (its report already exists;
+do not overwrite it). The curated reviewed candidate is v5, verified separately:
 
 ```powershell
 & '.\.venv-ingestion\Scripts\python.exe' -m ingestion.claim_validation 'data/experiments/cytiva/pages-100-102-v02-r2/resultat-sol.json' --corpus 'data/experiments/cytiva/pages-100-102-v02-r2/input.json' --output 'data/experiments/cytiva/pages-100-102-v02-r2/validation-sol.json'

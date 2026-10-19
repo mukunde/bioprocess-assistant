@@ -22,9 +22,18 @@ dist/
 # Sources / PDFs de référence (consultés en local, jamais redistribués)
 references/
 
+# Private ingestion artifacts, PDF copies and manual review decisions
+data/ingestion/
+data/experiments/
+data/consolidation/
+tmp/
+.venv-ingestion/
+
 # OS / éditeurs
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
+# Project-local native inference runtime
+.local-tools/

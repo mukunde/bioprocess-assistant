@@ -1,0 +1,11 @@
+{
+  "model": "hf.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF:Q4_K_M",
+  "provider": "ollama",
+  "base_url": "http://127.0.0.1:11434",
+  "allow_remote": false,
+  "chunk_max_tokens": 800,
+  "context_limit": 8192,
+  "max_output_tokens": 2048,
+  "max_pdf_pages": 30,
+  "timeout_s": 180
+}

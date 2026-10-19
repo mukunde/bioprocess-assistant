@@ -1,0 +1,8 @@
+# Isolate this optional CPU ingestion runtime from the Chainlit deployment.
+# Exact upstream revision inspected for dense extraction and detailed provenance.
+docling-graph @ git+https://github.com/docling-project/docling-graph.git@bbcd0e4846fadfcadac2800784783e59cd2722a9
+pypdf>=5,<7
+pypdfium2==5.14.0
+# Enables the installed Docling automatic OCR selector to handle en + fr together.
+easyocr==1.7.2
+neo4j>=5,<6

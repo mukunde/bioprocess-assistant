@@ -19,3 +19,10 @@ chainlit.db
 
 # Sources / PDFs en local (gros, jamais redistribués)
 references/
+data/
+tmp/
+.venv-ingestion/
+ingestion/
+tests/
+experiments/
+.local-tools/

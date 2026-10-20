@@ -8,6 +8,37 @@ The project validates a simple hypothesis: *can we build an agent a process engi
 
 > **Reliability update:** model prose is never displayed. The agent selects retrieved result IDs; application code validates them and renders graph facts and citations. This limits unsupported generation, but does not guarantee correct retrieval or scientifically validated knowledge. See [evaluation instructions](eval/README.md) for the checks and their limits.
 
+## Architecture
+
+![Detailed architecture: Docling conversion branches into local Docling Graph extraction with hierarchical chunking or the separate GPT extraction test. Chainlit, the agent and Neo4j form the current serving loop. OpenTelemetry tracing, Ragas quality evaluation and Promptfoo adversarial testing are separate roadmap roles.](docs/architecture/architecture-detailed.png)
+
+Solid dark connectors show implemented paths. Dashed coral connectors and roadmap
+cards show planned integrations or candidates to evaluate. The reviewed statements
+from the manual test on pages 100–102 are not yet served by the chatbot; the
+Docling Graph source-linked snapshot is separate from its current serving graph.
+See the [roadmap](docs/ROADMAP.md) for acceptance criteria.
+Read the top half from sources through ingestion to reviewed records, then follow
+the client → agent ↔ retrieval loop below; the validated response returns to the client.
+The numbered serving flow shows the question, graph query, results returned to the
+agent, selected IDs with their facts, and the validated response returned to the UI.
+
+The local route uses **Docling → Docling Graph → local extraction and review**,
+with **document-based, hierarchical chunking**: sections, lists and table context,
+headings and page references, then token-budget splitting or merging. The separate
+reviewed manual test uses **Docling → GPT‑6.1 Sol → checks and human review**;
+its full three-page input was submitted through a subscription, without Docling
+Graph extraction or automatic chunking. See the [diagram notes](docs/architecture/README.md)
+for terminology and the planned retrieval comparison.
+
+The three roadmap cards distinguish **OpenTelemetry** (runtime traces, usage and
+cost metadata), **Ragas** (retrieval and answer quality) and **Promptfoo**
+(adversarial tests and regression checks). Their shared instrumentation/test
+interface is a logical grouping, not an additional implemented service.
+
+[Open full-size SVG](docs/architecture/architecture-detailed.svg) ·
+[Download PNG](docs/architecture/architecture-detailed.png) ·
+[Diagram notes and logo sources](docs/architecture/README.md)
+
 ## Project documentation and experiments
 
 All four implementation lots are merged into `main`:

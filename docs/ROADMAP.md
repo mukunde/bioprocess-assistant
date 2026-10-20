@@ -123,6 +123,24 @@ verified provenance for published claims; rejection of unsupported numbers;
 reviewed contradictions; idempotent import, resume and rollback exercised.
 Measure cost per PDF/page and per approved claim, including retries/review rejects.
 
+### Pending verification — tables, captions and diagrams (2026-10-21)
+
+- [ ] Prepare a separate representative Cytiva test with troubleshooting tables,
+  captions and diagrams. Table-structure recognition was disabled in the reviewed
+  pages 100–102 preparation profile; that experiment does not validate these capabilities.
+- [ ] Enable table-structure recognition in a new, versioned conversion profile;
+  preserve the original test and record all conversion and optional vision settings.
+- [ ] Check cells, row/column headers, merged cells, units, footnotes and cross-page
+  continuations against the rendered PDF. Verify that chunking preserves the
+  symptom/cause/action associations and their conditions.
+- [ ] Check figure/caption associations and source locations; assess interpretation
+  of diagram relationships and chart quantities separately from image extraction.
+  Mark unsupported or ambiguous interpretations for quarantine and manual review.
+
+Exit: manually checked reference examples, reported conversion/extraction errors
+and provenance coverage, plus measured runtime and resource use. Do not generalize
+the existing text-only review to table or illustration understanding.
+
 ## Phase 4 — Contextual retrieval and bounded reasoning
 
 Retrieve multiple candidates, preserve negations and distinguish multiple symptoms.

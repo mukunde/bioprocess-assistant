@@ -1,0 +1,73 @@
+{
+  "usage": "Technology identification in project architecture diagrams; assets are embedded, not loaded remotely.",
+  "assets": [
+    {
+      "file": "docling.svg",
+      "source": "https://raw.githubusercontent.com/docling-project/docling/main/docs/assets/logo.svg",
+      "sha256": "91b8ecbf53d74c663d28ca059881dcf41bb602207d3ea8c0c01dcd3edad84743",
+      "bytes": 18363
+    },
+    {
+      "file": "neo4j.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/neo4j.svg",
+      "sha256": "4e30e210a3afe36c2dfa1baa929b1f7a33046bfea2829ba1ded94d07c3162c96",
+      "bytes": 797
+    },
+    {
+      "file": "anthropic.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/anthropic.svg",
+      "sha256": "1cc599f6ebce2016dc388cf84e54a52c6b13487655c7e243554d654c7bce1882",
+      "bytes": 281
+    },
+    {
+      "file": "openai.svg",
+      "source": "https://raw.githubusercontent.com/promptfoo/promptfoo/main/site/static/img/brands/openai-logo.svg",
+      "sha256": "5a28b637ffcde9e25fcac5790b7ac24fbaa3fd591f955062ec2c6021618e400a",
+      "bytes": 2946
+    },
+    {
+      "file": "opentelemetry.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/opentelemetry.svg",
+      "sha256": "1e93836eeedaf02fb985130ed05c4d692c66ff56269f50af8478a219645ee741",
+      "bytes": 1279
+    },
+    {
+      "file": "sqlite.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/sqlite.svg",
+      "sha256": "71d4153bc9661dfe6b92dad70f737ec2b6c7c839311e502b4ca66fe664fe12b6",
+      "bytes": 1420
+    },
+    {
+      "file": "ollama.svg",
+      "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ollama.svg",
+      "sha256": "9c62bf0159ee96c8b58c86a732f33b002b4b3bb165ec86e8ecca51ad6a82dab6",
+      "bytes": 4769
+    },
+    {
+      "file": "promptfoo.svg",
+      "source": "https://raw.githubusercontent.com/promptfoo/promptfoo/main/site/static/img/logo-panda.svg",
+      "sha256": "e8e3ad52c4ea4431c169a97ad158f5211915f831e273fa83571d40c212431b32",
+      "bytes": 8363
+    },
+    {
+      "file": "lightrag.svg",
+      "source": "https://raw.githubusercontent.com/HKUDS/LightRAG/main/lightrag_webui/src/assets/logo.svg",
+      "sha256": "14772b665128754a221bc0b304bfe34336a86232833a858bf7c4ffcbb2825934",
+      "bytes": 17960
+    },
+    {
+      "file": "ragas.png",
+      "source": "https://raw.githubusercontent.com/vibrantlabsai/ragas/main/docs/_static/imgs/logo.png",
+      "sha256": "6a373582c1245298a711cdfba4d293b70a4f01d5a5fd8a61a2579adf68c463e1",
+      "bytes": 33956
+    },
+    {
+      "file": "chainlit.svg",
+      "source": "https://github.com/Chainlit/chainlit",
+      "installed_distribution": "chainlit",
+      "asset": "chainlit/frontend/dist/logo_light.svg",
+      "sha256": "b078e7bc4ab5adfaa1ddb71ec49358518ed6103753419ab768a658a62e30e1c9",
+      "bytes": 8889
+    }
+  ]
+}

@@ -52,6 +52,37 @@ do not overwrite it). The curated reviewed candidate is v5, verified separately:
 & '.\.venv-ingestion\Scripts\python.exe' -m ingestion.claim_validation 'data/experiments/cytiva/pages-100-102-v02-r2/resultat-sol.json' --corpus 'data/experiments/cytiva/pages-100-102-v02-r2/input.json' --output 'data/experiments/cytiva/pages-100-102-v02-r2/validation-sol.json'
 ```
 
+## Local table conversion and chunking (no LLM)
+
+The separate table conversion/chunking launcher is documented in the
+[visual validation protocol](../../docs/experiments/cytiva-conversion-chunking-protocol.md).
+It never calls the extraction pipeline, an LLM or Neo4j. From the repository root:
+
+```powershell
+& '.\.venv-ingestion\Scripts\python.exe' -m experiments.cytiva.visual_validation convert --source 'references/manual.pdf' --output 'data/experiments/cytiva/visual-validation-v01/convert-NEW' --blocks p077 p088
+```
+
+The source must match the selected manual's SHA-256. The exact conversion runtime,
+layout/TableFormer weights and `cl100k_base` tokenizer must already be cached.
+Outputs are never overwritten. Each block/profile has its own bounded worker,
+effective settings, raw conversion, tables, images and timing/memory diagnostics.
+Python network connection/DNS calls are denied; this is not a native-code firewall.
+
+Inspect conversion before chunking. Create a local `conversion-review.json` with
+`purpose: "diagnostic_chunking_only"`, `human_approved: false`, and a `blocks` map
+whose entries contain the frozen T1 `document_sha256`, a diagnostic `status`
+(`usable_for_diagnostic` or `quarantined_diagnostic_only`) and review notes. This
+is technical inspection, not user approval; keep all reservations in that file.
+
+```powershell
+& '.\.venv-ingestion\Scripts\python.exe' -m experiments.cytiva.visual_validation chunk --run 'data/experiments/cytiva/visual-validation-v01/convert-NEW' --review 'data/experiments/cytiva/visual-validation-v01/conversion-review.json' --output 'data/experiments/cytiva/visual-validation-v01/chunks-NEW' --budgets 800
+& '.\.venv-ingestion\Scripts\python.exe' -m unittest tests.test_visual_validation -v
+```
+
+K0 and the native Docling Graph chunker output are saved, including secondary
+text splits and inherited parent metadata. Quarantined inputs may be inspected
+only as diagnostics: chunking cannot make an incorrect conversion acceptable.
+
 ## Historical v0.1 comparison: pages 97–99
 
 The original responses remain frozen and human approval remains pending. The

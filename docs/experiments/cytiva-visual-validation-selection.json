@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-visual-validation-v01",
+  "prepared_on": "2026-10-21",
+  "status": "first_slice_executed_077_088_diagnostic_only_pending_user_review",
+  "dataset_role": "development_not_held_out",
+  "source": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "document_reference": "CY13981-25Jan21-HB",
+    "document_version": "25Jan21",
+    "metadata_origin": "existing_r2_registry_not_new_independent_verification"
+  },
+  "page_numbering": {
+    "pdf_pages": "one_based",
+    "pdf_page_indices": "zero_based",
+    "printed_labels": "visually_checked_on_selected_pages",
+    "excerpt_mapping": "required_per_run_do_not_infer_contiguity_across_blocks"
+  },
+  "observed_installed_versions": {
+    "docling": "2.140.0",
+    "docling-core": "2.101.1",
+    "docling-graph": "1.9.1",
+    "tiktoken": "0.12.0",
+    "pypdf": "6.21.1"
+  },
+  "blocks": [
+    {
+      "id": "p077",
+      "pdf_pages_1based": [
+        77
+      ],
+      "printed_pages": [
+        "77"
+      ],
+      "tier": "first",
+      "objects": [
+        "Table 3.5",
+        "Adjacent applicability notes"
+      ],
+      "reason": "Grouped species/subclass rows, pH ranges and inequalities; adjacent warnings",
+      "pdf_page_indices_0based": [
+        76
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    },
+    {
+      "id": "p088",
+      "pdf_pages_1based": [
+        88
+      ],
+      "printed_pages": [
+        "88"
+      ],
+      "tier": "first",
+      "objects": [
+        "Table 3.6",
+        "Footnotes 1-5"
+      ],
+      "reason": "Four product columns, units, superscripts and measurement conditions",
+      "pdf_page_indices_0based": [
+        87
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    },
+    {
+      "id": "p104",
+      "pdf_pages_1based": [
+        104
+      ],
+      "printed_pages": [
+        "104"
+      ],
+      "tier": "first",
+      "objects": [
+        "Fig 3.29",
+        "Adjacent explanatory paragraph"
+      ],
+      "reason": "Five directed paths and a separate alternative-product connection",
+      "pdf_page_indices_0based": [
+        103
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    },
+    {
+      "id": "p152-153",
+      "pdf_pages_1based": [
+        152,
+        153
+      ],
+      "printed_pages": [
+        "152",
+        "153"
+      ],
+      "tier": "first",
+      "objects": [
+        "Table A1.7",
+        "Footnotes 1-3"
+      ],
+      "reason": "Actual consecutive-page continuation, repeated headers, variants and compatibility marks",
+      "pdf_page_indices_0based": [
+        151,
+        152
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    },
+    {
+      "id": "p053",
+      "pdf_pages_1based": [
+        53
+      ],
+      "printed_pages": [
+        "53"
+      ],
+      "tier": "extension",
+      "objects": [
+        "Table 3.1",
+        "Binding-symbol legend",
+        "Adjacent scope paragraph"
+      ],
+      "reason": "Ordinal symbols, missing/variable entries and measurement scope",
+      "pdf_page_indices_0based": [
+        52
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    },
+    {
+      "id": "p086",
+      "pdf_pages_1based": [
+        86
+      ],
+      "printed_pages": [
+        "86"
+      ],
+      "tier": "extension",
+      "objects": [
+        "Fig 3.22",
+        "Caption",
+        "Adjacent paragraph"
+      ],
+      "reason": "Four product groups, three residence-time series, axis unit and caption association",
+      "pdf_page_indices_0based": [
+        85
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    },
+    {
+      "id": "p142",
+      "pdf_pages_1based": [
+        142
+      ],
+      "printed_pages": [
+        "142"
+      ],
+      "tier": "extension",
+      "objects": [
+        "Fig 7.1",
+        "Adjacent explanatory paragraph"
+      ],
+      "reason": "Parallel alternatives, process order, operating modes and shared annotation",
+      "pdf_page_indices_0based": [
+        141
+      ],
+      "inspection_status": "rendered_and_visually_inspected_by_assistant",
+      "reference_status": "pending_human_confirmation"
+    }
+  ],
+  "cases": [
+    {
+      "id": "V01",
+      "block": "p077",
+      "object_ref": "Table 3.5",
+      "check": "Preserve four column headers and inherited species/subclass grouping; do not attach Human values to Mouse or Rat.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V02",
+      "block": "p077",
+      "object_ref": "Table 3.5 / Human IgG3",
+      "check": "Check binding pH 8.0 to 9.0 and elution pH <= 7.0, including the inequality.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V03",
+      "block": "p077",
+      "object_ref": "Table 3.5 / Mouse IgG2b and IgG3",
+      "check": "Keep Approx. 7.0 distinct from exact pH; keep the two elution intervals assigned to their own rows.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V04",
+      "block": "p077",
+      "object_ref": "Table 3.5 / Rat IgG3",
+      "check": "Keep 3.0 to 4.0 linked to the parenthetical 3 M potassium isothiocyanate condition; do not spread that condition to all rows.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V05",
+      "block": "p077",
+      "object_ref": "Table 3.5 / Cow, Goat and Guinea pig",
+      "check": "Preserve n.a. as printed; do not replace with zero, a measured pH or an inferred value.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V06",
+      "block": "p077",
+      "object_ref": "First adjacent applicability note",
+      "check": "Preserve the distinction between free protein A and matrix-coupled material. Apparent inconsistencies with other source text must remain flagged, not harmonized.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V07",
+      "block": "p088",
+      "object_ref": "Table 3.6 / product headers",
+      "check": "Keep MabSelect, MabSelect Xtra, MabSelect SuRe and MabSelect SuRe LX as four distinct columns.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V08",
+      "block": "p088",
+      "object_ref": "Table 3.6 / capacity and superscripts",
+      "check": "Keep approximate capacities linked to product, mg hIgG/mL medium and the correct footnote; inspect all four capacity cells.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V09",
+      "block": "p088",
+      "object_ref": "Footnotes 1-3",
+      "check": "Preserve the distinct residence times and experimental conditions; link footnote 3 to the SuRe LX capacity rather than neighboring products.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V10",
+      "block": "p088",
+      "object_ref": "Table 3.6 / CIP reagents",
+      "check": "Keep the reducing-agent combination separate from the 100 to 500 mM sodium hydroxide entries; preserve products and + conjunction.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V11",
+      "block": "p088",
+      "object_ref": "Footnotes 4-5",
+      "check": "Keep operating-velocity conditions and d50v definition tied to their own markers; do not treat either note as a new product row.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V12",
+      "block": "p104",
+      "object_ref": "Fig 3.29 / figure, caption and paragraph",
+      "check": "Identify/crop the whole diagram, including vertical role labels and bottom alternative; link the correct caption and figure citation.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V13",
+      "block": "p104",
+      "object_ref": "Fig 3.29 / Fab branches",
+      "check": "Keep Fab -> Kappa light chain -> Capto L and Fab -> Lambda light chain -> Lambda FabSelect as separate paths.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V14",
+      "block": "p104",
+      "object_ref": "Fig 3.29 / scFv and domain-antibody branches",
+      "check": "Keep scFv -> Kappa light chain -> Capto L; domain-antibody Kappa and VH3 branches must not be mixed.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V15",
+      "block": "p104",
+      "object_ref": "Fig 3.29 / alternative product",
+      "check": "Preserve KappaSelect as an alternative on the Fab/Kappa branch; do not transfer it to the lambda branch or convert it into a mandatory next process step.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V16",
+      "block": "p152-153",
+      "object_ref": "Table A1.7 / continuation",
+      "check": "Recognize two segments of one table with repeated column headings, while retaining original page locations.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V17",
+      "block": "p152-153",
+      "object_ref": "Table A1.7 / HiTrap Protein A HP on page 152",
+      "check": "Keep 1 mL/20 mg per column and 5 mL/100 mg per column variants aligned; compare with the original rendered cells.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V18",
+      "block": "p152-153",
+      "object_ref": "Table A1.7 / HiTrap MabSelect SuRe on page 153",
+      "check": "Keep 1 mL/30 mg per column and 5 mL/150 mg per column variants aligned.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V19",
+      "block": "p152-153",
+      "object_ref": "Table A1.7 / compatibility columns",
+      "check": "Check every marked and blank compatibility cell for the two selected HiTrap product rows; blanks remain blanks, not explicit scientific negatives.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V20",
+      "block": "p152-153",
+      "object_ref": "Table A1.7 / PreDictor MabSelect and footnote 3",
+      "check": "Keep N/A and its note attached to the selected product variants; not zero capacity.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V21",
+      "block": "p152-153",
+      "object_ref": "Table A1.7 / page-152 notes 1-2",
+      "check": "Keep the two notes attached to their actual product markers, not every product on the continuation page.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V22",
+      "block": "p053",
+      "object_ref": "Table 3.1 / Human IgG3",
+      "check": "Keep Protein G ++++ and Protein A dash in their own cells; do not transpose the two binding columns.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V23",
+      "block": "p053",
+      "object_ref": "Table 3.1 / legend",
+      "check": "Preserve ++++ = strong, ++ = medium, dash = weak or no binding; do not turn symbols into quantitative affinity constants.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V24",
+      "block": "p053",
+      "object_ref": "Table 3.1 / variable and blank cells",
+      "check": "Preserve variable and blank subclass cells without an invented fixed binding strength or subclass.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V25",
+      "block": "p053",
+      "object_ref": "Table 3.1 / scope paragraph",
+      "check": "Retain free-protein measurement scope and matrix-coupling caveat; a located table alone does not establish matrix-specific behavior.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V26",
+      "block": "p086",
+      "object_ref": "Fig 3.22 / figure and caption",
+      "check": "Correctly pair the chart with Fig 3.22, excluding the adjacent prose from the crop while retaining a reference to it.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V27",
+      "block": "p086",
+      "object_ref": "Fig 3.22 / axes and series",
+      "check": "Preserve all four product labels, the 1 / 2.4 / 6 min legend, and the dynamic-binding-capacity axis unit mg/mL medium.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V28",
+      "block": "p086",
+      "object_ref": "Fig 3.22 / limits of numeric interpretation",
+      "check": "Do not invent exact bar values from an image. Distinguish a text-supported approximate value from visual estimation; record numeric chart interpretation as untested without a separate pathway.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V29",
+      "block": "p142",
+      "object_ref": "Fig 7.1 / caption and diagram",
+      "check": "Retain the complete multi-panel figure and its caption; adjacent process-design text is separate linked context.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V30",
+      "block": "p142",
+      "object_ref": "Fig 7.1 / process alternatives",
+      "check": "Preserve the two-step, alternative two-step, three-step and alternative three-step branches independently, including order and FT versus B/E modes.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V31",
+      "block": "p142",
+      "object_ref": "Fig 7.1 / shared annotation",
+      "check": "Do not turn a shared clearance annotation into a sequential unit operation or create cross-branch arrows.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    },
+    {
+      "id": "V32",
+      "block": "p142",
+      "object_ref": "Adjacent process-design paragraph",
+      "check": "Retain conditions and qualified language behind process alternatives; do not present a two-step strategy as universally sufficient.",
+      "critical": true,
+      "reference_status": "candidate_pending_human_confirmation"
+    }
+  ],
+  "execution": {
+    "runner_status": "implemented_conversion_and_diagnostic_chunking",
+    "llm_calls": 0,
+    "api_calls": 0,
+    "conversion_runs": 4,
+    "chunking_runs": 2,
+    "publication_authorized": false,
+    "output_root": "data/experiments/cytiva/visual-validation-v01",
+    "keep_original_r2_unchanged": true,
+    "completed_blocks": [
+      "p077",
+      "p088"
+    ],
+    "executed_chunk_variants": [
+      "K0",
+      "K800"
+    ],
+    "unexecuted_chunk_variants": [
+      "K600",
+      "K1400"
+    ],
+    "results": "cytiva-conversion-chunking-results-077-088.md",
+    "human_approved": false
+  },
+  "profiles": {
+    "conversion_common": {
+      "device": "cpu",
+      "threads": 4,
+      "remote_services": false,
+      "generate_page_images": true,
+      "generate_picture_images": true,
+      "images_scale": 2,
+      "picture_description": false,
+      "picture_classification": false,
+      "table_backend_T1": "docling_tableformer",
+      "table_mode_T1": "accurate",
+      "cell_matching_T1": true
+    },
+    "conversion": [
+      {
+        "id": "T0",
+        "do_table_structure": false,
+        "do_ocr": false
+      },
+      {
+        "id": "T1",
+        "do_table_structure": true,
+        "do_ocr": false
+      },
+      {
+        "id": "T2",
+        "do_table_structure": true,
+        "do_ocr": true,
+        "conditional": "missing_characters_only_explicit_ocr_engine_required"
+      }
+    ],
+    "chunking": {
+      "conversion_input": "reviewed_frozen_T1_per_block",
+      "baseline": "K0_full_block_serialization",
+      "budgets": [
+        600,
+        800,
+        1400
+      ],
+      "local_reference_budget": 800,
+      "tokenizer": "tiktoken/cl100k_base",
+      "serializer": "doclang_without_geometry",
+      "merge_peers": true,
+      "test_secondary_text_resplitting": true,
+      "no_silent_fallback": true
+    }
+  },
+  "review_template": "cytiva-visual-validation-review.csv",
+  "protocol": "cytiva-conversion-chunking-protocol.md",
+  "coverage_note": "32 targeted checks, not exhaustive cell or semantic annotation. Figure relationship expectations concern preservation/review; no semantic VLM execution is included.",
+  "revision": 2
+}

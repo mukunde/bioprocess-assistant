@@ -125,11 +125,21 @@ Measure cost per PDF/page and per approved claim, including retries/review rejec
 
 ### Pending verification — tables, captions and diagrams (2026-10-21)
 
-- [ ] Prepare a separate representative Cytiva test with troubleshooting tables,
-  captions and diagrams. Table-structure recognition was disabled in the reviewed
-  pages 100–102 preparation profile; that experiment does not validate these capabilities.
+- [x] Select and visually inspect representative Cytiva tables, captions and
+  diagrams; prepare the [conversion/chunking protocol](experiments/cytiva-conversion-chunking-protocol.md),
+  machine-readable page selection and 32-check review template (2026-10-21).
+  Five initial pages: 77, 88, 104, 152–153; three extensions: 53, 86, 142.
+  These are development examples, chiefly condition/product tables rather than
+  a complete troubleshooting matrix. Human confirmation of reference annotations
+  remains pending; the first technical execution is described below. Table-structure
+  recognition was disabled in r2; that review does not validate these capabilities.
 - [ ] Enable table-structure recognition in a new, versioned conversion profile;
   preserve the original test and record all conversion and optional vision settings.
+  First diagnostic slice executed on 77 and 88: T0/T1 conversions and K0/K800,
+  with cached weights and no LLM/API. [Results](experiments/cytiva-conversion-chunking-results-077-088.md):
+  strong structural gain, but page 88's available-formats row is incorrectly
+  collapsed; overall acceptance and user review remain pending. The launcher and
+  six safety regression tests are available; other pages and K600/K1400 are untested.
 - [ ] Check cells, row/column headers, merged cells, units, footnotes and cross-page
   continuations against the rendered PDF. Verify that chunking preserves the
   symptom/cause/action associations and their conditions.

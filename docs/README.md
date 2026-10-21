@@ -6,6 +6,7 @@
 | What is next and what is already implemented? | [Active roadmap](ROADMAP.md) |
 | How are answers constrained and evaluated? | [Grounding ADR](ADR-001-knowledge-graph-grounding.md), [evaluation](../eval/README.md) |
 | How does the existing PDF ingestion/review work? | [Ingestion](INGESTION.md) |
+| How are Cytiva tables, captions, diagrams and chunking validated? | [Protocol and selected pages](experiments/cytiva-conversion-chunking-protocol.md), [first results on 77 and 88](experiments/cytiva-conversion-chunking-results-077-088.md) |
 | What do the troubleshooting concepts mean? | [Ontology draft](ontology/v0.1.md), [documentary examples](ontology/examples-v0.1.md) |
 | What is the current extraction format and quarantine rule? | [Claim contract v0.2](CLAIM-CONTRACT-V02.md) |
 | How will retrieval alternatives and LightRAG be evaluated? | [Three-arm comparison protocol](experiments/retrieval-comparison-protocol.md) |

@@ -1,0 +1,87 @@
+{
+  "package_version": 1,
+  "package_hash_policy": "sha256_utf8_lf",
+  "role": "Selected page-88 documentary review with reservations; not scientific validation or publication permission.",
+  "files": {
+    "README.md": "2fa7c7f300d0d59abfe9e7f79888c071a95f28638c11f147fbd9436747a5e6bc",
+    "packet.json": "ab2639e02de7989e648bca84c86be6f04af84a9bc4f6db991546f9dcaba5db12",
+    "review.json": "1f87bd279c3fbe3b900da7f32632f306db3b3cff563d27253d37f61d7c3a2956",
+    "events.json": "360f6b8f16b61cfd694669046179515810517b234edd8e1440e6877199275507"
+  },
+  "counts": {
+    "cards": 9,
+    "cells": 40,
+    "blank_cells": 2,
+    "notes": 5,
+    "printed_anchors": 6,
+    "product_cell_note_bindings": 12,
+    "validated_with_reservation": 9,
+    "pending": 0
+  },
+  "source": {
+    "document_reference": "CY13981-25Jan21-HB",
+    "table": "3.6",
+    "coordinate_origin": "TOPLEFT",
+    "source_map": {
+      "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "excerpt_sha256": "2252d6486bd02ca5d084b9c59718507340f63a678b8d6ed4cdc3f427ae162521",
+      "pages": [
+        {
+          "excerpt_page_1based": 1,
+          "original_pdf_page_1based": 88,
+          "original_pdf_page_index_0based": 87,
+          "printed_page": "88"
+        }
+      ]
+    },
+    "artifact_sha256": {
+      "words": "b454ba6c84dcaf21cf412f49adede96c87b26be233ac3b51eb04d13b10fc8f21",
+      "layout": "11c684e791a64a5515b5b6c99905866e80b1171f421733008f2ff62b78391ede",
+      "notes_spec": "1a44fdf1a6d144637a3330db87233b9be466ea86284338d3ee836afa5fe35e40",
+      "parent_table": "156433c3b3c55fca0615f81794ed0d56b0f1dab60d0c504d136b202c8850e0ad",
+      "parent_manifest": "d3f7025ccc3f2c78848bfbfdb523249df7daafc94591fc38d7b4ed73c4a78aef",
+      "source_image": "81387ca2dd804bd7a3a8573ca40e96a134e76331af73cb02dbba22854266d435"
+    },
+    "native_word_coordinate_page_size": {
+      "width": 1920.0,
+      "height": 1080.0
+    }
+  },
+  "lineage": {
+    "packet_canonical_sha256": "023fac94a3956b38d389356bb8894ee955af92de87df10248994188d81b37867",
+    "packet_original_file_sha256": "084a3c8fa1b99995b2f2d152d7473b6e8d3d4bca38721677abb4d09d91094965",
+    "base_review_original_file_sha256": "16918869f048992bbb52c4141046b6c3418fdac236c850f4338ca8a4764f49c7",
+    "final_review_original_file_sha256": "e2a07834837fd7e178b8d1b63f50c8fd3374858362647b13dc834571aed366d5",
+    "frozen_preparation_manifest_sha256": "79271737848844a24720fe2ffd5c28b90a4b3b5410fa19ca86c960ffc3130c72",
+    "event_file_sha256": {
+      "001-P88-layout": "137e591495db4d0a4a82d2053ad7c1e4f907747021992cfa87b5e42cb1d81e6d",
+      "002-P88-N1": "aea10d6579499a14a4c901acd6f9f9ba54ae7bd271b617946366bbca0659e21e",
+      "003-P88-N2": "2c850426205dfe3e885eb4359f6116f5df483b421e4df44419763891a6c04bc4",
+      "004-P88-N3": "14631f5185206942ddadd843dba7b09b8aed23f5fbcc5829430f885458fef51d",
+      "005-P88-N4": "9fc365271f82539ce485133493db828b4636a68dc08c0ac98cb7d3335f5434ad",
+      "006-P88-N5": "d22da106b94055156ecee44aac8ec28941158c06eeee9b3ac09533ff19560cb7",
+      "007-P88-row-4": "4f657afce654afd8cee2ca96f569a43d37928b3fcd317b9c405fe17305e2619b",
+      "008-P88-row-5": "d905a8eb8d15d91622902e3c9cb957b787b8c6b9e635d16c2b3b7103b878abbf",
+      "009-P88-row-7": "7100444bc2021b503012a2d63f92552a5fdf593cf98a0eebaaf580b3fafeb7a6"
+    },
+    "review_state_file_sha256": {
+      "001": "826e5dcfcbdfa281159506fcaa4b21d9f246f7c85961437d697204f72a7e74fb",
+      "002": "0d5b56e90b65dc24c3457670b0d608acb6f3db300e95c4853c640a2987060be7",
+      "003": "48742f9a65d15ff54c90176b74da5f209d444976160f14fae04254cc194f07cd",
+      "004": "34d3d9ab701b6353f095233b55b77c82253e19b4187e422a5d1846c7f0f929fc",
+      "005": "f69719e7cf83f238c98d698e2dbd45c89ca13d70d8c9d50455e56c6d39867904",
+      "006": "e24b8d337a47caf8a07e7e445aaf9008ca9f2d0b5402a5e57764933278861978",
+      "007": "52242a454f148b2ac7d482c2fa3907a6e6e2e376aa7d50e59813f0227fbab654",
+      "008": "06c917bb1d3f412c4bdeed421090f7f595cb8f33097485d162b57549f4b59871",
+      "009": "e2a07834837fd7e178b8d1b63f50c8fd3374858362647b13dc834571aed366d5"
+    },
+    "final_verification_original_file_sha256": "93c71cc4cbe8679c627f8ca27421fa680ac14dca6de82041a23d4c9f80cacb7b"
+  },
+  "limits": [
+    "PDF, source image, full-page word export and full conversions are local and omitted.",
+    "Preserved word references resolve within the original local word export, whose hash is retained; the full export is not distributed.",
+    "Checks replay the selected review objects and journal, not PDF conversion or visual inspection.",
+    "Source and human-record hashes provide integrity, not authentication or independent scientific validation."
+  ],
+  "publication_allowed": false
+}

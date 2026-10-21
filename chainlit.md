@@ -1,28 +1,28 @@
 # Bioprocess Troubleshooting Assistant
 
-Démonstrateur d'assistant IA spécialisé sur le **troubleshooting de la chromatographie de capture sur Protein A** (étape downstream du bioprocédé).
+An AI assistant demonstrator for **troubleshooting Protein A capture chromatography**, a downstream bioprocess operation.
 
-## Comment ça marche
+## How it works
 
-Décris un symptôme observé sur ton étape de capture. L'assistant te propose les causes probables et les actions correctives, **chacune sourcée sur un handbook public** - Cytiva *Affinity Chromatography Vol. 1: Antibodies Handbook* (CY13981-25Jan21-HB, 2021) et *MabSelect SuRe Data File* (CY12754-10Jul20-DF, 2020).
+Describe a symptom observed during capture. The assistant presents possible causes and corrective actions, **each with a public handbook citation**: Cytiva's *Affinity Chromatography Vol. 1: Antibodies Handbook* (CY13981-25Jan21-HB, 2021) and *MabSelect SuRe Data File* (CY12754-10Jul20-DF, 2020).
 
-## Fonctionnement et limites
+## Behavior and limitations
 
-- **Réponse encadrée** : le modèle sélectionne des résultats du graphe. L'application vérifie cette sélection et affiche les faits et leurs citations. La pertinence du résultat et l'exactitude scientifique des connaissances demandent une validation métier.
-- **Auditabilité native** : chaque cause et chaque action remontent à la page précise du PDF source.
-- **Périmètre actuel** : 6 symptômes types de la capture Protein A - chute de rendement, pression élevée, agrégats dans le pool d'élution, leaching de Protein A, HCP résiduels, bioburden.
+- **Constrained answers:** the model selects graph results. The application checks that selection and displays stored facts and citations. Relevance and scientific correctness require domain validation.
+- **Traceability:** causes and actions carry references to specific source PDF pages. A citation alone does not establish documentary fidelity.
+- **Current coverage:** six Protein A capture symptoms: reduced yield, high pressure, aggregates in the elution pool, Protein A leaching, residual HCP and bioburden.
 
-## Questions à essayer
+## Questions to try
 
-- *« Mon rendement de capture a chuté, qu'est-ce qui peut le causer ? »*
-- *« La pression de ma colonne est anormalement élevée. »*
-- *« J'ai trop d'agrégats dans mon pool d'élution. »*
-- *« Comment réduire le leaching de Protein A dans l'éluat ? »*
-- *« J'ai des HCP résiduels au-dessus de la spec. »*
-- *« J'ai détecté du bioburden dans ma colonne. »*
+- *“My capture yield has dropped. What could cause it?”*
+- *“My column pressure is unusually high.”*
+- *“There are too many aggregates in my elution pool.”*
+- *“How can I reduce Protein A leaching in the eluate?”*
+- *“Residual HCP is above specification.”*
+- *“I detected bioburden in my column.”*
 
-Formule ta question en français ou en anglais. Les titres et refus suivent ta langue ; les descriptions techniques restent en anglais, la langue du graphe.
+Ask in French or English. Headings and refusals follow your language; technical descriptions remain in English, the graph's canonical language.
 
 ---
 
-*POC démonstrateur - sources publiques uniquement, pas un système de niveau GxP. Architecture détaillée dans `/docs/ADR-001-knowledge-graph-grounding.md`.*
+*Demonstrator POC: public sources only, not a GxP-qualified system. See the repository's `docs/ADR-001-knowledge-graph-grounding.md` for the architecture.*

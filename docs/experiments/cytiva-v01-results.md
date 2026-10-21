@@ -1,37 +1,37 @@
-# Essai via abonnements — 19 octobre 2026
+# Subscription-based trial — 19 October 2026
 
-Rapport conservé de l’essai v0.1. Les artefacts bruts sont locaux sous `data/experiments/cytiva/pages-097-099-v01/` ; les outils sont dans [experiments/cytiva](../../experiments/cytiva/README.md). Le contrat courant est v0.2.
+Historical v0.1 trial report. Raw artifacts remain local under `data/experiments/cytiva/pages-097-099-v01/`; tools are in [experiments/cytiva](../../experiments/cytiva/README.md). The current contract is v0.2.
 
-Une génération par modèle, dans deux nouvelles conversations Chrome, sur le même prompt comprenant les textes convertis des pages 97–99. Sonnet 5.5 et GPT‑6.1 Sol ont été sélectionnés avec l'effort « Moyen ». Aucun appel API, achat, commit ou push. Les réponses n'ont pas été réparées par une seconde génération.
+One generation per model, in two new Chrome conversations, using the same prompt containing the converted text of pages 97–99. Sonnet 5.5 and GPT‑6.1 Sol were selected with the effort setting labelled « Moyen » in the original interface (medium). No API calls or purchases were made. Neither response was repaired through a second generation.
 
-| Contrôle local | Sonnet 5.5 | GPT‑6.1 Sol |
+| Local check | Sonnet 5.5 | GPT‑6.1 Sol |
 |---|---:|---:|
-| JSON conforme au schéma | Oui | Oui |
-| Entités | 29 | 29 |
-| Propositions totales | 20 | 29 |
-| Relations hors PROCEDURE | 14 | 10 |
+| JSON conforms to the schema | Yes | Yes |
+| Entities | 29 | 29 |
+| Total proposals | 20 | 29 |
+| Non-PROCEDURE relations | 14 | 10 |
 | PROCEDURE | 6 | 19 |
-| Références inexistantes détectées | 0 | 0 |
-| Erreurs de types/direction détectées | 1 | 0 |
+| Nonexistent references detected | 0 | 0 |
+| Type/direction errors detected | 1 | 0 |
 
-Sonnet c20 utilise RECOMMENDED_FOR avec une Cause comme objet ; l'ontologie exige un Symptom. Le modèle reconnaît ce choix dans ses uncertainties. Ne pas accepter cette proposition automatiquement. Le passage éventuel à une PROCEDURE avec objectif déclaré nécessite une revue, pas une correction silencieuse du résultat du test.
+Sonnet c20 uses RECOMMENDED_FOR with a Cause as its object; the ontology requires a Symptom. The model acknowledges this choice in its uncertainties. This proposal must not be accepted automatically. Converting it to a PROCEDURE with an explicit purpose requires review rather than silently correcting the trial output.
 
-GPT‑6.1 Sol passe ces contrôles structurels. Son nombre supérieur de propositions vient surtout des procédures ; il ne démontre ni une meilleure précision ni une meilleure couverture du dépannage. L'existence de toutes les références signifie que les éléments cités sont retrouvables dans l'entrée, pas qu'ils justifient chaque affirmation.
+GPT‑6.1 Sol passes these structural checks. Its higher proposal count mainly comes from procedures; it demonstrates neither better precision nor better troubleshooting coverage. All references being resolvable means that the cited items can be found in the input, not that they support every assertion.
 
-## Fichiers et conservation
+## Files and preservation
 
-- `resultat-sonnet-original.json` : réponse copiée depuis Claude et enregistrée via le Bloc-notes, sans modification.
-- `archive/resultat-sonnet-alias.json` : ancienne copie strictement identique, conservée pour traçabilité ; le vérificateur lit désormais directement l’original.
-- `resultat-sol.json` : réponse copiée depuis ChatGPT Work et enregistrée via le Bloc-notes, sans modification.
-- `verification-sonnet.json`, `verification-sol.json` : contrôles et textes des preuves résolues.
-- `comparaison-structurelle.json` : tableau calculé ci-dessus.
-- `execution-abonnements.json` : modèles, réglages, empreinte du prompt, liens des conversations et limites de mesure.
-- `archive/resultat-sonnet-accessibility.txt` : première capture du texte d'accessibilité, avec guillemets typographiques ; ce fichier n'est pas l'original à évaluer.
+- `resultat-sonnet-original.json`: response copied from Claude and saved through Notepad, unchanged.
+- `archive/resultat-sonnet-alias.json`: an older, identical copy retained for traceability; the verifier now reads the original directly.
+- `resultat-sol.json`: response copied from ChatGPT Work and saved through Notepad, unchanged.
+- `verification-sonnet.json`, `verification-sol.json`: checks and resolved evidence text.
+- `comparaison-structurelle.json`: the computed table above.
+- `execution-abonnements.json`: models, settings, prompt fingerprint, conversation links and measurement limitations.
+- `archive/resultat-sonnet-accessibility.txt`: the first accessibility-text capture, with typographic quotation marks; this is not the original to evaluate.
 
-Les huit fiches de référence restent des brouillons à valider. Aucun résultat n'est approuvé manuellement ni promu dans le graphe. La revue sémantique doit contrôler les quantités, conditions, modalités, frontières de produit et omissions, puis masquer autant que possible le nom du candidat pendant la notation.
+At this historical checkpoint, the eight reference cards were drafts awaiting validation. No result had been manually approved or promoted into the graph. Semantic review needed to check quantities, conditions, modality, product boundaries and omissions, with candidate names concealed during scoring where possible.
 
-Cet essai utilise les quotas des abonnements. Aucun coût API additionnel n'a été engagé. Les tokens facturables ne sont pas disponibles et les heures de fin observée incluent l'automatisation : aucune conclusion sur le coût API ou la vitesse relative. Le plafond de sortie de 8192 tokens prévu dans les requêtes API n'était pas imposable dans ces interfaces. Les instructions internes et la personnalisation des comptes ne sont pas contrôlées.
+The trial used subscription quotas. No additional API cost was incurred. Billable tokens are unavailable, and observed completion times include automation: neither API cost nor relative speed can be inferred. The 8192-token output cap planned for API requests could not be enforced in these interfaces. Internal instructions and account personalization were uncontrolled.
 
-## Revue documentaire ajoutée
+## Subsequent documentary review
 
-La revue par l’assistant des 49 propositions est disponible dans [le rapport de fidélité](cytiva-v01-fidelity.md). Les détails `AUDIT-DETAILLE.md` et `audit-fidelite.json` restent dans le dossier local de l’essai. Elle recommande provisoirement GPT‑6.1 Sol, avec corrections et quarantaine documentaire. Elle ne remplace pas les décisions humaines : aucun claim n’a été approuvé dans la base. Le présent document conserve le constat structurel initial.
+The assistant's review of all 49 proposals is available in the [fidelity report](cytiva-v01-fidelity.md). Detailed `AUDIT-DETAILLE.md` and `audit-fidelite.json` files remain in the local trial directory. That review provisionally recommends GPT‑6.1 Sol, with corrections and documentary quarantine. It does not replace human decisions: no claim was approved in the database through this trial. This document preserves the initial structural findings.

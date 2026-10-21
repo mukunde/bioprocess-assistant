@@ -40,7 +40,6 @@ Migration from the legacy dense template/review database is still pending.
   coverage and add new passages containing troubleshooting symptoms/causes/actions.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
-- Each commit and push requires explicit user approval. See AGENTS.md.
 
 ## Delivery status (2026-10-19)
 
@@ -48,7 +47,7 @@ All four lots are merged into main through PRs #3, #4, #5 and #6. The README
 update is merged separately through PR #7. Integrated main at `937a656` passed
 106 principal tests plus seven historical checks with local evidence (skipped
 without it). See [the consolidation record](CONSOLIDATION.md) for delivery history
-and validation scope. Future commits and pushes still require explicit approval.
+and validation scope.
 
 ## Phase 0 — Repair the reliability baseline (now)
 
@@ -323,11 +322,6 @@ Portfolio evidence: reproducible local startup, reviewed source-linked examples,
 held-out evaluation and red-team reports, measured cost/latency comparisons,
 portable telemetry export, a brief demo, and candid limitations. CI is a future
 proposal, not an instruction to publish or bypass user validation.
-
-### Git workflow
-
-No commit or push without the user's explicit validation for that operation.
-The user normally performs both. See ../AGENTS.md.
 
 ### Additional primary references
 

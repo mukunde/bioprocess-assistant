@@ -1,157 +1,157 @@
-# Protocole : recherche actuelle, passages simples et LightRAG
+# Protocol: current retrieval, simple passages and LightRAG
 
-Date : 2026-10-19. Statut : protocole préparé, non exécuté. LightRAG est un candidat, pas une migration décidée. Aucune installation, indexation, génération, dépense API, modification de base ou publication n'est engagée par ce document.
+Date: 2026-10-19. Status: prepared, not executed. LightRAG is a candidate, not an agreed migration. This document initiates no installation, indexing, generation, API expenditure, database changes or publication.
 
-## 1. Question et décisions possibles
+## 1. Research question and possible decisions
 
-Sur un petit corpus Cytiva vérifié, quelle approche retrouve les preuves nécessaires au dépannage avec le moins d'erreurs, de latence et de complexité ? Comparer les solutions utilisables sur le PC de référence (i5-1135G7, 16 Go RAM, Iris Xe), sans présumer qu'un graphe est supérieur aux passages.
+On a small verified Cytiva corpus, which approach retrieves the evidence needed for troubleshooting with the fewest errors, lowest latency and least complexity? Compare solutions usable on the reference PC (i5-1135G7, 16 GB RAM, Iris Xe), without assuming a graph outperforms passages.
 
-Les décisions admissibles sont : conserver la recherche actuelle ; ajouter une recherche de passages ; utiliser LightRAG comme composant de recherche ; ou conclure que les données ne permettent pas de trancher. Une adoption éventuelle garde le contrat v0.2, la provenance et la revue humaine. La migration du stockage ou de la génération n'est pas l'objet de ce premier essai.
+Possible decisions are to retain current retrieval, add passage retrieval, use LightRAG as a retrieval component, or conclude that the data is insufficient. Any adoption retains the v0.2 contract, provenance and human review. Storage or generation migration is outside this first trial.
 
-## 2. Prérequis et périmètre réellement comparable
+## 2. Prerequisites and genuinely comparable scope
 
-- Génération et revue humaine du paquet `pages-100-102-v02-r2` terminées le 20 octobre 2026 : 33 claims corrigés, 19 validés et 14 avec réserves. Le [paquet sélectionné](../../experiments/cytiva/reviewed-r2/README.md) conserve les décisions et les empreintes ; aucune publication n'est autorisée. Ces pages restent des données de développement, sans référence exhaustive des omissions. Les pages 97–99 et les anciennes fiches ne deviennent pas approuvées par cette revue r2.
-- Constituer un ensemble de claims approuvés et de preuves localisées, incluant de vrais symptômes/causes/actions. Les pages 100–102, principalement procédurales, ne suffisent pas à mesurer la couverture causale ; ajouter des pages de dépannage pertinentes si nécessaire, avant de figer les questions.
-- Ne pas assimiler un contrôle lexical réussi à une approbation scientifique. L'utilisateur vérifie la fidélité documentaire ; l'aptitude opérationnelle industrielle reste hors périmètre.
-- Figer PDF/édition, conversion, pages, sources ambiguës, claims, décisions humaines et liens claim-preuve par SHA-256. Aucun résultat de référence ni verdict de test n'entre dans les index.
-- Les adaptateurs v0.2 vers le moteur de recherche et le rendu commun restent à implémenter et vérifier. Si un prérequis manque, enregistrer « non prêt » ; ne pas produire de score factice.
+- Generation and human review of `pages-100-102-v02-r2` completed on 20 October 2026: 33 corrected claims, 19 approved and 14 approved with reservations. The [selected package](../../experiments/cytiva/reviewed-r2/README.md) preserves decisions and hashes; publication remains unauthorized. These pages are development data, without an exhaustive omission reference. This r2 review does not approve pages 97–99 or the older cards.
+- Assemble approved claims and located evidence, including actual symptoms/causes/actions. Mainly procedural pages 100–102 cannot establish causal coverage; add relevant troubleshooting pages if needed before freezing questions.
+- Successful lexical checks are not scientific approval. The user verifies documentary fidelity; industrial operational suitability is outside scope.
+- Freeze PDF/edition, conversion, pages, ambiguous sources, claims, human decisions and claim-evidence links with SHA-256. No reference answer or test verdict enters an index.
+- Adapters from v0.2 to retrieval and the common renderer still need implementation and verification. Record missing prerequisites as not ready, rather than producing artificial scores.
 
-### Témoin existant et comparaison sur corpus commun
+### Existing control and common-corpus comparison
 
-`tools.query_graph` utilise un index anglais de symptômes, un seuil Lucene de 2,5 et le meilleur symptôme, puis les chemins `INDICATES` / `RESOLVED_BY`. Ce n'est pas du Text2Cypher généré par LLM.
+`tools.query_graph` uses an English symptom index, a Lucene threshold of 2.5 and the best symptom, then `INDICATES` / `RESOLVED_BY` paths. It is not LLM-generated Text2Cypher.
 
-**A0, témoin inchangé** : conserver code, seed et seuil actuels et rejouer les cas existants séparément. La suite de développement est déjà connue ; ses scores ne constituent pas un nouveau résultat indépendant. Sans source précise retrouvable dans le corpus commun, un fait du seed n'est pas une preuve comparable. Les résultats A0 ne participent pas au classement à couverture égale.
+**A0, unchanged control:** retain current code, seed and threshold; replay existing cases separately. The development suite is already known, so its scores are not new independent results. Without a precise source retrievable in the common corpus, a seed fact is not comparable evidence. A0 results do not enter the equal-coverage ranking.
 
-**A, famille actuelle sur corpus commun** : créer une copie d'évaluation utilisant la même logique lexicale sur symptômes approuvés et parcours paramétrés, avec un adaptateur explicite depuis les claims v0.2. Conserver les procédures sans chemin causal dans l'inventaire de couverture ; ne pas inventer de cause pour les rendre accessibles. A est une adaptation expérimentale, jamais présentée comme l'application actuelle inchangée. Aucun changement du graphe de service.
+**A, current retrieval family on a common corpus:** create an evaluation copy using the same lexical symptom logic and parameterized traversals, with an explicit adapter from v0.2 claims. Keep procedures without causal paths in the coverage inventory; never invent a cause to make them accessible. A is an experimental adaptation, not the unchanged current application. The serving graph is untouched.
 
-Publier les résultats sur deux strates préassignées : questions compatibles avec le parcours causal et questions procédurales/synthétiques plus larges. Pour chaque strate, distinguer couverture représentable et qualité de recherche. Une impossibilité structurelle compte dans la couverture globale, mais ne prouve pas un mauvais classement lexical.
+Report two preassigned strata: questions compatible with causal traversal and broader procedural/synthesis questions. For each, distinguish representable coverage from retrieval quality. Structural inability counts against overall coverage but does not prove poor lexical ranking.
 
-## 3. Trois approches principales
+## 3. Three main approaches
 
-| Bras | Index et recherche | Ce qui reste identique |
+| Arm | Index and retrieval | Shared controls |
 |---|---|---|
-| A — famille actuelle | Recherche lexicale anglaise sur symptômes, parcours des claims approuvés, liens vers leurs passages sources ; seuil initial 2,5, éventuel réglage sur développement uniquement | Corpus approuvé, preuves, normalisation des questions, sortie canonique |
-| B — passages simples | Un embedding local multilingue par passage canonique ; classement par similarité cosinus, sans extraction d'entités, graphe, reranker ou expansion LLM | Même modèle d'embedding et mêmes passages que C ; même budget de contexte |
-| C — LightRAG | Import des mêmes passages et d'une projection des claims approuvés via `insert_custom_kg`, recherche `mix`, récupération du contexte sans réponse finale | Même graphe documentaire que A, mêmes embeddings que B, même sortie canonique |
+| A — current family | English lexical symptom search, traversal of approved claims, links to source passages; initial threshold 2.5, any tuning on development only | Approved corpus, evidence, question normalization, canonical output |
+| B — simple passages | One local multilingual embedding per canonical passage; cosine ranking, without entity extraction, graph, reranker or LLM expansion | Same embeddings and passages as C; same context budget |
+| C — LightRAG | Import the same passages and an approved-claim projection through `insert_custom_kg`, use `mix` retrieval, retrieve context without a final answer | Same documentary graph as A, same embeddings as B, same canonical output |
 
-B est volontairement une recherche vectorielle simple, pas un second framework complet. Un témoin BM25 sur les passages peut être ajouté comme ablation B-lexical, avec résultats séparés et coût déclaré ; ne pas remplacer B après lecture des résultats de test.
+B is deliberately simple vector retrieval rather than another full framework. A passage BM25 control may be added as the B-lexical ablation, with separate results and declared cost; do not replace B after seeing test results.
 
-Pour C, épingler un commit/release et un lock de dépendances avant l'essai. Tester les API de cette version : la documentation actuelle décrit `insert_custom_kg`, `only_need_context` et `aquery_data`, mais leur disponibilité ne remplace pas un test d'intégration. Retourner les objets et preuves exploitables, plutôt que dépendre d'une analyse fragile d'un contexte mis en forme.
+For C, pin a commit/release and dependency lock before the trial. Test that version's APIs: documentation consulted describes `insert_custom_kg`, `only_need_context` and `aquery_data`, but documented availability is not an integration test. Return usable objects and evidence rather than relying on fragile parsing of formatted context.
 
-Le mode contexte seul supprime la génération finale, mais ne garantit pas zéro appel LLM : extraction des mots-clés, fusion ou résumé peuvent encore en utiliser. Comptabiliser et journaliser chaque rôle. Aucun appel de reconstruction ne doit réintroduire des claims refusés ou en quarantaine.
+Context-only mode removes final generation but does not guarantee zero LLM calls: keyword extraction, merging or summarization may still use them. Account for and log every role. No reconstruction call may reintroduce rejected or quarantined claims.
 
-Si C gagne, effectuer les ablations `naive` / `mix` avec les mêmes passages, embeddings et budgets, puis avec mots-clés figés. Sans ces contrôles, conclure sur le système LightRAG testé, pas sur l'effet causal du graphe seul. L'extraction automatique native et le chunking propre à LightRAG sont des expériences ultérieures distinctes.
+If C wins, run `naive` / `mix` ablations with identical passages, embeddings and budgets, followed by frozen keywords. Without these controls, conclusions concern the tested LightRAG system, not the causal effect of the graph alone. Native automatic extraction and LightRAG's own chunking are separate later experiments.
 
-## 4. Corpus, chunking et conservation des conditions
+## 4. Corpus, chunking and preservation of conditions
 
-Utiliser notre stratégie fondée sur la structure documentaire et la hiérarchie. Les trois bras partagent exactement le même manifeste de passages :
+Use our document-structure and hierarchy strategy. All three arms share exactly the same passage manifest:
 
-- Regrouper paragraphes/listes par section et sous-section ; viser 150–350 tokens, plafond 512, sans découper une instruction de sa condition, sa négation ou son unité. Une instruction plus longue devient un cas exceptionnel déclaré, pas une troncature silencieuse.
-- Conserver document/version, titre et chemin hiérarchique, pages PDF/imprimées, item_refs, offsets et empreintes des textes. Les tableaux gardent leurs en-têtes et associations de lignes ; les légendes restent distinguées du protocole.
-- Garder le lien enfant-parent pour rétablir le contexte. Toute expansion vers un parent est appliquée par le même assembleur aux trois bras et consomme le même budget ; elle ne doit pas fournir des passages supplémentaires uniquement à C.
-- Affecter des IDs canoniques stables aux passages et aux preuves. La projection LightRAG doit préserver les IDs de claims, force, portée produit/phase, conditions AND/OR, quantités et liens vers ces preuves. Si une information ne tient pas dans une arête, conserver une représentation de Claim distincte et un registre externe versionné ; ne pas l'aplatir en résumé faisant autorité.
-- Vérifier l'export aller-retour sur des cas de négation, alternatives, produits voisins et nombres. Une perte de preuve ou de condition bloque le bras C avant les mesures.
+- Group paragraphs/lists by section and subsection; target 150–350 tokens, cap at 512, without separating an instruction from its condition, negation or unit. Longer instructions are declared exceptions, never silently truncated.
+- Preserve document/version, title and hierarchy path, PDF/printed pages, item_refs, offsets and text hashes. Tables retain headers and row associations; captions remain distinct from protocol instructions.
+- Preserve child-parent links to restore context. The same assembler applies parent expansion to all arms under the same budget; C must not receive extra passages alone.
+- Assign stable canonical passage and evidence IDs. The LightRAG projection must preserve claim IDs, force, product/phase scope, AND/OR conditions, quantities and evidence links. If an edge cannot hold information, retain a separate Claim representation and versioned external registry rather than flattening it into an authoritative summary.
+- Check round-trip export on negation, alternatives, adjacent products and numbers. Evidence or condition loss blocks C before measurement.
 
-Un passage peut contenir un texte ambigu utile pour expliquer une abstention ; il garde son drapeau et ne devient jamais une recommandation autorisée. Le filtre commun de publication/revue s'applique aux trois bras. Si l'unité source mélange clair et ambigu, appliquer le blocage conservateur existant ou créer une nouvelle segmentation revue, identique pour tous.
+A passage may contain ambiguous text useful for explaining abstention; its flag remains and it never becomes an authorized recommendation. The common publication/review filter applies to all arms. Where a source unit mixes clear and ambiguous content, apply the existing conservative block or create a newly reviewed segmentation shared by all arms.
 
-## 5. Questions et référence humaine
+## 5. Questions and human reference
 
-Préparer 24 intentions, chacune en français et en anglais : 48 formulations au total. Répartition prévue, à confirmer sur les sources réelles avant gel :
+Prepare 24 intents, each in French and English: 48 formulations total. Confirm this planned distribution against real sources before freezing:
 
-| Famille | Intentions | Attendu |
+| Family | Intents | Expected behaviour |
 |---|---:|---|
-| Dépannage causal direct | 6 | Symptôme, causes possibles et actions documentées |
-| Conditions, nécessité et négation | 4 | Application conditionnelle ou demande de contexte, sans permission inventée |
-| Quantités et frontières de produit/phase | 4 | Valeurs/unités exactes, refus de transfert à un produit voisin |
-| Preuves dispersées entre plusieurs passages | 4 | Toutes les preuves indispensables, sans relation nouvelle inférée |
-| Hors couverture, manque de contexte ou source ambiguë | 4 | Refus, clarification ou signalement d'ambiguïté selon le cas |
-| Injection directe ou portée par un document de test | 2 | Instruction hostile traitée comme donnée, aucune dérogation aux preuves |
+| Direct causal troubleshooting | 6 | Symptom, possible causes and documented actions |
+| Conditions, necessity and negation | 4 | Conditional applicability or context request, without invented permission |
+| Quantities and product/phase boundaries | 4 | Exact values/units, no transfer to an adjacent product |
+| Evidence dispersed across passages | 4 | All indispensable evidence, without newly inferred relations |
+| Outside coverage, missing context or ambiguous source | 4 | Refusal, clarification or ambiguity notice as appropriate |
+| Direct injection or injection in a test document | 2 | Hostile instruction treated as data, with no evidence-policy override |
 
-Une variante documentaire injectée est une fixture synthétique distincte, marquée comme telle, jamais attribuée au PDF original ni publiée dans le graphe. Tous les bras voient la même variante et le même statut de revue.
+An injected document variant is a distinct, labelled synthetic fixture, never attributed to the original PDF or published in the graph. Every arm sees the same variant and review status.
 
-Réserver huit intentions (16 formulations) au développement et 16 intentions (32 formulations) à l'évaluation verrouillée. Choisir une graine, répartir les familles et conserver les deux langues et toutes les variantes d'une intention dans le même groupe. Éviter les quasi-doublons entre groupes. Les questions de test sont cachées pendant le réglage ; le corpus reste indexé pour tous. Puisque les pages ont été inspectées, ne pas appeler cela un manuel inédit ou une évaluation totalement aveugle.
+Reserve eight intents (16 formulations) for development and 16 intents (32 formulations) for locked evaluation. Choose a seed, distribute families and keep both languages and every variant of an intent in the same group. Avoid near-duplicates between groups. Test questions remain hidden during tuning; the corpus is indexed for everyone. Since pages have already been inspected, this is neither an unseen manual nor a fully blind evaluation.
 
-Pour chaque question, l'utilisateur valide avant exécution : IDs de passages pertinents et indispensables, preuves alternatives acceptables, claims autorisés, produit/phase, paramètres essentiels, contexte manquant, statut attendu (`answer`, `clarify`, `refuse`, `source_ambiguity`) et justification. Un passage sans lien causal explicite ne justifie pas une cause inventée.
+Before execution, the user validates for each question: relevant and indispensable passage IDs, acceptable evidence alternatives, authorized claims, product/phase, essential parameters, missing context, expected status (`answer`, `clarify`, `refuse`, `source_ambiguity`) and rationale. A passage without an explicit causal link cannot justify an invented cause.
 
-Les deux formulations doivent avoir le même sens. Les métriques des deux langues restent séparées puis agrégées par intention ; elles ne constituent pas 48 observations indépendantes. Conserver les 33 cas actuels comme contrôle de développement séparé, pas comme jeu neuf.
+Both formulations must have the same meaning. Report language metrics separately, then aggregate by intent; these are not 48 independent observations. Retain the current 33 cases as a separate development control, not a fresh test set.
 
-## 6. Configuration et déroulement
+## 6. Configuration and execution
 
-### Étape 0 — Faisabilité, avant tout score
+### Stage 0 — Feasibility before scoring
 
-Créer des espaces d'évaluation isolés, sauvegarder les configurations et vérifier que le graphe de service est inchangé. Ne pas utiliser de procédure de suppression globale. Vérifier import, provenance aller-retour, mode contexte seul et absence de fournisseurs cloud non configurés.
+Create isolated evaluation spaces, save configurations and verify the serving graph is unchanged. Do not use global deletion procedures. Verify import, round-trip provenance, context-only mode and absence of unconfigured cloud providers.
 
-Sélectionner et figer un seul embedding local multilingue compatible avec le PC (nom, révision, dimension, tokenizer, quantification et préfixes). Mesurer sa mémoire sur deux questions de développement. Ne pas choisir son modèle après lecture du test. S'il ne tient pas en mémoire, arrêter et déclarer le candidat non viable dans ce profil matériel.
+Select and freeze one local multilingual embedding compatible with the PC: name, revision, dimension, tokenizer, quantization and prefixes. Measure memory on two development questions. Do not select the model after reading the test. If it does not fit memory, stop and declare the candidate infeasible on this hardware.
 
-Pour les mots-clés LightRAG, employer un modèle local disponible, préciser nom/révision/quantification et paramètres. Une bibliothèque open source ne donne pas accès à l'abonnement ChatGPT depuis ses appels API : aucune clé API ou dépense supplémentaire n'est autorisée ici. L'extraction par abonnement reste une étape documentaire séparée, partagée par tous les bras.
+Use an available local model for LightRAG keywords; record name/revision/quantization and parameters. An open-source library cannot use a ChatGPT subscription through its API calls: no API key or extra expenditure is authorized here. Subscription-based extraction remains a separate documentary stage shared by all arms.
 
-### Étape 1 — Recherche seule, comparaison principale
+### Stage 1 — Retrieval only, the main comparison
 
-- Fournir à chaque bras la même question originale. Pour A et son index anglais, utiliser une reformulation anglaise figée, préparée sans les réponses et appliquée également comme entrée à B/C dans la piste contrôlée. Pour un texte anglais, garder l'original. Archiver les deux versions et la règle de reformulation.
-- Une piste secondaire FR/EN native peut laisser B/C traiter le français directement et utiliser le pont modèle réel pour A : comptabiliser ce pont et publier ces scores séparément. Ne pas mélanger les deux pistes.
-- A conserve le meilleur symptôme ; ses chemins sont projetés vers les passages cités. B et C classent des passages ; chaque résultat est converti en unités canoniques de preuve. Dédupliquer avant calcul des métriques. Fixer le départage des ex aequo (ID) et l'ordre des preuves d'un chemin.
-- Exporter au plus cinq passages canoniques, puis appliquer un plafond commun de 2 048 tokens de contexte, titres compris, avec un même tokenizer de mesure. Retirer les passages entiers qui dépassent le budget, sans tronquer une condition ou une quantité ; enregistrer les exclusions. Mesurer le classement avant assemblage et la couverture effective après plafond ; ne pas appeler un top-k d'entités LightRAG un top-k de passages.
-- Régler seuils sur le développement seulement ; ne pas comparer directement un score Lucene, cosinus et LightRAG. Si le moteur ne fournit pas de score calibrable, fixer sa règle de sélection sur développement et la déclarer.
-- Désactiver le reranking pour la comparaison principale. Toute future activation est une variante dédiée avec son coût.
-- Figer tout réglage avant le test : un passage principal, puis trois répétitions chronométrées de recherche par question, en alternant l'ordre A/B/C. Ne pas sélectionner la meilleure répétition.
-- Séparer démarrage à froid (mesure distincte), régime chaud avec caches de réponses/requêtes désactivés et profil cache activé éventuel. Les caches d'index restent des artefacts figés ; déclarer les caches non désactivables et ne pas les confondre avec des calculs frais.
+- Supply the same original question to each arm. For A's English index, use a frozen English reformulation prepared without answers, also supplied to B/C in the controlled track. Keep English originals unchanged. Archive both versions and the reformulation rule.
+- A secondary native FR/EN track may let B/C handle French directly and use A's actual model bridge: account for that bridge and report these scores separately. Never mix tracks.
+- A retains the best symptom; project its paths to cited passages. B and C rank passages; convert each result into canonical evidence units. Deduplicate before metrics. Fix tie-breaking by ID and the evidence order within a path.
+- Export at most five canonical passages, then impose a common 2,048-token context cap including headings, using one measurement tokenizer. Remove whole over-budget passages without truncating conditions or quantities; record exclusions. Measure ranking before assembly and effective coverage after the cap. LightRAG top-k entities are not top-k passages.
+- Tune thresholds on development only; Lucene, cosine and LightRAG scores are not directly comparable. If a score cannot be calibrated, fix and disclose the selection rule on development.
+- Disable reranking in the main comparison. Any later activation is a dedicated variant with its own cost.
+- Freeze all settings before testing: one main pass, then three timed retrieval repetitions per question, alternating A/B/C order. Never select the best repetition.
+- Separate cold start, warm operation with answer/query caches disabled, and any cache-enabled profile. Index caches remain frozen artifacts; disclose caches that cannot be disabled and distinguish them from fresh computation.
 
-### Étape 2 — Réponse complète, seulement après les adaptateurs
+### Stage 2 — Complete answers, only after adapters exist
 
-Réutiliser les contextes enregistrés à l'étape 1. Même modèle local de réponse, révision, paramètres, prompt, limite de sortie et politique de refus pour les trois bras ; une génération par question/bras, aucun choix parmi plusieurs essais. Les erreurs et sorties tronquées restent dans les dénominateurs. La même graine ne rend pas les exécutions parfaitement déterministes.
+Reuse contexts recorded in stage 1. Use the same local answering model, revision, parameters, prompt, output cap and refusal policy for all arms; one generation per question/arm, without choosing among multiple attempts. Errors and truncated outputs remain in denominators. An identical seed does not make execution perfectly deterministic.
 
-Le rendu actuel rejette la prose technique libre : la comparaison principale de réponse doit conserver cette contrainte. Un adaptateur commun transforme les preuves retrouvées en claims approuvés admissibles, avec leurs conditions et leur portée ; le modèle sélectionne leurs IDs et le même validateur/rendu produit la sortie. Les preuves retrouvées seules ne valent pas approbation. Cet adaptateur est à construire : tant qu'il manque, limiter les conclusions à la recherche, sans annoncer de score de génération comparable.
+The current renderer rejects free technical prose; the main answer comparison must retain this constraint. A common adapter maps retrieved evidence to eligible approved claims with conditions and scope; the model selects IDs, and the same validator/renderer produces output. Retrieved evidence alone does not confer approval. This adapter remains to be built: until then, limit conclusions to retrieval, without claiming comparable generation scores.
 
-Une expérience de génération libre classique est possible ensuite avec un prompt identique et des contrôles explicites, mais ses scores sont séparés de ceux du rendu contraint. Ragas, avec juges/embeddings locaux explicitement configurés, complète les vérifications déterministes ; ses verdicts ne deviennent pas des décisions humaines. Si le juge local n'est pas calibré sur quelques cas relus, publier ses scores comme exploratoires et privilégier la revue manuelle masquée par bras.
+A conventional free-generation experiment may follow with an identical prompt and explicit checks, but its scores remain separate from constrained rendering. Ragas with explicitly configured local judges/embeddings supplements deterministic verification; its verdicts do not become human decisions. If the local judge has not been calibrated on reviewed cases, label scores exploratory and prioritize manual review with arm identities concealed.
 
-## 7. Mesures et dénominateurs
+## 7. Measures and denominators
 
-| Niveau | Mesures | Conditions de lecture |
+| Level | Measures | Interpretation |
 |---|---|---|
-| Recherche | Precision@5, Recall@5, MRR, NDCG@5 | Sur les questions ayant une référence pertinente ; pertinence graduée 0/1/2 gelée par l'annotation. Absence d'une preuve = score nul, pas exclusion de la question |
-| Preuves complètes | Fraction des questions où toutes les preuves indispensables (ou un ensemble alternatif accepté) sont présentes | Mesurer avant et après budget de contexte ; ne pas pénaliser une alternative de preuve validée comme une omission |
-| Couverture | Questions représentables par A, preuves mappables, échecs par famille | Séparer limites structurelles, pertes d'adaptateur et défauts de classement |
-| Réponse | Claims justifiés, erreurs de relation/force/condition/quantité/produit, exactitude des citations | Comparaison des sorties et de leurs preuves par vérification déterministe puis revue humaine |
-| Abstention | Bons refus, bonnes clarifications, fausses acceptations et refus excessifs | Matrice des quatre statuts attendus ; les questions sans preuve n'ont pas un Recall@5 artificiel de zéro |
-| Exploitation | Temps d'indexation et de revue, latence médiane/p95, RAM pic du système et processus, taille des index | Faible échantillon : p95 exploratoire, pas de p99 ni promesse de production |
-| Appels/coût | Appels par rôle, tokens rapportés/estimés, échecs et reprises, cache, coût estimé | Prix inconnu = inconnu ; abonnements/électricité/temps humain ne sont pas des coûts nuls démontrés |
+| Retrieval | Precision@5, Recall@5, MRR, NDCG@5 | Questions with relevant reference evidence; frozen 0/1/2 graded relevance. Missing evidence scores zero, rather than removing the question |
+| Complete evidence | Fraction of questions containing all indispensable evidence or an accepted alternative set | Before and after the context cap; an approved evidence alternative is not an omission |
+| Coverage | Questions representable by A, mappable evidence, failures by family | Separate structural limits, adapter losses and ranking failures |
+| Answer | Supported claims; relation/force/condition/quantity/product errors; citation accuracy | Deterministic checks followed by human comparison of outputs and evidence |
+| Abstention | Correct refusals/clarifications, false acceptances, excessive refusals | Matrix of the four expected statuses; questions without evidence do not receive an artificial zero Recall@5 |
+| Operations | Indexing/review time, median/p95 latency, system/process peak RAM, index size | Small sample: exploratory p95, no p99 or production promise |
+| Calls/cost | Calls by role, reported/estimated tokens, failures/retries, cache, estimated cost | Unknown prices stay unknown; subscriptions/electricity/human time are not demonstrated zero costs |
 
-Pour un top-5, diviser Precision@5 par 5, en comptant les positions non rendues comme non pertinentes. Recall@5 porte sur les preuves de référence canoniques ; publier séparément la couverture des ensembles alternatifs minimaux. MRR mesure la première preuve pertinente et ne suffit pas pour une procédure nécessitant plusieurs preuves. NDCG utilise les mêmes annotations graduées pour tous les bras.
+For top-5 results, divide Precision@5 by 5, counting unreturned positions as irrelevant. Recall@5 uses canonical reference evidence; separately report coverage of minimal alternative sets. MRR measures the first relevant evidence and is insufficient for procedures needing multiple sources. NDCG uses identical graded annotations across arms.
 
-Présenter les comptes bruts et résultats appariés par intention, famille et langue. Un éventuel bootstrap rééchantillonne les intentions avec leurs langues, pas les répétitions de timing. Petit jeu documentaire : aucune généralisation à l'ensemble du manuel ou au secteur régulé. Échec/OOM/timeout = cas visible ; budget de temps identique par requête, décidé sur développement puis gelé.
+Report raw counts and paired results by intent, family and language. Any bootstrap resamples intents with their languages, not timing repetitions. This small documentary set cannot support generalization to the whole manual or regulated sector. Failures/OOM/timeouts remain visible; establish an identical per-query time budget on development and freeze it.
 
-## 8. Traçabilité, ressources et budget
+## 8. Traceability, resources and budget
 
-Conserver un manifeste du run : commit du projet et de LightRAG, environnement verrouillé, SHA-256 corpus/claims/passages/questions, matériels, modèles et poids, paramètres, seuils, budgets de contexte, caches et ordre des exécutions. Fixer les plafonds exacts de temps et de RAM après le test de faisabilité, avant les questions verrouillées. Sur le PC de 16 Go, réserver une marge pour Windows/WSL ; une exécution qui provoque une pression mémoire durable ou compromet le PC est arrêtée, sans cacher les échecs.
+Keep a run manifest: project and LightRAG commits, locked environment, corpus/claim/passage/question SHA-256 hashes, hardware, models/weights, parameters, thresholds, context budgets, caches and execution order. Set exact time/RAM limits after feasibility but before locked questions. On the 16 GB PC, reserve headroom for Windows/WSL; stop runs causing sustained memory pressure or compromising the PC, without hiding failures.
 
-Chaque résultat contient `run_id`, bras/piste, `question_id`, `intent_id`, langue, passages/claims ordonnés, scores natifs, raisons de filtre, contexte exact et empreinte, résultat/erreur, latences, RAM, appels et tokens par rôle. Le journal de benchmark est local et contrôlé ; les traces opérationnelles restent des métadonnées par défaut, sans secrets ni texte intégral exporté vers un service tiers.
+Each result contains `run_id`, arm/track, `question_id`, `intent_id`, language, ordered passages/claims, native scores, filtering reasons, exact context and hash, result/error, latency, RAM, calls and tokens by role. The benchmark log is local and controlled; operational traces default to metadata, without secrets or full text exported to third parties.
 
-Budget additionnel API de ce protocole : **0 EUR**. Tous les modèles d'exécution sont locaux ; aucun fournisseur distant de repli. Le plafond projet inférieur à 10 EUR/mois reste une contrainte, pas une autorisation de dépenser. Arrêter plutôt que changer silencieusement de fournisseur. Compter séparément construction d'index/embeddings, requêtes, génération, juges et temps humain. L'absence de facture API n'établit pas la gratuité totale.
+Additional API budget for this protocol: **EUR 0**. All runtime models are local; no remote fallback provider. The project ceiling below EUR 10/month remains a constraint, not spending authorization. Stop rather than silently switching provider. Separately account for index/embedding construction, queries, generation, judges and human time. No API invoice does not establish zero total cost.
 
-Enregistrer les données de run sous un nouveau `data/experiments/retrieval/<run_id>/`, ignoré par Git. Garder manifestes, résultats, métriques et notes de revue séparés des entrées figées. Ne pas indexer les réponses attendues ni les sorties d'un autre bras.
+Store runs in new Git-ignored `data/experiments/retrieval/<run_id>/` directories. Separate manifests, results, metrics and review notes from frozen inputs. Do not index expected answers or another arm's outputs.
 
-## 9. Règle de décision à geler avant le test
+## 9. Decision rule to freeze before testing
 
-Conditions minimales : aucune sortie publiée avec faux produit, quantité dangereusement altérée, condition supprimée, preuve inventée ou quarantaine contournée dans le jeu vérifié ; provenance vérifiable et respect des limites matérielles. Les erreurs de recherche restent mesurées même si le filtre les bloque. L'absence d'erreur sur ce petit jeu ne constitue pas une certification.
+Minimum requirements: no published output with an incorrect product, dangerously altered quantity, omitted condition, invented evidence or bypassed quarantine in the checked set; verifiable provenance and compliance with hardware limits. Retrieval errors remain measured even when filters block them. Absence of errors on this small set is not certification.
 
-Pour justifier un pilote LightRAG, seuil de travail proposé à figer après annotation mais avant exécution : au moins deux intentions d'évaluation supplémentaires avec preuves complètes sur les 16, face au meilleur bras plus simple, sans régression sur les fausses acceptations et avec une latence médiane au plus deux fois celle de ce concurrent et sans dépassement des plafonds de ressources. Le nombre de deux est un seuil pratique de pilote, pas une significativité statistique. Publier aussi les variantes perdantes et la sensibilité aux cas individuels ; aucune adoption générale sur ce seul résultat.
+A proposed working threshold for a LightRAG pilot, to freeze after annotation but before execution: at least two additional evaluation intents with complete evidence out of 16 versus the best simpler arm, no regression in false acceptances, median latency at most twice that competitor's and no resource-limit breach. Two intents is a practical pilot threshold, not statistical significance. Report losing variants and sensitivity to individual cases too; this trial alone does not justify general adoption.
 
-Si B suffit, privilégier B. Si A suffit, conserver A. Si le gain de C n'apparaît que sur les questions plus larges, envisager un complément documentaire borné plutôt qu'un remplacement du moteur de dépannage. Si la projection C perd des conditions ou réclame des reprises manuelles disproportionnées, ne pas poursuivre malgré un bon score moyen. Les corrections faites après déverrouillage deviennent une nouvelle expérience, jamais une amélioration rétroactive du score.
+If B suffices, prefer B. If A suffices, retain A. If C only improves broader questions, consider a bounded documentary supplement instead of replacing troubleshooting retrieval. Do not continue if C loses conditions or requires disproportionate manual repair, despite a good mean score. Corrections after unlocking define a new experiment, never a retroactive score improvement.
 
-## 10. Livrables et ordre de travail
+## 10. Deliverables and work order
 
-1. Revue humaine des sources et claims, inventaire de couverture et manifeste de passages commun.
-2. Questions annotées, groupes développement/évaluation et plan des mesures gelés.
-3. Adaptateurs A/C et pilote de faisabilité locale ; compléter les champs de configuration encore non choisis avant toute mesure verrouillée.
-4. Résultats de recherche A/B/C, témoins A0 et ablations nécessaires ; journal de ressources et erreurs.
-5. Réponses comparables seulement après disponibilité du rendu commun ; revue masquée et Ragas exploratoire.
-6. Rapport décisionnel avec comptes bruts, limites, coût d'entretien et recommandation motivée.
+1. Human review of sources/claims, coverage inventory and common passage manifest.
+2. Annotated questions, development/evaluation groups and frozen measurement plan.
+3. A/C adapters and local feasibility pilot; complete unselected configuration fields before locked measurement.
+4. A/B/C retrieval results, A0 controls and necessary ablations; resource/error log.
+5. Comparable answers only once the common renderer exists; concealed-arm review and exploratory Ragas.
+6. Decision report with raw counts, limitations, maintenance cost and reasoned recommendation.
 
-Le présent document prépare la méthode. Il ne prétend pas fournir déjà les questions validées, les adaptateurs ou un benchmark exécutable. Aucun commit ni push sans accord.
+This document prepares the method. It does not claim that validated questions, adapters or an executable benchmark already exist.
 
-## Sources techniques consultées le 2026-10-19
+## Technical sources consulted on 2026-10-19
 
-- [LightRAG README](https://github.com/HKUDS/LightRAG/blob/main/README.md) : rôles de modèles et modes de recherche.
-- [Programmation du cœur](https://github.com/HKUDS/LightRAG/blob/main/docs/ProgramingWithCore.md) : graphe personnalisé, contexte seul, limites de contexte et stockage. Ces capacités sont à revérifier sur la version épinglée ; contexte seul ne signifie pas absence de tout appel LLM.
-- [ADR multilingue historique](../ADR-002-multilingual-retrieval.md) : résultats antérieurs à distinguer du nouvel essai.
-- [Contrat v0.2](../CLAIM-CONTRACT-V02.md) et [roadmap](../ROADMAP.md) : provenance, conditions et limites de publication.
+- [LightRAG README](https://github.com/HKUDS/LightRAG/blob/main/README.md): model roles and retrieval modes.
+- [Core programming](https://github.com/HKUDS/LightRAG/blob/main/docs/ProgramingWithCore.md): custom graphs, context-only mode, context limits and storage. Recheck these capabilities against the pinned version; context-only does not imply no LLM calls.
+- [Historical multilingual ADR](../ADR-002-multilingual-retrieval.md): distinguish earlier results from the new trial.
+- [Contract v0.2](../CLAIM-CONTRACT-V02.md) and [roadmap](../ROADMAP.md): provenance, conditions and publication limits.

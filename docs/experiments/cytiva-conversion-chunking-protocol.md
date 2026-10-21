@@ -1,124 +1,124 @@
-# Cytiva : validation des tableaux, légendes, schémas et du chunking
+# Cytiva: validating tables, captions, diagrams and chunking
 
-Date : 2026-10-21. Statut : **première tranche exécutée sur 77 et 88 : T0/T1 et K0/K800 ; défaut bloquant en conversion, revue utilisateur en attente**. Voir le [rapport du premier essai](cytiva-conversion-chunking-results-077-088.md). Les autres pages et K600/K1400 restent non exécutés. Aucun appel LLM/API, aucune publication Neo4j et aucune modification du paquet r2.
+Date: 2026-10-21. Status: **first slice executed on 77 and 88: T0/T1 and K0/K800; blocking conversion defect, user review pending**. See the [first trial report](cytiva-conversion-chunking-results-077-088.md). Other pages and K600/K1400 remain untested. No LLM/API calls, Neo4j publication or changes to the r2 package.
 
-## 1. Objectif et limites
+## 1. Objective and limitations
 
-Déterminer ce que le convertisseur conserve du PDF, puis ce que le chunker conserve de cette conversion. Ne pas confondre ces deux erreurs avec une erreur d'extraction d'un LLM. Cette phase ne lance pas `ingestion extract` : cette commande déclenche aussi l'extraction sémantique, inutile pour ce diagnostic.
+Determine what the converter preserves from the PDF, then what the chunker preserves from that conversion. Separate both error sources from LLM extraction errors. This phase does not run `ingestion extract`: that command also triggers semantic extraction, which is unnecessary for this diagnostic.
 
-Le test r2 désactivait `do_table_structure` et l'OCR. Il ne valide pas les tableaux ni l'interprétation des illustrations. Son profil reste gelé. Le pipeline local Docling Graph dispose de son propre chemin de conversion ; ne pas lui attribuer automatiquement les réglages du test r2.
+The r2 trial disabled `do_table_structure` and OCR. It validates neither tables nor illustration interpretation. Its profile remains frozen. The local Docling Graph pipeline has its own conversion path; do not automatically attribute r2 settings to it.
 
-Toutes les pages ci-dessous sont des données de **développement**. Leur examen et l'ajustement futur des réglages empêchent de les présenter comme un test indépendant. Ce protocole ne démontre ni aptitude industrielle ni validité scientifique des recommandations. Les tableaux choisis portent sur les propriétés, conditions et produits ; ils ne constituent pas une matrice complète symptôme/cause/action.
+All selected pages are **development** data. Inspection and subsequent tuning prevent presenting them as an independent test. This protocol demonstrates neither industrial suitability nor scientific validity of recommendations. Selected tables concern properties, conditions and products, not a complete symptom/cause/action matrix.
 
-## 2. Source et sélection
+## 2. Source and selection
 
-Manuel local : `cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf`, 183 pages PDF, SHA-256 `a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a`. Référence/version reprises du registre r2 : `CY13981-25Jan21-HB`, `25Jan21` ; ce sont des métadonnées documentaires déjà enregistrées, pas une nouvelle certification de l'édition.
+Local manual: `cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf`, 183 PDF pages, SHA-256 `a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a`. Reference/version copied from the r2 registry: `CY13981-25Jan21-HB`, `25Jan21`. These are previously recorded documentary metadata, not renewed certification of the edition.
 
-Les numéros ci-dessous sont **des pages PDF comptées à partir de 1**. Les numéros imprimés visibles correspondent sur les huit pages sélectionnées. Pour une API indexée à zéro, soustraire 1 ; conserver les deux champs dans le manifeste. La sélection structurée est dans [cytiva-visual-validation-selection.json](cytiva-visual-validation-selection.json).
+Numbers below are **1-based PDF pages**. Visible printed numbers match on all eight selected pages. Subtract 1 for a zero-based API; retain both fields in the manifest. The structured selection is in [cytiva-visual-validation-selection.json](cytiva-visual-validation-selection.json).
 
-| Lot | Pages PDF / imprimées | Objet vérifié visuellement | Difficulté ciblée |
+| Batch | PDF / printed pages | Visually checked content | Target difficulty |
 |---|---|---|---|
-| Premier essai | 77 | Tableau 3.5 et remarques à droite | Espèce/sous-classe héritées, plages de pH, `≤`, `≥`, `Approx.`, `n.a.`, exception et limites d'applicabilité |
-| Premier essai | 88 | Tableau 3.6 et cinq notes | Quatre produits voisins, unités, conditions expérimentales distinctes et renvois en exposant |
-| Premier essai | 104 | Figure 3.29 et texte à gauche | Cinq chemins fragment → sous-type de chaîne → produit ; alternative distincte du produit recommandé |
-| Premier essai | 152–153, ensemble | Tableau A1.7 et notes 1–3 | Continuation réelle, en-têtes répétés, variantes 1/5 mL, puces de compatibilité, cellules vides, `N/A` et notes |
-| Complément | 53 | Tableau 3.1, légende des symboles et texte | Échelle `++++`/`++`/`—`, sous-classes et portée des mesures ; pas de score numérique inventé |
-| Complément | 86 | Figure 3.22, légende et paragraphe | Quatre produits, trois séries de temps, axe et unités ; capture d'image distincte de lecture des barres |
-| Complément | 142 | Figure 7.1 et texte | Processus à deux/trois étapes, alternatives parallèles, ordre, modes FT/B/E et annotation partagée |
+| Initial trial | 77 | Table 3.5 and remarks on the right | Inherited species/subclass, pH ranges, `≤`, `≥`, `Approx.`, `n.a.`, exception and applicability limits |
+| Initial trial | 88 | Table 3.6 and five notes | Four adjacent products, units, distinct experimental conditions and superscript references |
+| Initial trial | 104 | Figure 3.29 and text on the left | Five fragment → chain subtype → product paths; an alternative distinct from the recommended product |
+| Initial trial | 152–153 together | Table A1.7 and notes 1–3 | Actual continuation, repeated headers, 1/5 mL variants, compatibility bullets, empty cells, `N/A` and notes |
+| Extension | 53 | Table 3.1, symbol legend and text | `++++`/`++`/`—` scale, subclasses and measurement scope; no invented numeric score |
+| Extension | 86 | Figure 3.22, caption and paragraph | Four products, three time series, axis and units; image capture distinguished from reading bars |
+| Extension | 142 | Figure 7.1 and text | Two/three-step process, parallel alternatives, order, FT/B/E modes and shared annotation |
 
-Commencer par les cinq pages du premier essai. N'ajouter les trois compléments qu'après résolution des erreurs bloquantes. Ce choix couvre des formes de documents, pas un échantillon statistiquement représentatif du manuel entier.
+Start with the five initial-trial pages. Add the three extensions only after resolving blocking errors. This covers document forms, not a statistically representative sample of the entire manual.
 
-Convertir des blocs séparés : `[77]`, `[88]`, `[104]`, `[152,153]`, puis `[53]`, `[86]`, `[142]`. Ne pas concaténer 77 et 88 comme si elles étaient contiguës. Ne pas fusionner des éléments de blocs différents. L'intégralité de chaque page est examinée pour l'ordre de lecture ; les sondes du manifeste sont une liste ciblée, non une annotation exhaustive de chaque cellule.
+Convert separate blocks: `[77]`, `[88]`, `[104]`, `[152,153]`, then `[53]`, `[86]`, `[142]`. Do not concatenate 77 and 88 as contiguous pages or merge items across blocks. Inspect every full page for reading order; manifest probes are targeted checks, not exhaustive annotation of every cell.
 
-## 3. Référence humaine avant conversion
+## 3. Human reference before conversion
 
-1. Vérifier l'empreinte du PDF, puis ouvrir les pages originales rendues. Utiliser Poppler ; les images d'inspection restent locales et ignorées. Augmenter la résolution si une unité ou une note est illisible.
-2. Pour chaque sonde, relever la zone source et les valeurs/relations attendues sans regarder une conversion. Les attentes préparées dans le manifeste sont des **candidates à confirmer**, jamais des décisions déjà validées par l'utilisateur.
-3. Dans les tableaux, identifier les cellules par en-têtes sémantiques et coordonnées de ligne/colonne, avec les cellules fusionnées et les champs hérités. Une cellule vide ne devient pas `false`, `0`, « identique à la précédente » ou `N/A` par défaut.
-4. Dans un schéma, relever les boîtes, libellés, connexions dirigées et groupes. Garder séparés les chemins parallèles et les relations alternatives. Dans un graphique, annoter axes, unités, séries et légende ; ne pas lire des valeurs exactes à partir de la hauteur des barres.
-5. Consigner ambiguïtés et contradictions éventuelles sans les résoudre par connaissance externe. Une note d'applicabilité n'est pas automatiquement un attribut de toutes les lignes voisines.
-6. Geler les références locales par empreinte avant l'exécution. Toute correction ultérieure crée une nouvelle version, avec sa raison ; ne pas corriger une référence simplement pour faire passer un profil.
+1. Verify the PDF hash, then open rendered original pages. Use Poppler; inspection images remain local and ignored. Increase resolution if a unit or note is unreadable.
+2. For every probe, record the source region and expected values/relations without inspecting conversion. Manifest expectations are **candidates for confirmation**, never already approved user decisions.
+3. Identify table cells by semantic headers and row/column coordinates, including merged cells and inherited fields. An empty cell does not default to `false`, `0`, the preceding value or `N/A`.
+4. For diagrams, record boxes, labels, directed connections and groups. Keep parallel paths and alternative relations separate. For charts, annotate axes, units, series and legend; do not infer exact values from bar heights.
+5. Record ambiguity and contradictions without resolving them through external knowledge. An applicability note is not automatically an attribute of all neighbouring rows.
+6. Freeze local references by hash before execution. Later corrections require a new version and rationale; do not alter a reference merely to make a profile pass.
 
-Utiliser [cytiva-visual-validation-review.csv](cytiva-visual-validation-review.csv) comme modèle de journal. Pour chaque exécution, copier ce modèle dans un nouveau dossier local, renseigner les identifiants de run et la référence gelée. Les décisions, captures et textes complets restent dans `data/experiments/cytiva/visual-validation-v01/<run-id>/`, jamais dans les fichiers versionnables de ce protocole.
+Use [cytiva-visual-validation-review.csv](cytiva-visual-validation-review.csv) as the review-log template. Copy it to a new local directory for each run and fill in run IDs and the frozen reference. Decisions, captures and full text remain under `data/experiments/cytiva/visual-validation-v01/<run-id>/`, outside this protocol's versioned files.
 
-## 4. Préparation et isolation
+## 4. Preparation and isolation
 
-- PC de référence : i5-1135G7, 16 Go RAM, Iris Xe ; CPU, quatre threads. Figer Python, Docling, docling-core, docling-graph et leurs versions/commit installés dans le manifeste du run. Le profil historique utilisait Docling 2.140.0 et le projet épingle Docling Graph 1.9.1 au commit indiqué dans `requirements-ingestion.txt`.
-- L'exécuteur **conversion/chunking uniquement** est disponible : `python -m experiments.cytiva.visual_validation`, avec commandes `convert` et `chunk` ; voir le [guide du lanceur](../../experiments/cytiva/README.md#local-table-conversion-and-chunking-no-llm). Il refuse un répertoire existant, un SHA source différent, des poids absents et les services distants ; tokenizer et sérialisation sont imposés. Ne pas présenter la commande historique `prepare_claim_test` comme capable d'activer les tableaux : ses réglages actuels les désactivent.
-- Vérifier les options contre la version installée. Le profil T1 prévoit TableFormer V1, mode `accurate`, correspondance aux cellules PDF activée ; enregistrer la classe et le `kind` effectivement chargés. Ne pas basculer implicitement vers V2, un VLM ou un profil par défaut.
-- Vérifier les poids de layout **et** de TableFormer, leurs empreintes et le cache tiktoken. Le préchargement historique du layout ne prouve pas la présence des poids de tableaux. En cas de manque : arrêter le prévol et identifier les fichiers ; tout téléchargement sera une étape distincte.
-- Exécution locale sans réseau : caches préparés, `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`, `HF_HUB_DISABLE_TELEMETRY=1`, `LITELLM_LOCAL_MODEL_COST_MAP=True`, aucun `DOCLING_SERVE_URL`, services distants désactivés. Ces variables ne prouvent pas seules l'isolation réseau : l'appliquer au processus si nécessaire.
+- Reference PC: i5-1135G7, 16 GB RAM, Iris Xe; CPU, four threads. Freeze Python, Docling, docling-core, docling-graph and installed versions/commits in the run manifest. The historical profile used Docling 2.140.0; the project pins Docling Graph 1.9.1 at the commit in `requirements-ingestion.txt`.
+- The **conversion/chunking-only** runner is available: `python -m experiments.cytiva.visual_validation`, with `convert` and `chunk` commands; see the [runner guide](../../experiments/cytiva/README.md#local-table-conversion-and-chunking-no-llm). It rejects existing output directories, source SHA mismatches, missing weights and remote services; tokenizer and serialization are enforced. The historical `prepare_claim_test` command cannot enable tables: its current settings disable them.
+- Check options against the installed version. T1 specifies TableFormer V1, `accurate` mode, PDF cell matching enabled; record the actual loaded class and `kind`. Never silently switch to V2, a VLM or a default profile.
+- Verify layout **and** TableFormer weights, their hashes and the tiktoken cache. Historical layout preloading does not establish table-weight availability. If anything is missing, stop preflight and identify the files; downloading is a separate step.
+- Run locally without network: prepared caches, `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1`, `HF_HUB_DISABLE_TELEMETRY=1`, `LITELLM_LOCAL_MODEL_COST_MAP=True`, no `DOCLING_SERVE_URL`, remote services disabled. These variables alone do not prove network isolation; enforce it on the process where necessary.
 
-## 5. Conversion : comparaison contrôlée
+## 5. Conversion: controlled comparison
 
-| Profil | Tableaux | OCR | Images | Usage |
+| Profile | Tables | OCR | Images | Purpose |
 |---|---|---|---|---|
-| T0, témoin nouveau | Structure désactivée | Désactivé | Pages et figures conservées | Rejouer l'ablation sur ces mêmes pages, sans toucher à r2 |
-| T1, candidat | Structure activée ; TableFormer V1 `accurate`, cell matching activé | Désactivé | Identique à T0 | Mesurer le gain réel de structure |
-| T2, conditionnel | Identique à T1 | Activé avec moteur/version/langue explicites | Identique à T0 | Seulement si des caractères pertinents manquent ; comparaison séparée |
+| T0, new control | Structure disabled | Disabled | Pages and figures preserved | Replay the ablation on these pages without changing r2 |
+| T1, candidate | Structure enabled; TableFormer V1 `accurate`, cell matching enabled | Disabled | Same as T0 | Measure the actual structural gain |
+| T2, conditional | Same as T1 | Enabled with explicit engine/version/language | Same as T0 | Only if relevant characters are missing; separate comparison |
 
-T0 et T1 partagent layout, CPU, ordre et blocs de pages, échelle des images fixée à 2, `generate_page_images=True`, `generate_picture_images=True`, description/classification d'images et enrichissements LLM désactivés. Exporter le document JSON complet, une représentation HTML/CSV des tableaux, le Markdown pour inspection, les figures recadrées et leurs références. Le Markdown seul ne fait pas référence pour les cellules fusionnées.
+T0 and T1 share layout, CPU, page order/blocks, image scale 2, `generate_page_images=True` and `generate_picture_images=True`; image description/classification and LLM enrichments are disabled. Export full document JSON, HTML/CSV tables, Markdown for inspection, cropped figures and references. Markdown alone is not authoritative for merged cells.
 
-Une figure vectorielle doit rester vérifiable : si aucun PictureItem exploitable n'est créé, noter un échec de détection de figure et conserver la page rendue comme recours manuel. Ne pas compter cette page complète comme une figure correctement détectée/recadrée. Ne pas ajouter une description sémantique générée pour masquer une perte de conversion.
+A vector figure must remain verifiable: if no usable PictureItem is created, record failed figure detection and retain the rendered page as a manual fallback. Do not count a full page as a correctly detected/cropped figure. Do not conceal conversion loss with a generated semantic description.
 
-Pour chaque objet : vérifier texte et ordre, en-têtes et cellules, opérateurs/unités, lien titre/note, figure/légende, page et géométrie. Documenter le système de coordonnées, les dimensions et l'origine ; vérifier par superposition sur le rendu. Une simple présence du bon nombre quelque part dans la page ne valide pas son association.
+For each object, check text/order, headers/cells, operators/units, title/note links, figure/caption, page and geometry. Document coordinates, dimensions and origin; verify with overlays on the rendering. The right number appearing somewhere on a page does not validate its association.
 
-## 6. Chunking : mesurer la perte après une conversion gelée
+## 6. Chunking: measure loss after freezing conversion
 
-Ne chunker que des blocs dont T1 a été examiné ; bloquer les unités incorrectes ou ambiguës. Utiliser le **même JSON de conversion par bloc** pour toutes les variantes : aucun nouvel appel de conversion pendant le comparatif.
+Only chunk blocks whose T1 output has been examined; block incorrect or ambiguous units. Use the **same conversion JSON per block** across variants: no reconversion during comparison.
 
-Un bloc incorrect peut être chunké uniquement pour diagnostiquer une perte supplémentaire, avec le statut explicite `quarantined_diagnostic_only` et une revue liée à l'empreinte exacte du JSON. Ce diagnostic ne rend pas le bloc admissible à l'extraction ou à la publication. Le lanceur n'infère aucune approbation humaine.
+An incorrect block may be chunked solely to diagnose additional loss, explicitly marked `quarantined_diagnostic_only` with a review tied to the exact JSON hash. This does not make the block eligible for extraction or publication. The runner infers no human approval.
 
-| Variante | Rôle |
+| Variant | Role |
 |---|---|
-| K0 | Sérialisation du bloc entier sans découpage ; témoin de préservation, pas une entrée LLM supposée compatible avec son contexte |
-| K600 | HybridChunker structurel/hiérarchique, plafond 600 tokens |
-| K800 | Même réglage, plafond 800 tokens ; correspond au budget local actuel |
-| K1400 | Même réglage, plafond 1400 tokens ; observer le compromis contexte/taille |
+| K0 | Full-block serialization without splitting; preservation control, not an assumed context-compatible LLM input |
+| K600 | Structural/hierarchical HybridChunker, 600-token cap |
+| K800 | Same settings, 800-token cap; matches the current local budget |
+| K1400 | Same settings, 1400-token cap; observe context/size trade-offs |
 
-Conserver `merge_peers=True`, format **DocLang sans géométrie dans le texte**, tokenizer tiktoken `cl100k_base`, et le même fournisseur de sérialisation que la voie locale épinglée. Les valeurs sont des hypothèses, pas des optima. Cette grille inclut 800 pour le diagnostic actuel ; elle ne remplace pas le budget distinct des passages de recherche du protocole LightRAG.
+Keep `merge_peers=True`, **DocLang without geometry in text**, tiktoken `cl100k_base` and the same serialization provider as the pinned local path. These values are hypotheses, not optima. This grid includes 800 for the current diagnostic; it does not replace the separate retrieval-passage budget in the LightRAG protocol.
 
-Tester le chunker **effectivement utilisé**, y compris la seconde découpe textuelle de Docling Graph, pas seulement les morceaux bruts de HybridChunker. Enregistrer avant/après : texte, texte contextualisé, tokens, IDs de parents/enfants, titres, item_refs, toutes les pages, géométrie, empreintes et `resplit_of`. Les métadonnées héritées du parent après seconde découpe ne démontrent pas que chaque enfant contient la note, la cellule ou la preuve indiquée. Vérifier le sous-passage exact et toutes les entrées `prov`, pas uniquement `prov[0]`.
+Test the **actual chunking path**, including Docling Graph's secondary text splitting, not just raw HybridChunker chunks. Record before/after text, contextualized text, tokens, parent/child IDs, headings, item_refs, all pages, geometry, hashes and `resplit_of`. Inherited parent metadata after secondary splitting does not prove that each child contains the stated note, cell or evidence. Verify the exact subpassage and every `prov` entry, not only `prov[0]`.
 
-Vérifier pour chaque unité :
+Check each unit:
 
-- produit/espèce/sous-classe + propriété + valeur/opérateur/unité + condition restent associés ;
-- une ligne de tableau garde ses en-têtes, sa note et son contexte de portée ; une séparation en lignes peut être acceptable si ces liens sont conservés ;
-- les notes externes et titres ne sont pas supposés automatiquement répétés : vérifier la sortie native puis, séparément, un éventuel assembleur de contexte ;
-- la continuation 152→153 est explicitement reliée ; aucune contiguïté artificielle n'est créée entre blocs ;
-- figure, légende et passage qui la cite restent reliés par des identifiants ; un chunk textuel qui omet l'image ne valide pas la transmission des relations visuelles à un LLM ;
-- chaque enfant retrouve sa page/zone réelle ; la duplication d'en-têtes est autorisée, la création de faits ou les associations croisées ne le sont pas.
+- product/species/subclass + property + value/operator/unit + condition remain associated;
+- table rows retain headers, notes and scope context; row splitting is acceptable only if links are preserved;
+- external notes and titles are not assumed to repeat automatically: inspect native output, then any context assembler separately;
+- continuation 152→153 is explicitly linked; no artificial contiguity across blocks;
+- figures, captions and referring passages remain linked by IDs; a text chunk omitting the image does not validate transmission of visual relations to an LLM;
+- each child resolves to its actual page/region; header duplication is allowed, invented facts and cross-associations are not.
 
-Rapporter **contexte natif** et **contexte reconstruit** séparément. Si un parent doit être réinjecté, conserver les références explicites, mesurer à nouveau le budget complet et déclarer la dépendance à un assembleur futur. Un ensemble de chunks qui contient collectivement la note n'est pas équivalent à une entrée modèle qui la reçoit effectivement.
+Report **native context** and **reconstructed context** separately. If a parent must be reinserted, preserve explicit references, remeasure the full budget and declare dependency on a future assembler. Chunks collectively containing a note are not equivalent to a model input actually receiving it.
 
-K0 permet aussi de repérer une perte due à la sérialisation DocLang : si le JSON est correct mais K0 omet des relations de cellules ou des images, l'erreur précède le découpage. Aucun LLM ne peut reconstituer de manière garantie une information visuelle absente de son entrée.
+K0 also detects DocLang serialization loss: if JSON is correct but K0 omits cell relations or images, the error precedes splitting. No LLM can guarantee reconstruction of visual information absent from its input.
 
-## 7. Contrôles, mesures et décision
+## 7. Checks, measurements and decision
 
-**Déterministes :** SHA des sources/artefacts ; correspondance pages PDF/extrait/imprimées ; existence et résolution des item_refs ; nombres et opérateurs exacts, unités conservées ; validité des liens explicites ; décompte des tokens du texte réellement sérialisé ; absence de lignes perdues/dupliquées et de fusions entre blocs. Comparer des cellules alignées aux références, pas un sac de mots. Toute normalisation est explicite et réversible ; ne pas transformer `n.a.` ou une approximation en mesure exacte.
+**Deterministic:** source/artifact hashes; PDF/excerpt/printed-page mapping; item_ref existence/resolution; exact numbers/operators and preserved units; valid explicit links; token counts of actual serialized text; no lost/duplicated rows or cross-block merges. Compare aligned cells to references, not bags of words. All normalization is explicit and reversible; never turn `n.a.` or approximations into exact measurements.
 
-**Manuels :** comparaison des objets convertis et des chunks à la page rendue ; associations de lignes, portée des notes, flèches, groupes et ambiguïtés. Un juge LLM n'est pas requis pour cette phase et ne remplace pas ces décisions. Les sondes du CSV restent `not_run` jusqu'à exécution, puis nécessitent `pass`, `fail`, `ambiguous` ou `not_applicable` avec justification et identité/date du réviseur.
+**Manual:** compare converted objects and chunks with rendered pages; row associations, note scope, arrows, groups and ambiguities. An LLM judge is unnecessary here and does not replace these decisions. CSV probes stay `not_run` until execution, then require `pass`, `fail`, `ambiguous` or `not_applicable`, with rationale and reviewer identity/date.
 
-Mesures à produire, avec numérateurs et dénominateurs par type de contenu :
+Report numerators and denominators by content type:
 
-- objets attendus retrouvés / objets attendus dans la référence gelée ;
-- cellules sélectionnées correctes (valeur **et** en-têtes) / cellules sélectionnées vérifiées ;
-- liens titre/note/figure corrects / liens annotés ; relations visuelles uniquement si une voie de représentation est effectivement testée ;
-- unités critiques intactes dans l'entrée finale / unités critiques examinées, et unités à reconstruire ou en quarantaine ;
-- ancres effectivement résolues / ancres vérifiées, avec distinction géométrie parent et localisation enfant ;
-- nombre de chunks, total/max de tokens, duplications et surcoût de contextualisation ;
-- temps de chargement, conversion, sérialisation et chunking séparés ; pic mémoire processus et enfants si mesurable, sinon `unknown` ; temps de revue humaine.
+- expected objects found / expected objects in the frozen reference;
+- correct selected cells (value **and** headers) / selected cells checked;
+- correct title/note/figure links / annotated links; visual relations only where a representation path is actually tested;
+- intact critical units in final input / critical units examined, plus units requiring reconstruction or quarantine;
+- actually resolved anchors / checked anchors, distinguishing parent geometry from child location;
+- chunk count, total/maximum tokens, duplication and contextualization overhead;
+- separate loading, conversion, serialization and chunking times; sampled process/child peak memory if measurable, otherwise `unknown`; human review time.
 
-Ne pas appeler le résultat « rappel du manuel » : il s'agit d'une sélection de développement. Compter les sondes ambiguës et non exécutées à part ; ne pas les retirer silencieusement pour améliorer un taux. Rapporter les résultats par tableau/figure, même si un score agrégé paraît bon.
+Do not call this manual-wide recall: it is a development selection. Count ambiguous and unexecuted probes separately, without silently removing them to improve rates. Report each table/figure even if aggregates look good.
 
-**Critères bloquants sur les unités destinées à une extraction ultérieure :** zéro association erronée entre produits/lignes, zéro nombre/opérateur/unité modifié, zéro note critique perdue, zéro relation visuelle inventée et 100 % des ancres nécessaires résolubles. Une unité peut être explicitement mise en quarantaine ; cela réduit la couverture et n'autorise pas à déclarer la configuration globalement validée. Le succès sur les sondes ne certifie pas les cellules non annotées.
+**Blocking criteria for units intended for later extraction:** zero incorrect product/row associations, zero changed numbers/operators/units, zero lost critical notes, zero invented visual relations and 100% of necessary anchors resolvable. Explicit quarantine reduces coverage; it does not validate the configuration globally. Passing probes does not certify unannotated cells.
 
-Arrêter un essai à 15 minutes par bloc/profil de conversion ou à pression mémoire excessive ; consigner `timeout`/`resource_limit`, pas un résultat de qualité. Ces limites sont des garde-fous proposés, pas des performances mesurées. Ne répéter une mesure que pour départager des candidats sans erreur bloquante ; distinguer démarrage à froid et cache chaud. Les coûts API restent nuls, le temps CPU et la mémoire sont rapportés.
+Stop after 15 minutes per conversion block/profile or excessive memory pressure; record `timeout`/`resource_limit`, not a quality result. These proposed safeguards are not measured performance. Repeat measurements only to distinguish candidates without blocking errors; separate cold start from warm caches. API costs remain zero; report CPU time and memory.
 
-## 8. Livrables et suite
+## 8. Deliverables and next steps
 
-Dans un nouveau dossier local : manifeste et versions ; PDF/extraits et cartes de pages ; rendus ; profils effectifs et poids ; conversions gelées ; tableaux et figures ; références humaines ; sorties K0/K600/K800/K1400 ; journal CSV et rapport des défauts. Aucun PDF, capture ou corpus complet dans Git.
+In a new local directory: manifest/versions; PDF/excerpts and page maps; renderings; effective profiles/weights; frozen conversions; tables/figures; human references; K0/K600/K800/K1400 outputs; CSV log and defect report. Source PDFs, captures and full corpora remain local artifacts; see [repository instructions](../../AGENTS.md).
 
-Premier passage : T0/T1 sur 77 et 88, puis 104 et le bloc 152–153 ; K0/K800 sur les conversions relues. Ensuite seulement comparer K600/K1400 et ajouter 53/86/142. Une interprétation des diagrammes par VLM est une expérience séparée, avec ses propres références et mesures ; elle ne fait pas partie de cette préparation.
+First pass: T0/T1 on 77 and 88, then 104 and block 152–153; K0/K800 on reviewed conversions. Only then compare K600/K1400 and add 53/86/142. VLM interpretation of diagrams is a separate experiment with its own references and measurements, outside this preparation.
 
-Décisions possibles : retenir T1 et un budget de chunking ; corriger une perte de contexte dans un adaptateur ; utiliser des unités par lignes avec en-têtes répétés ; conserver une page/image entière comme support manuel ; ou mettre des objets en quarantaine. Une correction du code fera l'objet de tests de régression dédiés. Aucun claim n'est approuvé ni publié par ce protocole.
+Possible decisions: retain T1 and a chunking budget; repair context loss in an adapter; use row units with repeated headers; retain a whole page/image for manual support; or quarantine objects. Code corrections require dedicated regression tests. This protocol approves or publishes no claims.

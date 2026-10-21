@@ -3,6 +3,7 @@
 | Question | Canonical document |
 |---|---|
 | What is the project and how do I run it? | [Project README](../README.md) |
+| Where are contribution and Git-operation instructions? | [Repository instructions](../AGENTS.md) |
 | What is next and what is already implemented? | [Active roadmap](ROADMAP.md) |
 | How are answers constrained and evaluated? | [Grounding ADR](ADR-001-knowledge-graph-grounding.md), [evaluation](../eval/README.md) |
 | How does the existing PDF ingestion/review work? | [Ingestion](INGESTION.md) |

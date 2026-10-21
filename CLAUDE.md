@@ -1,28 +1,26 @@
 # CLAUDE.md - Bioprocess Troubleshooting Assistant
 
-Contexte persistant pour Claude Code. Lu à chaque session. Garder concis.
+Persistent context for Claude Code. Read each session. Repository collaboration rules are in [AGENTS.md](AGENTS.md); the [README](README.md) and [roadmap](docs/ROADMAP.md) describe current status.
 
-## Objectif du projet
+## Project objective
 
-Prototype d'assistant IA de troubleshooting pour la **chromatographie de capture sur Protein A** (opération unitaire downstream du bioprocédé). À partir d'un symptôme décrit en langage naturel, l'agent renvoie les causes probables et les actions correctives, **chaque réponse étant ancrée dans un knowledge graph et sourcée**.
+An AI troubleshooting demonstrator for **Protein A capture chromatography**, a downstream bioprocess operation. Given a symptom in natural language, it returns documented possible causes and corrective actions with citations. This is an interview/portfolio project for bioprocess equipment use cases. Prioritize a small working end-to-end system over exhaustive coverage.
 
-C'est un démonstrateur pour un entretien (client : fabricant d'équipements de bioprocédé). Il sera aussi un repo GitHub vitrine. Priorité : un prototype léger qui **tourne de bout en bout**, pas l'exhaustivité.
+## Architecture
 
-## Décision d'architecture (voir ADR-001)
-
-Agent LLM ancré sur un **knowledge graph Neo4j** comme source de vérité unique - pas de RAG vectoriel, pas de connaissance paramétrique. Raison : la connaissance de troubleshooting est causale (symptôme → causes → actions), et le contexte biopharma exige auditabilité + zéro hallucination. Le graphe détient la connaissance ; l'agent n'est qu'une interface en langage naturel par-dessus.
+The current assistant retrieves from a **Neo4j knowledge graph**, without vector retrieval in its serving path. The graph stores documentary knowledge; the agent selects retrieved results rather than supplying technical advice from parametric knowledge. This supports traceability but does not guarantee scientific accuracy or absence of errors. See [ADR-001](docs/ADR-001-knowledge-graph-grounding.md).
 
 ## Stack
 
-- Python 3.11+
-- **Neo4j AuraDB Free** (cloud, offre gratuite illimitée). Driver : `neo4j` (officiel Python). Repli possible vers Neo4j Community Edition en local.
-- **Chainlit** pour l'UI conversationnelle.
-- **Anthropic SDK** (`anthropic`) - agent Claude avec tool use. Modèle : un Claude récent (vérifier le nom de modèle courant dans la doc API).
-- Config via variables d'environnement (`.env`) : `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`, `NEO4J_DATABASE`, `ANTHROPIC_API_KEY`. **Ne jamais committer le `.env`.**
+- Python; the reference workstation uses 3.13, while the application Dockerfile targets 3.11.
+- Neo4j Community in local Docker for development; Aura is an optional separately configured alternative. Python driver: `neo4j`.
+- Chainlit conversational UI with password authentication.
+- Anthropic SDK (`anthropic`) with tool use; the configured model is defined in `agent.py`.
+- Ignored `.env` configuration: `NEO4J_URI`, `NEO4J_USERNAME`, `NEO4J_PASSWORD`, `NEO4J_DATABASE`, `ANTHROPIC_API_KEY` and Chainlit authentication settings.
 
-## Modèle du graphe
+## Serving graph
 
-Trois types de nœuds, deux relations :
+Three node types and two relationships:
 
 - `(:Symptom {name, description, source})`
 - `(:Cause {name, description, source})`
@@ -30,42 +28,26 @@ Trois types de nœuds, deux relations :
 - `(:Symptom)-[:INDICATES]->(:Cause)`
 - `(:Cause)-[:RESOLVED_BY]->(:Action)`
 
-Le champ `source` (note d'application / handbook d'origine) est obligatoire sur chaque nœud et doit remonter dans les réponses de l'agent. Cible de volume après épaississement : ~6 symptômes, ~12 causes, ~15 actions. Sources publiques uniquement (handbooks Protein A type Cytiva/Merck-Millipore). **Pas de niveau GxP - c'est un POC.**
+Source fields must accompany displayed facts. The small seed covers six symptoms; historical expansion targets were approximately 12 causes and 15 actions. Public sources only. This is not a GxP-qualified system.
 
-## Contrat de l'agent (anti-hallucination - NON NÉGOCIABLE)
+## Agent contract
 
-L'agent expose **un seul outil** : `query_graph(symptom: str)` qui traduit la requête en Cypher, récupère les causes classées + leurs actions, et renvoie un résultat structuré.
+The single tool, `query_graph(symptom: str)`, performs parameterized Cypher retrieval and returns structured results. It does not ask an LLM to generate Cypher.
 
-Contrat actuel (amendement du 17 octobre 2026) :
-- Le modèle renvoie uniquement un JSON `status`, `language`, `result_ids`.
-- `grounding.py` valide les identifiants et les sources puis affiche les faits du
-  graphe. Aucun conseil libre du modèle n'est affiché.
-- Les titres/refus sont bilingues ; les descriptions restent en anglais tant que
-  des traductions relues ne sont pas disponibles.
-- Un échec du protocole est une erreur d'évaluation, pas un refus réussi.
-- La fidélité au graphe ne garantit pas l'exactitude scientifique ni la pertinence.
-- Le seed est additif et transactionnel ; ne pas réintroduire de suppression
-  globale. Les changements d'index nécessitent une migration explicite.
-- Voir `docs/ROADMAP.md` pour l'ingestion Docling Graph, le monitoring et KAG.
+The contract amended on 17 October 2026 requires:
 
-## Plan de build (walking skeleton / tracer bullet)
+- Model output is JSON containing only `status`, `language` and `result_ids`.
+- `grounding.py` validates IDs/sources and renders stored graph facts; free-form model advice is not displayed.
+- Headings/refusals are bilingual; descriptions remain English until translations are reviewed.
+- Protocol failure is an evaluation error, not a successful refusal.
+- Fidelity to the graph does not establish scientific correctness or relevance.
+- Seed loading is additive and transactional. Do not reintroduce global deletion. Index changes require explicit migrations.
+- PDF ingestion, monitoring and conditional KAG work are described in the active roadmap.
 
-Construire dans cet ordre, valider chaque étape avant la suivante :
+## Historical build sequence
 
-1. **Seed minimal + schéma** : script Cypher avec 1 symptôme, 2 causes, 2 actions (toutes sourcées). Vérifier le graphe dans le navigateur Neo4j.
-2. **Balle traçante end-to-end** : agent Chainlit + outil `query_graph` + prompt anti-hallucination. Objectif : une question traverse le graphe et revient en réponse sourcée. C'est le « wow moment » à sécuriser en premier.
-3. **Épaissir le graphe** jusqu'à la cible de volume.
-4. **Polish** : soigner les 3 premières interactions, préparer 2-3 questions de démo qui marchent à coup sûr, faire une **capture vidéo de secours** (démo hors-ligne, wifi invité non fiable).
+The original walking-skeleton plan was: minimal sourced seed/schema; Chainlit-to-graph end-to-end question; graph expansion; demonstration polish and a backup recording. These are delivery history, not instructions to rebuild completed features. The earlier exclusions of authentication and cloud deployment were superseded by the current password-protected reference deployment.
 
-## Conventions
+## Conventions and scope
 
-- Code commenté sobrement, noms explicites.
-- README clair (setup Neo4j local, install, lancement Chainlit, requête d'exemple).
-- Committer l'ADR-001 dans `/docs`.
-- Garder l'architecture légère et réutilisable : la brique « agent + outil de requête sur graphe » doit pouvoir resservir pour d'autres usages (c'est un argument d'entretien : boîte à outils commune).
-
-## Hors scope (ne pas faire)
-
-- Pas d'authentification, pas de déploiement cloud, pas de CI/CD pour ce POC.
-- Pas de RAG vectoriel (évolution future possible, en complément, pas maintenant).
-- Pas de données internes réelles - sources publiques seulement.
+Use explicit names and concise code comments. Keep documentation in English, with original source and human decision quotations preserved. Maintain ADR-001 in `docs/`. Keep the agent/graph-query boundary small and reusable. Do not use real internal data. Vector retrieval, extended automation and CI/CD are separate decisions, not implicit dependencies of the current POC.

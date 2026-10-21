@@ -1,107 +1,107 @@
-# Revue méthodologique — archive du 18 octobre 2026
+# Methodology review — archive of 18 October 2026
 
-Archive du raisonnement et des alternatives discutées. Le plan actif unique est [ROADMAP.md](../ROADMAP.md) ; ce document ne constitue pas une seconde roadmap à maintenir.
+Archive of reasoning and alternatives discussed. The single active plan is [ROADMAP.md](../ROADMAP.md); this document is not a second roadmap to maintain.
 
-Statut : proposition de travail ajustée aux réponses de Gaël. Usage prioritaire : dépannage, avec symptômes, causes possibles et actions. Objectif professionnel : AI/LLM engineer et data/knowledge engineer. Fonctionnement exclusivement local par défaut ; cloud privé envisageable si ses garanties et son coût sont acceptables. Budget déclaré : moins de 10 € maximum, interprété comme mensuel puisque la question portait sur un budget mensuel. Disponibilité : libre en semaine, avec autant de temps que nécessaire pour le projet ; aucune limite globale de 5 h/semaine. Aucun hébergement ni achat n'est engagé. Aucun commit ni push.
+Status: working proposal adjusted to Gaël's answers. Primary use: troubleshooting with symptoms, possible causes and actions. Career objective: AI/LLM engineer and data/knowledge engineer. Exclusively local operation by default; private cloud may be considered if guarantees and cost are acceptable. Declared maximum budget: below EUR 10, interpreted as monthly because the question asked about a monthly budget. Availability: free on weekdays, with as much project time as necessary; no overall five-hour weekly limit. No hosting or purchase is initiated.
 
-## Ce que révèle la revue
+## What the review reveals
 
-La roadmap existante [la roadmap](../ROADMAP.md) prévoyait correctement l'instrumentation (phase 1), puis le modèle métier et une référence annotée (phase 2), avant l'ingestion (phase 3). L'exécution a anticipé la phase 3 sans satisfaire ces prérequis. L'ontologie n'était donc pas oubliée du plan ; elle a été insuffisamment définie avant son utilisation. Les tests synthétiques ont vérifié des contrats techniques, pas la qualité d'extraction réelle.
+The existing [roadmap](../ROADMAP.md) correctly planned instrumentation (phase 1), then the domain model and annotated reference (phase 2), before ingestion (phase 3). Execution anticipated phase 3 without meeting prerequisites. The ontology was therefore not absent from the plan; it was insufficiently defined before use. Synthetic tests checked technical contracts, not actual extraction quality.
 
-Le test réel reste utile : 29 entités, aucune relation métier, 13 fiches bloquées, 55 min 49 s. Il invalide le choix actuel comme configuration par défaut, sans démontrer que Docling Graph ou le modèle local seraient inadaptés en général. Un essai unique ne suffit pas à sélectionner une architecture ou à mesurer un taux de fiabilité.
+The real test remains useful: 29 entities, no domain relation, 13 blocked cards, 55 min 49 s. It invalidates the current default configuration without proving Docling Graph or the local model generally unsuitable. One trial cannot select an architecture or establish a reliability rate.
 
-Les points solides à conserver sont la séparation ingestion/application, les sources immuables, la revue humaine, les contrôles déterministes, le rendu borné des réponses et le refus de publier automatiquement les extractions.
+Retain separation of ingestion/application, immutable sources, human review, deterministic checks, bounded answer rendering and no automatic publication of extractions.
 
-## Critique du périmètre et des hypothèses
+## Critique of scope and assumptions
 
-- Trois objectifs sont mêlés : assistant utile, plateforme d'ingestion de graphes, démonstrateur pour un secteur régulé. Choisir un scénario utilisateur principal ; les deux autres deviennent des contraintes ou extensions.
-- Le graphe et Neo4j sont imposés avant comparaison avec une référence documentaire simple. Garder l'existant comme candidat, pas comme conclusion expérimentale. KAG ne doit pas être un objectif indépendant du besoin.
-- Un modèle de dépannage n'a pas à représenter tous les objets du manuel. Les figures, tampons et marqueurs ne doivent pas être forcés dans les cinq classes disponibles. Un graphe partiel peut être correct si son périmètre est explicite et les passages restent consultables.
-- La chaîne Symptom→Cause→Action encourage une causalité plus forte que certains énoncés. Distinguer cause possible, effet décrit, action recommandée et conditions d'application. Une consigne « nettoyer si la pression augmente » ne justifie pas d'inventer une cause intermédiaire.
-- L'absence d'expert n'empêche pas de vérifier la fidélité au manuel, mais empêche d'appeler cette revue une validation d'adéquation à un procédé industriel. Remplacer ce prérequis inaccessible dans le prototype par une validation documentaire explicite et une catégorie « ambigu/non évalué ». Maintenir l'expertise comme prérequis d'un usage opérationnel éventuel.
-- Une source citée et un rendu déterministe n'éliminent ni erreur de sélection, ni mauvaise condition, ni erreur du graphe. Remplacer les promesses absolues de type « zero hallucination » par des critères mesurables et leurs limites.
-- Les conclusions historiques sur les embeddings portent sur six symptômes et un jeu de développement. Elles ne démontrent pas qu'une recherche vectorielle sur des passages serait inutile. La similarité de recherche et la décision de répondre/refuser doivent être évaluées séparément.
-- Le pipeline de publication produit un graphe de preuves séparé, encore non consommé par le chatbot. La connexion entre connaissance approuvée et réponse utilisateur doit devenir un jalon explicite. Prévoir aussi l'activation d'une version et sa révocation ; stocker les snapshots ne suffit pas à retirer une connaissance du service.
-- Le coût principal peut être le temps de revue, pas les tokens. Comparer l'annotation manuelle assistée à l'extraction automatique sur le même lot. Ne pas investir dans l'automatisation si elle coûte davantage en corrections pour le volume visé.
+- Three objectives are mixed: a useful assistant, a graph-ingestion platform and a regulated-sector demonstrator. Choose one primary user scenario; the others become constraints or extensions.
+- The graph and Neo4j are imposed before comparison with a simple documentary baseline. Keep the existing approach as a candidate, not an experimental conclusion. KAG should not be an objective independent of user need.
+- A troubleshooting model need not represent every manual object. Figures, buffers and markers must not be forced into the five available classes. A partial graph can be correct if scope is explicit and passages remain accessible.
+- Symptom→Cause→Action can imply stronger causality than sources state. Distinguish possible cause, described effect, recommended action and applicability conditions. An instruction to clean when pressure increases does not justify inventing an intermediate cause.
+- Lack of an expert does not prevent manual-fidelity checks, but prevents calling them validation for an industrial process. Replace this inaccessible prototype prerequisite with explicit documentary validation and an ambiguous/not-evaluated category. Expertise remains necessary for any eventual operational use.
+- A cited source and deterministic rendering eliminate neither selection errors, incorrect conditions nor graph errors. Replace absolute zero-hallucination promises with measurable criteria and limitations.
+- Historical embedding conclusions concern six symptoms and a development set. They do not establish that vector passage retrieval is useless. Evaluate retrieval similarity separately from answer/refusal decisions.
+- Publication produces a separate evidence graph not yet consumed by the chatbot. Connecting approved knowledge to user answers must become an explicit milestone. Plan version activation and revocation; stored snapshots alone cannot withdraw serving knowledge.
+- Review time may dominate token cost. Compare assisted manual annotation with automatic extraction on the same batch. Do not invest in automation if corrections cost more than entry for the intended volume.
 
-## Alternatives à comparer
+## Alternatives to compare
 
-| Approche | Intérêt | Coût/limite | Décision proposée |
+| Approach | Value | Cost/limitation | Proposed decision |
 |---|---|---|---|
-| Recherche de passages + réponse sourcée/abstention | Référence simple pour les questions documentaires | Relations et conditions à vérifier dans les passages | Baseline obligatoire, commencer lexical puis tester une extension seulement si nécessaire |
-| Petit graphe renseigné manuellement avec preuves | Référence fiable pour le dépannage ciblé ; coût initial prévisible | Maintenance et couverture limitées | Baseline obligatoire pour les faits sélectionnés |
-| Extraction assistée par section + revue + graphe | Évalue réellement le gain d'automatisation | Peut coûter plus en correction que la saisie manuelle | Candidat principal à tester après les deux références |
-| Graphe et passages combinés | Exploite des relations validées et restitue leur contexte | Routage, cohérence et évaluations supplémentaires | Cible possible si le gain est mesuré |
-| KAG complet, règles et inférences étendues | Peut servir des questions exigeant plusieurs étapes de raisonnement | Coût de modélisation et d'exploitation élevé | Différer tant qu'aucune question concrète n'en démontre le besoin |
+| Passage retrieval + sourced answer/abstention | Simple documentary-question baseline | Relations and conditions must be checked in passages | Mandatory baseline; start lexical and extend only if needed |
+| Small manually populated graph with evidence | Reliable targeted-troubleshooting reference; predictable initial effort | Limited maintenance capacity and coverage | Mandatory baseline for selected facts |
+| Section-assisted extraction + review + graph | Measures automation's actual benefit | Corrections may cost more than manual entry | Main candidate after both baselines |
+| Combined graph and passages | Uses validated relations and restores context | Extra routing, consistency and evaluation work | Possible target if benefits are measured |
+| Full KAG, extensive rules and inference | May serve multi-step reasoning questions | High modeling and operational cost | Defer until a concrete question demonstrates need |
 
-Conserver Docling pour la conversion dans les essais. Comparer le contrat direct par contexte borné au dense compact pour l'extraction ; ce sont des variantes, pas des engagements. L'ontologie métier doit rester indépendante de la bibliothèque d'extraction.
+Retain Docling conversion in trials. Compare bounded-context direct extraction with compact dense extraction; these are variants, not commitments. The domain ontology must remain independent of the extraction library.
 
-## Nouvelle séquence avec critères de passage
+## Revised sequence and acceptance gates
 
-| Jalon | Livrable | Critère de passage |
+| Milestone | Deliverable | Acceptance gate |
 |---|---|---|
-| 0 — Usage et budget | Scénario principal, utilisateur, corpus, limites de réponse ; budgets de latence interactive, ingestion et revue séparés | Choix explicités avec Gaël ; critères fixés avant comparaison |
-| 1 — Questions et ontologie minimale | 10–15 questions représentatives proposées, classes/relations définies, exemples et contre-exemples, conditions, identité et provenance | Chaque concept répond à un besoin ; exemples vérifiés dans le PDF ; ambiguïtés signalées |
-| 2 — Référence et mesures | Petit lot annoté indépendant des sorties du modèle ; traces OTel et budget d'exécution minimal | Mesure reproductible des faits/relations manqués, erreurs, temps de revue et ressources |
-| 3 — Baselines | Recherche de passages et graphe manuel sur le même périmètre | Scores et coûts observés ; refus et demandes de précision testés ; limites explicites |
-| 4 — Extraction expérimentale | Micro-test CIP puis pages variées ; source→faits→preuves→revue | Gain par rapport à la saisie manuelle mesuré ; aucun élément publié sans preuve et revue ; erreurs critiques analysées |
-| 5 — Tranche complète utile | Une question utilise les faits approuvés d'un snapshot précis et affiche les preuves | Publication, activation, reprise, correction et révocation testées ; contextes incomplets traités |
-| 6 — Évaluation et démonstration | Jeu réservé, Ragas calibré, attaques de régression, rapport qualité/latence/coût, démarrage reproductible | Résultats du système actuel ; décisions architecturales justifiées ; aucun ancien score présenté comme nouveau |
+| 0 — Use and budget | Primary scenario, user, corpus, answer limits; separate interactive-latency, ingestion and review budgets | Choices explicit with Gaël; criteria fixed before comparison |
+| 1 — Questions and minimal ontology | 10–15 proposed representative questions, class/relation definitions, examples/counterexamples, conditions, identity and provenance | Every concept serves a need; PDF examples checked; ambiguities flagged |
+| 2 — Reference and measurements | Small annotated batch independent of model outputs; OTel traces and minimal execution budget | Reproducible measurement of missed facts/relations, errors, review time and resources |
+| 3 — Baselines | Passage retrieval and manual graph on identical scope | Observed scores/costs; refusals/clarifications tested; explicit limits |
+| 4 — Experimental extraction | CIP micro-test then varied pages; source→facts→evidence→review | Measured gain versus manual entry; no publication without evidence/review; critical errors analyzed |
+| 5 — Useful complete slice | A question uses approved facts from a precise snapshot and displays evidence | Publication, activation, recovery, correction and revocation tested; incomplete contexts handled |
+| 6 — Evaluation and demonstration | Held-out set, calibrated Ragas, regression attacks, quality/latency/cost report, reproducible startup | Current-system results; justified architectural choices; no old score presented as new |
 
-Le nombre de questions est une proposition pour démarrer, pas une taille statistiquement suffisante pour établir la fiabilité industrielle. Les seuils de performance et budgets restent à fixer selon l'usage ; ne pas inventer des cibles de précision ou de latence sans acceptation.
+Question counts are a starting proposal, not a statistically sufficient sample for industrial reliability. Performance thresholds and budgets still depend on usage; do not invent accepted precision or latency targets.
 
-## Méthode expérimentale
+## Experimental method
 
-1. Définir des questions que l'ontologie et le système doivent pouvoir traiter : « quelle action le manuel recommande-t-il pour ce symptôme sur ce produit ? », « sous quelles conditions ? », « que ne permet pas de conclure le passage ? ».
-2. Annoter les faits attendus avant de consulter les réponses du modèle. Vérifier aussi les faits absents des extractions : la revue des seules propositions ne mesure pas le rappel.
-3. Séparer développement et test par section ou famille de questions ; éviter de placer des paraphrases du même fait des deux côtés. Avec un seul manuel, annoncer clairement la limite de généralisation.
-4. Utiliser les mêmes sources, modèle, contexte et budgets pour la première comparaison des méthodes ; changer ensuite un facteur à la fois. Faire quelques répétitions pour les variantes finalistes et distinguer démarrage à froid et fonctionnement à chaud.
-5. Mesurer par étape : conversion, extraction, localisation, validation sémantique, retrieval, réponse. Les scores globaux seuls ne permettent pas d'attribuer une régression.
-6. Évaluer relations avec types, direction, conditions et preuve ; compter explicitement les erreurs de nombre, unité, négation et produit. Mesurer la couverture des faits attendus, pas le nombre total de nœuds.
-7. Enregistrer durée, appels, tokens lorsqu'ils sont disponibles, RAM, minutes de revue et coût par fait accepté. Les tokens inconnus restent inconnus, les ressources locales ne sont pas assimilées à une absence de coût.
-8. Poser des règles d'arrêt : dépassement de budget, échec de schéma, troncature ou citation non résolue produisent un état incomplet/échoué observable, jamais une réussite silencieuse. Conserver la possibilité d'une reprise ciblée.
+1. Define questions the ontology/system must answer: which action the manual recommends for this symptom/product, under which conditions, and what the passage does not support concluding.
+2. Annotate expected facts before inspecting model answers. Check facts absent from extraction too: reviewing proposals alone does not measure recall.
+3. Separate development and test by section or question family; avoid paraphrases of the same fact on both sides. With one manual, explicitly state generalization limits.
+4. Use identical sources, model, context and budgets for the first method comparison, then change one factor at a time. Repeat finalist variants and separate cold start from warm operation.
+5. Measure conversion, extraction, location, semantic validation, retrieval and answering separately. Aggregate scores alone cannot attribute regressions.
+6. Evaluate relation types, direction, conditions and evidence; explicitly count number, unit, negation and product errors. Measure expected-fact coverage rather than total nodes.
+7. Record duration, calls, available tokens, RAM, review minutes and cost per accepted fact. Unknown tokens stay unknown; local resources are not cost-free.
+8. Set stopping rules: budget overrun, schema failure, truncation or unresolved citation yields an observable incomplete/failed state, never silent success. Preserve targeted resumption.
 
-## Place des outils retenus
+## Role of selected tools
 
-- **OpenTelemetry** : avant le prochain benchmark, spans aux frontières conversion/extraction/validation/recherche/réponse, identifiants de versions et erreurs. Export local simple d'abord ; OTLP/Collector et démonstration vers deux backends ensuite. Le format portable ne garantit pas la portabilité des tableaux de bord ou calculs de coûts.
-- **Ragas** : conservé, mais utilisé pour la recherche et les réponses avec contextes et références préparés. Ajouter des mesures spécifiques pour la fidélité des relations extraites. Calibrer les juges sur des cas revus ; ne pas définir le succès par un unique score de faithfulness, particulièrement avec le rendu actuel qui recopie les faits du graphe.
-- **Red-teaming** : commencer par des fixtures reproductibles et contrôles déterministes : injection dans le document, mauvaise résine, négation, conditions manquantes, fausse preuve, nombres altérés et épuisement de budget. Ajouter Promptfoo comme orchestration lorsque le contrat de l'application est stabilisé ; garder des cas bénins pour détecter le sur-refus.
-- **Modèles locaux** : conserver le modèle déjà installé pour isoler d'abord les effets du schéma et de l'orchestration. Un modèle plus fort sur des textes publics peut servir de comparaison si Gaël l'autorise ; ce n'est pas une référence de vérité. Fine-tuning différé jusqu'à disposer d'erreurs récurrentes et d'annotations suffisantes.
-- **Ontologie et visualisation** : une définition versionnée et des exemples de relations suffisent au début. OWL/Protégé devient pertinent si une question de raisonnement ou d'interopérabilité le justifie ; un diagramme du graphe observé ne remplace pas la définition des relations autorisées.
-- **Employabilité** : privilégier une tranche complète démontrable, une évaluation indépendante, un diagnostic d'échec et des choix mesurés. La quantité d'outils intégrés est secondaire.
+- **OpenTelemetry:** before the next benchmark, add spans at conversion/extraction/validation/retrieval/answer boundaries, version IDs and errors. Start with simple local export; OTLP/Collector and a two-backend demonstration follow. Portable transport does not guarantee portable dashboards or cost calculations.
+- **Ragas:** retained for retrieval/answers with prepared contexts and references. Add extracted-relation fidelity measures. Calibrate judges on reviewed cases; do not define success through one faithfulness score, especially when the current renderer copies graph facts.
+- **Red-teaming:** start with reproducible fixtures and deterministic checks: document injection, wrong resin, negation, missing conditions, false evidence, altered numbers and exhausted budgets. Add Promptfoo orchestration after stabilizing the application contract; include benign cases to detect excessive refusal.
+- **Local models:** retain the installed model to isolate schema/orchestration effects first. A stronger model on public text can be a comparator if Gaël authorizes it, not ground truth. Defer fine-tuning until recurring errors and sufficient annotations exist.
+- **Ontology and visualization:** versioned definitions and relation examples suffice initially. OWL/Protégé becomes relevant when reasoning or interoperability warrants it; observed-graph diagrams do not define permitted relations.
+- **Employability:** prioritize a complete demonstrable slice, independent evaluation, failure diagnosis and measured choices. Tool count is secondary.
 
-## Corrections documentaires à reporter après choix
+## Documentation corrections identified at this historical checkpoint
 
-Mettre à jour `docs/ROADMAP.md` et `docs/INGESTION.md` : matériel désormais connu, premier test réel effectué, qualité insuffisante, provenance imparfaite, instrumentation et référence encore manquantes. Marquer explicitement « implémenté », « testé sur fixtures », « mesuré sur un manuel » et « accepté » comme des états différents. Réviser les promesses du README et garder les anciens scores uniquement comme historique. Ne pas déclarer la phase 0 entièrement validée pour le déploiement tant que les contrôles live requis ne sont pas réalisés.
+Update `docs/ROADMAP.md` and `docs/INGESTION.md` to reflect known hardware, the first real trial, insufficient quality, imperfect provenance and missing instrumentation/reference. Distinguish implemented, fixture-tested, measured on a manual and accepted. Revise README promises and retain old scores only as history. Do not declare phase 0 fully deployment-validated before required live checks.
 
-## Choix confirmés et conséquences
+## Confirmed choices and consequences
 
-- **Produit** : assistant documentaire de dépannage de la capture Protein A. Il présente des causes possibles et des actions décrites dans les sources, demande les conditions nécessaires et distingue recommandation documentaire et diagnostic établi.
-- **Portfolio** : deux dimensions dans un seul produit. Knowledge engineering : ontologie versionnée, faits et preuves, conditions, revue, publication et révocation. AI/LLM engineering : extraction mesurée, recherche, gestion de contexte, abstention, traces et évaluations.
-- **Exécution** : conversion, modèle, recherche, stockage, revue et évaluations locales pour le parcours de référence. L'application existante avec Claude et AuraDB ne satisfait pas encore cette contrainte : conserver ce parcours comme historique et prévoir explicitement un parcours local complet. Examiner licences et limites des composants locaux avant distribution.
-- **Cloud privé** : option ultérieure et conditionnelle. Une API distante ou un GPU partagé bon marché n'est pas assimilé à un environnement privé. Évaluer isolation, accès, stockage, rétention, région et coûts complets avant toute proposition. La réussite du projet ne dépend pas de trouver une offre GPU gratuite.
-- **Budget** : aucun service payant nécessaire au prochain jalon. Les frais API locaux peuvent être nuls, mais matériel et électricité restent des coûts réels. Tout benchmark distant ou hébergement exige un choix explicite ultérieur ; moins de 10 €/mois reste un plafond, pas un objectif de dépense.
-- **Temps** : Gaël est disponible en semaine et peut consacrer au projet autant de temps que nécessaire. Avancer par jalons, sans plafond hebdomadaire ni répartition horaire imposée. Mesurer néanmoins le temps de revue et les temps machine pour comparer les méthodes et éviter du travail inutile.
+- **Product:** documentary troubleshooting assistant for Protein A capture. It presents possible causes and sourced actions, requests necessary conditions and distinguishes documentary recommendation from established diagnosis.
+- **Portfolio:** two dimensions in one product. Knowledge engineering: versioned ontology, facts/evidence, conditions, review, publication and revocation. AI/LLM engineering: measured extraction, retrieval, context management, abstention, traces and evaluations.
+- **Execution:** conversion, models, retrieval, storage, review and evaluation local in the reference path. At this historical checkpoint the Claude/AuraDB application did not satisfy this constraint: preserve it as history and explicitly plan a complete local path. Examine component licences and limits before distribution.
+- **Private cloud:** a later conditional option. A remote API or cheap shared GPU is not a private environment. Evaluate isolation, access, storage, retention, region and full costs before proposing it. Success does not depend on free GPU hosting.
+- **Budget:** no paid service needed for the next milestone. Local API fees may be zero, but hardware/electricity remain real costs. Any remote benchmark or hosting requires a later explicit choice; below EUR 10/month is a ceiling, not a spending target.
+- **Time:** Gaël is available on weekdays and can devote as much time as needed. Advance by milestones without a weekly cap or imposed hourly allocation. Still measure review/machine time to compare methods and avoid unnecessary work.
 
-## Premier cycle proposé : quatre étapes, sans durée imposée
+## Proposed first cycle: four stages without imposed duration
 
-Ces étapes suivent leurs dépendances et peuvent être enchaînées dès que leurs critères sont satisfaits. Elles ne correspondent plus à des semaines calendaires. Les critères de qualité priment sur la vitesse ; les temps machine sont mesurés séparément.
+Stages follow dependencies and may proceed once criteria are met. They are not calendar weeks. Quality criteria take precedence over speed; machine time is measured separately.
 
-| Étape | Travail prioritaire | Livrable |
+| Stage | Priority work | Deliverable |
 |---|---|---|
-| 1 | Cadrer 2–3 symptômes, préparer environ 10 questions ; définir les relations et vérifier un petit lot de faits | Ontologie minimale et exemples documentaires revus, avec ambiguïtés |
-| 2 | Rendre ces faits consultables localement, sans extraction automatique indispensable ; préparer tests et traces minimales | Une question mène à une réponse sourcée ou à une demande de précision, sur un snapshot connu |
-| 3 | Micro-test d'extraction instrumenté, en réutilisant la conversion ; comparer au temps de saisie manuelle | Choix motivé entre extraction assistée et maintien d'une saisie manuelle pour ce périmètre |
-| 4 | Évaluer des cas réservés, y compris mauvaises conditions, négations et injections ; documenter les résultats | Démonstration locale reproductible et rapport des limites |
+| 1 | Scope 2–3 symptoms, prepare about 10 questions; define relations and check a small fact batch | Minimal ontology and reviewed documentary examples, including ambiguities |
+| 2 | Make facts locally accessible without requiring automatic extraction; prepare tests/minimal traces | A question yields a sourced answer or clarification on a known snapshot |
+| 3 | Instrumented extraction micro-test reusing conversion; compare manual-entry time | Reasoned choice between assisted extraction and manual entry for this scope |
+| 4 | Evaluate held-out cases including incorrect conditions, negations and injections; document results | Reproducible local demonstration and limitations report |
 
-Si un jalon échoue, réduire le périmètre ou prolonger le cycle. Ne pas compenser par davantage d'outils. Ragas est conservé comme évaluation complémentaire locale, introduite lorsque les références sont prêtes et le coût de son juge mesuré. L'export OTel vers plusieurs plateformes et le red-team automatisé étendu restent des étapes suivantes.
+If a milestone fails, narrow scope or extend the cycle rather than adding tools. Retain Ragas as supplementary local evaluation once references exist and judge cost is measured. Multi-platform OTel export and extensive automated red-teaming follow later.
 
-### Ontologie : décisions à préparer avant le prochain test
+### Ontology decisions to prepare before the next test
 
-Définir Symptom, PossibleCause, RecommendedAction et le contexte produit/phase ; autoriser une recommandation Symptom→Action lorsque la source ne donne aucune cause intermédiaire. Séparer ces concepts métier du Document, de sa Version, des Evidence et des Claim qui portent la provenance. Les noms définitifs et les correspondances avec le schéma existant seront documentés. Définir les conditions inconnues, les contradictions et le retrait d'une affirmation. Préparer les exemples avant de demander leur revue à Gaël.
+Define Symptom, PossibleCause, RecommendedAction and product/phase context; allow Symptom→Action recommendations where no intermediate cause is sourced. Separate domain concepts from Document, Version, Evidence and Claim provenance concepts. Document final names and mappings to the existing schema. Define unknown conditions, contradictions and claim withdrawal. Prepare examples before requesting Gaël's review.
 
-### Critère de réussite du premier cycle
+### First-cycle success criterion
 
-Un petit assistant de dépannage fonctionne entièrement en local, sur quelques faits vérifiés, et expose exactement les preuves et conditions de ses réponses. Son rapport distingue ce qui est testé, mesuré, revu et encore inconnu. Le graphe peut être petit et alimenté manuellement au départ ; l'automatisation est retenue seulement si sa valeur est mesurée.
+A small troubleshooting assistant works entirely locally on a few verified facts and exposes the exact evidence and conditions behind answers. Its report distinguishes tested, measured, reviewed and unknown aspects. The graph may initially be small and manually populated; adopt automation only when its value is measured.
 
-Sources : roadmap et guides locaux lus le 18 octobre 2026 ; diagnostic du test Cytiva dans `diagnostic-extraction-cytiva.md`. Documentation primaire consultée : https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/ ; https://opentelemetry.io/docs/specs/semconv/gen-ai/ ; https://github.com/docling-project/docling-graph/blob/main/docs/fundamentals/extraction-process/dense-extraction.md
+Sources: local roadmap/guides read on 18 October 2026; [Cytiva extraction diagnostic](../experiments/cytiva-local-extraction-diagnostic.md). Primary documentation consulted: [Ragas metrics](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/), [OpenTelemetry GenAI conventions](https://opentelemetry.io/docs/specs/semconv/gen-ai/) and [Docling Graph dense extraction](https://github.com/docling-project/docling-graph/blob/main/docs/fundamentals/extraction-process/dense-extraction.md).

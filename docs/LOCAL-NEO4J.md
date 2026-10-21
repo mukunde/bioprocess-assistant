@@ -1,30 +1,23 @@
-# Neo4j local dans Docker
+# Local Neo4j in Docker
 
-La base de travail remplace la connexion Aura introuvable. Elle reconstruit le
-graphe à partir de `graph/schema.cypher` et `graph/seed.cypher` ; ce n'est pas une
-récupération des éventuels ajouts présents dans l'ancienne instance.
+The working database replaces the unavailable Aura connection. It rebuilds the graph from `graph/schema.cypher` and `graph/seed.cypher`; it does not recover additions that may have existed in the old instance.
 
 ## Configuration
 
-Le fichier `.env`, ignoré par Git, contient les quatre paramètres locaux :
+The ignored `.env` contains the four local settings:
 
 ```dotenv
 NEO4J_URI=bolt://127.0.0.1:7687
 NEO4J_USERNAME=neo4j
-NEO4J_PASSWORD=<mot-de-passe-local>
+NEO4J_PASSWORD=<local-password>
 NEO4J_DATABASE=neo4j
 ```
 
-Le mot de passe initial a été généré localement. Pour une nouvelle installation,
-choisir un mot de passe avant le premier démarrage. Modifier simplement `.env`
-après création du volume ne change pas le mot de passe enregistré dans Neo4j.
+The initial password was generated locally. For a new installation, choose a password before the first start. Editing `.env` after the volume is created does not change the password stored in Neo4j.
 
-La base est accessible uniquement depuis ce PC. Le volume Docker nommé
-`bioprocess-assistant-local_neo4j_data` conserve les données quand le conteneur
-est arrêté ou recréé. Ce volume appartient au stockage Docker Desktop/WSL,
-pas au dossier OneDrive du projet ; il faut le sauvegarder séparément.
+The database is accessible only from this PC. The named Docker volume `bioprocess-assistant-local_neo4j_data` preserves data when the container stops or is recreated. This volume belongs to Docker Desktop/WSL storage, not the project's OneDrive folder; back it up separately.
 
-## Utilisation depuis la racine du dépôt
+## Commands from the repository root
 
 ```powershell
 docker compose -f compose.neo4j.yaml up -d --wait
@@ -33,31 +26,16 @@ docker compose -f compose.neo4j.yaml up -d --wait
 docker compose -f compose.neo4j.yaml stop
 ```
 
-L'environnement `integration-venv` est local et non versionné. Sur une autre
-machine, installer `requirements.txt` et `eval/requirements.txt` dans un
-environnement Python puis utiliser son interpréteur.
+The `integration-venv` environment is local and unversioned. On another machine, install `requirements.txt` and `eval/requirements.txt` into a Python environment and use its interpreter.
 
-Neo4j Browser : <http://127.0.0.1:7474>. Pour se connecter manuellement, utiliser
-`bolt://127.0.0.1:7687`, l'utilisateur `neo4j` et le mot de passe du `.env` local.
-La vérification de connexion du driver et l'évaluation lexicale n'appellent aucun
-modèle. Ne pas utiliser `--agent` pour un test sans facturation API.
+Neo4j Browser: <http://127.0.0.1:7474>. Connect with `bolt://127.0.0.1:7687`, user `neo4j` and the password from the local `.env`. Driver connection checks and lexical evaluation do not call a model. Do not use `--agent` for an evaluation without API charges.
 
-Le `.env` local créé pour Neo4j ne configure pas le modèle ni les identifiants de
-la démo Chainlit. Le test d'intégration utilise un modèle simulé ; l'usage normal
-du chat conserve sa configuration Anthropic actuelle et peut être facturé si une
-clé API est ajoutée.
+The local Neo4j `.env` does not configure the model or Chainlit demo credentials. Integration testing uses a simulated model; normal chat retains its Anthropic configuration and can incur charges when an API key is supplied.
 
-La limite mémoire du conteneur est de 1,5 Gio, dont 512 Mio maximum de heap Java
-et 256 Mio de page cache. Docker Desktop/WSL et l'application utilisent de la
-mémoire supplémentaire. Arrêter la base libère les ressources du conteneur.
+The container memory limit is 1.5 GiB, including up to 512 MiB Java heap and 256 MiB page cache. Docker Desktop/WSL and the application need additional memory. Stopping the database releases the container's resources.
 
-## Validation du lot 1
+## Lot 1 validation
 
-Une base temporaire distincte de la base de travail a validé le chargement,
-l'index anglais, les contraintes, les sources présentes, l'idempotence, la
-préservation d'un nœud indépendant, le rollback réel après une instruction
-invalide, les neuf cas de recherche lexicale et un aller-retour Chainlit avec
-Neo4j réel et modèle simulé. Elle a ensuite été supprimée.
+A temporary database, separate from the working database, validated loading, the English index, constraints, source presence, idempotence, preservation of an independent node, real rollback after an invalid statement, the nine lexical cases and a Chainlit round trip with real Neo4j and a simulated model. It was then removed.
 
-Ces contrôles ne valident ni la fidélité scientifique du seed au manuel, ni le
-choix sémantique d'un modèle réel sur les questions françaises.
+These checks do not validate the seed's scientific fidelity to the manual or a real model's semantic choices on French questions.

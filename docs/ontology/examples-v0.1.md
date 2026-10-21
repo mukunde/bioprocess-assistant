@@ -1,142 +1,142 @@
-# Fiches de vérification Cytiva — v0.1
+# Cytiva verification cards - v0.1
 
-**Toutes les fiches sont en attente.** Elles sont proposées par l’assistant ; les citations sont localisées automatiquement dans la conversion existante. Les pages PDF rendues 97–99 ont été inspectées visuellement pendant la préparation. Aucune approbation humaine n’est présumée.
+**All cards are pending.** These are assistant proposals; quotations are located automatically in the existing conversion. Rendered PDF pages 97–99 were visually inspected during preparation. No human approval is inferred.
 
-Source : *Affinity Chromatography Vol. 1: Antibodies*, CY13981-25Jan21-HB. Pages originales/numéros imprimés 97–99 = pages 1–3 de l’extrait.
+Source: *Affinity Chromatography Vol. 1: Antibodies*, CY13981-25Jan21-HB. Original/printed pages 97–99 correspond to excerpt pages 1–3.
 
-[Ouvrir l’extrait local des pages 97–99](<../../references/cytiva-hitrap-sure-pages-097-099.pdf>)
+[Open the local pages 97–99 excerpt](<../../references/cytiva-hitrap-sure-pages-097-099.pdf>)
 
-Périmètre commun proposé : **HiTrap MabSelect SuRe**. Vérifier le titre et l’introduction p.97 ; les sections p.98–99 se poursuivent jusqu’au nouveau titre « MabSelect SuRe LX ». Les preuves de ce périmètre sont conservées séparément dans le JSON.
+Proposed shared scope: **HiTrap MabSelect SuRe**. Check the heading/introduction on p.97; the sections on pp.98–99 continue until the new heading “MabSelect SuRe LX”. Evidence for this scope is stored separately in the JSON.
 
-Ordre de revue conseillé : **C04 → C01 → C07 → C08**, puis C02/C03/C05/C06. Pour chaque fiche, répondre approuvé / rejeté / à préciser, avec une note.
+Suggested review order: **C04 → C01 → C07 → C08**, then C02/C03/C05/C06. For each card, record approved / rejected / needs clarification with a note.
 
-## C01 — Encrassement sévère → augmentation possible de contre-pression
+## C01 — Severe fouling → possible backpressure increase
 
-**Statut : pending.** Modalité : `possible`.
+**Status: pending.** Modality: `possible`.
 
-Proposition : `cause:fouling` — `MAY_CAUSE` → `symptom:backpressure-increase`.
+Proposal: `cause:fouling` — `MAY_CAUSE` → `symptom:backpressure-increase`.
 
-**Page 99** (extrait 3), élément `#/texts/77`, offsets `294:390` :
-
-> If the fouling is severe, it can block the column, increase back pressure, and reduce flow rate.
-
-Conditions / contexte : `fouling_severity` = `severe` (applicability)
-
-**Point de vigilance :** Vérifier « severe » et « can ». Le symptôme seul ne prouve ni la présence ni la sévérité de cet encrassement.
-
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
-
-## C02 — Encrassement sévère → diminution possible du débit
-
-**Statut : pending.** Modalité : `possible`.
-
-Proposition : `cause:fouling` — `MAY_CAUSE` → `symptom:flow-reduction`.
-
-**Page 99** (extrait 3), élément `#/texts/77`, offsets `294:390` :
+**Page 99** (excerpt 3), item `#/texts/77`, offsets `294:390` :
 
 > If the fouling is severe, it can block the column, increase back pressure, and reduce flow rate.
 
-Conditions / contexte : `fouling_severity` = `severe` (applicability)
+Conditions / context: `fouling_severity` = `severe` (applicability)
 
-**Point de vigilance :** Vérifier « severe » et « can ». Le symptôme seul ne prouve ni la présence ni la sévérité de cet encrassement.
+**Review focus:** check “severe” and “can”. The symptom alone proves neither the presence nor the severity of fouling.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## C03 — Encrassement sévère → obstruction possible de la colonne
+## C02 — Severe fouling → possible flow reduction
 
-**Statut : pending.** Modalité : `possible`.
+**Status: pending.** Modality: `possible`.
 
-Proposition : `cause:fouling` — `MAY_CAUSE` → `symptom:column-blockage`.
+Proposal: `cause:fouling` — `MAY_CAUSE` → `symptom:flow-reduction`.
 
-**Page 99** (extrait 3), élément `#/texts/77`, offsets `294:390` :
+**Page 99** (excerpt 3), item `#/texts/77`, offsets `294:390` :
 
 > If the fouling is severe, it can block the column, increase back pressure, and reduce flow rate.
 
-Conditions / contexte : `fouling_severity` = `severe` (applicability)
+Conditions / context: `fouling_severity` = `severe` (applicability)
 
-**Point de vigilance :** Vérifier « severe » et « can ». Le symptôme seul ne prouve ni la présence ni la sévérité de cet encrassement.
+**Review focus:** check “severe” and “can”. The symptom alone proves neither the presence nor the severity of fouling.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## C04 — Nettoyer la colonne lorsque la contre-pression augmente
+## C03 — Severe fouling → possible column blockage
 
-**Statut : pending.** Modalité : `recommended`.
+**Status: pending.** Modality: `possible`.
 
-Proposition : `action:clean-column` — `RECOMMENDED_FOR` → `symptom:backpressure-increase`.
+Proposal: `cause:fouling` — `MAY_CAUSE` → `symptom:column-blockage`.
 
-**Page 99** (extrait 3), élément `#/texts/78`, offsets `153:224` :
+**Page 99** (excerpt 3), item `#/texts/77`, offsets `294:390` :
+
+> If the fouling is severe, it can block the column, increase back pressure, and reduce flow rate.
+
+Conditions / context: `fouling_severity` = `severe` (applicability)
+
+**Review focus:** check “severe” and “can”. The symptom alone proves neither the presence nor the severity of fouling.
+
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
+
+## C04 — Clean the column when backpressure increases
+
+**Status: pending.** Modality: `recommended`.
+
+Proposal: `action:clean-column` — `RECOMMENDED_FOR` → `symptom:backpressure-increase`.
+
+**Page 99** (excerpt 3), item `#/texts/78`, offsets `153:224` :
 
 > When an increase in backpressure is seen, the column should be cleaned.
 
-Conditions / contexte : `observed_symptom` = `symptom:backpressure-increase` (trigger)
+Conditions / context: `observed_symptom` = `symptom:backpressure-increase` (trigger)
 
-**Point de vigilance :** Pas de cause intermédiaire dans cette phrase. Elle ne prescrit pas à elle seule une concentration, une durée ou un seuil de pression.
+**Review focus:** this sentence contains no intermediate cause. It does not by itself specify concentration, duration or a pressure threshold.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## C05 — Le CIP peut retirer les substances ciblées du milieu
+## C05 — CIP can remove the targeted substances from the medium
 
-**Statut : pending.** Modalité : `possible`.
+**Status: pending.** Modality: `possible`.
 
-Proposition : `action:cip` — `CAN_REMOVE` → `cause:retained-substances`.
+Proposal: `action:cip` — `CAN_REMOVE` → `cause:retained-substances`.
 
-**Page 99** (extrait 3), élément `#/texts/77`, offsets `0:105` :
+**Page 99** (excerpt 3), item `#/texts/77`, offsets `0:105` :
 
 > CIP can be performed to remove very tightly bound, precipitated, or denatured substances from the medium.
 
-Conditions / contexte : périmètre produit commun ; aucune condition supplémentaire ajoutée.
+Conditions / context: shared product scope; no additional condition added.
 
-**Point de vigilance :** Conserver le « or » entre les catégories. Cette cible est un état candidat de la classe Cause ; aucun lien causal vers un symptôme n’est ajouté par cette fiche.
+**Review focus:** preserve “or” between categories. The target is a candidate state in the Cause class; this card adds no causal link to a symptom.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## C06 — Le CIP régulier prévient l’accumulation de contaminants
+## C06 — Regular CIP prevents contaminant buildup
 
-**Statut : pending.** Modalité : `source_assertion`.
+**Status: pending.** Modality: `source_assertion`.
 
-Proposition : `action:cip` — `PREVENTS_BUILDUP_OF` → `cause:contaminant-buildup`.
+Proposal: `action:cip` — `PREVENTS_BUILDUP_OF` → `cause:contaminant-buildup`.
 
-**Page 99** (extrait 3), élément `#/texts/78`, offsets `0:152` :
+**Page 99** (excerpt 3), item `#/texts/78`, offsets `0:152` :
 
 > Regular CIP prevents the build-up of contaminants and helps to maintain the capacity, flow properties, and general performance of HiTrap MabSelect SuRe.
 
-Conditions / contexte : `frequency` = `regular` (applicability)
+Conditions / context: `frequency` = `regular` (applicability)
 
-**Point de vigilance :** Prévention d’une accumulation ; la fréquence reste qualitative. Aucune garantie individuelle ni fréquence par cycle n’est déduite.
+**Review focus:** prevention of buildup; frequency stays qualitative. No individual guarantee or per-cycle frequency is inferred.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## C07 — Paramètres du CIP de l’étape 9, si nécessaire après élution
+## C07 — Step 9 CIP parameters, if required after elution
 
-**Statut : pending.** Modalité : `conditional_instruction`.
+**Status: pending.** Modality: `conditional_instruction`.
 
-Proposition : `action:cip` — procédure contextualisée.
+Proposal: `action:cip` — contextualized procedure.
 
-**Page 99** (extrait 3), élément `#/texts/72`, offsets `165:377` :
+**Page 99** (excerpt 3), item `#/texts/72`, offsets `165:377` :
 
 > If required, perform cleaning in place directly after elution with at least 2 column volumes of 0.1 to 0.5 M sodium hydroxide ensuring a contact time of 10 to 15 min. Wash with 5 column volumes of binding buffer.
 
-Conditions / contexte : `cip_required` = `True` (applicability) ; `timing` = `directly_after_elution` (applicability)
+Conditions / context: `cip_required` = `True` (applicability) ; `timing` = `directly_after_elution` (applicability)
 
-Paramètres à vérifier :
+Parameters to check:
 
 ```json
 [
@@ -187,30 +187,30 @@ Paramètres à vérifier :
 ]
 ```
 
-**Point de vigilance :** Vérifier tous les paramètres ensemble et le rinçage qui suit. « If required » n’a pas de critère défini ici. Ne pas déduire de C04 que ce protocole est automatiquement applicable.
+**Review focus:** check all parameters together, including the subsequent wash. “If required” has no defined criterion here. C04 does not make this protocol automatically applicable.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## C08 — Préparer les tubes de collecte : quantité par millilitre de fraction
+## C08 — Prepare collection tubes: amount per milliliter of fraction
 
-**Statut : pending.** Modalité : `instruction_with_stated_purpose`.
+**Status: pending.** Modality: `instruction_with_stated_purpose`.
 
-Proposition : `action:prepare-collection-tubes` — procédure contextualisée.
+Proposal: `action:prepare-collection-tubes` — contextualized procedure.
 
-**Page 98** (extrait 2), élément `#/texts/59`, offsets `0:115` :
+**Page 98** (excerpt 2), item `#/texts/59`, offsets `0:115` :
 
 > Prepare collection tubes by adding 60 to 200 µL of 1 M Tris-HCl, pH 9.0 per milliliter of fraction to be collected.
 
-**Page 98** (extrait 2), élément `#/texts/60`, offsets `0:198` :
+**Page 98** (excerpt 2), item `#/texts/60`, offsets `0:198` :
 
 > To preserve the activity of acid-labile IgG, we recommend adding 60 to 200 µL of 1 M Tris-HCl pH 9.0 to collection tubes, which ensures that the final pH of the sample will be approximately neutral.
 
-Conditions / contexte : `antibody_property` = `acid_labile_IgG` (stated_purpose_context)
+Conditions / context: `antibody_property` = `acid_labile_IgG` (stated_purpose_context)
 
-Paramètres à vérifier :
+Parameters to check:
 
 ```json
 [
@@ -255,22 +255,22 @@ Paramètres à vérifier :
 ]
 ```
 
-**Point de vigilance :** L’étape 1 fournit le dénominateur « per milliliter ». La note suivante donne le motif pour les IgG sensibles à l’acide ; ce motif n’est pas présenté comme une restriction exclusive de l’étape 1. Le pH 9,0 est celui du Tris, pas le pH final de la fraction.
+**Review focus:** step 1 supplies the denominator “per milliliter”. The following note explains the purpose for acid-labile IgG; it is not an exclusive restriction on step 1. pH 9.0 is the Tris pH, not the final fraction pH.
 
-- [ ] Citation et page vérifiées dans le PDF.
-- [ ] Sens, direction, modalité et conditions fidèles.
-- [ ] Périmètre produit vérifié.
-- Décision : … ; note : …
+- [ ] Quotation and page checked in the PDF.
+- [ ] Meaning, direction, modality and conditions are faithful.
+- [ ] Product scope checked.
+- Decision: …; note: …
 
-## Contre-exemples à rejeter
+## Counterexamples to reject
 
-- « Une contre-pression accrue prouve un encrassement sévère » : inversion abusive de C01.
-- « Le nettoyage résout toujours la hausse de pression » : C04 ne garantit pas la résolution.
-- « Utiliser exactement 2 mL de NaOH » : C07 parle d’au moins deux volumes de colonne.
-- « Appliquer les paramètres C07 à MabSelect SuRe LX » : autre produit, instructions distinctes p.99.
-- « Ajouter 60–200 µL au total, quel que soit le volume collecté » : dénominateur perdu dans C08.
-- « La fraction finale doit avoir un pH de 9,0 » : confusion entre pH du Tris et pH final.
-- « Le CIP régulier signifie un CIP à chaque cycle » : fréquence inventée.
-- « Le tampon de la figure p.97 et celui du protocole p.98 ont le même pH » : contextes différents, 7,4 et 7,2.
+- “Increased backpressure proves severe fouling”: invalid reversal of C01.
+- “Cleaning always resolves increased pressure”: C04 provides no guarantee.
+- “Use exactly 2 mL NaOH”: C07 specifies at least two column volumes.
+- “Apply C07 parameters to MabSelect SuRe LX”: different product, separate instructions on p.99.
+- “Add 60–200 µL total regardless of collected volume”: C08 denominator lost.
+- “The final fraction must have pH 9.0”: Tris pH confused with final pH.
+- “Regular CIP means CIP every cycle”: invented frequency.
+- “The p.97 figure buffer and p.98 protocol buffer have the same pH”: different contexts, 7.4 and 7.2.
 
-Ce lot est destiné au développement et à la discussion de l’ontologie. Il ne constitue pas une annotation exhaustive des trois pages ni un test indépendant de performance.
+This set supports ontology development and discussion. It is neither exhaustive annotation of the three pages nor an independent performance test.

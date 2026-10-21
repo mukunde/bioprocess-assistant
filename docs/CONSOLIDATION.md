@@ -1,52 +1,52 @@
-# Consolidation en quatre lots — état et historique
+# Four-lot consolidation - status and history
 
-**Les quatre lots et le README sont fusionnés dans `main`.** Les modifications documentaires post-fusion restent locales jusqu’à accord explicite pour un commit et un push.
+**The four lots and the README were merged into `main`.** This document records that delivery milestone, not the latest test count or repository state.
 
-| Livraison | État | Référence |
+| Delivery | Status | Reference |
 |---|---|---|
-| Lot 1 | Fusionné | [PR #3](https://github.com/mukunde/bioprocess-assistant/pull/3) |
-| Lot 2 | Fusionné | [PR #4](https://github.com/mukunde/bioprocess-assistant/pull/4) |
-| Lot 3 | Fusionné | [PR #5](https://github.com/mukunde/bioprocess-assistant/pull/5) |
-| Lot 4 | Fusionné, 23 fichiers | [PR #6](https://github.com/mukunde/bioprocess-assistant/pull/6), commit `0f76d14` |
-| README | Fusionné séparément, un fichier | [PR #7](https://github.com/mukunde/bioprocess-assistant/pull/7), commit `521088a` |
+| Lot 1 | Merged | [PR #3](https://github.com/mukunde/bioprocess-assistant/pull/3) |
+| Lot 2 | Merged | [PR #4](https://github.com/mukunde/bioprocess-assistant/pull/4) |
+| Lot 3 | Merged | [PR #5](https://github.com/mukunde/bioprocess-assistant/pull/5) |
+| Lot 4 | Merged, 23 files | [PR #6](https://github.com/mukunde/bioprocess-assistant/pull/6), commit `0f76d14` |
+| README | Merged separately, one file | [PR #7](https://github.com/mukunde/bioprocess-assistant/pull/7), commit `521088a` |
 
-Le README figurait dans la liste initiale du lot 4 ; il a été livré séparément et n’a pas été recommitté dans ce lot. La PR #6 contient les 22 autres fichiers initiaux et la mise à jour de compatibilité de `docs/CLAIM-CONTRACT-V02.md` avec les arguments du lanceur PDF. Le manifeste conserve ce périmètre dans `lot_4_delivery_files` ; `pending_review_files` est vide pour les quatre lots livrés.
+The README was in the initial lot 4 list, but was delivered separately and not included again. PR #6 contains the other 22 initial files and the compatibility update aligning `docs/CLAIM-CONTRACT-V02.md` with the PDF launcher arguments. The manifest records this scope in `lot_4_delivery_files`; `pending_review_files` is empty for all four delivered lots.
 
-Vérification finale de main au commit `937a656dc478e14c91f1c3e92321cf6f520a5e0a` : les cinq commits de livraison sont présents et le contenu attendu des 69 fichiers est confirmé. Les 106 tests principaux passent sur une copie propre ; les sept contrôles historiques passent avec le jeu local et sont ignorés sans ce jeu. Aucun appel modèle/API payant ni écriture de base pendant cette vérification. Détails locaux : `data/consolidation/main-final-verification.json`.
+Final main verification at commit `937a656dc478e14c91f1c3e92321cf6f520a5e0a`: the five delivery commits are present and the expected content of 69 files is confirmed. All 106 principal tests pass on a clean copy; seven historical checks pass with local evidence and skip without it. No paid model/API call or database write occurred during verification. Local details: `data/consolidation/main-final-verification.json`.
 
-Les lots ont été intégrés dans l’ordre 1 → 2 → 3 → 4. Les listes initiales affectaient chaque fichier une seule fois ; les livraisons et la correction de compatibilité ci-dessus explicitent les écarts ultérieurs. Dans ce découpage initial, les règles d’exclusion relevaient du lot 2, le README et le plan général du lot 4 ; le README a ensuite été livré séparément. Les liens documentaires entre lots sont désormais disponibles sur main.
+Lots were integrated in order 1 → 2 → 3 → 4. Initial lists assigned each file once; the deliveries and compatibility correction above explain subsequent differences. Exclusion rules originally belonged to lot 2, and the README/general plan to lot 4; the README was later delivered separately. Cross-lot documentation links are available on main.
 
-## Rangement effectué
+## File organization
 
-| Contenu | Emplacement courant |
+| Content | Location |
 |---|---|
-| Code applicatif et évaluations | fichiers existants, `grounding.py`, `eval/`, `tests/` |
-| Ingestion et contrat de claims | `ingestion/`, `docs/INGESTION.md`, `docs/CLAIM-CONTRACT-V02.md` |
-| Ontologie et exemples lisibles | `docs/ontology/` |
-| Code des expérimentations | `experiments/cytiva/` |
-| Rapports de diagnostic et comparaison | `docs/experiments/` |
-| Plan actif unique | `docs/ROADMAP.md` |
-| Revue méthodologique historique | `docs/decisions/2026-10-roadmap-review.md` |
-| Résultats bruts des pages 97–99 | `data/experiments/cytiva/pages-097-099-v01/` (ignoré) |
-| Archive non exécutée des pages 100–102 (ancien prompt) | `data/experiments/cytiva/pages-100-102-v02/` (ignoré) |
-| Fiches de référence JSON | `data/experiments/cytiva/reference-v01/` (ignoré) |
-| Checkout Docling Graph de consultation | `.local-tools/docling-graph-reference/` (ignoré) |
-| Inventaire, empreintes et journal des déplacements | `data/consolidation/` (ignoré) |
+| Application code and evaluations | existing files, `grounding.py`, `eval/`, `tests/` |
+| Ingestion and claim contract | `ingestion/`, `docs/INGESTION.md`, `docs/CLAIM-CONTRACT-V02.md` |
+| Ontology and readable examples | `docs/ontology/` |
+| Experiment code | `experiments/cytiva/` |
+| Diagnostic/comparison reports | `docs/experiments/` |
+| Single active plan | `docs/ROADMAP.md` |
+| Historical methodology review | `docs/decisions/2026-10-roadmap-review.md` |
+| Raw results for pages 97–99 | `data/experiments/cytiva/pages-097-099-v01/` (ignored) |
+| Unexecuted pages 100–102 archive (earlier prompt) | `data/experiments/cytiva/pages-100-102-v02/` (ignored) |
+| JSON reference cards | `data/experiments/cytiva/reference-v01/` (ignored) |
+| Docling Graph reference checkout | `.local-tools/docling-graph-reference/` (ignored) |
+| Inventory, hashes and relocation journal | `data/consolidation/` (ignored) |
 
-## Doublons et recouvrements
+## Duplicates and overlaps
 
-- **Doublon exact confirmé :** ancien `resultat-sonnet.json` identique à `resultat-sonnet-original.json`. L’original est la référence ; l’alias est conservé sous `archive/resultat-sonnet-alias.json`. Les scripts ne recréent plus cet alias.
-- **Capture dégradée :** ancien `resultat-sonnet-brut.txt`, avec guillemets typographiques. Conservé sous `archive/resultat-sonnet-accessibility.txt`, exclu de la notation.
-- **Roadmaps qui se recouvraient :** ROADMAP.md est le plan courant ; la revue française antérieure est une archive de décision, explicitement signalée.
-- **Ontologie et schéma :** complémentaires, pas des doublons à supprimer. La première définit le sens métier ; le contrat v0.2 définit la sérialisation et ses contrôles.
-- **Markdown et JSON de revue :** deux rendus à fonctions différentes, conservés. Les données complètes restent locales ; les rapports sélectionnés sont versionnables.
-- Aucun original de modèle, PDF ou décision humaine n’a été supprimé ou réécrit. Les textes de navigation ont été adaptés aux nouveaux chemins. Les entrées figées et les réponses ont gardé leurs empreintes.
+- **Confirmed exact duplicate:** old `resultat-sonnet.json` matches `resultat-sonnet-original.json`. The original is authoritative; the alias is retained in `archive/resultat-sonnet-alias.json`. Scripts no longer recreate it.
+- **Degraded capture:** old `resultat-sonnet-brut.txt` contains typographic quotes. Retained as `archive/resultat-sonnet-accessibility.txt`, excluded from grading.
+- **Overlapping roadmaps:** ROADMAP.md is the current plan; the earlier methodology review is explicitly marked as a historical decision archive.
+- **Ontology and schema:** complementary, not duplicates. The ontology defines domain meaning; v0.2 defines serialization and checks.
+- **Review Markdown and JSON:** retained for different purposes. Complete data remains local; selected reports are repository artifacts.
+- No original model response, PDF or human decision was deleted or rewritten. Navigation text was adjusted to the new paths. Frozen inputs/responses retained their hashes.
 
-## Lots initiaux et messages de livraison
+## Initial lots and delivery messages
 
-### Lot 1 — Fiabilité et évaluations (23 fichiers)
+### Lot 1 - Reliability and evaluations (23 files)
 
-Message proposé :
+Proposed message:
 
 ```text
 fix: enforce grounded answers and reliable evaluations
@@ -54,7 +54,7 @@ fix: enforce grounded answers and reliable evaluations
 Render only validated graph selections, fail malformed evaluations and make seed loading additive and transactional. Preserve explicit refusal and threshold behavior.
 ```
 
-Fichiers :
+Files:
 
 - `.chainlit/config.toml`
 - `AGENTS.md`
@@ -80,14 +80,14 @@ Fichiers :
 - `compose.neo4j.yaml`
 - `docs/LOCAL-NEO4J.md`
 
-Vérifications :
+Checks:
 
 - `python -m unittest discover -s tests -p test_reliability.py -v`
 - `python -m unittest discover -s tests -p test_app.py -v`
 
-### Lot 2 — Ingestion PDF, provenance et revue (15 fichiers)
+### Lot 2 - PDF ingestion, provenance and review (15 files)
 
-Message proposé :
+Proposed message:
 
 ```text
 feat: stage PDF extractions with provenance and manual review
@@ -95,7 +95,7 @@ feat: stage PDF extractions with provenance and manual review
 Isolate the optional Docling Graph runtime, ground extraction evidence in immutable PDF conversions and require append-only manual review before exporting a separate evidence graph.
 ```
 
-Fichiers :
+Files:
 
 - `.dockerignore`
 - `.gitignore`
@@ -113,13 +113,13 @@ Fichiers :
 - `requirements-ingestion.txt`
 - `tests/test_ingestion.py`
 
-Vérifications :
+Checks:
 
 - `python -m unittest discover -s tests -p test_ingestion.py -v`
 
-### Lot 3 — Ontologie, contrat v0.2 et quarantaine (8 fichiers)
+### Lot 3 - Ontology, v0.2 contract and quarantine (8 files)
 
-Message proposé :
+Proposed message:
 
 ```text
 feat: define versioned troubleshooting claims and source quarantine
@@ -127,7 +127,7 @@ feat: define versioned troubleshooting claims and source quarantine
 Separate normative force, purpose, applicability and quantities. Validate evidence and typed conditions, block source conflicts per claim, and keep all candidates pending human review.
 ```
 
-Fichiers :
+Files:
 
 - `docs/CLAIM-CONTRACT-V02.md`
 - `docs/ontology/examples-v0.1.md`
@@ -138,13 +138,13 @@ Fichiers :
 - `ingestion/claim_validation.py`
 - `tests/test_claim_contract.py`
 
-Vérifications :
+Checks:
 
 - `python -m unittest discover -s tests -p test_claim_contract.py -v`
 
-### Lot 4 — Expérimentations et documentation consolidées (liste initiale de 23 fichiers)
+### Lot 4 - Consolidated experiments/documentation (initial 23-file list)
 
-Message proposé :
+Proposed message:
 
 ```text
 test: consolidate Cytiva experiments and prepare the v0.2 benchmark
@@ -152,7 +152,7 @@ test: consolidate Cytiva experiments and prepare the v0.2 benchmark
 Keep experiment tooling and curated reports in the repository, move local evidence into ignored data directories, archive duplicate captures and prepare a frozen new-page test without model calls.
 ```
 
-Fichiers :
+Files:
 
 - `README.md`
 - `docs/CONSOLIDATION.md`
@@ -178,42 +178,42 @@ Fichiers :
 - `ingestion/prepare_claim_test.py`
 - `tests/test_experiment_preparation.py`
 
-Vérifications :
+Checks:
 
 - `python -m unittest discover -s tests -v`
 - `python -m unittest discover -s experiments/cytiva/v01 -p test_*.py -v`
 
-## Contre-revue du lot 4
+## Lot 4 follow-up review
 
-- Audit historique lié aux empreintes exactes des réponses, corpus, prompt, extrait PDF et source-map : changement refusé avant écriture des verdicts.
-- Génération des fiches uniquement dans un nouveau dossier `--output`, sans écrasement des annotations ni du document d’ontologie du dépôt.
-- Métadonnées de document/version et justification des pages obligatoires, enregistrées comme fournies par l’opérateur ; date calculée en UTC. La reprise exige la même source, les mêmes pages et métadonnées.
-- Ancien paquet `pages-100-102-v02` conservé sans changement ; nouvelle préparation `pages-100-102-v02-r2` à réaliser avec le prompt corrigé. Aucun nouveau modèle lancé.
-- Suite actuelle : 106 tests principaux (34 fiabilité, 6 Chainlit, 29 ingestion, 29 contrat, 8 préparation/audit/fiches). Sept contrôles historiques supplémentaires utilisent le jeu local ; ils sont ignorés explicitement sans ce jeu. La contre-revue est conservée dans `data/consolidation/lot-4-fixed-review.json` ; la vérification après fusion est dans `data/consolidation/main-final-verification.json`.
+- Historical audit bound to exact response, corpus, prompt, PDF excerpt and source-map hashes: changed inputs are rejected before verdicts are written.
+- Cards generated only in a new `--output` directory, without overwriting annotations or the repository ontology document.
+- Document/version metadata and page-selection rationale required and recorded as operator supplied; date calculated in UTC. Resume requires identical source, pages and metadata.
+- At this historical checkpoint, `pages-100-102-v02` was preserved unchanged and `pages-100-102-v02-r2` still needed preparation with the corrected prompt. No new model was launched at that checkpoint.
+- Suite at that checkpoint: 106 principal tests (34 reliability, 6 Chainlit, 29 ingestion, 29 contract, 8 preparation/audit/cards). Seven additional historical checks require local evidence and explicitly skip without it. Follow-up review: `data/consolidation/lot-4-fixed-review.json`; post-merge verification: `data/consolidation/main-final-verification.json`.
 
-## Validation historique (à ne pas confondre avec la suite actuelle)
+## Historical validation (not the current suite)
 
-Révision du lot 1 après intégration : gestion des pannes ajoutée dans `app.py`, six tests dans `tests/test_app.py`. Les 34 tests de fiabilité et les six tests applicatifs passent ; les 14 contrôles HTTP/callbacks Chainlit locaux passent avec modèle et résultats Neo4j simulés. À cette étape historique, l'intégration Neo4j réelle restait bloquée par la résolution DNS de l'hôte configuré. Aucun appel API payant, commit ni push.
+Lot 1 after integration: error handling added in `app.py`, with six tests in `tests/test_app.py`. The 34 reliability tests, six application tests and 14 local Chainlit HTTP/callback checks passed with simulated model/Neo4j results. At this historical checkpoint, real Neo4j integration was blocked by DNS resolution of the configured host. No paid API call occurred.
 
-Suite à la vérification de la console Aura, l'utilisateur a choisi Neo4j local dans Docker. Les 16 contrôles sur une base temporaire Neo4j Community 5.26.32 passent, dont les neuf cas lexicaux, l'idempotence et le rollback réel. L'aller-retour Chainlit emploie Neo4j réel et un modèle simulé. La base temporaire est supprimée ; `compose.neo4j.yaml` et `docs/LOCAL-NEO4J.md` décrivent la base de travail persistante. Le blocage de l'ancienne URI Aura ne bloque plus la validation locale. L'ancien graphe distant n'a pas été récupéré.
+After checking the Aura console, the user chose local Neo4j in Docker. Sixteen checks passed on a temporary Neo4j Community 5.26.32 database, including nine lexical cases, idempotence and real rollback. The Chainlit round trip used real Neo4j and a simulated model. The temporary database was removed; `compose.neo4j.yaml` and `docs/LOCAL-NEO4J.md` describe persistent development storage. The old Aura URI no longer blocks local validation. The old remote graph was not recovered.
 
-Lors de la consolidation initiale, chaque lot a été appliqué dans une copie jetable du dernier commit, sans création de commit ni modification de l’index. Résultats cumulés historiques, antérieurs à la correction des erreurs Chainlit :
+During initial consolidation, each lot was applied to a disposable copy of the latest commit without changing the index or creating commits. Historical cumulative results, before Chainlit error-handling corrections:
 
-| Copie vérifiée | Tests principaux | Résultat |
+| Copy checked | Principal tests | Result |
 |---|---:|---|
-| Lots 1 à 1 | 34 | OK |
-| Lots 1 à 2 | 58 | OK |
-| Lots 1 à 3 | 81 | OK |
-| Lots 1 à 4 | 82 | OK |
+| Lots 1 through 1 | 34 | OK |
+| Lots 1 through 2 | 58 | OK |
+| Lots 1 through 3 | 81 | OK |
+| Lots 1 through 4 | 82 | OK |
 
-Les sept contrôles historiques du comparatif passent aussi sur le jeu local. Les entrées figées v0.1/v0.2 et les réponses originales ont gardé leurs empreintes. Aucun nouveau modèle n’a été appelé. Les tests utilisent des mocks pour les modèles et la base ; les tests de revue HTTP restent locaux. Les liens Markdown locaux et la syntaxe Python ont été contrôlés.
+The seven historical comparison checks also passed with local evidence. Frozen v0.1/v0.2 inputs and original responses retained their hashes. No new model was called. Tests mock models/database access; review HTTP tests stay local. Local Markdown links and Python syntax were checked.
 
-## Hors des commits
+## Excluded local artifacts
 
-Les manuels/PDF, conversions, réponses complètes, décisions de revue, modèles et outils locaux ne doivent pas être ajoutés à Git. Les exclusions ont été vérifiées ; ne pas utiliser `git add .` pour préparer cette série.
+Manuals/PDFs, conversions, complete responses, full review journals, model weights and machine-specific tools remain in ignored local storage. Exclusions were checked.
 
-Le lot 4 garde uniquement les outils et rapports sélectionnés. Une nouvelle copie du dépôt n’aura pas les données privées : les tests principaux utilisent des fixtures synthétiques, les sept tests historiques savent signaler leur absence.
+Lot 4 retains only selected tooling/reports. A fresh clone does not contain private data: principal tests use synthetic fixtures, and the seven historical checks report missing evidence explicitly.
 
-Les autres fichiers du dossier parent concernent un autre projet et n’ont pas été inclus. Les anciens répertoires devenus vides peuvent rester visibles sous OneDrive : Windows en a refusé la suppression ; ils ne contiennent plus les travaux déplacés et ne sont pas versionnables comme répertoires vides.
+Other files in the parent folder belong to another project and were excluded. Old empty directories may remain visible under OneDrive because Windows refused their removal; they no longer contain relocated work and empty directories are not tracked by Git.
 
-Le résultat des vérifications de consolidation est consigné localement dans `data/consolidation/validation.json` après leur exécution. Les listes machine se trouvent dans [commit-lots.json](commit-lots.json).
+Consolidation checks were recorded locally in `data/consolidation/validation.json`. Machine-readable lists are in [commit-lots.json](commit-lots.json).

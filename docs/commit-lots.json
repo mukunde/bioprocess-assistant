@@ -11,7 +11,7 @@
   "lots": [
     {
       "id": 1,
-      "title": "Fiabilité et évaluations",
+      "title": "Reliability and evaluations",
       "subject": "fix: enforce grounded answers and reliable evaluations",
       "body": "Render only validated graph selections, fail malformed evaluations and make seed loading additive and transactional. Preserve explicit refusal and threshold behavior.",
       "files": [
@@ -48,7 +48,7 @@
     },
     {
       "id": 2,
-      "title": "Ingestion PDF, provenance et revue",
+      "title": "PDF ingestion, provenance and review",
       "subject": "feat: stage PDF extractions with provenance and manual review",
       "body": "Isolate the optional Docling Graph runtime, ground extraction evidence in immutable PDF conversions and require append-only manual review before exporting a separate evidence graph.",
       "files": [
@@ -78,7 +78,7 @@
     },
     {
       "id": 3,
-      "title": "Ontologie, contrat v0.2 et quarantaine",
+      "title": "Ontology, v0.2 contract and quarantine",
       "subject": "feat: define versioned troubleshooting claims and source quarantine",
       "body": "Separate normative force, purpose, applicability and quantities. Validate evidence and typed conditions, block source conflicts per claim, and keep all candidates pending human review.",
       "files": [
@@ -102,7 +102,7 @@
     },
     {
       "id": 4,
-      "title": "Expérimentations et documentation consolidées",
+      "title": "Consolidated experiments and documentation",
       "subject": "test: consolidate Cytiva experiments and prepare the v0.2 benchmark",
       "body": "Keep experiment tooling and curated reports in the repository, move local evidence into ignored data directories, archive duplicate captures and prepare a frozen new-page test without model calls.",
       "files": [
@@ -150,7 +150,7 @@
     ".local-tools/",
     ".venv-ingestion/"
   ],
-  "note": "Original file assignments and initial validation are historical. lot_4_delivery_files records the exact 23-file delivery; README was merged separately. pending_review_files is empty for these delivered lots. Future commits and pushes, including post-merge documentation updates, require explicit user approval.",
+  "note": "Original file assignments and initial validation are historical. lot_4_delivery_files records the exact 23-file delivery; README was merged separately. pending_review_files is empty for these delivered lots.",
   "validation": {
     "status": "historical_snapshot_see_current_validation",
     "cumulative_batch_tests": [

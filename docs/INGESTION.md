@@ -29,8 +29,10 @@ ollama pull hf.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF:Q4_K_M
 
 Configure the serving model context to match the context budget in the settings.
 `context_limit` informs extraction planning; it does not reconfigure an already
-running inference server. Hardware fit, inference speed and extraction quality
-have not yet been measured on the user's PC. Start with a few pages.
+running inference server. The first local trial on pages 97–99 took approximately
+56 minutes and produced no semantic relations; see the
+[diagnostic](experiments/cytiva-local-extraction-diagnostic.md). This is a measured
+failure case, not a validated default. Start with a bounded micro-test.
 
 The example uses 800-token structural chunks, dense scoped extraction, one worker,
 one node per fill request, no gleaning and no automatic retry. These are initial
@@ -197,10 +199,12 @@ association, review decisions/revocation, revisions, local HTTP boundaries and
 parameterized transaction construction. They do not validate Cytiva content,
 actual OCR/chunk boundaries, model extraction quality or real Neo4j concurrency.
 The pinned upstream PipelineConfig was also instantiated against the inspected
-source. Full Docling conversion/inference still requires the optional runtime,
-a downloaded/running model and an actual manual; it has not been run here.
+source. Full Docling conversion/inference requires the optional runtime,
+a downloaded/running model and an actual manual. The first real local extraction
+was executed separately; the later [conversion/chunking trial](experiments/cytiva-conversion-chunking-results-077-088.md)
+used no LLM and found a blocking table-association defect on page 88.
 
-Next: test a small real Cytiva document, inspect chunks/notes and extracted claims,
-annotate the reference set manually, measure errors/latency/memory, then add Ragas,
-red-teaming and OpenTelemetry around the proven extraction path. No Git commit or
-push is performed without the user's explicit agreement.
+Next: resolve or quarantine conversion defects, confirm the manual reference and
+instrument bounded extraction comparisons. Measure errors, latency, memory and
+review time before expanding. Ragas, red-teaming and OpenTelemetry integration
+remain roadmap work.

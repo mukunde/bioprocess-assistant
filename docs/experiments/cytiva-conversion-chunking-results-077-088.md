@@ -1,75 +1,75 @@
-# Cytiva 77 et 88 : premier comparatif conversion et chunking
+# Cytiva 77 and 88: first conversion and chunking comparison
 
-Date : 2026-10-21. **Diagnostic technique exécuté ; validation humaine et publication non autorisées.** Le test suit le [protocole](cytiva-conversion-chunking-protocol.md) sur deux blocs séparés. Référence transcrite par l'assistant depuis les rendus avant conversion, gelée localement, en attente de confirmation utilisateur. Les autres pages et K600/K1400 n'ont pas été exécutés.
+Date: 2026-10-21. **Technical diagnostic executed; human validation and publication are not authorized.** The test follows the [protocol](cytiva-conversion-chunking-protocol.md) on two separate blocks. The assistant transcribed the reference from renderings before conversion and froze it locally; user confirmation is pending. Other pages and K600/K1400 were not executed.
 
 ## Conclusion
 
-Activer TableFormer améliore fortement la structure. **Le profil T1 n'est cependant pas validé globalement** : la ligne « Available formats » de la page 88 est incorrectement regroupée dans une seule cellule produit. Le tableau reste en quarantaine. À 800 tokens, aucune perte supplémentaire des cellules converties ni des notes ciblées n'a été observée sur ces deux pages ; cela ne corrige pas une conversion erronée.
+Enabling TableFormer substantially improves structure. **T1 is not globally validated**, however: the “Available formats” row on page 88 is incorrectly grouped into one product cell. The table remains quarantined. At 800 tokens, no additional loss of converted cells or targeted notes was observed on these two pages; this does not repair incorrect conversion.
 
-## Conditions et traçabilité
+## Conditions and traceability
 
-- Source : SHA-256 `a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a`, 183 pages. Extraits indépendants de 77 et 88 ; page locale 1 reliée à la page originale dans chaque carte source.
-- Docling 2.140.0, docling-core 2.101.1, Docling Graph 1.9.1 au commit épinglé par le projet, tiktoken 0.12.0, pypdf 6.21.1 ; poids locaux layout Heron et TableFormer V1 `accurate`, cell matching activé pour T1. CPU, quatre threads, OCR désactivé, images conservées à l'échelle 2.
-- T0 : reconnaissance de structure désactivée ; T1 : activée. Le reste du profil est identique. Chaque conversion utilise un processus distinct, avec démarrage/imports comptés.
-- K0 : DocLang complet ; K800 : HybridChunker natif via Docling Graph, tiktoken `cl100k_base`, `merge_peers=True`, format DocLang sans géométrie dans le texte. Même JSON T1 gelé pour le diagnostic.
-- Aucun extracteur LLM, aucune API payante et aucune base Neo4j appelée. Aucun téléchargement : caches vérifiés ; zéro tentative réseau dans les journaux des workers sous garde Python. Ce mécanisme n'est pas un pare-feu pour code natif.
+- Source: SHA-256 `a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a`, 183 pages. Independent excerpts of 77 and 88; local page 1 maps to the original page in each source map.
+- Docling 2.140.0, docling-core 2.101.1, Docling Graph 1.9.1 at the project-pinned commit, tiktoken 0.12.0, pypdf 6.21.1; local Heron layout and TableFormer V1 `accurate` weights, cell matching enabled for T1. CPU, four threads, OCR disabled, images preserved at scale 2.
+- T0: structure recognition disabled; T1: enabled. All other profile settings match. Each conversion uses a separate process, counting startup/imports.
+- K0: full DocLang; K800: native HybridChunker through Docling Graph, tiktoken `cl100k_base`, `merge_peers=True`, DocLang without geometry in text. Same frozen T1 JSON for diagnosis.
+- No LLM extractor, paid API or Neo4j database was called. No downloads: caches checked; zero network attempts in worker logs under a Python guard. This mechanism is not a firewall for native code.
 
-Artefacts complets locaux et ignorés sous `data/experiments/cytiva/visual-validation-v01/` : `reference-20261021/`, `convert-20261021-a/`, `chunks-20261021-a/`, `conversion-checks-20261021.json`, `chunk-checks-20261021.json`, `review-20261021.csv` et les revues de conversion versionnées. PDF, rendus, cellules complètes et sorties ne sont pas distribués par ce rapport.
+Full local ignored artifacts under `data/experiments/cytiva/visual-validation-v01/`: `reference-20261021/`, `convert-20261021-a/`, `chunks-20261021-a/`, `conversion-checks-20261021.json`, `chunk-checks-20261021.json`, `review-20261021.csv` and versioned conversion reviews. This report does not distribute PDFs, renderings, full cells or outputs.
 
-## Conversion : observations
+## Conversion observations
 
-| Vérification | T0 | T1 |
+| Check | T0 | T1 |
 |---|---|---|
-| Page 77, tableau 3.5 | Une seule cellule contenant le texte aplati | 17 lignes dont l'en-tête, 4 colonnes |
-| Page 88, tableau 3.6 | Une seule cellule contenant le texte aplati | 8 lignes dont l'en-tête, 5 colonnes |
-| Légende/titre des deux tableaux | Présents | Présents et références résolues |
-| Cellules, unités et notes ciblées | Texte parfois présent, structure insuffisante | Fort gain, avec les réserves ci-dessous |
+| Page 77, table 3.5 | One cell containing flattened text | 17 rows including the header, 4 columns |
+| Page 88, table 3.6 | One cell containing flattened text | 8 rows including the header, 5 columns |
+| Both table captions/titles | Present | Present and references resolved |
+| Targeted cells, units and notes | Text sometimes present, insufficient structure | Substantial gain, with reservations below |
 
-**Page 77 :** comparaison de 48 champs sur les 16 lignes de données : 16 sous-classes et 32 champs de pH. Après normalisation déclarée des espaces des sous-classes, 46 correspondent exactement et deux `n.a.` ont perdu le point final. Aucune modification de valeur numérique ou d'opérateur observée sur ces champs. Les 10 cellules d'espèce laissées vides dans les lignes de continuation restent vides : le format ne fournit pas une relation explicite de portée vers chaque sous-classe. Ne pas remplir automatiquement tous les blancs par la valeur précédente sans une règle documentaire revue. Les remarques à droite restent du texte distinct, y compris la réserve sur la protéine libre et le matériau couplé.
+**Page 77:** 48 fields compared across 16 data rows: 16 subclasses and 32 pH fields. After declared subclass-whitespace normalization, 46 match exactly and two `n.a.` entries lose the final full stop. No numeric value or operator changes were observed in these fields. The 10 empty species cells in continuation rows remain empty: the format supplies no explicit scope relation to each subclass. Do not automatically forward-fill every blank without a reviewed documentary rule. Remarks on the right remain separate text, including the reservation about free protein and coupled material.
 
-**Page 88 :** les 12 contrôles ciblés sur les quatre capacités avec leurs marqueurs de note, les quatre vitesses et les quatre tailles de particules correspondent. Les cinq notes sont présentes et rattachées au tableau par références. Les réactifs CIP des deux familles restent distincts dans les cellules examinées. Mais la dernière ligne concatène les quatre textes de formats dans la cellule du premier produit et laisse les trois suivantes vides : **F01, défaut bloquant d'association entre colonnes**, repéré à l'examen au-delà des sondes initiales. La superposition des boîtes de cellules sur le rendu confirme ce regroupement incorrect.
+**Page 88:** the 12 targeted checks of four capacities with note markers, four velocities and four particle sizes match. All five notes are present and linked to the table by references. CIP reagents for the two families remain distinct in checked cells. However, the last row concatenates all four format texts into the first product's cell and leaves the next three empty: **F01, blocking column-association defect**, found by inspection beyond the initial probes. Cell-box overlays on the rendering confirm the incorrect grouping.
 
-Une première note de diagnostic a suspecté un caractère de remplacement dans l'unité de température de la note 4 à cause de l'affichage console. L'inspection UTF-8 et des points de code confirme que le signe degré U+00B0 est intact. Cette suspicion est retirée dans `conversion-review-20261021-v2.json`, qui conserve le lien à la version initiale. Elle ne compte pas comme erreur de conversion.
+An initial diagnostic note suspected a replacement character in note 4's temperature unit because of console display. UTF-8 and code-point inspection confirms that degree sign U+00B0 is intact. The suspicion is withdrawn in `conversion-review-20261021-v2.json`, retaining a link to the initial version. It does not count as a conversion error.
 
-## Chunking : observations
+## Chunking observations
 
-| Mesure | Page 77 | Page 88 |
+| Measure | Page 77 | Page 88 |
 |---|---:|---:|
-| K0, tokens DocLang complet | 1 469 | 1 003 |
-| K800, chunks finaux | 2 | 2 |
-| Tokens totaux des chunks contextualisés | 1 174 | 808 |
-| Maximum par chunk | 760 | 793 |
-| Découpes textuelles secondaires | 0 | 0 |
-| Notes du tableau 3.6 dans son chunk | Sans objet | 5 sur 5 |
+| K0, full DocLang tokens | 1,469 | 1,003 |
+| K800, final chunks | 2 | 2 |
+| Total contextualized-chunk tokens | 1,174 | 808 |
+| Maximum per chunk | 760 | 793 |
+| Secondary text splits | 0 | 0 |
+| Table 3.6 notes in its chunk | Not applicable | 5 of 5 |
 
-Les 58 cellules non vides converties de la page 77 et les 35 de la page 88 se retrouvent dans le chunk contenant leur tableau. **Cela mesure la préservation de la conversion, pas sa fidélité au PDF** : F01 reste présent dans K0 et K800. La page 77 garde sa première réserve d'applicabilité dans le même chunk que le tableau. Les en-têtes et les conditions ciblées sont présents ; les deux blocs ne sont jamais fusionnés.
+All 58 converted nonempty cells on page 77 and all 35 on page 88 occur in the chunk containing their table. **This measures conversion preservation, not PDF fidelity:** F01 persists in K0 and K800. Page 77 retains its first applicability reservation in the same chunk as the table. Headers and targeted conditions are present; the two blocks are never merged.
 
-Tous les item_refs vérifiés se résolvent ; les cartes de pages et les empreintes de conversion correspondent. Les 10 entrées de géométrie des chunks de 77 et les 8 de 88 se résolvent avec des boîtes dans les dimensions des pages. Les overlays de cellules ont été examinés. Les empreintes textuelles natives sont BLAKE2b sur 8 octets ; l'identité des fichiers est suivie séparément par SHA-256.
+All checked item_refs resolve; page maps and conversion hashes match. All 10 chunk geometry entries for 77 and 8 for 88 resolve to boxes within page dimensions. Cell overlays were inspected. Native text fingerprints use 8-byte BLAKE2b; file identity is tracked separately with SHA-256.
 
-La différence de tokens entre K0 et les chunks inclut leur sérialisation et contextualisation différentes ; ce n'est pas un taux de compression ni, à elle seule, une mesure d'omission. L'audit compare les cellules et les notes. Le mécanisme de seconde découpe n'a pas été exercé ; sa sécurité sur des tableaux plus grands n'est pas démontrée.
+Token differences between K0 and chunks include different serialization/contextualization; they are neither compression rates nor, alone, omission measures. The audit compares cells and notes. Secondary splitting was not exercised; its safety on larger tables remains undemonstrated.
 
-## Temps et ressources
+## Time and resources
 
-| Bloc/profil | Temps worker complet | Imports/préparation | Conversion, dont chargement différé des modèles |
+| Block/profile | Full worker time | Imports/preparation | Conversion, including deferred model loading |
 |---|---:|---:|---:|
-| 77/T0 | 123,0 s | 89,6 s | 30,6 s |
-| 77/T1 | 79,2 s | 48,6 s | 27,9 s |
-| 88/T0 | 51,1 s | 36,3 s | 12,8 s |
-| 88/T1 | 52,0 s | 32,3 s | 17,5 s |
+| 77/T0 | 123.0 s | 89.6 s | 30.6 s |
+| 77/T1 | 79.2 s | 48.6 s | 27.9 s |
+| 88/T0 | 51.1 s | 36.3 s | 12.8 s |
+| 88/T1 | 52.0 s | 32.3 s | 17.5 s |
 
-Total des quatre workers de conversion : **305,3 s**. Pic mémoire échantillonné processus et enfants : environ **1,15 Go décimal**. Ces premiers passages, avec caches système évoluant et export d'images, ne constituent pas une mesure contrôlée de surcoût de TableFormer : ne pas conclure qu'il accélère la conversion parce que 77/T1 est plus rapide que 77/T0.
+Total for four conversion workers: **305.3 s**. Sampled process/child peak memory: approximately **1.15 decimal GB**. These initial passes, with evolving system caches and image export, are not a controlled TableFormer overhead measurement: the faster 77/T1 run does not establish that TableFormer accelerates conversion.
 
-Chunking : environ 79,4 s et 52,3 s imports compris ; traitement des deux passes (chunks bruts et voie native) de 0,086 s et 0,040 s. Le démarrage domine ces mesures. Aucun coût API. Ces durées **ne se comparent pas directement aux 56 minutes d'extraction LLM antérieure**, qui incluait d'autres traitements et appels.
+Chunking: approximately 79.4 s and 52.3 s including imports; actual processing of both passes (raw chunks and native path) took 0.086 s and 0.040 s. Startup dominates. No API cost. These times **cannot be directly compared to the earlier 56-minute LLM extraction**, which included other processing and calls.
 
-## Décisions et prochaine expérience
+## Decisions and next experiment
 
-- 11 sondes ciblées examinées techniquement : 10 satisfaites sur T1/K800, une ambiguë sur la portée d'espèce (V01). Les 21 sondes des autres pages restent non exécutées. F01 est un défaut supplémentaire hors de ces 11 sondes ; leur score ne permet donc pas d'approuver le tableau.
-- Aucun résultat n'est une décision utilisateur. La grille locale reste `pending_user_review` ; le modèle CSV versionné conserve ses valeurs initiales en attente.
-- Conserver 800 comme point de départ expérimental sur ces deux pages ; aucun motif mesuré pour changer globalement le budget à ce stade.
-- Comparer ensuite, sur une **nouvelle** exécution, le cell matching activé/désactivé pour la page 88 : le regroupement actuel pourrait venir de la correspondance aux cellules PDF, mais cette cause reste une hypothèse. Ne pas modifier T1 ni ses sorties.
-- Avant toute extraction de faits concernés par F01 : corriger puis revoir la ligne, ou la maintenir explicitement en quarantaine. Aucun remplissage automatique des trois cellules vides.
-- Traiter séparément les groupes d'espèces et leur portée. Poursuivre ensuite sur 104 et 152–153 ; K600/K1400 et la seconde découpe seront évalués dans une tranche distincte. Les figures et leurs relations visuelles ne sont pas validées par ce test de tableaux.
+- 11 targeted probes technically examined: 10 satisfied on T1/K800, one ambiguous species-scope probe (V01). The other 21 probes remain unexecuted. F01 is an additional defect outside these 11 probes; their score cannot approve the table.
+- No result is a user decision. The local grid remains `pending_user_review`; the versioned CSV template retains its initial pending values.
+- Retain 800 as an experimental starting point for these two pages; there is no measured reason to change the global budget yet.
+- Next compare cell matching enabled/disabled on page 88 in a **new** run: PDF-cell matching might cause the grouping, but this remains a hypothesis. Do not alter T1 or its outputs.
+- Before extracting facts affected by F01, repair and review the row or explicitly retain quarantine. No automatic filling of the three empty cells.
+- Handle species grouping and scope separately. Continue with 104 and 152–153; K600/K1400 and secondary splitting belong to a distinct slice. This table trial does not validate figures or their visual relations.
 
-## Vérification du lanceur
+## Runner verification
 
-Six tests de sécurité sans modèles : sorties préservées, blocs non contigus séparés, rejet d'une revue sans inspection ou d'empreintes modifiées, absence d'approbation humaine implicite, blocage DNS avant réseau, rejet d'un autre manuel avant chargement des modèles. La suite principale avec les dépendances applicatives/PDF locales a passé **112 tests**, avec modèles/API externes simulés et serveurs HTTP de revue uniquement locaux. Les environnements applicatif et ingestion étant isolés, le contrôle complet réutilise leurs dépendances déjà installées ; il n'installe aucun paquet.
+Six model-free safety tests cover preserved outputs, separate noncontiguous blocks, rejection of uninspected reviews or changed hashes, no implicit human approval, DNS blocking before network access and rejection of another manual before model loading. The main suite with local application/PDF dependencies passed **112 tests**, mocking external models/APIs and using local-only review HTTP servers. Application and ingestion environments are isolated; the complete check reuses installed dependencies and installs no packages.

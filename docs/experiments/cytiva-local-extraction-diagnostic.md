@@ -1,75 +1,75 @@
-# Diagnostic du premier test Cytiva
+# Diagnostic of the first Cytiva extraction
 
-Analyse des fichiers existants, sans nouvelle extraction, modification des décisions, commit ou push.
+Analysis of existing files, without a new extraction or changes to review decisions.
 
-Run : `bioprocess-assistant-review/data/ingestion/a325aff86fd8-5bb7c2d10264`.
-Pages originales 97–99, pages 1–3 de l'extrait. Modèle local Ministral 3B Q4, CPU i5, RAM 16 Go.
+Run: `bioprocess-assistant-review/data/ingestion/a325aff86fd8-5bb7c2d10264`.
+Original pages 97–99, pages 1–3 of the excerpt. Local Ministral 3B Q4 model, i5 CPU, 16 GB RAM.
 
-## Résultats et causes
+## Results and causes
 
-29 entités, aucune relation sémantique. Les métadonnées natives donnent `skeleton_path_counts = {"": 1, "entities[]": 29}`. Il n'y a aucun nœud `relations[]` dès la découverte. `merge_orphans_dropped = 0`, aucune troncature ni aucun batch de découverte en échec. L'adaptateur ne filtre pas les relations : il reprend celles du modèle. Les 27 arêtes natives sont des liens structurels, pas des relations métier.
+29 entities, no semantic relations. Native metadata reports `skeleton_path_counts = {"": 1, "entities[]": 29}`. No `relations[]` node exists at discovery time. `merge_orphans_dropped = 0`, with no truncation or failed discovery batch. The adapter does not filter relations: it takes those returned by the model. The 27 native edges are structural links, not domain relations.
 
-Le schéma place les relations dans une liste de modèles autonomes avec cinq champs d'identité (types et noms des deux extrémités, prédicat). Or la découverte dense demande des identifiants courts copiés du document, interdit de remplir les propriétés et indique que les relations seront traitées plus tard. Le remplissage n'est ensuite lancé que pour les chemins effectivement découverts ; ses sous-schémas retirent les listes enfants. Cette combinaison explique le blocage structurel et constitue une hypothèse forte sur la cause de l'omission par le modèle, pas une preuve d'une incapacité générale de Docling Graph.
+The schema puts relations in a list of standalone models with five identity fields (types and names of both endpoints, and predicate). Dense discovery requests short identifiers copied from the document, prohibits filling properties and says relations will be handled later. Filling is then launched only for paths actually discovered; its subschemas remove child lists. This combination explains the structural blockage and provides a strong hypothesis for the model's omission, rather than proving a general limitation of Docling Graph.
 
-Le modèle n'a extrait aucun Symptom/Cause malgré le texte explicite de `#/texts/77` (encrassement, obstruction, augmentation de la contre-pression, diminution du débit) et `#/texts/78` (nettoyer lorsque la contre-pression augmente). Ces textes sont présents dans le chunk CIP : le défaut ne vient pas de leur absence dans la conversion. Les objets extraits sont trop souvent mal typés : tampon classé Resin, eau distillée classée ProcessStep, marqueurs de masse moléculaire classés Resin. Le schéma Entity et Relation n'a pas de docstring de classification ; le guide de découverte ne transmet pas les énumérations de type et de prédicat. La docstring racine est tronquée à 240 caractères. Le découpage conserve la section CIP mais des titres locaux comme Lane remplacent le contexte produit ; le début du document est répété comme contexte global, ce qui peut favoriser l'exemple expérimental de la page 97. Cette dernière influence reste à tester.
+The model extracted no Symptom/Cause despite explicit text in `#/texts/77` (fouling, blockage, increased back pressure, decreased flow rate) and `#/texts/78` (clean when back pressure increases). These passages are in the CIP chunk, so their absence from conversion is not the cause. Extracted objects are often mistyped: a buffer as Resin, distilled water as ProcessStep, molecular-weight markers as Resin. The Entity and Relation schemas have no classification docstrings; the discovery guide does not transmit type and predicate enums. The root docstring is truncated to 240 characters. Chunking preserves the CIP section, but local headings such as Lane replace product context; the start of the document is repeated as global context, potentially favouring the experimental example on page 97. This last influence remains untested.
 
-## Citations : 13 fiches, 29 occurrences en échec, 26 textes distincts
+## Citations: 13 cards, 29 failed occurrences, 26 distinct texts
 
-Le contrôle actuel cherche une citation dans un seul élément Docling ou une ligne/cellule de tableau, avec seulement une tolérance aux espaces blancs. C'est une vérification de localisation, pas une preuve du sens de l'affirmation.
+The current check searches for a quotation within one Docling item or one table row/cell, tolerating whitespace differences only. This verifies location, not the meaning of an assertion.
 
-- Six occurrences deviennent des correspondances exactes dans un élément après retrait des seules balises. Exemple : `<text>(B) SDS-PAGE analysis</text>`. Ce test diagnostique ne modifie ni les résultats ni les approbations.
-- Quatre autres occurrences deviennent des sous-chaînes exactes d'une concaténation globale après retrait des balises (Elution buffer et System, chacune deux fois). Cette concaténation sert uniquement au diagnostic : l'accepter comme preuve pourrait relier abusivement des pages ou des colonnes différentes.
-- Les 19 autres occurrences présentent des causes parfois combinées : caractères de contrôle PDF rendus en texte `[U+0003]`/`[U+0007]`, étiquette et valeur séparées, marqueur de liste ajouté par le sérialiseur, changements de casse, reformulation ou suppression de mots.
+- Six occurrences become exact within-item matches after removing tags alone. Example: `<text>(B) SDS-PAGE analysis</text>`. This diagnostic does not change results or approvals.
+- Four more become exact substrings of a global concatenation after tag removal (Elution buffer and System, twice each). Concatenation is diagnostic only: accepting it as evidence could incorrectly connect different pages or columns.
+- The remaining 19 occurrences have potentially combined causes: PDF control characters rendered as `[U+0003]`/`[U+0007]`, separate label and value, a serializer-added list marker, case changes, paraphrasing or omitted words.
 
-Exemples vérifiés :
+Verified examples:
 
-- `Column:` = `#/texts/4`, valeur = `#/texts/6` ; ce ne sont pas un élément contigu unique, et `Sample:` s'intercale dans l'ordre de lecture.
-- Le sodium phosphate contient réellement un caractère U+0003 dans `#/texts/9`. Copier le texte affiché ou sa représentation échappée ne correspond plus au texte brut.
-- `Pool eluted human MAb` diffère de `Pool eluted purified human MAb` dans `#/texts/48`.
-- `backpressure` diffère de `back pressure` dans `#/texts/77`.
-- Une citation de la figure retire `(SDS gel, lane 3)` avant le point final.
-- `<ldiv><marker>1.</marker></ldiv>LMW markers` contient un numéro de liste ajouté par le sérialiseur ; enlever simplement les tags conserve `1.` qui n'existe pas dans l'élément `#/texts/46`.
+- `Column:` is `#/texts/4`, its value is `#/texts/6`; they are not one contiguous item, and `Sample:` intervenes in reading order.
+- Sodium phosphate actually contains U+0003 in `#/texts/9`. Copying displayed text or its escaped representation no longer matches the raw text.
+- `Pool eluted human MAb` differs from `Pool eluted purified human MAb` in `#/texts/48`.
+- `backpressure` differs from `back pressure` in `#/texts/77`.
+- One figure quotation removes `(SDS gel, lane 3)` before the final full stop.
+- `<ldiv><marker>1.</marker></ldiv>LMW markers` contains a serializer-added list number; simply stripping tags retains `1.`, which does not exist in `#/texts/46`.
 
-Il ne faut donc ni appeler les 13 fiches des hallucinations, ni autoriser une correspondance approximative comme preuve. Les 16 fiches sans erreur de localisation nécessitent toujours une revue sémantique et des conditions.
+The 13 cards should therefore neither be labelled hallucinations nor accepted through approximate matching. The 16 cards without location errors still require semantic and condition review.
 
-## Décomposition des 55 min 49 s
+## Breakdown of 55 min 49 s
 
-| Étape | Temps observé |
+| Stage | Observed time |
 |---|---:|
-| Initialisation avant le début du pipeline natif | ~1 min 39 s |
-| Conversion et préparation des chunks | ~46 s |
-| Découverte initiale, 4 batches | ~14 min 08 s |
-| Relecture de couverture, 1 batch | ~1 min 49 s |
-| Remplissage, 30 jobs séquentiels | ~37 min 27 s |
+| Initialization before the native pipeline starts | ~1 min 39 s |
+| Conversion and chunk preparation | ~46 s |
+| Initial discovery, 4 batches | ~14 min 08 s |
+| Coverage review, 1 batch | ~1 min 49 s |
+| Filling, 30 sequential jobs | ~37 min 27 s |
 
-Le remplissage représente environ 67 % du temps total. `dense_fill_nodes_cap=1` impose un appel par nœud, plus la racine. Les journaux montrent cinq batches de découverte en incluant la couverture, puis trente jobs de remplissage. La couverture dense est distincte du gleaning direct : `gleaning_enabled=false` ne la désactive pas. Les métadonnées ne montrent ni troncature ni batches de découverte en échec.
+Filling accounts for approximately 67% of total time. `dense_fill_nodes_cap=1` requires one call per node, plus the root. Logs show five discovery batches including coverage, followed by thirty filling jobs. Dense coverage is distinct from direct gleaning: `gleaning_enabled=false` does not disable it. Metadata shows neither truncation nor failed discovery batches.
 
-La conversion n'est pas le goulot principal. Un relevé ponctuel ne laissait que 0,5 Gio de RAM libre ; la pression mémoire est plausible mais sa contribution n'a pas été mesurée. Ne pas attribuer une durée précise au swap ni promettre un gain matériel. Il manque les tokens et durées prompt/génération par appel pour séparer leurs coûts.
+Conversion is not the main bottleneck. One snapshot showed only 0.5 GiB of free RAM; memory pressure is plausible, but its contribution was not measured. No specific duration can be attributed to swapping or hardware gain promised. Per-call token counts and prompt/generation durations are missing, preventing separation of these costs.
 
-## Corrections proposées, par priorité
+## Proposed corrections, in priority order
 
-1. **Preuves par références plutôt que citations régénérées.** Conserver `document.json` brut et ses empreintes. Produire une vue de texte destinée au modèle avec IDs d'éléments, paragraphes/phrases et correspondance des offsets vers le brut. Nettoyage limité, explicite et journalisé des contrôles de sérialisation. Le modèle sélectionne des IDs et, si nécessaire, des segments ; le code reconstruit les citations exactes et les coordonnées. Les preuves multi-éléments gardent leurs segments séparés et leurs rôles. Ne pas concaténer arbitrairement étiquette/valeur ou traverser des lignes de tableau. Une référence valide prouve la localisation seulement : la revue humaine reste obligatoire.
+1. **Evidence references instead of regenerated quotations.** Preserve raw `document.json` and its hashes. Produce a model-facing text view with item IDs, paragraphs/sentences and offset mappings back to raw content. Limit, document and log serialization-control cleanup. The model selects IDs and, where needed, segments; code reconstructs exact quotations and coordinates. Multi-item evidence keeps segments and their roles separate. Do not arbitrarily concatenate labels/values or cross table rows. A valid reference proves location only; human review remains mandatory.
 
-2. **Extraction des faits et relations dans un même petit contexte.** Conserver Docling pour la conversion et HybridChunker pour la structure. Pour ce schéma plat et ce petit modèle, tester une extraction directe par sous-section sémantique bornée plutôt qu'une découverte de nœuds suivie d'un remplissage individuel. Chaque sortie contient le symptôme, la cause/action explicitement citée, leurs conditions et les références de preuve. Un adaptateur attribue les IDs et construit les entités/relations canoniques. Le changement exige un orchestrateur de sections et ne se résume pas à remplacer `dense` par `direct` sur le PDF entier. Le budget de sortie de 2048 tokens peut être insuffisant pour tout le document.
+2. **Extract facts and relations in the same small context.** Retain Docling conversion and HybridChunker structure. For this flat schema and small model, test direct extraction per bounded semantic subsection against node discovery followed by individual filling. Each output contains the symptom, explicitly cited cause/action, conditions and evidence references. An adapter assigns IDs and constructs canonical entities/relations. This requires section orchestration, not merely replacing `dense` with `direct` on the entire PDF. A 2048-token output budget may be insufficient for the whole document.
 
-3. **Ontologie et consignes compactes.** Définir chaque classe et chaque prédicat dans les descriptions réellement transmises au modèle. Exclure figures, instruments, marqueurs et tampons des classes métier qui ne les décrivent pas ; ne pas créer des classes supplémentaires sans besoin de recherche. Exemple de cible à vérifier manuellement : augmentation de contre-pression → nettoyage, ou symptôme → encrassement → nettoyage lorsque les passages soutiennent réellement ces liens. L'énoncé de nettoyage ne doit pas être transformé en diagnostic certain. Décider explicitement si une relation Symptom→Action est utile : le schéma actuel ne la permet pas directement. Préserver les distinctions entre les conditions de la figure et celles du protocole (notamment pH 7,4 et 7,2).
+3. **Compact ontology and instructions.** Define every class and predicate in descriptions actually transmitted to the model. Exclude figures, instruments, markers and buffers from domain classes that do not describe them; do not add classes without a retrieval need. A target for manual verification is increased back pressure → cleaning, or symptom → fouling → cleaning where passages actually support those links. A cleaning instruction must not become a certain diagnosis. Explicitly decide whether a Symptom→Action relation is useful: the current schema does not allow it directly. Preserve figure/protocol condition differences, particularly pH 7.4 versus 7.2.
 
-4. **Conserver le chunking documentaire/hierarchique.** Ajouter à chaque chunk le produit/section parent et les conditions pertinentes, sans répéter toute la figure initiale. Garder avertissements et étapes associées ensemble ; garder les tableaux avec leurs en-têtes et relations spatiales. Détecter les limites de produit, notamment MabSelect SuRe LX en fin de page. Limite en tokens calculée sur la totalité de la requête avec marge de sortie, pas seulement sur le texte et un proxy cl100k. Ne pas augmenter aveuglément la taille des chunks.
+4. **Keep document-based/hierarchical chunking.** Attach parent product/section and relevant conditions to each chunk without repeating the entire opening figure. Keep warnings with associated steps, and tables with headers and spatial relationships. Detect product boundaries, particularly MabSelect SuRe LX at the end of the page. Calculate token limits for the entire request with output headroom, rather than text alone and a cl100k proxy. Do not blindly increase chunk size.
 
-5. **Limiter et mesurer les appels.** Réutiliser la conversion immuable ; terminer le processus de conversion avant de charger le modèle d'extraction pour libérer les poids OCR/layout. Cache par empreinte PDF + versions + conversion + schéma + consignes + modèle + paramètres. Limites du nombre d'appels, temps total et tokens ; erreurs explicites et reprise des sections manquantes. Tracer par appel durée totale, chargement, prompt, génération, tokens, débit, section, tentative et validation ; distinguer zéro frais API locaux et consommation de ressources. Garder un seul worker CPU dans un premier temps.
+5. **Limit and measure calls.** Reuse immutable conversion; finish the conversion process before loading the extraction model to release OCR/layout weights. Cache by PDF hash + versions + conversion + schema + instructions + model + parameters. Limit call count, total time and tokens; report explicit errors and support resuming missing sections. Trace each call's total, loading, prompt and generation durations, tokens, throughput, section, attempt and validation. Distinguish zero local API fees from resource consumption. Initially retain one CPU worker.
 
-6. **Comparaison dense minimale si nécessaire.** Tester `dense_fill_nodes_cap=3`, contexte scoped et descriptions corrigées sur un contexte réduit. Avec exactement les mêmes 29 entités et une racine, cela donnerait 11 jobs de remplissage au lieu de 30, donc environ 16 jobs au total si les cinq batches de découverte restaient identiques. C'est un calcul de jobs, pas une prédiction de durée : les sorties seront plus longues, les contextes peuvent grandir et il faut vérifier la troncature. Cela ne corrige pas à lui seul la découverte des relations. Éviter la déduplication LLM et le parallélisme comme premiers leviers sur ce PC.
+6. **Minimal dense comparison if needed.** Test `dense_fill_nodes_cap=3`, scoped context and corrected descriptions on reduced input. With exactly the same 29 entities and one root, this gives 11 filling jobs instead of 30, approximately 16 total jobs if the five discovery batches remain unchanged. This is job arithmetic, not a duration prediction: outputs will be longer, contexts may grow and truncation must be checked. It does not alone fix relation discovery. Avoid LLM deduplication and parallelism as first optimizations on this PC.
 
-## Protocole de validation avant toute nouvelle extraction complète
+## Validation protocol before another full extraction
 
-Commencer avec les deux paragraphes CIP de la page originale 99, en réutilisant la conversion existante. Établir une petite référence humaine avec chaque fait/relation attendu et sa preuve exacte ; les propositions préparées automatiquement restent non validées jusqu'à confirmation par le lecteur.
+Start with the two CIP paragraphs on original page 99, reusing existing conversion. Establish a small human reference with every expected fact/relation and its exact evidence. Automatically prepared proposals remain unvalidated until confirmed by the reader.
 
-Comparer même modèle, même contexte et même référence : mode actuel, dense compact, extraction directe structurée par section. Instrumenter chaque appel, poser un budget explicite (par exemple trois appels maximum et dix minutes pour ce micro-test, arrêt si dépassé). Vérifier précision/rappel des relations, types, directions, conditions, entités parasites, taux de références résolues, tokens et durée. Toutes les preuves des fiches proposées à l'approbation doivent être localisées ; aucun gain de vitesse ne compense une perte de fidélité. Un LLM-as-a-judge/RAGAS peut compléter les contrôles, mais ne constitue pas la référence de vérité de cette extraction.
+Compare the current mode, compact dense mode and structured direct extraction by section using the same model, context and reference. Instrument every call and set an explicit budget, such as at most three calls and ten minutes for this micro-test, stopping on overrun. Check relation precision/recall, types, directions, conditions, irrelevant entities, resolved-reference rate, tokens and duration. All evidence for approval candidates must be located; speed gains cannot compensate for lost fidelity. An LLM-as-a-judge/RAGAS can supplement checks but is not this extraction's ground truth.
 
-Ensuite seulement, comparer sur les trois pages, y compris figures, tampons et conditions divergentes. Aucun gain de durée n'a encore été mesuré pour les corrections proposées ; ne pas annoncer une réduction garantie à un nombre de minutes.
+Only then compare all three pages, including figures, buffers and conflicting conditions. No duration gain has yet been measured for these proposals; no guaranteed reduction to a specific number of minutes can be claimed.
 
-## Sources vérifiées
+## Verified sources
 
-- Sources locales : `ingestion/schema.py`, `ingestion/pipeline.py`, `ingestion/evidence.py`, sortie `extraction.json`, `document.json`, `provenance.json`, métadonnées natives et `tmp/cytiva-first-extraction.log`.
-- Code de la dépendance installée, révision épinglée : `docling_graph/core/extractors/contracts/dense/{catalog,prompts,orchestrator}.py` et `docling_graph/config.py`.
-- Documentation officielle, contexte général (la version installée prime) : https://github.com/docling-project/docling-graph/blob/main/docs/fundamentals/extraction-process/dense-extraction.md ; https://github.com/docling-project/docling-graph/blob/main/docs/reference/config.md
+- Local sources: `ingestion/schema.py`, `ingestion/pipeline.py`, `ingestion/evidence.py`, `extraction.json`, `document.json`, `provenance.json`, native metadata and `tmp/cytiva-first-extraction.log`.
+- Installed dependency code, pinned revision: `docling_graph/core/extractors/contracts/dense/{catalog,prompts,orchestrator}.py` and `docling_graph/config.py`.
+- Official documentation for general context; the installed version takes precedence: [dense extraction](https://github.com/docling-project/docling-graph/blob/main/docs/fundamentals/extraction-process/dense-extraction.md) and [configuration](https://github.com/docling-project/docling-graph/blob/main/docs/reference/config.md).

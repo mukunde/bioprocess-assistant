@@ -1,6 +1,6 @@
 # Cytiva: validating tables, captions, diagrams and chunking
 
-Date: 2026-10-21. Status: **first slice executed on 77 and 88: T0/T1 and K0/K800; blocking conversion defect, user review pending**. See the [first trial report](cytiva-conversion-chunking-results-077-088.md). Other pages and K600/K1400 remain untested. No LLM/API calls, Neo4j publication or changes to the r2 package.
+Date: 2026-10-21; status updated 2026-10-22. **Initial T0/T1 and K0/K800 trials executed on 77 and 88.** See the [first trial report](cytiva-conversion-chunking-results-077-088.md). Later documentary reviews approved the exact [page-77 T1 result with reservations](cytiva-page-077-human-review.md) and the separate [page-88 deterministic reconstruction with reservations](cytiva-page-088-human-review.md); they do not approve the defective original page-88 conversion or production retrieval. The [page-104 figure/caption trial](cytiva-figure-104-results.md) has now executed T0/T1 and K0/K800: the image and text are preserved, but diagram semantics remain quarantined for text-only use. Its [six-card human documentary review](cytiva-page-104-human-review.md) is complete with reservations. Other selected pages and K600/K1400 remain untested. No LLM/API calls, Neo4j publication or changes to the r2 package.
 
 ## 1. Objective and limitations
 

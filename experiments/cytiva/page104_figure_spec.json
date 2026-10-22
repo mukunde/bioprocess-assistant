@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "experiment_id": "cytiva-figure-104-v01",
+  "status": "prepared_not_executed_pending_human_confirmation",
+  "dataset_role": "development_not_held_out",
+  "human_approved": false,
+  "publication_allowed": false,
+  "source": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "original_pdf_page_1based": 104,
+    "original_pdf_page_index_0based": 103,
+    "printed_page": "104",
+    "expected_excerpt_page_1based": 1,
+    "figure": "3.29"
+  },
+  "reference_origin": "Assistant annotation of full-page Poppler rendering before conversion; native PDF text is a transcription cross-check, not proof of arrows. Pending user confirmation.",
+  "coordinate_system": {
+    "units": "normalized_page_fraction",
+    "origin": "top_left",
+    "bbox_order": [
+      "left",
+      "top",
+      "right",
+      "bottom"
+    ],
+    "source_page_width_pt": 1920,
+    "source_page_height_pt": 1080,
+    "regions_are": "Approximate assistant-annotated source inspection regions, not converter output or tight word boxes."
+  },
+  "regions": {
+    "diagram_including_vertical_role_labels": [
+      0.465,
+      0.115,
+      0.91,
+      0.87
+    ],
+    "caption": [
+      0.468,
+      0.885,
+      0.91,
+      0.913
+    ],
+    "explanatory_paragraph": [
+      0.037,
+      0.12,
+      0.413,
+      0.282
+    ]
+  },
+  "caption_exact": "Fig 3.29. AC media for purification of antibody fragments.",
+  "paragraph_figure_reference_exact": "Figure 3.29",
+  "role_labels_exact": [
+    "Antibody fragment",
+    "Chain sub type",
+    "Recommended product",
+    "Alternative product"
+  ],
+  "nodes": [
+    {
+      "id": "fab",
+      "role": "Antibody fragment",
+      "display_label": "Fab",
+      "bbox": [
+        0.509,
+        0.169,
+        0.632,
+        0.214
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "scfv",
+      "role": "Antibody fragment",
+      "display_label": "scFv",
+      "bbox": [
+        0.636,
+        0.169,
+        0.759,
+        0.214
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "domain",
+      "role": "Antibody fragment",
+      "display_label": "Domain antibody",
+      "bbox": [
+        0.764,
+        0.169,
+        0.889,
+        0.214
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "fab-kappa",
+      "role": "Chain sub type",
+      "display_label": "Kappa light chain",
+      "bbox": [
+        0.497,
+        0.371,
+        0.573,
+        0.427
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "fab-lambda",
+      "role": "Chain sub type",
+      "display_label": "Lambda light chain",
+      "bbox": [
+        0.575,
+        0.371,
+        0.651,
+        0.427
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "scfv-kappa",
+      "role": "Chain sub type",
+      "display_label": "Kappa light chain",
+      "bbox": [
+        0.659,
+        0.371,
+        0.735,
+        0.427
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "domain-kappa",
+      "role": "Chain sub type",
+      "display_label": "Kappa light chain",
+      "bbox": [
+        0.744,
+        0.371,
+        0.82,
+        0.427
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "domain-vh3",
+      "role": "Chain sub type",
+      "display_label": "VH3 Heavy chain",
+      "bbox": [
+        0.822,
+        0.371,
+        0.898,
+        0.427
+      ],
+      "typography_note": "VH has subscript 3 in source; VH3 is the explicit plain-text comparison form."
+    },
+    {
+      "id": "fab-capto",
+      "role": "Recommended product",
+      "display_label": "Capto L",
+      "bbox": [
+        0.497,
+        0.568,
+        0.574,
+        0.624
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "fab-fabselect",
+      "role": "Recommended product",
+      "display_label": "Lambda FabSelect",
+      "bbox": [
+        0.575,
+        0.568,
+        0.652,
+        0.624
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "scfv-capto",
+      "role": "Recommended product",
+      "display_label": "Capto L",
+      "bbox": [
+        0.659,
+        0.568,
+        0.736,
+        0.624
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "domain-capto",
+      "role": "Recommended product",
+      "display_label": "Capto L",
+      "bbox": [
+        0.744,
+        0.568,
+        0.821,
+        0.624
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "domain-mabselect",
+      "role": "Recommended product",
+      "display_label": "MabSelect",
+      "bbox": [
+        0.822,
+        0.568,
+        0.899,
+        0.624
+      ],
+      "typography_note": null
+    },
+    {
+      "id": "fab-kappaselect",
+      "role": "Alternative product",
+      "display_label": "KappaSelect",
+      "bbox": [
+        0.497,
+        0.754,
+        0.574,
+        0.81
+      ],
+      "typography_note": null
+    }
+  ],
+  "recommended_paths": [
+    {
+      "id": "path-1",
+      "node_ids": [
+        "fab",
+        "fab-kappa",
+        "fab-capto"
+      ]
+    },
+    {
+      "id": "path-2",
+      "node_ids": [
+        "fab",
+        "fab-lambda",
+        "fab-fabselect"
+      ]
+    },
+    {
+      "id": "path-3",
+      "node_ids": [
+        "scfv",
+        "scfv-kappa",
+        "scfv-capto"
+      ]
+    },
+    {
+      "id": "path-4",
+      "node_ids": [
+        "domain",
+        "domain-kappa",
+        "domain-capto"
+      ]
+    },
+    {
+      "id": "path-5",
+      "node_ids": [
+        "domain",
+        "domain-vh3",
+        "domain-mabselect"
+      ]
+    }
+  ],
+  "visual_connections": [
+    {
+      "from": "fab",
+      "to": "fab-kappa",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "fab-kappa",
+      "to": "fab-capto",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "fab",
+      "to": "fab-lambda",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "fab-lambda",
+      "to": "fab-fabselect",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "scfv",
+      "to": "scfv-kappa",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "scfv-kappa",
+      "to": "scfv-capto",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "domain",
+      "to": "domain-kappa",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "domain-kappa",
+      "to": "domain-capto",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "domain",
+      "to": "domain-vh3",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "domain-vh3",
+      "to": "domain-mabselect",
+      "kind": "directed_diagram_connection_not_process_sequence"
+    },
+    {
+      "from": "fab-capto",
+      "to": "fab-kappaselect",
+      "kind": "visual_connection_to_alternative_not_mandatory_process_step"
+    }
+  ],
+  "alternative_scope": {
+    "node_id": "fab-kappaselect",
+    "path_id": "path-1",
+    "role": "alternative_to_recommended_product",
+    "not_a_process_step": true
+  },
+  "paragraph_context_to_preserve": [
+    "Complementary media are introduced for cases where Capto L lacks affinity for the antibody fragment of interest.",
+    "KappaSelect: kappa Fabs, constant region; Lambda FabSelect: lambda Fabs, constant region.",
+    "MabSelect: affinity for heavy chain subtype VH3; figure is a general selection guide."
+  ],
+  "comparison_policy": {
+    "text": "Collapse whitespace explicitly for comparison only; retain raw values and all occurrence positions.",
+    "typography": "Track VH subscript separately; do not silently treat 3 as a concentration or branch number.",
+    "diagram_relations": "Five paths and eleven directed logical connections are source annotations, not already extracted edges. Count duplicated labels by distinct box occurrence.",
+    "caption_link": "Require native explicit item references; separately report geometric association if only spatial inference is available.",
+    "image": "A page rendering is a manual fallback, not a successful detected figure. Preserve readable role labels and the bottom alternative.",
+    "chunking": "Separate text preservation, native image/ref attachment, relation transmission and future context reconstruction. No bag-of-words approval."
+  },
+  "profiles": {
+    "conversion": [
+      "T0",
+      "T1"
+    ],
+    "ocr": false,
+    "image_description": false,
+    "remote_services": false,
+    "image_scale": 2,
+    "chunking": [
+      "K0",
+      "K800"
+    ],
+    "deferred": [
+      "T2 OCR unless source text is actually missing",
+      "K600/K1400 after first inspection",
+      "VLM/LLM interpretation",
+      "context assembler implementation"
+    ]
+  },
+  "not_validated": [
+    "conversion",
+    "chunking",
+    "visual semantic extraction",
+    "production retrieval",
+    "scientific applicability"
+  ]
+}

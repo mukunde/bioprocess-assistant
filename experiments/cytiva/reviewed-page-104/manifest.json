@@ -1,0 +1,95 @@
+{
+  "package_version": 1,
+  "package_hash_policy": "sha256_utf8_lf",
+  "files": {
+    "README.md": "75fb5c116675a753755d43e4c98a106475e80145d0daee634bf913d04f644f98",
+    "cards.json": "ef37e12035c280b045228ea0bb099402944a35bd39eae0c459bd0527028fc7cb",
+    "review.json": "f3ccbc52f3afe03c679dd90ad0f42778b7055247288e87ed3abc6bdf2dba7816",
+    "events.json": "84fbbbde77293c042e0b728c0fa2197956127a90c89e1f0db7828d22f376f2ab"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-conversion-chunking-protocol.md": "75614b2bf27e1a054d8aabf38f9b77bf3fde2875d04250f357aaa4519293b360",
+    "docs/experiments/cytiva-figure-104-protocol.md": "7bd13657574f3ea520eb59ae18f625f00502b5a634b9337b5b12ffd52b79d7d9",
+    "docs/experiments/cytiva-figure-104-results.csv": "a4544fc194327fea2bcd0f8d7e6cc99459b5a5522d3ccef72731527ec3138ec5",
+    "docs/experiments/cytiva-figure-104-results.md": "5ec917f3a45c75266a0b4f35cd1081b29bf25163703474928b51e84086b5de4b",
+    "docs/experiments/cytiva-figure-104-review.csv": "f7ce06e8c4ba96b1f9137d7f9e018aeec727e30560960e7788e444b71935a574",
+    "docs/experiments/cytiva-page-104-human-review.md": "de4b61a363ad54c3530140439a12c385445e7f16963af1e492c44083bb735914",
+    "experiments/cytiva/page104_figure_spec.json": "c4e204167730aac28fed8585c1e97450f4572fab5949ae055aefd09ea3c99fdf"
+  },
+  "counts": {
+    "cards": 6,
+    "validated_with_reservation": 6,
+    "pending": 0,
+    "source_boxes": 14,
+    "source_paths": 5,
+    "source_connections": 11,
+    "source_alternatives": 1,
+    "native_typed_diagram_relations": 0,
+    "native_text_items": 28,
+    "picture_text_children": 25,
+    "chunks": 1,
+    "K0_tokens": 392,
+    "K800_tokens": 316,
+    "secondary_resplits": 0,
+    "direct_anchors": 3,
+    "reachable_items": 29
+  },
+  "source": {
+    "source_map": {
+      "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "excerpt_sha256": "2e820737ed56e2f39a258532ae82092dd85c4d3de9880db3d85596f854e9e7b9",
+      "pages": [
+        {
+          "excerpt_page_1based": 1,
+          "original_pdf_page_1based": 104,
+          "original_pdf_page_index_0based": 103,
+          "printed_page": "104"
+        }
+      ]
+    },
+    "conversion_document_sha256": "887870e70681ecd1171d8d1dff17b515381d52d2ccf35ea66e5c55ce54fbd923",
+    "figure": "3.29",
+    "original_pdf_page_1based": 104,
+    "printed_page": "104"
+  },
+  "lineage": {
+    "card_file_sha256": {
+      "P104-image-caption": "9a89a75116540d5d5225bd8259a032b8d65c7e2fdca3a8e1b48f5ab9366587e1",
+      "P104-paths": "e32f1100cda545e6e6727a689ec18228a0449e680ecdc442dc01b92070adf8f3",
+      "P104-alternative": "5525bdc27504d0033476fe26305777ac7904f71f9ea970803b7694e644af6a01",
+      "P104-applicability": "9ce590d30d1cdefdb11addea81e3b15a2e1efd97f93236e1d067686507281ee8",
+      "P104-VH3": "43003370dea52efe3955b1dd1428c3e25b6f514e2c1734396c130050822d12a4",
+      "P104-chunking": "16645653b955ff6f4ff64d7809dec7fb0676bc137620943adcb10e7a87746c7c"
+    },
+    "initial_review_file_sha256": "9e7005cdf9ef1609dc946e001e8a9cfe293aca445353b23e9022c9aa129db32a",
+    "event_file_sha256": {
+      "001-P104-image-caption": "0ca29e6fefbade84ca8a7383675df63c08646af45be6bad123ce92b35891822f",
+      "002-P104-paths": "a0029fda42ea341dd53cfab553cde8dc9489fde807a58c3ce5ef0568537e8185",
+      "003-P104-alternative": "44b92013dfea61b483c13d54e82c09221a333b40968adf96a96c2a3fa6e28c4d",
+      "004-P104-applicability": "a2309eb20b169e2d3a7a131be6584e948906d71437f5323adc017b4d6e47fba3",
+      "005-P104-VH3": "44e464651adb6fb164b1b3e73ce724561bd59729d9ed3fd86cb6dcb640945beb",
+      "006-P104-chunking": "76ebfe0a8c3e5204a16dfb40f459199e9121622b9e874b88d3e853986f28124b"
+    },
+    "review_state_file_sha256": {
+      "001": "31ffaef88e1569f5ba528863b93ef99d22e29445c71a2676704a37d7118705b6",
+      "002": "ec9037db6c6db51aa373419164a4e7f21eed0cb8126b68dfb207189361c84457",
+      "003": "bb13e54e3d25d85ace0d4b9c3f583d0169bf591ed92223097540f9be2ba0f0f9",
+      "004": "a6c88191ba8ea2701dc8095e2c8648225668b0993bd2b48dedc768ee2106b60a",
+      "005": "9ac4003b48ba4b5de1d4670447dbd7510e14abd77e613ff3e89cde1031f6ba71",
+      "006": "50f641a7197dc06120df3112e0dc39a38d5407c562be88d297271fca243a7769"
+    },
+    "final_review_file_sha256": "50f641a7197dc06120df3112e0dc39a38d5407c562be88d297271fca243a7769"
+  },
+  "historical_artifact_sha256": {
+    "initial_review_manifest": "eca3fcc7921605df4ce435594f9204df3515bddd1e13bb3c6f00b031ebac069c",
+    "final_local_verification": "014db959079aec30b14559e5c4fc9a19fbb28d670331d1cbf42fb0cfdf7b28d0"
+  },
+  "scope_limits": [
+    "Human documentary reading, not native typed diagram edges.",
+    "Automatic text-only diagram semantics remain quarantined.",
+    "Raw VH/3 and source records unchanged; no normalization or image-delivery adapter implemented.",
+    "Single page/one chunk only; no scientific or production retrieval validation."
+  ],
+  "source_images_included": false,
+  "publication_allowed": false
+}

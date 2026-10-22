@@ -1,0 +1,88 @@
+{
+  "package_version": 1,
+  "package_hash_policy": "sha256_utf8_lf",
+  "files": {
+    "README.md": "29d8da6463155dc332aa5b33630cb769cc53f08575a50d4e842d9c81c3ace0f6",
+    "cards.json": "8fb2cea22d48bbc39aedef2d7ef4f22c075837fba446ff8b45472eaf861d5ab9",
+    "review.json": "d7d2dd8b6483ccbae881a25bf7c4aa43a1b0e6e6891704f1afcd4da6cc6e0139",
+    "events.json": "3b7fed5414489440b13dbbcfdedb26f0186532b114c2c60e852abda088b5ef43"
+  },
+  "counts": {
+    "cards": 10,
+    "table_cells": 68,
+    "blank_species_cells": 10,
+    "pH_cells": 32,
+    "remarks": 7,
+    "remark_items": 8,
+    "chunks": 2,
+    "validated_with_reservation": 10,
+    "pending": 0
+  },
+  "source": {
+    "document_sha256": "201beee7ce8d23936cde9c82e77e093d61e79133706247a7fbc12b59e7dd7a52",
+    "original_pdf_page_1based": 77,
+    "printed_page": "77",
+    "table": "3.5",
+    "source_map": {
+      "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "excerpt_sha256": "bfbc0aa89aa858708618b223325ad6820c9f13e5b0b79ec085493605fcbd844b",
+      "pages": [
+        {
+          "excerpt_page_1based": 1,
+          "original_pdf_page_1based": 77,
+          "original_pdf_page_index_0based": 76,
+          "printed_page": "77"
+        }
+      ]
+    }
+  },
+  "lineage": {
+    "card_file_sha256": {
+      "P77-layout-species": "ae80b414588ef5fae8cfdc42cf3666b69f96e026b2f6e456bbedb20d9b102f6e",
+      "P77-pH": "e19c72d011c4697e651de4f1429be8857078ff0c61c503558b1d1ce87146d3d1",
+      "P77-applicability-1": "7a94bc9608e052320386b6d06e00da7e6f8d5bd98ed1213e44a84b6afe3519b6",
+      "P77-applicability-2": "90cd9c2dcb0afad45961d426489be76dfc6f60fd78abf4a3db270f9a6c2ffaab",
+      "P77-applicability-3": "5a09d604e99eae27c4480a49bbb29b41a921b439908f55dccafbe42e161c521c",
+      "P77-applicability-4": "3c7d82acfb95ff52ddd96e7c1abe73f7db6a61bb07225628e14735bea3b91210",
+      "P77-applicability-5": "b22f16f7090af9a51214ac737bd643cdc73dc370d2f893dbeb273d9ebfd68705",
+      "P77-applicability-6": "460c5d74797d5301bc35b27a7355dec500e80ca6f9afb1d0cb9eeb2780f671f6",
+      "P77-applicability-7": "4bb284179a074e860fb6d028091df315ca2eac402599b8b1ae5f196a8790b297",
+      "P77-chunking": "e67a13716372a98258361716e11f93a150b076144dc8bedbf2dc6f35cb0fcf39"
+    },
+    "initial_review_file_sha256": "c3fac8b9dd9642cf69c4612564db81ea570d95da4c7813fcc12c920f5be021ad",
+    "event_file_sha256": {
+      "001-P77-layout-species": "4b2c1e1d4dd37adf61d1bbe3bef9b5827ee539a91d38abde1c3226bf5dbcad87",
+      "002-P77-pH": "ff1048fd81c02e9ca28358324b168868ad6febf359acb6acea9c679784f5cb69",
+      "003-P77-applicability-1": "3d7d93aa2327d23519546e2ebf35fdf4a593ffe4e4d7067cee46ef6255a99562",
+      "004-P77-applicability-2": "d938c6bdd63d6d2c6747d2740ebf876def971869f25d6ee7f7641608cd850942",
+      "005-P77-applicability-3": "785462acfba8d43321e4f49a96bb418304a54663453b522e4d797fd2811396fc",
+      "006-P77-applicability-4": "2a733d1f130137937980b6a2e9b42b787ccb9b158fbdd80939a496312e3acce4",
+      "007-P77-applicability-5": "837463e49616458ed36302b2e4bfcc6c39466618cfdf47f9543bd680642e5be6",
+      "008-P77-applicability-6": "46ef4c91cf69906892fdeaca888ef6d4647c292db20cbd89050819e2e9aca18b",
+      "009-P77-applicability-7": "881b404da92f400ec789052a5480b4317717699bf182e3d73c7790ed325706f2",
+      "010-P77-chunking": "3f3e50e338411e8a436ac4edf30bb1e34c1c7b86d634aadb8c03f25c03fd7b7b"
+    },
+    "review_state_file_sha256": {
+      "001": "3bb05a4f1cd3937bb2ad0aa99830eeac8160c855f30d286971026cdfa7436d37",
+      "002": "1766cf6d88f09f9fc09b38b1010ba592add8eca5e4f9f9b66f087f427d398590",
+      "003": "99a23864440792b746f7cd3c2f03dabcea0874c82eb157bd5d5657673ff92af5",
+      "004": "c060a90e5501ccc0603a370f76ee7da1d5dc271792813f0e392ccb56ec8acec2",
+      "005": "9f12b286cacfa2a3f91d15870e749154b6f031e83ef316fca59223b6a4a6ccef",
+      "006": "77ef8a78c5699d76c3ffd057168faea7c4bd2ee17623c97549763fbf55b34704",
+      "007": "a70b21a1633109529667393bbde523ed95a59e01ca04d084eedb2f1ea0168640",
+      "008": "f9fc6a7344ff8aff6730bb182ae0b90ca9fdbb6cb2e00b5d8d5cca5810678eb8",
+      "009": "2116487bb337f19f8c1ab734af2e2b5fe84273d50c28ad140c641f0729fec575",
+      "010": "b284c018e064f32fe513ad04b823736702cc242a8a3cedd5546eaf306928aa89"
+    },
+    "final_review_file_sha256": "b284c018e064f32fe513ad04b823736702cc242a8a3cedd5546eaf306928aa89"
+  },
+  "scope_limits": [
+    "Documentary fidelity and observed diagnostic chunk conservation only.",
+    "No independent scientific validation, production retrieval validation or graph publication.",
+    "Historical reference punctuation errors remain frozen; source n.a preserved in rows 6 and 8."
+  ],
+  "historical_artifact_sha256": {
+    "review_preparation_manifest": "55cfc21d5cd92ec8575b729e86fc438c7e136d6eb6f1608ea3a7ab42661dcb92",
+    "final_local_verification": "9ef1d189170db8757a6ef98a392ff6a475fc0ab7e0c2adc78f3966c5dce19c5b"
+  }
+}

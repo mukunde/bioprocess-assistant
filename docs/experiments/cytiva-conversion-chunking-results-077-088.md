@@ -6,6 +6,12 @@ The later [page-88 human review](cytiva-page-088-human-review.md) approved a
 separate deterministic reconstruction with reservations. It does not approve
 these original conversions, the page-77 diagnostic or graph publication.
 
+On 2026-10-22, the separate [page-77 human review](cytiva-page-077-human-review.md)
+completed ten validations with reservations for the exact T1 table, adjacent
+remarks and observed K800 conservation. It does not approve T0, generalize to
+other conversions or validate production retrieval. In particular, a condition
+and its potassium-isothiocyanate precaution remain in separate chunks.
+
 ## Conclusion
 
 Enabling TableFormer substantially improves structure. **T1 is not globally validated**, however: the “Available formats” row on page 88 is incorrectly grouped into one product cell. The table remains quarantined. At 800 tokens, no additional loss of converted cells or targeted notes was observed on these two pages; this does not repair incorrect conversion.
@@ -29,7 +35,7 @@ Full local ignored artifacts under `data/experiments/cytiva/visual-validation-v0
 | Both table captions/titles | Present | Present and references resolved |
 | Targeted cells, units and notes | Text sometimes present, insufficient structure | Substantial gain, with reservations below |
 
-**Page 77:** 48 fields compared across 16 data rows: 16 subclasses and 32 pH fields. After declared subclass-whitespace normalization, 46 match exactly and two `n.a.` entries lose the final full stop. No numeric value or operator changes were observed in these fields. The 10 empty species cells in continuation rows remain empty: the format supplies no explicit scope relation to each subclass. Do not automatically forward-fill every blank without a reviewed documentary rule. Remarks on the right remain separate text, including the reservation about free protein and coupled material.
+**Page 77:** 48 fields compared across 16 data rows: 16 subclasses and 32 pH fields. Against the initial authored reference, 46 matched after declared subclass-whitespace normalization and two differed in `n.a.` punctuation. **Source recheck on 2026-10-22:** the PDF itself prints `n.a` without a final stop for Goat IgG2 and the second Guinea pig row. Conversion preserves those spellings; the two discrepancies are errors in the initial reference, not lost punctuation in conversion. The frozen reference and comparison remain unchanged as historical evidence. No numeric value or operator changes were observed in these fields. The 10 empty species cells in continuation rows remain empty: the format supplies no explicit scope relation to each subclass. Do not automatically forward-fill every blank without a reviewed documentary rule. Remarks on the right remain separate text, including the reservation about free protein and coupled material.
 
 **Page 88:** the 12 targeted checks of four capacities with note markers, four velocities and four particle sizes match. All five notes are present and linked to the table by references. CIP reagents for the two families remain distinct in checked cells. However, the last row concatenates all four format texts into the first product's cell and leaves the next three empty: **F01, blocking column-association defect**, found by inspection beyond the initial probes. Cell-box overlays on the rendering confirm the incorrect grouping.
 
@@ -65,7 +71,7 @@ Total for four conversion workers: **305.3 s**. Sampled process/child peak memor
 
 Chunking: approximately 79.4 s and 52.3 s including imports; actual processing of both passes (raw chunks and native path) took 0.086 s and 0.040 s. Startup dominates. No API cost. These times **cannot be directly compared to the earlier 56-minute LLM extraction**, which included other processing and calls.
 
-## Decisions and next experiment
+## Historical decisions and next experiment (2026-10-21)
 
 - 11 targeted probes technically examined: 10 satisfied on T1/K800, one ambiguous species-scope probe (V01). The other 21 probes remain unexecuted. F01 is an additional defect outside these 11 probes; their score cannot approve the table.
 - No result is a user decision. The local grid remains `pending_user_review`; the versioned CSV template retains its initial pending values.

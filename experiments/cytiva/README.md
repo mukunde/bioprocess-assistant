@@ -68,6 +68,40 @@ Outputs are never overwritten. Each block/profile has its own bounded worker,
 effective settings, raw conversion, tables, images and timing/memory diagnostics.
 Python network connection/DNS calls are denied; this is not a native-code firewall.
 
+Cell matching is enabled by default. Use `--no-cell-matching` in a separate new
+conversion directory for an ablation; `--cell-matching` explicitly keeps it enabled.
+Detailed table options are recorded in `profile.json`. The
+[page-88 ablation](../../docs/experiments/cytiva-cell-matching-ablation-088.md)
+found that disabling it does not repair the formats row and introduces a velocity
+association regression. Neither variant validates the table for extraction.
+
+A separate [word-coordinate reconstruction trial](../../docs/experiments/cytiva-word-reconstruction-088.md)
+recovers the four format cells and velocity associations on page 88 without
+inference or filling missing values. It consumes a frozen word export and an
+explicit page-specific layout; it is not a general table detector. Original
+conversions remain quarantined. The separate reconstructed page-88 table has
+completed documentary human review with reservations; this is not approval of
+newly generated candidates or graph publication.
+
+The [page-88 footnote/review preparation](../../docs/experiments/cytiva-table-088-notes-review.md)
+now binds all five notes, keeping measurement and operating contexts distinct.
+Its nine review cards cover all forty cells; exact source text, conditions,
+marker locations and hashes remain available in the frozen preparation packet.
+The subsequent [completed page-88 human review](../../docs/experiments/cytiva-page-088-human-review.md)
+records nine validations with reservations in a separate decision log. Documentary
+review is complete; graph publication remains unauthorized.
+
+For new page-88 preparations, layout identities use canonical JSON and tolerate
+LF/CRLF checkouts while retaining original byte hashes separately. Historical
+byte-bound manifests still require their exact frozen inputs; generate a new
+reconstruction rather than editing an old manifest. See the note-preparation
+guide for the two-step commands and preserved-history policy.
+
+Use the [targeted visual document review method](../../docs/visual-document-review.md)
+for source overlays, exact cell checks and side-by-side captures of the existing
+review UI. Its first technical application checked P88-layout while the human
+decision was still pending; no card approval follows from a visual check alone.
+
 Inspect conversion before chunking. Create a local `conversion-review.json` with
 `purpose: "diagnostic_chunking_only"`, `human_approved: false`, and a `blocks` map
 whose entries contain the frozen T1 `document_sha256`, a diagnostic `status`

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-table-3-6-page-088-word-layout-v01",
+  "status": "page_specific_development_layout_pending_human_confirmation",
+  "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+  "original_page_1based": 88,
+  "page_size": {
+    "width": 1920.0,
+    "height": 1080.0
+  },
+  "table_bbox": {
+    "l": 75.0,
+    "t": 280.0,
+    "r": 1840.0,
+    "b": 584.0,
+    "coord_origin": "TOPLEFT"
+  },
+  "header_band": {
+    "t": 280.0,
+    "b": 310.0
+  },
+  "header_anchor_text": "MabSelect",
+  "product_columns": 4,
+  "description_rows": 1,
+  "labelled_rows": 6,
+  "column_gap_search": 40.0,
+  "row_gap_search": 20.0,
+  "minimum_gap": 0.5,
+  "line_overlap_fraction": 0.5,
+  "layout_origin": "Assistant visual inspection of original page; table region and one unlabeled description row are explicit assumptions, not learned or automatically approved.",
+  "fill_missing_cells": false
+}

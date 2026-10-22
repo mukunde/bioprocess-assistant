@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "experiment_id": "cytiva-table-152-153-v01",
+  "status": "prepared_not_executed_pending_human_confirmation",
+  "dataset_role": "development_not_held_out",
+  "human_approved": false,
+  "publication_allowed": false,
+  "source": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "pdf_pages_1based": [
+      152,
+      153
+    ],
+    "pdf_indices_0based": [
+      151,
+      152
+    ],
+    "printed_pages": [
+      "152",
+      "153"
+    ],
+    "expected_excerpt_mapping": [
+      {
+        "excerpt_page_1based": 1,
+        "original_pdf_page_1based": 152,
+        "printed_page": "152"
+      },
+      {
+        "excerpt_page_1based": 2,
+        "original_pdf_page_1based": 153,
+        "printed_page": "153"
+      }
+    ]
+  },
+  "table_id": "A1.7",
+  "caption_exact": "Table A1.7. Summary of products for antibody purification with references to product data files",
+  "caption_source_page_1based": 152,
+  "caption_repeated_on_page153": false,
+  "continuation_annotation": {
+    "basis": "Consecutive original pages, same ten ordered headers, appendix product-list content and visual table layout. No repeated caption or explicit continued label observed on page 153.",
+    "last_product_group_page152": "HiScreen MabSelect",
+    "first_product_group_page153": "PreDictor MabSelect",
+    "boundary_is": "Between complete product groups, not a split product/variant row.",
+    "candidate_relation": "continuation_of Table A1.7; retain separate native table objects if emitted, without automatic raw merging.",
+    "human_approved": false
+  },
+  "columns": [
+    {
+      "id": "product",
+      "header_exact": "Product",
+      "source_column_index_1based": 1
+    },
+    {
+      "id": "medium_volume",
+      "header_exact": "Medium volume",
+      "source_column_index_1based": 2
+    },
+    {
+      "id": "approx_binding_capacity",
+      "header_exact": "Approx. protein binding capacity",
+      "source_column_index_1based": 3
+    },
+    {
+      "id": "high_throughput",
+      "header_exact": "High-throughput screening",
+      "source_column_index_1based": 4
+    },
+    {
+      "id": "minipreps",
+      "header_exact": "Minipreps",
+      "source_column_index_1based": 5
+    },
+    {
+      "id": "batch_gravity",
+      "header_exact": "Batch/gravity flow",
+      "source_column_index_1based": 6
+    },
+    {
+      "id": "syringe",
+      "header_exact": "Syringe compatible",
+      "source_column_index_1based": 7
+    },
+    {
+      "id": "prepacked_akta",
+      "header_exact": "Prepacked columns, ÄKTA compatible",
+      "source_column_index_1based": 8
+    },
+    {
+      "id": "process_development",
+      "header_exact": "Process development",
+      "source_column_index_1based": 9
+    },
+    {
+      "id": "data_file_code",
+      "header_exact": "Data file code number",
+      "source_column_index_1based": 10
+    }
+  ],
+  "source_geometry": {
+    "origin": "top_left",
+    "units": "PDF points",
+    "page_size_pt": [
+      1920,
+      1080
+    ],
+    "column_boundaries_x_pt": [
+      80,
+      310,
+      440,
+      664,
+      839,
+      1015,
+      1191,
+      1367,
+      1543,
+      1719,
+      1859
+    ],
+    "header_y_ranges_pt": {
+      "152": [
+        280,
+        324
+      ],
+      "153": [
+        130,
+        180
+      ]
+    },
+    "limit": "Approximate assistant source-annotation bands cross-checked with native characters; not converter grid cells or independently approved gold."
+  },
+  "product_group_inventory": {
+    "152": [
+      "HiTrap Protein G HP",
+      "Ab SpinTrap",
+      "Protein G HP SpinTrap",
+      "Protein G HP MultiTrap",
+      "MAbTrap Kit",
+      "Protein G Sepharose 4 Fast Flow",
+      "Protein G GraviTrap",
+      "Protein G Mag Sepharose Xtra",
+      "HiTrap Protein A HP",
+      "Protein A HP SpinTrap",
+      "Protein A HP MultiTrap",
+      "rProtein A Sepharose Fast Flow",
+      "HiTrap rProtein A FF",
+      "rProtein A GraviTrap",
+      "rProtein A/Protein G GraviTrap",
+      "nProtein A Sepharose 4 Fast Flow",
+      "Protein A Mag Sepharose Xtra",
+      "MabSelect",
+      "HiTrap MabSelect",
+      "HiScreen MabSelect"
+    ],
+    "153": [
+      "PreDictor MabSelect",
+      "MabSelect SuRe",
+      "HiTrap MabSelect SuRe",
+      "HiScreen MabSelect SuRe",
+      "PreDictor MabSelect SuRe",
+      "MabSelect Xtra",
+      "HiTrap MabSelect Xtra",
+      "HiScreen MabSelect Xtra",
+      "PreDictor MabSelect Xtra",
+      "MabSelect SuRe LX",
+      "HiScreen MabSelect SuRe LX",
+      "PreDictor MabSelect SuRe LX"
+    ]
+  },
+  "candidate_counts": {
+    "columns_each_page": 10,
+    "header_occurrences": 20,
+    "product_groups_page152": 20,
+    "product_groups_page153": 12,
+    "product_groups_total": 32,
+    "physical_variant_lines_page152": 24,
+    "physical_variant_lines_page153": 22,
+    "physical_variant_lines_total": 46,
+    "selected_HiTrap_variants": 4,
+    "selected_compatibility_cells": 24,
+    "selected_compatibility_marks": 8,
+    "selected_compatibility_blanks": 16,
+    "notes": 3,
+    "preDictor_groups": 4,
+    "N_A_note3_capacity_occurrences": 12
+  },
+  "selected_variant_rows": [
+    {
+      "id": "p152-1",
+      "source_page_1based": 152,
+      "product_group": "HiTrap Protein A HP",
+      "variant_medium_volume": "1 mL",
+      "approx_binding_capacity": "20 mg/column",
+      "source_row_band_top_left_pt": [
+        553,
+        575
+      ],
+      "raw_product_label_on_variant_line": "HiTrap Protein A HP",
+      "raw_data_file_code_on_variant_line": "11003558",
+      "separate_product_and_code_group_scope_candidate": {
+        "product": "HiTrap Protein A HP",
+        "data_file_code": "11003558",
+        "raw_blanks_must_remain_blank": true
+      },
+      "compatibility_cells": {
+        "high_throughput": "",
+        "minipreps": "",
+        "batch_gravity": "",
+        "syringe": "•",
+        "prepacked_akta": "•",
+        "process_development": ""
+      }
+    },
+    {
+      "id": "p152-2",
+      "source_page_1based": 152,
+      "product_group": "HiTrap Protein A HP",
+      "variant_medium_volume": "5 mL",
+      "approx_binding_capacity": "100 mg/column",
+      "source_row_band_top_left_pt": [
+        575,
+        593
+      ],
+      "raw_product_label_on_variant_line": "",
+      "raw_data_file_code_on_variant_line": "",
+      "separate_product_and_code_group_scope_candidate": {
+        "product": "HiTrap Protein A HP",
+        "data_file_code": "11003558",
+        "raw_blanks_must_remain_blank": true
+      },
+      "compatibility_cells": {
+        "high_throughput": "",
+        "minipreps": "",
+        "batch_gravity": "",
+        "syringe": "•",
+        "prepacked_akta": "•",
+        "process_development": ""
+      }
+    },
+    {
+      "id": "p153-1",
+      "source_page_1based": 153,
+      "product_group": "HiTrap MabSelect SuRe",
+      "variant_medium_volume": "1 mL",
+      "approx_binding_capacity": "30 mg/column",
+      "source_row_band_top_left_pt": [
+        268,
+        290
+      ],
+      "raw_product_label_on_variant_line": "HiTrap MabSelect SuRe",
+      "raw_data_file_code_on_variant_line": "11003490",
+      "separate_product_and_code_group_scope_candidate": {
+        "product": "HiTrap MabSelect SuRe",
+        "data_file_code": "11003490",
+        "raw_blanks_must_remain_blank": true
+      },
+      "compatibility_cells": {
+        "high_throughput": "",
+        "minipreps": "",
+        "batch_gravity": "",
+        "syringe": "",
+        "prepacked_akta": "•",
+        "process_development": "•"
+      }
+    },
+    {
+      "id": "p153-2",
+      "source_page_1based": 153,
+      "product_group": "HiTrap MabSelect SuRe",
+      "variant_medium_volume": "5 mL",
+      "approx_binding_capacity": "150 mg/column",
+      "source_row_band_top_left_pt": [
+        290,
+        307
+      ],
+      "raw_product_label_on_variant_line": "",
+      "raw_data_file_code_on_variant_line": "",
+      "separate_product_and_code_group_scope_candidate": {
+        "product": "HiTrap MabSelect SuRe",
+        "data_file_code": "11003490",
+        "raw_blanks_must_remain_blank": true
+      },
+      "compatibility_cells": {
+        "high_throughput": "",
+        "minipreps": "",
+        "batch_gravity": "",
+        "syringe": "",
+        "prepacked_akta": "•",
+        "process_development": "•"
+      }
+    }
+  ],
+  "preDictor_groups": [
+    {
+      "product_group": "PreDictor MabSelect",
+      "source_page_1based": 153,
+      "variants": [
+        {
+          "medium_volume": "6 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "20 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "50 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        }
+      ],
+      "data_file_code_group_candidate": "28925839",
+      "source_blank_repeat_policy": "Product and code labels occur once per visible group; preserve blank continuation-line cells separately from proposed group scope."
+    },
+    {
+      "product_group": "PreDictor MabSelect SuRe",
+      "source_page_1based": 153,
+      "variants": [
+        {
+          "medium_volume": "6 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "20 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "50 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        }
+      ],
+      "data_file_code_group_candidate": "28925839",
+      "source_blank_repeat_policy": "Product and code labels occur once per visible group; preserve blank continuation-line cells separately from proposed group scope."
+    },
+    {
+      "product_group": "PreDictor MabSelect Xtra",
+      "source_page_1based": 153,
+      "variants": [
+        {
+          "medium_volume": "6 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "20 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "50 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        }
+      ],
+      "data_file_code_group_candidate": "28925839",
+      "source_blank_repeat_policy": "Product and code labels occur once per visible group; preserve blank continuation-line cells separately from proposed group scope."
+    },
+    {
+      "product_group": "PreDictor MabSelect SuRe LX",
+      "source_page_1based": 153,
+      "variants": [
+        {
+          "medium_volume": "6 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "20 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        },
+        {
+          "medium_volume": "50 µL",
+          "capacity_raw_label": "N/A",
+          "superscript_note_marker": "3"
+        }
+      ],
+      "data_file_code_group_candidate": "28925839",
+      "source_blank_repeat_policy": "Product and code labels occur once per visible group; preserve blank continuation-line cells separately from proposed group scope."
+    }
+  ],
+  "notes": [
+    {
+      "id": "1",
+      "page_1based": 152,
+      "text": "Includes buffer stock solutions for approximately 20 purifications using a syringe.",
+      "source_product_markers": [
+        "MAbTrap Kit"
+      ],
+      "scope_limit": "Approximate purification count for the kit wording, not capacity, a universal number of uses or a complete procedure."
+    },
+    {
+      "id": "2",
+      "page_1based": 152,
+      "text": "Paramagnetic beads.",
+      "source_product_markers": [
+        "Protein G Mag Sepharose Xtra",
+        "Protein A Mag Sepharose Xtra"
+      ],
+      "scope_limit": "Material description only, not a magnetic-handling protocol or an inherited attribute of every product."
+    },
+    {
+      "id": "3",
+      "page_1based": 153,
+      "text": "The products are used for high-throughput screening of chromatographic conditions (i.e., capacity, selectivity, purity).",
+      "source_product_markers": [
+        "PreDictor MabSelect",
+        "PreDictor MabSelect SuRe",
+        "PreDictor MabSelect Xtra",
+        "PreDictor MabSelect SuRe LX"
+      ],
+      "marker_location": "Capacity cells N/A with superscript 3 for each 6/20/50 µL variant; twelve occurrences.",
+      "scope_limit": "Preserve N/A and its marker; do not replace with zero, infer no binding capacity or invent an expansion of N/A not supplied here."
+    }
+  ],
+  "comparison_policy": {
+    "glyphs": "Retain raw •, µL, ÄKTA, N/A and superscript markers; comparisons may explicitly ignore whitespace only. Record equivalent mu glyph forms without silently rewriting source.",
+    "capacities": "Approximate capacity header governs reported values. Preserve mg/column versus mg/mL or mg/well; do not infer linear scaling/performance or derive missing values.",
+    "blank_cells": "A blank is not an explicit negative, unsupported flag, zero or preceding value. Group annotations are separate and pending.",
+    "header_repetition": "Retain both header occurrences and original page locations; a semantic union requires an explicit reviewed continuation link.",
+    "identifier": "Data file code number is a documentary identifier, stored as text, not a capacity or automatically a product catalogue number.",
+    "chunking": "Check native serialization before splitting; explicitly resolve title, headers, product/variant scope and distant note bodies. Do not assume continuity or note scope from co-occurrence."
+  },
+  "profiles": {
+    "blocks": [
+      "p152-153"
+    ],
+    "conversion": [
+      "T0",
+      "T1"
+    ],
+    "OCR": false,
+    "picture_description_and_classification": false,
+    "remote_services": false,
+    "chunking_initial": [
+      "K0",
+      "K800"
+    ],
+    "secondary_split_policy": "Execute native secondary splitting if triggered; otherwise record not exercised. K600/K1400 deferred until a concrete need."
+  },
+  "scope_limits": [
+    "This is an assistant-authored source candidate before conversion, not a user decision or held-out gold.",
+    "The 32-product/46-line inventory checks completeness/order; full property annotation beyond the selected probes is not claimed.",
+    "No LLM/VLM, API, source repair, automatic table merger, retrieval benchmark or graph publication is prepared."
+  ]
+}

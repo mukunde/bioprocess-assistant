@@ -1,0 +1,108 @@
+{
+  "package_version": 1,
+  "hash_policy": "sha256_utf8_lf",
+  "local_json_policy": "utf8_indent2_crlf_insertion_order",
+  "files": {
+    "README.md": "b3a39a2ddb68661b309d4ba6af4777aa476798705b08e08ccdfc9b098b7716dc",
+    "cards.json": "9c9b288003b68e2a14ac3b21c69d8703943658a4f0ac4e573cab4d962ae7486f",
+    "events.json": "cea3d4b01c5edffe5f0d9e117ca55930134d1fdfd266d4f3eb4532048e22487f",
+    "review.json": "5535c5a73f6b88cb22a8a7997c9cb6e6ba6a00db636153ffeb3f68d3097e29c2"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-table-152-153-human-review.md": "7839d07655c548d0527d8538e176ad1a6323d47633645c2c9acf6d78bb7bd107",
+    "docs/experiments/cytiva-table-152-153-protocol.md": "f0f6448902e83292e69519cad9160bf88cc0907091212ce0d48ca03adafd1b4d",
+    "docs/experiments/cytiva-table-152-153-repair.md": "324876015722b256b7cd32020ec0751125e63fb9bf40d51a775adbd81cc7790d",
+    "docs/experiments/cytiva-table-152-153-results.csv": "cead45ec83632be01ddb695614e20d2dfb6cd0d260156cd0b4847488e9323e2f",
+    "docs/experiments/cytiva-table-152-153-results.md": "2a019b7e5a1123d8eef50afed37dab630630bffc4b37ec8bee9dcb16fea72e21",
+    "docs/experiments/cytiva-table-152-153-review.csv": "74709fe0f069066d9a841fe6b3690aa5bd67f94652f7bf069c30c6117dc6b4c1",
+    "experiments/cytiva/pages152153_table_spec.json": "e78d46df58bc2fb6550a2d9e89f848ac24fc6653eccb6737f99efd568f016f19",
+    "experiments/cytiva/repair_table152.py": "89da0671680ff4555929f3c6b2a8fc4a0febf4d58fbcf8a250c8cd1de0ab862b",
+    "ingestion/table_chunking.py": "78bc8cc3a81d94adfbb5fe832df5b66cda2f26a142a03cc4076be5d442cae7dc",
+    "tests/test_table_chunking.py": "6dcb4e87d5a207bce3f63c3da1f0bd01c50fe87f5da7c034e2fc2af9f812df03"
+  },
+  "counts": {
+    "cards": 6,
+    "validated_with_reservation": 6,
+    "pending": 0,
+    "note_cell_bindings": 15,
+    "reconstructed_cells": 30,
+    "reconstructed_blanks": 13,
+    "source_glyphs": 108,
+    "data_rows": 43,
+    "grid_positions": 430,
+    "chunks": 7,
+    "K0_tokens": 3579,
+    "K800_total_tokens": 4375,
+    "K800_max_tokens": 794
+  },
+  "source": {
+    "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "native_T1_document_sha256": "9ae4ee2f1be39731d27a0b3aad854cc4ad068c27555e8c05aa51e9de70948681",
+    "derived_document_sha256": "5fefd6c8712202b1352e0521791dc73ed06ee2acb8e7f6aa9b9bf85cd1f47bb9",
+    "source_map": {
+      "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "excerpt_sha256": "a2f68502193f903b45e8d189befdf63709506557dba7d459d3646c7ddf9bc550",
+      "pages": [
+        {
+          "excerpt_page_1based": 1,
+          "original_pdf_page_1based": 152,
+          "original_pdf_page_index_0based": 151,
+          "printed_page": "152"
+        },
+        {
+          "excerpt_page_1based": 2,
+          "original_pdf_page_1based": 153,
+          "original_pdf_page_index_0based": 152,
+          "printed_page": "153"
+        }
+      ]
+    }
+  },
+  "lineage": {
+    "card_sha256": {
+      "P152-HiTrap-HiScreen": "9f4ac94be26fdca01f3295406982b080f26727f4b897e55966e4ef38b6caaf58",
+      "P152-153-continuity": "62100740a1fe3f715609b35a1a6541fecac6e0d3232baf54146ab7eb5499f887",
+      "P152-N1": "a7467c027be3861979d75be663718f7d90bbe2b7dfc853b774cbbe8c707fb93a",
+      "P152-N2": "a066ec03be4304302b33b1a7bbde0fa4cd1ee7038cd7dd856606a9e856412166",
+      "P153-N3": "bf77cd149273a207eab763984c748fe480944d35f4b25cb58a3285750c054505",
+      "P152-153-chunking": "1494c9f197640b215435023d854a720195b2f02bae670f227faec430970de6cf"
+    },
+    "initial_state_sha256": "2ebb62b6d7619e653464058b91a4a5bc2e806f030897891c720fcb0363ad463a",
+    "event_sha256": {
+      "001-P152-HiTrap-HiScreen": "7873a7fa4fa1196ac038706b695eb7a42d67f8df6a8bfb687a9e31b4d27f5cbb",
+      "002-P152-153-continuity": "59de0038db2fa4a5c0ce668bcc0cc01c065d9b08064e57ddd054c6edab7f511c",
+      "003-P152-N1": "38823f34b8491461abcc648d7ed605a5495622a1b6f98c28661654d1e6e44d15",
+      "004-P152-N2": "f8384ebdca156e8bb83dafedb45de2d33fe75ce7e6b31d42780c9ee059a8838a",
+      "005-P153-N3": "3487f61fbe3f5991cdb5f3e9138223d1ab70a655bb229d51814c73bc55e7774b",
+      "006-P152-153-chunking": "b52b9fa3971df675dd9c6066e3610b0eb6ea0b1b8a0fcd63dc4a104b31f674ac"
+    },
+    "state_sha256": {
+      "001": "81420640ba1fefd6ffe63225255fe33faa2a5cf550783a208cbc37c72482be13",
+      "002": "f7ad7ef1363c09a368cb921cc3230d2ce8c2da9dae11851f8aff6560fed163f9",
+      "003": "f3a12f5209ad2cec33b979575e3bf76123630fb021078a89254ee3dc7fc02e7d",
+      "004": "eb027a7f30f77f3fe913108bd3fdba38caf8db47bb44a6337953b725d749d76b",
+      "005": "4a163ae265129095327f8d118a8c5630129aaf2c46b0ff674fa274d61d50c1b1",
+      "006": "2c90364cb4fa08b232d5f95b58c4c951f3acb285a157e22aff9681df8204e41a"
+    },
+    "final_state_sha256": "2c90364cb4fa08b232d5f95b58c4c951f3acb285a157e22aff9681df8204e41a"
+  },
+  "canonical_cards": {
+    "P152-HiTrap-HiScreen": "85049259ba928d9c2dcc9276d5b491d22e23f241c120e76064eddd955b03ae47",
+    "P152-153-continuity": "c3cf8906136f9caaa874b8aa868360ce89939963f3c1a4f8222f42fe4f94449d",
+    "P152-N1": "4d838261cff3e126a6ecf574f18f72345bbbf1e2e5847a793de4399676633e8f",
+    "P152-N2": "5fd2fc97600e3bc9a1c3be6f974988d322bee4bd3dece067de563700fd3a13c4",
+    "P153-N3": "4e6f7db69b844424fef1c3a6bd2c41b6b4757eba6f8a2df4941c2fca67a66691",
+    "P152-153-chunking": "179b0528cfc6f915cb94e8205d1ed013f89b7f0531818538589411704da3e9bd"
+  },
+  "canonical_evidence": "08c79896e7c56eecf699e92e23b183a4f2025e32f8882c93fcb570de23f1a437",
+  "historical_artifacts": {
+    "repair_manifest_sha256": "04795e4ed583608794acbafe91da426028a6896ffdddb8bf8ca32792301bb321",
+    "chunk_manifest_sha256": "b32c9eb311a105b5a3064c9e8f4b8ca058f728d088954aec244de9b544c781fa",
+    "review_manifest_sha256": "0ee92c7638957cc06622656fc00b1a69315f611c4aa8923b43ffbd54056ddea3",
+    "verification_sha256": "6a4e6cc544fb55a0fae87332b1fa81ebd70f216186280a064cf82180c3dc55ce"
+  },
+  "source_images_included": false,
+  "full_conversion_included": false,
+  "publication_allowed": false,
+  "production_retrieval_validated": false
+}

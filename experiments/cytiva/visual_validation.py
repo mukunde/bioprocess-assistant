@@ -171,7 +171,8 @@ def convert(args) -> None:
             result = supervised([sys.executable, '-m', 'experiments.cytiva.visual_validation',
                 '_convert', '--source', str((folder/'source.pdf').resolve()), '--output',
                 str((folder/profile).resolve()), '--artifacts', str(args.artifacts.resolve()),
-                '--profile', profile], folder/f'{profile}.log')
+                '--profile', profile,
+                '--cell-matching' if args.cell_matching else '--no-cell-matching'], folder/f'{profile}.log')
             manifest['workers'].append({'block': block['id'], 'profile': profile, **result})
             dump(args.output/'manifest.json', manifest)
             if result['status'] != 'success':
@@ -189,14 +190,15 @@ def conversion_worker(args) -> None:
     from docling.datamodel.pipeline_options import PdfPipelineOptions, TableStructureOptions, TableFormerMode
     from docling.document_converter import DocumentConverter, PdfFormatOption
     options = PdfPipelineOptions(do_ocr=False, do_table_structure=args.profile == 'T1',
-        table_structure_options=TableStructureOptions(mode=TableFormerMode.ACCURATE, do_cell_matching=True),
+        table_structure_options=TableStructureOptions(mode=TableFormerMode.ACCURATE,
+                                                     do_cell_matching=args.cell_matching),
         enable_remote_services=False, artifacts_path=args.artifacts,
         generate_page_images=True, generate_picture_images=True, images_scale=2,
         accelerator_options=AcceleratorOptions(num_threads=4, device=AcceleratorDevice.CPU))
     if options.table_structure_options.kind != 'docling_tableformer':
         raise RuntimeError('Unexpected table backend')
     fresh(args.output)
-    dump(args.output/'profile.json', options.model_dump(mode='json'))
+    dump(args.output/'profile.json', options.model_dump(mode='json', serialize_as_any=True))
     converter = DocumentConverter(format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=options)})
     loaded = time.monotonic()
     result = converter.convert(args.source)
@@ -328,6 +330,8 @@ def main():
     convert_p.add_argument('--output',type=Path,required=True)
     convert_p.add_argument('--artifacts',type=Path,default=ROOT/'.local-tools/docling-models')
     convert_p.add_argument('--blocks',nargs='+',default=['p077','p088'])
+    convert_p.add_argument('--cell-matching', action=argparse.BooleanOptionalAction, default=True,
+                           help='Match predicted table cells to PDF text cells (default: enabled)')
     chunk_p = commands.add_parser('chunk')
     chunk_p.add_argument('--run',type=Path,required=True)
     chunk_p.add_argument('--review',type=Path,required=True)
@@ -337,6 +341,7 @@ def main():
     for name in ('source','output','artifacts'):
         worker.add_argument('--'+name,type=Path,required=True)
     worker.add_argument('--profile',choices=['T0','T1'],required=True)
+    worker.add_argument('--cell-matching', action=argparse.BooleanOptionalAction, default=True)
     worker = commands.add_parser('_chunk')
     worker.add_argument('--source',type=Path,required=True)
     worker.add_argument('--output',type=Path,required=True)

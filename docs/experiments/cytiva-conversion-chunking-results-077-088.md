@@ -1,6 +1,10 @@
 # Cytiva 77 and 88: first conversion and chunking comparison
 
-Date: 2026-10-21. **Technical diagnostic executed; human validation and publication are not authorized.** The test follows the [protocol](cytiva-conversion-chunking-protocol.md) on two separate blocks. The assistant transcribed the reference from renderings before conversion and froze it locally; user confirmation is pending. Other pages and K600/K1400 were not executed.
+Date: 2026-10-21. **Historical technical diagnostic; these converted outputs were not human-approved.** The test follows the [protocol](cytiva-conversion-chunking-protocol.md) on two separate blocks. The assistant transcribed the reference from renderings before conversion and froze it locally; that preparation was not a human decision. Other pages and K600/K1400 were not executed.
+
+The later [page-88 human review](cytiva-page-088-human-review.md) approved a
+separate deterministic reconstruction with reservations. It does not approve
+these original conversions, the page-77 diagnostic or graph publication.
 
 ## Conclusion
 
@@ -73,3 +77,11 @@ Chunking: approximately 79.4 s and 52.3 s including imports; actual processing o
 ## Runner verification
 
 Six model-free safety tests cover preserved outputs, separate noncontiguous blocks, rejection of uninspected reviews or changed hashes, no implicit human approval, DNS blocking before network access and rejection of another manual before model loading. The main suite with local application/PDF dependencies passed **112 tests**, mocking external models/APIs and using local-only review HTTP servers. Application and ingestion environments are isolated; the complete check reuses installed dependencies and installs no packages.
+
+## Subsequent cell-matching ablation
+
+The [separate page-88 comparison](cytiva-cell-matching-ablation-088.md) is complete.
+Disabling matching does not repair F01 and moves the first velocity value into
+the row label. The enabled default is retained and both Docling versions of
+table 3.6 remain quarantined.
+This follow-up preserves the original measurements and artifacts above.

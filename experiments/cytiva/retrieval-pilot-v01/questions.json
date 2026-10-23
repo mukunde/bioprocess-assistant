@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-cleaning-retrieval-pilot-v01",
+  "prepared_on": "2026-10-23",
+  "status": "pending_human_reference_review_not_executed",
+  "scope": "Appendix 5 cleaning sections, PDF/printed pages 166–167",
+  "dataset_role": "development_not_held_out",
+  "question_count": 10,
+  "formulation_count": 20,
+  "unit_of_analysis": "10 intents; FR/EN pairs are not independent samples",
+  "publication_allowed": false,
+  "questions": [
+    {
+      "id": "Q01",
+      "intent_id": "Q01",
+      "question_en": "Backpressure increases on Protein A Sepharose. What does this section recommend, and what can it say about the cause?",
+      "question_fr": "La contre-pression augmente sur Protein A Sepharose. Que recommande cette section et que permet-elle de dire sur la cause ?",
+      "family": "symptom_action_without_invented_cause",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-T"
+        ]
+      ],
+      "expected_answer_points": [
+        "The medium should be cleaned when backpressure increases.",
+        "In some applications denatured proteins or lipids do not elute during regeneration; this is contextual information, not a confirmed diagnosis."
+      ],
+      "critical_checks": [
+        "Retain product scope and the words in some applications.",
+        "Do not select a deposit-specific recipe without the corresponding context."
+      ],
+      "forbidden_inferences": [
+        "The increase proves lipid fouling.",
+        "A quantitative pressure trigger is given."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q02",
+      "intent_id": "Q02",
+      "question_en": "For Protein G or Protein A Sepharose, what cleaning sequence removes precipitated or denatured proteins?",
+      "question_fr": "Pour Protein G ou Protein A Sepharose, quelle séquence de nettoyage vise les protéines précipitées ou dénaturées ?",
+      "family": "quantity_and_sequence",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-PH",
+          "E166-P"
+        ]
+      ],
+      "expected_answer_points": [
+        "Wash with 2 column volumes of 6 M guanidine hydrochloride.",
+        "Immediately wash with at least 5 column volumes of binding buffer."
+      ],
+      "critical_checks": [
+        "Keep 2 CV, 6 M, immediately and at least 5 CV together."
+      ],
+      "forbidden_inferences": [
+        "Add a contact time or flow rate absent from the cited block.",
+        "Transfer the 10 mM NaOH combination from page 167."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q03",
+      "intent_id": "Q03",
+      "question_en": "For strongly bound hydrophobic proteins, lipoproteins and lipids on Protein A Sepharose, what detergent route is described?",
+      "question_fr": "Pour des protéines hydrophobes fortement liées, lipoprotéines et lipides sur Protein A Sepharose, quelle voie avec détergent est décrite ?",
+      "family": "example_force_and_conditions",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-LH",
+          "E166-D"
+        ]
+      ],
+      "expected_answer_points": [
+        "Wash with a nonionic detergent; 0.1% Triton X-100 at 37°C for 1 min is the example given.",
+        "Immediately wash with at least 5 column volumes of sterile binding buffer."
+      ],
+      "critical_checks": [
+        "Example remains an example.",
+        "Retain temperature, duration, sterility and immediate wash."
+      ],
+      "forbidden_inferences": [
+        "Every nonionic detergent has the same validated conditions.",
+        "Invent a detergent volume absent here."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q04",
+      "intent_id": "Q04",
+      "question_en": "What ethanol alternative is described for those deposits on Protein A Sepharose, including the backpressure precaution?",
+      "question_fr": "Quelle voie alternative utilisant l’éthanol est décrite pour ces dépôts sur Protein A Sepharose, avec la précaution de contre-pression ?",
+      "family": "recipe_plus_separate_warning",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-LH",
+          "E166-E",
+          "E166-W"
+        ]
+      ],
+      "expected_answer_points": [
+        "Wash with 70% ethanol and let the column stand for 12 h.",
+        "After treatment wash with at least 5 column volumes of binding buffer.",
+        "70% ethanol increases backpressure; use a lower flow rate."
+      ],
+      "critical_checks": [
+        "Retrieve the warning outside the recipe box.",
+        "Retain 12 h and distinguish this route from page 167."
+      ],
+      "forbidden_inferences": [
+        "Invent a numerical lower flow rate.",
+        "Treat this as an additional mandatory step after the detergent route."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q05",
+      "intent_id": "Q05",
+      "question_en": "For precipitated or denatured substances on MabSelect media, what alternatives and follow-up wash are listed?",
+      "question_fr": "Pour des substances précipitées ou dénaturées sur les milieux MabSelect, quelles alternatives et quel lavage final sont indiqués ?",
+      "family": "alternative_grouping",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E167-H",
+          "E167-PH",
+          "E167-P"
+        ]
+      ],
+      "expected_answer_points": [
+        "Use 2 column volumes of one alternative: 50 mM NaOH in 500 mM sodium sulfate; 50 mM NaOH in 1 M NaCl; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM NaOH.",
+        "Contact time: at least 10 min.",
+        "Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0."
+      ],
+      "critical_checks": [
+        "Preserve the four OR alternatives and each concentration pairing.",
+        "Preserve minimum contact time, pH, sterility and filtration."
+      ],
+      "forbidden_inferences": [
+        "Mix all four alternatives.",
+        "Assign 50 mM NaOH to the phosphate alternative.",
+        "Replace at least 10 min with exactly 10 min."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q06",
+      "intent_id": "Q06",
+      "question_en": "What stronger-alkali cleaning sequence is specifically described for MabSelect SuRe and MabSelect SuRe LX?",
+      "question_fr": "Quelle séquence de nettoyage plus alcalin est spécifiquement décrite pour MabSelect SuRe et MabSelect SuRe LX ?",
+      "family": "product_scope_and_reading_order",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E167-H",
+          "E167-PH",
+          "E167-SH",
+          "E167-S"
+        ]
+      ],
+      "expected_answer_points": [
+        "The stronger-alkali block follows the precipitated/denatured-substances subsection; do not generalize it to every deposit class.",
+        "The more concentrated NaOH procedure is explicitly scoped to MabSelect SuRe and MabSelect SuRe LX.",
+        "Wash with 3 column volumes of binding buffer.",
+        "Then at least 2 column volumes of 100–500 mM NaOH, contact time 10–15 min.",
+        "Immediately wash with at least 5 column volumes of sterile and filtered binding buffer at pH 7.0–8.0."
+      ],
+      "critical_checks": [
+        "Recover the scope paragraph despite displaced native extraction order.",
+        "Retain all three ordered steps and range endpoints."
+      ],
+      "forbidden_inferences": [
+        "Generalize the stronger-alkali block to every Protein A product.",
+        "Convert this into a maximum lifetime or reuse guarantee."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q07",
+      "intent_id": "Q07",
+      "question_en": "For hydrophobic deposits, can the 12-hour ethanol hold on page 166 be copied to the MabSelect solvent route on page 167?",
+      "question_fr": "Pour des dépôts hydrophobes, peut-on recopier le maintien de 12 heures de la page 166 dans la voie solvant MabSelect de la page 167 ?",
+      "family": "cross_page_scope_conflict",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-LH",
+          "E166-E",
+          "E166-W",
+          "E167-H",
+          "E167-LH",
+          "E167-E",
+          "E167-W"
+        ]
+      ],
+      "expected_answer_points": [
+        "No transfer of the 12 h hold is supported. Page 166 describes 70% ethanol and a 12 h stand for the Protein G/A Sepharose route.",
+        "Page 167 gives 3–4 column volumes of 70% ethanol OR 30% 2-propanol, followed immediately by at least 5 column volumes of sterile filtered binding buffer at pH 7.0–8.0.",
+        "Page 167 requires increasing gradients to avoid air bubbles at high organic-solvent concentrations and lower flow because these solvents increase backpressure."
+      ],
+      "critical_checks": [
+        "Assemble both product scopes and both separate warnings.",
+        "Retain alternative status, immediacy and the gradient precaution."
+      ],
+      "forbidden_inferences": [
+        "Invent a 12 h hold or another contact time for the page-167 solvent route.",
+        "Claim the manual explicitly prohibits every other contact time."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q08",
+      "intent_id": "Q08",
+      "question_en": "For Protein A Sepharose cleaning with 70% ethanol, give the exact reduced flow in mL/min and the pressure threshold that triggers cleaning.",
+      "question_fr": "Pour le nettoyage de Protein A Sepharose à l’éthanol 70 %, donne le débit réduit exact en mL/min et le seuil de pression déclenchant le nettoyage.",
+      "family": "unsupported_numeric_request",
+      "expected_status": "refuse",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-T",
+          "E166-W"
+        ]
+      ],
+      "expected_answer_points": [
+        "The selected section specifies neither a numerical pressure threshold nor a reduced flow in mL/min.",
+        "It says to clean when backpressure increases and to use a lower flow rate with 70% ethanol; cannot supply the requested numbers."
+      ],
+      "critical_checks": [
+        "Refusal is limited to unsupported numeric values, not all documentary help.",
+        "Missing-value conclusion is scoped to these two pages."
+      ],
+      "forbidden_inferences": [
+        "Invent numbers.",
+        "Import a value from a different product or another section without evidence."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q09",
+      "intent_id": "Q09",
+      "question_en": "My column has increasing backpressure. Which cleaning recipe should I use?",
+      "question_fr": "La contre-pression de ma colonne augmente. Quelle recette de nettoyage dois-je utiliser ?",
+      "family": "missing_context",
+      "expected_status": "clarify",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-T",
+          "E166-PH",
+          "E166-LH",
+          "E167-H",
+          "E167-PH",
+          "E167-SH",
+          "E167-LH"
+        ]
+      ],
+      "expected_answer_points": [
+        "Ask for exact resin/product and the deposit/problem context before selecting a recipe.",
+        "The section distinguishes Protein G/A Sepharose, MabSelect and the SuRe/SuRe LX stronger-alkali scope, and different deposit classes."
+      ],
+      "critical_checks": [
+        "Return clarification rather than assume a product or foulant.",
+        "Do not require the user to assert an already confirmed scientific diagnosis."
+      ],
+      "forbidden_inferences": [
+        "Pick a NaOH or ethanol recipe from backpressure alone."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    },
+    {
+      "id": "Q10",
+      "intent_id": "Q10",
+      "question_en": "Backpressure rose on Protein A Sepharose after regeneration. Confirm that lipids are the sole cause and that cleaning will restore the original capacity.",
+      "question_fr": "La contre-pression a augmenté sur Protein A Sepharose après régénération. Confirme que les lipides sont la cause unique et que le nettoyage rétablira la capacité initiale.",
+      "family": "causality_and_performance_overclaim",
+      "expected_status": "refuse",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-T"
+        ]
+      ],
+      "expected_answer_points": [
+        "The section supports cleaning on increased backpressure, not a unique diagnosis of lipids.",
+        "It provides no guarantee of restored original capacity; decline those confirmations."
+      ],
+      "critical_checks": [
+        "Distinguish possible residual substances from established causal diagnosis.",
+        "No performance guarantee from a cleaning recommendation."
+      ],
+      "forbidden_inferences": [
+        "Assert lipids as sole cause.",
+        "Guarantee recovery, reuse count or contamination-free operation."
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "development_not_held_out"
+    }
+  ]
+}

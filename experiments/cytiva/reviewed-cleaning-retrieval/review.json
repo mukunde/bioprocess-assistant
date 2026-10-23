@@ -1,0 +1,236 @@
+{
+  "schema_version": 1,
+  "dataset_id": "cytiva-cleaning-retrieval-pilot-v01",
+  "scope": "Human review of documentary question/reference fidelity only; no scientific validation, operational suitability, benchmark result or graph publication approval.",
+  "publication_allowed": false,
+  "benchmark_executed": false,
+  "decisions": [
+    {
+      "question_id": "Q01",
+      "question_sha256": "e0e2888f8b61295ba235be8aaa7618476e63299ceac30405ebb1a98885d858da",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T10:58:58.793229+00:00",
+      "original_human_message": "Je valide Q01 avec les limites indiquées, sans cause établie ni recette déduite. Enregistre ma décision et passons à Q02. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q01 documentary scope and expected answer only, with both E166-H and E166-T required.",
+        "Preserve the qualifier in some applications; proteins/lipids are contextual possibilities, not an established cause of the observed increase in backpressure.",
+        "Do not infer a deposit-specific recipe or numerical pressure threshold from these passages.",
+        "No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "001-Q01",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26"
+      }
+    },
+    {
+      "question_id": "Q02",
+      "question_sha256": "ce856167274c70398743cb72e14826511effafec412df0d93e8252a4ac08b581",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:02:48.676048+00:00",
+      "original_human_message": "Je valide Q02 avec les limites indiquées, sans durée ni débit ajoutés et sans transfert de la recette de la page 167. Enregistre ma décision et passons à Q03. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval is limited to Q02 documentary fidelity with E166-H, E166-PH and E166-P jointly required: Protein G/Protein A Sepharose and precipitated or denatured proteins.",
+        "Preserve the two ordered steps: 2 column volumes of 6 M guanidine hydrochloride; immediately wash with at least 5 column volumes of binding buffer.",
+        "Do not add a contact duration or flow rate absent from this block, or transfer the 10 mM sodium hydroxide combination or another recipe from page 167.",
+        "No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "002-Q02",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+        "E166-P": "51f7649117961fd6fa978c0b4712824d266d9304093b43193fed1c662e11d3f2"
+      }
+    },
+    {
+      "question_id": "Q03",
+      "question_sha256": "787b9e544a5a3091ec35e32967c71e1bb60a91e2bec1eb9facb728b65174eb03",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:05:17.298198+00:00",
+      "original_human_message": "Je valide Q03 avec les limites indiquées, en conservant le caractère d’exemple et sans volume de détergent inventé. Enregistre ma décision et passons à Q04. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q03 documentary fidelity only, requiring E166-H, E166-LH and E166-D together: Protein G/Protein A Sepharose and strongly bound hydrophobic proteins, lipoproteins and lipids.",
+        "Preserve the example status of 0.1% Triton X-100 at 37 degrees Celsius for 1 minute; do not generalize these conditions to every nonionic detergent.",
+        "Preserve the immediate follow-up wash with at least 5 column volumes of sterile binding buffer.",
+        "Do not invent a detergent-wash volume; the cited block does not specify one.",
+        "No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "003-Q03",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E166-D": "feaf670fbea0704d04337229f3faa593401485f142e20b94eccaf8c977015f14"
+      }
+    },
+    {
+      "question_id": "Q04",
+      "question_sha256": "33b4e8031dfd6805e2504d7b6b31751abc0f5a00b18c549d35622d3b5584c696",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:07:48.537770+00:00",
+      "original_human_message": "Je valide Q04 avec les limites indiquées, en conservant le caractère alternatif et l’avertissement, sans débit ni volume d’éthanol inventés. Enregistre ma décision et passons à Q05. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q04 documentary fidelity only; require E166-H, E166-LH, E166-E and E166-W together, including the warning outside the recipe box.",
+        "Preserve the alternative status of the ethanol route for strongly bound hydrophobic proteins, lipoproteins and lipids on Protein G/Protein A Sepharose; do not make it an obligatory step after detergent cleaning.",
+        "Preserve 70% ethanol, the 12-hour stand, and the subsequent wash with at least 5 column volumes of binding buffer.",
+        "Preserve the warning that 70% ethanol increases backpressure and requires lower flow; do not invent a numerical flow rate or an ethanol volume.",
+        "Do not transfer these conditions to the MabSelect recipe on page 167. No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "004-Q04",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E166-E": "1f69cb0d95f44ffc41ef63e38ba71e3ec99ddbc32c5a1881c5c3fe266ac0e6bb",
+        "E166-W": "c7ec75e5b9bc2ad7404f9bdbac01240e90e45b2913f9e4094472232970339070"
+      }
+    },
+    {
+      "question_id": "Q05",
+      "question_sha256": "5ab32e1dc68a95c0ace4f8de85c92a221004495c962df8c40f6464aeafeb096d",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:08:56.852582+00:00",
+      "original_human_message": "Je valide Q05 avec les limites indiquées, en conservant les quatre alternatives et leurs conditions, sans les combiner. Enregistre ma décision et passons à Q06. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q05 documentary fidelity only, requiring E167-H, E167-PH and E167-P together: MabSelect media and precipitated or denatured substances.",
+        "Keep four separate alternatives, each at 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide. Do not combine them or turn them into successive steps.",
+        "Preserve each concentration pairing; do not add sodium hydroxide to the phosphate alternative. Preserve contact time of at least 10 minutes, not exactly 10 minutes.",
+        "Preserve the immediate follow-up wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not infer which alternative is suitable for a real case. No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "005-Q05",
+      "evidence_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-P": "0763639136da4e71c403fef218209281114f2fd9810376f3d283a0cf2ac7b2bd"
+      }
+    },
+    {
+      "question_id": "Q06",
+      "question_sha256": "74e8eefc4a896f3d65bbb490fb0f38ee208f1109b7613c2883c1acb955493f62",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:10:14.163187+00:00",
+      "original_human_message": "Je valide Q06 avec les limites indiquées, en conservant la restriction SuRe/SuRe LX et les trois étapes, sans garantie de réutilisation. Enregistre ma décision et passons à Q07. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q06 documentary fidelity only, requiring E167-H, E167-PH, E167-SH and E167-S together; preserve the precipitated/denatured-substances context without generalizing to every deposit.",
+        "The stronger-alkali block is explicitly restricted to MabSelect SuRe and MabSelect SuRe LX; do not extend it to all Protein A or MabSelect products. Recover this scope despite displaced native extraction order.",
+        "Preserve all three ordered steps: 3 column volumes of binding buffer; at least 2 column volumes of 100–500 mM sodium hydroxide with 10–15 minutes contact; immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0–8.0.",
+        "Do not infer lifetime or reuse guarantees. No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "006-Q06",
+      "evidence_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+        "E167-S": "42056ad1e4629894ed34bd5d60cddd856995009179acb07d9d9943d26520da7b"
+      }
+    },
+    {
+      "question_id": "Q07",
+      "question_sha256": "2a1a5ac77e4ae97d59aad0cdad890c34c7406efaa3af3c9ce00eebed186464a7",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:45:35.941285+00:00",
+      "original_human_message": "Je valide Q07 avec les limites indiquées, sans transfert du maintien de 12 h à MabSelect ni interdiction générale déduite. Enregistre ma décision et passons à Q08. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q07 documentary fidelity only; assemble E166-H, E166-LH, E166-E, E166-W, E167-H, E167-LH, E167-E and E167-W, retaining both product scopes, deposit headings and separate warnings.",
+        "The 12-hour stand with 70% ethanol belongs to the page-166 Protein G/Protein A Sepharose alternative; do not transfer it or invent another contact time for the page-167 MabSelect solvent route.",
+        "Preserve the page-167 alternative: 3–4 column volumes of 70% ethanol OR 30% 2-propanol, immediately followed by at least 5 column volumes of sterile filtered binding buffer at pH 7.0–8.0.",
+        "Preserve increasing gradients to avoid air bubbles at high organic-solvent concentrations and reduced flow due to increased backpressure; do not invent a numerical flow rate.",
+        "Distinguish an unsupported transfer from an explicit prohibition; do not infer a general ban on every other contact time.",
+        "No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "007-Q07",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E166-E": "1f69cb0d95f44ffc41ef63e38ba71e3ec99ddbc32c5a1881c5c3fe266ac0e6bb",
+        "E166-W": "c7ec75e5b9bc2ad7404f9bdbac01240e90e45b2913f9e4094472232970339070",
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+        "E167-E": "e781189daa71a13b3e534852ac1cf01a6cf787f0a55bdd34610144aa660fd827",
+        "E167-W": "f01e9ff331f834e882befdd1bc83e92f24c74adc1e7c3a61f80285258aa4b154"
+      }
+    },
+    {
+      "question_id": "Q08",
+      "question_sha256": "4c215f5df0b94a31ae91de200cc76665c91e544f85af0ed6771b8ff1fa5b4fe8",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:46:43.695514+00:00",
+      "original_human_message": "Je valide Q08 avec les limites indiquées, sans valeurs numériques inventées et en limitant le constat d’absence aux pages sélectionnées. Enregistre ma décision et passons à Q09. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q08 documentary expected behaviour only, requiring E166-H, E166-T and E166-W together for Protein G/Protein A Sepharose.",
+        "Refuse only unsupported numerical pressure thresholds and reduced flow rates while retaining the available qualitative guidance: clean on increased backpressure and use lower flow with 70% ethanol.",
+        "Do not invent values in mL/min, pressure units or percentage flow reductions; do not import numbers from another product or passage without evidence.",
+        "Limit the absence conclusion to selected pages 166–167, not the complete manual or all available product documentation.",
+        "No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "008-Q08",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26",
+        "E166-W": "c7ec75e5b9bc2ad7404f9bdbac01240e90e45b2913f9e4094472232970339070"
+      }
+    },
+    {
+      "question_id": "Q09",
+      "question_sha256": "0ab01b6fcbfcd766281fdf42c07d415d40496c281a312caaec5153ca0db1fa05",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T11:49:07.597066+00:00",
+      "original_human_message": "Je valide Q09 avec les limites indiquées, en demandant le produit et le contexte sans supposer de dépôt ni choisir de recette. Enregistre ma décision et passons à Q10. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q09 documentary expected clarification behaviour only, with E166-H, E166-T, E166-PH, E166-LH, E167-H, E167-PH, E167-SH and E167-LH jointly required.",
+        "Ask for the exact resin/product and available problem or deposit context before selecting treatment. Do not assume a protein or lipid deposit from increased backpressure alone.",
+        "Do not require an already confirmed scientific diagnosis; unknown context remains unknown. Do not automatically select a sodium hydroxide or ethanol recipe.",
+        "The clarification policy is an application response rule supported by the documentary distinctions, not a verbatim instruction from the manual.",
+        "Approval does not establish that clarification alone determines an operational procedure; no independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "event_id": "009-Q09",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26",
+        "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8"
+      }
+    },
+    {
+      "question_id": "Q10",
+      "question_sha256": "2661825990c721d9548fbe06f96c3157e3659b695fcb508092d1d65bf415454f",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T12:12:06.279543+00:00",
+      "original_human_message": "Je valide Q10 avec les limites indiquées, sans cause unique ni garantie de capacité restaurée. Enregistre ma décision et fais le bilan final de la revue des dix questions. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q10 documentary expected refusal behaviour only, requiring E166-H and E166-T together for Protein G/Protein A Sepharose.",
+        "Refuse both unsupported confirmations: lipids as the sole cause and guaranteed restoration of original capacity. Retain the available documentary recommendation to clean on increased backpressure.",
+        "Preserve in some applications; possible residual denatured proteins or lipids are not an established or unique diagnosis of this column.",
+        "Infer no restored-capacity, reuse-count or contamination-free guarantee from a cleaning recommendation.",
+        "Limit absence of a guarantee to the selected section; do not conclude that restoring capacity is impossible. No independent scientific validation, operational authorization or approval of another source or modified reference is implied."
+      ],
+      "event_id": "010-Q10",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26"
+      }
+    }
+  ],
+  "review_status": "documentary_reference_review_completed_with_reservations",
+  "counts": {
+    "validated_with_reservation": 10,
+    "pending": 0
+  },
+  "last_event_sha256": "8ff2d4508093df75d2e34dd3e6cc4fe229d36ca542fa0bacf002961e14d08c8f",
+  "completed_at_utc": "2026-10-23T12:12:06.279543+00:00",
+  "production_retrieval_validated": false,
+  "scientific_validation": false
+}

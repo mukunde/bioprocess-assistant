@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-cleaning-retrieval-pilot-v01",
+  "prepared_on": "2026-10-23",
+  "status": "pending_human_reference_review_not_executed",
+  "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+  "pages": [
+    166,
+    167
+  ],
+  "passage_count": 17,
+  "intents": 10,
+  "language_formulations": 20,
+  "status_counts": {
+    "answer": 7,
+    "clarify": 1,
+    "refuse": 2
+  },
+  "visual_inspection": "assistant inspected both Poppler full-page renders; human review pending",
+  "checks": [
+    "source PDF SHA-256",
+    "exact quote offsets into extracted page text",
+    "all question evidence references resolve",
+    "visible product/deposit heading associations checked"
+  ],
+  "llm_calls": 0,
+  "api_calls": 0,
+  "benchmark_executed": false,
+  "publication_allowed": false,
+  "files": {
+    "experiments/cytiva/retrieval-pilot-v01/evidence.json": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+    "experiments/cytiva/retrieval-pilot-v01/questions.json": "a952dbf6b3e2ea010a67024f9a6625b2c6a4600a80c68c27e2e4b7b286d96bd3",
+    "docs/experiments/cytiva-cleaning-retrieval-pilot.md": "9c71291a17f0a66cb2edcb38b2524c75aef2c3921807b5e752e668048950a10d"
+  },
+  "excluded": [
+    "source PDF",
+    "full-page text artifacts",
+    "rendered images",
+    "credentials",
+    "absolute personal paths"
+  ]
+}

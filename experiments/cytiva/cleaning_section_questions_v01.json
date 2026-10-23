@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "prepared_on": "2026-10-23",
+  "status": "candidate_references_frozen_before_measurement_pending_human_review",
+  "new_intents": 8,
+  "formulations": 16,
+  "scope": "Same known manual pages 166–167; additional combinations and requests, not independent unseen-source evaluation",
+  "questions": [
+    {
+      "id": "N01",
+      "question_en": "With Protein G Sepharose, pressure is rising and the foulant is unknown. What does the cleaning section distinguish before a recipe can be selected?",
+      "question_fr": "Avec Protein G Sepharose, la contre-pression augmente et le dépôt est inconnu. Que distingue la section de nettoyage avant de choisir une recette ?",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-T",
+          "E166-PH",
+          "E166-LH"
+        ]
+      ],
+      "expected_status": "clarify",
+      "rationale": "Need general indication and both deposit categories; no confirmed foulant diagnosis required.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N02",
+      "question_en": "What reduced flow rate in mL/min does the MabSelect section specify for cleaning with 30% 2-propanol?",
+      "question_fr": "Quel débit réduit en mL/min la section MabSelect précise-t-elle pour un nettoyage au 2-propanol à 30 % ?",
+      "required_evidence_sets": [
+        [
+          "E167-H",
+          "E167-E",
+          "E167-W"
+        ]
+      ],
+      "expected_status": "refuse",
+      "rationale": "Return available solvent context/warning; no exact numeric flow rate in the selected section.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N03",
+      "question_en": "Compare the nonionic-detergent route on Protein A Sepharose with the one on MabSelect, including wash conditions.",
+      "question_fr": "Compare la voie avec détergent non ionique sur Protein A Sepharose à celle sur MabSelect, avec les conditions de lavage.",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-LH",
+          "E166-D",
+          "E167-H",
+          "E167-LH",
+          "E167-D"
+        ]
+      ],
+      "expected_status": "answer",
+      "rationale": "Distinct examples/volumes and follow-up wash requirements; do not transfer the page-166 temperature/duration to page 167.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N04",
+      "question_en": "On Protein A Sepharose, give both the ethanol hold time and the volume of ethanol required for the hydrophobic-deposit alternative.",
+      "question_fr": "Sur Protein A Sepharose, donne à la fois la durée de maintien et le volume d’éthanol de l’alternative visant les dépôts hydrophobes.",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-LH",
+          "E166-E",
+          "E166-W"
+        ]
+      ],
+      "expected_status": "refuse",
+      "rationale": "12 h is available; ethanol volume is not given. Refuse only the unsupported component and retain warning.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N05",
+      "question_en": "Can the 100–500 mM sodium hydroxide sequence for MabSelect SuRe LX be treated as the Protein G Sepharose cleaning procedure?",
+      "question_fr": "Peut-on considérer la séquence à 100–500 mM de soude pour MabSelect SuRe LX comme la procédure de nettoyage de Protein G Sepharose ?",
+      "required_evidence_sets": [
+        [
+          "E167-H",
+          "E167-PH",
+          "E167-SH",
+          "E167-S",
+          "E166-H",
+          "E166-PH",
+          "E166-P"
+        ]
+      ],
+      "expected_status": "answer",
+      "rationale": "Compare explicitly restricted block and other family reference; no claim of a universal prohibition.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N06",
+      "question_en": "Is pH 7.0–8.0 stated for the binding-buffer wash after the MabSelect detergent route, and what other wash conditions accompany it?",
+      "question_fr": "Le pH 7,0–8,0 est-il indiqué pour le lavage au tampon après la voie détergent MabSelect, et quelles autres conditions l’accompagnent ?",
+      "required_evidence_sets": [
+        [
+          "E167-H",
+          "E167-LH",
+          "E167-D"
+        ]
+      ],
+      "expected_status": "answer",
+      "rationale": "Immediate, at least 5 CV, sterile filtered binding buffer; pH given, without extrapolation.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N07",
+      "question_en": "Why does the MabSelect solvent paragraph mention increasing gradients and lower flow, and does it specify a pressure limit in bar?",
+      "question_fr": "Pourquoi le paragraphe sur les solvants MabSelect mentionne-t-il des gradients croissants et un débit plus faible, et précise-t-il une limite de pression en bar ?",
+      "required_evidence_sets": [
+        [
+          "E167-H",
+          "E167-LH",
+          "E167-E",
+          "E167-W"
+        ]
+      ],
+      "expected_status": "refuse",
+      "rationale": "Air-bubble precaution and increased backpressure are sourced; numerical limit is not. Do not invent one.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    },
+    {
+      "id": "N08",
+      "question_en": "For Protein A Sepharose, does the 6 M guanidine hydrochloride cleaning block specify a contact time?",
+      "question_fr": "Pour Protein A Sepharose, le bloc de nettoyage au chlorhydrate de guanidine 6 M précise-t-il un temps de contact ?",
+      "required_evidence_sets": [
+        [
+          "E166-H",
+          "E166-PH",
+          "E166-P"
+        ]
+      ],
+      "expected_status": "refuse",
+      "rationale": "Two washes are given but no contact time in this block; do not borrow page-167 minimum 10 minutes.",
+      "reference_status": "assistant_candidate_pending_human_review",
+      "dataset_role": "additional_development_not_held_out"
+    }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "id": "cytiva-cleaning-retrieval-depth-v05",
+  "scope": "Experimental source topology for pages 166–167 only; not automatic universal parsing",
+  "basis": "Source product/deposit headings and separate solvent warnings checked during documentary review; no question-specific expansion",
+  "requires": {
+    "E166-H": [],
+    "E166-T": [
+      "E166-H"
+    ],
+    "E166-PH": [
+      "E166-H"
+    ],
+    "E166-P": [
+      "E166-PH"
+    ],
+    "E166-LH": [
+      "E166-H"
+    ],
+    "E166-D": [
+      "E166-LH"
+    ],
+    "E166-E": [
+      "E166-LH",
+      "E166-W"
+    ],
+    "E166-W": [
+      "E166-H"
+    ],
+    "E167-H": [],
+    "E167-PH": [
+      "E167-H"
+    ],
+    "E167-P": [
+      "E167-PH"
+    ],
+    "E167-SH": [
+      "E167-PH"
+    ],
+    "E167-S": [
+      "E167-SH"
+    ],
+    "E167-LH": [
+      "E167-H"
+    ],
+    "E167-D": [
+      "E167-LH"
+    ],
+    "E167-E": [
+      "E167-LH",
+      "E167-W"
+    ],
+    "E167-W": [
+      "E167-H"
+    ]
+  },
+  "quarantined_ids": [],
+  "publication_allowed": false,
+  "retrieval": {
+    "method": "BM25",
+    "k1": 1.2,
+    "b": 0.75,
+    "top_k": 6,
+    "bilingual_aliases": true,
+    "index_context": true
+  },
+  "context": {
+    "max_tokens": 2048,
+    "tokenizer": "cl100k_base",
+    "scope": "full serialized source-context JSON only; no answer prompt",
+    "selection": "rank order, atomic transitive dependencies, deduplicate by canonical source ID, skip whole over-budget bundle"
+  },
+  "searchable_ids": [
+    "E166-T",
+    "E166-P",
+    "E166-D",
+    "E166-E",
+    "E166-W",
+    "E167-P",
+    "E167-S",
+    "E167-D",
+    "E167-E",
+    "E167-W"
+  ],
+  "variant_note": "Opt-in top-6 candidate, compared with top-5 v03 using the same index, section policy and 2048-token budget. Tuned after inspecting N05; development only, not held-out validation.",
+  "section_context": {
+    "trigger_terms": [
+      "backpressure",
+      "flow",
+      "threshold"
+    ],
+    "require_positive_retrieval_hit": true,
+    "priority": "reserve complete overview before ranked procedural bundles; do not enlarge 2048-token budget",
+    "families": [
+      {
+        "id": "protein-ga",
+        "query_aliases": [
+          "protein a sepharose",
+          "protein g sepharose"
+        ],
+        "overview_ids": [
+          "E166-H",
+          "E166-T",
+          "E166-PH",
+          "E166-LH"
+        ]
+      },
+      {
+        "id": "mabselect",
+        "query_aliases": [
+          "mabselect"
+        ],
+        "overview_ids": [
+          "E167-H",
+          "E167-PH",
+          "E167-SH",
+          "E167-LH"
+        ]
+      }
+    ],
+    "unresolved_product": "both family overviews, labelled unresolved; no automatic product/recipe choice"
+  },
+  "development_status": "candidate_pending_human_review_not_production_default",
+  "baseline_spec": "experiments/cytiva/cleaning_source_context_v03.json"
+}

@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "reference_freeze": {
+    "files": {
+      "experiments/cytiva/cleaning_source_context_v03.json": "2e58c89f21f0330a9565d338595ae2f1b26e775f683c9cc79c8aca02b139ba94",
+      "experiments/cytiva/cleaning_section_questions_v01.json": "0b4ad5c9d15cbdfe9150d838e0b7f026ebcf3e63946186a28d35b5580b5df67b"
+    },
+    "measurements_started": false,
+    "human_review": "pending"
+  },
+  "reference_freeze_sha256": "4167743e8a288678cbca8161403c8873831aba51c1698dbf7ecd7c5ee870378b",
+  "reference_freeze_serialization": "UTF-8 json.dumps ensure_ascii=True indent=2 CRLF no final newline; unchanged historical flags",
+  "source_evidence_original_sha256": "58305b61233199388235563d4d0e3d72d22905b857a270d9af1dcfe49ea9fcbe",
+  "source_evidence_original_line_endings": "CRLF",
+  "questions_original_sha256": "0b4ad5c9d15cbdfe9150d838e0b7f026ebcf3e63946186a28d35b5580b5df67b",
+  "questions_original_line_endings": "LF",
+  "experiment": {
+    "run_id": "section-context-20261023-c",
+    "original_manifest": {
+      "status": "completed",
+      "prepared_at_utc": "2026-10-23T13:40:44.680359+00:00",
+      "base_commit": "d52f1b2131cb99efe7283780ad723b7292b80a44",
+      "config": {
+        "id": "cytiva-cleaning-section-context-v03",
+        "scope": "Experimental source topology for pages 166–167 only; not automatic universal parsing",
+        "basis": "Source product/deposit headings and separate solvent warnings checked during documentary review; no question-specific expansion",
+        "requires": {
+          "E166-H": [],
+          "E166-T": [
+            "E166-H"
+          ],
+          "E166-PH": [
+            "E166-H"
+          ],
+          "E166-P": [
+            "E166-PH"
+          ],
+          "E166-LH": [
+            "E166-H"
+          ],
+          "E166-D": [
+            "E166-LH"
+          ],
+          "E166-E": [
+            "E166-LH",
+            "E166-W"
+          ],
+          "E166-W": [
+            "E166-H"
+          ],
+          "E167-H": [],
+          "E167-PH": [
+            "E167-H"
+          ],
+          "E167-P": [
+            "E167-PH"
+          ],
+          "E167-SH": [
+            "E167-PH"
+          ],
+          "E167-S": [
+            "E167-SH"
+          ],
+          "E167-LH": [
+            "E167-H"
+          ],
+          "E167-D": [
+            "E167-LH"
+          ],
+          "E167-E": [
+            "E167-LH",
+            "E167-W"
+          ],
+          "E167-W": [
+            "E167-H"
+          ]
+        },
+        "quarantined_ids": [],
+        "publication_allowed": false,
+        "retrieval": {
+          "method": "BM25",
+          "k1": 1.2,
+          "b": 0.75,
+          "top_k": 5,
+          "bilingual_aliases": true,
+          "index_context": true
+        },
+        "context": {
+          "max_tokens": 2048,
+          "tokenizer": "cl100k_base",
+          "scope": "full serialized source-context JSON only; no answer prompt",
+          "selection": "rank order, atomic transitive dependencies, deduplicate by canonical source ID, skip whole over-budget bundle"
+        },
+        "searchable_ids": [
+          "E166-T",
+          "E166-P",
+          "E166-D",
+          "E166-E",
+          "E166-W",
+          "E167-P",
+          "E167-S",
+          "E167-D",
+          "E167-E",
+          "E167-W"
+        ],
+        "variant_note": "Same BM25 index as v02; add atomic product-section overviews for pressure/flow/threshold queries, independent of question IDs or gold references.",
+        "section_context": {
+          "trigger_terms": [
+            "backpressure",
+            "flow",
+            "threshold"
+          ],
+          "require_positive_retrieval_hit": true,
+          "priority": "reserve complete overview before ranked procedural bundles; do not enlarge 2048-token budget",
+          "families": [
+            {
+              "id": "protein-ga",
+              "query_aliases": [
+                "protein a sepharose",
+                "protein g sepharose"
+              ],
+              "overview_ids": [
+                "E166-H",
+                "E166-T",
+                "E166-PH",
+                "E166-LH"
+              ]
+            },
+            {
+              "id": "mabselect",
+              "query_aliases": [
+                "mabselect"
+              ],
+              "overview_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-LH"
+              ]
+            }
+          ],
+          "unresolved_product": "both family overviews, labelled unresolved; no automatic product/recipe choice"
+        }
+      },
+      "tokenizer": {
+        "name": "cl100k_base",
+        "tiktoken_version": "0.12.0",
+        "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+      },
+      "code_and_input_sha256_lf": {
+        "ingestion/local_passage_retrieval.py": "835daa9fb4de02e2578a0867f26233d198b542d0cc4a44914e25e88ab1c908d4",
+        "ingestion/section_context.py": "469785ff3c2987292b0dbd260a61144643ab79b36ccb7181458586c7f6c0a234",
+        "experiments/cytiva/cleaning_retrieval.py": "4ce58b39df2008ce347c62552f38cfcd1c0fb46964277459b9caebdb455c2b86",
+        "experiments/cytiva/section_retrieval.py": "fd1869e3b66192cf80c2ae34a4132f316550c84646b3c73630c0ab7081173650",
+        "experiments/cytiva/cleaning_source_context_v03.json": "2e58c89f21f0330a9565d338595ae2f1b26e775f683c9cc79c8aca02b139ba94",
+        "experiments/cytiva/cleaning_section_questions_v01.json": "0b4ad5c9d15cbdfe9150d838e0b7f026ebcf3e63946186a28d35b5580b5df67b",
+        "experiments/cytiva/retrieval-pilot-v01/evidence.json": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "experiments/cytiva/retrieval-pilot-v01/questions.json": "a952dbf6b3e2ea010a67024f9a6625b2c6a4600a80c68c27e2e4b7b286d96bd3"
+      },
+      "corpus_sha256_lf": "00ca327bcf032970ee2b1c87ed2d7ca6307af26334efc54d63777c3eac0ab2e4",
+      "llm_calls": 0,
+      "api_calls": 0,
+      "publication_allowed": false,
+      "new_references_human_reviewed": false,
+      "timing_scope": "in-process 3 repetitions; alternating v02/v03 order by intent; no tracemalloc; excludes initialization",
+      "network_attempts": [],
+      "artifact_sha256_lf": {
+        "results.json": "bf9a3058bea7f5d047e9f9381b66bb7ab768f85b4d0f10c58f775b55c6dd66c4",
+        "metrics.json": "9bff550db71dd159fe4f4b6d0d6ebbca39f4ba0d268e1a3d808f739a548a2fef",
+        "corpus.json": "00ca327bcf032970ee2b1c87ed2d7ca6307af26334efc54d63777c3eac0ab2e4"
+      }
+    },
+    "original_manifest_sha256": "2b608761560bb5fe528cb5cf264166d2e614fa13eec4944e04685468e847c6b4",
+    "metrics": {
+      "reviewed": {
+        "v02": {
+          "intents": 10,
+          "formulations": 20,
+          "complete_both_languages": 8,
+          "max_context_tokens": 1514,
+          "excluded_bundles": 0,
+          "median_retrieval_ms": 0.3932999998141895,
+          "median_assembly_ms": 4.940400000123191,
+          "en": {
+            "complete": 8,
+            "mean_reference_coverage": 0.9416666666666667
+          },
+          "fr": {
+            "complete": 8,
+            "mean_reference_coverage": 0.9291666666666667
+          }
+        },
+        "v03": {
+          "intents": 10,
+          "formulations": 20,
+          "complete_both_languages": 10,
+          "max_context_tokens": 1618,
+          "excluded_bundles": 0,
+          "median_retrieval_ms": 0.37724999947386095,
+          "median_assembly_ms": 5.8758000004672795,
+          "en": {
+            "complete": 10,
+            "mean_reference_coverage": 1.0
+          },
+          "fr": {
+            "complete": 10,
+            "mean_reference_coverage": 1.0
+          }
+        }
+      },
+      "new_candidate": {
+        "v02": {
+          "intents": 8,
+          "formulations": 16,
+          "complete_both_languages": 7,
+          "max_context_tokens": 1604,
+          "excluded_bundles": 0,
+          "median_retrieval_ms": 0.5438999996840721,
+          "median_assembly_ms": 6.443550000767573,
+          "en": {
+            "complete": 7,
+            "mean_reference_coverage": 0.9642857142857143
+          },
+          "fr": {
+            "complete": 7,
+            "mean_reference_coverage": 0.9642857142857143
+          }
+        },
+        "v03": {
+          "intents": 8,
+          "formulations": 16,
+          "complete_both_languages": 7,
+          "max_context_tokens": 1604,
+          "excluded_bundles": 0,
+          "median_retrieval_ms": 0.5513999994946062,
+          "median_assembly_ms": 8.152399999744375,
+          "en": {
+            "complete": 7,
+            "mean_reference_coverage": 0.9642857142857143
+          },
+          "fr": {
+            "complete": 7,
+            "mean_reference_coverage": 0.9642857142857143
+          }
+        }
+      },
+      "answer_correctness": "not_evaluated_no_answer_layer"
+    },
+    "n05_outcomes": [
+      {
+        "question_id": "N05",
+        "language": "en",
+        "variant": "v02",
+        "reference_coverage": 0.7142857142857143,
+        "complete_evidence": false,
+        "missing": [
+          "E166-P",
+          "E166-PH"
+        ],
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "N05",
+        "language": "en",
+        "variant": "v03",
+        "reference_coverage": 0.7142857142857143,
+        "complete_evidence": false,
+        "missing": [
+          "E166-P",
+          "E166-PH"
+        ],
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "N05",
+        "language": "fr",
+        "variant": "v02",
+        "reference_coverage": 0.7142857142857143,
+        "complete_evidence": false,
+        "missing": [
+          "E166-P",
+          "E166-PH"
+        ],
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "N05",
+        "language": "fr",
+        "variant": "v03",
+        "reference_coverage": 0.7142857142857143,
+        "complete_evidence": false,
+        "missing": [
+          "E166-P",
+          "E166-PH"
+        ],
+        "response_status_evaluated": false
+      }
+    ],
+    "scope": "Metadata audit only; full measured contexts, tokenizer and unversioned runtime code excluded. Optional local replay checks original artifacts, not retrieval recomputation."
+  }
+}

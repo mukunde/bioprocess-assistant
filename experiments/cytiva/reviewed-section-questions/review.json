@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "dataset_id": "cytiva-cleaning-section-questions-v01",
+  "scope": "Human review of additional development question references and expected behaviour only; not scientific validation, operational authorization or approval of benchmark results.",
+  "publication_allowed": false,
+  "retrieval_benchmark_previously_executed": true,
+  "benchmark_results_human_validated": false,
+  "decisions": [
+    {
+      "question_id": "N01",
+      "question_sha256": "573c33178b44c7437532c5e56c35220fb40146c80b7654611d7d62f110b1321c",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T13:48:43.270572+00:00",
+      "original_human_message": "Je valide N01 avec les limites indiquées, sans dépôt supposé ni recette choisie et sans exiger de diagnostic confirmé. Enregistre ma décision et passons à N02. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N01 documentary expected clarification behaviour only; E166-H, E166-T, E166-PH and E166-LH are jointly indispensable.",
+        "Retain the Protein G/Protein A Sepharose scope, general cleaning indication and the two deposit categories. Protein G Sepharose is already specified; do not unnecessarily ask for the product again.",
+        "Do not assume a deposit or select a recipe from increased backpressure alone. Preserve in some applications without establishing a cause.",
+        "Ask for available sample, prior-treatment or suspected-deposit context without requiring a confirmed diagnosis; unknown information remains unknown.",
+        "Clarification behaviour and example follow-up questions are application policy supported by the source distinctions, not verbatim instructions from the manual.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "001-N01",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26",
+        "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f"
+      }
+    },
+    {
+      "question_id": "N02",
+      "question_sha256": "37b441f145ead6e2922777c1235443279a8406fa4bc6c3b70c1a1db51f8c6bc2",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T13:51:09.070078+00:00",
+      "original_human_message": "Je valide N02 avec les limites indiquées, sans débit chiffré inventé ni confusion entre volume et débit. Enregistre ma décision et passons à N03. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N02 documentary expected refusal behaviour only; E167-H, E167-E and E167-W are jointly indispensable, preserving the MabSelect scope.",
+        "Refuse only the unsupported numerical flow rate in mL/min while retaining the instruction to use a lower flow rate with 30% 2-propanol because backpressure increases.",
+        "Do not invent a numerical flow rate or percentage reduction. Do not confuse 3–4 column volumes of solvent with a flow rate.",
+        "Do not import values from another product; limit the absence conclusion to the selected section, not all Cytiva documentation.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "002-N02",
+      "evidence_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-E": "e781189daa71a13b3e534852ac1cf01a6cf787f0a55bdd34610144aa660fd827",
+        "E167-W": "f01e9ff331f834e882befdd1bc83e92f24c74adc1e7c3a61f80285258aa4b154"
+      }
+    },
+    {
+      "question_id": "N03",
+      "question_sha256": "64bc67977ca911135e42ced1614d94241575349d36efeeca4d275aea74079d32",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T14:03:05.448235+00:00",
+      "original_human_message": "Je valide N03 avec les limites indiquées, sans transfert des conditions entre produits ni équivalence déduite. Enregistre ma décision et passons à N04. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N03 documentary comparison only; E166-H, E166-LH, E166-D, E167-H, E167-LH and E167-D are jointly indispensable, preserving both product scopes and the targeted deposit categories.",
+        "Preserve example status: page 166 gives 0.1% Triton X-100 at 37 degrees Celsius for 1 minute; page 167 gives a nonionic detergent, for example a 0.1% solution. Do not transfer the named detergent, temperature or duration to MabSelect.",
+        "Page 167 specifies 2 column volumes of detergent; page 166 does not specify a detergent volume in this block. Do not transfer that volume between products.",
+        "Both follow-up washes are immediate and use at least 5 column volumes of sterile binding buffer; page 167 additionally specifies filtered buffer at pH 7.0–8.0. Do not add those requirements to the page-166 block or infer that their absence means they are prohibited or unnecessary.",
+        "Infer no equivalence or interchangeability of treatments. No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "003-N03",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E166-D": "feaf670fbea0704d04337229f3faa593401485f142e20b94eccaf8c977015f14",
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+        "E167-D": "ac364b229f1ca70a9c78288cf955daf21b288a60c162fbe15ae251d2e766da24"
+      }
+    },
+    {
+      "question_id": "N04",
+      "question_sha256": "b6f5644597cc73b650c77ba6da08a752cb9f1b872bcd5fddad12fc2b01f4e72d",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T14:38:13.932982+00:00",
+      "original_human_message": "Je valide N04 avec les limites indiquées, en conservant les 12 h et l’avertissement, sans volume d’éthanol inventé. Enregistre ma décision et passons à N05. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N04 documentary partial-answer/scoped-refusal behaviour only; E166-H, E166-LH, E166-E and E166-W are jointly indispensable.",
+        "Return the documented 12-hour stand with 70% ethanol and retain the alternative status; refuse only the unsupported ethanol volume, not the entire request.",
+        "Distinguish 70% concentration from volume. The subsequent at-least-5-column-volume binding-buffer wash is not the ethanol volume.",
+        "Preserve the increased-backpressure warning and lower-flow instruction without inventing a numerical flow rate. Do not import the MabSelect 3–4 column volumes from page 167.",
+        "Limit absence of an ethanol volume to the selected block. No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "004-N04",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E166-E": "1f69cb0d95f44ffc41ef63e38ba71e3ec99ddbc32c5a1881c5c3fe266ac0e6bb",
+        "E166-W": "c7ec75e5b9bc2ad7404f9bdbac01240e90e45b2913f9e4094472232970339070"
+      }
+    },
+    {
+      "question_id": "N05",
+      "question_sha256": "5761a5f76b84a3c267ea4ad3719aa668976ce6b72e1515e40759b7cb722abfbb",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T15:00:23.707760+00:00",
+      "original_human_message": "Je valide N05 avec les limites indiquées, sans transfert de recette ni interdiction générale déduite. Enregistre ma décision et passons à N06. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N05 documentary comparison only; E167-H, E167-PH, E167-SH, E167-S, E166-H, E166-PH and E166-P are jointly indispensable.",
+        "Preserve each recipe with its product scope, objective and ordered steps; the 100–500 mM sodium hydroxide block is explicitly scoped to MabSelect SuRe and SuRe LX, not Protein G Sepharose.",
+        "Infer neither equivalence nor interchangeability, and do not transfer concentration, contact time, volume, filtration or pH between blocks.",
+        "Do not present the page-166 guanidine block as the sole Protein G cleaning procedure for every deposit. Distinguish an unsupported recipe transfer from a universal prohibition of sodium hydroxide use.",
+        "Reference approval does not correct the recorded incomplete N05 retrieval in v02/v03; E166-PH and E166-P remain missing in those measured outputs.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "005-N05",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+        "E166-P": "51f7649117961fd6fa978c0b4712824d266d9304093b43193fed1c662e11d3f2",
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+        "E167-S": "42056ad1e4629894ed34bd5d60cddd856995009179acb07d9d9943d26520da7b"
+      }
+    },
+    {
+      "question_id": "N06",
+      "question_sha256": "12c058865a1566f279a7bf728058617df79f65b7885baf3c5e445fd76ae13c9b",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T15:01:38.446343+00:00",
+      "original_human_message": "Je valide N06 avec les limites indiquées, en réservant le pH au tampon du lavage suivant, sans règle automatique d’ajustement. Enregistre ma décision et passons à N07. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N06 documentary expected answer only; E167-H, E167-LH and E167-D are jointly indispensable, preserving MabSelect scope and the targeted hydrophobic proteins, lipoproteins and lipids.",
+        "The pH 7.0–8.0 applies to the binding buffer of the follow-up wash, not to the detergent solution. Do not convert that range into a unique target or automatic adjustment rule.",
+        "Preserve the preceding 2-column-volume nonionic-detergent wash and the example status of a 0.1% solution.",
+        "Preserve the immediate follow-up wash with at least 5 column volumes of sterile and filtered binding buffer; do not invent a specific detergent, temperature, duration or flow rate.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "006-N06",
+      "evidence_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+        "E167-D": "ac364b229f1ca70a9c78288cf955daf21b288a60c162fbe15ae251d2e766da24"
+      }
+    },
+    {
+      "question_id": "N07",
+      "question_sha256": "d1516ff3dbd85ca42351f3efbade2d8bb6f84ce1b3684853728670d20ff6fc2d",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T15:53:11.620052+00:00",
+      "original_human_message": "Je valide N07 avec les limites indiquées, en distinguant les deux précautions et sans limite de pression inventée. Enregistre ma décision et passons à N08. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N07 documentary partial-answer/scoped-refusal behaviour only; E167-H, E167-LH, E167-E and E167-W are jointly indispensable, preserving MabSelect scope and the targeted deposit category.",
+        "Keep the two precautions distinct: increasing gradients to avoid air bubbles at high organic-solvent concentrations; lower flow because washing with 70% ethanol or 30% 2-propanol increases backpressure.",
+        "Do not state that increasing gradients are prescribed to reduce pressure; do not invent a numerical gradient profile, flow rate or pressure limit in bar.",
+        "Preserve the alternative ethanol OR 2-propanol route. Return the supported explanations while refusing only the unsupported numerical pressure limit.",
+        "Limit the absence conclusion to the selected block, without implying no product pressure limit exists elsewhere.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "event_id": "007-N07",
+      "evidence_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+        "E167-E": "e781189daa71a13b3e534852ac1cf01a6cf787f0a55bdd34610144aa660fd827",
+        "E167-W": "f01e9ff331f834e882befdd1bc83e92f24c74adc1e7c3a61f80285258aa4b154"
+      }
+    },
+    {
+      "question_id": "N08",
+      "question_sha256": "36e7ab16c54deceffa77629e36088a18e931cc28f956a92addfdd9e7999da920",
+      "decision": "validated_with_reservation",
+      "reviewer": "project_user_via_conversation",
+      "decided_at_utc": "2026-10-23T16:01:16.585055+00:00",
+      "original_human_message": "Je valide N08 avec les limites indiquées, sans durée déduite ni transfert depuis la page 167. Enregistre ma décision et fais le bilan final de la revue des huit questions. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N08 documentary partial-answer/scoped-refusal behaviour only; E166-H, E166-PH and E166-P are jointly indispensable for Protein G/Protein A Sepharose and precipitated or denatured proteins.",
+        "State that the selected 6 M guanidine hydrochloride block gives no contact time; preserve 2 column volumes followed immediately by at least 5 column volumes of binding buffer.",
+        "Do not infer a numerical duration or borrow the page-167 MabSelect minimum 10 minutes. Do not interpret immediately as zero contact time or a calculable duration.",
+        "Do not convert column volumes to duration without a documented flow rate; limit absence of a contact time to this block, not the complete manual.",
+        "Refuse only the unsupported duration while providing the available documentary answer that it is unspecified.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other sources or modified questions is implied."
+      ],
+      "event_id": "008-N08",
+      "evidence_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+        "E166-P": "51f7649117961fd6fa978c0b4712824d266d9304093b43193fed1c662e11d3f2"
+      }
+    }
+  ],
+  "review_status": "documentary_reference_review_completed_with_reservations",
+  "counts": {
+    "validated_with_reservation": 8,
+    "pending": 0
+  },
+  "last_event_sha256": "561b14ca2883e28a6240edc3e223aa39fe42642d43f28385cc567c24370d5708",
+  "completed_at_utc": "2026-10-23T16:01:16.585055+00:00",
+  "scientific_validation": false,
+  "production_retrieval_validated": false
+}

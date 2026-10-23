@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-section-questions-reviewed-v01",
+  "completed_on": "2026-10-23",
+  "source_pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+  "counts": {
+    "intents": 8,
+    "formulations": 16,
+    "required_source_passages": 16,
+    "validated_with_reservation": 8,
+    "pending": 0
+  },
+  "expected_response_counts": {
+    "answer": 3,
+    "clarify": 1,
+    "refuse": 4
+  },
+  "publication_allowed": false,
+  "benchmark_results_human_validated": false,
+  "historical_json_serialization": "UTF-8 ensure_ascii=False indent=2 LF final newline; insertion order retained",
+  "historical_files": {
+    "review-initial.json": "5fb4964b6189b3e3184bea464414808b9a666232da53b552692440b7f9b5d57a",
+    "001-N01.json": "4bb9e19662df49857f714e8c871a6fee181dd48a7233728af9edcc0d3ad27b58",
+    "002-N02.json": "c0087d18fbcd5505b3ee7ec211080d52d9cc34954ca9b8e2966412067ab6b7f3",
+    "003-N03.json": "4dae500777107b3c16e4cab5f8dccb0a66a6ec70916fef79dca2809c6de80989",
+    "004-N04.json": "74413f4288714b8211a46945482c35b84d744397e6198e77ca3e4f6357c5a3ed",
+    "005-N05.json": "a2ab01f86e8cf8fe1770cdd87384978e71eda3ecbe6424dac1e5148ea27f868d",
+    "006-N06.json": "f318f5e0af0b517e0fea1e3f9a81231d9ed98d1bd2a14322590b65dad2c513ae",
+    "007-N07.json": "a91b6ec5360c43dafeef9c41de573043701251cad748536e19a8459678c8e15e",
+    "008-N08.json": "561b14ca2883e28a6240edc3e223aa39fe42642d43f28385cc567c24370d5708",
+    "review-after-001.json": "02e3bdceb13a83e6e228a717e6ede3bd7bdc667650f3c0745d0f17504466c6a1",
+    "review-after-002.json": "0755df74ea65bbdd5e7cad252ed8689da0f2aa784fa077b352a5a629fe9002cc",
+    "review-after-003.json": "404fbb05fac9f035e3f3495973410fb3a3f879adbb03bbce176fa5ac2ecb8f8f",
+    "review-after-004.json": "4c158bd62787145c034f04d7d3a43dfba8e7e4242b8887cd81354ce8acae95b3",
+    "review-after-005.json": "b9b058a97df69dd321336419a6b05722fa7a9e4a01f4c27e48d0b92741df789a",
+    "review-after-006.json": "df3efda21f1af585100bef3602385c70a32519fb84d49d935c207554e50da8fa",
+    "review-after-007.json": "100b8b0d8f869235c5b142bc966712538058f0bd37ec71d5205c5a7ec1ced8ab",
+    "review-after-008.json": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4"
+  },
+  "files": {
+    "README.md": "f6d92555ef7b21d00b09ea756c9948231e99e1a37b5f45f7fce86cf37c0dc40b",
+    "events.json": "35282ac6fcfa31f98452c49783099e98ae5b660f926006a22d05f6cf661229d0",
+    "provenance.json": "5888ed18c1f2357cfa89f8f0cd5d82df84dbce3b36d6d388b9cc97929a2d0ada",
+    "review.json": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-section-questions-human-review.md": "15c2487ae09e5dd9b9a9e60788b69c96624de6c527fc474df9e5dc1da142ed5a",
+    "experiments/cytiva/cleaning_section_questions_v01.json": "0b4ad5c9d15cbdfe9150d838e0b7f026ebcf3e63946186a28d35b5580b5df67b",
+    "experiments/cytiva/verify_section_questions_package.py": "260baa5c9f7ad1558a8b2404c66d5e3fec70bc32b8d93a375edfd75d895bbe9f",
+    "tests/test_section_questions_package.py": "48c3e9330fbb43c3af4fbabd838ad335ee84d53b0f514ae65f5fd160cc7057b0"
+  },
+  "dependencies": {
+    "experiments/cytiva/retrieval-pilot-v01/evidence.json": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+    "experiments/cytiva/reviewed-cleaning-retrieval/manifest.json": "a3a6a66e1a7c0541603347264021e11eb3f146018ac3a55828446db95fa6d27c",
+    "experiments/cytiva/verify_cleaning_retrieval_package.py": "122b8bca64e23b5e72289612a80a599612abb06c5ae71739f76000eb291ea38c"
+  }
+}

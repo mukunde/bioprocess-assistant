@@ -1,0 +1,86 @@
+{
+  "package_version": 2,
+  "hash_policy": "sha256_utf8_lf",
+  "historical_json_policy": "utf8_indent2_crlf_insertion_order",
+  "files": {
+    "README.md": "8c0bda41227f521a65172d3eab3b576715cf0da43af9da0e47ff6b17db993af3",
+    "cards.json": "04bb289b7982ab5cf31302aee49c857d18375353cfd06b8345a02e62b19ad2eb",
+    "events.json": "b3987f5a3ae965ec6334db962a2d2f98dedd4327d34233e3adf3c4193f58c770",
+    "review.json": "98cc27c825a320c1212069a4c5025e2a7830d652a9753eb14fdcff8d50a99a83"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-table-152-153-annotations-human-review.md": "db85dbb61563194cb32821cfdb37420c377fdb562c6a68b30d90cbe88e6e9ba0",
+    "docs/experiments/cytiva-table-152-153-annotations.md": "f380c98be70706f30f2d5e022dcc75ef092e11bf31ac59d947eb13253c873e12",
+    "experiments/cytiva/apply_reviewed_tables.py": "673b8cd0b7e8ef3b2a6bf90cb48cb2048a91487b0310067c5a7fc6324024c344",
+    "ingestion/reviewed_table_chunking.py": "875488f98b157361ed12d2ebcbded770cc64e8bd6612364e3472c3152f9b556c",
+    "tests/test_reviewed_table_chunking.py": "6a4ea8f153bd9b571760c059e637de8a55cdfb816b765186e82fae814edb2879"
+  },
+  "dependencies": {
+    "experiments/cytiva/reviewed-pages-152-153/README.md": "b3a39a2ddb68661b309d4ba6af4777aa476798705b08e08ccdfc9b098b7716dc",
+    "experiments/cytiva/reviewed-pages-152-153/cards.json": "9c9b288003b68e2a14ac3b21c69d8703943658a4f0ac4e573cab4d962ae7486f",
+    "experiments/cytiva/reviewed-pages-152-153/events.json": "cea3d4b01c5edffe5f0d9e117ca55930134d1fdfd266d4f3eb4532048e22487f",
+    "experiments/cytiva/reviewed-pages-152-153/manifest.json": "354598d1b5f9a2b0edc72a37d80ee01e4bc104b8b7fb2975d69dc34a557147fb",
+    "experiments/cytiva/reviewed-pages-152-153/review.json": "5535c5a73f6b88cb22a8a7997c9cb6e6ba6a00db636153ffeb3f68d3097e29c2",
+    "experiments/cytiva/verify_pages152153_package.py": "cafa869a00a5e0d0b58ef189c93bf71eddebda77d3b0d9c084e03fd14ac0c735"
+  },
+  "counts": {
+    "cards": 1,
+    "validated_with_reservation": 1,
+    "pending": 0,
+    "prior_documentary_decisions": 6,
+    "approved_note_bindings": 15,
+    "primary_rows": 40,
+    "quarantined_rows": 3,
+    "grid_positions": 430,
+    "primary_K0_tokens": 3952,
+    "quarantine_K0_tokens": 446,
+    "primary_K800_chunks": 8,
+    "quarantine_K800_chunks": 1,
+    "primary_K800_tokens": 5230,
+    "quarantine_K800_tokens": 425,
+    "primary_K800_max_tokens": 765,
+    "quarantine_K800_max_tokens": 425
+  },
+  "canonical_card": "576dfaff768ffcc2028781b23fd77b2c4f32d78c1adb0a381967971e2a429407",
+  "canonical_payload": "8d6753df5517ea7176f4be0bc31bda9a891d08b367a0ae974b4ff1aaa8fef715",
+  "lineage": {
+    "card_sha256": "7079769064dd4eede7849a6df08f12af241c6b8ddc010eea8f2c2372fc03dcc2",
+    "annotations_sha256": "c01d314aecc7189d4a7cfa4b6df8febc8e1a72aef3c7a06c4a3fc7771d426a01",
+    "initial_state_sha256": "59a970274dcb3018fdb995c20a4544594210440ef2d54cf66ef93ef7b0199690",
+    "event_sha256": "ac57282ef2068710c9d2e729bcf70f419e2b32fd06c874ebdac846bef1002425",
+    "final_state_sha256": "c2369b271d3f7d959c781bb5a3e23a83dd16115baf3129e00c3a372b56108f6f",
+    "artifact_manifest_sha256": "9d18696cca44fb7ac3b0cfad56bed64ee01bb33a0e20e7c7aa9574b07b0ad30d",
+    "chunk_manifest_sha256": "4e8d543fa2ecdb460e90d001b690895696686216b641cdf850dbb784af164ce2"
+  },
+  "source": {
+    "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "document_sha256": "5fefd6c8712202b1352e0521791dc73ed06ee2acb8e7f6aa9b9bf85cd1f47bb9",
+    "source_map": {
+      "source_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "excerpt_sha256": "a2f68502193f903b45e8d189befdf63709506557dba7d459d3646c7ddf9bc550",
+      "pages": [
+        {
+          "excerpt_page_1based": 1,
+          "original_pdf_page_1based": 152,
+          "original_pdf_page_index_0based": 151,
+          "printed_page": "152"
+        },
+        {
+          "excerpt_page_1based": 2,
+          "original_pdf_page_1based": 153,
+          "original_pdf_page_index_0based": 152,
+          "printed_page": "153"
+        }
+      ]
+    }
+  },
+  "historical_artifacts": {
+    "initial_review_manifest_sha256": "45b5c69893bdda5b82e4cb87c30e4ac372c832f4c26a6acc36ea7583cfeb9100",
+    "final_review_manifest_sha256": "9ce659347e175ee054ea5c663fdd024de107564da2dc7c220b3cb30cebf94ffa",
+    "final_verification_sha256": "357ae469e1a823395945e3cf789a737fa88084361c3cd2d9a41c75558641b93f"
+  },
+  "source_images_included": false,
+  "full_document_included": false,
+  "production_ready": false,
+  "publication_allowed": false
+}

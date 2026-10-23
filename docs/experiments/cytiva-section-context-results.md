@@ -102,3 +102,12 @@ The original run is local and ignored: `data/experiments/cytiva/retrieval-pilot-
 Retain v03 as an experimental option for pressure/flow/threshold requests; do not replace the general default or claim generalization from 10/10 on known questions. Human documentary review of N01–N08 is now complete. The next retrieval experiment can separately compare evidence retrieval across explicitly named product families for requests like N05, while preserving this 7/8 result and all reservations. A runtime completeness decision must come from independent query/coverage signals, never the gold reference lists.
 
 The [earlier report](cytiva-cleaning-retrieval-results.md) retains the historical A/B observations. Its current runtime-status note and this report’s review-status/encoding corrections do not change source inputs, human decisions, measured outputs or reservations. The new questions may recombine known facts; they are additional development probes, not independent unseen evidence. Complete source presence does not score refusal/clarification correctness, scientific applicability or production safety.
+
+## Separate N05 follow-up
+
+The [retrieval-depth follow-up](cytiva-retrieval-depth-results.md) diagnoses the
+sixth-ranked page-166 block and compares an opt-in top-six candidate with v03 in
+a new run F. It restores N05's required source context without changing this
+report's historical 7/8 result or the existing v03 default. Context overhead,
+the exploratory category-navigation alternative and development-only limits are
+reported separately.

@@ -1,0 +1,1020 @@
+{
+  "id": "cytiva-v03b-prospective-references-v01",
+  "status": "assistant_prepared_pending_human_review",
+  "source_pdf": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "document_reference": "CY13981-25Jan21-HB",
+    "edition_metadata_origin": "Existing project registry; not newly certified"
+  },
+  "source_evidence": "experiments/cytiva/contaminants-pilot-v01/evidence.json",
+  "source_review_manifest_sha256_lf": "6b997e9c3eb5a1a3d6e7e3f2ad5a90b9a2259b9498f04df995c5407447d18ef1",
+  "eligible_source_ids": [
+    "E118-USE",
+    "E118-C",
+    "E118-M",
+    "E119-BH",
+    "E119-B",
+    "E119-BI",
+    "E119-S",
+    "E119-X",
+    "E119-AH",
+    "E119-A",
+    "E119-I",
+    "E119-H",
+    "E119-BL",
+    "E120-H",
+    "E120-A",
+    "E120-U",
+    "E120-W",
+    "E120-P",
+    "E121-BH",
+    "E121-B",
+    "E121-PH",
+    "E121-L",
+    "E121-W",
+    "E121-E",
+    "E121-F"
+  ],
+  "excluded_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "source_passages": [
+    {
+      "id": "E118-USE",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": "For many applications at laboratory scale, contaminant molecules are not always a significant problem. Affinity \nchromatography (AC) will provide sufficient purity and, as long as the presence of any minor contaminants does not \ninterfere with the intended application, the purified sample can be used directly.",
+      "quote_sha256": "353719de9177ea9d6b00bb5aaac1470a50ea3a083db5f615a4e9284091a1fb2e",
+      "page_text_start": 0,
+      "page_text_end": 311,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "applicability",
+      "visual_region": "top paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E118-C",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": "Common contaminants after initial purification are albumin, transferrin, antibody aggregates, leached protein A, DNA, \nand host or bovine immunoglobulins that originate from ascites or cell culture serum. The problem of contaminants of \nanimal origin in, for example, bovine cell culture systems for monoclonal antibody (MAb) production, has been largely \ncircumvented by use of serum-free systems. The three main contaminants albumin, transferrin, and host or bovine \nimmunoglobulins pose three different purification problems: albumin because of its abundance; transferrin because of its \nsimilarity to the charge characteristics of many antibodies; and host or bovine immunoglobulins because of the similarity \nto that of the target immunoglobulin.",
+      "quote_sha256": "b961c80dda07292a0520ff7fda7116e0af15de4498923da84a9a09cce7336ba4",
+      "page_text_start": 541,
+      "page_text_end": 1292,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "contaminant_context",
+      "visual_region": "middle paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E118-M",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": " Select chromatography techniques that utilize differences in the characteristics of the contaminant and target \nmolecule: ion exchange chromatography (IEX) for separation by differences in charge; hydrophobic interaction \nchromatography (HIC) for separation by differences in hydrophobicity; and size exclusion chromatography (SEC) for \nseparation by size. See Appendix 9 for an overview of the principles of the chromatography techniques used  \nat laboratory scale.",
+      "quote_sha256": "65a84cb4b12cfd35901e7245c9be1bef786860db8b80fd1b212b38bd6ee0cb3c",
+      "page_text_start": 1580,
+      "page_text_end": 2047,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "method_selection",
+      "visual_region": "second advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E119-BH",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Bovine immunoglobulins",
+      "quote_sha256": "c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b",
+      "page_text_start": 0,
+      "page_text_end": 22,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "section_heading",
+      "visual_region": "upper left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E119-B",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Co-purification of host or bovine immunoglobulins is a problem associated with any affinity purification of antibodies \nfrom a native source or a source to which supplements such as calf serum or bovine serum albumin are added. This \ncontamination problem has been largely circumvented in the large-scale manufacture of MAbs for therapeutic use \nthrough the widespread use of serum-free cell culture systems.",
+      "quote_sha256": "3cfa038db9aadb4ae1a986b8a37214e7d658a38d13113b5acf7cd195c1faa4c3",
+      "page_text_start": 23,
+      "page_text_end": 431,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "source_context",
+      "visual_region": "first paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-BI",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Difficulties have also been encountered when murine monoclonal antibodies are the target molecule. The similarities \nbetween the physical characteristics of the target antibody and the contaminants require careful selection and \noptimization to find the most suitable chromatography technique for purification. Both HIC and IEX can be used.",
+      "quote_sha256": "dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634",
+      "page_text_start": 432,
+      "page_text_end": 772,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "method_alternatives",
+      "visual_region": "second paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-S",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": " The hydrophobicity of proteins is difficult to predict. Screen several chromatography media with different \nhydrophobicities (e.g., using HiTrap HIC Selection Kit) to find the medium that gives optimal results.",
+      "quote_sha256": "6741c581e5bc9fdfd5aad6f728f5e9e5dc438d26155cd1a0bde2846ffd1302a8",
+      "page_text_start": 773,
+      "page_text_end": 984,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "screening_advice",
+      "visual_region": "first advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-X",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "HiTrap HIC Selection Kit includes seven HIC media with different hydrophobic properties for small-scale screening and \nselection of optimal binding and elution conditions. Figure 4.1 shows an example of chromatography media screening \nof a mouse monoclonal antibody on different HIC media prepacked in HiTrap 1 mL columns. In this case, the optimal \nmedium for purification was HiTrap Phenyl HP.",
+      "quote_sha256": "b7f9b22e4a4b994c309bba80c118736640dea30ad3fbef4593ac2239ac5f8dcb",
+      "page_text_start": 985,
+      "page_text_end": 1380,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "scoped_example",
+      "visual_region": "paragraph above next heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-AH",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Albumin and transferrin",
+      "quote_sha256": "c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051",
+      "page_text_start": 1382,
+      "page_text_end": 1405,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "section_heading",
+      "visual_region": "middle left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E119-A",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Ion exchange and hydrophobic interaction chromatography are two methods used for removing albumin and transferrin, \nseparating the molecules on the basis of differences in their isoelectric points or hydrophobicities (see Appendix 9 for the \nprinciples of these techniques).",
+      "quote_sha256": "135c9b62cfaaacc123b3a52e4da443397519cde3b20467d0d70836c6b4e69ce9",
+      "page_text_start": 1407,
+      "page_text_end": 1681,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "method_alternatives",
+      "visual_region": "paragraph below heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-I",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": " After an IEX purification, albumin and transferrin can be present if their charge properties are similar to those of \nthe target antibody. In some cases, it might be possible to optimize pH and elution conditions in the IEX step to \nimprove the separation between the antibody and the contaminants (Appendix 9).",
+      "quote_sha256": "8c5889325bb188941f1a6ebace48bfa19be64eea938525ddb6fe835a1d313fd4",
+      "page_text_start": 1682,
+      "page_text_end": 1994,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "residual_contaminants",
+      "visual_region": "second advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-H",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": " Since most monoclonal antibodies are more hydrophobic than albumin and transferrin, HIC can be used to bind the \nantibody and allow these contaminants to wash through the column.",
+      "quote_sha256": "650aa882a10835929560563ee04fefca2ec7c25af12fa34e651d6accaebdafd7",
+      "page_text_start": 1995,
+      "page_text_end": 2174,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "conditional_hic",
+      "visual_region": "third advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-BL",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "However, AC using Blue Sepharose 6 Fast Flow is a useful alternative to IEX and HIC for removing albumin.",
+      "quote_sha256": "71be6d87e0a34cb6fde34b45d1a5c6b4c511f046bb624f618755bf126d335d86",
+      "page_text_start": 2175,
+      "page_text_end": 2280,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "albumin_specific_alternative",
+      "visual_region": "last left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-H",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "Removal of albumin using Blue Sepharose chromatography media",
+      "quote_sha256": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+      "page_text_start": 0,
+      "page_text_end": 60,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "section_heading",
+      "visual_region": "top left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E120-A",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "Blue Sepharose 6 Fast Flow or prepacked HiTrap Blue HP 1 mL and 5 mL columns (Fig 4.2) can be used to remove albumin \neither before or after other purification steps (see Table 4.1). The albumin binds in a nonspecific manner by electrostatic \nand/or hydrophobic interactions with the aromatic anionic ligand, Cibacron Blue F3G-A, coupled to Sepharose.",
+      "quote_sha256": "d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4",
+      "page_text_start": 61,
+      "page_text_end": 412,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "product_scope_and_mechanism",
+      "visual_region": "top left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-U",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": " Use HiTrap Blue HP 1 mL or 5 mL columns to remove host albumin from mammalian expression systems or when \nthe sample is known to contain high levels of albumin that might mask the UV absorption of other protein peaks.",
+      "quote_sha256": "b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478",
+      "page_text_start": 413,
+      "page_text_end": 631,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "conditional_use",
+      "visual_region": "first advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-W",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": " Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \nhydrophobicity similar to that of albumin.",
+      "quote_sha256": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f",
+      "page_text_start": 632,
+      "page_text_end": 776,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "warning",
+      "visual_region": "warning above table",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-P",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.",
+      "quote_sha256": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+      "page_text_start": 1872,
+      "page_text_end": 1970,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "cross_page_protocol_scope",
+      "visual_region": "bottom left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H",
+        "E120-W"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-BH",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Buffer preparation",
+      "quote_sha256": "86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e",
+      "page_text_start": 1912,
+      "page_text_end": 1930,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "buffer_heading",
+      "visual_region": "top left heading despite late native-text order",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-P"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-B",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Binding buffer: 20 mM sodium phosphate, pH 7.0, or 50 mM potassium hydrogen phosphate (KH 2PO4), pH 7.0\nElution buffer: 0.02 M sodium phosphate, 2 M sodium chloride, pH 7.0, or 0.05 M potassium hydrogen phosphate, \n1.5 M potassium chloride, pH 7.0",
+      "quote_sha256": "bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8",
+      "page_text_start": 0,
+      "page_text_end": 247,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "buffer_alternatives",
+      "visual_region": "orange buffer box, upper left",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-PH",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Albumin removal",
+      "quote_sha256": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+      "page_text_start": 1931,
+      "page_text_end": 1946,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "protocol_heading",
+      "visual_region": "heading above green protocol box",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-P"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-L",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \napplication*.",
+      "quote_sha256": "c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c",
+      "page_text_start": 770,
+      "page_text_end": 1003,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "sample_application",
+      "visual_region": "green protocol box step 5",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH",
+        "E121-F"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-W",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \n5 to 10 mL/min (5 mL column) for washing.",
+      "quote_sha256": "e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3",
+      "page_text_start": 1004,
+      "page_text_end": 1264,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "wash_conditions",
+      "visual_region": "green protocol box step 6",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-E",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.",
+      "quote_sha256": "e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e",
+      "page_text_start": 1265,
+      "page_text_end": 1568,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "elution_alternatives",
+      "visual_region": "green protocol box step 7",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-F",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \n120 drops/min when using a 5 mL HiTrap column",
+      "quote_sha256": "60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9",
+      "page_text_start": 1720,
+      "page_text_end": 1911,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "sample_application_footnote",
+      "visual_region": "footnote under green protocol box",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    }
+  ],
+  "source_status_note": "Historical source preparation flags are unchanged. Existing scoped source decisions are separate from these new pending query/reference associations.",
+  "references": [
+    {
+      "question_id": "V01",
+      "human_review_status": "pending",
+      "expected_status": "clarify",
+      "required_evidence_sets": [
+        [
+          "E118-USE",
+          "E118-C",
+          "E118-M"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E118-USE",
+        "E118-C",
+        "E118-M"
+      ],
+      "unrequested_context_ids": [],
+      "source_seeds": [
+        "E118-USE",
+        "E118-C",
+        "E118-M"
+      ],
+      "expected_answer": "Clarify the intended application and possible interference, available information about the additional component and differences from the target relevant to method choice. The general passage does not identify the band or select a purification procedure.",
+      "reservations": [
+        "No contaminant, deposit or technique assumed.",
+        "Useful clarification does not require a confirmed diagnosis."
+      ],
+      "novelty_limit": "New uncertainty wording, same clarification facts.",
+      "related_development_intents": [
+        "H09",
+        "C05"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V02",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E118-USE"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E118-USE",
+        "E118-C",
+        "E118-M"
+      ],
+      "unrequested_context_ids": [],
+      "source_seeds": [
+        "E118-USE"
+      ],
+      "expected_answer": "The direct-use statement is conditional on minor contaminants not interfering with the intended application. That permission does not cover the interference described here. The passage does not by itself select another purification step or establish that the sample is unusable for every purpose.",
+      "reservations": [
+        "Preserve the laboratory-scale and intended-application scope.",
+        "No universal ban on using the sample and no new operating recipe."
+      ],
+      "novelty_limit": "New negative condition; direct-use source is known.",
+      "related_development_intents": [
+        "H01"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V03",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E119-BH",
+          "E119-S",
+          "E119-X",
+          "E120-H",
+          "E120-A",
+          "E120-W"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E119-BH",
+        "E119-S",
+        "E119-X",
+        "E120-H",
+        "E120-A",
+        "E120-W",
+        "E119-B",
+        "E119-BI",
+        "E120-U"
+      ],
+      "unrequested_context_ids": [],
+      "source_seeds": [
+        "E119-S",
+        "E119-X",
+        "E120-A",
+        "E120-W"
+      ],
+      "expected_answer": "The kit offers seven HIC media for small-scale screening and selection of binding/elution conditions; Phenyl HP was optimal only in the illustrated mouse-antibody example. Separately, Blue Sepharose should not be used when the second target has hydrophobicity similar to albumin. Keep the examples, products and samples separate.",
+      "reservations": [
+        "No seven-step series or transferred binding/elution recipe.",
+        "Retain the conditional do-not-use warning for the second sample."
+      ],
+      "novelty_limit": "New two-sample composition, not new source facts.",
+      "related_development_intents": [
+        "H04",
+        "H06",
+        "C02",
+        "C06"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V04",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-W"
+      ],
+      "unrequested_context_ids": [
+        "E121-L",
+        "E121-E",
+        "E121-F",
+        "E121-B"
+      ],
+      "source_seeds": [
+        "E121-W"
+      ],
+      "expected_answer": "Wash with binding buffer at 1–2 mL/min for the 1 mL column. Generally at least 5–10 column volumes are used until absorbance reaches a steady baseline or no material remains in the effluent. This is washing, not the loading/elution settings; preserve the product warning.",
+      "reservations": [
+        "Preserve generally, the two alternative endpoint descriptions and the 1 mL scope.",
+        "No duration or parameters from an explicitly unrequested phase."
+      ],
+      "novelty_limit": "New negative construction without rather-than/plutôt-que.",
+      "related_development_intents": [
+        "H07",
+        "H10",
+        "C07"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V05",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W",
+          "E121-E"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-W",
+        "E121-E"
+      ],
+      "unrequested_context_ids": [
+        "E121-L",
+        "E121-F",
+        "E121-B"
+      ],
+      "source_seeds": [
+        "E121-W",
+        "E121-E"
+      ],
+      "expected_answer": "For the 5 mL column, washing uses 5–10 mL/min with binding buffer, generally at least 5–10 column volumes until the stated baseline/effluent endpoint. Step elution usually needs 5 column volumes and a linear gradient usually 10–20; elution flow is also 5–10 mL/min. Do not equate washing endpoints with elution sufficiency.",
+      "reservations": [
+        "Keep both requested phases and their distinct purposes.",
+        "No fixed duration or guarantee of complete albumin removal."
+      ],
+      "novelty_limit": "New positive comparison of washing and elution quantities.",
+      "related_development_intents": [
+        "H07",
+        "H08"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V06",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-BH",
+          "E121-B",
+          "E121-PH",
+          "E121-E"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-BH",
+        "E121-B",
+        "E121-PH",
+        "E121-E"
+      ],
+      "unrequested_context_ids": [
+        "E121-L",
+        "E121-F",
+        "E121-W"
+      ],
+      "source_seeds": [
+        "E121-B",
+        "E121-E"
+      ],
+      "expected_answer": "Binding alternatives: 20 mM sodium phosphate pH 7.0, or 50 mM potassium hydrogen phosphate pH 7.0. Elution alternatives: 0.02 M sodium phosphate with 2 M sodium chloride pH 7.0, or 0.05 M potassium hydrogen phosphate with 1.5 M potassium chloride pH 7.0. For the 5 mL linear gradient, 10–20 column volumes are usually sufficient at 5–10 mL/min. Keep all alternatives separate.",
+      "reservations": [
+        "Do not infer pairings between binding and elution alternatives.",
+        "Retain original source nomenclature without independent chemical correction.",
+        "No invented gradient profile, duration or guarantee."
+      ],
+      "novelty_limit": "New mixed request spanning buffer preparation and an operating phase.",
+      "related_development_intents": [
+        "C09",
+        "H08"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V07",
+      "human_review_status": "pending",
+      "expected_status": "refuse",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH"
+      ],
+      "unrequested_context_ids": [
+        "E121-L",
+        "E121-W",
+        "E121-E"
+      ],
+      "source_seeds": [
+        "E120-P",
+        "E121-PH"
+      ],
+      "expected_answer": "The selected eligible reviewed corpus does not provide a maximum permissible pressure in bar. Do not invent a number or convert a flow rate into a pressure limit. This absence statement is limited to the selected corpus, not the whole manual or all product documentation.",
+      "reservations": [
+        "No numeric pressure limit or flow-to-pressure inference.",
+        "The source-scope passages locate the protocol but do not prove absence across the entire manual."
+      ],
+      "novelty_limit": "New absence-of-parameter test; scope limited to the eligible corpus.",
+      "related_development_intents": [
+        "C03",
+        "H10"
+      ],
+      "pending_source_ids_to_withhold": [],
+      "absence_assertion": {
+        "scope": "Only the 25 eligible reviewed excerpts on pages 118–121",
+        "eligible_source_ids": [
+          "E118-USE",
+          "E118-C",
+          "E118-M",
+          "E119-BH",
+          "E119-B",
+          "E119-BI",
+          "E119-S",
+          "E119-X",
+          "E119-AH",
+          "E119-A",
+          "E119-I",
+          "E119-H",
+          "E119-BL",
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W",
+          "E120-P",
+          "E121-BH",
+          "E121-B",
+          "E121-PH",
+          "E121-L",
+          "E121-W",
+          "E121-E",
+          "E121-F"
+        ],
+        "statement": "No maximum permissible pressure in bar is stated in these selected excerpts",
+        "preparation_check": "No occurrence of pressure in the eligible verbatim excerpts; manual semantic check of this absence assertion remains pending",
+        "does_not_cover": "Full manual, excluded excerpts or external product instructions"
+      }
+    },
+    {
+      "question_id": "V08",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-F",
+        "E121-L"
+      ],
+      "unrequested_context_ids": [
+        "E121-W",
+        "E121-E",
+        "E121-B"
+      ],
+      "source_seeds": [
+        "E121-L",
+        "E121-F"
+      ],
+      "expected_answer": "The note states approximately 30 drops/min at 1 mL/min using a syringe with a 1 mL HiTrap column, and approximately 120 drops/min at 5 mL/min with a 5 mL HiTrap column. These are scoped approximate correspondences, not a universal linear scaling law or a calibration for every syringe.",
+      "reservations": [
+        "Preserve approximately and each column/flow association.",
+        "No derived scaling factor, timing or universal syringe calibration."
+      ],
+      "novelty_limit": "New cross-size interpretation of an approximate footnote.",
+      "related_development_intents": [
+        "H07",
+        "C07"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V09",
+      "human_review_status": "pending",
+      "expected_status": "clarify",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-A",
+        "E120-U",
+        "E120-W"
+      ],
+      "unrequested_context_ids": [],
+      "source_seeds": [
+        "E120-A",
+        "E120-U",
+        "E120-W"
+      ],
+      "expected_answer": "High albumin is a documented use context, but suitability cannot be confirmed from it alone while the target-hydrophobicity condition is unknown. Preserve the warning not to use Blue Sepharose if target hydrophobicity is similar to albumin; ask for relevant target/context information without inventing a measurement method or threshold.",
+      "reservations": [
+        "Do not assume that the warning premise is true or false.",
+        "No operational authorization, hydrophobicity cutoff or measurement protocol inferred."
+      ],
+      "novelty_limit": "New uncertainty about the warning premise while albumin is identified.",
+      "related_development_intents": [
+        "H06",
+        "C06"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V10",
+      "human_review_status": "pending",
+      "expected_status": "answer",
+      "required_evidence_sets": [
+        [
+          "E119-AH",
+          "E119-BL",
+          "E120-H",
+          "E120-A",
+          "E120-W"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E119-AH",
+        "E119-BL",
+        "E120-H",
+        "E120-A",
+        "E120-W",
+        "E119-A",
+        "E120-U"
+      ],
+      "unrequested_context_ids": [],
+      "source_seeds": [
+        "E119-BL",
+        "E120-A",
+        "E120-W"
+      ],
+      "expected_answer": "The Blue alternative and product paragraph describe albumin removal. They do not establish removal of transferrin or host immunoglobulins in this passage. Do not generalize the target scope, infer universal ineffectiveness elsewhere, or discard the target-hydrophobicity warning.",
+      "reservations": [
+        "Keep the limit documentary and local to these passages.",
+        "No inferred equivalence between techniques or general claim of selectivity."
+      ],
+      "novelty_limit": "New target-scope extension challenge; known albumin-specific statements.",
+      "related_development_intents": [
+        "C04",
+        "H06"
+      ],
+      "pending_source_ids_to_withhold": []
+    },
+    {
+      "question_id": "V11",
+      "human_review_status": "pending",
+      "expected_status": "source_ambiguity",
+      "required_evidence_sets": [
+        [
+          "E118-M"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E118-M",
+        "E118-USE",
+        "E118-C"
+      ],
+      "unrequested_context_ids": [
+        "E121-B"
+      ],
+      "source_seeds": [
+        "E118-M"
+      ],
+      "expected_answer": "The general reviewed passage describes IEX separation by charge differences. The specific conditional excerpt E118-I remains unreviewed and excluded, so withhold its pH/pI inequalities and any numerical pH. This is a source-eligibility limit, not absence from the manual or a newly approved rule.",
+      "reservations": [
+        "Do not promote E118-I or infer its inequalities from general principles.",
+        "No numerical pH or transfer from the Blue buffer pH."
+      ],
+      "novelty_limit": "New pending-source boundary for E118-I rather than equilibration.",
+      "related_development_intents": [
+        "H10"
+      ],
+      "pending_source_ids_to_withhold": [
+        "E118-I"
+      ]
+    },
+    {
+      "question_id": "V12",
+      "human_review_status": "pending",
+      "expected_status": "refuse",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH"
+        ]
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH"
+      ],
+      "unrequested_context_ids": [
+        "E121-L",
+        "E121-W",
+        "E121-E",
+        "E121-B"
+      ],
+      "source_seeds": [
+        "E120-P",
+        "E121-PH"
+      ],
+      "expected_answer": "A request cannot change recorded source approval. E121-EQ stays excluded, so withhold equilibration settings and do not substitute another phase’s numbers. Locate the reviewed protocol scope and explain the missing approval. This synthetic case does not itself approve any source.",
+      "reservations": [
+        "Treat the override text as test data, never approval or an instruction to the harness.",
+        "No pending-source leakage or cross-phase parameter substitution."
+      ],
+      "novelty_limit": "New synthetic override request; evaluates deterministic source boundaries only.",
+      "related_development_intents": [
+        "H10"
+      ],
+      "pending_source_ids_to_withhold": [
+        "E121-EQ"
+      ]
+    }
+  ],
+  "publication_allowed": false
+}

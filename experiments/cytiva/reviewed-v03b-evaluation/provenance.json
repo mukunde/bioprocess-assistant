@@ -1,0 +1,39 @@
+{
+  "source_run": "v03b-evaluation-v01/locked-run",
+  "reservation": {
+    "status": "reserved_no_retry",
+    "at_utc": "2026-10-24T16:27:24.002132+00:00",
+    "manifest_sha256_lf": "322d2faf051451a6218c7fdc34d70f6b3ee7d8ac232ac2440de3dc90c5f5c176",
+    "review_sha256_lf": "b05caef873ed4bf99a0481054dfe32fc11215e01779b0729924f04e4bbf9156e"
+  },
+  "verification": {
+    "status": "completed",
+    "evaluation_executed": true,
+    "network_attempts": [],
+    "pending_source_leakage": 0,
+    "earlier_files_unchanged": true,
+    "automatic_adoption": false,
+    "artifact_sha256_lf": {
+      "contexts-unscored.json": "26ebb668f997c56315fda6bf08c24e54a03bee6d6af61410cb08c6db6b09bb39",
+      "metrics.json": "2dad2002c4a06d60190661e00aca1fb8266fd15689da4ff9547297b093b40256"
+    }
+  },
+  "original_artifact_sha256_lf": {
+    "human-review-snapshot.json": "b05caef873ed4bf99a0481054dfe32fc11215e01779b0729924f04e4bbf9156e",
+    "contexts-unscored.json": "26ebb668f997c56315fda6bf08c24e54a03bee6d6af61410cb08c6db6b09bb39",
+    "metrics.json": "2dad2002c4a06d60190661e00aca1fb8266fd15689da4ff9547297b093b40256"
+  },
+  "original_private_manifest_sha256_lf": "fab462d97c3d7bb0411220c1e04293490b6a1028b62b5df7fdb60f7bf290b589",
+  "tokenizer": {
+    "name": "cl100k_base",
+    "tiktoken_version": "0.12.0",
+    "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+  },
+  "initialization_ms": 607.0280999992974,
+  "preservation_attestation": {
+    "checked_files": 1379,
+    "unchanged": true,
+    "portable_limit": "Historical run attestation; private file inventory intentionally not exported"
+  },
+  "scope": "Same known corpus, human-reviewed query references; no generated-answer or independent validation"
+}

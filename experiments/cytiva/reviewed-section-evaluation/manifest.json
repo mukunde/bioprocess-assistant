@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "status": "completed_review_and_run_gate_blocked",
+  "files": {
+    "README.md": "de499c1c08e58553c620f18ccc4f072a691e8bf5b56ceb9f98acd38585b23169",
+    "events.json": "013e15d64255c5c91f1669a8a6bf847e7dcffb443a1d38eefec3e04d4f120925",
+    "provenance.json": "dd2f65f87926c9a81c84ea636ad8bc72ac653b1cf78619a1e1baea13a006b44b",
+    "results.json": "92df67f229afc7e31cc4caeef14e7d495399777eabf55fb5dcdd9295c7aea68d",
+    "review.json": "d3d364bc1e7d707b6ad32d80200fd02ba1ae731d952632e536b8e492bc87d562"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-section-evaluation-results.md": "612718d714e95ab87cf299a4f56fef54df38abaf3aecfe8175db81b5d8adb5df",
+    "experiments/cytiva/section-evaluation-v01/PROTOCOL.md": "44fb3fb31b3d282e622102c17655623a39d7e151d919ae15358899a1056d0c14",
+    "experiments/cytiva/section-evaluation-v01/candidate.json": "f83726b30752fb3b9434b6657c1a8bbacea6cd392656110ad08b0a2c72f43b4b",
+    "experiments/cytiva/section-evaluation-v01/manifest.json": "34660d71fd391ba2f3208b04f22eaccd2ab9d74ee89960a3f977a3b9f4210cad",
+    "experiments/cytiva/section-evaluation-v01/questions.json": "61e8c247d8d6c07a489ef268433eae27a69202ab54dba15c9567e76f2dbee589",
+    "experiments/cytiva/section-evaluation-v01/references.json": "86de08945cb3cf345c4aec17924311dcd1d36d650c23a72f346e4da14226b0d5",
+    "experiments/cytiva/section_evaluation.py": "e6eb4f74530ac3efabb9008733110f053fdee945872f8b31d0c39acd4d4e67e1",
+    "experiments/cytiva/verify_section_evaluation_package.py": "420a6eab497552b002ed925c79105701ea8249338780b3035b600a56ecebeea6",
+    "tests/test_section_evaluation.py": "6bbf5973b49dd37baec2f184a5a89ac5002179c7220f08ba6e42695467c8f6ef",
+    "tests/test_section_evaluation_package.py": "ac23f815c686ca98f4f640a3f00e0a23d5e8babcbe682fcaedefaf011eb0d71e"
+  },
+  "frozen_manifest_sha256_lf": "34660d71fd391ba2f3208b04f22eaccd2ab9d74ee89960a3f977a3b9f4210cad",
+  "publication_allowed": false
+}

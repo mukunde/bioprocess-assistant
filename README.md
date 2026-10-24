@@ -10,8 +10,12 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Current status
 
-Updated 24 October 2026. The application and documentary experiments are separate:
-reviewed manual knowledge is not yet available in the chat.
+Updated 24 October 2026. The merged baseline is `main` at `081a30d`, after
+[PR #34](https://github.com/mukunde/bioprocess-assistant/pull/34) (reviewed frozen
+v03b) and [PR #35](https://github.com/mukunde/bioprocess-assistant/pull/35) (v04
+and the maintained test suite). Reviewed manual knowledge is still separate from
+the chat. A new W01-W12 evaluation packet exists only in the local workspace and
+is awaiting human review; it is not included in that merged checkpoint.
 
 | Component | Status and scope |
 |---|---|
@@ -20,7 +24,8 @@ reviewed manual knowledge is not yet available in the chat.
 | Local PDF ingestion | Experimental: Docling Graph with Ollama, structural chunking, source localization and a local review UI; optional publication creates a separate graph |
 | Reviewed manual extraction | Completed development example: 33 statements reviewed against pages 100–102, with 14 retaining reservations; not served by the chatbot |
 | Conversion and structural chunking | Targeted human reviews completed on pages 77, 88, 104 and 152–153, including deterministic table repairs, note scope and figure limitations; three ambiguous rows remain quarantined on 152–153 |
-| Local passage retrieval | Experimental BM25 and bounded context assembly evaluated on 28 reviewed bilingual intents; six-hit and section-context candidates remain separate from chat |
+| Local passage retrieval | Merged experimental BM25 and bounded context assembly: frozen v03b fails its acceptance gate; opt-in v04 recovers the required sources on known V/H/C development cases. Neither is the chat default |
+| Prospective v04 challenge | Local only: v04 is frozen for W01-W12, twelve new bilingual question/reference pairs awaiting human review; no search or trial has been run |
 | Reviewed records → chatbot | Adapter pending; ingestion does not automatically expand the serving graph |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo are planned; LightRAG is a comparison candidate, KAG remains conditional |
 
@@ -113,7 +118,14 @@ Install the additional test dependencies into the application environment:
 
 The [current suite notes](tests/README.md) explain the maintained entry point and preservation of frozen historical fixtures.
 
-These tests mock external model/database calls; some start loopback HTTP servers. They need neither paid APIs nor an external service. **351 main-suite tests and 13 supplementary Cytiva checks passed on integrated `main` on 24 October 2026.** This dated result used the existing application and ingestion environments; it does not certify a fresh dependency installation. This is regression coverage, not a quality score for live answers.
+These tests mock external model/database calls; some start loopback HTTP servers.
+They need neither paid APIs nor an external service. **433/433 tests passed on the
+merged `main` checkpoint `081a30d`.** With the uncommitted W preparation and its
+13 integrity/synthetic harness checks, the local suite passes **446/446**. Those
+13 checks do not search, plan or score the real W questions. Both counts are dated
+24 October 2026 and use existing application/ingestion environments; they do not
+certify a fresh installation or the quality of generated answers. Earlier test
+counts remain in their historical reports.
 
 | Development evidence | What it establishes | Limits |
 |---|---|---|
@@ -123,15 +135,35 @@ These tests mock external model/database calls; some start loopback HTTP servers
 | [Pages 152–153 annotated review](experiments/cytiva/reviewed-pages-152-153-v2/README.md) | Continued table, repaired HiTrap/HiScreen row and reviewed note annotations retained in new chunks | Three ambiguous rows remain physically separated in quarantine; no complete property-cell or production retrieval validation |
 | [Cleaning retrieval](docs/experiments/cytiva-retrieval-depth-results.md) | Six-hit candidate supplies all required sources for Q01–Q10 and N01–N08 in both languages, under a 2,048-token context cap | Known development questions; additional context is not proven more precise; no generated answers evaluated |
 | [Contaminant context ablation](docs/experiments/cytiva-contaminants-context-results.md) | On C01–C10, section context raises complete evidence from 6/10 to 10/10 in both languages; combined vocabulary/context also reaches 10/10 | Tuned after inspecting failures; no independent generalization or answer-quality result; E118-I and E121-EQ remain pending and excluded |
+| [Frozen v03b / V01-V12](experiments/cytiva/reviewed-v03b-evaluation/README.md) | Twelve reviewed references; 24 saved contexts; 6/12 intents have complete evidence in both languages, but only V02/V05/V09 also respect explicit scope | Merged; acceptance gate blocked. Source omissions and unrequested phases remain visible; no generated answers evaluated |
+| [v04 development A-D](experiments/cytiva/compositional-navigation-v04-results/README.md) | Composes requests and handles bounded negations; final known-case coverage V12/12, H10/10, C10/10 in both languages; no unrequested or outside-acceptable V context | Merged development result after inspecting failures; no independent validation or default activation. One optional V03 seed still exceeds the six-seed cap |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
-The 28 bilingual intents are three reviewed development series (Q: 10, N: 8,
-C: 10), not one locked test set. Retrieval scores measure presence of indispensable
-source passages after assembly, not correctness of a generated answer, diagnosis
-or measured retrieval precision. The C-series section-only and combined variants
-reach at most 2,027 serialized context tokens; the 2,048-token cap excludes any
-future answer prompt and output. Section-only is the simpler candidate to test
-next; neither variant changes the application default.
+The question series have distinct histories: Q/N/C contain 28 reviewed development
+intents; H01-H10 and V01-V12 add reviewed same-corpus challenges whose failures
+subsequently informed tuning. EN/FR formulations are paired observations, and
+source facts overlap. The earlier section-only preference was a historical
+ablation choice; the current local prospective candidate is frozen v04.
+
+**Local only, pending review:** `experiments/cytiva/v04-evaluation-v01/` contains
+W01-W12, twelve new EN/FR question pairs with exact excerpts, required/acceptable
+sources, expected answers and reservations. Its protocol fixes the six-seed and
+2,048-token policy before measurement. It covers negations, combined requests,
+unavailable parameters and a synthetic contradictory request. All twelve
+references await human review; there are no W retrieval results. This packet,
+`experiments/cytiva/v04_evaluation.py` and `tests/test_v04_evaluation.py` are not
+part of the merged checkpoint or a fresh clone of it. Review and authorize the
+single frozen run before searching any W question.
+
+The W gate requires complete evidence in both languages for all twelve intents,
+zero explicitly unrequested sources, zero failed reference diagnostic criteria
+and no hard invariant violation. A pass only permits considering a limited
+end-to-end pilot. Outside-acceptable context remains a separate noise proxy;
+no answer quality, refusal quality, diagnosis or measured precision is established.
+All W sources remain the known pages 118-121; the questions were prepared with
+knowledge of the implementation and prior failures. E118-I and E121-EQ remain
+excluded, even if W10/W11 are validated. The context cap excludes future prompt
+and generated output tokens.
 
 The three-arm graph/passages/LightRAG comparison remains unexecuted. Current BM25
 trials are a lexical baseline, not the multilingual vector arm specified in that
@@ -145,10 +177,14 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Freeze a simple retrieval/context candidate and evaluate separately prepared questions before further tuning. Measure missing and unnecessary sources, conditions, exclusions and resource use; keep earlier trials unchanged.
-2. Connect a small reviewed corpus to the assistant through the v0.2-to-serving adapter and common validated renderer. Preserve reservations, quarantine, source snapshots and missing-context behaviour; test activation, correction and revocation.
-3. Add OpenTelemetry instrumentation during that integration, then evaluate actual answers and abstentions using deterministic checks, calibrated local Ragas and Promptfoo adversarial cases.
-4. Complete the common-corpus graph/passages/LightRAG comparison once adapters and a frozen evaluation set exist. Assess lightweight local serving within the PC and budget constraints; consider KAG or fine-tuning only if measured failures justify them.
+1. Review local W01-W12, including source scope and diagnostic criteria, then authorize the one frozen v04 run. Preserve all results and apply the declared gate without post-result tuning. Any subsequent fix is a separate development variant requiring another prospective set.
+2. Build the missing reviewed-records-to-chatbot slice with the v0.2 adapter and validated renderer: retain source snapshots, conditions, reservations and quarantine; exercise clarification, activation, correction, revocation and rollback. A retrieval experiment does not complete this serving adapter.
+3. Instrument that integration with minimal OpenTelemetry spans and portable usage/budget accounting; then evaluate actual answers, citations and abstentions with deterministic checks, calibrated local Ragas and Promptfoo plus benign controls.
+4. Compare graph/passages/LightRAG on a common corpus and budget once adapters and evaluation inputs exist. Benchmark lightweight local serving; keep KAG and fine-tuning conditional on measured unmet needs.
+
+W is the next retrieval decision point, not approval to repeat tuning indefinitely.
+No additional whole-manual page review is a prerequisite unless a measured failure
+or a newly required format exposes a concrete conversion/chunking gap.
 
 The [active roadmap](docs/ROADMAP.md) defines acceptance criteria. The earlier vector experiment is recorded in [ADR-002](docs/ADR-002-multilingual-retrieval.md); it does not settle the planned comparison on a larger reviewed corpus.
 

@@ -5,7 +5,11 @@
 Keep Neo4j as the published knowledge store. Add a separate PDF ingestion job,
 review extracted claims before publication, and measure both answer quality and
 cost. Adopt useful KAG principles incrementally; do not migrate to OpenSPG yet.
-Phase 0 is implemented. A first phase 3 ingestion/review implementation is now available; see INGESTION.md. Observability, real-manual benchmarking and the remaining acceptance criteria are pending.
+The reliability baseline is implemented. Ingestion/review and local passage
+retrieval have been exercised on selected real-manual examples; the reviewed
+knowledge is not yet served by the chatbot. Portable telemetry, independent
+answer evaluation and the common-corpus retrieval comparison remain pending.
+See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
 strong-model extraction. Claim contract v0.2 and per-claim quarantine are implemented. The earlier-prompt
@@ -36,20 +40,63 @@ Migration from the legacy dense template/review database is still pending.
   it is unexecuted. The corrected-prompt `pages-100-102-v02-r2` package has completed
   generation and per-claim human documentary review (33 final claims, none pending).
   This development review is not an exhaustive gold benchmark or a causal retrieval
-  evaluation. Next: preserve decisions/reservations in the migration adapter, annotate
-  coverage and add new passages containing troubleshooting symptoms/causes/actions.
+  evaluation. Reviewed cleaning and contaminant sources/questions now extend the
+  procedural sample; their retrieval results are summarized below. Next: preserve
+  decisions/reservations in the serving adapter and measure coverage independently.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Delivery status (2026-10-19)
+## Current checkpoint — 24 October 2026
 
-All four lots are merged into main through PRs #3, #4, #5 and #6. The README
-update is merged separately through PR #7. Integrated main at `937a656` passed
-106 principal tests plus seven historical checks with local evidence (skipped
-without it). See [the consolidation record](CONSOLIDATION.md) for delivery history
-and validation scope.
+Phase numbers below identify workstreams and acceptance gates, not a claim that
+all earlier phases have passed. Documentary experiments advanced before the
+planned telemetry layer; local manifests/timings do not satisfy phase 1.
 
-## Phase 0 — Repair the reliability baseline (now)
+| Workstream | Implemented or reviewed | Remaining gate |
+|---|---|---|
+| 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation remains separate |
+| 1 — Observability | Reproducible experiment manifests, context/token accounting and local timings | OpenTelemetry workflows, portable export, call/retry/cost accounting and enforcement |
+| 2 — Model and references | Minimal ontology, v0.2 claim contract, 33 reviewed extraction claims and 28 reviewed bilingual retrieval intents | Exhaustive omission/causal coverage and separate evaluation questions; documentary approval is not scientific validation |
+| 3 — Ingestion and chunking | Local Docling Graph route; separate Docling → GPT-6.1 Sol experiment; selected table/figure reviews and repairs | Real-manual extraction precision/recall, full ingestion lifecycle and migration into serving |
+| 4 — Retrieval | Local BM25, atomic dependencies, bounded contexts and paired depth/vocabulary/section experiments | Independent evaluation, reviewed-record serving adapter, actual answers/abstentions and common-corpus comparison |
+| 5 — KAG decision | Deferred | A concrete need beyond simpler retrieval and bounded reasoning |
+
+The latest integrated `main` checkpoint is PRs #29 then #30 at `1c7e7f4`:
+**351 main-suite tests plus 13 supplementary Cytiva checks passed** using existing
+local dependency environments. This is a dated regression result, not an answer
+quality score or a fresh-install certification. The original four-lot delivery
+and its historical test counts remain in [the consolidation record](CONSOLIDATION.md).
+
+### Next delivery priorities
+
+1. **Freeze and challenge the retrieval candidate.** Prefer section-only as the
+   simpler candidate from the latest ablation; keep combined vocabulary/context
+   as an alternative. Prepare a separate evaluation set before running it, freeze
+   source/configuration hashes, and report complete evidence, irrelevant sources,
+   condition/scope retention, exclusions, latency and resources by language. A fix
+   after inspecting evaluation failures creates a new development variant.
+2. **Build a useful complete slice.** Map a small approved corpus into eligible
+   v0.2 claims and the shared renderer. A question must reach the correct source
+   snapshot and retain conditions/reservations. Exercise clarification/refusal,
+   activation, correction, revocation and rollback without changing the legacy
+   seed's coverage silently. Experimental question adapters are not this serving
+   adapter. Record source-only context where no approved claim is available.
+3. **Instrument and evaluate that path.** Add minimal OpenTelemetry spans while
+   integrating retrieval/answering, including versions, errors and budgets; then
+   verify portable export and usage/cost fixtures. Evaluate actual rendered
+   answers, citations and abstentions with deterministic checks, calibrated local
+   Ragas and Promptfoo attacks plus benign controls. All three remain unimplemented.
+4. **Compare architectures only after prerequisites.** Finish the common-corpus
+   graph/passages/LightRAG protocol with independent questions, verified adapters
+   and a common budget. Benchmark a lightweight local answering/routing model;
+   keep KAG and fine-tuning conditional on measured unmet needs.
+
+No additional representative-page review is a prerequisite by default. Reopen
+conversion/chunking when a new format, measured retrieval failure or required
+source exposes a concrete gap. The optional pages 53, 86 and 142 are untested
+extensions, not an automatic whole-manual review queue.
+
+## Phase 0 — Reliability baseline (implemented; deployment gate separate)
 
 - Reject unverified free-form model answers. The model selects retrieved result
   IDs; application code renders graph facts and their sources.
@@ -67,7 +114,7 @@ Exit: offline regression tests pass. Live Neo4j/Anthropic evaluation remains a
 separate required check before deployment. Historical scores are not scores of
 this revised pipeline.
 
-## Phase 1 — Instrument before expanding ingestion
+## Phase 1 — Portable observability (pending; next integration prerequisite)
 
 Use a provider-neutral call wrapper with an optional Langfuse sink. Record a
 trace ID, operation (chat / extraction / judge), model, prompt/schema version,
@@ -87,6 +134,12 @@ Validate usage and cost accounting on fixed fixtures including cache usage.
 
 ## Phase 2 — A versioned domain model and a reference extraction set
 
+Status: [minimal ontology](ontology/v0.1.md), [claim contract v0.2](CLAIM-CONTRACT-V02.md)
+and scoped human references are implemented. The 33 extraction claims and 28
+retrieval intents are development references, not exhaustive extraction recall
+or a held-out answer benchmark. The target model and acceptance gate follow;
+the implemented subset is summarized above.
+
 Add stable domain IDs independently of display names. Model Document,
 DocumentVersion, Evidence (page, block/table/cell, exact quote), Claim,
 Symptom, Cause, Action, Resin, ProcessStep and ApplicabilityCondition.
@@ -105,6 +158,11 @@ claim has a traceable source and an applicability context.
 
 ## Phase 3 — Docling Graph ingestion into staging
 
+Status: isolated local conversion/extraction/review and optional separate evidence
+publication exist. The GPT-6.1 Sol subscription extraction is a distinct reviewed
+route, not evidence that the local model achieves the same quality. Neither
+route feeds the existing chat. End-to-end acceptance criteria below remain open.
+
 PDF registry + SHA-256/version -> Docling conversion -> schema-constrained
 Docling Graph extraction -> validation -> staging -> human review -> publication
 into Neo4j. Run outside the interactive Chainlit container and pin the ingestion
@@ -122,35 +180,57 @@ verified provenance for published claims; rejection of unsupported numbers;
 reviewed contradictions; idempotent import, resume and rollback exercised.
 Measure cost per PDF/page and per approved claim, including retries/review rejects.
 
-### Pending verification — tables, captions and diagrams (2026-10-21)
+### Completed targeted reviews — tables, captions and diagrams
 
-- [x] Select and visually inspect representative Cytiva tables, captions and
-  diagrams; prepare the [conversion/chunking protocol](experiments/cytiva-conversion-chunking-protocol.md),
-  machine-readable page selection and 32-check review template (2026-10-21).
-  Five initial pages: 77, 88, 104, 152–153; three extensions: 53, 86, 142.
-  These are development examples, chiefly condition/product tables rather than
-  a complete troubleshooting matrix. Human confirmation of reference annotations
-  remains pending; the first technical execution is described below. Table-structure
-  recognition was disabled in r2; that review does not validate these capabilities.
-- [ ] Enable table-structure recognition in a new, versioned conversion profile;
-  preserve the original test and record all conversion and optional vision settings.
-  First diagnostic slice executed on 77 and 88: T0/T1 conversions and K0/K800,
-  with cached weights and no LLM/API. [Results](experiments/cytiva-conversion-chunking-results-077-088.md):
-  strong structural gain, but page 88's available-formats row is incorrectly
-  collapsed; overall acceptance and user review remain pending. The launcher and
-  six safety regression tests are available; other pages and K600/K1400 are untested.
-- [ ] Check cells, row/column headers, merged cells, units, footnotes and cross-page
-  continuations against the rendered PDF. Verify that chunking preserves the
-  symptom/cause/action associations and their conditions.
-- [ ] Check figure/caption associations and source locations; assess interpretation
-  of diagram relationships and chart quantities separately from image extraction.
-  Mark unsupported or ambiguous interpretations for quarantine and manual review.
+The [conversion/chunking protocol](experiments/cytiva-conversion-chunking-protocol.md)
+was exercised without extraction LLMs or paid APIs on pages 77, 88, 104 and
+152–153. T0/T1 conversion and K0/K800 tests preserve historical outputs; later
+repairs and reviewed annotations are new artifacts. Table recognition was
+**disabled in the earlier r2 extraction**, so these are separate experiments.
 
-Exit: manually checked reference examples, reported conversion/extraction errors
-and provenance coverage, plus measured runtime and resource use. Do not generalize
-the existing text-only review to table or illustration understanding.
+| Reviewed example | Completed scope | Retained limits |
+|---|---|---|
+| [Page 77](../experiments/cytiva/reviewed-page-077/README.md) | Ten cards: species/header scope, pH, seven remarks and observed chunk conservation | Source blanks stay blank; some applicability context is in a different chunk; no production retrieval approval |
+| [Page 88](../experiments/cytiva/reviewed-page-088/README.md) | Nine cards: deterministic coordinate reconstruction, 40 cells, five notes and 12 cell-note bindings | Original available-formats conversion defect remains historical; reconstruction is specific to this table, not a general converter fix |
+| [Page 104](../experiments/cytiva/reviewed-page-104/README.md) | Six cards: image/caption, five paths, alternative, applicability, VH3 and K0/K800 conservation | Reviewed paths are human readings, not extracted directed edges; automatic text-only diagram semantics remain quarantined |
+| [Pages 152–153 v1](../experiments/cytiva/reviewed-pages-152-153/README.md) and [v2](../experiments/cytiva/reviewed-pages-152-153-v2/README.md) | Six initial decisions plus one v2 conservation decision: HiTrap/HiScreen repair, continuity, note scope and integrated annotations | Three ambiguous rows remain physically quarantined; no complete property-cell or production retrieval approval |
+
+Current scoped decisions are in each package's review record. Historical pending
+flags in frozen preparation artifacts stay unchanged. Reservations, source
+provenance and original human quotations remain part of the accepted record.
+
+These examples validate observed conversion/chunk conservation and documentary
+readings with reservations. They do not establish automated diagram reasoning,
+optimal chunk size, retrieval completeness, full-manual correctness or scientific
+applicability. K600/K1400 and optional pages 53/86/142 remain untested; broadening
+the matrix requires a concrete need rather than a default page-by-page review.
 
 ## Phase 4 — Contextual retrieval and bounded reasoning
+
+### Implemented development baseline
+
+Local BM25 retrieval and atomic context assembly use exact reviewed passages,
+source dependencies, immutable run manifests and a 2,048-token serialized-context
+cap. No LLM, embedding model or paid API was needed for these trials. The cap does
+not include a future answer prompt or output. Earlier trials/configurations are
+preserved and no experiment silently changes the chat default.
+
+| Reference series | Observed result | Interpretation |
+|---|---|---|
+| [Q01–Q10 and N01–N08](experiments/cytiva-retrieval-depth-results.md), cleaning pp. 166–167 | Six hits preserve 10/10 Q and improve N from 7/8 to 8/8 with complete required evidence in both languages | N05's sixth-ranked passage and dependent heading are recovered; greater context size is not proven better precision |
+| [C01–C10 first run](experiments/cytiva-contaminants-retrieval-results.md), contaminants pp. 118–121 | Five → six hits improves bilingual completeness from 5/10 to 6/10 | Ranking/vocabulary and missing section introductions remain measurable failures |
+| [C01–C10 ablation](experiments/cytiva-contaminants-context-results.md) | Baseline 6/10, vocabulary 7/10, section 10/10, combined 10/10; section/combined maximum 2,027 tokens | Context of section explains most gain; combined saves 20.35 mean tokens versus section-only in this sample |
+
+The 28 intents each have FR/EN formulations, not 56 independent observations.
+Required-source presence is not measured answer correctness, refusal quality or
+retrieval precision. Later variants were designed after inspecting development
+failures; the C corpus extends the cleaning corpus, but its tuned result is not
+independent validation. No answer was generated in these retrieval trials.
+E118-I and E121-EQ remain pending and excluded from all contaminant indexes and
+contexts, including indirect dependencies. New navigation rules are experimental
+policy, not additional human approval of scientific applicability.
+
+### Remaining product and reasoning requirements
 
 Retrieve multiple candidates, preserve negations and distinguish multiple symptoms.
 Ask for missing resin, phase or operating context before proposing conditional
@@ -183,8 +263,12 @@ chunking, context budgets and configurations; measure evidence quality, refusal,
 conditions/quantities, latency, tokens and RAM on the local PC. Use local models
 with zero additional API spend. Compare chunking/extraction variants separately.
 Only consider adoption if the measured gain over the simpler alternatives survives
-resource, provenance and quarantine checks. No installation or benchmark execution
-has been performed by preparing this plan.
+resource, provenance and quarantine checks. The three-arm comparison and LightRAG
+integration remain unexecuted. Existing
+BM25 trials are a lexical baseline/ablation; they do not implement the protocol's
+simple multilingual-vector arm or its common-corpus graph and LightRAG adapters.
+Reconcile the separately tested six-hit candidate with the protocol's five-passage
+limit by declaring and freezing one shared comparison policy before measurement.
 
 ## Phase 5 — Decide whether an OpenSPG KAG experiment is justified
 
@@ -309,7 +393,9 @@ Start local model trials with Ministral-3-3B-Instruct-2512 GGUF Q4_K_M; compare
 Qwen3.5-4B with thinking disabled for short structured tasks. Pin exact artifacts
 and runtimes. No fine-tuning until held-out errors show a stable learnable problem;
 fine-tune routing/extraction format, not mutable handbook facts. Hardware fit and
-latency remain unmeasured until the user's CPU/RAM/GPU configuration is available.
+answering latency remain to be benchmarked on the known reference PC: Intel
+i5-1135G7 (4 cores/8 threads), 16 GB RAM and Intel Iris Xe, without a CUDA GPU.
+The earlier 56-minute extraction does not measure interactive answering latency.
 
 ### Visualization and portfolio deliverables
 
@@ -347,8 +433,11 @@ A loopback UI displays extracted passages and PDFium-rendered source pages.
 Optional parameterized Neo4j publication creates a separate reviewed evidence
 snapshot; the chatbot's existing graph is not automatically enriched.
 
-Validation currently covers synthetic fixtures and the upstream configuration
-contract. It does not establish real PDF extraction quality or latency. The
-DocLang chunker uses a tokenizer proxy; parent notes and oversized row splits
-need a real-manual test. Ragas, OTel, red-team execution and the serving adapter
-remain unimplemented. See INGESTION.md for exact commands and limitations.
+Initial validation covered synthetic fixtures and the upstream configuration
+contract. Subsequent real-manual conversion/chunking reviews and passage-retrieval
+experiments are summarized above; the initial local extraction's limitations are
+retained in [its diagnostic](experiments/cytiva-local-extraction-diagnostic.md).
+Selected table repairs and conservation checks do not complete phase 3 extraction
+precision/recall, lifecycle or publication acceptance. Ragas, OpenTelemetry,
+Promptfoo execution and the reviewed-record serving adapter remain unimplemented.
+See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

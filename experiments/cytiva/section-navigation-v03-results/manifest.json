@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "status": "development_results_not_independent",
+  "files": {
+    "README.md": "ac2d8082af07e590b200f8e2e3defc47d1e7f9a29c89d0dde95d3a632b938e60",
+    "provenance.json": "23a3b6e2aeb705e615028e2437da9d631e0d0d9c341e80d2a83cc70d14643de0",
+    "results.json": "000d829c8f69cde096055b36a4d146ed6c39be1137a07e196420008260daffbe"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-scoped-context-results.md": "1af6f69b0ca2fa5ce00a2b736e98dc02b5539b25fcf4344db7f4d28e042a3db8",
+    "experiments/cytiva/section_navigation_retrieval.py": "f3982daa8cc8143f4d14cbf30a7ef3ba95a62d21d0c7caf6c84fd472a2864ccf",
+    "experiments/cytiva/section_navigation_v03.json": "0ea632a64181a2805546940db95cd669a75214c253cf585caf7d1207f973abaf",
+    "experiments/cytiva/verify_section_navigation_package.py": "a329f1a742529154b62cea14887c9d20f51c488dd3bc85e57bfd08b123c4a6d0",
+    "ingestion/scoped_passage_context.py": "2e5d2f49117755b0d0a1439524099f1f8b0b1c193839b148753134f52aab5c48",
+    "tests/test_scoped_passage_context.py": "834e3e6d75c658696b131cc8d37a80698889f1bd077c94601b25819dae28785b",
+    "tests/test_section_navigation_package.py": "ceab02c3aa19daa6233f9662973489f197c565e0cb645cdfe548310fa662fe4e",
+    "tests/test_section_navigation_runner.py": "163666e184bde06c4d41dfcf017c0363decc8e773850ac54f46148ec42b0b0da"
+  },
+  "dependency_H_export_manifest_sha256_lf": "e8ed14d0cb2e59f31034d9f965452d99191fa485f5ae39ba925f2082a4520e46",
+  "publication_allowed": false
+}

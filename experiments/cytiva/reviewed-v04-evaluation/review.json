@@ -1,0 +1,150 @@
+{
+  "manifest_sha256_lf": "98f15737e8d04f691ba5c2b09fd0ebcb9fef45d079778179f1419a75343b606d",
+  "method_lock_sha256_lf": "972a46be1668fbbe941502a2fc579f3be6786e8675a0be89095ce21e9259ab08",
+  "decisions": [
+    {
+      "question_id": "W01",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W01 avec les limites indiquées, sans contaminant supposé ni technique choisie et sans exiger de diagnostic confirmé. Enregistre ma décision et passons à W02. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T21:44:24.929911+00:00",
+      "question_sha256_canonical": "f1c1a458f2ceda2330067cf2e446570cc37708afe318b2079f889011754d5f96",
+      "reference_sha256_canonical": "6567d4c7f9b738a90d349dac456a58cf2560920f38b21b40df84caf53222d0de",
+      "retained_reservations": [
+        "Retain laboratory-scale intended-application scope.",
+        "No assumed identity, automatic extra purification or confirmed-diagnosis requirement."
+      ]
+    },
+    {
+      "question_id": "W02",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W02 avec les limites indiquées, en gardant les préparations distinctes et l’avertissement Blue Sepharose, sans transfert d’autorisation. Enregistre ma décision et passons à W03. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T21:47:44.139846+00:00",
+      "question_sha256_canonical": "5e8e53c1abdce3c1f0be9943625507d23d0f2e17ee8d2f0f33021aade0454e57",
+      "reference_sha256_canonical": "ccc48f9bf8f4402227ac4d46aaf8b0ecf957a4ba8c10c2ae01c46cc16c466e6f",
+      "retained_reservations": [
+        "No transfer of the direct-use permission to preparation B or to other applications.",
+        "Preserve the conditional do-not-use warning; no substitute product or recipe inferred."
+      ]
+    },
+    {
+      "question_id": "W03",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W03 avec les limites indiquées, sans durée ni profil de gradient déduits, sans garantie d’élimination complète ni paramètres de lavage. Enregistre ma décision et passons à W04. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T21:48:20.634041+00:00",
+      "question_sha256_canonical": "fd81252cb02adfcc2d3991f88491c5f48d087897ebac47616eed4f4017fcf4fb",
+      "reference_sha256_canonical": "ef4775443ea1c3ee06bce91b64efcb8a9417d34ad0bf03dc19a3b7cf3241cbee",
+      "retained_reservations": [
+        "Usually sufficient is not a guarantee of complete albumin removal.",
+        "No washing endpoint, duration, gradient profile or 1 mL-column flow transferred."
+      ]
+    },
+    {
+      "question_id": "W04",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W04 avec les limites indiquées, en conservant les critères alternatifs et l’avertissement, sans durée ni paramètres d’autres étapes déduits. Enregistre ma décision et passons à W05. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:04:42.310621+00:00",
+      "question_sha256_canonical": "80c71842f6bee2f5a311d98040b588b5ee1cfdfc1765d87069f7e7b63b6651bd",
+      "reference_sha256_canonical": "6f09a62633c1de8b2341d598734eaecc5025cc517d79462d4f6a628f9191da92",
+      "retained_reservations": [
+        "Preserve generally, at least and the two alternative endpoints.",
+        "No loading/elution parameters, fixed duration or guarantee deduced."
+      ]
+    },
+    {
+      "question_id": "W05",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W05 avec les limites indiquées, sans combiner les tampons ni corriger la nomenclature, sans durée ni paramètres d’élution déduits. Enregistre ma décision et passons à W06. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:06:23.134944+00:00",
+      "question_sha256_canonical": "ec5123ed765aa00f98a5952d33500a1d90886fee1e46d34ea56e0b3fbbf96c9b",
+      "reference_sha256_canonical": "5d9e8fddc3046995150e5e03992ec7c106edba08d7ca1f5c88e7908b3933a5d9",
+      "retained_reservations": [
+        "Do not pair alternatives, correct source nomenclature or validate chemical formulation independently.",
+        "Do not promote volumes to guarantees or add a duration; elution operation parameters are unrequested."
+      ]
+    },
+    {
+      "question_id": "W06",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W06 avec les limites indiquées, en conservant les approximations et les associations colonne/débit, sans conversion universelle ni durée déduite. Enregistre ma décision et passons à W07. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:08:24.071788+00:00",
+      "question_sha256_canonical": "100516b91ed646c91c269d70ba7a9ace9ea33e084bdd0cc49f9a38ea2a624e23",
+      "reference_sha256_canonical": "8ea5488339547bc185a6a66e32ccbf8162d1fd7f1a6aa23a873d10495da01889",
+      "retained_reservations": [
+        "No universal drops conversion, timing, extrapolation or 1 mL-column correspondence substituted.",
+        "No washing/elution settings; the whole source atom may still contain the other column example."
+      ]
+    },
+    {
+      "question_id": "W07",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W07 avec les limites indiquées, sans transfert entre les tâches ni appariement des tampons, en gardant Phenyl HP comme exemple. Enregistre ma décision et passons à W08. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:09:17.294716+00:00",
+      "question_sha256_canonical": "6663344b5cef2fc16592a2e448575036636223fb74a7feb5d534578fdb001002",
+      "reference_sha256_canonical": "72e038d1cb5b6e21a9fdbc817009541e8e73137acddc471b595f1e9b8c6515ba",
+      "retained_reservations": [
+        "No seven-step procedure or general preference for Phenyl HP.",
+        "No pairing of buffer alternatives, nomenclature correction, duration or transfer between samples."
+      ]
+    },
+    {
+      "question_id": "W08",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W08 avec les limites indiquées, en conservant « la plupart », sans diagnostic confirmé ni pH chiffré ou garantie déduits. Enregistre ma décision et passons à W09. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:31:27.270392+00:00",
+      "question_sha256_canonical": "a596ca7f4397818cce8466c0694738f4f18fd3abec80125da594fed102fbdb3a",
+      "reference_sha256_canonical": "42c8b74842deebe88780a649e7570a64b769b84458446941b13b25064b4ecbad",
+      "retained_reservations": [
+        "Preserve can, in some cases, might and most.",
+        "No numerical pH, guaranteed clearance, diagnosis or automatic optimization inferred."
+      ]
+    },
+    {
+      "question_id": "W09",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W09 avec les limites indiquées, en limitant l’absence aux 25 extraits admissibles, sans pression inventée ni conversion du débit. Enregistre ma décision et passons à W10. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:32:06.549358+00:00",
+      "question_sha256_canonical": "18b33044583a8f3ccef36733f91b56f7e0066e8ddd5ca71fcac2cdf29f0baa5f",
+      "reference_sha256_canonical": "6637a3a901be0d883a3c2c397e53e1b8de2b52137a1a4487f3dd568f1be88e2b",
+      "retained_reservations": [
+        "Absence applies only to the 25 eligible excerpts, not the whole manual or product documentation.",
+        "No duration, complete-removal guarantee, pressure value or cross-phase substitution inferred."
+      ]
+    },
+    {
+      "question_id": "W10",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W10 avec les limites indiquées, sans reconstruire les conditions pH/pI ni valider E118-I. Enregistre ma décision et passons à W11. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:32:47.654189+00:00",
+      "question_sha256_canonical": "b556188c46779b57c77d01bdfca7050e2fff6370a058233ba2636502f126e272",
+      "reference_sha256_canonical": "39f6dd4d84fc72110a1f5844014296ad766d926175add723cbff06b5a8aeb020",
+      "retained_reservations": [
+        "Validating this question does not validate E118-I.",
+        "No pH/pI relation reconstructed from general principles, even when pI values are available."
+      ]
+    },
+    {
+      "question_id": "W11",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W11 avec les limites indiquées, sans valider E121-EQ ni transférer les paramètres de lavage à l’équilibrage. Enregistre ma décision et passons à W12. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:33:18.594750+00:00",
+      "question_sha256_canonical": "c7c29fe0e7f6e007f897be6a97fc25f556c54a9a3af1de02c8ae9f80bf31612a",
+      "reference_sha256_canonical": "f2c27ff0fb6125df2191d7c6443b8de77dd8ce0f4cbb27d6958de3ba5dbd9aec",
+      "retained_reservations": [
+        "Validating the combined reference does not approve E121-EQ.",
+        "No transfer of washing parameters into equilibration, duration or guarantee inferred."
+      ]
+    },
+    {
+      "question_id": "W12",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide W12 avec les limites indiquées, sans résoudre arbitrairement la contradiction ni fournir de paramètres avant clarification. Enregistre ma décision et fais le bilan des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T22:33:49.846423+00:00",
+      "question_sha256_canonical": "a62bd97b51dcc6e1355e81406e14d4eb6bb97d87ee8d2f6b33945ef819a70174",
+      "reference_sha256_canonical": "091f97936cbe701c1bb6fb2c78999a7a8b3a0f8678aae4ba980a4309e72079a0",
+      "retained_reservations": [
+        "Contradiction detection is observable metadata; no generated clarification quality is measured.",
+        "Do not silently resolve the conflict, approve a source or treat the synthetic request as manual content."
+      ]
+    }
+  ]
+}

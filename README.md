@@ -10,13 +10,17 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Current status
 
+Updated 24 October 2026. The application and documentary experiments are separate:
+reviewed manual knowledge is not yet available in the chat.
+
 | Component | Status and scope |
 |---|---|
 | Troubleshooting chat | Implemented: six curated Protein A symptoms, English full-text retrieval in Neo4j, Anthropic tool use and application-controlled rendering |
 | French and English questions | Supported by the agent's English search-phrase selection; headings and refusals are localized, technical graph facts remain in English |
 | Local PDF ingestion | Experimental: Docling Graph with Ollama, structural chunking, source localization and a local review UI; optional publication creates a separate graph |
 | Reviewed manual extraction | Completed development example: 33 statements reviewed against pages 100–102, with 14 retaining reservations; not served by the chatbot |
-| Table conversion and chunking | First diagnostic completed on pages 77 and 88; a malformed row keeps the page-88 table quarantined |
+| Conversion and structural chunking | Targeted human reviews completed on pages 77, 88, 104 and 152–153, including deterministic table repairs, note scope and figure limitations; three ambiguous rows remain quarantined on 152–153 |
+| Local passage retrieval | Experimental BM25 and bounded context assembly evaluated on 28 reviewed bilingual intents; six-hit and section-context candidates remain separate from chat |
 | Reviewed records → chatbot | Adapter pending; ingestion does not automatically expand the serving graph |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo are planned; LightRAG is a comparison candidate, KAG remains conditional |
 
@@ -107,13 +111,29 @@ Install the additional test dependencies into the application environment:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-These tests mock external model/database calls; some start loopback HTTP servers. They need neither paid APIs nor an external service. **112 tests passed on 21 October 2026**, including six launcher safety checks. This is regression coverage, not a quality score for live answers.
+These tests mock external model/database calls; some start loopback HTTP servers. They need neither paid APIs nor an external service. **351 main-suite tests and 13 supplementary Cytiva checks passed on integrated `main` on 24 October 2026.** This dated result used the existing application and ingestion environments; it does not certify a fresh dependency installation. This is regression coverage, not a quality score for live answers.
 
 | Development evidence | What it establishes | Limits |
 |---|---|---|
 | [Reviewed extraction, pages 100–102](experiments/cytiva/reviewed-r2/README.md) | 33 corrected statements: 19 validated and 14 validated with reservations; decisions and hashes preserved | Documentary review only; no exhaustive recall, scientific approval or publication |
-| [Conversion/chunking, pages 77 and 88](docs/experiments/cytiva-conversion-chunking-results-077-088.md) | Table structure improves; K800 preserves the converted tables and targeted notes | Page 88 has an incorrect product-format row; source grouping needs care; figures remain untested |
+| [Page 77 review](experiments/cytiva/reviewed-page-077/README.md) and [page 88 review](experiments/cytiva/reviewed-page-088/README.md) | Species/header scope, pH, remarks, reconstructed product cells and five notes reviewed with reservations | Original conversion defects remain documented; targeted repairs do not fix Docling generally; table-only retrieval may omit adjacent context |
+| [Figure 104 review](experiments/cytiva/reviewed-page-104/README.md) | Image/caption, five paths, alternative role, applicability and K0/K800 text conservation reviewed | Human interpretation is not native extracted graph edges; automatic text-only diagram semantics remain quarantined |
+| [Pages 152–153 annotated review](experiments/cytiva/reviewed-pages-152-153-v2/README.md) | Continued table, repaired HiTrap/HiScreen row and reviewed note annotations retained in new chunks | Three ambiguous rows remain physically separated in quarantine; no complete property-cell or production retrieval validation |
+| [Cleaning retrieval](docs/experiments/cytiva-retrieval-depth-results.md) | Six-hit candidate supplies all required sources for Q01–Q10 and N01–N08 in both languages, under a 2,048-token context cap | Known development questions; additional context is not proven more precise; no generated answers evaluated |
+| [Contaminant context ablation](docs/experiments/cytiva-contaminants-context-results.md) | On C01–C10, section context raises complete evidence from 6/10 to 10/10 in both languages; combined vocabulary/context also reaches 10/10 | Tuned after inspecting failures; no independent generalization or answer-quality result; E118-I and E121-EQ remain pending and excluded |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
+
+The 28 bilingual intents are three reviewed development series (Q: 10, N: 8,
+C: 10), not one locked test set. Retrieval scores measure presence of indispensable
+source passages after assembly, not correctness of a generated answer, diagnosis
+or measured retrieval precision. The C-series section-only and combined variants
+reach at most 2,027 serialized context tokens; the 2,048-token cap excludes any
+future answer prompt and output. Section-only is the simpler candidate to test
+next; neither variant changes the application default.
+
+The three-arm graph/passages/LightRAG comparison remains unexecuted. Current BM25
+trials are a lexical baseline, not the multilingual vector arm specified in that
+protocol. OpenTelemetry, Ragas and Promptfoo are not integrated yet.
 
 With Neo4j running, `python eval/run_eval.py` evaluates the eligible English lexical subset without model calls. `--agent` additionally calls Anthropic for the assistant and judge and incurs API costs; it is a separate, deliberate evaluation step.
 
@@ -123,10 +143,10 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Resolve the page-88 conversion defect, make inherited table context explicit, and extend validation to continued tables and diagrams.
-2. Implement the reviewed v0.2-to-serving adapter, preserving conditions, reservations and quarantine.
-3. Add OpenTelemetry traces, Ragas quality evaluation and Promptfoo adversarial tests.
-4. Compare current graph retrieval, simple passage retrieval and LightRAG on a common corpus; assess lightweight local serving. Consider KAG only if measured tasks justify it.
+1. Freeze a simple retrieval/context candidate and evaluate separately prepared questions before further tuning. Measure missing and unnecessary sources, conditions, exclusions and resource use; keep earlier trials unchanged.
+2. Connect a small reviewed corpus to the assistant through the v0.2-to-serving adapter and common validated renderer. Preserve reservations, quarantine, source snapshots and missing-context behaviour; test activation, correction and revocation.
+3. Add OpenTelemetry instrumentation during that integration, then evaluate actual answers and abstentions using deterministic checks, calibrated local Ragas and Promptfoo adversarial cases.
+4. Complete the common-corpus graph/passages/LightRAG comparison once adapters and a frozen evaluation set exist. Assess lightweight local serving within the PC and budget constraints; consider KAG or fine-tuning only if measured failures justify them.
 
 The [active roadmap](docs/ROADMAP.md) defines acceptance criteria. The earlier vector experiment is recorded in [ADR-002](docs/ADR-002-multilingual-retrieval.md); it does not settle the planned comparison on a larger reviewed corpus.
 

@@ -1,0 +1,556 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-contaminants-118-121-evidence-v01",
+  "status": "assistant_prepared_pending_human_review",
+  "source": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "document_reference": "CY13981-25Jan21-HB",
+    "edition_metadata_origin": "Existing project registry; not newly certified"
+  },
+  "publication_allowed": false,
+  "extraction": {
+    "method": "pypdf native text, no OCR/model; Poppler visual inspection",
+    "pypdf_version": "6.21.1",
+    "offset_unit": "Unicode code points, start inclusive/end exclusive, no quote normalization",
+    "reading_order_warning": "Page 121 headings occur late in native text; cross-page product and buffer/protocol links are explicit candidate annotations.",
+    "pages": [
+      {
+        "pdf_page_1based": 118,
+        "pdf_page_index_0based": 117,
+        "printed_page": "118",
+        "text_sha256": "3e91e99e84a23e0191a4d16cb72f6a1fd258045b2b80b1e7456a0e31cd88649f",
+        "text_length": 2453,
+        "printed_label_visually_checked": true
+      },
+      {
+        "pdf_page_1based": 119,
+        "pdf_page_index_0based": 118,
+        "printed_page": "119",
+        "text_sha256": "cf386538499b3c0ede913ede23e2a55d57b2139e34dba6c51b0750c693cc7ff9",
+        "text_length": 2837,
+        "printed_label_visually_checked": true
+      },
+      {
+        "pdf_page_1based": 120,
+        "pdf_page_index_0based": 119,
+        "printed_page": "120",
+        "text_sha256": "476326aef4238cefed65fad842bfdd6cd9ea0e97f31108de68ec60fc4ad8277d",
+        "text_length": 1974,
+        "printed_label_visually_checked": true
+      },
+      {
+        "pdf_page_1based": 121,
+        "pdf_page_index_0based": 120,
+        "printed_page": "121",
+        "text_sha256": "779bc7ff6525151dcf0ae4bbf2af3d06fe8a746d4f265787017cd2516edbb27c",
+        "text_length": 2673,
+        "printed_label_visually_checked": true
+      }
+    ]
+  },
+  "passages": [
+    {
+      "id": "E118-USE",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": "For many applications at laboratory scale, contaminant molecules are not always a significant problem. Affinity \nchromatography (AC) will provide sufficient purity and, as long as the presence of any minor contaminants does not \ninterfere with the intended application, the purified sample can be used directly.",
+      "quote_sha256": "353719de9177ea9d6b00bb5aaac1470a50ea3a083db5f615a4e9284091a1fb2e",
+      "page_text_start": 0,
+      "page_text_end": 311,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "applicability",
+      "visual_region": "top paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E118-C",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": "Common contaminants after initial purification are albumin, transferrin, antibody aggregates, leached protein A, DNA, \nand host or bovine immunoglobulins that originate from ascites or cell culture serum. The problem of contaminants of \nanimal origin in, for example, bovine cell culture systems for monoclonal antibody (MAb) production, has been largely \ncircumvented by use of serum-free systems. The three main contaminants albumin, transferrin, and host or bovine \nimmunoglobulins pose three different purification problems: albumin because of its abundance; transferrin because of its \nsimilarity to the charge characteristics of many antibodies; and host or bovine immunoglobulins because of the similarity \nto that of the target immunoglobulin.",
+      "quote_sha256": "b961c80dda07292a0520ff7fda7116e0af15de4498923da84a9a09cce7336ba4",
+      "page_text_start": 541,
+      "page_text_end": 1292,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "contaminant_context",
+      "visual_region": "middle paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E118-M",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": " Select chromatography techniques that utilize differences in the characteristics of the contaminant and target \nmolecule: ion exchange chromatography (IEX) for separation by differences in charge; hydrophobic interaction \nchromatography (HIC) for separation by differences in hydrophobicity; and size exclusion chromatography (SEC) for \nseparation by size. See Appendix 9 for an overview of the principles of the chromatography techniques used  \nat laboratory scale.",
+      "quote_sha256": "65a84cb4b12cfd35901e7245c9be1bef786860db8b80fd1b212b38bd6ee0cb3c",
+      "page_text_start": 1580,
+      "page_text_end": 2047,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "method_selection",
+      "visual_region": "second advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E118-I",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": " If the pI value of the antibody is sufficiently different from the contaminants, a cation exchange medium (negatively \ncharged) can be used for removal of the contaminants at a pH above the pI of the impurities and below that of the \nantibody. This will ensure that the antibody (positively charged) binds to the column while the impurities, including \nnegatively charged nucleic acids, pass through.",
+      "quote_sha256": "bc5b8bc05d0362d3df93c45509ca149a1b3ebc25598fbbf1c31fab117fd95461",
+      "page_text_start": 2048,
+      "page_text_end": 2449,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "conditional_iex",
+      "visual_region": "last advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E119-BH",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Bovine immunoglobulins",
+      "quote_sha256": "c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b",
+      "page_text_start": 0,
+      "page_text_end": 22,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "section_heading",
+      "visual_region": "upper left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E119-B",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Co-purification of host or bovine immunoglobulins is a problem associated with any affinity purification of antibodies \nfrom a native source or a source to which supplements such as calf serum or bovine serum albumin are added. This \ncontamination problem has been largely circumvented in the large-scale manufacture of MAbs for therapeutic use \nthrough the widespread use of serum-free cell culture systems.",
+      "quote_sha256": "3cfa038db9aadb4ae1a986b8a37214e7d658a38d13113b5acf7cd195c1faa4c3",
+      "page_text_start": 23,
+      "page_text_end": 431,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "source_context",
+      "visual_region": "first paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-BI",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Difficulties have also been encountered when murine monoclonal antibodies are the target molecule. The similarities \nbetween the physical characteristics of the target antibody and the contaminants require careful selection and \noptimization to find the most suitable chromatography technique for purification. Both HIC and IEX can be used.",
+      "quote_sha256": "dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634",
+      "page_text_start": 432,
+      "page_text_end": 772,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "method_alternatives",
+      "visual_region": "second paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-S",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": " The hydrophobicity of proteins is difficult to predict. Screen several chromatography media with different \nhydrophobicities (e.g., using HiTrap HIC Selection Kit) to find the medium that gives optimal results.",
+      "quote_sha256": "6741c581e5bc9fdfd5aad6f728f5e9e5dc438d26155cd1a0bde2846ffd1302a8",
+      "page_text_start": 773,
+      "page_text_end": 984,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "screening_advice",
+      "visual_region": "first advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-X",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "HiTrap HIC Selection Kit includes seven HIC media with different hydrophobic properties for small-scale screening and \nselection of optimal binding and elution conditions. Figure 4.1 shows an example of chromatography media screening \nof a mouse monoclonal antibody on different HIC media prepacked in HiTrap 1 mL columns. In this case, the optimal \nmedium for purification was HiTrap Phenyl HP.",
+      "quote_sha256": "b7f9b22e4a4b994c309bba80c118736640dea30ad3fbef4593ac2239ac5f8dcb",
+      "page_text_start": 985,
+      "page_text_end": 1380,
+      "scope": "Host or bovine immunoglobulin co-purification",
+      "role": "scoped_example",
+      "visual_region": "paragraph above next heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-AH",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Albumin and transferrin",
+      "quote_sha256": "c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051",
+      "page_text_start": 1382,
+      "page_text_end": 1405,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "section_heading",
+      "visual_region": "middle left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E119-A",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "Ion exchange and hydrophobic interaction chromatography are two methods used for removing albumin and transferrin, \nseparating the molecules on the basis of differences in their isoelectric points or hydrophobicities (see Appendix 9 for the \nprinciples of these techniques).",
+      "quote_sha256": "135c9b62cfaaacc123b3a52e4da443397519cde3b20467d0d70836c6b4e69ce9",
+      "page_text_start": 1407,
+      "page_text_end": 1681,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "method_alternatives",
+      "visual_region": "paragraph below heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-I",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": " After an IEX purification, albumin and transferrin can be present if their charge properties are similar to those of \nthe target antibody. In some cases, it might be possible to optimize pH and elution conditions in the IEX step to \nimprove the separation between the antibody and the contaminants (Appendix 9).",
+      "quote_sha256": "8c5889325bb188941f1a6ebace48bfa19be64eea938525ddb6fe835a1d313fd4",
+      "page_text_start": 1682,
+      "page_text_end": 1994,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "residual_contaminants",
+      "visual_region": "second advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-H",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": " Since most monoclonal antibodies are more hydrophobic than albumin and transferrin, HIC can be used to bind the \nantibody and allow these contaminants to wash through the column.",
+      "quote_sha256": "650aa882a10835929560563ee04fefca2ec7c25af12fa34e651d6accaebdafd7",
+      "page_text_start": 1995,
+      "page_text_end": 2174,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "conditional_hic",
+      "visual_region": "third advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E119-BL",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "quote": "However, AC using Blue Sepharose 6 Fast Flow is a useful alternative to IEX and HIC for removing albumin.",
+      "quote_sha256": "71be6d87e0a34cb6fde34b45d1a5c6b4c511f046bb624f618755bf126d335d86",
+      "page_text_start": 2175,
+      "page_text_end": 2280,
+      "scope": "Albumin and transferrin after antibody purification",
+      "role": "albumin_specific_alternative",
+      "visual_region": "last left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E119-AH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-H",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "Removal of albumin using Blue Sepharose chromatography media",
+      "quote_sha256": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+      "page_text_start": 0,
+      "page_text_end": 60,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "section_heading",
+      "visual_region": "top left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E120-A",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "Blue Sepharose 6 Fast Flow or prepacked HiTrap Blue HP 1 mL and 5 mL columns (Fig 4.2) can be used to remove albumin \neither before or after other purification steps (see Table 4.1). The albumin binds in a nonspecific manner by electrostatic \nand/or hydrophobic interactions with the aromatic anionic ligand, Cibacron Blue F3G-A, coupled to Sepharose.",
+      "quote_sha256": "d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4",
+      "page_text_start": 61,
+      "page_text_end": 412,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "product_scope_and_mechanism",
+      "visual_region": "top left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-U",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": " Use HiTrap Blue HP 1 mL or 5 mL columns to remove host albumin from mammalian expression systems or when \nthe sample is known to contain high levels of albumin that might mask the UV absorption of other protein peaks.",
+      "quote_sha256": "b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478",
+      "page_text_start": 413,
+      "page_text_end": 631,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "conditional_use",
+      "visual_region": "first advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-W",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": " Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \nhydrophobicity similar to that of albumin.",
+      "quote_sha256": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f",
+      "page_text_start": 632,
+      "page_text_end": 776,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "warning",
+      "visual_region": "warning above table",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-P",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.",
+      "quote_sha256": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+      "page_text_start": 1872,
+      "page_text_end": 1970,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "cross_page_protocol_scope",
+      "visual_region": "bottom left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H",
+        "E120-W"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-BH",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Buffer preparation",
+      "quote_sha256": "86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e",
+      "page_text_start": 1912,
+      "page_text_end": 1930,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "buffer_heading",
+      "visual_region": "top left heading despite late native-text order",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-P"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-B",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Binding buffer: 20 mM sodium phosphate, pH 7.0, or 50 mM potassium hydrogen phosphate (KH 2PO4), pH 7.0\nElution buffer: 0.02 M sodium phosphate, 2 M sodium chloride, pH 7.0, or 0.05 M potassium hydrogen phosphate, \n1.5 M potassium chloride, pH 7.0",
+      "quote_sha256": "bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8",
+      "page_text_start": 0,
+      "page_text_end": 247,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "buffer_alternatives",
+      "visual_region": "orange buffer box, upper left",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-PH",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Albumin removal",
+      "quote_sha256": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+      "page_text_start": 1931,
+      "page_text_end": 1946,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "protocol_heading",
+      "visual_region": "heading above green protocol box",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-P"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-EQ",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "4. Equilibrate the column with at least 5 column volumes of binding buffer. Recommended flow rates are 1 mL/min \n(1 mL column) and 5 mL/min (5  mL column).",
+      "quote_sha256": "d5b4e1d80340e981432f0cc312f81b8e5141d0923f47247c5436904d2203011f",
+      "page_text_start": 614,
+      "page_text_end": 769,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "equilibration",
+      "visual_region": "green protocol box step 4",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-L",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \napplication*.",
+      "quote_sha256": "c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c",
+      "page_text_start": 770,
+      "page_text_end": 1003,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "sample_application",
+      "visual_region": "green protocol box step 5",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH",
+        "E121-F"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-W",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \n5 to 10 mL/min (5 mL column) for washing.",
+      "quote_sha256": "e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3",
+      "page_text_start": 1004,
+      "page_text_end": 1264,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "wash_conditions",
+      "visual_region": "green protocol box step 6",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-E",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.",
+      "quote_sha256": "e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e",
+      "page_text_start": 1265,
+      "page_text_end": 1568,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "elution_alternatives",
+      "visual_region": "green protocol box step 7",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-F",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \n120 drops/min when using a 5 mL HiTrap column",
+      "quote_sha256": "60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9",
+      "page_text_start": 1720,
+      "page_text_end": 1911,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "sample_application_footnote",
+      "visual_region": "footnote under green protocol box",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    }
+  ]
+}

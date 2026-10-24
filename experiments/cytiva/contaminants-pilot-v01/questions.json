@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-contaminants-questions-v01",
+  "status": "pending_human_reference_review_not_executed",
+  "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored",
+  "scope": "Pages 118-121; a new section for the retrieval benchmark, not a blind independent benchmark",
+  "publication_allowed": false,
+  "benchmark_executed": false,
+  "question_count": 10,
+  "formulation_count": 20,
+  "refusal_semantics": "Decline unsupported numeric/guarantee parts while providing supported guidance; not blanket refusal",
+  "questions": [
+    {
+      "id": "C01",
+      "question_en": "My murine monoclonal antibody preparation contains co-purified bovine immunoglobulins. What source context and separation options does the manual identify?",
+      "question_fr": "Ma préparation d’anticorps monoclonal murin contient des immunoglobulines bovines copurifiées. Quel contexte de source et quelles options de séparation le manuel indique-t-il ?",
+      "required_evidence_sets": [
+        [
+          "E119-BH",
+          "E119-B",
+          "E119-BI"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "The manual associates co-purification with native sources or sources supplemented with calf serum or bovine serum albumin. Similar physical characteristics require careful selection and optimization; HIC and IEX are options. Serum-free systems are described as largely circumventing this problem in large-scale therapeutic MAb manufacture.",
+      "conditions_to_preserve": [
+        "Preserve native/supplemented-source alternatives and the manufacturing scope of the serum-free statement.",
+        "Treat HIC and IEX as options requiring selection/optimization."
+      ],
+      "must_not_infer": [
+        "No unique cause established for the user sample.",
+        "No guaranteed removal or automatic culture change.",
+        "No pH, salt, flow or column recipe invented."
+      ],
+      "human_review_checks": [
+        "Are both technique alternatives retained?",
+        "Is the source association distinguished from a confirmed diagnosis?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C02",
+      "question_en": "Bovine immunoglobulins remain with my mouse monoclonal antibody. Does the manual justify choosing HiTrap Phenyl HP directly, or should I screen HIC media?",
+      "question_fr": "Des immunoglobulines bovines restent avec mon anticorps monoclonal de souris. Le manuel justifie-t-il de choisir directement HiTrap Phenyl HP, ou faut-il cribler les supports HIC ?",
+      "required_evidence_sets": [
+        [
+          "E119-BH",
+          "E119-BI",
+          "E119-S",
+          "E119-X"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "Protein hydrophobicity is difficult to predict, so the manual advises screening media with different hydrophobicities. The kit is described as including seven media. HiTrap Phenyl HP was optimal in the specific mouse-antibody screening example, not established as the universal best medium.",
+      "conditions_to_preserve": [
+        "Keep the recommendation to screen and optimize binding/elution conditions.",
+        "Distinguish the seven-media kit statement from the subset of columns shown in the example."
+      ],
+      "must_not_infer": [
+        "Do not prescribe Phenyl HP for every murine antibody.",
+        "Do not infer chromatogram purity or clearance from the plot.",
+        "Do not reuse example buffer settings as a universal protocol."
+      ],
+      "human_review_checks": [
+        "Is the specific-example qualification preserved?",
+        "Are screening and final medium selection distinct?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C03",
+      "question_en": "Albumin and transferrin remain after IEX purification of my antibody. What exact pH does this section prescribe to fix the separation?",
+      "question_fr": "Il reste de l’albumine et de la transferrine après la purification de mon anticorps par IEX. Quel pH exact cette section prescrit-elle pour corriger la séparation ?",
+      "required_evidence_sets": [
+        [
+          "E119-AH",
+          "E119-A",
+          "E119-I"
+        ]
+      ],
+      "expected_status": "refuse",
+      "expected_answer_en": "The selected subsection gives no exact pH for this problem. Similar charge properties can leave these contaminants after IEX; in some cases, optimizing pH and elution conditions may improve separation. Decline to supply a numeric setting while providing that conditional guidance.",
+      "conditions_to_preserve": [
+        "Absence is scoped to the selected albumin/transferrin IEX subsection.",
+        "Preserve \"in some cases\" and \"might\"."
+      ],
+      "must_not_infer": [
+        "Do not transfer pH 7.0 from the separate Blue-column protocol.",
+        "Do not invent a numeric pH, pI or gradient.",
+        "Do not present similar charge as a confirmed cause."
+      ],
+      "human_review_checks": [
+        "Is the scoped refusal compatible with giving available guidance?",
+        "Are the IEX advice and Blue-column buffers kept separate?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C04",
+      "question_en": "How does HIC remove albumin and transferrin from an antibody preparation, and is the Blue Sepharose alternative described for both contaminants?",
+      "question_fr": "Comment la HIC permet-elle de retirer l’albumine et la transferrine d’une préparation d’anticorps, et l’alternative Blue Sepharose est-elle décrite pour ces deux contaminants ?",
+      "required_evidence_sets": [
+        [
+          "E119-AH",
+          "E119-A",
+          "E119-H",
+          "E119-BL"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "The manual says most monoclonal antibodies are more hydrophobic than albumin and transferrin: HIC can bind the antibody while these contaminants wash through. The Blue Sepharose 6 Fast Flow alternative is stated for albumin removal; this passage does not extend that alternative to transferrin.",
+      "conditions_to_preserve": [
+        "Preserve \"most\" and conditional applicability to the target.",
+        "Blue Sepharose alternative is albumin-specific in this passage."
+      ],
+      "must_not_infer": [
+        "Do not state that every antibody binds HIC.",
+        "Do not extend Blue Sepharose removal to transferrin.",
+        "Do not infer quantitative clearance."
+      ],
+      "human_review_checks": [
+        "Are target binding and contaminant wash-through correctly attributed?",
+        "Is the albumin-only scope preserved?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C05",
+      "question_en": "My antibody is still impure after affinity capture, but the contaminant is unidentified. Should I add IEX, HIC, SEC or a Blue column?",
+      "question_fr": "Mon anticorps reste impur après capture par affinité, mais le contaminant n’est pas identifié. Dois-je ajouter une IEX, une HIC, une SEC ou une colonne Blue ?",
+      "required_evidence_sets": [
+        [
+          "E118-USE",
+          "E118-C",
+          "E118-M",
+          "E120-H",
+          "E120-U",
+          "E120-W"
+        ]
+      ],
+      "expected_status": "clarify",
+      "expected_answer_en": "Ask about the sample/source, intended application and purity need, the suspected or measured contaminant, and available target/contaminant characteristics. The manual selects IEX by charge differences, HIC by hydrophobicity and SEC by size. Minor contamination can be acceptable if it does not interfere with the application; Blue-column advice is conditional on albumin and target hydrophobicity. Do not select a recipe from the symptom alone.",
+      "conditions_to_preserve": [
+        "Identification need not be a confirmed diagnosis before clarification can begin.",
+        "Preserve the intended-application criterion and Blue warning."
+      ],
+      "must_not_infer": [
+        "Do not assume albumin, aggregates or a unique contaminant.",
+        "Do not automatically choose a column or require unnecessary polishing.",
+        "No regulatory purity threshold or numerical acceptance criterion invented."
+      ],
+      "human_review_checks": [
+        "Does the answer request decision-relevant context without choosing a recipe?",
+        "Are the technique principles and product restriction retained?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C06",
+      "question_en": "My sample has high albumin, but the target immunoglobulin has hydrophobicity similar to albumin. Does this section recommend Blue Sepharose?",
+      "question_fr": "Mon échantillon contient beaucoup d’albumine, mais l’immunoglobuline cible a une hydrophobicité similaire à celle de l’albumine. Cette section recommande-t-elle Blue Sepharose ?",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "Although HiTrap Blue HP is advised for known high albumin levels or host albumin in mammalian systems, the section explicitly says not to use Blue Sepharose media when the target has hydrophobicity similar to albumin. Preserve this exception rather than recommending it solely because albumin is abundant.",
+      "conditions_to_preserve": [
+        "Apply the warning to an immunoglobulin or other target with similar hydrophobicity.",
+        "Keep the known-albumin use case separate from this exclusion."
+      ],
+      "must_not_infer": [
+        "No predicted target recovery or binding percentage.",
+        "No claim that HIC or IEX will necessarily solve this case.",
+        "No guaranteed outcome inferred."
+      ],
+      "human_review_checks": [
+        "Does the warning override the general use case for this stated condition?",
+        "Is no unsupported alternative prescribed?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C07",
+      "question_en": "For HiTrap Blue HP, what flow ranges does the albumin-removal protocol give for loading and washing a 1 mL column versus a 5 mL column?",
+      "question_fr": "Pour HiTrap Blue HP, quelles plages de débit le protocole de retrait de l’albumine donne-t-il pour charger puis laver une colonne de 1 mL, par rapport à une colonne de 5 mL ?",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-P",
+          "E121-PH",
+          "E121-L",
+          "E121-W",
+          "E121-F"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "During sample application: 0.2–1 mL/min for the 1 mL column and 0.5–5 mL/min for the 5 mL column. During washing: 1–2 and 5–10 mL/min respectively. Wash with binding buffer, generally at least 5–10 CV, until a steady absorbance baseline or no material remains in the effluent. Preserve column size and phase; the syringe footnote gives only approximate drop-rate correspondences.",
+      "conditions_to_preserve": [
+        "Keep sample application distinct from washing.",
+        "Retain \"generally at least\", both alternative wash endpoints, and approximate syringe footnote scope."
+      ],
+      "must_not_infer": [
+        "Do not transfer 5 mL/min sample-loading advice to the 1 mL column.",
+        "Do not confuse mL/min, mL column size and CV.",
+        "No duration calculated without volume."
+      ],
+      "human_review_checks": [
+        "Are all four ranges assigned to the correct size and phase?",
+        "Does the cross-page protocol attribution remain explicit?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C08",
+      "question_en": "For albumin elution on HiTrap Blue HP 1 mL, what volumes and flow range are stated for step versus linear-gradient elution?",
+      "question_fr": "Pour l’élution de l’albumine sur HiTrap Blue HP 1 mL, quels volumes et quelle plage de débit sont indiqués pour une élution par palier ou par gradient linéaire ?",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-P",
+          "E121-PH",
+          "E121-E"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "Use elution buffer with one-step or linear-gradient elution as alternatives. Step elution: 5 CV is usually sufficient. Linear gradient: 10–20 CV is usually sufficient. For the 1 mL column, the stated elution flow is 1–2 mL/min. The same passage lists 5–10 mL/min for the separate 5 mL column.",
+      "conditions_to_preserve": [
+        "Retain \"usually sufficient\", not mandatory universal volumes.",
+        "Keep step and gradient alternatives and column-size attribution."
+      ],
+      "must_not_infer": [
+        "No gradient start/end composition, slope or duration invented.",
+        "Do not combine the two alternatives into one sequence.",
+        "Do not transfer the 5 mL-column flow to 1 mL."
+      ],
+      "human_review_checks": [
+        "Are both elution choices and their separate volume ranges retained?",
+        "Is the 1 mL flow correctly assigned?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C09",
+      "question_en": "Which binding-buffer and elution-buffer alternatives does the HiTrap Blue HP albumin protocol list? Keep every concentration, salt and pH with its own formulation.",
+      "question_fr": "Quelles alternatives de tampon de fixation et de tampon d’élution le protocole HiTrap Blue HP pour l’albumine énumère-t-il ? Garde chaque concentration, sel et pH avec sa formulation.",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-P",
+          "E121-BH",
+          "E121-B"
+        ]
+      ],
+      "expected_status": "answer",
+      "expected_answer_en": "Binding: 20 mM sodium phosphate, pH 7.0; OR 50 mM potassium hydrogen phosphate (KH2PO4), pH 7.0. Elution: 0.02 M sodium phosphate with 2 M sodium chloride, pH 7.0; OR 0.05 M potassium hydrogen phosphate with 1.5 M potassium chloride, pH 7.0. Preserve all four formulations separately.",
+      "conditions_to_preserve": [
+        "Keep binding and elution distinct and each OR as an alternative.",
+        "KH2PO4 is a plain-text rendering of the printed subscript formula."
+      ],
+      "must_not_infer": [
+        "Do not mix salts or buffer strengths across alternatives.",
+        "Do not infer that all cross-pairings are interchangeable or validated.",
+        "Do not derive a pH adjustment recipe."
+      ],
+      "human_review_checks": [
+        "Are all concentrations, salts and pH values attached to the right formulation?",
+        "Is the page-120 product scope linked to the page-121 buffer box?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    },
+    {
+      "id": "C10",
+      "question_en": "I load a sample onto HiTrap Blue HP 5 mL at 5 mL/min. How many minutes are required, and does that guarantee complete albumin removal?",
+      "question_fr": "Je charge un échantillon sur HiTrap Blue HP 5 mL à 5 mL/min. Combien de minutes faut-il, et cela garantit-il le retrait complet de l’albumine ?",
+      "required_evidence_sets": [
+        [
+          "E120-H",
+          "E120-P",
+          "E120-W",
+          "E121-PH",
+          "E121-L",
+          "E121-W"
+        ]
+      ],
+      "expected_status": "refuse",
+      "expected_answer_en": "The stated loading rate lies within the 0.5–5 mL/min range for the 5 mL column, but sample volume is unspecified, so a loading duration cannot be calculated. Washing has its own flow range and conditional endpoint, not a universal duration. These selected passages provide no guarantee of complete albumin removal; retain the target-hydrophobicity warning.",
+      "conditions_to_preserve": [
+        "Scope missing duration/guarantee to the selected protocol.",
+        "Distinguish loading time, washing endpoint and actual removal performance."
+      ],
+      "must_not_infer": [
+        "Do not treat 5 mL column size as sample volume or calculate one minute.",
+        "No guaranteed clearance or purity percentage.",
+        "Do not transfer the unrelated 12 h cleaning hold from page 166."
+      ],
+      "human_review_checks": [
+        "Are both the missing sample volume and lack of guarantee stated?",
+        "Is refusal limited to unsupported claims while giving the available range?"
+      ],
+      "reference_status": "pending_human_review",
+      "dataset_role": "prospective_new_section_before_first_measurement_not_independently_authored"
+    }
+  ]
+}

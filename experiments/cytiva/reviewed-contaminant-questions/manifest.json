@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "id": "cytiva-contaminant-questions-reviewed-v01",
+  "completed_on": "2026-10-24",
+  "source_pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+  "counts": {
+    "intents": 10,
+    "formulations": 20,
+    "source_passages": 27,
+    "required_source_passages": 25,
+    "validated_with_reservation": 10,
+    "pending": 0
+  },
+  "expected_response_counts": {
+    "answer": 7,
+    "clarify": 1,
+    "refuse": 2
+  },
+  "not_individually_reviewed_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "publication_allowed": false,
+  "benchmark_executed": false,
+  "benchmark_results_human_validated": false,
+  "historical_json_serialization": "UTF-8 ensure_ascii=False indent=2 LF final newline; insertion order retained",
+  "canonical_link_serialization": "UTF-8 ensure_ascii=False sort_keys=True compact separators",
+  "historical_files": {
+    "review-initial.json": "037b1860520945477b0c8f75e425bd9eee01e032587fcc9fc5ff05751f1c7567",
+    "001-C01.json": "c85891db3d12a6a4a6c5064e93e74fa8296f0a4604cafa9dfbb137244a903737",
+    "002-C02.json": "ca76fef03d4888e2df2bfba46e96afe21f54b3e36f0857f5b280d4ef56fa3358",
+    "003-C03.json": "5506792e5b8bf5623a1c3bae6d937509be65daa9b3011be153e7826fc79c6852",
+    "004-C04.json": "3a61f625d7d2d1113b1044e447e3cf9a4901e16642d8c40efb413a03093fd77d",
+    "005-C05.json": "f205b1b9645411ee531e86fbe45c5d5fcf3f5ac3c39a985ebceb9f9dbe6481d6",
+    "006-C06.json": "1ae63c66036e95c5beadc3505e0a9df02718da9aea1a7faca160b94f8b8ade7a",
+    "007-C07.json": "6a490ac376c041c0b7a9d5e6863518e6b1575bab7a20f2c4b2ce5d85434da21c",
+    "008-C08.json": "626832468f638132f538cd13e2ffbcdfa06b5d8a302bcc6995b2f8fb09e8daba",
+    "009-C09.json": "bc3133a4c439f6a61af41cba1926f1ec6039a305d99b33dd2e9dd7b77fb072f5",
+    "010-C10.json": "50faed59eed04ca78c329e8d63a4cb3bf5d826fb3b84fda05fa939bbfc3217fd",
+    "review-after-001.json": "0c59b9829871cc8b8d9dc98fe2def2c75552be12c9f35eb516bec58857ba2c6a",
+    "review-after-002.json": "ef3fbe5ae03d93022ae68498b9d7490c9d58930539fd17c8a507b02746b7af52",
+    "review-after-003.json": "65046e4d8de364d84ab3fcf24ad98c23e0110b133dd8c22c018657e9d27bfcf8",
+    "review-after-004.json": "677bb36cb0c0ea0e3764c49d62b2737fd2e3d3aa16f2b6fe479636d74f2ea43d",
+    "review-after-005.json": "17cf35a94f4dc0aa3118f2825c5442c6cf6b4949d8b9d18c6581396bcf0c969d",
+    "review-after-006.json": "b2b7b6d2e4cb75f334436ff76b217a02af4dc46415c01544c5673be8ed0bf8ac",
+    "review-after-007.json": "af2cfc0be45af6822f4b82ce20c6febbcb517761f4698150e38b5dd2e6da2847",
+    "review-after-008.json": "bb5bea6474d91c32a4a2968cdfe66f0b63dd533325ab5426a2ec566296964715",
+    "review-after-009.json": "47ff381fec33874f630bd0250713dc22067d78c0947c1a81e99dfa7030de13b3",
+    "review-after-010.json": "1ad3d57278bdc62823be6b64aa5157536ec73ceca82e949272c9c840d9a70874"
+  },
+  "files": {
+    "README.md": "8c17f74e7236e35d4de6c2867945b534c3909fe9eff98ada60db2090e6a74456",
+    "events.json": "67e174c89febe75c1e6e22370a25f9cedb9ce14f42c21a68ddfac2d7f89eb6e5",
+    "provenance.json": "f53106df2bdbde725b348a16e5b373f1eb6ad1558d1ec80df7eb1f30622d5072",
+    "review.json": "1ad3d57278bdc62823be6b64aa5157536ec73ceca82e949272c9c840d9a70874"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-contaminants-human-review.md": "ca03f3ee6571ab713ba61c190448bd3b88e342ac036b21aa9ab0dbef7d58a28c",
+    "docs/experiments/cytiva-contaminants-retrieval-pilot.md": "e0b0957eb6fdab794064b47aca7c8470fd3a7277bcee8ee767a2783f068f7403",
+    "experiments/cytiva/contaminants-pilot-v01/evidence.json": "ccf4a498e16446e30289a7e864de715f3c3bb4377785df607a38f54fd97a84ca",
+    "experiments/cytiva/contaminants-pilot-v01/manifest.json": "afba61dcac0715ba6c381b4f72463e7e742efdf173073e2840b6e1ff019c4c20",
+    "experiments/cytiva/contaminants-pilot-v01/questions.json": "8a1845af727ff3272b93d4680e01e3a2240cd31434ea34280ccf810b774d88ed",
+    "experiments/cytiva/contaminants-pilot-v01/source_context.json": "bda2a9b4a701272db91548da8ae89e1137311fdecf63794af391356aa6ee09e8",
+    "experiments/cytiva/verify_contaminant_questions_package.py": "c1992c5b10e3e328a66bd61be0e25a5caf5a359b849374d9222adac71a36b045",
+    "tests/test_contaminant_questions_package.py": "eea85dcb11a19a0aebb0e23c1652acce16da132eae3dd6f7855e99624b7e64de"
+  },
+  "dependencies": {
+    "experiments/cytiva/cleaning_source_context_v05.json": "2e0ddd90aa39305e25609080cfdb351b028e2ee46d78070c82551fc94f258317",
+    "ingestion/local_passage_retrieval.py": "835daa9fb4de02e2578a0867f26233d198b542d0cc4a44914e25e88ab1c908d4",
+    "ingestion/section_context.py": "469785ff3c2987292b0dbd260a61144643ab79b36ccb7181458586c7f6c0a234"
+  }
+}

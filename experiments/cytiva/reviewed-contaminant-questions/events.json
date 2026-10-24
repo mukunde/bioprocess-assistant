@@ -1,0 +1,395 @@
+{
+  "base_review": {
+    "schema_version": 1,
+    "dataset_id": "cytiva-contaminants-questions-v01",
+    "scope": "Human documentary review of question references, expected answers and reservations; not independent scientific validation, operational authorization or benchmark-result approval.",
+    "preparation_manifest_sha256_lf": "afba61dcac0715ba6c381b4f72463e7e742efdf173073e2840b6e1ff019c4c20",
+    "source_pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "review_status": "pending",
+    "publication_allowed": false,
+    "benchmark_executed": false,
+    "benchmark_results_human_validated": false,
+    "decisions": [
+      {
+        "question_id": "C01",
+        "question_sha256": "1545569eb9f7b30aeef6ec57668ab3e36b40889b133a0db334ad5ac6a3147cbb",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C02",
+        "question_sha256": "f2d57396172c924ef98557ebfa1465685a5a2a4e9c80d87e952ec6f6163e7579",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C03",
+        "question_sha256": "54ba23cb85a671ab4a339fa76b18212105d2eb3f0eaa9ba4f25d37c346626dc0",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C04",
+        "question_sha256": "c38e40bd38ccdf9096822e19d4e628168cf497b6e9e6bd2e79685ac5b2da5104",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C05",
+        "question_sha256": "a7eee798b29fc29fcad59ae8be735b9ce2b876fa6f9ac12104430e3296f21764",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C06",
+        "question_sha256": "15b3f92c9024ee7e989d2f285ae9461f69e5e6d527da834fb1fe1701df974024",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C07",
+        "question_sha256": "508705b4a1bf7b0c510c834b0ea2fde87958fb9c49781cc1a497c332ebe0001c",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C08",
+        "question_sha256": "f9b93877eba6c52354850bfab9e536070e150c57fcf8a086fe6f9d69d2e706b8",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C09",
+        "question_sha256": "0afcec58cc595c3bb224348c11766075e5012a61191f7f71c211b7d41c2fe2bc",
+        "decision": "pending"
+      },
+      {
+        "question_id": "C10",
+        "question_sha256": "ec5e9ec1a28b732ef85c10891fe8d57101b8199f22bc5c7f8bdc1c9637b8ade2",
+        "decision": "pending"
+      }
+    ]
+  },
+  "events": [
+    {
+      "schema_version": 1,
+      "event_id": "001-C01",
+      "recorded_at_utc": "2026-10-23T19:01:33.151101+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C01 avec les limites indiquées, sans diagnostic confirmé ni garantie d’élimination. Enregistre ma décision et passons à C02. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C01",
+      "decision": "validated_with_reservation",
+      "question_sha256": "1545569eb9f7b30aeef6ec57668ab3e36b40889b133a0db334ad5ac6a3147cbb",
+      "evidence_sha256": {
+        "E119-BH": "f06d2f300a4b14f235d23c008a775c083acfc21baeb65202214be7611fd4e798",
+        "E119-B": "102d870b4d76bacee861bf4cfd53386e4915e79eb9e49f6ff77e12cfbcc03597",
+        "E119-BI": "f48db3121cd7343d38a68c266557e1e33fa7e7ec866725c183d0660f0c8cd394"
+      },
+      "quote_sha256": {
+        "E119-BH": "c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b",
+        "E119-B": "3cfa038db9aadb4ae1a986b8a37214e7d658a38d13113b5acf7cd195c1faa4c3",
+        "E119-BI": "dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634"
+      },
+      "reservations": [
+        "Preserve native/supplemented-source alternatives and the manufacturing scope of the serum-free statement.",
+        "Treat HIC and IEX as options requiring selection/optimization.",
+        "No unique cause established for the user sample.",
+        "No guaranteed removal or automatic culture change.",
+        "No pH, salt, flow or column recipe invented."
+      ],
+      "review_before_sha256": "3f090ed416be9e3dc7d0d889ddd3200b97a0876258ddd3dceb09f3bb081aec0f",
+      "previous_event_sha256": null
+    },
+    {
+      "schema_version": 1,
+      "event_id": "002-C02",
+      "recorded_at_utc": "2026-10-23T19:02:32.394427+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C02 avec les limites indiquées, en conservant le caractère d’exemple de HiTrap Phenyl HP et la recommandation de criblage. Enregistre ma décision et passons à C03. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C02",
+      "decision": "validated_with_reservation",
+      "question_sha256": "f2d57396172c924ef98557ebfa1465685a5a2a4e9c80d87e952ec6f6163e7579",
+      "evidence_sha256": {
+        "E119-BH": "f06d2f300a4b14f235d23c008a775c083acfc21baeb65202214be7611fd4e798",
+        "E119-BI": "f48db3121cd7343d38a68c266557e1e33fa7e7ec866725c183d0660f0c8cd394",
+        "E119-S": "a1d773a3c277dc14dd63b8aef312efe53145e12f9319dc66c028ffc00f757700",
+        "E119-X": "706f44f1533504d9720901c870a950d2f25569beb87045a5a0424a127dd1fa1d"
+      },
+      "quote_sha256": {
+        "E119-BH": "c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b",
+        "E119-BI": "dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634",
+        "E119-S": "6741c581e5bc9fdfd5aad6f728f5e9e5dc438d26155cd1a0bde2846ffd1302a8",
+        "E119-X": "b7f9b22e4a4b994c309bba80c118736640dea30ad3fbef4593ac2239ac5f8dcb"
+      },
+      "reservations": [
+        "Keep the recommendation to screen and optimize binding/elution conditions.",
+        "Distinguish the seven-media kit statement from the subset of columns shown in the example.",
+        "Do not prescribe Phenyl HP for every murine antibody.",
+        "Do not infer chromatogram purity or clearance from the plot.",
+        "Do not reuse example buffer settings as a universal protocol.",
+        "The HIC screening advice does not make IEX inapplicable."
+      ],
+      "review_before_sha256": "39ef0535af60118310a7602f2247fb494b22b128bcc1b9362e0d0fb7efe709c5",
+      "previous_event_sha256": "acc3d51fd85c805cf37ff240d66af69773d9cef97df9f8f73e671d5822d8f455"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "003-C03",
+      "recorded_at_utc": "2026-10-23T19:10:07.440422+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C03 avec les limites indiquées, sans pH inventé ni transfert du pH 7,0 du protocole Blue Sepharose. Enregistre ma décision et passons à C04. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C03",
+      "decision": "validated_with_reservation",
+      "question_sha256": "54ba23cb85a671ab4a339fa76b18212105d2eb3f0eaa9ba4f25d37c346626dc0",
+      "evidence_sha256": {
+        "E119-AH": "560834252f86ac7ca896b06fd0ae7d1e17e7598b0efb78d10c5a009464f4db91",
+        "E119-A": "cd11abda4a8b4b98357d343d715d44857d4cbde4f24da2b969b54e596766754a",
+        "E119-I": "596aa1e010eeb3706ff20e8733b4a68bd52dba6917a334f34ebe8121209dbc25"
+      },
+      "quote_sha256": {
+        "E119-AH": "c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051",
+        "E119-A": "135c9b62cfaaacc123b3a52e4da443397519cde3b20467d0d70836c6b4e69ce9",
+        "E119-I": "8c5889325bb188941f1a6ebace48bfa19be64eea938525ddb6fe835a1d313fd4"
+      },
+      "reservations": [
+        "Absence is scoped to the selected albumin/transferrin IEX subsection.",
+        "Preserve \"in some cases\" and \"might\".",
+        "Do not transfer pH 7.0 from the separate Blue-column protocol.",
+        "Do not invent a numeric pH, pI or gradient.",
+        "Do not present similar charge as a confirmed cause."
+      ],
+      "review_before_sha256": "2e0871e8751d6275914481d0706cbb7ba920e4e35c212ec109db57400432c968",
+      "previous_event_sha256": "98bea22c9dfece9f71dec122f0b9d3866d09832a6ddadb587609e852ad18938a"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "004-C04",
+      "recorded_at_utc": "2026-10-23T19:38:42.266869+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C04 avec les limites indiquées, en conservant « la plupart » et la portée de Blue Sepharose limitée à l’albumine dans ce passage. Enregistre ma décision et passons à C05. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C04",
+      "decision": "validated_with_reservation",
+      "question_sha256": "c38e40bd38ccdf9096822e19d4e628168cf497b6e9e6bd2e79685ac5b2da5104",
+      "evidence_sha256": {
+        "E119-AH": "560834252f86ac7ca896b06fd0ae7d1e17e7598b0efb78d10c5a009464f4db91",
+        "E119-A": "cd11abda4a8b4b98357d343d715d44857d4cbde4f24da2b969b54e596766754a",
+        "E119-H": "8b4b50945b1864a226e461af2ae35597a27187af2fb4fc1838bea41b77a000b1",
+        "E119-BL": "9960bb57eb97df43c2841ee51edaf5e4cbdbbcc18eeb808e57e112a753c45989"
+      },
+      "quote_sha256": {
+        "E119-AH": "c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051",
+        "E119-A": "135c9b62cfaaacc123b3a52e4da443397519cde3b20467d0d70836c6b4e69ce9",
+        "E119-H": "650aa882a10835929560563ee04fefca2ec7c25af12fa34e651d6accaebdafd7",
+        "E119-BL": "71be6d87e0a34cb6fde34b45d1a5c6b4c511f046bb624f618755bf126d335d86"
+      },
+      "reservations": [
+        "Preserve \"most\" and conditional applicability to the target.",
+        "Blue Sepharose alternative is albumin-specific in this passage.",
+        "Do not state that every antibody binds HIC.",
+        "Do not extend Blue Sepharose removal to transferrin.",
+        "Do not infer quantitative clearance.",
+        "The albumin-only indication in this passage does not establish a general impossibility of using Blue Sepharose for transferrin.",
+        "Do not infer target recovery or guaranteed purity."
+      ],
+      "review_before_sha256": "976eacfed8af29354934d7bc7bfb5723813f99b03c0ab401493a9564a6f07677",
+      "previous_event_sha256": "ef37ce86e881c3c705e0858e0858d8528c4cbfeee84e5824da23ac3fd19e4b9e"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "005-C05",
+      "recorded_at_utc": "2026-10-23T21:29:18.670774+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C05 avec les limites indiquées, sans contaminant supposé ni technique choisie et sans exiger de diagnostic confirmé. Enregistre ma décision et passons à C06. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C05",
+      "decision": "validated_with_reservation",
+      "question_sha256": "a7eee798b29fc29fcad59ae8be735b9ce2b876fa6f9ac12104430e3296f21764",
+      "evidence_sha256": {
+        "E118-USE": "e2a8bdc2ff7c3840ffb10b98fd83385b790a7ed65111d3e9a86b864c40eb8e4f",
+        "E118-C": "41003cac36c2fe494bbad87d38e7fafdaa5d5bde5965cec2de8d863ec80b866b",
+        "E118-M": "ab80ba27443d8c29eaba52f0034324c828fcfc6ca71bb3ca18565627d243359a",
+        "E120-H": "b44ffd5db220380895ce036292de2ee6b4622e50d5e2163ac78dc5933d871c1a",
+        "E120-U": "751d4f802fed00baa5606609b54c1a262f57b0fdff97df7eff35bd045e830e60",
+        "E120-W": "2b16a3c739d8224b66eac3b9161e3979b843b2f46acfeac8b903cf9dc6ce0b59"
+      },
+      "quote_sha256": {
+        "E118-USE": "353719de9177ea9d6b00bb5aaac1470a50ea3a083db5f615a4e9284091a1fb2e",
+        "E118-C": "b961c80dda07292a0520ff7fda7116e0af15de4498923da84a9a09cce7336ba4",
+        "E118-M": "65a84cb4b12cfd35901e7245c9be1bef786860db8b80fd1b212b38bd6ee0cb3c",
+        "E120-H": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+        "E120-U": "b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478",
+        "E120-W": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f"
+      },
+      "reservations": [
+        "Identification need not be a confirmed diagnosis before clarification can begin.",
+        "Preserve the intended-application criterion and Blue warning.",
+        "Do not assume albumin, aggregates or a unique contaminant.",
+        "Do not automatically choose a column or require unnecessary polishing.",
+        "No regulatory purity threshold or numerical acceptance criterion invented."
+      ],
+      "review_before_sha256": "815126ff4b2ec8bc621f070c2959259e05247208b2f4e64519cbf5bd6eb45926",
+      "previous_event_sha256": "4641b81b20c0766662ae894fe62d86ed3eb7f9e4d9a1a6550bc67b2b2bd1c36b"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "006-C06",
+      "recorded_at_utc": "2026-10-23T21:32:05.206315+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C06 avec les limites indiquées, en conservant l’avertissement sur l’hydrophobicité similaire de la cible. Enregistre ma décision et passons à C07. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C06",
+      "decision": "validated_with_reservation",
+      "question_sha256": "15b3f92c9024ee7e989d2f285ae9461f69e5e6d527da834fb1fe1701df974024",
+      "evidence_sha256": {
+        "E120-H": "b44ffd5db220380895ce036292de2ee6b4622e50d5e2163ac78dc5933d871c1a",
+        "E120-A": "19375a7c12f0af3700d50b9012b4b195511b324d2fe5b640b75272f0461fff1c",
+        "E120-U": "751d4f802fed00baa5606609b54c1a262f57b0fdff97df7eff35bd045e830e60",
+        "E120-W": "2b16a3c739d8224b66eac3b9161e3979b843b2f46acfeac8b903cf9dc6ce0b59"
+      },
+      "quote_sha256": {
+        "E120-H": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+        "E120-A": "d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4",
+        "E120-U": "b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478",
+        "E120-W": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f"
+      },
+      "reservations": [
+        "Apply the warning to an immunoglobulin or other target with similar hydrophobicity.",
+        "Keep the known-albumin use case separate from this exclusion.",
+        "No predicted target recovery or binding percentage.",
+        "No claim that HIC or IEX will necessarily solve this case.",
+        "No guaranteed outcome inferred.",
+        "Do not invent a numerical threshold defining similar hydrophobicity."
+      ],
+      "review_before_sha256": "0ef9890d26611c3b6539de116b4c5d8c94bd91dfd1ba1f10d56585b6a7ce3a02",
+      "previous_event_sha256": "5052f7450b39aff6a42c30015bd0e7baed9e99f21bb6683cd809b6c31fa1315e"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "007-C07",
+      "recorded_at_utc": "2026-10-23T21:32:58.273771+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C07 avec les limites indiquées, en distinguant les débits selon l’étape et la taille de colonne, et en conservant la portée approximative de la note. Enregistre ma décision et passons à C08. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C07",
+      "decision": "validated_with_reservation",
+      "question_sha256": "508705b4a1bf7b0c510c834b0ea2fde87958fb9c49781cc1a497c332ebe0001c",
+      "evidence_sha256": {
+        "E120-H": "b44ffd5db220380895ce036292de2ee6b4622e50d5e2163ac78dc5933d871c1a",
+        "E120-P": "1d54729e048209a923d3d56cb0e818cf2aba0ef5fa0a1003e75eeed0af0f25b0",
+        "E121-PH": "07e306a70f663b92d7e6d0730fa5371f4b3dd5575e8835d127966c90ce981811",
+        "E121-L": "dfc907876a19e72fc2c9118ff945e167879ae0e250f97181c13e8d61ad3d85b3",
+        "E121-W": "a34d8405021895e1eb8364ed5fc96f39b87a87adc41f29cc5a2872d761a02f40",
+        "E121-F": "dd618fcb4006afb14848aa16eb3ca4be483985bdec3694de13645afaf4d0d2fb"
+      },
+      "quote_sha256": {
+        "E120-H": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+        "E120-P": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+        "E121-PH": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+        "E121-L": "c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c",
+        "E121-W": "e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3",
+        "E121-F": "60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9"
+      },
+      "reservations": [
+        "Keep sample application distinct from washing.",
+        "Retain \"generally at least\", both alternative wash endpoints, and approximate syringe footnote scope.",
+        "Do not transfer 5 mL/min sample-loading advice to the 1 mL column.",
+        "Do not confuse mL/min, mL column size and CV.",
+        "No duration calculated without volume.",
+        "Preserve the explicit cross-page attribution of the protocol to HiTrap Blue HP 1 mL and 5 mL columns."
+      ],
+      "review_before_sha256": "c9c21173b93710a1612d8e3ffe495248fde14c33374d099ee45e979cee2785b5",
+      "previous_event_sha256": "f1cc5f0f80cdd0ff568c743f90dbd506004d984ce0163c2a741ce9ffee3c644b"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "008-C08",
+      "recorded_at_utc": "2026-10-23T21:33:48.326115+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C08 avec les limites indiquées, en conservant « généralement suffisants » et les deux alternatives d’élution. Enregistre ma décision et passons à C09. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C08",
+      "decision": "validated_with_reservation",
+      "question_sha256": "f9b93877eba6c52354850bfab9e536070e150c57fcf8a086fe6f9d69d2e706b8",
+      "evidence_sha256": {
+        "E120-H": "b44ffd5db220380895ce036292de2ee6b4622e50d5e2163ac78dc5933d871c1a",
+        "E120-P": "1d54729e048209a923d3d56cb0e818cf2aba0ef5fa0a1003e75eeed0af0f25b0",
+        "E121-PH": "07e306a70f663b92d7e6d0730fa5371f4b3dd5575e8835d127966c90ce981811",
+        "E121-E": "7fa7d9ff1fd2d9b46b1b75d9e13af268f4f6f592da8432445d8b3ac9154caa55"
+      },
+      "quote_sha256": {
+        "E120-H": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+        "E120-P": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+        "E121-PH": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+        "E121-E": "e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e"
+      },
+      "reservations": [
+        "Retain \"usually sufficient\", not mandatory universal volumes.",
+        "Keep step and gradient alternatives and column-size attribution.",
+        "No gradient start/end composition, slope or duration invented.",
+        "Do not combine the two alternatives into one sequence.",
+        "Do not transfer the 5 mL-column flow to 1 mL.",
+        "Preserve the explicit cross-page attribution of the protocol to HiTrap Blue HP columns."
+      ],
+      "review_before_sha256": "d527c114f1c34384184228eb24c219708c6b1a7ca332fff8a9547ef6097b94ad",
+      "previous_event_sha256": "89c6ab000c1de3b7325399367ef50434dbb5c45ac4c3d1a496b3878aa6025cb9"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "009-C09",
+      "recorded_at_utc": "2026-10-23T23:29:18.116831+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C09 avec les limites indiquées, en conservant les quatre formulations séparées, sans appariement ni correction de nomenclature déduits. Enregistre ma décision et passons à C10. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C09",
+      "decision": "validated_with_reservation",
+      "question_sha256": "0afcec58cc595c3bb224348c11766075e5012a61191f7f71c211b7d41c2fe2bc",
+      "evidence_sha256": {
+        "E120-H": "b44ffd5db220380895ce036292de2ee6b4622e50d5e2163ac78dc5933d871c1a",
+        "E120-P": "1d54729e048209a923d3d56cb0e818cf2aba0ef5fa0a1003e75eeed0af0f25b0",
+        "E121-BH": "efd84bbd6b07820c63d2fc12d37ce3fd743d29b5070a4a58b6945a0c88ed58e3",
+        "E121-B": "cb1ec03912fa662eeeb727f39617ab325e9cc64d38f6c3b97ab764f1694742fd"
+      },
+      "quote_sha256": {
+        "E120-H": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+        "E120-P": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+        "E121-BH": "86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e",
+        "E121-B": "bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8"
+      },
+      "reservations": [
+        "Keep binding and elution distinct and each OR as an alternative.",
+        "KH2PO4 is a plain-text rendering of the printed subscript formula.",
+        "Do not mix salts or buffer strengths across alternatives.",
+        "Do not infer that all cross-pairings are interchangeable or validated.",
+        "Do not derive a pH adjustment recipe.",
+        "Preserve all four formulations separately; infer no binding/elution pairing.",
+        "Preserve the source chemical names without inferred nomenclature correction; documentary fidelity is not independent chemical-nomenclature validation.",
+        "Preserve the cross-page attribution of the buffer box to the HiTrap Blue HP protocol."
+      ],
+      "review_before_sha256": "a57a1e4490b7c12c605750b48002fdec41c7b4a8823e860808ecf6f0095d7582",
+      "previous_event_sha256": "0ab1e96ed4ff484229c77037f97fa224d2e2145641c75f285505bbbf0c52de9a"
+    },
+    {
+      "schema_version": 1,
+      "event_id": "010-C10",
+      "recorded_at_utc": "2026-10-23T23:39:41.583626+00:00",
+      "reviewer": "project_user_via_conversation",
+      "original_human_message": "Je valide C10 avec les limites indiquées, sans durée déduite ni garantie de retrait complet de l’albumine. Enregistre ma décision et fais le bilan final de la revue des dix questions. Aucun LLM, API payante, commit ni push.",
+      "question_id": "C10",
+      "decision": "validated_with_reservation",
+      "question_sha256": "ec5e9ec1a28b732ef85c10891fe8d57101b8199f22bc5c7f8bdc1c9637b8ade2",
+      "evidence_sha256": {
+        "E120-H": "b44ffd5db220380895ce036292de2ee6b4622e50d5e2163ac78dc5933d871c1a",
+        "E120-P": "1d54729e048209a923d3d56cb0e818cf2aba0ef5fa0a1003e75eeed0af0f25b0",
+        "E120-W": "2b16a3c739d8224b66eac3b9161e3979b843b2f46acfeac8b903cf9dc6ce0b59",
+        "E121-PH": "07e306a70f663b92d7e6d0730fa5371f4b3dd5575e8835d127966c90ce981811",
+        "E121-L": "dfc907876a19e72fc2c9118ff945e167879ae0e250f97181c13e8d61ad3d85b3",
+        "E121-W": "a34d8405021895e1eb8364ed5fc96f39b87a87adc41f29cc5a2872d761a02f40"
+      },
+      "quote_sha256": {
+        "E120-H": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+        "E120-P": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+        "E120-W": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f",
+        "E121-PH": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+        "E121-L": "c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c",
+        "E121-W": "e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3"
+      },
+      "reservations": [
+        "Scope missing duration/guarantee to the selected protocol.",
+        "Distinguish loading time, washing endpoint and actual removal performance.",
+        "Do not treat 5 mL column size as sample volume or calculate one minute.",
+        "No guaranteed clearance or purity percentage.",
+        "Do not transfer the unrelated 12 h cleaning hold from page 166.",
+        "Preserve the target-hydrophobicity warning and cross-page product/protocol attribution."
+      ],
+      "review_before_sha256": "1c41da69adfcef63caeac37ca6dd57f02df618f20dd27285a4394fd2a961095b",
+      "previous_event_sha256": "829934867222cacfe90fb94b519313b93feb1277210dc7c4806435ecbe244f61"
+    }
+  ]
+}

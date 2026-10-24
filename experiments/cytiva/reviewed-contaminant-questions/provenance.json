@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "preparation_manifest": {
+    "schema_version": 1,
+    "status": "prepared_pending_human_reference_review_not_executed",
+    "prepared_on": "2026-10-23",
+    "base_commit": "3eabcfb95b9470da27029c8f92263c0abf5819cb",
+    "source_pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pages_1based": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "question_count": 10,
+    "formulation_count": 20,
+    "passage_count": 27,
+    "expected_response_counts": {
+      "answer": 7,
+      "clarify": 1,
+      "refuse": 2
+    },
+    "files_sha256_lf": {
+      "experiments/cytiva/contaminants-pilot-v01/evidence.json": "ccf4a498e16446e30289a7e864de715f3c3bb4377785df607a38f54fd97a84ca",
+      "experiments/cytiva/contaminants-pilot-v01/questions.json": "8a1845af727ff3272b93d4680e01e3a2240cd31434ea34280ccf810b774d88ed",
+      "experiments/cytiva/contaminants-pilot-v01/source_context.json": "bda2a9b4a701272db91548da8ae89e1137311fdecf63794af391356aa6ee09e8",
+      "docs/experiments/cytiva-contaminants-retrieval-pilot.md": "e0b0957eb6fdab794064b47aca7c8470fd3a7277bcee8ee767a2783f068f7403"
+    },
+    "method_frozen_from": {
+      "experiments/cytiva/cleaning_source_context_v05.json": "2e0ddd90aa39305e25609080cfdb351b028e2ee46d78070c82551fc94f258317",
+      "ingestion/local_passage_retrieval.py": "835daa9fb4de02e2578a0867f26233d198b542d0cc4a44914e25e88ab1c908d4",
+      "ingestion/section_context.py": "469785ff3c2987292b0dbd260a61144643ab79b36ccb7181458586c7f6c0a234"
+    },
+    "benchmark_executed": false,
+    "llm_calls": 0,
+    "api_calls": 0,
+    "publication_allowed": false,
+    "reference_review_status": "pending",
+    "source_scope_review_status": "pending",
+    "limitation": "New-section prospective development set; known method, assistant-authored; not independently blind",
+    "local_artifacts": "data/experiments/cytiva/contaminants-pilot-v01/"
+  },
+  "preparation_manifest_sha256_lf": "afba61dcac0715ba6c381b4f72463e7e742efdf173073e2840b6e1ff019c4c20",
+  "source": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "document_reference": "CY13981-25Jan21-HB",
+    "edition_metadata_origin": "Existing project registry; not newly certified"
+  },
+  "source_page_metadata": [
+    {
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "text_sha256": "3e91e99e84a23e0191a4d16cb72f6a1fd258045b2b80b1e7456a0e31cd88649f",
+      "text_length": 2453,
+      "printed_label_visually_checked": true
+    },
+    {
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "printed_page": "119",
+      "text_sha256": "cf386538499b3c0ede913ede23e2a55d57b2139e34dba6c51b0750c693cc7ff9",
+      "text_length": 2837,
+      "printed_label_visually_checked": true
+    },
+    {
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "text_sha256": "476326aef4238cefed65fad842bfdd6cd9ea0e97f31108de68ec60fc4ad8277d",
+      "text_length": 1974,
+      "printed_label_visually_checked": true
+    },
+    {
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "text_sha256": "779bc7ff6525151dcf0ae4bbf2af3d06fe8a746d4f265787017cd2516edbb27c",
+      "text_length": 2673,
+      "printed_label_visually_checked": true
+    }
+  ],
+  "preparation_verification": {
+    "status": "passed",
+    "reference_review_status": "pending",
+    "pages_checked": [
+      118,
+      119,
+      120,
+      121
+    ],
+    "passages_checked": 27,
+    "bilingual_intents": 10,
+    "formulations": 20,
+    "expected_response_counts": {
+      "answer": 7,
+      "clarify": 1,
+      "refuse": 2
+    },
+    "source_dependency_and_reachability_check": "passed",
+    "required_bundle_tokens_preflight": {
+      "C01": 442,
+      "C02": 586,
+      "C03": 420,
+      "C04": 514,
+      "C05": 1022,
+      "C06": 614,
+      "C07": 993,
+      "C08": 687,
+      "C09": 682,
+      "C10": 993
+    },
+    "budget_preflight_scope": "Reference feasibility only; no query ranking, retrieval run or answer evaluation",
+    "previous_files_unchanged": 315,
+    "local_documentation_links": 4,
+    "network_attempts": [],
+    "llm_calls": 0,
+    "api_calls": 0,
+    "benchmark_executed": false,
+    "tokenizer": {
+      "name": "cl100k_base",
+      "tiktoken_version": "0.12.0",
+      "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+    }
+  },
+  "preparation_verification_sha256_lf": "57ebf2c36ab795c01695d7955c6805ae0f6e81724c79139a964907581d16decb",
+  "final_review_verification": {
+    "status": "passed",
+    "review_status": "completed_with_reservations",
+    "validated_with_reservations": 10,
+    "pending": 0,
+    "formulations": 20,
+    "required_source_records": 25,
+    "candidate_corpus_records": 27,
+    "not_individually_covered_by_question_reviews": [
+      "E118-I",
+      "E121-EQ"
+    ],
+    "event_chain_verified": 10,
+    "intermediate_states_reconstructed": 10,
+    "original_messages_preserved": true,
+    "frozen_preparation_unchanged": true,
+    "earlier_files_unchanged": 315,
+    "benchmark_executed": false,
+    "llm_calls": 0,
+    "api_calls": 0,
+    "commit_performed": false,
+    "push_performed": false
+  },
+  "final_review_verification_sha256_lf": "66ca71680c090352fe312eb279dcbdd5b1be84741784d5cce69b2f8899602eb8",
+  "earlier_preservation_inventory_sha256_lf": "68cf94ded52b2fbc9a487e971c1ab43e3faf08170e231391d82b632fe2dfbbd0",
+  "earlier_preservation_file_count": 315,
+  "not_individually_reviewed_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "benchmark_executed": false,
+  "scientific_validation": false,
+  "production_retrieval_validated": false,
+  "publication_allowed": false,
+  "scope": "Documentary reference review only; candidate source topology is not a validated production policy. No C01-C10 retrieval run exists."
+}

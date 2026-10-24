@@ -1,0 +1,19 @@
+{
+  "status": "development_not_independent",
+  "files": {
+    "README.md": "d471737d73e9cebddda1ba3945d14b8fc6fc6ae4ab87ac694116c0975715ac61",
+    "provenance.json": "d01fc9093ebd6384cae133f7b114e0cc2c68d12abcd1d4d32b67a06035414553",
+    "results.json": "a6eafa17b2075106671be673fe6da1251894b86007a3669daaf506eeb21364df"
+  },
+  "supporting_files": {
+    "docs/experiments/cytiva-polarity-context-results.md": "e51f0cc3a87d1bfa14de99d3499b40d924d203767135f0579d86ee5b87861413",
+    "experiments/cytiva/polarity_navigation_retrieval.py": "6754705a1f6736c950d279fb5b8d45083bc455f11e9f2be1921825a4bcb9ae44",
+    "experiments/cytiva/section_navigation_v05.json": "b0ce045b49972542739b6d784ffd121ebe6acc9577b7615cd3f89cca4e90596d",
+    "experiments/cytiva/verify_polarity_navigation_package.py": "4730d4dda48fc61ebb5153c3ef46fd2299215fbbbcff9773c14731647b790aad",
+    "ingestion/polarity_passage_context.py": "d2a0400efea2c3927019b57515664de741720334e4ce4b77ba218a3807a249bb",
+    "tests/test_polarity_navigation_package.py": "c2501037ffa6f05287d0a207f1360441e82513417ad40728340a2c3a7c02ba96",
+    "tests/test_polarity_passage_context.py": "e324f357f43fdd7aa7fee742afe84284461a13010340f0e74994a76f62d74c47"
+  },
+  "publication_allowed": false,
+  "v04_export_manifest_sha256_lf": "2a55bbebc402c6d4cd4507857b1297ffeb10b2301581f746d67f2d193462bcee"
+}

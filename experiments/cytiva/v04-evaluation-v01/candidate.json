@@ -1,0 +1,448 @@
+{
+  "id": "cytiva-v04-prospective-candidate-v01",
+  "method_lock_sha256_lf": "972a46be1668fbbe941502a2fc579f3be6786e8675a0be89095ce21e9259ab08",
+  "config": {
+    "id": "cytiva-compositional-section-navigation-v04",
+    "status": "development_after_v03b_V01_V12_results_not_prospective_validation",
+    "top_k": 6,
+    "max_tokens": 2048,
+    "vocabulary": {
+      "phrases": {
+        "ionexchange": [
+          "ion exchange",
+          "echange ionique",
+          "echange d ions",
+          "iex"
+        ],
+        "hydrophobicinteraction": [
+          "hydrophobic interaction",
+          "interaction hydrophobe",
+          "interactions hydrophobes",
+          "hic"
+        ],
+        "sizeexclusion": [
+          "size exclusion",
+          "exclusion sterique",
+          "sec"
+        ],
+        "unknown": [
+          "not identified",
+          "non identifie",
+          "pas identifie",
+          "unidentified",
+          "inconnu",
+          "inconnue"
+        ]
+      },
+      "words": {
+        "albumine": "albumin",
+        "transferrine": "transferrin",
+        "anticorps": "antibody",
+        "antibodies": "antibody",
+        "immunoglobulines": "immunoglobulin",
+        "immunoglobulins": "immunoglobulin",
+        "bovines": "bovine",
+        "bovins": "bovine",
+        "murine": "mouse",
+        "murin": "mouse",
+        "murins": "mouse",
+        "hydrophobicite": "hydrophobicity",
+        "hydrophobicites": "hydrophobicity",
+        "hydrophobicities": "hydrophobicity",
+        "hydrophobic": "hydrophobicity",
+        "echantillon": "sample",
+        "echantillons": "sample",
+        "samples": "sample",
+        "impur": "impurity",
+        "impure": "impurity",
+        "impurete": "impurity",
+        "impuretes": "impurity",
+        "impurities": "impurity",
+        "contaminants": "contaminant",
+        "affinite": "affinity",
+        "retrait": "removal",
+        "retirer": "removal",
+        "remove": "removal",
+        "removed": "removal",
+        "restent": "remain",
+        "reste": "remain",
+        "remains": "remain",
+        "cible": "target",
+        "cibles": "target",
+        "hote": "host",
+        "bovine": "bovine",
+        "proteique": "protein",
+        "affinitaire": "affinity",
+        "application": "application",
+        "prevue": "intended",
+        "aval": "downstream",
+        "liaison": "binding",
+        "elution": "elution",
+        "chargement": "loading",
+        "load": "loading",
+        "washing": "wash",
+        "lavage": "wash",
+        "equilibrage": "equilibration",
+        "equilibration": "equilibration",
+        "tampons": "buffer",
+        "buffers": "buffer",
+        "gouttes": "drops",
+        "interference": "interfere",
+        "interferences": "interfere",
+        "genent": "interfere",
+        "affecte": "affects"
+      }
+    },
+    "source_roles": {
+      "E118-USE": "applicability",
+      "E118-C": "contaminant_context",
+      "E118-M": "method_selection",
+      "E118-I": "conditional_iex",
+      "E119-BH": "section_heading",
+      "E119-B": "source_context",
+      "E119-BI": "method_alternatives",
+      "E119-S": "screening_advice",
+      "E119-X": "scoped_example",
+      "E119-AH": "section_heading",
+      "E119-A": "method_alternatives",
+      "E119-I": "residual_contaminants",
+      "E119-H": "conditional_hic",
+      "E119-BL": "albumin_specific_alternative",
+      "E120-H": "section_heading",
+      "E120-A": "product_scope_and_mechanism",
+      "E120-U": "conditional_use",
+      "E120-W": "warning",
+      "E120-P": "cross_page_protocol_scope",
+      "E121-BH": "buffer_heading",
+      "E121-B": "buffer_alternatives",
+      "E121-PH": "protocol_heading",
+      "E121-EQ": "equilibration",
+      "E121-L": "sample_application",
+      "E121-W": "wash_conditions",
+      "E121-E": "elution_alternatives",
+      "E121-F": "sample_application_footnote"
+    },
+    "groups": {
+      "general": {
+        "members": [
+          "E118-USE",
+          "E118-C",
+          "E118-M"
+        ]
+      },
+      "bovine": {
+        "root": "E119-BH"
+      },
+      "albumin": {
+        "root": "E119-AH"
+      },
+      "blue": {
+        "root": "E120-H"
+      }
+    },
+    "signals": {
+      "unknown": [
+        "unknown",
+        "unidentified",
+        "not identified",
+        "inconnu",
+        "inconnue",
+        "non identifié",
+        "pas identifié",
+        "do not know what",
+        "don’t know what",
+        "je ne sais pas de quoi",
+        "undetermined",
+        "remain to be determined",
+        "restent a determiner",
+        "reste a determiner",
+        "not yet known",
+        "pas encore connu"
+      ],
+      "purification_context": [
+        "affinity",
+        "affinité",
+        "purification",
+        "antibody",
+        "anticorps",
+        "contaminant",
+        "impurity",
+        "impure",
+        "protein signal",
+        "signal protéique"
+      ],
+      "general_reason": [
+        "why",
+        "pourquoi",
+        "principles",
+        "principes",
+        "different purification problems",
+        "problèmes de purification différents"
+      ],
+      "direct_use": [
+        "intended application",
+        "application prévue",
+        "minor contaminants",
+        "contaminants mineurs",
+        "used directly",
+        "utilisé directement"
+      ],
+      "albumin": [
+        "albumin",
+        "albumine"
+      ],
+      "transferrin": [
+        "transferrin",
+        "transferrine"
+      ],
+      "bovine": [
+        "bovine",
+        "bovines",
+        "bovins",
+        "host",
+        "hôte"
+      ],
+      "immunoglobulin": [
+        "immunoglobulins",
+        "immunoglobulines",
+        "immunoglobulin"
+      ],
+      "screen": [
+        "selection kit",
+        "phenyl",
+        "screen",
+        "screening",
+        "criblage"
+      ],
+      "blue": [
+        "blue sepharose",
+        "hitrap blue",
+        "blue column",
+        "colonne blue"
+      ],
+      "iex": [
+        "iex",
+        "ion exchange",
+        "échange ionique",
+        "cation exchange",
+        "cation-exchange",
+        "echange cationique"
+      ],
+      "hic": [
+        "hic",
+        "hydrophobic interaction",
+        "interaction hydrophobe"
+      ],
+      "loading": [
+        "loading",
+        "load",
+        "sample application",
+        "chargement",
+        "charger",
+        "je charge",
+        "nous chargeons",
+        "appliquer l’échantillon"
+      ],
+      "washing": [
+        "wash",
+        "washing",
+        "lavage",
+        "laver"
+      ],
+      "elution": [
+        "elution",
+        "élution",
+        "elute",
+        "éluer"
+      ],
+      "buffer": [
+        "binding buffer",
+        "elution buffer",
+        "buffer alternatives",
+        "buffer preparation",
+        "tampon",
+        "tampons"
+      ],
+      "equilibration": [
+        "equilibration",
+        "equilibrate",
+        "équilibrage",
+        "équilibrer"
+      ],
+      "completion": [
+        "guarantee complete",
+        "complete albumin removal",
+        "retrait complet",
+        "élimination complète"
+      ],
+      "source_condition": [
+        "pI",
+        "isoelectric",
+        "isoelectrique"
+      ],
+      "pressure": [
+        "pressure",
+        "pression"
+      ],
+      "drop_note": [
+        "drops",
+        "drop rate",
+        "gouttes",
+        "note sur la seringue",
+        "syringe note"
+      ],
+      "generic_hitrap": [
+        "hitrap"
+      ],
+      "formulation": [
+        "formulations",
+        "buffer preparation",
+        "preparation des tampons",
+        "buffer alternatives",
+        "tampons alternatifs"
+      ],
+      "method_explanation": [
+        "how",
+        "comment"
+      ]
+    },
+    "fallback_relative_score": 0.65,
+    "publication_allowed": false,
+    "interpretation": "Opt-in development source routing only. Finite clause rules, not general semantic parsing, approval or answer generation. Generic HiTrap note navigation requires unique eligible source-family support.",
+    "phase_contrast_markers": [
+      "rather than",
+      "plutôt que"
+    ]
+  },
+  "source_runtime_policy": {
+    "id": "cytiva-contaminants-source-context-v01",
+    "status": "candidate_pending_human_reference_review",
+    "scope": "Source-derived dependencies declared before first search; not automatic whole-manual chunking",
+    "retrieval": {
+      "method": "BM25",
+      "k1": 1.2,
+      "b": 0.75,
+      "top_k": 6,
+      "bilingual_aliases": true,
+      "index_context": true
+    },
+    "context": {
+      "max_tokens": 2048,
+      "tokenizer": "cl100k_base",
+      "scope": "Full serialized source-context JSON, no answer prompt",
+      "selection": "Whole transitive source bundles; exact quotes; deduplicate; skip whole over-budget bundle"
+    },
+    "requires": {
+      "E118-USE": [],
+      "E118-C": [],
+      "E118-M": [],
+      "E118-I": [],
+      "E119-BH": [],
+      "E119-B": [
+        "E119-BH"
+      ],
+      "E119-BI": [
+        "E119-BH"
+      ],
+      "E119-S": [
+        "E119-BH"
+      ],
+      "E119-X": [
+        "E119-BH"
+      ],
+      "E119-AH": [],
+      "E119-A": [
+        "E119-AH"
+      ],
+      "E119-I": [
+        "E119-AH"
+      ],
+      "E119-H": [
+        "E119-AH"
+      ],
+      "E119-BL": [
+        "E119-AH"
+      ],
+      "E120-H": [],
+      "E120-A": [
+        "E120-H"
+      ],
+      "E120-U": [
+        "E120-H"
+      ],
+      "E120-W": [
+        "E120-H"
+      ],
+      "E120-P": [
+        "E120-H",
+        "E120-W"
+      ],
+      "E121-BH": [
+        "E120-P"
+      ],
+      "E121-B": [
+        "E121-BH"
+      ],
+      "E121-PH": [
+        "E120-P"
+      ],
+      "E121-EQ": [
+        "E121-PH"
+      ],
+      "E121-L": [
+        "E121-PH",
+        "E121-F"
+      ],
+      "E121-W": [
+        "E121-PH"
+      ],
+      "E121-E": [
+        "E121-PH"
+      ],
+      "E121-F": [
+        "E121-PH"
+      ]
+    },
+    "searchable_ids": [
+      "E118-USE",
+      "E118-C",
+      "E118-M",
+      "E119-B",
+      "E119-BI",
+      "E119-S",
+      "E119-X",
+      "E119-A",
+      "E119-I",
+      "E119-H",
+      "E119-BL",
+      "E120-A",
+      "E120-U",
+      "E120-W",
+      "E121-B",
+      "E121-L",
+      "E121-W",
+      "E121-E"
+    ],
+    "quarantined_ids": [
+      "E118-I",
+      "E121-EQ"
+    ],
+    "publication_allowed": false,
+    "comparison": {
+      "baseline_top_k": 5,
+      "candidate_top_k": 6,
+      "same_corpus_and_policy": true
+    },
+    "section_policy": "Generic atomic assembly only; do not reuse page-166/167 pressure-flow family-overview IDs in this corpus",
+    "freeze": "Do not change aliases, ranking, source dependencies or answers after seeing the first result. Version any later tuning separately."
+  },
+  "pending_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "timing_repetitions": 3,
+  "run_directory": "data/experiments/cytiva/v04-evaluation-v01/locked-run",
+  "human_review_path": "data/experiments/cytiva/v04-evaluation-v01/human-review.json",
+  "automatic_adoption": false,
+  "publication_allowed": false
+}

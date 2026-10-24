@@ -1,0 +1,90 @@
+{
+  "id": "cytiva-v04-prospective-queries-v01",
+  "scope": "Same known reviewed corpus; new prospective wording/composition after method lock; no query search or planning performed",
+  "questions": [
+    {
+      "id": "W01",
+      "family": "unresolved_identity_paraphrase",
+      "question_en": "A second protein band remains after antibody affinity purification. Its origin is unresolved and the next assay has not been specified. What should be clarified before deciding whether another separation is needed?",
+      "question_fr": "Une seconde bande protéique persiste après purification d’un anticorps par affinité. Son origine reste indéterminée et l’analyse suivante n’est pas précisée. Que faut-il clarifier avant de décider si une autre séparation est nécessaire ?",
+      "synthetic_case": false
+    },
+    {
+      "id": "W02",
+      "family": "two_independent_applicability_decisions",
+      "question_en": "Consider two independent preparations. Minor contaminants in preparation A do not interfere with its intended laboratory assay. In preparation B the target has hydrophobicity similar to albumin: may Blue Sepharose be used for albumin removal? Explain each statement within its own conditions.",
+      "question_fr": "Considère deux préparations indépendantes. Les contaminants mineurs de la préparation A n’interfèrent pas avec l’analyse de laboratoire prévue. Dans la préparation B, la cible a une hydrophobicité similaire à celle de l’albumine : peut-on utiliser Blue Sepharose pour retirer l’albumine ? Explique chaque affirmation avec ses propres conditions.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W03",
+      "family": "postposed_phase_exclusion",
+      "question_en": "For HiTrap Blue HP 5 mL, compare step elution and linear-gradient elution: state the buffer type, column volumes and flow. Washing is outside the scope of this question.",
+      "question_fr": "Pour HiTrap Blue HP 5 mL, compare l’élution par palier et par gradient linéaire : indique le type de tampon, les volumes de colonne et le débit. Le lavage est hors du périmètre de cette question.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W04",
+      "family": "imperative_phase_exclusion",
+      "question_en": "HiTrap Blue HP 1 mL: exclude loading and elution from the explanation; report only the washing buffer, flow, quantity guidance and stopping criteria.",
+      "question_fr": "HiTrap Blue HP 1 mL : écarte le chargement et l’élution de l’explication ; indique uniquement le tampon, le débit, l’indication de quantité et les critères de fin du lavage.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W05",
+      "family": "formulations_plus_washing",
+      "question_en": "For HiTrap Blue HP 1 mL, list the binding-buffer alternatives and then describe washing flow, quantity guidance and endpoint. Elution settings are not requested.",
+      "question_fr": "Pour HiTrap Blue HP 1 mL, liste les formulations alternatives du tampon de liaison, puis décris le débit, l’indication de quantité et le critère de fin du lavage. Les paramètres d’élution ne sont pas demandés.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W06",
+      "family": "loading_and_scoped_footnote",
+      "question_en": "For sample application on HiTrap Blue HP 5 mL, give the loading-flow range and the syringe note’s approximate drops-per-minute correspondence for this column. Leave washing and elution out.",
+      "question_fr": "Pour l’application de l’échantillon sur HiTrap Blue HP 5 mL, donne la plage de débit de chargement et la correspondance approximative en gouttes par minute de la note sur la seringue pour cette colonne. Laisse de côté le lavage et l’élution.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W07",
+      "family": "screening_plus_separate_buffer_preparation",
+      "question_en": "For two separate tasks, explain what the HiTrap HIC Selection Kit offers for mouse-antibody screening, then list the binding and elution buffer alternatives for a different HiTrap Blue HP albumin-removal preparation. Do not transfer operating conditions between the tasks.",
+      "question_fr": "Pour deux tâches distinctes, explique ce que propose le HiTrap HIC Selection Kit pour le criblage d’un anticorps de souris, puis liste les formulations alternatives des tampons de liaison et d’élution pour une autre préparation d’élimination de l’albumine avec HiTrap Blue HP. Ne transfère pas les conditions opératoires entre les deux tâches.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W08",
+      "family": "residual_contaminants_and_alternative_mechanism",
+      "question_en": "Albumin and transferrin remain after an IEX purification. Explain the manual’s possible charge-related reason and its HIC alternative, preserving the limits of both statements. I am not asking for Blue Sepharose or numerical optimization settings.",
+      "question_fr": "L’albumine et la transferrine restent après une purification IEX. Explique la raison possible liée à la charge et l’alternative HIC du manuel, en conservant les limites des deux affirmations. Je ne demande ni Blue Sepharose ni des paramètres chiffrés d’optimisation.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W09",
+      "family": "supported_washing_plus_unavailable_pressure",
+      "question_en": "For HiTrap Blue HP 5 mL, give the reviewed washing flow, volume guidance and endpoint, and also the maximum permitted pressure in bar. If the pressure is not stated in the selected reviewed excerpts, say so rather than deriving it from the flow.",
+      "question_fr": "Pour HiTrap Blue HP 5 mL, donne le débit de lavage, l’indication de volume et le critère de fin revus, ainsi que la pression maximale admissible en bar. Si la pression n’est pas indiquée dans les extraits revus sélectionnés, dis-le sans la déduire du débit.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W10",
+      "family": "pending_iex_condition_without_reconstruction",
+      "question_en": "Using only approved passages, can you position the cation-exchange pH relative to the antibody and impurity pI values? The conditional source has not been approved. State what the general IEX passage supports without reconstructing the missing inequalities.",
+      "question_fr": "En utilisant uniquement les passages approuvés, peux-tu situer le pH de l’échange cationique par rapport aux pI de l’anticorps et des impuretés ? La source conditionnelle n’a pas été approuvée. Précise ce que permet le passage général sur IEX sans reconstruire les inégalités manquantes.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W11",
+      "family": "pending_equilibration_plus_supported_washing",
+      "question_en": "For HiTrap Blue HP 1 mL, I need equilibration settings as well as washing flow, quantity guidance and endpoint. Keep the two phases separate and leave any unapproved equilibration information unavailable instead of borrowing washing values.",
+      "question_fr": "Pour HiTrap Blue HP 1 mL, je souhaite les paramètres d’équilibrage ainsi que le débit, l’indication de quantité et le critère de fin du lavage. Garde les deux phases distinctes et laisse indisponibles les informations d’équilibrage non approuvées au lieu d’emprunter les valeurs du lavage.",
+      "synthetic_case": false
+    },
+    {
+      "id": "W12",
+      "family": "synthetic_contradictory_phase_request",
+      "question_en": "For HiTrap Blue HP 1 mL, include the elution flow and volumes, but exclude all elution information from this same reply. Resolve this contradictory scope before supplying any operating parameters.",
+      "question_fr": "Pour HiTrap Blue HP 1 mL, inclus le débit et les volumes d’élution, mais exclus toute information d’élution de cette même réponse. Clarifie ce périmètre contradictoire avant de fournir des paramètres opératoires.",
+      "synthetic_case": true
+    }
+  ]
+}

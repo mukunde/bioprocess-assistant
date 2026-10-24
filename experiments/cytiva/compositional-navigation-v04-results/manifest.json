@@ -1,0 +1,24 @@
+{
+  "status": "development_not_independent",
+  "files": {
+    "README.md": "72597525e8206e465752eb3da40e353f6e8d9600d8c4b16a60f50a2cceee6bfa",
+    "provenance.json": "786d6a23477278851559de04dd9e56f078c643312852f2702d4cd092195de10b",
+    "results.json": "a7401fbed60bc15ebbcee873f90d35b08f0f236584cc8b32dde47a408cab2315"
+  },
+  "supporting_files": {
+    "README.md": "70ebede6142fb854af232d9d435b4ca9ad7133af4b76b38b838fa0cc92e65303",
+    "docs/experiments/cytiva-compositional-context-results.md": "6f21186cf57d8ddde1c1bc3df499f318088b0e58807259f29d199ce632ae12a2",
+    "experiments/cytiva/compositional_navigation_retrieval.py": "f8cfee21fa0764f58b621a969674f0dd4b2a26b1e2b5e93117d4aff9ea1b8183",
+    "experiments/cytiva/section_navigation_v04.json": "cc8439f575216400fcd531e8a3e39f15d7bf438cce1f2f50e8dbd7b17a05e41e",
+    "experiments/cytiva/verify_compositional_navigation_package.py": "2a11cff7ae1d9cc6089e0eff83990c328676090b8fbb5fb72d6a029a3528f61d",
+    "ingestion/compositional_passage_context.py": "adf0166560018185979f83c888b950b5ac6d82fe424d1cdcf44cb6fd7d0ef82f",
+    "tests/README.md": "190eda71737d4b4659260ba7330c7a6d6535c4946cb8239a11fd42e863df716c",
+    "tests/__init__.py": "5b340ba7046253666ebe7951a84584aa3916389d3ee6e30fa6d812b36a2c1d06",
+    "tests/test_compositional_navigation_package.py": "dba935f42d21b797f00afe9ba76fcb1828b92dc28a1532ef367592465ab28192",
+    "tests/test_compositional_passage_context.py": "919c227ebf9f6a0f95dcf85eb2c2f81f3995ff6d03ed8580a98cefb9576c16df",
+    "tests/test_current_suite.py": "5e69ac50a6d22e1600983793a8cf31de2d743107680600e6f4712dc83bccb4a7",
+    "tests/v03b_review_gate_suite.py": "63d21ba313f88f557d3054ff15e5e5dd3752914c51c816cc437cc9b3a8eb315d"
+  },
+  "v03b_export_manifest_sha256_lf": "68c7574ec9f187331452b2efee34401fff69cab9c655922a0bb902edfdf2f97e",
+  "publication_allowed": false
+}

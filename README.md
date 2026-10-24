@@ -108,8 +108,10 @@ Install the additional test dependencies into the application environment:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r eval/requirements.txt
-.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+.\.venv\Scripts\python.exe -m unittest tests -v
 ```
+
+The [current suite notes](tests/README.md) explain the maintained entry point and preservation of frozen historical fixtures.
 
 These tests mock external model/database calls; some start loopback HTTP servers. They need neither paid APIs nor an external service. **351 main-suite tests and 13 supplementary Cytiva checks passed on integrated `main` on 24 October 2026.** This dated result used the existing application and ingestion environments; it does not certify a fresh dependency installation. This is regression coverage, not a quality score for live answers.
 

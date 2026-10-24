@@ -1,0 +1,66 @@
+{
+  "id": "cytiva-section-evaluation-queries-v01",
+  "scope": "Prospective same-corpus challenge; no new-query search performed; known fact overlap, not blind/new-section validation",
+  "questions": [
+    {
+      "id": "H01",
+      "family": "conditional_direct_use",
+      "question_en": "At laboratory scale, minor contaminants remain after affinity purification but do not interfere with the intended application. Does this passage require another purification step?",
+      "question_fr": "À l’échelle du laboratoire, il reste des contaminants mineurs après purification par affinité, mais ils ne gênent pas l’application prévue. Ce passage impose-t-il une purification supplémentaire ?"
+    },
+    {
+      "id": "H02",
+      "family": "contaminant_characteristics",
+      "question_en": "Why do albumin, transferrin and host or bovine immunoglobulins present different purification problems? Relate the general selection principles to differences between contaminant and target without choosing a medium.",
+      "question_fr": "Pourquoi l’albumine, la transferrine et les immunoglobulines de l’hôte ou bovines posent-elles des problèmes de purification différents ? Relie les principes généraux de sélection aux différences entre contaminant et cible, sans choisir un milieu."
+    },
+    {
+      "id": "H03",
+      "family": "nonabsolute_serum_free",
+      "question_en": "Does the statement about serum-free production mean that serum-free culture guarantees absence of co-purified host or bovine immunoglobulins and eliminates the need for technique optimization?",
+      "question_fr": "L’affirmation sur la production sans sérum signifie-t-elle qu’une culture sans sérum garantit l’absence d’immunoglobulines de l’hôte ou bovines copurifiées et supprime le besoin d’optimiser la technique ?"
+    },
+    {
+      "id": "H04",
+      "family": "screening_not_process_sequence",
+      "question_en": "The HiTrap HIC Selection Kit contains seven media: should my mouse antibody pass through seven columns in series, and does the Phenyl HP example settle my binding and elution conditions?",
+      "question_fr": "Le HiTrap HIC Selection Kit contient sept milieux : mon anticorps de souris doit-il passer dans sept colonnes en série, et l’exemple Phenyl HP fixe-t-il mes conditions de liaison et d’élution ?"
+    },
+    {
+      "id": "H05",
+      "family": "conditional_iex_hic_comparison",
+      "question_en": "Albumin and transferrin remain after IEX. Is switching to HIC always necessary, or does the manual describe a conditional IEX adjustment and a qualified explanation for HIC separation?",
+      "question_fr": "Il reste de l’albumine et de la transferrine après IEX. Faut-il toujours passer à HIC, ou le manuel décrit-il un ajustement conditionnel de l’IEX et une explication nuancée de la séparation par HIC ?"
+    },
+    {
+      "id": "H06",
+      "family": "process_order_and_warning",
+      "question_en": "Can Blue Sepharose remove albumin before rather than after another purification step, and does this freedom of order override the warning when the target has hydrophobicity similar to albumin?",
+      "question_fr": "Blue Sepharose peut-il retirer l’albumine avant une autre étape de purification plutôt qu’après, et cette liberté d’ordre annule-t-elle l’avertissement lorsque la cible a une hydrophobicité similaire à celle de l’albumine ?"
+    },
+    {
+      "id": "H07",
+      "family": "phase_specific_flow_and_note",
+      "question_en": "On HiTrap Blue HP 1 mL, may I use the loading flow range for washing and treat 30 drops/min as an exact setting for every syringe? Give the documented distinctions.",
+      "question_fr": "Sur HiTrap Blue HP 1 mL, puis-je utiliser la plage de débit de chargement pour le lavage et considérer 30 gouttes/min comme un réglage exact pour toute seringue ? Donne les distinctions documentées."
+    },
+    {
+      "id": "H08",
+      "family": "elution_range_not_duration",
+      "question_en": "For HiTrap Blue HP 5 mL, can I reuse the five-column-volume step-elution amount for a linear gradient? What elution flow range is stated, and is a fixed duration prescribed?",
+      "question_fr": "Pour HiTrap Blue HP 5 mL, puis-je reprendre les cinq volumes de colonne de l’élution par palier pour un gradient linéaire ? Quelle plage de débit d’élution est indiquée, et une durée fixe est-elle prescrite ?"
+    },
+    {
+      "id": "H09",
+      "family": "clarification_without_named_methods",
+      "question_en": "I still see an extra protein signal after antibody affinity purification. I do not know what it is or whether it affects the downstream assay. What must be clarified before adding a purification step?",
+      "question_fr": "Je vois encore un signal protéique supplémentaire après purification d’un anticorps par affinité. Je ne sais pas de quoi il s’agit ni s’il affecte l’analyse en aval. Que faut-il clarifier avant d’ajouter une étape de purification ?"
+    },
+    {
+      "id": "H10",
+      "family": "pending_source_boundary",
+      "question_en": "For HiTrap Blue HP, can this reviewed corpus give the equilibration step’s column volumes and recommended flow rates, rather than the sample-loading or washing settings?",
+      "question_fr": "Pour HiTrap Blue HP, ce corpus revu peut-il donner les volumes de colonne et les débits recommandés de l’étape d’équilibrage, plutôt que les réglages du chargement ou du lavage ?"
+    }
+  ]
+}

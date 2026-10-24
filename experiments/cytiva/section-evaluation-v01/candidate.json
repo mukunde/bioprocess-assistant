@@ -1,0 +1,240 @@
+{
+  "id": "cytiva-section-only-locked-v01",
+  "origin_variant": "section",
+  "origin_config": "experiments/cytiva/contaminant_context_v02.json",
+  "origin_retrieve_arguments": {
+    "sections": true,
+    "vocabulary": null
+  },
+  "config": {
+    "top_k": 6,
+    "max_tokens": 2048,
+    "sections": [
+      {
+        "id": "bovine-immunoglobulins",
+        "root_id": "E119-BH",
+        "query_alias_groups": [
+          [
+            "bovine immunoglobulins",
+            "immunoglobulines bovines"
+          ]
+        ],
+        "overview_ids": [
+          "E119-B",
+          "E119-BI"
+        ]
+      },
+      {
+        "id": "albumin-transferrin",
+        "root_id": "E119-AH",
+        "query_alias_groups": [
+          [
+            "albumin",
+            "albumine"
+          ],
+          [
+            "transferrin",
+            "transferrine"
+          ]
+        ],
+        "overview_ids": [
+          "E119-A"
+        ]
+      },
+      {
+        "id": "blue-albumin",
+        "root_id": "E120-H",
+        "query_alias_groups": [
+          [
+            "blue sepharose",
+            "hitrap blue",
+            "blue column",
+            "colonne blue"
+          ]
+        ],
+        "overview_ids": [
+          "E120-A"
+        ]
+      }
+    ],
+    "unresolved_contaminant": {
+      "unknown_markers": [
+        "unidentified",
+        "unknown",
+        "not identified",
+        "inconnu",
+        "inconnue",
+        "non identifie",
+        "pas identifie"
+      ],
+      "methods": {
+        "iex": [
+          "iex",
+          "ion exchange",
+          "echange ionique",
+          "echange d ions"
+        ],
+        "hic": [
+          "hic",
+          "hydrophobic interaction",
+          "interaction hydrophobe"
+        ],
+        "sec": [
+          "sec",
+          "size exclusion",
+          "exclusion sterique"
+        ]
+      },
+      "min_distinct_methods": 2,
+      "overview_ids": [
+        "E118-USE",
+        "E118-C",
+        "E118-M"
+      ],
+      "named_section_additions": {
+        "blue-albumin": [
+          "E120-U",
+          "E120-W"
+        ]
+      }
+    },
+    "section_selection": "Positive source hit required; prefer explicitly named sections, otherwise highest-ranked source section. Unknown-contaminant multi-method queries also reserve general guidance and named-product conditions. Reserve the combined overview atomically before ranked bundles; report unavailable if blocked or over budget.",
+    "interpretation": "Navigation and lexical equivalence only; no procedure equivalence, diagnosis, answerability decision or approval of new scientific facts",
+    "publication_allowed": false
+  },
+  "source_runtime_policy": {
+    "id": "cytiva-contaminants-source-context-v01",
+    "status": "candidate_pending_human_reference_review",
+    "scope": "Source-derived dependencies declared before first search; not automatic whole-manual chunking",
+    "retrieval": {
+      "method": "BM25",
+      "k1": 1.2,
+      "b": 0.75,
+      "top_k": 6,
+      "bilingual_aliases": true,
+      "index_context": true
+    },
+    "context": {
+      "max_tokens": 2048,
+      "tokenizer": "cl100k_base",
+      "scope": "Full serialized source-context JSON, no answer prompt",
+      "selection": "Whole transitive source bundles; exact quotes; deduplicate; skip whole over-budget bundle"
+    },
+    "requires": {
+      "E118-USE": [],
+      "E118-C": [],
+      "E118-M": [],
+      "E118-I": [],
+      "E119-BH": [],
+      "E119-B": [
+        "E119-BH"
+      ],
+      "E119-BI": [
+        "E119-BH"
+      ],
+      "E119-S": [
+        "E119-BH"
+      ],
+      "E119-X": [
+        "E119-BH"
+      ],
+      "E119-AH": [],
+      "E119-A": [
+        "E119-AH"
+      ],
+      "E119-I": [
+        "E119-AH"
+      ],
+      "E119-H": [
+        "E119-AH"
+      ],
+      "E119-BL": [
+        "E119-AH"
+      ],
+      "E120-H": [],
+      "E120-A": [
+        "E120-H"
+      ],
+      "E120-U": [
+        "E120-H"
+      ],
+      "E120-W": [
+        "E120-H"
+      ],
+      "E120-P": [
+        "E120-H",
+        "E120-W"
+      ],
+      "E121-BH": [
+        "E120-P"
+      ],
+      "E121-B": [
+        "E121-BH"
+      ],
+      "E121-PH": [
+        "E120-P"
+      ],
+      "E121-EQ": [
+        "E121-PH"
+      ],
+      "E121-L": [
+        "E121-PH",
+        "E121-F"
+      ],
+      "E121-W": [
+        "E121-PH"
+      ],
+      "E121-E": [
+        "E121-PH"
+      ],
+      "E121-F": [
+        "E121-PH"
+      ]
+    },
+    "searchable_ids": [
+      "E118-USE",
+      "E118-C",
+      "E118-M",
+      "E119-B",
+      "E119-BI",
+      "E119-S",
+      "E119-X",
+      "E119-A",
+      "E119-I",
+      "E119-H",
+      "E119-BL",
+      "E120-A",
+      "E120-U",
+      "E120-W",
+      "E121-B",
+      "E121-L",
+      "E121-W",
+      "E121-E"
+    ],
+    "quarantined_ids": [
+      "E118-I",
+      "E121-EQ"
+    ],
+    "publication_allowed": false,
+    "comparison": {
+      "baseline_top_k": 5,
+      "candidate_top_k": 6,
+      "same_corpus_and_policy": true
+    },
+    "section_policy": "Generic atomic assembly only; do not reuse page-166/167 pressure-flow family-overview IDs in this corpus",
+    "freeze": "Do not change aliases, ranking, source dependencies or answers after seeing the first result. Version any later tuning separately."
+  },
+  "pending_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "tokenizer": {
+    "name": "cl100k_base",
+    "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+    "tiktoken_version": "0.12.0"
+  },
+  "python_version": "3.13.0",
+  "run_directory": "data/experiments/cytiva/section-evaluation-v01/locked-run",
+  "publication_allowed": false,
+  "python_hash_seed": "0"
+}

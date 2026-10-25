@@ -1,0 +1,151 @@
+{
+  "manifest_sha256_lf": "10ec2b9d37ed231be5f586e64c0056bc51c3589df32e13c73aadcc40dd143541",
+  "method_lock_sha256_lf": "fc309ddad6cc4d205ae0855a3a315423eaa3e601ef1a780934a84f8b76015ece",
+  "decisions": [
+    {
+      "question_id": "X01",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X01 avec les limites indiquées, sans contaminant supposé ni technique choisie et sans exiger de diagnostic confirmé. Enregistre ma décision et passons à X02. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:26:46.273125+00:00",
+      "question_sha256_canonical": "8f2244f8edc02f3b4b9b1057fbcd9a2dc014201e93a501fb409f44d4becde8b2",
+      "reference_sha256_canonical": "879bfed65e551137338b72abe51c3818747fb296af2922e021ac767787b6dfbf",
+      "retained_reservations": [
+        "Do not infer the peak identity, choose a technique, or demand a confirmed diagnosis.",
+        "Keep the laboratory-scale intended-application condition; no purification recipe follows from these general principles."
+      ]
+    },
+    {
+      "question_id": "X02",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X02 avec les limites indiquées, en gardant A et B distinctes, sans interdiction générale ni purification supplémentaire déduite. Enregistre ma décision et donne moi les questions restantes en même temps, je les passerai en revue en même temps. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:29:39.056242+00:00",
+      "question_sha256_canonical": "720d1759e5010ba0c957c135b0e2a8c52087392932b28ec00677fed132363487",
+      "reference_sha256_canonical": "1aaa4b62ee152d7548afe8da6bfa8788011ec0e0e03c836916861f524c6e834b",
+      "retained_reservations": [
+        "Keep A and B separate; do not transfer the non-interference condition.",
+        "Failure to meet a sufficient condition is not a general prohibition or proof that another purification is required."
+      ]
+    },
+    {
+      "question_id": "X03",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "4a1322ac44382cee0a2828c6fbcfbc318aa81ed81ff2cf735d09fdafd55aa785",
+      "reference_sha256_canonical": "375a0a381543d1434209e335937472557b056f1c23170ff1e96ae8de353ff09a",
+      "retained_reservations": [
+        "Keep generally, at least and the alternative endpoint criteria.",
+        "Do not infer a duration, substitute the 1 mL-column flow, or supply loading/elution parameters."
+      ]
+    },
+    {
+      "question_id": "X04",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "67c844218f146f5268e6ada2129a5dd85bcd091df4539355a8729444fc570f18",
+      "reference_sha256_canonical": "725acde5d109862966cc5754592744d57ffe42075c8d154a95e9bb4df62259ca",
+      "retained_reservations": [
+        "The requested operating value is the 1 mL loading range, not the 5 mL range or elution flow.",
+        "Keep the atomic loading footnote in context without turning it into a mandatory operating instruction, timing calculation or universal drops conversion."
+      ]
+    },
+    {
+      "question_id": "X05",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "299b4c67eecd59a863f723629ff14305295a931b76360cc75e5b525504b099eb",
+      "reference_sha256_canonical": "99bbe234fb2ef4bcea564f99ddc9916a6bc2380d6e46e8948363f817b91d7a5e",
+      "retained_reservations": [
+        "Do not mix or automatically pair the alternative buffers, or correct the printed chemical nomenclature.",
+        "The whole buffer atom also contains elution formulations and the loading atom includes the other column size; their presence in context does not authorize extra operating instructions.",
+        "No washing/elution flow, duration, gradient profile or universal drops conversion."
+      ]
+    },
+    {
+      "question_id": "X06",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "5abd93a152f84188276591492e394cd5b40c82cace79b20c6c0fad0d18d0e688",
+      "reference_sha256_canonical": "4d8515c9da8822da8945db5fbe7d6a538900f60bfa51075c0b795d550d748255",
+      "retained_reservations": [
+        "Do not transfer the 1 mL loading range to 5 mL washing or treat washing as elution.",
+        "No duration, guaranteed clearance or universal conversion from the associated approximate syringe note."
+      ]
+    },
+    {
+      "question_id": "X07",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "c8934d857af0387adf413cec6143f01fee0d95c52eeb314f049c300a5acd902a",
+      "reference_sha256_canonical": "43b693b186ccc0f9f22826a740c8c1413cc54ef46d1c69639259f6fea0a65397",
+      "retained_reservations": [
+        "Do not flag a false contradiction merely because the request contains a negated exclusion.",
+        "Preserve the two steps, endpoint alternatives, usually/generally and Blue warning; no duration or gradient profile is supplied."
+      ]
+    },
+    {
+      "question_id": "X08",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "5814509600d0b914a410a8e24d149f3c2cc8f585d70ddeaafdf942012e0fe383",
+      "reference_sha256_canonical": "81d0d59a5acf173fb910f9eddf1900bba92a24d04d81e0ad8d8d032f9c29f6e8",
+      "retained_reservations": [
+        "Keep in some cases and most; no exact pH, automatic adjustment or confirmed target hydrophobicity.",
+        "E119-I is eligible and distinct from excluded E118-I. Blue-specific product or operating context is outside the request."
+      ]
+    },
+    {
+      "question_id": "X09",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "61ef7e527d491d6f142a796a3802872aab9ca3a9c976bf96d4a812e9c7a6644e",
+      "reference_sha256_canonical": "b51c384b617bf3b52f8cb2cb881dea50a427da75774a36c8b32d2a7adc68fe23",
+      "retained_reservations": [
+        "The absence statement covers only the 25 eligible excerpts, not the entire manual or external product documentation.",
+        "Keep column sizes and phases separate; preserve the warning and approximate note scope. No pressure conversion or elution parameter."
+      ]
+    },
+    {
+      "question_id": "X10",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "8af947b655e3200687cad32f01b57f8e8d2f016ae1a68bc32c559b156c11dcf6",
+      "reference_sha256_canonical": "ad86bd801715554c0e85e5c668ff52955331c67820507c3ca6bb891c39224e8b",
+      "retained_reservations": [
+        "No pH/pI inequality or equilibration flow/volume is reconstructed; this review does not approve either excluded source.",
+        "Source limitations do not suppress the supported washing request. Preserve the Blue warning and column/phase scope."
+      ]
+    },
+    {
+      "question_id": "X11",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "d96f52e6adaf9a61fc724bc7eab65b9de3c2bd62ceff2532bc32172603492a50",
+      "reference_sha256_canonical": "e73f3478efbbbec7edf78e5998fd0045c6ec4f532cd281490ebd12d6e0859b8e",
+      "retained_reservations": [
+        "The same phase can be included for A and excluded for B without contradiction. Do not transfer A operating parameters to B.",
+        "This checks context and scope diagnostics, not generated-answer task attribution or confirmed suitability of either sample. Preserve usually and the warning."
+      ]
+    },
+    {
+      "question_id": "X12",
+      "decision": "validated_with_reservation",
+      "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-24T23:32:03.160040+00:00",
+      "question_sha256_canonical": "66a4d20f798bf48f904b3cda55b94b5ceb44dc04e5055a3e2bc7e49482ff89bd",
+      "reference_sha256_canonical": "7b43f19ccc514673c5c4c053c96a184df6613c1819421d23a5274f5d6268d0db",
+      "retained_reservations": [
+        "Label this as a synthetic scope-control question, not a contradictory statement in the manual.",
+        "Clarification must precede operating parameters; source context alone is not a generated clarification answer."
+      ]
+    }
+  ]
+}

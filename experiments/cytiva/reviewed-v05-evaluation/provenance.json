@@ -1,0 +1,56 @@
+{
+  "source_run": "v05-evaluation-v01/locked-run",
+  "reservation": {
+    "status": "reserved_no_retry",
+    "at_utc": "2026-10-25T00:39:34.905548+00:00",
+    "manifest_sha256_lf": "10ec2b9d37ed231be5f586e64c0056bc51c3589df32e13c73aadcc40dd143541",
+    "review_sha256_lf": "a40d551194f7e2abab05b4936c46905ef56582ea4e1f4e06a0ec4805b4d076f2"
+  },
+  "verification": {
+    "status": "completed",
+    "evaluation_executed": true,
+    "network_attempts": [],
+    "pending_source_leakage": 0,
+    "earlier_files_unchanged": true,
+    "automatic_adoption": false,
+    "artifact_sha256_lf": {
+      "contexts-unscored.json": "5e6cac6268ed1dea842743f2a828c231d417f4bd47b85f69596018b7b0812fdb",
+      "metrics.json": "45d2352d0a9d05bc2b5a5951e9da930fa99674d3ef86848ab296163a5cbc3261"
+    }
+  },
+  "original_artifact_sha256_lf": {
+    "human-review-snapshot.json": "a40d551194f7e2abab05b4936c46905ef56582ea4e1f4e06a0ec4805b4d076f2",
+    "contexts-unscored.json": "5e6cac6268ed1dea842743f2a828c231d417f4bd47b85f69596018b7b0812fdb",
+    "metrics.json": "45d2352d0a9d05bc2b5a5951e9da930fa99674d3ef86848ab296163a5cbc3261"
+  },
+  "original_private_manifest_sha256_lf": "5d1cb9cf8304e22f71f69ec0adc6c8a07c923477c5ccaf767d1a319920f18a65",
+  "tokenizer": {
+    "name": "cl100k_base",
+    "tiktoken_version": "0.12.0",
+    "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+  },
+  "initialization_ms": 612.8137999912724,
+  "preservation_attestation": {
+    "checked_files": 1588,
+    "unchanged": true,
+    "portable_limit": "Historical run attestation at execution time; private inventory intentionally omitted. Later explicitly requested documentation updates do not rewrite this attestation."
+  },
+  "collective_approval": {
+    "question_ids": [
+      "X03",
+      "X04",
+      "X05",
+      "X06",
+      "X07",
+      "X08",
+      "X09",
+      "X10",
+      "X11",
+      "X12"
+    ],
+    "human_quote": "Je valide X03 à X12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+    "recorded_at_utc": "2026-10-24T23:32:03.160040+00:00",
+    "scope": "X03-X12 approved collectively in one actual user message; not ten distinct approval events."
+  },
+  "scope": "Same known corpus and known-code drafting; no generated-answer, independent-authorship or scientific validation."
+}

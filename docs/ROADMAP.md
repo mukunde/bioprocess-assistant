@@ -46,73 +46,76 @@ Migration from the legacy dense template/review database is still pending.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Current checkpoint — 24 October 2026
+## Current checkpoint — 25 October 2026
 
-Phase numbers below identify workstreams and acceptance gates, not a claim that
-all earlier phases have passed. Documentary experiments advanced before the
-planned telemetry layer; local manifests/timings do not satisfy phase 1.
+Phase numbers identify workstreams and acceptance gates, not a claim that all
+preceding gates passed. Documentary work advanced before telemetry; local
+manifests and timings do not complete phase 1.
 
 | Workstream | Implemented or reviewed | Remaining gate |
 |---|---|---|
 | 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation remains separate |
-| 1 — Observability | Reproducible experiment manifests, context/token accounting and local timings | OpenTelemetry workflows, portable export, call/retry/cost accounting and enforcement |
-| 2 — Model and references | Minimal ontology, v0.2 claim contract, 33 reviewed extraction claims and reviewed Q/N/C, H and V question series | Local W01-W12 await review; exhaustive omission/causal coverage and independent answer evaluation remain open; documentary approval is not scientific validation |
-| 3 — Ingestion and chunking | Local Docling Graph route; separate Docling → GPT-6.1 Sol experiment; selected table/figure reviews and repairs | Real-manual extraction precision/recall, full ingestion lifecycle and migration into serving |
-| 4 — Retrieval | Local BM25, atomic dependencies, frozen v03b failures and opt-in v04 development A-D are merged; W preparation is local only | Review and run frozen W without tuning; reviewed-record serving adapter, actual answers/abstentions, independent evaluation and common-corpus comparison remain open |
+| 1 — Observability | Experiment manifests, context/token accounting and local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
+| 2 — Model and references | Minimal ontology, v0.2 contract, 33 reviewed claims and Q/N/C/H/V/W references are merged; X01-X12 review is complete in the local packet | Exhaustive omission/causal coverage and independent answer evaluation; documentary approval is not scientific validation |
+| 3 — Ingestion and chunking | Local Docling Graph route, separate Docling → GPT-6.1 Sol experiment, selected table/figure reviews and repairs | Full ingestion lifecycle, real-manual extraction precision/recall and serving migration |
+| 4 — Retrieval | BM25, atomic assembly, frozen v03b/v04 results and opt-in v04/v05 development are merged; completed frozen X trial/export is local | Frozen X gate is blocked; task-scoped interpretation, structured-input control, serving adapter and actual answer evaluation remain open |
 | 5 — KAG decision | Deferred | A concrete need beyond simpler retrieval and bounded reasoning |
 
-The merged checkpoint is `main` at `081a30d`, after
-[PR #34](https://github.com/mukunde/bioprocess-assistant/pull/34) (frozen v03b review/results)
-and [PR #35](https://github.com/mukunde/bioprocess-assistant/pull/35) (v04 development,
-selected A-D results and maintained-suite correction). **433/433 tests passed on
-that merged checkpoint**, with zero skipped tests. These counts use existing local
-dependency environments; they are regression results, not answer quality or a
-fresh-install certification. Earlier checkpoints and counts remain historical in
-their reports and [the consolidation record](CONSOLIDATION.md).
+The merged checkpoint before this documentation update is `main` at `a6026ca`,
+after [PR #37](https://github.com/mukunde/bioprocess-assistant/pull/37) (reviewed
+v04 W trial) and [PR #38](https://github.com/mukunde/bioprocess-assistant/pull/38)
+(v05 development, with both attempts preserved). **463/463 tests passed on that
+merged checkpoint.** These are existing-environment regressions, not an answer
+quality or fresh-install certification. Earlier checkpoints remain historical.
 
-**Local working state, not merged:** the eight-file W preparation adds twelve
-bilingual question/reference intents and thirteen integrity/synthetic harness
-checks. The complete local suite passes **446/446**, but no real W question has
-been searched, planned, assembled or scored. All twelve references await human
-review; there is no human-review record or locked-run output. A fresh clone of
-the merged checkpoint has neither this packet nor its thirteen new checks.
+**Prepared locally, not yet merged:** the six-file frozen v05 packet, harness and
+15 synthetic/integrity tests, completed X01-X12 review, single frozen run, outcome
+report and portable export. All twelve references are validated with reservations;
+X03-X12 were approved in one actual collective message. The original preparation
+pending flags remain historical. The export preserves all 24 contexts and 72
+measurements without private inventories, PDFs or model assets. Its five checks
+verify saved results without retrieval or local raw artifacts. The full current
+local suite passed **483/483 tests** on 25 October 2026, including this prepared,
+uncommitted packet.
 
-The local paths are `experiments/cytiva/v04-evaluation-v01/` (including its
-protocol), `experiments/cytiva/v04_evaluation.py` and `tests/test_v04_evaluation.py`.
-They are described as local paths rather than published links because they are
-not part of the merged repository at this checkpoint.
+The [frozen X outcome](experiments/cytiva-v05-prospective-results.md) is blocked:
+7/12 intents complete in both languages, 9/24 explicit scope failures and 6/24
+diagnostic failures. Only X02/X05/X09 satisfy completeness, scope and diagnostics
+in both languages. The [compact export](../experiments/cytiva/reviewed-v05-evaluation/README.md)
+is prepared for versioning, not a merged or automatically activated candidate.
 
 ### Next delivery priorities
 
-1. **Review W01-W12 and measure frozen v04 once.** The method lock already binds
-   the unchanged v04 code/configuration before question/reference JSON. Review
-   exact excerpts, required/acceptable and unrequested sources, expected answers,
-   reservations and diagnostic criteria, then explicitly authorize the single
-   run. The predeclared gate requires all twelve intents complete in both
-   languages, no explicitly unrequested source, no failed reference diagnostic
-   and no hard invariant violation. Preserve all contexts, errors and incomplete
-   cases. Do not tune after opening results or silently retry; a fix creates a
-   new development variant and needs another prospective set. Use W as a decision
-   point rather than extending known-case tuning indefinitely. A pass permits
-   considering a limited end-to-end pilot, not automatic adoption.
-2. **Build a useful complete slice.** Map a small approved corpus into eligible
-   v0.2 claims and the shared renderer. This reviewed-record serving adapter is
-   still missing. Retain source snapshots, conditions, reservations and quarantine;
-   exercise clarification/refusal, activation, correction, revocation and rollback
-   without silently expanding legacy-seed coverage. Mark source-only context where
-   no approved claim exists. Adapter development does not imply that a blocked
-   retrieval candidate is eligible for adoption.
-3. **Instrument and evaluate that path.** Add minimal OpenTelemetry spans during
-   retrieval/answer integration, including versions, errors, retries and budgets;
-   verify portable export and usage/cost accounting. Then evaluate actual rendered
-   answers, citations and abstentions with deterministic checks, calibrated local
-   Ragas and Promptfoo attacks plus benign controls. All three integrations remain
-   pending; local experiment manifests and token counts do not complete them.
-4. **Compare architectures after prerequisites.** Run the common-corpus
+1. **Preserve X and design task-scoped interpretation before another variant.**
+   Keep the reviewed packet, native results and original failures. Specify a
+   request contract separating tasks/samples, products, column sizes, phases,
+   requested parameters, exclusions and uncertain information. Distinguish nested
+   negation, separate-task scopes and a real same-task contradiction. Align routing
+   and lexical support; incidental words are not reliable semantic scope evidence.
+   Do not respond to each failed sentence with another isolated alias.
+2. **Compare structured input with free-text interpretation.** A deterministic
+   structured-input control should exercise retrieval/assembly independently of
+   language parsing. A free-text adapter would target the same contract. Neither
+   is implemented. Use X and earlier cases as development/regression inputs; after
+   implementation, freeze a new version before preparing/reviewing a new challenge.
+   Do not retune a frozen method after its results or silently retry. A future pass
+   permits considering a limited pilot, not automatic adoption.
+3. **Build a bounded end-to-end serving slice.** Map a small approved corpus into
+   eligible v0.2 claims and the shared renderer, retaining source snapshots,
+   conditions, reservations and quarantine. The reviewed-record serving adapter
+   remains missing. Exercise clarification/refusal, correction, revocation and
+   rollback without promoting blocked retrievers or expanding legacy-seed scope
+   implicitly. Mark source-only context where no approved claim exists.
+4. **Instrument and evaluate that path.** Add minimal OpenTelemetry spans with
+   versions, errors, retries and budgets; verify portable export and accounting.
+   Then evaluate actual rendered answers, citations and abstentions using
+   deterministic checks, calibrated local Ragas and Promptfoo attacks with benign
+   controls. All three integrations remain pending.
+5. **Compare architectures after prerequisites.** Run the common-corpus
    graph/passages/LightRAG protocol with reviewed adapters, separate evaluation
-   inputs and a shared resource/context budget. Benchmark a lightweight local
-   answering/routing model; keep KAG and fine-tuning conditional on measured unmet
-   needs. These comparisons and adoption decisions remain unexecuted.
+   inputs and a shared resource/context budget. Benchmark lightweight local
+   answering/routing only under an explicitly scoped experiment; keep KAG and
+   fine-tuning conditional on measured unmet needs. Comparisons remain unexecuted.
 
 No additional representative-page review is a prerequisite by default. Reopen
 conversion/chunking when a new format, measured retrieval failure or required
@@ -248,30 +251,39 @@ preserved and no experiment silently changes the chat default.
 | [Frozen H01-H10 section-only run](../experiments/cytiva/reviewed-section-evaluation/README.md) | 8/10 intents complete in both languages (EN 9/10, FR 8/10) | Gate blocked; later inspected failures became development inputs |
 | [Frozen v03b / V01-V12](../experiments/cytiva/reviewed-v03b-evaluation/README.md) | 6/12 complete in both languages, but only 3/12 also respect explicit scope; all 24 contexts retained | Merged blocked result; no source leakage, but omissions and unrequested phase context prevent promotion |
 | [v04 development A-D](../experiments/cytiva/compositional-navigation-v04-results/README.md) | Final known-case evidence coverage V12/12, H10/10, C10/10 in both languages; V has zero unrequested/outside-acceptable context | Merged opt-in development variant after failure inspection, not an independent evaluation or default change; one optional V03 seed is still dropped at six seeds |
-| Local W01-W12 preparation | Frozen v04 and twelve new EN/FR references with exact excerpts, expected answers, exclusions and diagnostics | Not merged, all references pending human review, no W retrieval results; same known pages 118-121 |
+| [Frozen v04 / W01-W12](../experiments/cytiva/reviewed-v04-evaluation/README.md) | 8/12 complete in both languages; only W10/W11 satisfy completeness, explicit scope and diagnostics | Merged blocked trial: 13/24 explicit scope failures, 2/24 diagnostic failures; no generated answers |
+| [v05 development A-B](../experiments/cytiva/polarity-navigation-v05-results/README.md) | Final known-case W12/12, V12/12, H10/10, C10/10; intermediate C02 failure retained | Merged development result, not generalization; missing H/C scope annotations remain unavailable |
+| [Frozen v05 / X01-X12](../experiments/cytiva/reviewed-v05-evaluation/README.md) | EN 8/12, FR 7/12, both 7/12 complete; only X02/X05/X09 satisfy all reference criteria | Completed local packet prepared for versioning; gate blocked by scope/diagnostic failures; no method tuning after results |
 
 The original Q/N/C series contains 28 intents with paired FR/EN formulations,
-not 56 independent observations. H and V add reviewed same-corpus challenges;
-inspected failures subsequently informed development. Required-source presence
+not 56 independent observations. H/V/W/X add same-corpus challenges with known-code
+authorship; inspected failures become development inputs. Required-source presence
 is not answer correctness, refusal quality or measured precision. Section-only
-was the earlier ablation preference; v04 is now the separately frozen local W
-candidate. The W package was authored with knowledge of the implementation and
-prior failures, and is not a new-section/manual or blind benchmark.
+was a historical ablation preference. The latest frozen v05 X run is blocked;
+no candidate becomes the chat default through these experiments. W and X use
+different questions and their aggregate scores are not a controlled v04/v05
+comparison. Neither is a new-section/manual or independently authored benchmark.
 
-On V, frozen v03b averaged 705.33 context tokens with a maximum of 1,187; final
-v04 development averages 663.75 with a maximum of 1,220. Lower mean size does not
-mean every context shrinks or every corpus improves. The later W source-only
-feasibility check found a maximum required bundle of 1,109 tokens, without running
-retrieval; this is not an observed W context size or performance result.
+On V, frozen v03b averaged 705.33 context tokens (maximum 1,187); final v04 known-V
+development averaged 663.75 (maximum 1,220). Frozen v04 W averaged 813 (maximum
+1,741), while v05's known-W development averaged 684.83 (maximum 1,109). The later
+frozen X run averaged 757.92 (maximum 1,187). These are recorded serialized-context
+sizes under the 2,048-token cap, not future prompt/answer tokens or paid usage.
+No X source bundle was rejected by budget and no selected seed exceeded the cap;
+larger context/result limits do not explain or solve the observed X failures.
 
 E118-I and E121-EQ remain pending and excluded from indexes and contexts,
-including indirect dependencies. W10/W11 validation would approve only their
-question/reference associations, not those sources. W09's pressure-absence claim
-is restricted to the 25 eligible excerpts, never the full manual. W12 is a labelled
-synthetic contradictory request, not manual content. No generated answer is
-scored in these retrieval-only trials, and diagnostics do not certify refusal or
-clarification quality. New rules remain experimental policy, not approval of
-scientific applicability.
+including indirect dependencies. Validating W10/W11 or X10 does not approve them;
+E119-I is separately eligible. W09/X09 pressure absence is bounded to the 25
+eligible excerpts. W12 and X11/X12 are labelled synthetic scope controls, not
+contradictions in the manual. No generated answer is scored in these trials;
+metadata flags do not certify actual clarification or correct sample attribution.
+
+The X traces identify finite exclusion/uncertainty vocabulary, nested negation,
+request-wide conflict sets without task ownership, and routing/lexical mismatch.
+For X10, English family support even relies on incidental words while French
+has no general-family lexical hit. A structured request contract and shared scope
+interpretation are the next design priorities, not an implemented v06 fix.
 
 ### Remaining product and reasoning requirements
 

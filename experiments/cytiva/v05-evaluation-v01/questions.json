@@ -1,0 +1,90 @@
+{
+  "id": "cytiva-v05-prospective-queries-v01",
+  "scope": "New wording and task-boundary composition on known reviewed corpus; no search, planning or scoring performed",
+  "questions": [
+    {
+      "id": "X01",
+      "family": "uncertain_identity_and_application_choice",
+      "question_en": "A residual protein peak appears after antibody affinity purification. Its identity is still an open question, and we have not chosen the downstream assay. Can the manual justify selecting IEX or HIC now, or what information should we establish first?",
+      "question_fr": "Un pic protéique résiduel apparaît après purification d’un anticorps par affinité. Son identité reste une question ouverte et nous n’avons pas choisi l’analyse en aval. Le manuel permet-il de choisir dès maintenant IEX ou HIC, ou quelles informations faut-il d’abord préciser ?",
+      "synthetic_case": false
+    },
+    {
+      "id": "X02",
+      "family": "separate_interference_conditions",
+      "question_en": "Compare two laboratory preparations with minor contaminants: in A they do not interfere with the intended assay; in B they do interfere. What direct-use statement does the manual support for A, and why does that statement alone not settle what to do with B? Do not choose a purification method.",
+      "question_fr": "Compare deux préparations de laboratoire contenant des contaminants mineurs : dans A, ils n’interfèrent pas avec l’analyse prévue ; dans B, ils interfèrent. Quelle possibilité d’utilisation directe le manuel donne-t-il pour A, et pourquoi cette phrase seule ne permet-elle pas de décider quoi faire de B ? Ne choisis pas de méthode de purification.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X03",
+      "family": "omit_operating_phases",
+      "question_en": "For a HiTrap Blue HP 5 mL column, report the washing buffer, flow, quantity guidance and the alternative stopping criteria. Omit sample application and elution from the response.",
+      "question_fr": "Pour une colonne HiTrap Blue HP de 5 mL, indique le tampon, le débit, l’indication de quantité et les critères alternatifs de fin du lavage. Omet l’application de l’échantillon et l’élution de la réponse.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X04",
+      "family": "instead_of_phase_contrast",
+      "question_en": "HiTrap Blue HP 1 mL: I need sample-application flow instead of elution settings. State the loading range only, with any source qualification needed to interpret it.",
+      "question_fr": "HiTrap Blue HP 1 mL : j’ai besoin du débit d’application de l’échantillon au lieu des paramètres d’élution. Donne seulement la plage de chargement, avec les réserves du passage nécessaires à son interprétation.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X05",
+      "family": "binding_formulations_and_loading",
+      "question_en": "For HiTrap Blue HP 5 mL, list the binding-buffer alternatives, then state the sample-loading flow range. Leave washing out, and do not provide operating instructions for elution. Keep buffer preparation distinct from an operating phase.",
+      "question_fr": "Pour HiTrap Blue HP 5 mL, liste les formulations alternatives du tampon de liaison, puis la plage de débit de chargement de l’échantillon. Laisse le lavage de côté et ne donne pas de consignes opératoires d’élution. Distingue la préparation du tampon d’une étape opératoire.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X06",
+      "family": "separate_column_sizes_and_phases",
+      "question_en": "I have two separate HiTrap Blue HP tasks: loading a 1 mL column and washing a 5 mL column. Give the appropriate flow range for each, and the washing endpoint and column-volume guidance. Do not turn either range into an elution instruction.",
+      "question_fr": "J’ai deux tâches distinctes avec HiTrap Blue HP : charger une colonne de 1 mL et laver une colonne de 5 mL. Donne la plage de débit de chacune, ainsi que le critère de fin et l’indication en volumes de colonne pour le lavage. Ne transforme aucune plage en consigne d’élution.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X07",
+      "family": "nested_negation_not_excluding",
+      "question_en": "For HiTrap Blue HP 1 mL, washing and elution are both requested. I am not asking you to exclude elution. Give the washing endpoint and flow, then the step-versus-linear elution column volumes and flow.",
+      "question_fr": "Pour HiTrap Blue HP 1 mL, le lavage et l’élution sont tous deux demandés. Je ne te demande pas d’exclure l’élution. Donne le critère de fin et le débit du lavage, puis les volumes de colonne et le débit d’élution par palier ou par gradient linéaire.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X08",
+      "family": "product_mention_explicitly_ruled_out",
+      "question_en": "After IEX, albumin and transferrin remain. Discuss the possible charge-related explanation and the HIC alternative. Blue Sepharose is ruled out of this question; mentioning its name is not a request for that product.",
+      "question_fr": "Après IEX, de l’albumine et de la transferrine restent. Présente l’explication possible liée à la charge et l’alternative HIC. Blue Sepharose est exclu du périmètre de cette question ; citer son nom ne constitue pas une demande sur ce produit.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X09",
+      "family": "pressure_with_two_supported_phase_requests",
+      "question_en": "For HiTrap Blue HP, give the loading-flow range for a 5 mL column, the washing-flow range for a separate 1 mL column, and a maximum pressure in bar if the reviewed excerpts support one. Keep the two supported steps even if pressure is unavailable.",
+      "question_fr": "Pour HiTrap Blue HP, donne la plage de débit de chargement d’une colonne de 5 mL, la plage de lavage d’une autre colonne de 1 mL et une pression maximale en bar si les extraits validés en donnent une. Conserve les deux étapes documentées même si la pression est indisponible.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X10",
+      "family": "two_pending_source_roles_plus_supported_wash",
+      "question_en": "Keep three requests separate: the cation-exchange pH-versus-pI condition, HiTrap Blue HP 5 mL equilibration settings, and the washing flow for a 1 mL HiTrap Blue HP column. Withhold conditions whose source excerpts have not been approved; still give the reviewed general principle and washing information.",
+      "question_fr": "Garde trois demandes distinctes : la condition de pH par rapport au pI en échange cationique, les paramètres d’équilibrage de HiTrap Blue HP 5 mL et le débit de lavage d’une colonne HiTrap Blue HP de 1 mL. Retiens les conditions dont les extraits sources ne sont pas validés, mais donne le principe général et les informations de lavage déjà validés.",
+      "synthetic_case": false
+    },
+    {
+      "id": "X11",
+      "family": "distinct_tasks_not_a_global_phase_conflict",
+      "question_en": "Two independent tasks: for preparation A, summarize step and linear-gradient elution on HiTrap Blue HP 1 mL, including volumes and flow. For preparation B, state only whether the manual places Blue Sepharose albumin removal before or after other purification steps; exclude elution parameters for B only. Do not treat the two scopes as contradictory.",
+      "question_fr": "Deux tâches indépendantes : pour la préparation A, résume l’élution par palier et par gradient linéaire sur HiTrap Blue HP 1 mL, avec volumes et débit. Pour la préparation B, indique seulement si le manuel situe le retrait d’albumine par Blue Sepharose avant ou après d’autres étapes ; exclus les paramètres d’élution pour B uniquement. Ne traite pas les deux périmètres comme contradictoires.",
+      "synthetic_case": true
+    },
+    {
+      "id": "X12",
+      "family": "same_task_conflicting_washing_instructions",
+      "question_en": "Synthetic scope check for the same HiTrap Blue HP 1 mL column and the same answer: give the washing flow and quantity guidance, but omit every washing parameter. Clarify this contradiction before supplying any operating settings.",
+      "question_fr": "Test synthétique de périmètre pour la même colonne HiTrap Blue HP de 1 mL et la même réponse : donne le débit et l’indication de quantité du lavage, mais omets tout paramètre de lavage. Clarifie cette contradiction avant de fournir des paramètres opératoires.",
+      "synthetic_case": true
+    }
+  ]
+}

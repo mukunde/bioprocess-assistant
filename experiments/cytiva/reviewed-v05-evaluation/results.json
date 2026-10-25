@@ -1,0 +1,3961 @@
+{
+  "contexts": [
+    {
+      "question_id": "X01",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E119-BI",
+          "score": 8.09666665505005
+        },
+        {
+          "passage_id": "E118-C",
+          "score": 7.160606802565385
+        },
+        {
+          "passage_id": "E119-I",
+          "score": 4.717285433809836
+        },
+        {
+          "passage_id": "E119-B",
+          "score": 4.67199686003584
+        },
+        {
+          "passage_id": "E118-USE",
+          "score": 4.013469502574847
+        },
+        {
+          "passage_id": "E119-X",
+          "score": 3.570869752693264
+        }
+      ],
+      "scope_selected_seeds": [
+        "E119-BI"
+      ],
+      "navigation_plan": {
+        "reason": "no_explicit_scope",
+        "routes": [],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "product_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E118-C",
+        "E119-I",
+        "E119-B",
+        "E118-USE",
+        "E119-X",
+        "E119-S",
+        "E118-M",
+        "E119-BL",
+        "E119-H",
+        "E119-A",
+        "E120-U",
+        "E120-W",
+        "E120-A",
+        "E121-W",
+        "E121-E",
+        "E121-B",
+        "E121-L"
+      ],
+      "assembled": {
+        "ids": [
+          "E119-BH",
+          "E119-BI"
+        ],
+        "accepted_seeds": [
+          "E119-BI"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E119-BH\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Host or bovine immunoglobulin co-purification\",\"quote\":\"Bovine immunoglobulins\",\"quote_sha256\":\"c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b\",\"page_text_start\":0,\"page_text_end\":22},{\"id\":\"E119-BI\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Host or bovine immunoglobulin co-purification\",\"quote\":\"Difficulties have also been encountered when murine monoclonal antibodies are the target molecule. The similarities \\nbetween the physical characteristics of the target antibody and the contaminants require careful selection and \\noptimization to find the most suitable chromatography technique for purification. Both HIC and IEX can be used.\",\"quote_sha256\":\"dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634\",\"page_text_start\":432,\"page_text_end\":772}]}",
+        "tokens": 263,
+        "budget_complete": true,
+        "context_sha256": "58fff8144265da19c27c64984d7af1ecbe7ead26140287998717c195e1829e25"
+      },
+      "total_times_ms": [
+        13.782900001388043,
+        5.931499996222556,
+        6.251899991184473
+      ]
+    },
+    {
+      "question_id": "X01",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E119-BI",
+          "score": 5.241693781946568
+        },
+        {
+          "passage_id": "E119-I",
+          "score": 4.717285433809836
+        },
+        {
+          "passage_id": "E119-B",
+          "score": 4.67199686003584
+        },
+        {
+          "passage_id": "E118-C",
+          "score": 4.149047524090068
+        },
+        {
+          "passage_id": "E119-X",
+          "score": 3.570869752693264
+        },
+        {
+          "passage_id": "E119-S",
+          "score": 3.2701811780501315
+        }
+      ],
+      "scope_selected_seeds": [
+        "E119-BI",
+        "E119-B",
+        "E119-X"
+      ],
+      "navigation_plan": {
+        "reason": "no_explicit_scope",
+        "routes": [],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "product_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E119-I",
+        "E118-C",
+        "E119-S",
+        "E118-M",
+        "E119-BL",
+        "E119-H",
+        "E119-A",
+        "E118-USE",
+        "E121-W",
+        "E120-U",
+        "E120-A"
+      ],
+      "assembled": {
+        "ids": [
+          "E119-BH",
+          "E119-BI",
+          "E119-B",
+          "E119-X"
+        ],
+        "accepted_seeds": [
+          "E119-BI",
+          "E119-B",
+          "E119-X"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E119-BH\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Host or bovine immunoglobulin co-purification\",\"quote\":\"Bovine immunoglobulins\",\"quote_sha256\":\"c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b\",\"page_text_start\":0,\"page_text_end\":22},{\"id\":\"E119-BI\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Host or bovine immunoglobulin co-purification\",\"quote\":\"Difficulties have also been encountered when murine monoclonal antibodies are the target molecule. The similarities \\nbetween the physical characteristics of the target antibody and the contaminants require careful selection and \\noptimization to find the most suitable chromatography technique for purification. Both HIC and IEX can be used.\",\"quote_sha256\":\"dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634\",\"page_text_start\":432,\"page_text_end\":772},{\"id\":\"E119-B\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Host or bovine immunoglobulin co-purification\",\"quote\":\"Co-purification of host or bovine immunoglobulins is a problem associated with any affinity purification of antibodies \\nfrom a native source or a source to which supplements such as calf serum or bovine serum albumin are added. This \\ncontamination problem has been largely circumvented in the large-scale manufacture of MAbs for therapeutic use \\nthrough the widespread use of serum-free cell culture systems.\",\"quote_sha256\":\"3cfa038db9aadb4ae1a986b8a37214e7d658a38d13113b5acf7cd195c1faa4c3\",\"page_text_start\":23,\"page_text_end\":431},{\"id\":\"E119-X\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Host or bovine immunoglobulin co-purification\",\"quote\":\"HiTrap HIC Selection Kit includes seven HIC media with different hydrophobic properties for small-scale screening and \\nselection of optimal binding and elution conditions. Figure 4.1 shows an example of chromatography media screening \\nof a mouse monoclonal antibody on different HIC media prepacked in HiTrap 1 mL columns. In this case, the optimal \\nmedium for purification was HiTrap Phenyl HP.\",\"quote_sha256\":\"b7f9b22e4a4b994c309bba80c118736640dea30ad3fbef4593ac2239ac5f8dcb\",\"page_text_start\":985,\"page_text_end\":1380}]}",
+        "tokens": 624,
+        "budget_complete": true,
+        "context_sha256": "cc339605f49172520b0793c2d729489870b6ae91a8000a8f5b28b97ab42fd4c4"
+      },
+      "total_times_ms": [
+        9.863599989330396,
+        8.065500005614012,
+        8.32520000403747
+      ]
+    },
+    {
+      "question_id": "X02",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E118-USE",
+          "score": 14.569564665545458
+        },
+        {
+          "passage_id": "E118-C",
+          "score": 3.4286040114288854
+        },
+        {
+          "passage_id": "E118-M",
+          "score": 3.3227454539753607
+        },
+        {
+          "passage_id": "E119-A",
+          "score": 3.1332740330275897
+        },
+        {
+          "passage_id": "E119-B",
+          "score": 2.6222019699409334
+        },
+        {
+          "passage_id": "E119-I",
+          "score": 2.4608452049225766
+        }
+      ],
+      "scope_selected_seeds": [
+        "E118-USE"
+      ],
+      "navigation_plan": {
+        "reason": "application_scope",
+        "routes": [
+          {
+            "group": "general",
+            "roles": [
+              "applicability"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "product_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E118-C",
+        "E118-M",
+        "E119-A",
+        "E119-B",
+        "E119-I",
+        "E119-BI",
+        "E120-W",
+        "E121-L",
+        "E121-W",
+        "E121-E",
+        "E121-B",
+        "E119-H",
+        "E119-X",
+        "E120-A",
+        "E120-U"
+      ],
+      "assembled": {
+        "ids": [
+          "E118-USE"
+        ],
+        "accepted_seeds": [
+          "E118-USE"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E118-USE\",\"pdf_page_1based\":118,\"pdf_page_index_0based\":117,\"scope\":\"Contaminants after initial antibody purification; laboratory-scale guidance\",\"quote\":\"For many applications at laboratory scale, contaminant molecules are not always a significant problem. Affinity \\nchromatography (AC) will provide sufficient purity and, as long as the presence of any minor contaminants does not \\ninterfere with the intended application, the purified sample can be used directly.\",\"quote_sha256\":\"353719de9177ea9d6b00bb5aaac1470a50ea3a083db5f615a4e9284091a1fb2e\",\"page_text_start\":0,\"page_text_end\":311}]}",
+        "tokens": 163,
+        "budget_complete": true,
+        "context_sha256": "2123054546bbbd858406258ac690c218f2b2155a830dd14123454cadfe3f0a67"
+      },
+      "total_times_ms": [
+        7.2169000050053,
+        6.7918999993707985,
+        6.771700020181015
+      ]
+    },
+    {
+      "question_id": "X02",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E118-USE",
+          "score": 4.611479229439353
+        },
+        {
+          "passage_id": "E118-C",
+          "score": 2.7754956037554592
+        },
+        {
+          "passage_id": "E119-I",
+          "score": 2.4608452049225766
+        },
+        {
+          "passage_id": "E119-BI",
+          "score": 2.412272932830288
+        },
+        {
+          "passage_id": "E119-B",
+          "score": 1.4984847754932515
+        },
+        {
+          "passage_id": "E119-H",
+          "score": 1.3836557478653009
+        }
+      ],
+      "scope_selected_seeds": [
+        "E118-USE"
+      ],
+      "navigation_plan": {
+        "reason": "application_scope",
+        "routes": [
+          {
+            "group": "general",
+            "roles": [
+              "applicability"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "product_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E118-C",
+        "E119-I",
+        "E119-BI",
+        "E119-B",
+        "E119-H",
+        "E118-M",
+        "E119-X",
+        "E120-A"
+      ],
+      "assembled": {
+        "ids": [
+          "E118-USE"
+        ],
+        "accepted_seeds": [
+          "E118-USE"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E118-USE\",\"pdf_page_1based\":118,\"pdf_page_index_0based\":117,\"scope\":\"Contaminants after initial antibody purification; laboratory-scale guidance\",\"quote\":\"For many applications at laboratory scale, contaminant molecules are not always a significant problem. Affinity \\nchromatography (AC) will provide sufficient purity and, as long as the presence of any minor contaminants does not \\ninterfere with the intended application, the purified sample can be used directly.\",\"quote_sha256\":\"353719de9177ea9d6b00bb5aaac1470a50ea3a083db5f615a4e9284091a1fb2e\",\"page_text_start\":0,\"page_text_end\":311}]}",
+        "tokens": 163,
+        "budget_complete": true,
+        "context_sha256": "2123054546bbbd858406258ac690c218f2b2155a830dd14123454cadfe3f0a67"
+      },
+      "total_times_ms": [
+        10.385900008259341,
+        12.056200008373708,
+        9.63779998710379
+      ]
+    },
+    {
+      "question_id": "X03",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 12.461524723965999
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 12.16810387813099
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 12.167090740601713
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 7.943494530575332
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 7.50737875545596
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.4807126161257775
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-W",
+        "E121-E"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "wash_conditions",
+              "elution_alternatives"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "loading",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "for a hitrap blue hp 5 ml column, report the washing buffer, flow, quantity guidance and the alternative stopping criteria",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "omit sample application and elution from the response",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "sample application",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "for a hitrap blue hp 5 ml column, report the washing buffer, flow, quantity guidance and the alternative stopping criteria",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-B",
+        "E120-U",
+        "E120-A",
+        "E119-BL",
+        "E119-X",
+        "E119-H",
+        "E118-USE",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-W",
+          "E121-E"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-W",
+          "E121-E"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264},{\"id\":\"E121-E\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \\nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \\n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.\",\"quote_sha256\":\"e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e\",\"page_text_start\":1265,\"page_text_end\":1568}]}",
+        "tokens": 1187,
+        "budget_complete": true,
+        "context_sha256": "56088e6ec417ccc967033cfa60b5b9587db6480b5bca251b8dd7f68604a71d56"
+      },
+      "total_times_ms": [
+        20.02270001685247,
+        11.620400007814169,
+        10.180199984461069
+      ]
+    },
+    {
+      "question_id": "X03",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 12.461524723965999
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 12.16810387813099
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 12.167090740601713
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 7.943494530575332
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 7.50737875545596
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.4807126161257775
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-W",
+        "E121-E"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "wash_conditions",
+              "elution_alternatives"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "pour une colonne hitrap blue hp de 5 ml, indique le tampon, le debit, l'indication de quantite et les criteres alternatifs de fin du lavage",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "omet l'application de l'echantillon et l'elution de la reponse",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "pour une colonne hitrap blue hp de 5 ml, indique le tampon, le debit, l'indication de quantite et les criteres alternatifs de fin du lavage",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-L",
+        "E121-B",
+        "E120-U",
+        "E120-A",
+        "E119-X",
+        "E119-H",
+        "E118-USE",
+        "E119-BL",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W",
+          "E121-E"
+        ],
+        "accepted_seeds": [
+          "E121-W",
+          "E121-E"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264},{\"id\":\"E121-E\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \\nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \\n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.\",\"quote_sha256\":\"e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e\",\"page_text_start\":1265,\"page_text_end\":1568}]}",
+        "tokens": 866,
+        "budget_complete": true,
+        "context_sha256": "b1ce11bbf6cbf5556ee11277a01ec913fa513ca3549ac90491eaf351551483e1"
+      },
+      "total_times_ms": [
+        10.223600023891777,
+        9.825099987210706,
+        9.869800007436424
+      ]
+    },
+    {
+      "question_id": "X04",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-L",
+          "score": 9.617833657712916
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 8.358718991745251
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 7.349582269888151
+        },
+        {
+          "passage_id": "E118-USE",
+          "score": 6.728995782457579
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.692998816708685
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 6.374224056106115
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-E"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "elution_alternatives"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "loading"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "hitrap blue hp 1 ml: i need sample-application flow instead of elution settings",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "sample application",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "state the loading range only, with any source qualification needed to interpret it",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "loading",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "hitrap blue hp 1 ml: i need sample-application flow instead of elution settings",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E120-U",
+        "E118-USE",
+        "E120-A",
+        "E121-W",
+        "E119-X",
+        "E119-B",
+        "E121-B",
+        "E119-BL",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-E"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-E"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-E\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \\nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \\n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.\",\"quote_sha256\":\"e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e\",\"page_text_start\":1265,\"page_text_end\":1568}]}",
+        "tokens": 1008,
+        "budget_complete": true,
+        "context_sha256": "965c838b2801288f0e2174238f4704a62fb14403c51e22d7f0ebf223a65a818d"
+      },
+      "total_times_ms": [
+        8.079399995040148,
+        8.803900011116639,
+        14.319400012027472
+      ]
+    },
+    {
+      "question_id": "X04",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-L",
+          "score": 9.617833657712916
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 8.358718991745251
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 7.349582269888151
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.692998816708685
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 6.374224056106115
+        },
+        {
+          "passage_id": "E119-X",
+          "score": 5.783182747150667
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-E"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "elution_alternatives"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "loading"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "hitrap blue hp 1 ml : j'ai besoin du debit d'application de l'echantillon au lieu des parametres d'elution",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "donne seulement la plage de chargement, avec les reserves du passage necessaires a son interpretation",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "chargement",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "hitrap blue hp 1 ml : j'ai besoin du debit d'application de l'echantillon au lieu des parametres d'elution",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E120-U",
+        "E120-A",
+        "E121-W",
+        "E119-X",
+        "E121-B",
+        "E118-USE",
+        "E119-BL",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-E"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-E"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-E\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \\nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \\n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.\",\"quote_sha256\":\"e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e\",\"page_text_start\":1265,\"page_text_end\":1568}]}",
+        "tokens": 1008,
+        "budget_complete": true,
+        "context_sha256": "965c838b2801288f0e2174238f4704a62fb14403c51e22d7f0ebf223a65a818d"
+      },
+      "total_times_ms": [
+        17.557699989993125,
+        13.181499991333112,
+        15.6931999954395
+      ]
+    },
+    {
+      "question_id": "X05",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 12.672338406542416
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 11.91026786660341
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 10.83053222991181
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 9.354168982483909
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 7.50737875545596
+        },
+        {
+          "passage_id": "E118-USE",
+          "score": 6.591878532094687
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-B",
+        "E121-L"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "buffer_alternatives",
+              "sample_application"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "loading"
+          ],
+          "negative": [
+            "elution",
+            "washing"
+          ],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "state the sample-loading flow range",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "loading",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "leave washing out, and do not provide operating instructions for elution",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "for hitrap blue hp 5 ml, list the binding-buffer alternatives,",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-W",
+        "E121-E",
+        "E120-U",
+        "E118-USE",
+        "E120-A",
+        "E119-BL",
+        "E119-X",
+        "E120-W",
+        "E119-H",
+        "E119-I",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-BH",
+          "E121-B",
+          "E121-PH",
+          "E121-F",
+          "E121-L"
+        ],
+        "accepted_seeds": [
+          "E121-B",
+          "E121-L"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-BH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Buffer preparation\",\"quote_sha256\":\"86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e\",\"page_text_start\":1912,\"page_text_end\":1930},{\"id\":\"E121-B\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Binding buffer: 20 mM sodium phosphate, pH 7.0, or 50 mM potassium hydrogen phosphate (KH 2PO4), pH 7.0\\nElution buffer: 0.02 M sodium phosphate, 2 M sodium chloride, pH 7.0, or 0.05 M potassium hydrogen phosphate, \\n1.5 M potassium chloride, pH 7.0\",\"quote_sha256\":\"bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8\",\"page_text_start\":0,\"page_text_end\":247},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003}]}",
+        "tokens": 1109,
+        "budget_complete": true,
+        "context_sha256": "21760380373786416dbd5a28d52ca647a2a4a2ca5c9baefe330c49e7acdf1046"
+      },
+      "total_times_ms": [
+        10.590200021397322,
+        10.740800003986806,
+        12.167799985036254
+      ]
+    },
+    {
+      "question_id": "X05",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 11.81365210319833
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 11.107952751467673
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 10.006580750607446
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 8.636641707587936
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 7.50737875545596
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.4807126161257775
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-B",
+        "E121-L"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "buffer_alternatives",
+              "sample_application"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "loading"
+          ],
+          "negative": [
+            "elution",
+            "washing"
+          ],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "la plage de debit de chargement de l'echantillon",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "chargement",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "laisse le lavage de cote et ne donne pas de consignes operatoires d'elution",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "pour hitrap blue hp 5 ml, liste les formulations alternatives du tampon de liaison,",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-W",
+        "E121-E",
+        "E120-U",
+        "E120-A",
+        "E119-BL",
+        "E119-X",
+        "E119-H",
+        "E118-USE",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-BH",
+          "E121-B",
+          "E121-PH",
+          "E121-F",
+          "E121-L"
+        ],
+        "accepted_seeds": [
+          "E121-B",
+          "E121-L"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-BH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Buffer preparation\",\"quote_sha256\":\"86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e\",\"page_text_start\":1912,\"page_text_end\":1930},{\"id\":\"E121-B\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Binding buffer: 20 mM sodium phosphate, pH 7.0, or 50 mM potassium hydrogen phosphate (KH 2PO4), pH 7.0\\nElution buffer: 0.02 M sodium phosphate, 2 M sodium chloride, pH 7.0, or 0.05 M potassium hydrogen phosphate, \\n1.5 M potassium chloride, pH 7.0\",\"quote_sha256\":\"bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8\",\"page_text_start\":0,\"page_text_end\":247},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003}]}",
+        "tokens": 1109,
+        "budget_complete": true,
+        "context_sha256": "21760380373786416dbd5a28d52ca647a2a4a2ca5c9baefe330c49e7acdf1046"
+      },
+      "total_times_ms": [
+        18.28739998745732,
+        12.986999994609505,
+        12.127499998314306
+      ]
+    },
+    {
+      "question_id": "X06",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 13.258028721993515
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 12.95387916910952
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 11.19519734716183
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 10.17065074472779
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 7.5239766647571615
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 6.666971259149035
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-W"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "wash_conditions"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "loading",
+            "washing"
+          ],
+          "negative": [
+            "elution"
+          ],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "i have two separate hitrap blue hp tasks: loading a 1 ml column and washing a 5 ml column",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "loading",
+                  "negative": false
+                },
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "give the appropriate flow range for each, and the washing endpoint and column-volume guidance",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "do not turn either range into an elution instruction",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "i have two separate hitrap blue hp tasks: loading a 1 ml column and washing a 5 ml column",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E120-A",
+        "E121-B",
+        "E120-U",
+        "E119-X",
+        "E119-H",
+        "E119-A",
+        "E119-BI",
+        "E119-BL",
+        "E120-W",
+        "E119-I",
+        "E118-USE",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-W"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 993,
+        "budget_complete": true,
+        "context_sha256": "9fdc28fff3a150d637c2c29f65f2dd4e75e95491c94b09f9e3e6fa108abf9a79"
+      },
+      "total_times_ms": [
+        11.339599994244054,
+        10.498999996343628,
+        15.043999999761581
+      ]
+    },
+    {
+      "question_id": "X06",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-E",
+          "score": 14.439410422062227
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 14.022951749807905
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 10.477670072265857
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 7.725850300677832
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 6.721661549621424
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 6.666971259149035
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-W",
+        "E121-E"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "wash_conditions",
+              "elution_alternatives"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "loading",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "j'ai deux taches distinctes avec hitrap blue hp : charger une colonne de 1 ml et laver une colonne de 5 ml",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "charger",
+                  "negative": false
+                },
+                {
+                  "signal": "washing",
+                  "alias": "laver",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "donne la plage de debit de chacune, ainsi que le critere de fin et l'indication en volumes de colonne pour le lavage",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "ne transforme aucune plage en consigne d'elution",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "j'ai deux taches distinctes avec hitrap blue hp : charger une colonne de 1 ml et laver une colonne de 5 ml",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E120-A",
+        "E121-B",
+        "E120-U",
+        "E119-X",
+        "E119-H",
+        "E119-BL",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-W",
+          "E121-E"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-W",
+          "E121-E"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264},{\"id\":\"E121-E\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \\nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \\n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.\",\"quote_sha256\":\"e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e\",\"page_text_start\":1265,\"page_text_end\":1568}]}",
+        "tokens": 1187,
+        "budget_complete": true,
+        "context_sha256": "56088e6ec417ccc967033cfa60b5b9587db6480b5bca251b8dd7f68604a71d56"
+      },
+      "total_times_ms": [
+        13.297899975441396,
+        15.986300015356392,
+        14.35669997590594
+      ]
+    },
+    {
+      "question_id": "X07",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-E",
+          "score": 18.854326570536248
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 13.239509776775307
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 9.416860690374179
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.692998816708685
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 6.32648489978274
+        },
+        {
+          "passage_id": "E119-X",
+          "score": 5.783182747150667
+        }
+      ],
+      "scope_selected_seeds": [
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "clarification_required",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "cross_page_protocol_scope",
+              "protocol_heading"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "washing"
+          ],
+          "negative": [
+            "elution"
+          ],
+          "conflicts": [
+            "elution"
+          ],
+          "clauses": [
+            {
+              "clause": "for hitrap blue hp 1 ml, washing and elution are both requested",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "i am not asking you to exclude elution",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            },
+            {
+              "clause": "give the washing endpoint and flow,",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "the step-versus-linear elution column volumes and flow",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "for hitrap blue hp 1 ml, washing and elution are both requested",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": true,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": false,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E121-W",
+        "E121-L",
+        "E120-A",
+        "E121-B",
+        "E119-X",
+        "E120-U",
+        "E119-H",
+        "E119-I",
+        "E119-BI",
+        "E119-BL",
+        "E120-W",
+        "E118-USE",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "accepted_seeds": [
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946}]}",
+        "tokens": 493,
+        "budget_complete": true,
+        "context_sha256": "6e07e060b0d11baa906d363940823db6b97137b55b518ffc581c3a3722de2789"
+      },
+      "total_times_ms": [
+        10.968000016873702,
+        7.588100008433685,
+        7.987399992998689
+      ]
+    },
+    {
+      "question_id": "X07",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-E",
+          "score": 15.720892358974812
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 12.38082347343122
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 8.699333415478206
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.692998816708685
+        },
+        {
+          "passage_id": "E119-X",
+          "score": 5.783182747150667
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 5.524169784647002
+        }
+      ],
+      "scope_selected_seeds": [
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "clarification_required",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "cross_page_protocol_scope",
+              "protocol_heading"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "elution",
+            "washing"
+          ],
+          "negative": [
+            "elution"
+          ],
+          "conflicts": [
+            "elution"
+          ],
+          "clauses": [
+            {
+              "clause": "pour hitrap blue hp 1 ml, le lavage et l'elution sont tous deux demandes",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "je ne te demande pas d'exclure l'elution",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            },
+            {
+              "clause": "donne le critere de fin et le debit du lavage,",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "les volumes de colonne et le debit d'elution par palier ou par gradient lineaire",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "pour hitrap blue hp 1 ml, le lavage et l'elution sont tous deux demandes",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": true,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": false,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E121-W",
+        "E121-L",
+        "E120-A",
+        "E119-X",
+        "E121-B",
+        "E120-U",
+        "E119-H",
+        "E119-BL",
+        "E119-I",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "accepted_seeds": [
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946}]}",
+        "tokens": 493,
+        "budget_complete": true,
+        "context_sha256": "6e07e060b0d11baa906d363940823db6b97137b55b518ffc581c3a3722de2789"
+      },
+      "total_times_ms": [
+        13.762199989287183,
+        10.935900005279109,
+        15.054099989356473
+      ]
+    },
+    {
+      "question_id": "X08",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E119-BL",
+          "score": 10.909010939403794
+        },
+        {
+          "passage_id": "E119-I",
+          "score": 9.107092443580317
+        },
+        {
+          "passage_id": "E118-C",
+          "score": 6.601360751193119
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 5.476776309908078
+        },
+        {
+          "passage_id": "E119-A",
+          "score": 5.17753444152536
+        },
+        {
+          "passage_id": "E118-M",
+          "score": 4.939030673785836
+        }
+      ],
+      "scope_selected_seeds": [
+        "E119-BL",
+        "E120-A",
+        "E120-U",
+        "E120-W"
+      ],
+      "navigation_plan": {
+        "reason": "contaminant_methods+product_applicability",
+        "routes": [
+          {
+            "group": "albumin",
+            "roles": [
+              "albumin_specific_alternative"
+            ]
+          },
+          {
+            "group": "blue",
+            "roles": [
+              "product_scope_and_mechanism",
+              "conditional_use",
+              "warning"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "blue sepharose is ruled out of this question",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "blue sepharose",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E119-I",
+        "E118-C",
+        "E121-W",
+        "E119-A",
+        "E118-M",
+        "E119-H",
+        "E121-E",
+        "E121-B",
+        "E121-L",
+        "E119-BI",
+        "E118-USE",
+        "E119-X",
+        "E119-S",
+        "E119-B"
+      ],
+      "assembled": {
+        "ids": [
+          "E119-AH",
+          "E119-BL",
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W"
+        ],
+        "accepted_seeds": [
+          "E119-BL",
+          "E120-A",
+          "E120-U",
+          "E120-W"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E119-AH\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Albumin and transferrin after antibody purification\",\"quote\":\"Albumin and transferrin\",\"quote_sha256\":\"c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051\",\"page_text_start\":1382,\"page_text_end\":1405},{\"id\":\"E119-BL\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Albumin and transferrin after antibody purification\",\"quote\":\"However, AC using Blue Sepharose 6 Fast Flow is a useful alternative to IEX and HIC for removing albumin.\",\"quote_sha256\":\"71be6d87e0a34cb6fde34b45d1a5c6b4c511f046bb624f618755bf126d335d86\",\"page_text_start\":2175,\"page_text_end\":2280},{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-A\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Blue Sepharose 6 Fast Flow or prepacked HiTrap Blue HP 1 mL and 5 mL columns (Fig 4.2) can be used to remove albumin \\neither before or after other purification steps (see Table 4.1). The albumin binds in a nonspecific manner by electrostatic \\nand/or hydrophobic interactions with the aromatic anionic ligand, Cibacron Blue F3G-A, coupled to Sepharose.\",\"quote_sha256\":\"d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4\",\"page_text_start\":61,\"page_text_end\":412},{\"id\":\"E120-U\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Use HiTrap Blue HP 1 mL or 5 mL columns to remove host albumin from mammalian expression systems or when \\nthe sample is known to contain high levels of albumin that might mask the UV absorption of other protein peaks.\",\"quote_sha256\":\"b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478\",\"page_text_start\":413,\"page_text_end\":631},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776}]}",
+        "tokens": 836,
+        "budget_complete": true,
+        "context_sha256": "4f635ae5231bcbea615c5f9cc1677177a4d9f8b833509d929b0abf23a6212e0e"
+      },
+      "total_times_ms": [
+        10.9402000089176,
+        9.883399994578212,
+        11.773200007155538
+      ]
+    },
+    {
+      "question_id": "X08",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E119-BL",
+          "score": 10.909010939403794
+        },
+        {
+          "passage_id": "E119-I",
+          "score": 9.107092443580317
+        },
+        {
+          "passage_id": "E119-A",
+          "score": 5.17753444152536
+        },
+        {
+          "passage_id": "E118-M",
+          "score": 4.939030673785836
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 4.618090006563992
+        },
+        {
+          "passage_id": "E119-H",
+          "score": 3.7710008634664103
+        }
+      ],
+      "scope_selected_seeds": [
+        "E119-BL",
+        "E120-A",
+        "E120-U",
+        "E120-W"
+      ],
+      "navigation_plan": {
+        "reason": "contaminant_methods+product_applicability",
+        "routes": [
+          {
+            "group": "albumin",
+            "roles": [
+              "albumin_specific_alternative"
+            ]
+          },
+          {
+            "group": "blue",
+            "roles": [
+              "product_scope_and_mechanism",
+              "conditional_use",
+              "warning"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [],
+          "negative": [],
+          "conflicts": [],
+          "clauses": []
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "blue sepharose est exclu du perimetre de cette question",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "blue sepharose",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E119-I",
+        "E119-A",
+        "E118-M",
+        "E121-W",
+        "E119-H",
+        "E118-C",
+        "E121-E",
+        "E119-BI",
+        "E121-B",
+        "E121-L",
+        "E119-X",
+        "E119-S",
+        "E119-B"
+      ],
+      "assembled": {
+        "ids": [
+          "E119-AH",
+          "E119-BL",
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W"
+        ],
+        "accepted_seeds": [
+          "E119-BL",
+          "E120-A",
+          "E120-U",
+          "E120-W"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E119-AH\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Albumin and transferrin after antibody purification\",\"quote\":\"Albumin and transferrin\",\"quote_sha256\":\"c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051\",\"page_text_start\":1382,\"page_text_end\":1405},{\"id\":\"E119-BL\",\"pdf_page_1based\":119,\"pdf_page_index_0based\":118,\"scope\":\"Albumin and transferrin after antibody purification\",\"quote\":\"However, AC using Blue Sepharose 6 Fast Flow is a useful alternative to IEX and HIC for removing albumin.\",\"quote_sha256\":\"71be6d87e0a34cb6fde34b45d1a5c6b4c511f046bb624f618755bf126d335d86\",\"page_text_start\":2175,\"page_text_end\":2280},{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-A\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Blue Sepharose 6 Fast Flow or prepacked HiTrap Blue HP 1 mL and 5 mL columns (Fig 4.2) can be used to remove albumin \\neither before or after other purification steps (see Table 4.1). The albumin binds in a nonspecific manner by electrostatic \\nand/or hydrophobic interactions with the aromatic anionic ligand, Cibacron Blue F3G-A, coupled to Sepharose.\",\"quote_sha256\":\"d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4\",\"page_text_start\":61,\"page_text_end\":412},{\"id\":\"E120-U\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Use HiTrap Blue HP 1 mL or 5 mL columns to remove host albumin from mammalian expression systems or when \\nthe sample is known to contain high levels of albumin that might mask the UV absorption of other protein peaks.\",\"quote_sha256\":\"b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478\",\"page_text_start\":413,\"page_text_end\":631},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776}]}",
+        "tokens": 836,
+        "budget_complete": true,
+        "context_sha256": "4f635ae5231bcbea615c5f9cc1677177a4d9f8b833509d929b0abf23a6212e0e"
+      },
+      "total_times_ms": [
+        18.10059999115765,
+        33.73909997753799,
+        30.327399988891557
+      ]
+    },
+    {
+      "question_id": "X09",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 13.258028721993515
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 12.742681885857218
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 11.19519734716183
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 10.17065074472779
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 6.666971259149035
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 6.446609315089142
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-W",
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "wash_conditions",
+              "cross_page_protocol_scope",
+              "protocol_heading"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "loading",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "for hitrap blue hp, give the loading-flow range for a 5 ml column, the washing-flow range for a separate 1 ml column, and a maximum pressure in bar if the reviewed excerpts support one",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "loading",
+                  "negative": false
+                },
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "for hitrap blue hp, give the loading-flow range for a 5 ml column, the washing-flow range for a separate 1 ml column, and a maximum pressure in bar if the reviewed excerpts support one",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [
+          {
+            "group": "blue",
+            "role": "maximum_pressure",
+            "reason": "not_in_selected_corpus"
+          }
+        ],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [
+        {
+          "group": "blue",
+          "role": "maximum_pressure",
+          "reason": "not_in_selected_corpus"
+        }
+      ],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": false,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E120-A",
+        "E120-U",
+        "E121-B",
+        "E119-H",
+        "E119-X",
+        "E119-A",
+        "E119-BL",
+        "E120-W",
+        "E119-I",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 993,
+        "budget_complete": true,
+        "context_sha256": "9fdc28fff3a150d637c2c29f65f2dd4e75e95491c94b09f9e3e6fa108abf9a79"
+      },
+      "total_times_ms": [
+        30.254100012825802,
+        26.361500000348315,
+        34.39960000105202
+      ]
+    },
+    {
+      "question_id": "X09",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 12.399342418649429
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 10.477670072265857
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 9.968404562281611
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 7.725850300677832
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 6.666971259149035
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 5.644294199953404
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-L",
+        "E121-W",
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "sample_application",
+              "wash_conditions",
+              "cross_page_protocol_scope",
+              "protocol_heading"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "loading",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "pour hitrap blue hp, donne la plage de debit de chargement d'une colonne de 5 ml, la plage de lavage d'une autre colonne de 1 ml et une pression maximale en bar si les extraits valides en donnent une",
+              "mentions": [
+                {
+                  "signal": "loading",
+                  "alias": "chargement",
+                  "negative": false
+                },
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "pour hitrap blue hp, donne la plage de debit de chargement d'une colonne de 5 ml, la plage de lavage d'une autre colonne de 1 ml et une pression maximale en bar si les extraits valides en donnent une",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [
+          {
+            "group": "blue",
+            "role": "maximum_pressure",
+            "reason": "not_in_selected_corpus"
+          }
+        ],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [
+        {
+          "group": "blue",
+          "role": "maximum_pressure",
+          "reason": "not_in_selected_corpus"
+        }
+      ],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": false,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E120-A",
+        "E120-U",
+        "E121-B",
+        "E119-H",
+        "E119-X",
+        "E119-BL",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-F",
+          "E121-L",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E121-L",
+          "E121-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-F\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \\n120 drops/min when using a 5 mL HiTrap column\",\"quote_sha256\":\"60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9\",\"page_text_start\":1720,\"page_text_end\":1911},{\"id\":\"E121-L\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \\nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \\napplication*.\",\"quote_sha256\":\"c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c\",\"page_text_start\":770,\"page_text_end\":1003},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 993,
+        "budget_complete": true,
+        "context_sha256": "9fdc28fff3a150d637c2c29f65f2dd4e75e95491c94b09f9e3e6fa108abf9a79"
+      },
+      "total_times_ms": [
+        24.247199995443225,
+        13.789599994197488,
+        14.21749999281019
+      ]
+    },
+    {
+      "question_id": "X10",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 13.258028721993515
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 11.19519734716183
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 10.792356041585975
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 9.450646496746694
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 7.725850300677832
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 6.666971259149035
+        }
+      ],
+      "scope_selected_seeds": [
+        "E118-M",
+        "E121-W",
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "conditional_iex_source_boundary+product_roles",
+        "routes": [
+          {
+            "group": "general",
+            "roles": [
+              "method_selection"
+            ]
+          },
+          {
+            "group": "blue",
+            "roles": [
+              "wash_conditions",
+              "equilibration"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "equilibration",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "keep three requests separate: the cation-exchange ph-versus-pi condition, hitrap blue hp 5 ml equilibration settings, and the washing flow for a 1 ml hitrap blue hp column",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                },
+                {
+                  "signal": "equilibration",
+                  "alias": "equilibration",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "still give the reviewed general principle and washing information",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "keep three requests separate: the cation-exchange ph-versus-pi condition, hitrap blue hp 5 ml equilibration settings, and the washing flow for a 1 ml hitrap blue hp column",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                },
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [
+          {
+            "group": "general",
+            "role": "conditional_iex",
+            "reason": "source_not_approved"
+          }
+        ],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [
+        {
+          "group": "blue",
+          "role": "equilibration",
+          "reason": "source_missing_or_quarantined"
+        }
+      ],
+      "source_limitations": [
+        {
+          "group": "general",
+          "role": "conditional_iex",
+          "reason": "source_not_approved"
+        }
+      ],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": false,
+      "source_support_complete": false,
+      "filtered_ranked_ids": [
+        "E121-L",
+        "E121-E",
+        "E121-B",
+        "E120-A",
+        "E120-U",
+        "E119-X",
+        "E119-B",
+        "E119-BI",
+        "E119-I",
+        "E119-H",
+        "E118-C",
+        "E119-BL",
+        "E120-W",
+        "E118-USE",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E118-M",
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E118-M",
+          "E121-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E118-M\",\"pdf_page_1based\":118,\"pdf_page_index_0based\":117,\"scope\":\"Contaminants after initial antibody purification; laboratory-scale guidance\",\"quote\":\" Select chromatography techniques that utilize differences in the characteristics of the contaminant and target \\nmolecule: ion exchange chromatography (IEX) for separation by differences in charge; hydrophobic interaction \\nchromatography (HIC) for separation by differences in hydrophobicity; and size exclusion chromatography (SEC) for \\nseparation by size. See Appendix 9 for an overview of the principles of the chromatography techniques used  \\nat laboratory scale.\",\"quote_sha256\":\"65a84cb4b12cfd35901e7245c9be1bef786860db8b80fd1b212b38bd6ee0cb3c\",\"page_text_start\":1580,\"page_text_end\":2047},{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 864,
+        "budget_complete": true,
+        "context_sha256": "489d8cda892cfd3c5ef99b69e43ae7735647ed18aa6486dda07f51b87bed4f0a"
+      },
+      "total_times_ms": [
+        12.212300003739074,
+        11.313199996948242,
+        11.29279998713173
+      ]
+    },
+    {
+      "question_id": "X10",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 12.399342418649429
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 10.477670072265857
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 9.968404562281611
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 8.648331381610957
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 7.725850300677832
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 6.666971259149035
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-W",
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "conditional_iex_source_boundary+product_roles",
+        "routes": [
+          {
+            "group": "general",
+            "roles": [
+              "method_selection"
+            ]
+          },
+          {
+            "group": "blue",
+            "roles": [
+              "wash_conditions",
+              "equilibration"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "equilibration",
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "garde trois demandes distinctes : la condition de ph par rapport au pi en echange cationique, les parametres d'equilibrage de hitrap blue hp 5 ml et le debit de lavage d'une colonne hitrap blue hp de 1 ml",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                },
+                {
+                  "signal": "equilibration",
+                  "alias": "équilibrage",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "donne le principe general et les informations de lavage deja valides",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "garde trois demandes distinctes : la condition de ph par rapport au pi en echange cationique, les parametres d'equilibrage de hitrap blue hp 5 ml et le debit de lavage d'une colonne hitrap blue hp de 1 ml",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                },
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [
+          {
+            "group": "general",
+            "role": "conditional_iex",
+            "reason": "source_not_approved"
+          }
+        ],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [
+        {
+          "group": "general",
+          "reason": "no_positive_scope_hit"
+        },
+        {
+          "group": "blue",
+          "role": "equilibration",
+          "reason": "source_missing_or_quarantined"
+        }
+      ],
+      "source_limitations": [
+        {
+          "group": "general",
+          "role": "conditional_iex",
+          "reason": "source_not_approved"
+        }
+      ],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": false,
+      "source_support_complete": false,
+      "filtered_ranked_ids": [
+        "E121-L",
+        "E121-E",
+        "E121-B",
+        "E120-A",
+        "E120-U",
+        "E119-X",
+        "E119-I",
+        "E119-H",
+        "E119-BL",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E121-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 672,
+        "budget_complete": true,
+        "context_sha256": "040f7d373cb10e35dc732a01dc352a1dfc8da1a2b40102d4b86c8d6a373cece7"
+      },
+      "total_times_ms": [
+        12.48390000546351,
+        9.523000015178695,
+        10.887200012803078
+      ]
+    },
+    {
+      "question_id": "X11",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-E",
+          "score": 22.988100216685105
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 14.076274689946741
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 12.360172374905966
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 11.313083995054285
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 10.32834968846582
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 9.326271942961391
+        }
+      ],
+      "scope_selected_seeds": [
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "clarification_required",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "cross_page_protocol_scope",
+              "protocol_heading"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "elution"
+          ],
+          "negative": [
+            "elution"
+          ],
+          "conflicts": [
+            "elution"
+          ],
+          "clauses": [
+            {
+              "clause": "two independent tasks: for preparation a, summarize step and linear-gradient elution on hitrap blue hp 1 ml, including volumes and flow",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "exclude elution parameters for b only",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "two independent tasks: for preparation a, summarize step and linear-gradient elution on hitrap blue hp 1 ml, including volumes and flow",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "for preparation b, state only whether the manual places blue sepharose albumin removal before or after other purification steps",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "blue sepharose",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": true,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": false,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E120-A",
+        "E121-W",
+        "E121-B",
+        "E121-L",
+        "E120-U",
+        "E120-W",
+        "E119-X",
+        "E119-I",
+        "E119-BL",
+        "E119-A",
+        "E119-B",
+        "E118-C",
+        "E118-USE",
+        "E119-BI",
+        "E119-S",
+        "E119-H"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "accepted_seeds": [
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946}]}",
+        "tokens": 493,
+        "budget_complete": true,
+        "context_sha256": "6e07e060b0d11baa906d363940823db6b97137b55b518ffc581c3a3722de2789"
+      },
+      "total_times_ms": [
+        10.092200012877584,
+        7.876000017859042,
+        10.120000020833686
+      ]
+    },
+    {
+      "question_id": "X11",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-E",
+          "score": 16.24947066779063
+        },
+        {
+          "passage_id": "E121-W",
+          "score": 10.757357402425173
+        },
+        {
+          "passage_id": "E121-B",
+          "score": 9.815490899439357
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 9.703564348641338
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 8.989020698486854
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 8.301277933505327
+        }
+      ],
+      "scope_selected_seeds": [
+        "E120-P",
+        "E121-PH"
+      ],
+      "navigation_plan": {
+        "reason": "clarification_required",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "cross_page_protocol_scope",
+              "protocol_heading"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": true,
+        "phase_mentions": {
+          "positive": [
+            "elution"
+          ],
+          "negative": [
+            "elution"
+          ],
+          "conflicts": [
+            "elution"
+          ],
+          "clauses": [
+            {
+              "clause": "deux taches independantes : pour la preparation a, resume l'elution par palier et par gradient lineaire sur hitrap blue hp 1 ml, avec volumes et debit",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": false
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "exclus les parametres d'elution pour b uniquement",
+              "mentions": [
+                {
+                  "signal": "elution",
+                  "alias": "elution",
+                  "negative": true
+                },
+                {
+                  "signal": "elution",
+                  "alias": "élution",
+                  "negative": true
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "deux taches independantes : pour la preparation a, resume l'elution par palier et par gradient lineaire sur hitrap blue hp 1 ml, avec volumes et debit",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "pour la preparation b, indique seulement si le manuel situe le retrait d'albumine par blue sepharose avant ou apres d'autres etapes",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "blue sepharose",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": true,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": false,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-E",
+        "E121-W",
+        "E121-B",
+        "E120-A",
+        "E121-L",
+        "E120-U",
+        "E119-X",
+        "E119-BL",
+        "E120-W",
+        "E119-I",
+        "E119-S",
+        "E119-H",
+        "E119-A",
+        "E118-C",
+        "E119-B"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH"
+        ],
+        "accepted_seeds": [
+          "E120-P",
+          "E121-PH"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946}]}",
+        "tokens": 493,
+        "budget_complete": true,
+        "context_sha256": "6e07e060b0d11baa906d363940823db6b97137b55b518ffc581c3a3722de2789"
+      },
+      "total_times_ms": [
+        11.569299997063354,
+        10.40540001122281,
+        10.492200002772734
+      ]
+    },
+    {
+      "question_id": "X12",
+      "language": "en",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 10.757214142272744
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 8.699333415478206
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 8.358718991745251
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.692998816708685
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 5.4841807641251625
+        },
+        {
+          "passage_id": "E119-H",
+          "score": 4.474229815939528
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-W"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "wash_conditions"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "synthetic scope check for the same hitrap blue hp 1 ml column and the same answer: give the washing flow and quantity guidance,",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "omit every washing parameter",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "washing",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "synthetic scope check for the same hitrap blue hp 1 ml column and the same answer: give the washing flow and quantity guidance,",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-L",
+        "E121-E",
+        "E120-A",
+        "E120-U",
+        "E119-H",
+        "E121-B",
+        "E119-X",
+        "E119-BL",
+        "E118-USE",
+        "E119-B",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E121-W"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 672,
+        "budget_complete": true,
+        "context_sha256": "040f7d373cb10e35dc732a01dc352a1dfc8da1a2b40102d4b86c8d6a373cece7"
+      },
+      "total_times_ms": [
+        7.42139999056235,
+        8.032800018554553,
+        8.121099992422387
+      ]
+    },
+    {
+      "question_id": "X12",
+      "language": "fr",
+      "hits": [
+        {
+          "passage_id": "E121-W",
+          "score": 10.757214142272744
+        },
+        {
+          "passage_id": "E121-L",
+          "score": 8.699333415478206
+        },
+        {
+          "passage_id": "E121-E",
+          "score": 8.358718991745251
+        },
+        {
+          "passage_id": "E120-A",
+          "score": 6.692998816708685
+        },
+        {
+          "passage_id": "E120-U",
+          "score": 5.4841807641251625
+        },
+        {
+          "passage_id": "E119-H",
+          "score": 4.474229815939528
+        }
+      ],
+      "scope_selected_seeds": [
+        "E121-W"
+      ],
+      "navigation_plan": {
+        "reason": "product_roles",
+        "routes": [
+          {
+            "group": "blue",
+            "roles": [
+              "wash_conditions"
+            ]
+          }
+        ],
+        "phase_exclusion_applied": false,
+        "phase_mentions": {
+          "positive": [
+            "washing"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "test synthetique de perimetre pour la meme colonne hitrap blue hp de 1 ml et la meme reponse : donne le debit et l'indication de quantite du lavage,",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            },
+            {
+              "clause": "omets tout parametre de lavage",
+              "mentions": [
+                {
+                  "signal": "washing",
+                  "alias": "lavage",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "product_mentions": {
+          "positive": [
+            "blue"
+          ],
+          "negative": [],
+          "conflicts": [],
+          "clauses": [
+            {
+              "clause": "test synthetique de perimetre pour la meme colonne hitrap blue hp de 1 ml et la meme reponse : donne le debit et l'indication de quantite du lavage,",
+              "mentions": [
+                {
+                  "signal": "blue",
+                  "alias": "hitrap blue",
+                  "negative": false
+                }
+              ]
+            }
+          ]
+        },
+        "clarification_required": false,
+        "source_limitations": [],
+        "discover_footnote_family": false
+      },
+      "unavailable_source_roles": [],
+      "source_limitations": [],
+      "source_navigation_over_top_k": [],
+      "navigation_complete": true,
+      "source_support_complete": true,
+      "filtered_ranked_ids": [
+        "E121-L",
+        "E121-E",
+        "E120-A",
+        "E120-U",
+        "E119-H",
+        "E121-B",
+        "E119-X",
+        "E119-BL",
+        "E120-W",
+        "E119-S"
+      ],
+      "assembled": {
+        "ids": [
+          "E120-H",
+          "E120-W",
+          "E120-P",
+          "E121-PH",
+          "E121-W"
+        ],
+        "accepted_seeds": [
+          "E121-W"
+        ],
+        "excluded": [],
+        "context": "{\"source_passages\":[{\"id\":\"E120-H\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Removal of albumin using Blue Sepharose chromatography media\",\"quote_sha256\":\"cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a\",\"page_text_start\":0,\"page_text_end\":60},{\"id\":\"E120-W\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \\nhydrophobicity similar to that of albumin.\",\"quote_sha256\":\"642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f\",\"page_text_start\":632,\"page_text_end\":776},{\"id\":\"E120-P\",\"pdf_page_1based\":120,\"pdf_page_index_0based\":119,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.\",\"quote_sha256\":\"8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024\",\"page_text_start\":1872,\"page_text_end\":1970},{\"id\":\"E121-PH\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\"Albumin removal\",\"quote_sha256\":\"f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5\",\"page_text_start\":1931,\"page_text_end\":1946},{\"id\":\"E121-W\",\"pdf_page_1based\":121,\"pdf_page_index_0based\":120,\"scope\":\"Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL\",\"quote\":\" 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \\nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \\n5 to 10 mL/min (5 mL column) for washing.\",\"quote_sha256\":\"e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3\",\"page_text_start\":1004,\"page_text_end\":1264}]}",
+        "tokens": 672,
+        "budget_complete": true,
+        "context_sha256": "040f7d373cb10e35dc732a01dc352a1dfc8da1a2b40102d4b86c8d6a373cece7"
+      },
+      "total_times_ms": [
+        11.27639997866936,
+        7.500200008507818,
+        8.321500004967675
+      ]
+    }
+  ],
+  "metrics": {
+    "rows": [
+      {
+        "question_id": "X01",
+        "language": "en",
+        "complete_evidence": false,
+        "reference_coverage": 0.0,
+        "missing_ids": [
+          "E118-C",
+          "E118-M",
+          "E118-USE"
+        ],
+        "outside_acceptable_ids": [
+          "E119-BH",
+          "E119-BI"
+        ],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "clarify",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X01",
+        "language": "fr",
+        "complete_evidence": false,
+        "reference_coverage": 0.0,
+        "missing_ids": [
+          "E118-C",
+          "E118-M",
+          "E118-USE"
+        ],
+        "outside_acceptable_ids": [
+          "E119-B",
+          "E119-BH",
+          "E119-BI",
+          "E119-X"
+        ],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "clarify",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X02",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X02",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X03",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-E",
+          "E121-F",
+          "E121-L"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-E",
+          "E121-F",
+          "E121-L"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X03",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-E"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-E"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X04",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-E"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-E"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X04",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-E"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-E"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X05",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X05",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X06",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X06",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-E"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-E"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X07",
+        "language": "en",
+        "complete_evidence": false,
+        "reference_coverage": 0.6666666666666666,
+        "missing_ids": [
+          "E121-E",
+          "E121-W"
+        ],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [
+          "navigation_complete",
+          "clarification_required"
+        ],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X07",
+        "language": "fr",
+        "complete_evidence": false,
+        "reference_coverage": 0.6666666666666666,
+        "missing_ids": [
+          "E121-E",
+          "E121-W"
+        ],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [
+          "navigation_complete",
+          "clarification_required"
+        ],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X08",
+        "language": "en",
+        "complete_evidence": false,
+        "reference_coverage": 0.25,
+        "missing_ids": [
+          "E119-A",
+          "E119-H",
+          "E119-I"
+        ],
+        "outside_acceptable_ids": [
+          "E119-BL",
+          "E120-A",
+          "E120-H",
+          "E120-U",
+          "E120-W"
+        ],
+        "unrequested_context_ids_present": [
+          "E120-A",
+          "E120-H",
+          "E120-U",
+          "E120-W"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X08",
+        "language": "fr",
+        "complete_evidence": false,
+        "reference_coverage": 0.25,
+        "missing_ids": [
+          "E119-A",
+          "E119-H",
+          "E119-I"
+        ],
+        "outside_acceptable_ids": [
+          "E119-BL",
+          "E120-A",
+          "E120-H",
+          "E120-U",
+          "E120-W"
+        ],
+        "unrequested_context_ids_present": [
+          "E120-A",
+          "E120-H",
+          "E120-U",
+          "E120-W"
+        ],
+        "diagnostic_failures": [],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X09",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer_with_source_limit",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X09",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer_with_source_limit",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X10",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer_with_source_limit",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X10",
+        "language": "fr",
+        "complete_evidence": false,
+        "reference_coverage": 0.8333333333333334,
+        "missing_ids": [
+          "E118-M"
+        ],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [],
+        "expected_status": "answer_with_source_limit",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X11",
+        "language": "en",
+        "complete_evidence": false,
+        "reference_coverage": 0.6666666666666666,
+        "missing_ids": [
+          "E120-A",
+          "E121-E"
+        ],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [
+          "navigation_complete",
+          "clarification_required"
+        ],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X11",
+        "language": "fr",
+        "complete_evidence": false,
+        "reference_coverage": 0.6666666666666666,
+        "missing_ids": [
+          "E120-A",
+          "E121-E"
+        ],
+        "outside_acceptable_ids": [],
+        "unrequested_context_ids_present": [],
+        "diagnostic_failures": [
+          "navigation_complete",
+          "clarification_required"
+        ],
+        "expected_status": "answer",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X12",
+        "language": "en",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-W"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-W"
+        ],
+        "diagnostic_failures": [
+          "navigation_complete",
+          "clarification_required",
+          "phase_conflicts_contains"
+        ],
+        "expected_status": "clarify",
+        "response_status_evaluated": false
+      },
+      {
+        "question_id": "X12",
+        "language": "fr",
+        "complete_evidence": true,
+        "reference_coverage": 1.0,
+        "missing_ids": [],
+        "outside_acceptable_ids": [
+          "E121-W"
+        ],
+        "unrequested_context_ids_present": [
+          "E121-W"
+        ],
+        "diagnostic_failures": [
+          "navigation_complete",
+          "clarification_required",
+          "phase_conflicts_contains"
+        ],
+        "expected_status": "clarify",
+        "response_status_evaluated": false
+      }
+    ],
+    "intents": 12,
+    "planned_formulations": 24,
+    "complete_both_languages": 7,
+    "complete_by_language": {
+      "en": 8,
+      "fr": 7
+    },
+    "mean_reference_coverage": 0.7916666666666666,
+    "contexts_outside_acceptable_reference": 11,
+    "explicit_scope_failures": 9,
+    "diagnostic_failure_formulations": 6,
+    "pilot_gate": "blocked_missing_evidence_scope_or_diagnostics",
+    "answer_quality": "not_evaluated",
+    "automatic_adoption": false,
+    "mean_context_tokens": 757.9166666666666,
+    "max_context_tokens": 1187,
+    "excluded_bundles": 0,
+    "unavailable_source_roles": 3,
+    "median_total_ms": 10.954100012895651
+  }
+}

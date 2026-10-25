@@ -1,0 +1,25 @@
+{
+  "status": "completed_review_and_blocked_frozen_run",
+  "files": {
+    "README.md": "28ee07d23a473c70909a99db9fc5f07d902927b35d8572c6442f83d7e58223a2",
+    "provenance.json": "560ed8535d0b46d01a052a652603db3e4ce6dfe491b2a758d0193546296d27b2",
+    "results.json": "6b6b8f29b0c58fad1c4686df060237e13b65a3d9785954169a073ac7b9e83316",
+    "review.json": "a40d551194f7e2abab05b4936c46905ef56582ea4e1f4e06a0ec4805b4d076f2"
+  },
+  "supporting_files": {
+    "README.md": "e4e27bfb2ebfd2e2e57b54bef2a58a211f9053efc511cc086b8f57c3040bd5e2",
+    "docs/ROADMAP.md": "781cca784edcd4b890d066ee62805608990fbff05ba2fa6e52fc51eac0385ea6",
+    "docs/experiments/cytiva-v05-prospective-results.md": "a8595e3a76974d5dce96261efe7cc715dea70d9217d95001e67d9ab35db17cd2",
+    "experiments/cytiva/v05-evaluation-v01/PROTOCOL.md": "fb21af7b4dc98b0fd8b7c0b275c61bf6ffedb62190666634d063c955c43e422a",
+    "experiments/cytiva/v05-evaluation-v01/candidate.json": "1c9731df951c00435aa51e21deb5a5859f9e6acf0650c87cfd83a66ce6125f3a",
+    "experiments/cytiva/v05-evaluation-v01/manifest.json": "10ec2b9d37ed231be5f586e64c0056bc51c3589df32e13c73aadcc40dd143541",
+    "experiments/cytiva/v05-evaluation-v01/method-lock.json": "fc309ddad6cc4d205ae0855a3a315423eaa3e601ef1a780934a84f8b76015ece",
+    "experiments/cytiva/v05-evaluation-v01/questions.json": "43cd4e05cea2ddbfd0e8e45bbdfff8b05be24dfaba59824815f73d04f98d47a3",
+    "experiments/cytiva/v05-evaluation-v01/references.json": "2441697d6727176a9b0afa7bcd72600a56830030deffdd3ed05176e255d0cd65",
+    "experiments/cytiva/v05_evaluation.py": "1479c3906d312f12de14b613f315e7eee16664537295d7733e100811f9a7f7c6",
+    "experiments/cytiva/verify_v05_reviewed_package.py": "5358e33ed2f80a76fa4a1ee5fe195f50ef6ad302c0ca0eb24f5ea740cebbe90e",
+    "tests/test_v05_evaluation.py": "9b293f38743fc93414d56230839476a7098a51498088fd604a9a81a03549fad3",
+    "tests/test_v05_reviewed_package.py": "20d9392267e424c30733db03979d522ec6d21179fc2785f62e108f5ada519655"
+  },
+  "publication_allowed": false
+}

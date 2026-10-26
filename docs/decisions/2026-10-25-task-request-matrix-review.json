@@ -1,0 +1,81 @@
+{
+  "id": "task-request-matrix-cards-review-2026-10-25",
+  "decision": "approved_design_details_with_R08_correction",
+  "recorded_at_utc": "2026-10-25T15:40:02.959974+00:00",
+  "human_quote": "Je valide M01–M14, R01–R08 et les modalités d’allocation, avec la correction de R08. Enregistre mes décisions, corrige la fiche et fais le bilan avant l’implémentation. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective human message; not 22 independent matrix/card approval exchanges.",
+  "approved_matrix_ids": [
+    "M01",
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M07",
+    "M08",
+    "M09",
+    "M10",
+    "M11",
+    "M12",
+    "M13",
+    "M14"
+  ],
+  "approved_card_ids": [
+    "R01",
+    "R02",
+    "R03",
+    "R04",
+    "R05",
+    "R06",
+    "R07",
+    "R08"
+  ],
+  "approved_allocation_modalities": {
+    "selected_seeds_per_request": 6,
+    "serialized_context_tokens_per_request": 2048,
+    "item_visit_order": "Interleave task-local item lists in input order: A1, B1, A2, B2, etc.; reuse this order for another candidate round.",
+    "shared_sources": "Deduplicate serialized shared bundles while retaining all task/item associations and counting distinct seeds globally.",
+    "atomic_dependencies": "Keep all required eligible dependencies and metadata; never trim warnings/footnotes to fit.",
+    "non_fitting_bundle": "Report the affected item and budget reason; continue considering other feasible items.",
+    "accounting": "Do not equate budget incompleteness with absent or quarantined source, input ambiguity, or full request completeness."
+  },
+  "R08_correction": {
+    "previous_assertion": "The 1 mL sample volume was described as loaded sample volume.",
+    "approved_meaning": "Only sample volume is provided. The amount actually loaded and the column bed volume are not supplied. Do not assume that the entire sample is loaded.",
+    "implemented_in_document": "docs/experiments/structured-request-review-cards-v01.md",
+    "kind": "Documentation correction only; not an implemented wire-format field."
+  },
+  "prior_decision_record": {
+    "path": "docs/decisions/2026-10-25-task-request-review.json",
+    "sha256_lf": "7f35af40bada1c271292ca26a0f2e045aa5dec4bf1f75598dfd73657049f07a2",
+    "preserved_unchanged": true,
+    "pending_review_fields_are_historical": true
+  },
+  "context_document_sha256_lf_before_update": {
+    "docs/REQUEST-CONTRACT-V01.md": "e603fa5593b9aa057b851d1465ef19a7c97459ad3d2517bd6657629140f19b4a",
+    "docs/REQUEST-CONTEXT-MATRIX-V01.md": "7bdfd17c7621d1a19b9e924220c40c7238b6ff939855e2cd4b8f76f3b6356c9d",
+    "docs/experiments/structured-request-review-cards-v01.md": "b7ff72204f53cb0ea2750c106e0d8687096e6d57a43dc5213009362ab6f19d67",
+    "docs/experiments/structured-request-comparison-protocol.md": "423bfad3ce07dc6696293d0783c3eba31f7b8ddc092b095f176d350b6318b26a"
+  },
+  "current_document_sha256_lf": {
+    "docs/REQUEST-CONTRACT-V01.md": "11f815ab57d68880d10faf611e6448cc4d27c424da60eb1d852accedd2311538",
+    "docs/REQUEST-CONTEXT-MATRIX-V01.md": "023fc689520b99d4f80b23990cab1280be4853d17c2daff559729b26ece004ce",
+    "docs/experiments/structured-request-review-cards-v01.md": "1aa0bc1ab65409da8eae1bd940074ce7af1cb8026d4b20712bc1ace6eeff7068",
+    "docs/experiments/structured-request-comparison-protocol.md": "a198d9f569671323dcbece9f91dd77b233535b7cbbbc3b6a992d569dfefeb8a8"
+  },
+  "remaining_technical_specification": [
+    "Machine/wire format, validation rules and exact field encoding.",
+    "Reviewed initial product and alias catalog plus corpus-adapter implementation.",
+    "Candidate ordering and relevance thresholds inside an information item."
+  ],
+  "not_approved_or_performed": [
+    "No schema, form, v06 code or free-text interpreter implemented.",
+    "No prospective dataset size, experimental thresholds or measured success approved by this decision.",
+    "No manual source approval, quarantine removal, scientific suitability or laboratory action authorization.",
+    "No retrieval run, model/API call or change to frozen experiments."
+  ],
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ]
+}

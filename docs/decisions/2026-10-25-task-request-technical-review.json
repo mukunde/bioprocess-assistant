@@ -1,0 +1,89 @@
+{
+  "id": "task-request-technical-review-2026-10-25",
+  "decision": "technical_design_approved_with_TC01_TC04_clarifications",
+  "recorded_at_utc": "2026-10-25T16:27:16.653163+00:00",
+  "human_quote": "Je valide T01–T08 et tes propositions TC01–TC04. Enregistre mes décisions, clarifie la spécification et vérifie sa cohérence avant l’implémentation. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective human message approving T01-T08 and the four preceding TC proposals; not twelve independent approval exchanges.",
+  "approved_technical_choices": {
+    "T01": "Strict versioned structured input; separate application-produced canonical request; no caller source-policy override.",
+    "T02": "Four explicit slot states, decimal-string quantities, declared units, no automatic conversion.",
+    "T03": "Explicit product/technique catalog and aliases; no approximate resolution; ambiguity, known out-of-scope and unresolved identity distinct.",
+    "T04": "Source-role adapter preserving task, stage, information and facet ownership.",
+    "T05": "Atomic source/dependency/guard bundles, joint E118-USE/C/M clarification support and mandatory E120-W workflow warning.",
+    "T06": "Rank admissible candidates by new coverage, product specificity, column specificity then BM25 tie-break; no raw/relative lexical cutoff.",
+    "T07": "Per-information partial outcomes and complete blocking reasons.",
+    "T08": "Global six-root/2048-token budget including source metadata and task/information bindings; deduplicated shared sources."
+  },
+  "approved_clarifications": {
+    "TC01": "Retain all scoped reasons and distinguish input interpretation, documentary support and assembly. Unknown context must not hide known quarantine; clarification cannot lift quarantine.",
+    "TC02": "Represent explicit binding/elution formulation comparison as two preparation items in one task, each with scalar buffer-use facet, without pairing formulations.",
+    "TC03": "Preserve contradictory assertions and their origins within the same scenario; clarify affected units, no last-wins or automatic split. Separate only explicitly distinct scenarios.",
+    "TC04": "Require deterministic conformance coverage of states/units/identity conflicts, exclusions/ownership, atomic dependencies/quarantines, partial results/deduplication/global budgets before freezing and preparing prospective evaluation."
+  },
+  "clarification_encoding": {
+    "unit_result": "Retain summary state; require independent interpretation_state/documentary_support_state, scoped issue_ids and all dimensioned diagnostics.",
+    "contradictions": "Preserve malformed-semantic duplicate/conflicting facts in input snapshot; semantic issue blocks affected units without silently rewriting the input.",
+    "conformance": "CF01-CF12 specify future implementation acceptance checks, not executed planner tests or a new prospective benchmark.",
+    "identifier_policy": "Preimplementation identifiers containing proposed are retained for traceability; updated technical-design status and this decision are authoritative.",
+    "catalog_utf8_correction": "Restored intended French accents and typographic/straight apostrophe aliases using explicit UTF-8 I/O; corrected double-decoding in the local draft, not product scope or source quotations."
+  },
+  "prior_decision_records": [
+    {
+      "path": "docs/decisions/2026-10-25-task-request-review.json",
+      "sha256_lf": "7f35af40bada1c271292ca26a0f2e045aa5dec4bf1f75598dfd73657049f07a2",
+      "preserved_unchanged": true
+    },
+    {
+      "path": "docs/decisions/2026-10-25-task-request-matrix-review.json",
+      "sha256_lf": "7a9e4b52ff2914d226df71617d95a07b4fdc9a7be6eb8ef480885615f86a253f",
+      "preserved_unchanged": true
+    }
+  ],
+  "pre_clarification_artifact_sha256_lf": {
+    "docs/technical/task-request-catalog-v01.json": "189aedc0735a7107edc34db156e6f4e20ef9d47a6a0dc3d6f5a03cbed96e8970",
+    "docs/technical/task-request-source-adapter-v01.json": "c7dffe21e8e7a471cc1d4f691114aead866a4226269b167665c0c182dbebffcd",
+    "docs/technical/TASK-REQUEST-TECHNICAL-SPEC-V01.md": "5eb88f41e36077199b5e50145f14fbece3558a2fb49f25d584212b12afac4bef",
+    "docs/technical/task-request-v01.schema.json": "517875b40aeefb879248284d0f6e3b2c059a1c5bc2bb4b4a18fdb6621261b60b"
+  },
+  "current_artifact_sha256_lf": {
+    "docs/technical/task-request-catalog-v01.json": "8678171880f700d774dc75a13645ab2a998a0ed65bcf590c34a422220772b278",
+    "docs/technical/task-request-source-adapter-v01.json": "5e31df49eab70787afd22c379be4e7b77acb300f4c1fca486e6e89903a5d7f2b",
+    "docs/technical/TASK-REQUEST-TECHNICAL-SPEC-V01.md": "2d0817b5c9764f25e5dbe22dca3bb6c84fd50fe6193c26514212f0baa89b53cf",
+    "docs/technical/task-request-v01.schema.json": "88a20bd3a7e3c5514f6b51521f284eade4fc7a308cc1e5ac9c8e96da6503f0ea"
+  },
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "not_approved_or_performed": [
+    "No runtime implementation, interpreter, form or graph migration.",
+    "No new source approval, real-sample suitability, laboratory authorization or removal of quarantine.",
+    "No prospective dataset, performance threshold or measured success.",
+    "No retrieval/planning run, model/API call, Git commit or push."
+  ],
+  "consistency_verification": {
+    "status": "passed_static_checks",
+    "scope": "Declarative document/schema/catalog/adapter consistency only; no semantic planner implemented or executed.",
+    "checks": {
+      "draft_2020_12_meta_schema": true,
+      "structural_fixture_assertions": 12,
+      "local_schema_references": 26,
+      "unique_normalized_catalog_labels": 30,
+      "source_fingerprints": 27,
+      "eligible_sources": 25,
+      "excluded_sources": [
+        "E118-I",
+        "E121-EQ"
+      ],
+      "admissible_role_candidate_closures": 11,
+      "interface_roots": 8,
+      "pinned_corpus_policy_manifest_and_lexical_hashes": true,
+      "prior_decisions_and_four_design_documents_unchanged": true,
+      "pre_post_clarification_hashes": true,
+      "relative_document_links": true,
+      "future_conformance_requirements": 12,
+      "utf8_french_aliases_and_exact_human_quote": true
+    },
+    "not_executed": "CF01-CF12 semantic/planner acceptance suite, retrieval or benchmarks; these require future implementation."
+  }
+}

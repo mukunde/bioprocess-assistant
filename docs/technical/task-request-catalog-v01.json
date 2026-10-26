@@ -1,0 +1,127 @@
+{
+  "id": "task-request-catalog-v01-proposed",
+  "status": "technical_design_approved_not_implemented",
+  "scope": "HiTrap Blue HP 1 mL/5 mL and reviewed general IEX/HIC/SEC topics; exact labels and aliases below are approved technical design, not changes to the approved source policy.",
+  "label_normalization": [
+    "Unicode NFKC",
+    "Unicode casefold",
+    "Map Unicode whitespace to ASCII spaces; trim and collapse repeated spaces",
+    "Do not remove punctuation, words, size qualifiers or accents; do not use substring/fuzzy matching"
+  ],
+  "products": [
+    {
+      "id": "product:hitrap_blue_hp",
+      "canonical_label": "HiTrap Blue HP",
+      "kind": "prepacked_column",
+      "supported_bed_volumes": [
+        {
+          "value": "1",
+          "unit": "mL"
+        },
+        {
+          "value": "5",
+          "unit": "mL"
+        }
+      ],
+      "labels": [
+        {
+          "text": "HiTrap Blue HP",
+          "match_kind": "exact_label",
+          "explicit_bed_volume": null
+        },
+        {
+          "text": "HiTrap Blue HP 1 mL",
+          "match_kind": "reviewed_alias",
+          "explicit_bed_volume": {
+            "value": "1",
+            "unit": "mL"
+          }
+        },
+        {
+          "text": "HiTrap Blue HP 5 mL",
+          "match_kind": "reviewed_alias",
+          "explicit_bed_volume": {
+            "value": "5",
+            "unit": "mL"
+          }
+        }
+      ],
+      "documentary_basis": [
+        "E120-A",
+        "E120-P",
+        "E121-L",
+        "E121-W",
+        "E121-E"
+      ],
+      "reviewed_alias_note": "Alias rows approved as technical catalog design under T03 on 2026-10-25; not runtime activation or new scientific/source approval."
+    }
+  ],
+  "ambiguous_labels": [
+    "HiTrap",
+    "Blue",
+    "Blue HP",
+    "Blue Sepharose"
+  ],
+  "known_out_of_scope_labels": [
+    "Blue Sepharose 6 Fast Flow",
+    "HiTrap MabSelect SuRe",
+    "HiTrap MabSelect SuRe LX",
+    "HiTrap Phenyl HP",
+    "HiTrap HIC Selection Kit"
+  ],
+  "methods": [
+    {
+      "id": "method:iex",
+      "canonical_label": "IEX",
+      "labels": [
+        "IEX",
+        "ion exchange",
+        "échange ionique",
+        "echange ionique"
+      ]
+    },
+    {
+      "id": "method:hic",
+      "canonical_label": "HIC",
+      "labels": [
+        "HIC",
+        "hydrophobic interaction chromatography",
+        "chromatographie d’interaction hydrophobe",
+        "chromatographie d interaction hydrophobe",
+        "chromatographie d'interaction hydrophobe"
+      ]
+    },
+    {
+      "id": "method:sec",
+      "canonical_label": "SEC",
+      "labels": [
+        "SEC",
+        "size exclusion chromatography",
+        "chromatographie d’exclusion stérique",
+        "chromatographie d exclusion sterique",
+        "chromatographie d'exclusion stérique"
+      ]
+    },
+    {
+      "id": "method:cation_exchange",
+      "canonical_label": "cation exchange",
+      "broader_family": "method:iex",
+      "labels": [
+        "cation exchange",
+        "cation-exchange",
+        "échange cationique",
+        "echange cationique"
+      ],
+      "restriction": "Preserve the subtype; family membership does not approve the withheld pH/pI condition."
+    }
+  ],
+  "resolution_rules": [
+    "One exact normalized label entry resolves; no score threshold.",
+    "Ambiguous label remains ambiguous, even if only one in-scope product is implemented.",
+    "Known out-of-scope label is identified but unsupported; unknown label remains unresolved.",
+    "An explicit size in a qualified label is recorded with that input origin; conflicting explicit column fields require clarification, never overwrite.",
+    "Do not inherit product or column context across tasks.",
+    "Source passages naming several products do not make their identities equivalent."
+  ],
+  "approval_record": "docs/decisions/2026-10-25-task-request-technical-review.json"
+}

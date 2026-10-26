@@ -1,0 +1,1978 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess-assistant:task-request:0.1-tech-proposed",
+  "$comment": "Declarative design artifact only. No current runtime imports this schema. Root accepts structured submissions only; canonical_request is application output, never a public intake type. Cross-field semantic rules are specified in the companion document. T01-T08 and TC01-TC04 approved on 2026-10-25; see docs/decisions/2026-10-25-task-request-technical-review.json. Existing tech-proposed identifiers are retained as preimplementation identifiers, not pending approval markers.",
+  "title": "Design-approved task-scoped structured submission and internal canonical envelope (not implemented)",
+  "$ref": "#/$defs/submission",
+  "$defs": {
+    "quantity": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "pattern": "^(?:0|[1-9][0-9]*)(?:\\.[0-9]+)?$"
+        },
+        "unit": {
+          "enum": [
+            "mL",
+            "mL/min"
+          ]
+        }
+      },
+      "required": [
+        "value",
+        "unit"
+      ],
+      "additionalProperties": false
+    },
+    "stage": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "operating_phase"
+            },
+            "code": {
+              "enum": [
+                "sample_application",
+                "washing",
+                "elution",
+                "equilibration"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "preparation"
+            },
+            "code": {
+              "enum": [
+                "buffer_preparation"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "code"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "general_topic"
+            },
+            "code": {
+              "enum": [
+                "method_selection",
+                "product_applicability",
+                "operating_limits"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "code"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "product": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "provided"
+            },
+            "value": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "unknown",
+                "not_supplied"
+              ]
+            },
+            "value": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "not_applicable"
+            },
+            "value": {
+              "type": "null"
+            },
+            "reason": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "column": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "provided"
+            },
+            "value": {
+              "type": "object",
+              "properties": {
+                "bed_volume": {
+                  "$ref": "#/$defs/quantity"
+                }
+              },
+              "required": [
+                "bed_volume"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "unknown",
+                "not_supplied"
+              ]
+            },
+            "value": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "not_applicable"
+            },
+            "value": {
+              "type": "null"
+            },
+            "reason": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "techniques": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "provided"
+            },
+            "value": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "enum": [
+                "unknown",
+                "not_supplied"
+              ]
+            },
+            "value": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "state",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "state": {
+              "const": "not_applicable"
+            },
+            "value": {
+              "type": "null"
+            },
+            "reason": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "state",
+            "value",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "fact": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "key": {
+              "enum": [
+                "sample_volume",
+                "loaded_volume",
+                "observed_flow"
+              ]
+            },
+            "input_role": {
+              "enum": [
+                "user_observation",
+                "user_assumption",
+                "documentary_scenario"
+              ]
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "$ref": "#/$defs/quantity"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "key",
+            "input_role",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "key": {
+              "enum": [
+                "target_hydrophobicity_similar_to_albumin",
+                "minor_contaminants_interfere"
+              ]
+            },
+            "input_role": {
+              "enum": [
+                "user_observation",
+                "user_assumption",
+                "documentary_scenario"
+              ]
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "key",
+            "input_role",
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "key": {
+              "enum": [
+                "residual_identity",
+                "intended_application"
+              ]
+            },
+            "input_role": {
+              "enum": [
+                "user_observation",
+                "user_assumption",
+                "documentary_scenario"
+              ]
+            },
+            "value": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "key",
+            "input_role",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "item": {
+      "type": "object",
+      "properties": {
+        "item_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "stage": {
+          "$ref": "#/$defs/stage"
+        },
+        "information": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "principle",
+              "clarification_context",
+              "flow_rate",
+              "buffer_role",
+              "buffer_formulation",
+              "column_volumes",
+              "stopping_criteria",
+              "syringe_correspondence",
+              "relative_position_in_workflow",
+              "maximum_pressure",
+              "ph_vs_pi_condition",
+              "elution_mode"
+            ]
+          }
+        },
+        "answer_mode": {
+          "enum": [
+            "single_context",
+            "compare_documented_alternatives"
+          ]
+        },
+        "techniques": {
+          "$ref": "#/$defs/techniques"
+        },
+        "facets": {
+          "type": "object",
+          "properties": {
+            "buffer_use": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "enum": [
+                        "binding",
+                        "elution"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "elution_mode": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "enum": [
+                        "step",
+                        "linear_gradient"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "syringe_query_mode": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "enum": [
+                        "note_lookup",
+                        "reference_flow_check"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "buffer_use",
+            "elution_mode"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "item_id",
+        "stage",
+        "information",
+        "answer_mode",
+        "techniques",
+        "facets"
+      ],
+      "additionalProperties": false
+    },
+    "exclusion": {
+      "type": "object",
+      "properties": {
+        "exclusion_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "scope": {
+          "type": "object",
+          "properties": {
+            "task_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "item_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            }
+          },
+          "required": [
+            "task_id"
+          ],
+          "additionalProperties": false
+        },
+        "selector": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "operating_phase"
+                },
+                "code": {
+                  "enum": [
+                    "sample_application",
+                    "washing",
+                    "elution",
+                    "equilibration"
+                  ]
+                },
+                "information": {
+                  "oneOf": [
+                    {
+                      "const": "all"
+                    },
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "items": {
+                        "enum": [
+                          "principle",
+                          "clarification_context",
+                          "flow_rate",
+                          "buffer_role",
+                          "buffer_formulation",
+                          "column_volumes",
+                          "stopping_criteria",
+                          "syringe_correspondence",
+                          "relative_position_in_workflow",
+                          "maximum_pressure",
+                          "ph_vs_pi_condition",
+                          "elution_mode"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "code",
+                "information"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "preparation"
+                },
+                "code": {
+                  "enum": [
+                    "buffer_preparation"
+                  ]
+                },
+                "information": {
+                  "oneOf": [
+                    {
+                      "const": "all"
+                    },
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "items": {
+                        "enum": [
+                          "principle",
+                          "clarification_context",
+                          "flow_rate",
+                          "buffer_role",
+                          "buffer_formulation",
+                          "column_volumes",
+                          "stopping_criteria",
+                          "syringe_correspondence",
+                          "relative_position_in_workflow",
+                          "maximum_pressure",
+                          "ph_vs_pi_condition",
+                          "elution_mode"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                "buffer_use": {
+                  "enum": [
+                    "binding",
+                    "elution"
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "code",
+                "information"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "general_topic"
+                },
+                "code": {
+                  "enum": [
+                    "method_selection",
+                    "product_applicability",
+                    "operating_limits"
+                  ]
+                },
+                "information": {
+                  "oneOf": [
+                    {
+                      "const": "all"
+                    },
+                    {
+                      "type": "array",
+                      "minItems": 1,
+                      "uniqueItems": true,
+                      "items": {
+                        "enum": [
+                          "principle",
+                          "clarification_context",
+                          "flow_rate",
+                          "buffer_role",
+                          "buffer_formulation",
+                          "column_volumes",
+                          "stopping_criteria",
+                          "syringe_correspondence",
+                          "relative_position_in_workflow",
+                          "maximum_pressure",
+                          "ph_vs_pi_condition",
+                          "elution_mode"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "kind",
+                "code",
+                "information"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "product"
+                },
+                "label": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "kind",
+                "label"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "all_operating_information"
+                }
+              },
+              "required": [
+                "kind"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "exclusion_id",
+        "scope",
+        "selector"
+      ],
+      "additionalProperties": false
+    },
+    "task": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "sample_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "intent": {
+          "enum": [
+            "documentary_procedure_lookup",
+            "documentary_procedure_comparison",
+            "mechanism_explanation",
+            "documentary_applicability",
+            "context_clarification"
+          ]
+        },
+        "product": {
+          "$ref": "#/$defs/product"
+        },
+        "column": {
+          "$ref": "#/$defs/column"
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/fact"
+          },
+          "minItems": 0
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          },
+          "minItems": 1
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/exclusion"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "task_id",
+        "sample_ref",
+        "intent",
+        "product",
+        "column",
+        "facts",
+        "items",
+        "exclusions"
+      ],
+      "additionalProperties": false
+    },
+    "submission": {
+      "type": "object",
+      "properties": {
+        "document_kind": {
+          "const": "structured_submission"
+        },
+        "contract_version": {
+          "const": "task-request-0.1-tech-proposed"
+        },
+        "input_mode": {
+          "const": "structured"
+        },
+        "language": {
+          "enum": [
+            "en",
+            "fr"
+          ]
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/task"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "document_kind",
+        "contract_version",
+        "input_mode",
+        "language",
+        "tasks"
+      ],
+      "additionalProperties": false
+    },
+    "origin": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "form_field"
+            },
+            "pointer": {
+              "type": "string",
+              "pattern": "^(?:/.*)?$"
+            }
+          },
+          "required": [
+            "kind",
+            "pointer"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "text_span"
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "kind",
+            "start",
+            "end"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "not_stated"
+            },
+            "input_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "reason": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "kind",
+            "input_sha256",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "application_assignment"
+            },
+            "reason": {
+              "type": "string",
+              "pattern": "\\S"
+            }
+          },
+          "required": [
+            "kind",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "field_resolution": {
+      "type": "object",
+      "properties": {
+        "input_pointer": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "entity_kind": {
+          "enum": [
+            "product",
+            "technique"
+          ]
+        },
+        "status": {
+          "enum": [
+            "exact_label",
+            "reviewed_alias",
+            "ambiguous",
+            "unresolved",
+            "out_of_scope",
+            "not_needed"
+          ]
+        },
+        "canonical_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "uniqueItems": true
+        },
+        "explicit_column_from_label": {
+          "$ref": "#/$defs/column"
+        },
+        "origins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/origin"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "input_pointer",
+        "task_id",
+        "entity_kind",
+        "status",
+        "canonical_refs",
+        "explicit_column_from_label",
+        "origins"
+      ],
+      "additionalProperties": false
+    },
+    "issue": {
+      "type": "object",
+      "properties": {
+        "issue_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "code": {
+          "enum": [
+            "missing_context",
+            "ambiguous_identity",
+            "out_of_scope_product",
+            "unsupported_column_format",
+            "conflicting_input",
+            "conflicting_exclusion",
+            "unsupported_selector",
+            "invalid_unit_role",
+            "unresolved_binding",
+            "presentation_policy_conflict",
+            "duplicate_identifier",
+            "unsupported_transformation"
+          ]
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "item_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "information": {
+          "oneOf": [
+            {
+              "enum": [
+                "principle",
+                "clarification_context",
+                "flow_rate",
+                "buffer_role",
+                "buffer_formulation",
+                "column_volumes",
+                "stopping_criteria",
+                "syringe_correspondence",
+                "relative_position_in_workflow",
+                "maximum_pressure",
+                "ph_vs_pi_condition",
+                "elution_mode"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origins": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/origin"
+          },
+          "minItems": 1
+        },
+        "detail": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "blocking": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "issue_id",
+        "code",
+        "task_id",
+        "item_id",
+        "information",
+        "origins",
+        "detail",
+        "blocking"
+      ],
+      "additionalProperties": false
+    },
+    "canonical_request": {
+      "type": "object",
+      "properties": {
+        "document_kind": {
+          "const": "canonical_request"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "contract_version": {
+          "const": "task-request-0.1-tech-proposed"
+        },
+        "input_snapshot": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/submission"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "document_kind": {
+                  "const": "free_text_input"
+                },
+                "language": {
+                  "enum": [
+                    "en",
+                    "fr"
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "pattern": "\\S"
+                }
+              },
+              "required": [
+                "document_kind",
+                "language",
+                "text"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "input_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "submission": {
+          "$ref": "#/$defs/submission"
+        },
+        "system_versions": {
+          "type": "object",
+          "properties": {
+            "schema_sha256_lf": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "catalog_sha256_lf": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "adapter_sha256_lf": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "corpus_manifest_sha256_lf": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "schema_sha256_lf",
+            "catalog_sha256_lf",
+            "adapter_sha256_lf",
+            "corpus_manifest_sha256_lf"
+          ],
+          "additionalProperties": false
+        },
+        "field_origins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "target_pointer": {
+                "type": "string",
+                "pattern": "\\S"
+              },
+              "origins": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/origin"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "target_pointer",
+              "origins"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "resolved_fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/field_resolution"
+          },
+          "minItems": 0
+        },
+        "issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/issue"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "document_kind",
+        "request_id",
+        "contract_version",
+        "input_snapshot",
+        "input_sha256",
+        "submission",
+        "system_versions",
+        "field_origins",
+        "resolved_fields",
+        "issues"
+      ],
+      "additionalProperties": false
+    },
+    "context_source": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "pdf_page_1based": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pdf_page_index_0based": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "scope": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "quote": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "quote_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "page_text_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "page_text_end": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "id",
+        "pdf_page_1based",
+        "pdf_page_index_0based",
+        "scope",
+        "quote",
+        "quote_sha256",
+        "page_text_start",
+        "page_text_end"
+      ],
+      "additionalProperties": false
+    },
+    "context_binding": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "item_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "information": {
+          "enum": [
+            "principle",
+            "clarification_context",
+            "flow_rate",
+            "buffer_role",
+            "buffer_formulation",
+            "column_volumes",
+            "stopping_criteria",
+            "syringe_correspondence",
+            "relative_position_in_workflow",
+            "maximum_pressure",
+            "ph_vs_pi_condition",
+            "elution_mode"
+          ]
+        },
+        "stage": {
+          "$ref": "#/$defs/stage"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "product_ref": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "column": {
+          "$ref": "#/$defs/column"
+        },
+        "facets": {
+          "type": "object",
+          "properties": {
+            "buffer_use": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "enum": [
+                        "binding",
+                        "elution"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "elution_mode": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "enum": [
+                        "step",
+                        "linear_gradient"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "syringe_query_mode": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "provided"
+                    },
+                    "value": {
+                      "enum": [
+                        "note_lookup",
+                        "reference_flow_check"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "enum": [
+                        "unknown",
+                        "not_supplied"
+                      ]
+                    },
+                    "value": {
+                      "type": "null"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value"
+                  ],
+                  "additionalProperties": false
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "state": {
+                      "const": "not_applicable"
+                    },
+                    "value": {
+                      "type": "null"
+                    },
+                    "reason": {
+                      "type": "string",
+                      "pattern": "\\S"
+                    }
+                  },
+                  "required": [
+                    "state",
+                    "value",
+                    "reason"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            }
+          },
+          "required": [
+            "buffer_use",
+            "elution_mode"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "task_id",
+        "item_id",
+        "information",
+        "stage",
+        "source_ids",
+        "product_ref",
+        "column",
+        "facets"
+      ],
+      "additionalProperties": false
+    },
+    "context_envelope": {
+      "type": "object",
+      "properties": {
+        "source_passages": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/context_source"
+          }
+        },
+        "bindings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/context_binding"
+          }
+        }
+      },
+      "required": [
+        "source_passages",
+        "bindings"
+      ],
+      "additionalProperties": false
+    },
+    "unit_result": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "item_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "information": {
+          "enum": [
+            "principle",
+            "clarification_context",
+            "flow_rate",
+            "buffer_role",
+            "buffer_formulation",
+            "column_volumes",
+            "stopping_criteria",
+            "syringe_correspondence",
+            "relative_position_in_workflow",
+            "maximum_pressure",
+            "ph_vs_pi_condition",
+            "elution_mode"
+          ]
+        },
+        "state": {
+          "enum": [
+            "supported",
+            "needs_clarification",
+            "missing_source",
+            "quarantined",
+            "out_of_scope",
+            "unsupported_selector",
+            "unsupported_transformation",
+            "budget_incomplete"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "uniqueItems": true
+        },
+        "interpretation_state": {
+          "enum": [
+            "ready",
+            "needs_clarification",
+            "out_of_scope"
+          ]
+        },
+        "documentary_support_state": {
+          "enum": [
+            "eligible",
+            "missing_source",
+            "quarantined",
+            "unsupported_selector",
+            "not_assessed"
+          ]
+        },
+        "issue_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "uniqueItems": true
+        },
+        "diagnostics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/unit_diagnostic"
+          }
+        }
+      },
+      "required": [
+        "task_id",
+        "item_id",
+        "information",
+        "state",
+        "reason",
+        "source_ids",
+        "interpretation_state",
+        "documentary_support_state",
+        "issue_ids",
+        "diagnostics"
+      ],
+      "additionalProperties": false,
+      "description": "One requested information unit. state is a presentation summary; independent interpretation/support states and all diagnostics must be preserved (TC01). No eligible source is admitted for a blocked unit."
+    },
+    "plan_result": {
+      "type": "object",
+      "properties": {
+        "document_kind": {
+          "const": "task_context_plan"
+        },
+        "request_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "units": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/unit_result"
+          }
+        },
+        "context": {
+          "$ref": "#/$defs/context_envelope"
+        },
+        "context_tokens": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2048
+        },
+        "selected_root_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "\\S"
+          },
+          "uniqueItems": true,
+          "maxItems": 6
+        },
+        "all_requested_units_accounted_for": {
+          "type": "boolean"
+        },
+        "all_supported_ready_units_covered": {
+          "type": "boolean"
+        },
+        "has_interpretation_issues": {
+          "type": "boolean"
+        },
+        "has_unserved_units": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "document_kind",
+        "request_id",
+        "units",
+        "context",
+        "context_tokens",
+        "selected_root_ids",
+        "all_requested_units_accounted_for",
+        "all_supported_ready_units_covered",
+        "has_interpretation_issues",
+        "has_unserved_units"
+      ],
+      "additionalProperties": false
+    },
+    "unit_diagnostic": {
+      "type": "object",
+      "properties": {
+        "dimension": {
+          "enum": [
+            "interpretation",
+            "documentary_support",
+            "assembly"
+          ]
+        },
+        "code": {
+          "type": "string",
+          "pattern": "\\S"
+        },
+        "detail": {
+          "type": "string",
+          "pattern": "\\S"
+        }
+      },
+      "required": [
+        "dimension",
+        "code",
+        "detail"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

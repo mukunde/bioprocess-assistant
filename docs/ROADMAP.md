@@ -46,81 +46,87 @@ Migration from the legacy dense template/review database is still pending.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Current checkpoint — 25 October 2026
+## Current checkpoint — 26 October 2026
 
-Phase numbers identify workstreams and acceptance gates, not a claim that all
-preceding gates passed. Documentary work advanced before telemetry; local
-manifests and timings do not complete phase 1.
+Phase numbers identify workstreams and acceptance gates, not a completed linear
+sequence. Documentary work advanced before telemetry; local manifests and timings
+do not complete phase 1.
 
-| Workstream | Implemented or reviewed | Remaining gate |
+| Workstream | Merged/observed | Remaining gate |
 |---|---|---|
-| 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation remains separate |
-| 1 — Observability | Experiment manifests, context/token accounting and local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
-| 2 — Model and references | Minimal ontology, v0.2 contract, 33 reviewed claims and Q/N/C/H/V/W references are merged; X01-X12 review is complete in the local packet | Exhaustive omission/causal coverage and independent answer evaluation; documentary approval is not scientific validation |
-| 3 — Ingestion and chunking | Local Docling Graph route, separate Docling → GPT-6.1 Sol experiment, selected table/figure reviews and repairs | Full ingestion lifecycle, real-manual extraction precision/recall and serving migration |
-| 4 — Retrieval | BM25, atomic assembly, frozen v03b/v04 results and opt-in v04/v05 development are merged; completed frozen X trial/export is local | Frozen X gate is blocked; task-scoped interpretation, structured-input control, serving adapter and actual answer evaluation remain open |
-| 5 — KAG decision | Deferred | A concrete need beyond simpler retrieval and bounded reasoning |
+| 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation |
+| 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
+| 2 — Model and references | Minimal ontology/claim contract, reviewed extraction and Q/N/C/H/V/W/X records; S01-S12 decisions/export merged | Exhaustive coverage, independently authored evaluation and actual answer quality; documentary review is not scientific validation |
+| 3 — Ingestion/chunking | Local Docling Graph route, separate reviewed Docling → GPT extraction, targeted table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
+| 4 — Retrieval/interpretation | BM25 experiments and blocked v03b/v04/v05 results preserved; reviewed structured control and passing S trial merged | Refined free-text fixture review, interpreter/bridge implementation, new frozen S/F trial, serving adapter and answer evaluation |
+| 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-The merged checkpoint before this documentation update is `main` at `a6026ca`,
-after [PR #37](https://github.com/mukunde/bioprocess-assistant/pull/37) (reviewed
-v04 W trial) and [PR #38](https://github.com/mukunde/bioprocess-assistant/pull/38)
-(v05 development, with both attempts preserved). **463/463 tests passed on that
-merged checkpoint.** These are existing-environment regressions, not an answer
-quality or fresh-install certification. Earlier checkpoints remain historical.
+The merged baseline is `main` at `1b852f4`, after
+[PR #39](https://github.com/mukunde/bioprocess-assistant/pull/39) (reviewed X trial),
+[PR #40](https://github.com/mukunde/bioprocess-assistant/pull/40) (request contract/spec),
+[PR #41](https://github.com/mukunde/bioprocess-assistant/pull/41) (corrected control),
+and [PR #42](https://github.com/mukunde/bioprocess-assistant/pull/42) (reviewed S trial).
+The maintained suite passed **556/556 tests**, none skipped, on this integrated
+baseline with external connections blocked and loopback tests allowed. Earlier
+463/483 checkpoints remain historical, not the current test count. This is not
+fresh-install certification or a generated-answer benchmark.
 
-**Prepared locally, not yet merged:** the six-file frozen v05 packet, harness and
-15 synthetic/integrity tests, completed X01-X12 review, single frozen run, outcome
-report and portable export. All twelve references are validated with reservations;
-X03-X12 were approved in one actual collective message. The original preparation
-pending flags remain historical. The export preserves all 24 contexts and 72
-measurements without private inventories, PDFs or model assets. Its five checks
-verify saved results without retrieval or local raw artifacts. The full current
-local suite passed **483/483 tests** on 25 October 2026, including this prepared,
-uncommitted packet.
+### Completed versus prepared locally
 
-The [frozen X outcome](experiments/cytiva-v05-prospective-results.md) is blocked:
-7/12 intents complete in both languages, 9/24 explicit scope failures and 6/24
-diagnostic failures. Only X02/X05/X09 satisfy completeness, scope and diagnostics
-in both languages. The [compact export](../experiments/cytiva/reviewed-v05-evaluation/README.md)
-is prepared for versioning, not a merged or automatically activated candidate.
+- **Merged:** the [v05 X review/export](../experiments/cytiva/reviewed-v05-evaluation/README.md)
+  preserves its blocked outcome: 7/12 intents evidence-complete in both languages;
+  only X02/X05/X09 meet completeness, scope and diagnostic criteria. Its 9/24
+  scope and 6/24 diagnostic failures are not rewritten.
+- **Merged:** the [structured S01-S12 export](../experiments/cytiva/reviewed-structured-control/README.md)
+  preserves twelve actual approvals, the S01 form amendment and all 24 saved
+  outputs. All 12 paired scenarios pass their reviewed context/diagnostic gate;
+  E118-I/E121-EQ stay excluded. The [outcome report](experiments/cytiva-structured-control-s-results.md)
+  records limitations and the 348–1,504-token contexts. This is an intent-supplied
+  control, not evidence of free-text understanding or scientific suitability.
+- **Local, not merged or implemented:** [CP comparison protocol](experiments/structured-free-text-comparison-v01.md),
+  [FI interface](technical/FREE-TEXT-INTERFACE-V01.md), three [MC machine schemas](technical/FREE-TEXT-MACHINE-DESIGN-V01.md)
+  and actual collective decision records. CP01–CP06, FI01–FI06/IF01–IF14 and
+  MC01–MC06 with their clarifications are approved design choices.
+- **Local, still pending human review:** sixteen refined machine examples and
+  three invalid caller inputs, organized into [GR01–GR04](experiments/free-text-interface-group-review-v01.md).
+  Precise origins, absence/default reasons, externally supplied boundary conditions,
+  injected errors and rejection audit are prepared and statically checked.
+  Those checks do not execute the interpreter or establish IF conformance.
+
+The [proposed design delivery](experiments/free-text-design-package-v01.md)
+lists the exact files; the sixteen older local S preparation/review notes remain
+outside it. Original historical preparation flags, raw runs and decisions are
+preserved. No experimental method is activated in the chat by these updates.
 
 ### Next delivery priorities
 
-1. **Preserve X and design task-scoped interpretation before another variant.**
-   Keep the reviewed packet, native results and original failures. Specify a
-   request contract separating tasks/samples, products, column sizes, phases,
-   requested parameters, exclusions and uncertain information. Distinguish nested
-   negation, separate-task scopes and a real same-task contradiction. Align routing
-   and lexical support; incidental words are not reliable semantic scope evidence.
-   Do not respond to each failed sentence with another isolated alias.
-2. **Compare structured input with free-text interpretation.** A deterministic
-   structured-input control should exercise retrieval/assembly independently of
-   language parsing. A free-text adapter would target the same contract. Neither
-   is implemented. Use X and earlier cases as development/regression inputs; after
-   implementation, freeze a new version before preparing/reviewing a new challenge.
-   Do not retune a frozen method after its results or silently retry. A future pass
-   permits considering a limited pilot, not automatic adoption.
-3. **Build a bounded end-to-end serving slice.** Map a small approved corpus into
-   eligible v0.2 claims and the shared renderer, retaining source snapshots,
-   conditions, reservations and quarantine. The reviewed-record serving adapter
-   remains missing. Exercise clarification/refusal, correction, revocation and
-   rollback without promoting blocked retrievers or expanding legacy-seed scope
-   implicitly. Mark source-only context where no approved claim exists.
-4. **Instrument and evaluate that path.** Add minimal OpenTelemetry spans with
-   versions, errors, retries and budgets; verify portable export and accounting.
-   Then evaluate actual rendered answers, citations and abstentions using
-   deterministic checks, calibrated local Ragas and Promptfoo attacks with benign
-   controls. All three integrations remain pending.
-5. **Compare architectures after prerequisites.** Run the common-corpus
-   graph/passages/LightRAG protocol with reviewed adapters, separate evaluation
-   inputs and a shared resource/context budget. Benchmark lightweight local
-   answering/routing only under an explicitly scoped experiment; keep KAG and
-   fine-tuning conditional on measured unmet needs. Comparisons remain unexecuted.
+1. **Complete the four fixture groups, then implement the bounded language interface.**
+   Keep origin and policy issues separate from the unchanged structured core.
+   Preserve every requested unit, including blocked/unresolved ones, in the global
+   outcome. Declare EN/FR coverage and pass IF01–IF14 before candidate freeze.
+   Do not start another generic specification cycle unless an actual gap appears.
+2. **Freeze and evaluate S versus unassisted free text.** Use known P01–P12 and
+   G01–G06 for development, with separate documentary/semantic denominators.
+   After freezing the candidate, author twelve new bilingual intents and review
+   exact inputs, origins and references before one saved S/F trial. Retain all
+   failures without retuning. Unrepresentable owner ambiguities remain semantic-only;
+   post-confirmation human corrections are a separate arm, not F0 performance.
+3. **Build a bounded serving slice.** Connect eligible reviewed v0.2 records to
+   the renderer; retain versions, conditions, reservations and quarantine.
+   Exercise clarification/refusal, correction, revocation and rollback. Do not
+   silently promote blocked retrievers or expand the legacy seed's scope.
+4. **Instrument and evaluate the real answering path.** Add OpenTelemetry spans,
+   provider usage/retry/cost accounting and budget checks. Evaluate generated
+   answers, citations and abstentions with deterministic checks, calibrated local
+   Ragas and Promptfoo attacks with benign controls. All three integrations are pending.
+5. **Compare architectures after prerequisites.** Run graph/passages/LightRAG
+   against a common corpus and resource budget. Benchmark local answering under
+   a separate approved experiment; keep KAG and fine-tuning conditional on failures
+   that simpler approaches do not address.
 
-No additional representative-page review is a prerequisite by default. Reopen
-conversion/chunking when a new format, measured retrieval failure or required
-source exposes a concrete gap. The optional pages 53, 86 and 142 are untested
-extensions, not an automatic whole-manual review queue.
+No additional representative-page review is required by default. Reopen conversion
+only when a new format, measured failure or required source exposes a gap. Optional
+pages 53/86/142 are untested extensions, not a whole-manual review queue.
 
 ## Phase 0 — Reliability baseline (implemented; deployment gate separate)
 
@@ -163,7 +169,7 @@ Validate usage and cost accounting on fixed fixtures including cache usage.
 Status: [minimal ontology](ontology/v0.1.md), [claim contract v0.2](CLAIM-CONTRACT-V02.md)
 and scoped human references are implemented. The 33 extraction claims and reviewed
 Q/N/C (28 intents), H (10) and V (12) series are documentary/development references
-with overlapping facts. W adds twelve local pending intents. These do not establish
+with overlapping facts. W and X each add twelve reviewed same-corpus intents; S adds twelve reviewed structured diagnostic scenarios. These do not establish
 exhaustive extraction recall, independent authorship or a held-out answer benchmark.
 The target model and acceptance gate follow;
 the implemented subset is summarized above.
@@ -253,7 +259,9 @@ preserved and no experiment silently changes the chat default.
 | [v04 development A-D](../experiments/cytiva/compositional-navigation-v04-results/README.md) | Final known-case evidence coverage V12/12, H10/10, C10/10 in both languages; V has zero unrequested/outside-acceptable context | Merged opt-in development variant after failure inspection, not an independent evaluation or default change; one optional V03 seed is still dropped at six seeds |
 | [Frozen v04 / W01-W12](../experiments/cytiva/reviewed-v04-evaluation/README.md) | 8/12 complete in both languages; only W10/W11 satisfy completeness, explicit scope and diagnostics | Merged blocked trial: 13/24 explicit scope failures, 2/24 diagnostic failures; no generated answers |
 | [v05 development A-B](../experiments/cytiva/polarity-navigation-v05-results/README.md) | Final known-case W12/12, V12/12, H10/10, C10/10; intermediate C02 failure retained | Merged development result, not generalization; missing H/C scope annotations remain unavailable |
-| [Frozen v05 / X01-X12](../experiments/cytiva/reviewed-v05-evaluation/README.md) | EN 8/12, FR 7/12, both 7/12 complete; only X02/X05/X09 satisfy all reference criteria | Completed local packet prepared for versioning; gate blocked by scope/diagnostic failures; no method tuning after results |
+| [Frozen v05 / X01-X12](../experiments/cytiva/reviewed-v05-evaluation/README.md) | EN 8/12, FR 7/12, both 7/12 complete; only X02/X05/X09 satisfy all reference criteria | Merged reviewed packet; gate blocked by scope/diagnostic failures; no method tuning after results |
+| [Structured S01-S12](../experiments/cytiva/reviewed-structured-control/README.md) | 24/24 submitted forms and 12/12 bilingual pairs pass context/diagnostic checks; 348–1,504 tokens | Merged structured control on known code/corpus; no free-text or generated-answer validation |
+| [Local free-text design](technical/FREE-TEXT-MACHINE-DESIGN-V01.md) | CP/FI/MC decisions approved, machine artifacts prepared, GR01–GR04 pending | No interpreter/bridge implementation or S/F execution; exact case/origin approval remains separate |
 
 The original Q/N/C series contains 28 intents with paired FR/EN formulations,
 not 56 independent observations. H/V/W/X add same-corpus challenges with known-code
@@ -282,8 +290,7 @@ metadata flags do not certify actual clarification or correct sample attribution
 The X traces identify finite exclusion/uncertainty vocabulary, nested negation,
 request-wide conflict sets without task ownership, and routing/lexical mismatch.
 For X10, English family support even relies on incidental words while French
-has no general-family lexical hit. A structured request contract and shared scope
-interpretation are the next design priorities, not an implemented v06 fix.
+has no general-family lexical hit. The task-scoped request contract and structured control are now merged; their separate S trial passes. Free-text interpretation and its bridge remain unimplemented. A passing structured trial is not an implemented v06 language fix.
 
 ### Remaining product and reasoning requirements
 

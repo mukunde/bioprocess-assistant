@@ -1,0 +1,77 @@
+{
+  "id": "structured-free-text-protocol-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T12:44:29.458521+00:00",
+  "human_quote": "Je valide CP01–CP06 et tes propositions de clarification. Enregistre mes décisions, clarifie G05 et prépare la spécification de l’interface avant l’implémentation. Aucun LLM, API payante, commit ni push.",
+  "decision": "CP01_CP06_and_preceding_clarifications_approved_interface_specification_requested",
+  "approval_basis": "One actual collective human message, not six or eleven independent approval events.",
+  "approved_protocol_decisions": {
+    "CP01": "Structured control and unassisted text use one common downstream method, catalog/source policy and per-request six-root/2048-token budget.",
+    "CP02": "Twelve known P development anchors and six semantic G controls have separate reporting; original S approvals do not approve every new text/origin mapping.",
+    "CP03": "Preserve verbatim text, real origins, competing assertions and scoped ambiguity without coercion to valid JSON.",
+    "CP04": "Exact critical-meaning and context/diagnostic gates; zero hard source/resource violations, no always-clarify shortcut, no dropped failures.",
+    "CP05": "Freeze the candidate before authoring a new twelve-intent bilingual prospective set; review exact references before one preserved run without post-result tuning.",
+    "CP06": "Start with a deterministic local interpreter; defer real human confirmation and generated-answer evaluation as separate arms/stages."
+  },
+  "approved_preceding_clarifications": {
+    "CL01": "Separate interpretation issue/origin ledger from the current structured input; retain non-dispatched units in the whole-request outcome rather than claim coverage by omission.",
+    "CL02": "Declare a limited EN/FR construction perimeter and scope unsupported-input diagnostics; do not claim arbitrary language understanding.",
+    "CL03": "Score meaning through reviewed aliases while retaining literal words, quantities, uncertainty and valid origins; ID renaming cannot change ownership.",
+    "CL04": "Clarify G05 so unresolved A/B ownership is explicit, not dependent on a debatable nearest-pronoun reading.",
+    "CL05": "Preserve the current structured method. A necessary common-method change requires a separately versioned baseline and conformance evidence."
+  },
+  "pre_clarification_proposal_sha256_lf": {
+    "docs/experiments/structured-free-text-comparison-v01.md": "f1b54f7841670bf0ce340be4391b182fa2a2abc8537666a5b45957b0c92d2767",
+    "docs/experiments/structured-free-text-cases-v01.md": "56f5408c63663c361dbee6b6b8297e228eee8ef7f6ddc3281d9ab40c0646db26",
+    "docs/experiments/structured-free-text-comparison-v01.json": "6dbc98232ff138a8a72765924f3cd8dac43866bca3a512718aa029717b0511ed"
+  },
+  "unchanged_baseline_files_sha256_lf": {
+    "experiments/cytiva/structured-control-evaluation-v01/method-lock.json": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+    "experiments/cytiva/structured-control-evaluation-v01/manifest.json": "e37ae3c4d00e254fcc422e1aea4c8c9b8f2532237415445c72a7975b6182f84d",
+    "experiments/cytiva/structured-control-evaluation-v01/questions.json": "f31aba706e4bb8602b8d912439e9781b716b6065bc7f00e19e4876629665c863",
+    "experiments/cytiva/structured-control-evaluation-v01/submissions.json": "772b948fc808ecb031ea44c7d9c75374e834e8b37a25865e9aca14260983f63d",
+    "experiments/cytiva/structured-control-evaluation-v01/references.json": "286fb3880ce01400547bfd745ee2a8677fc80d269af0bc642e84ae4d2d1604de",
+    "experiments/cytiva/reviewed-structured-control/README.md": "f07ed7a9af02c4a76087b71d10ede971f16e2c23edd50fbadffbcc90b4141699",
+    "experiments/cytiva/reviewed-structured-control/review.json": "0d9a40e1827ce4e914cd353ce12170267cd617c7df787ae523c4d5773ad71700",
+    "experiments/cytiva/reviewed-structured-control/results.json": "80b54f7c51dfc2363deee23273ff94b30c92080dece8f7bb595c6bf1a160f7d6",
+    "experiments/cytiva/reviewed-structured-control/events.json": "7ae3cb17e9b906cc2e9e24ac9c126bf16ade93a4a0c1b4a021e15c2257ccba10",
+    "experiments/cytiva/reviewed-structured-control/provenance.json": "046f8685d48b3caa143a5a625a7995186350dad9debba11291d815736f29a5c8",
+    "experiments/cytiva/reviewed-structured-control/manifest.json": "c71614afd95b214396ab4fbe346bc4a1f0b4d9ae9f2401f81e52c65ae281a411"
+  },
+  "G05_revision": {
+    "before": {
+      "id": "G05",
+      "family": "Unresolved pronoun with independent general request",
+      "text_en": "A uses HiTrap Blue HP 1 mL and B uses HiTrap Blue HP 5 mL. What washing flow should be used for it? Independently, C asks for the general SEC principle.",
+      "text_fr": "A utilise HiTrap Blue HP 1 mL et B utilise HiTrap Blue HP 5 mL. Quel débit de lavage utiliser pour celle-ci ? Indépendamment, C demande le principe général de la SEC.",
+      "draft_expected_meaning": "The washing owner is ambiguous between A and B and requires clarification, preserving both candidates. C general SEC/principle remains independent.",
+      "limits": "Do not resolve by closest mention, merge A/B or invent two positive washing requests. Do not force an unresolved-owner issue into a misleading valid form.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "588b6d98cd77c4251e33bbb588282828351a5a2dcebe8d3a115eee62ef569397",
+        "fr": "56b4dea56856674897d174a143ecc8a328c13a1e5b42d55657d583c173729d63"
+      }
+    },
+    "after": {
+      "id": "G05",
+      "family": "Unresolved pronoun with independent general request",
+      "text_en": "A uses HiTrap Blue HP 1 mL and B uses HiTrap Blue HP 5 mL. For washing, I refer to one of these two preparations without specifying whether A or B. What flow applies to that preparation? Independently, C asks for the general SEC principle.",
+      "text_fr": "A utilise HiTrap Blue HP 1 mL et B utilise HiTrap Blue HP 5 mL. Pour le lavage, je parle de l’une de ces deux préparations sans préciser si c’est A ou B. Quel débit s’applique à cette préparation ? Indépendamment, C demande le principe général de la SEC.",
+      "draft_expected_meaning": "The washing owner is ambiguous between A and B and requires clarification, preserving both candidates. C general SEC/principle remains independent.",
+      "limits": "The input explicitly leaves the washing owner unresolved between A and B. Preserve both candidates without selecting the latest mention, merging A/B or inventing two positive requests. C remains independent; no misleading valid form is fabricated.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "7813424de83dc0ec63837c365329890628d811f55f46f71517aff1d79c20e133",
+        "fr": "e5fd0ad242be01474e139cda6950d70fb5a4fb8280d9fb5cd0d8b93c99d5504f"
+      },
+      "revision": 2,
+      "revision_basis": "Actual collective protocol approval requests G05 clarification; exact revised wording and origin annotations still await case review."
+    },
+    "scope": "Clarified wording only; exact revised case/origin review remains pending; no executed result or new source reference."
+  },
+  "not_approved_or_performed": [
+    "No approval inferred for the newly drafted FI01-FI06 interface choices or IF01-IF14 fixtures.",
+    "No completed P/G text/form/origin review or prospective dataset approval.",
+    "No interpreter, runtime/schema change, candidate freeze, comparison execution or source-policy change.",
+    "No model/API call, Git commit or push."
+  ]
+}

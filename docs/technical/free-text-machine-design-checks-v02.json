@@ -1,0 +1,39 @@
+{
+  "status": "passed_static_design_checks",
+  "schemas_meta_validated": 3,
+  "existing_structured_schema_meta_validated_unchanged": true,
+  "offline_registry_resources": 4,
+  "valid_design_examples": 16,
+  "external_test_condition_checks": 16,
+  "focused_field_links_checked": 970,
+  "invalid_input_examples_rejected": 3,
+  "over_limit_input_rejected": true,
+  "design_examples_rejected_as_actual_outcomes": 16,
+  "semantic_corruptions_rejected": {
+    "changed_origin_quote": "ValueError",
+    "changed_input_hash": "ValueError",
+    "wrong_mapping_owner": "ValueError",
+    "missing_expected_unit": "ValueError",
+    "wrong_summary_counter": "ValueError",
+    "invalid_field_pointer": "KeyError",
+    "negated_ban_activated": "ValidationError",
+    "preblocked_without_issue": "ValueError"
+  },
+  "all_IF01_IF14_have_design_coverage_tags": true,
+  "conformance_implementation_tests_executed": false,
+  "origin_geometry_and_input_hashes_verified": true,
+  "origin_entailment_human_review_complete": false,
+  "baseline_unchanged": true,
+  "interpreter_implemented": false,
+  "planner_calls": 0,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "artifact_sha256_lf": {
+    "docs/technical/free-text-input-v01.schema.json": "334775d3756d839649d6a1e5cda1f4bb86f324d55aad89f2e6e1697c6d8e1aab",
+    "docs/technical/free-text-interpretation-v01.schema.json": "1b6af9c461afb4b5d3761553b707dd3b6065c97d808c2e50394d8b2b6db49eeb",
+    "docs/technical/free-text-outcome-v01.schema.json": "f071112f2837820cf01ad66de9bd32a580792c8bc8aff86d8a18794ac4131af3",
+    "docs/experiments/free-text-interface-examples-v01.json": "1302d55201eb2607a94309ed7d50a846b4ffc3bbd2f9ea942b13adfbb0810a45",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "55ce4a34c35e691efc8af7325453a858f2e91fd52739cc8b0eadab5e232c3c03",
+    "docs/experiments/free-text-interface-group-review-v01.md": "eb793c1eeadcd6f708708d07cffee95fac071280136cb95bfdccecb64f00de8e"
+  }
+}

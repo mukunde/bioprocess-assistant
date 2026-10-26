@@ -1,0 +1,65 @@
+{
+  "id": "free-text-interface-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T13:14:13.012186+00:00",
+  "human_quote": "Je valide FI01–FI06, IF01–IF14 et tes clarifications. Enregistre mes décisions, puis prépare les schémas machine et les exemples d’entrée/sortie avant l’implémentation. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective message approving six FI decisions, fourteen IF requirements and six preceding clarifications; not 26 separate approval exchanges.",
+  "approved_interface_decisions": {
+    "FI01": "Separate ledger/wrapper from unchanged core schemas and preserve the original core result.",
+    "FI02": "Preserve verbatim text, hashes, original origins and explicit slot states.",
+    "FI03": "Dispatch representable units through one common core call; preblock scoped unrepresentable ambiguity or policy conflicts.",
+    "FI04": "Account for every recognizable unit, including omitted and failed units, without coverage by subtraction.",
+    "FI05": "Declare the EN/FR language perimeter and scoped unsupported-construction diagnostics.",
+    "FI06": "Require IF01-IF14 conformance before candidate freeze; machine examples need separate review."
+  },
+  "approved_conformance_ids": [
+    "IF01",
+    "IF02",
+    "IF03",
+    "IF04",
+    "IF05",
+    "IF06",
+    "IF07",
+    "IF08",
+    "IF09",
+    "IF10",
+    "IF11",
+    "IF12",
+    "IF13",
+    "IF14"
+  ],
+  "approved_clarifications": {
+    "IC01": "Separate interpretation fidelity, documentary support and full-request service status.",
+    "IC02": "Preblocked means not assessed by planner, not absent from the manual; source exclusions remain visible.",
+    "IC03": "Use a null core result with an explicit reason when no planner was called; never fabricate an empty computed plan.",
+    "IC04": "Preserve independent items only when a restriction is clearly local; block every possibly affected scope otherwise.",
+    "IC05": "Review exact machine limits, supported constructions, diagnostics and complete representative fixtures before coding.",
+    "IC06": "Keep G05 semantic-only until equivalent unresolved ownership can be expressed faithfully in both comparison arms."
+  },
+  "pre_machine_design_sha256_lf": {
+    "docs/technical/FREE-TEXT-INTERFACE-V01.md": "77f0de29fe906ef76001f94ca82cc4368302b6108dd1db5ec71d149b3f9d8831",
+    "docs/experiments/structured-free-text-comparison-v01.json": "c2e71bd855e7f67e6494e68c8f9409534d9b1fcb9bb53e882693e8ac468aa0bf"
+  },
+  "unchanged_baseline_files_sha256_lf": {
+    "experiments/cytiva/structured-control-evaluation-v01/method-lock.json": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+    "experiments/cytiva/structured-control-evaluation-v01/manifest.json": "e37ae3c4d00e254fcc422e1aea4c8c9b8f2532237415445c72a7975b6182f84d",
+    "experiments/cytiva/structured-control-evaluation-v01/questions.json": "f31aba706e4bb8602b8d912439e9781b716b6065bc7f00e19e4876629665c863",
+    "experiments/cytiva/structured-control-evaluation-v01/submissions.json": "772b948fc808ecb031ea44c7d9c75374e834e8b37a25865e9aca14260983f63d",
+    "experiments/cytiva/structured-control-evaluation-v01/references.json": "286fb3880ce01400547bfd745ee2a8677fc80d269af0bc642e84ae4d2d1604de",
+    "experiments/cytiva/reviewed-structured-control/README.md": "f07ed7a9af02c4a76087b71d10ede971f16e2c23edd50fbadffbcc90b4141699",
+    "experiments/cytiva/reviewed-structured-control/review.json": "0d9a40e1827ce4e914cd353ce12170267cd617c7df787ae523c4d5773ad71700",
+    "experiments/cytiva/reviewed-structured-control/results.json": "80b54f7c51dfc2363deee23273ff94b30c92080dece8f7bb595c6bf1a160f7d6",
+    "experiments/cytiva/reviewed-structured-control/events.json": "7ae3cb17e9b906cc2e9e24ac9c126bf16ade93a4a0c1b4a021e15c2257ccba10",
+    "experiments/cytiva/reviewed-structured-control/provenance.json": "046f8685d48b3caa143a5a625a7995186350dad9debba11291d815736f29a5c8",
+    "experiments/cytiva/reviewed-structured-control/manifest.json": "c71614afd95b214396ab4fbe346bc4a1f0b4d9ae9f2401f81e52c65ae281a411",
+    "ingestion/structured_request.py": "6a179d94882c4f38cb2024f2a003510d57833b4375b1905f96a240aeaf3b6d92",
+    "ingestion/structured_sources.py": "d727721333f6d367391b865bf474ae59a35551633cdf4a0590ecbcb0c8e9b33c",
+    "docs/technical/task-request-v01.schema.json": "88a20bd3a7e3c5514f6b51521f284eade4fc7a308cc1e5ac9c8e96da6503f0ea",
+    "docs/technical/task-request-catalog-v01.json": "8678171880f700d774dc75a13645ab2a998a0ed65bcf590c34a422220772b278",
+    "docs/technical/task-request-source-adapter-v01.json": "5e31df49eab70787afd22c379be4e7b77acb300f4c1fca486e6e89903a5d7f2b"
+  },
+  "not_approved_or_performed": [
+    "New machine field choices, caps, example wording and exact origin annotations remain pending review.",
+    "No interpreter implementation, candidate freeze, planner/retrieval/model call or prospective comparison.",
+    "No new source approval, unit conversion, runtime/schema/catalog modification, commit or push."
+  ]
+}

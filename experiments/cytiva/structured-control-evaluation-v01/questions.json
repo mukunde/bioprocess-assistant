@@ -1,0 +1,90 @@
+{
+  "status": "pending_human_review",
+  "authoring": "Same assistant knows sources, code and development cases; new compositions, not a blinded independent holdout.",
+  "questions": [
+    {
+      "id": "S01",
+      "family": "separate_preparations_formulation_vs_operation",
+      "question_en": "For A, identified as HiTrap Blue HP 5 mL, list the elution-buffer formulations only; omit operating elution. For a separate 1 mL HiTrap Blue HP preparation B, give washing column volumes and stopping criteria, not flow. No other size is supplied for A.",
+      "question_fr": "Pour A, identifiée comme HiTrap Blue HP 5 mL, donne uniquement les formulations du tampon d’élution ; exclus l’élution opératoire. Pour une préparation B distincte sur HiTrap Blue HP 1 mL, donne les volumes de lavage en CV et les critères de fin, sans débit. Aucune autre taille n’est indiquée pour A.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S02",
+      "family": "qualified_exclusions_do_not_widen",
+      "question_en": "A uses HiTrap Blue HP 5 mL: give sample-application flow and the approximate syringe-note reference; exclude the 1 mL product format for A. B independently uses HiTrap Blue HP 1 mL: give elution flow only and exclude the 5 mL format for B. Do not select an elution mode.",
+      "question_fr": "A utilise HiTrap Blue HP 5 mL : donne le débit de chargement et la correspondance approximative de la note pour la seringue ; exclus le format 1 mL pour A. B utilise séparément HiTrap Blue HP 1 mL : donne uniquement le débit d’élution et exclus le format 5 mL pour B. Ne choisis pas de mode d’élution.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S03",
+      "family": "unknown_format_permission_and_general_sibling",
+      "question_en": "A is HiTrap Blue HP but its column size is unknown. Explain the washing endpoints, excluding the 1 mL format for A. Do not infer that A is 5 mL. For an unrelated general request B, explain the separation principles of SEC and HIC, without choosing a technique.",
+      "question_fr": "A est HiTrap Blue HP mais sa taille de colonne est inconnue. Explique les critères de fin du lavage, en excluant le format 1 mL pour A. N’en déduis pas que A est en 5 mL. Pour une demande générale B sans lien avec A, explique les principes de séparation de la SEC et de la HIC, sans choisir une technique.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S04",
+      "family": "matching_exclusion_is_item_local",
+      "question_en": "For HiTrap Blue HP 5 mL preparation A, request sample-application flow while excluding that same 5 mL product format from the loading item only. Separately list the binding-buffer formulations for A; that item is not excluded.",
+      "question_fr": "Pour la préparation A sur HiTrap Blue HP 5 mL, demande le débit de chargement tout en excluant ce même format 5 mL uniquement pour cet item de chargement. Donne séparément les formulations du tampon de fixation pour A ; cet item n’est pas exclu.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S05",
+      "family": "blocked_first_item_admissible_interleaving",
+      "question_en": "A is HiTrap Blue HP with unknown column size and unknown target hydrophobicity relative to albumin. First request washing flow; next ask whether albumin removal may precede or follow other purification steps. B is a separate HiTrap Blue HP 1 mL preparation requesting washing flow.",
+      "question_fr": "A est HiTrap Blue HP avec une taille de colonne inconnue et une hydrophobicité de la cible inconnue par rapport à l’albumine. Demande d’abord le débit de lavage, puis si le retrait de l’albumine peut précéder ou suivre les autres étapes de purification. B est une préparation distincte sur HiTrap Blue HP 1 mL demandant le débit de lavage.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S06",
+      "family": "two_quarantines_with_supported_siblings",
+      "question_en": "A is HiTrap Blue HP 1 mL: ask for equilibration flow and buffer role, and separately the washing buffer role. For a product-free B request, explain the general cation-exchange principle and the pH-versus-pI condition. Use only the currently admitted sources.",
+      "question_fr": "A est HiTrap Blue HP 1 mL : demande le débit et le rôle du tampon d’équilibrage, puis séparément le rôle du tampon de lavage. Pour une demande B sans produit, explique le principe général de l’échange cationique et la condition de pH par rapport au pI. Utilise seulement les sources actuellement admises.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S07",
+      "family": "unmapped_joint_role_and_source_absence",
+      "question_en": "For HiTrap Blue HP 5 mL A, label a washing-flow item explicitly as IEX. Also request the elution-buffer formulations as preparation information and the maximum pressure. Do not treat the extra IEX label as proven product/technique compatibility.",
+      "question_fr": "Pour A sur HiTrap Blue HP 5 mL, qualifie explicitement d’IEX un item demandant le débit de lavage. Demande aussi les formulations du tampon d’élution comme information de préparation et la pression maximale. Ne considère pas l’étiquette IEX comme une compatibilité produit/technique établie.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S08",
+      "family": "invalid_restriction_before_intersection",
+      "question_en": "A is HiTrap Blue HP 1 mL. Ask for sample-application flow, but attach a “buffer preparation / flow rate” exclusion to that loading item. Independently ask whether albumin removal comes before or after other steps. A task-wide exclusion of equilibration flow also applies.",
+      "question_fr": "A est HiTrap Blue HP 1 mL. Demande le débit de chargement, mais rattache à cet item une exclusion « préparation de tampon / débit ». Demande indépendamment si le retrait de l’albumine vient avant ou après les autres étapes. Une exclusion du débit d’équilibrage s’applique aussi à toute la tâche.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S09",
+      "family": "exact_reference_pair_and_absent_pressure",
+      "question_en": "On HiTrap Blue HP 1 mL A, the observed flow is 1.0 mL/min. Give the documentary sample-application range, check only whether that exact flow matches the syringe-note reference, and state the maximum pressure if present in the admitted excerpts.",
+      "question_fr": "Sur A en HiTrap Blue HP 1 mL, le débit observé est de 1,0 mL/min. Donne la plage documentaire de chargement, vérifie seulement si ce débit précis correspond à la référence de la note pour la seringue, et indique la pression maximale si elle figure dans les extraits admis.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S10",
+      "family": "unsupported_conversion_with_shared_source_sibling",
+      "question_en": "A uses HiTrap Blue HP 5 mL and the observed flow is 2 mL/min. Request a syringe-note reference check for that flow, without interpolation. In a separate item request the manual’s sample-application flow range for A.",
+      "question_fr": "A utilise HiTrap Blue HP 5 mL et le débit observé est de 2 mL/min. Demande la vérification de la référence de la note pour ce débit, sans interpolation. Dans un item séparé, demande la plage documentaire de débit de chargement de A.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S11",
+      "family": "conflict_unsupported_identity_and_ambiguity",
+      "question_en": "Keep four requests independent: A’s full product label is HiTrap Blue HP 5 mL but its column field says 1 mL; ask for washing endpoints. B is explicitly HiTrap Phenyl HP 1 mL; ask for washing flow. C asks only the general IEX principle. D is named only HiTrap with a 5 mL column; ask for washing flow.",
+      "question_fr": "Garde quatre demandes indépendantes : le nom complet de A est HiTrap Blue HP 5 mL mais son champ colonne indique 1 mL ; demande les critères de fin du lavage. B est explicitement HiTrap Phenyl HP 1 mL ; demande son débit de lavage. C demande uniquement le principe général de l’IEX. D est nommé seulement HiTrap avec une colonne de 5 mL ; demande son débit de lavage.",
+      "synthetic_scenario": true
+    },
+    {
+      "id": "S12",
+      "family": "mode_alternatives_without_size_or_buffer_pairing",
+      "question_en": "For A, HiTrap Blue HP with no supplied column size, explicitly compare the documented step and linear-gradient elution quantities in CV and name the modes; do not request flow or washing. For separate B, whose full label is HiTrap Blue HP 1 mL, list binding-buffer alternatives only and exclude operating elution.",
+      "question_fr": "Pour A, HiTrap Blue HP sans taille de colonne indiquée, compare explicitement les quantités d’élution en CV en une étape et en gradient linéaire et nomme ces modes ; ne demande ni débit ni lavage. Pour B distincte, dont le nom complet est HiTrap Blue HP 1 mL, donne uniquement les alternatives de tampon de fixation et exclus l’élution opératoire.",
+      "synthetic_scenario": true
+    }
+  ]
+}

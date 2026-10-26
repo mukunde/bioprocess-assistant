@@ -1,0 +1,3324 @@
+{
+  "status": "pending_human_review",
+  "runtime_input_rule": "Only input_en/input_fr JSON is sent to StructuredControl; never question text or references.",
+  "submissions": [
+    {
+      "id": "S01",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-elution-buffer",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "elution"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-no-operation",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-wash",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "column_volumes",
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "B-no-washing-flow",
+                "scope": {
+                  "task_id": "B"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "washing",
+                  "information": [
+                    "flow_rate"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-elution-buffer",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "elution"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-no-operation",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-wash",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "column_volumes",
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "B-no-washing-flow",
+                "scope": {
+                  "task_id": "B"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "washing",
+                  "information": [
+                    "flow_rate"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "S02",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate",
+                  "syringe_correspondence"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "provided",
+                    "value": "note_lookup"
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-not-one",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 1 mL"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-elute",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "elution"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "B-not-five",
+                "scope": {
+                  "task_id": "B"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 5 mL"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate",
+                  "syringe_correspondence"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "provided",
+                    "value": "note_lookup"
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-not-one",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 1 mL"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-elute",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "elution"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "B-not-five",
+                "scope": {
+                  "task_id": "B"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 5 mL"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "S03",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-end",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-not-one",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 1 mL"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "General topic; no product selected."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-principles",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "SEC",
+                    "HIC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-end",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-not-one",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 1 mL"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "General topic; no product selected."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-principles",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "chromatographie d’exclusion stérique",
+                    "chromatographie d’interaction hydrophobe"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S04",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-binding",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "binding"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-no-five-loading",
+                "scope": {
+                  "task_id": "A",
+                  "item_id": "A-load"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 5 mL"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-binding",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "binding"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-no-five-loading",
+                "scope": {
+                  "task_id": "A",
+                  "item_id": "A-load"
+                },
+                "selector": {
+                  "kind": "product",
+                  "label": "HiTrap Blue HP 5 mL"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "S05",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "target_hydrophobicity_similar_to_albumin",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "unknown",
+                  "value": null
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "A-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-position",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "product_applicability"
+                },
+                "information": [
+                  "relative_position_in_workflow"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "target_hydrophobicity_similar_to_albumin",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "unknown",
+                  "value": null
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "A-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-position",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "product_applicability"
+                },
+                "information": [
+                  "relative_position_in_workflow"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S06",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-equilibrate",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "equilibration"
+                },
+                "information": [
+                  "flow_rate",
+                  "buffer_role"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-wash-buffer",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "buffer_role"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "General topic; no product selected."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-ion",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle",
+                  "ph_vs_pi_condition"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "cation exchange"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-equilibrate",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "equilibration"
+                },
+                "information": [
+                  "flow_rate",
+                  "buffer_role"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-wash-buffer",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "buffer_role"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "General topic; no product selected."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-ion",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle",
+                  "ph_vs_pi_condition"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "échange cationique"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S07",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-joint",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "IEX"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-elution-buffer",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "elution"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-pressure",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "operating_limits"
+                },
+                "information": [
+                  "maximum_pressure"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-joint",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "échange ionique"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-elution-buffer",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "elution"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-pressure",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "operating_limits"
+                },
+                "information": [
+                  "maximum_pressure"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S08",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-position",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "product_applicability"
+                },
+                "information": [
+                  "relative_position_in_workflow"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-invalid",
+                "scope": {
+                  "task_id": "A",
+                  "item_id": "A-load"
+                },
+                "selector": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation",
+                  "information": [
+                    "flow_rate"
+                  ]
+                }
+              },
+              {
+                "exclusion_id": "A-no-equilibration-flow",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "equilibration",
+                  "information": [
+                    "flow_rate"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              },
+              {
+                "item_id": "A-position",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "product_applicability"
+                },
+                "information": [
+                  "relative_position_in_workflow"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-invalid",
+                "scope": {
+                  "task_id": "A",
+                  "item_id": "A-load"
+                },
+                "selector": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation",
+                  "information": [
+                    "flow_rate"
+                  ]
+                }
+              },
+              {
+                "exclusion_id": "A-no-equilibration-flow",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "equilibration",
+                  "information": [
+                    "flow_rate"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "S09",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [
+              {
+                "key": "observed_flow",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "1.0",
+                    "unit": "mL/min"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate",
+                  "syringe_correspondence"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "provided",
+                    "value": "reference_flow_check"
+                  }
+                }
+              },
+              {
+                "item_id": "A-pressure",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "operating_limits"
+                },
+                "information": [
+                  "maximum_pressure"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [
+              {
+                "key": "observed_flow",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "1.0",
+                    "unit": "mL/min"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate",
+                  "syringe_correspondence"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "provided",
+                    "value": "reference_flow_check"
+                  }
+                }
+              },
+              {
+                "item_id": "A-pressure",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "operating_limits"
+                },
+                "information": [
+                  "maximum_pressure"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S10",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [
+              {
+                "key": "observed_flow",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "2",
+                    "unit": "mL/min"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "A-note",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "syringe_correspondence"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "provided",
+                    "value": "reference_flow_check"
+                  }
+                }
+              },
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [
+              {
+                "key": "observed_flow",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "2",
+                    "unit": "mL/min"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "A-note",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "syringe_correspondence"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "provided",
+                    "value": "reference_flow_check"
+                  }
+                }
+              },
+              {
+                "item_id": "A-load",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S11",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-end",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Phenyl HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "C",
+            "sample_ref": "preparation-C",
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "General topic; no product selected."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "C-principle",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "IEX"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "D",
+            "sample_ref": "preparation-D",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-end",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Phenyl HP"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "C",
+            "sample_ref": "preparation-C",
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "General topic; no product selected."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "C-principle",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "échange ionique"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "D",
+            "sample_ref": "preparation-D",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-flow",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "S12",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-modes",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "elution"
+                },
+                "information": [
+                  "column_volumes",
+                  "elution_mode"
+                ],
+                "answer_mode": "compare_documented_alternatives",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-no-wash",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "washing",
+                  "information": "all"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-binding",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "binding"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "B-no-elution-operation",
+                "scope": {
+                  "task_id": "B"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "A",
+            "sample_ref": "preparation-A",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "A-modes",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "elution"
+                },
+                "information": [
+                  "column_volumes",
+                  "elution_mode"
+                ],
+                "answer_mode": "compare_documented_alternatives",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No buffer formulation use selected for this item."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "A-no-wash",
+                "scope": {
+                  "task_id": "A"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "washing",
+                  "information": "all"
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "B",
+            "sample_ref": "preparation-B",
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "B-binding",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "No selected technique needed for this documentary item."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "binding"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No single elution mode selected; explicit comparison if requested."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "No syringe-note request."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "B-no-elution-operation",
+                "scope": {
+                  "task_id": "B"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

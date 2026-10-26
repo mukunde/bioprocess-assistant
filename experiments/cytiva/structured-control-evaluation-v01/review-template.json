@@ -1,0 +1,171 @@
+{
+  "method_lock_sha256_lf": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+  "manifest_sha256_lf": null,
+  "instruction": "Copy to a separate private file. Bind the manifest hash from verify(). Pending placeholders are not actual approval.",
+  "decisions": [
+    {
+      "question_id": "S01",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "df3f7d1cdf0ee016f2d61634c36dc216c9a54bb92ceaa40bd94bf9d0b4d1b775",
+      "submission_sha256_canonical": "8eeddad5a91b0c1a5aa8305fc1c49bcd9eea7aaef14b837e2babd3b7e017e3cf",
+      "reference_sha256_canonical": "bf2dc0df3dd535eba9dc1ed4ba77fb87a6a525ea0580970f2485d6026beb9a10",
+      "retained_reservations": [
+        "Keep A/B distinct; the stated 5 mL product label is explicit input, not an inferred size.",
+        "Do not pair alternative buffers or turn CV into mL.",
+        "The target hydrophobicity/applicability is not established; retain E120-W."
+      ]
+    },
+    {
+      "question_id": "S02",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "a3230e7821ad7f9e85c1ddec15ef71ee529de9afbdc8121d04c1310c929d2474",
+      "submission_sha256_canonical": "3da6e89c4ea5635c09c8b1114591b3b7d67ea8a06fe07a8915d2332c70bb0c7e",
+      "reference_sha256_canonical": "333c0295eb59894729314a5267325e617022db0c3769b82269a623b6be17f8e4",
+      "retained_reservations": [
+        "Preserve optimal-results and approximate-note qualifications.",
+        "No universal drop conversion, operating duration or chosen elution recipe.",
+        "Preserve E120-W and the separate task/column bindings."
+      ]
+    },
+    {
+      "question_id": "S03",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "02eda48b48335e013999c85079df53eba626a966e6c013899a81fcc63d5bd762",
+      "submission_sha256_canonical": "bd741bfed460b7edba99c57d09a77f2e413696a6cc269267983818adcd24faaa",
+      "reference_sha256_canonical": "f698d791cd0cb9772c75a232be0382e3577262d2c5de33215b2e9ec8fbfbebd4",
+      "retained_reservations": [
+        "Washing endpoints are shared in the source, but this format-specific permission scope is unresolved.",
+        "General B support remains independent; no diagnosis or process suitability is established."
+      ]
+    },
+    {
+      "question_id": "S04",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "e95280b3d67d53171fdede2fb68f14bee20ff6a71d2ef574c7b7c9d39bbca937",
+      "submission_sha256_canonical": "42850b4fc65dab421377954bfd72dca8bc5712b358d510138712319cd17d0067",
+      "reference_sha256_canonical": "ccae9f7f45f166500e362c55b86ec4b391e0ecbd03256a3603ba2d8757b61872",
+      "retained_reservations": [
+        "The restriction belongs only to A-load; it must not suppress A-binding.",
+        "Printed formulation fidelity is not independent chemical validation."
+      ]
+    },
+    {
+      "question_id": "S05",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "96665298c5b16cffa3d06b29f2d557b4b5ae8b834fcff327617010e00a53fe85",
+      "submission_sha256_canonical": "5e3c98a3cacef5bad61c3dc3a67fc02124d829dbe60ac7f76115b7dfd1b103c4",
+      "reference_sha256_canonical": "c845e25c4f506c26619da3ae1138fef08f0a6401093b931e7e28ebc6d5af90f4",
+      "retained_reservations": [
+        "Unknown hydrophobicity remains unknown; no process authorization.",
+        "Skip blocked A-flow when interleaving admissible items.",
+        "The expected selected-root order is a plan-level criterion, not a procedural sequence."
+      ]
+    },
+    {
+      "question_id": "S06",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "ec5216809bda3556efdb18301e2885aba754bca2d9123d41d70f7ed824428eda",
+      "submission_sha256_canonical": "eb73d70ca4e0eca24758e372cc1771f27c34db489635d300890445fbdb6dbcdd",
+      "reference_sha256_canonical": "9436bfe2091b7236c68c3a9952fe863722dd388de704e244d945659b2e952b14",
+      "retained_reservations": [
+        "E118-I and E121-EQ remain excluded; their text is not admitted as reference context.",
+        "General E118-M support does not certify the withheld cation-exchange condition."
+      ]
+    },
+    {
+      "question_id": "S07",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "597276039b5d444750678265bcf40d64455ccbdc81dada62cc53fa82911b45a3",
+      "submission_sha256_canonical": "db4e9cdc75f560e0075a3d7589f17caa05018fedd36e784c99535e968a42b93c",
+      "reference_sha256_canonical": "c39211be2ae74c41c4e7be1e39bf9405cd57cf84f7949ed22c045f077895c585",
+      "retained_reservations": [
+        "No claim that the manual or chemistry forbids IEX globally; this is a bounded role-mapping gap.",
+        "Pressure absence is limited to the 25 eligible excerpts, not the full manual.",
+        "Buffer alternatives stay separate; no operating elution values requested."
+      ]
+    },
+    {
+      "question_id": "S08",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "9ab59dbe5c8b76fc9db6f42b8bd8b95447dcd501968634ce30f80444a4b89390",
+      "submission_sha256_canonical": "e9b62b1ad91025e594fb0f15c1a874fc996cbdb8ac8e02548c9c080612496693",
+      "reference_sha256_canonical": "d51c5276da4203c32d78b400e09d918f110f953e450cf2271772be7b357b2261",
+      "retained_reservations": [
+        "Invalid restriction blocks its declared item only.",
+        "Semantic invalidity is intentional; the submitted JSON remains structurally valid.",
+        "No transfer of forbidden/unavailable parameters."
+      ]
+    },
+    {
+      "question_id": "S09",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "aa782d69a65d23a2b22b3e8361872bb9cfa2aad9cac971ae0e2898a4d175d565",
+      "submission_sha256_canonical": "76fb89f5cc87b40ad22df014cf49a80b77b3710d7cfd57e88c8f46e2cc4d6a9b",
+      "reference_sha256_canonical": "c22b5a54159b68beed634364fe18b0cc37dcdab1354ef5c583841b186dea03ad",
+      "retained_reservations": [
+        "The approximate correspondence is confined to the printed syringe/column reference.",
+        "Observed flow is a user observation, not independent verification or process authorization.",
+        "No universal drop-rate relation or pressure value."
+      ]
+    },
+    {
+      "question_id": "S10",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "41d1d42824a692d62b28a3096aec453d139736a94cec542777bbd9b8d483165d",
+      "submission_sha256_canonical": "63db2fea0ae5455103260ff1939002dd0fe8763b434950a3c646a3c34f30ba78",
+      "reference_sha256_canonical": "122a236c99699a3a1d8201867edfd3e769960fe19012390c7eac84f425c9012f",
+      "retained_reservations": [
+        "Source presence for a sibling does not authorize the blocked note assignment.",
+        "No interpolation, calculated drops or inferred operating duration."
+      ]
+    },
+    {
+      "question_id": "S11",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "3106b615b44029bcd2d44d903179461981d75ce4a85d6b0b95f44d351139436e",
+      "submission_sha256_canonical": "f309ea046c8b1b94c637b72878340eadba3cd7ed7c3a5d6de194b63b5210d8f9",
+      "reference_sha256_canonical": "1298f697cb8431ebe874de1427f0e78f519d1eba2e24d5e320be011e9ad9bb26",
+      "retained_reservations": [
+        "A same-scenario conflict must not become two invented tasks.",
+        "Do not repeatedly ask B to identify an already identified out-of-scope product.",
+        "General charge separation does not supply the quarantined pH/pI condition."
+      ]
+    },
+    {
+      "question_id": "S12",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "0f4b74e99e16beb04d36cd13deafbdb7d65fb8a6c20d112433ebb0d86d9aa4df",
+      "submission_sha256_canonical": "4a0289b9919b5f824a32e389651b3550387e4ab7c488c3de57a31ef378bc369a",
+      "reference_sha256_canonical": "f2f7092ef8874b4803edebf60a442e4576be29749a115dfd48074d43eb086083",
+      "retained_reservations": [
+        "Preserve usually-sufficient and alternative qualifications; no CV-to-mL calculation.",
+        "Adjacent flow values or elution-buffer formulations in atomic source passages are not requested answers.",
+        "Printed buffer nomenclature is preserved without independent chemical correction."
+      ]
+    }
+  ]
+}

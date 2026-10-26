@@ -1,0 +1,179 @@
+{
+  "id": "structured-control-review-corrections-checks",
+  "check_record_revision": 2,
+  "recorded_at_utc": "2026-10-26T00:50:15.820743+00:00",
+  "status": "review_corrections_verified_no_additional_blocking_finding_in_bounded_review_not_frozen",
+  "prior_check_record": {
+    "path": "docs/technical/structured-control-v01-checks.json",
+    "sha256_lf": "c37943c7d543de4dc00a8edb25a65665028128c71f9b7983f6f2cacae51405ed",
+    "preserved_unchanged": true,
+    "scope": "Historical pre-correction hashes and initial 35/518 passing checks, not current corrected behavior."
+  },
+  "approval_record": {
+    "path": "docs/decisions/2026-10-25-task-request-technical-review.json",
+    "sha256_lf": "a3531bbb40cbc65b6ed614aedd965aadf619e6c479879c067a81096aae109c8a",
+    "preserved_unchanged": true
+  },
+  "approved_design_sha256_lf": {
+    "docs/technical/task-request-catalog-v01.json": "8678171880f700d774dc75a13645ab2a998a0ed65bcf590c34a422220772b278",
+    "docs/technical/task-request-source-adapter-v01.json": "5e31df49eab70787afd22c379be4e7b77acb300f4c1fca486e6e89903a5d7f2b",
+    "docs/technical/TASK-REQUEST-TECHNICAL-SPEC-V01.md": "2d0817b5c9764f25e5dbe22dca3bb6c84fd50fe6193c26514212f0baa89b53cf",
+    "docs/technical/task-request-v01.schema.json": "88a20bd3a7e3c5514f6b51521f284eade4fc7a308cc1e5ac9c8e96da6503f0ea"
+  },
+  "implementation_sha256_lf": {
+    "ingestion/structured_request.py": "6a179d94882c4f38cb2024f2a003510d57833b4375b1905f96a240aeaf3b6d92",
+    "ingestion/structured_sources.py": "d727721333f6d367391b865bf474ae59a35551633cdf4a0590ecbcb0c8e9b33c",
+    "tests/test_structured_request.py": "b36b16eb16f460ef7503edb929ea36e264b1c2245265bc7a4c73c3e55280ca5e",
+    "requirements-structured.txt": "d2da021ffed232e7567757979edcd46ea76fe9b0953a92f7121afeb53be76c52",
+    "examples/structured-control/washing-partial.json": "df840443ae21a57f879b96c2d59764fb1a91794f4ef2590b7a77d4330751ab37",
+    "docs/technical/STRUCTURED-CONTROL-V01.md": "e5858a75b6e897dbb6f7f58eab73cf2b01d86a4282200959694df428e63f8918",
+    "docs/technical/STRUCTURED-CONTROL-REVIEW-FIXES-V01.md": "6d62da271f252e4848da02db039195881914fca19d50b901798a66955a922160"
+  },
+  "corrections": {
+    "CF12_admissible_item_order": "Compact admissible task-local item lists before interleaving; preserve this order in later candidate rounds. Partial items remain admissible for their clear units.",
+    "CF08_CF11_coverage": "Unsupported selectors in summaries, documentary support or retained diagnostics prevent complete supported-ready coverage; ordinary clarification/source absence remain distinct.",
+    "CF04_restrictions": "Validate registered stage/information/facet combinations independently of positive intersection; malformed restrictions block their declared owner scope with explicit diagnostics."
+  },
+  "format_exclusion_clarification": {
+    "qualified_label": "Same product AND explicit cataloged bed volume; never expand to every format.",
+    "unqualified_label": "Product-wide across formats, for product-dependent information only.",
+    "unknown_column": "Keep scoped unresolved_binding; never choose a column by elimination.",
+    "conflicting_or_invalid_column": "Do not resolve exclusion scope from one side of a conflict or invalid unit/domain.",
+    "explicit_unsupported_column": "Retain known out-of-scope format; do not classify it as unknown.",
+    "provenance": "Record the negative catalog resolution, explicit size and original exclusion-label pointer; do not use negative labels as positive context.",
+    "scope": "Retain task/item ownership and exact catalog matching; no conversion or inferred numeric rule.",
+    "authority": "Implementation clarification under the correction request; not a new human source approval or scientific validation."
+  },
+  "validation": {
+    "targeted": {
+      "command": "python -m unittest tests.test_structured_request -q",
+      "tests": 50,
+      "added_regression_tests": 15,
+      "result": "passed",
+      "sockets": "blocked"
+    },
+    "maintained_suite": {
+      "entry_point": "python -m unittest tests",
+      "environment": "Existing ingestion Python plus existing integration site-packages, writable local temp and PYTHONHASHSEED=0; loopback only.",
+      "tests": 533,
+      "passed": true,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "external_connection_attempts": 0,
+      "elapsed_seconds": 53.598
+    },
+    "post_fix_reproductions": [
+      {
+        "case": "blocked_first_item",
+        "unit_states": [
+          "needs_clarification",
+          "supported",
+          "supported"
+        ],
+        "coverage": true,
+        "selection_order": [
+          "A-ready",
+          "B-ready"
+        ],
+        "context_tokens": 1726
+      },
+      {
+        "case": "unmapped_interpretation",
+        "unit_states": [
+          "unsupported_selector"
+        ],
+        "coverage": false,
+        "selection_order": [],
+        "context_tokens": 9
+      },
+      {
+        "case": "invalid_exclusion",
+        "unit_states": [
+          "unsupported_selector"
+        ],
+        "coverage": false,
+        "selection_order": [],
+        "context_tokens": 9
+      },
+      {
+        "case": "qualified_exclusion_column_1",
+        "unit_states": [
+          "supported"
+        ],
+        "coverage": true,
+        "selection_order": [
+          "A-wash"
+        ],
+        "context_tokens": 836
+      },
+      {
+        "case": "qualified_exclusion_column_5",
+        "unit_states": [
+          "needs_clarification"
+        ],
+        "coverage": true,
+        "selection_order": [],
+        "context_tokens": 9
+      },
+      {
+        "case": "qualified_exclusion_column_None",
+        "unit_states": [
+          "needs_clarification"
+        ],
+        "coverage": true,
+        "selection_order": [],
+        "context_tokens": 9
+      },
+      {
+        "case": "qualified_exclusion_column_2",
+        "unit_states": [
+          "out_of_scope"
+        ],
+        "coverage": true,
+        "selection_order": [],
+        "context_tokens": 9
+      }
+    ],
+    "static_checks": [
+      "Python source compilation",
+      "UTF-8 and trailing whitespace",
+      "Relative documentation links",
+      "Approved design and prior-record hashes",
+      "Unchanged tracked files and pre-existing local files outside the three authorized edits"
+    ],
+    "boundary_fixture_note": "Exact token/root branch tests use a synthetic internal counter; integration examples and post-fix reproductions use the real pinned local tokenizer."
+  },
+  "preservation": {
+    "baseline_files_checked": 357,
+    "authorized_changed_files": [
+      "docs/technical/STRUCTURED-CONTROL-V01.md",
+      "ingestion/structured_request.py",
+      "tests/test_structured_request.py"
+    ],
+    "unchanged_baseline_files": 354,
+    "tracked_files_unchanged": 339,
+    "historical_cli_output_unchanged": true,
+    "previous_trials": "No historical runner executed, previous output overwritten or source/quarantine edited; checked inventory covers tracked and pre-existing nonignored local files.",
+    "source_exclusions": [
+      "E118-I",
+      "E121-EQ"
+    ]
+  },
+  "runtime": {
+    "python_version": "3.13.0",
+    "jsonschema": "4.26.0",
+    "tiktoken": "0.12.0"
+  },
+  "remaining_boundary": [
+    "Method freeze has not been performed; a later lock must include the implementation and exclusion-scope clarification.",
+    "No new prospective benchmark, free-text interpreter, answering model or real-process applicability validation."
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "packages_installed": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

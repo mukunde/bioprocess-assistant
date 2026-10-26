@@ -1,0 +1,95 @@
+{
+  "id": "structured-control-v01-conformance-checks",
+  "recorded_at_utc": "2026-10-25T16:56:54.819173+00:00",
+  "status": "local_implementation_conformance_passed_not_prospectively_evaluated_or_frozen",
+  "approval_record": {
+    "path": "docs/decisions/2026-10-25-task-request-technical-review.json",
+    "sha256_lf": "a3531bbb40cbc65b6ed614aedd965aadf619e6c479879c067a81096aae109c8a"
+  },
+  "implementation_sha256_lf": {
+    "ingestion/structured_request.py": "60bb3f8f41e3873d18759ad0d1801f1251be54a73dde090757914c3abaaecd59",
+    "ingestion/structured_sources.py": "d727721333f6d367391b865bf474ae59a35551633cdf4a0590ecbcb0c8e9b33c",
+    "tests/test_structured_request.py": "bc78d76d143a2b6d5fd441913778653ec531d98cae236735431e74dca15f0a30",
+    "requirements-structured.txt": "d2da021ffed232e7567757979edcd46ea76fe9b0953a92f7121afeb53be76c52",
+    "examples/structured-control/washing-partial.json": "df840443ae21a57f879b96c2d59764fb1a91794f4ef2590b7a77d4330751ab37",
+    "docs/technical/STRUCTURED-CONTROL-V01.md": "2f11c8d1e5ff6043cccb050fe698c2bfce77b25cfeeab39aded43add8905c7d1"
+  },
+  "approved_design_sha256_lf": {
+    "docs/technical/task-request-catalog-v01.json": "8678171880f700d774dc75a13645ab2a998a0ed65bcf590c34a422220772b278",
+    "docs/technical/task-request-source-adapter-v01.json": "5e31df49eab70787afd22c379be4e7b77acb300f4c1fca486e6e89903a5d7f2b",
+    "docs/technical/TASK-REQUEST-TECHNICAL-SPEC-V01.md": "2d0817b5c9764f25e5dbe22dca3bb6c84fd50fe6193c26514212f0baa89b53cf",
+    "docs/technical/task-request-v01.schema.json": "88a20bd3a7e3c5514f6b51521f284eade4fc7a308cc1e5ac9c8e96da6503f0ea"
+  },
+  "runtime": {
+    "python_version": "3.13.0",
+    "jsonschema_version": "4.26.0",
+    "tiktoken_version": "0.12.0",
+    "tokenizer_asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+  },
+  "validation": {
+    "targeted": {
+      "command": "python -m unittest tests.test_structured_request -v",
+      "tests": 35,
+      "result": "passed",
+      "coverage": [
+        "CF01",
+        "CF02",
+        "CF03",
+        "CF04",
+        "CF05",
+        "CF06",
+        "CF07",
+        "CF08",
+        "CF09",
+        "CF10",
+        "CF11",
+        "CF12"
+      ],
+      "socket_connections": "blocked"
+    },
+    "maintained_complete_suite": {
+      "entry_point": "python -m unittest tests",
+      "tests": 518,
+      "result": "passed",
+      "external_connection_attempts": 0,
+      "network_policy": "loopback only; external socket connects blocked",
+      "environment": "Existing ingestion Python plus existing integration-venv site-packages for application dependencies; no installation. Writable project-local temporary directory and PYTHONHASHSEED=0."
+    },
+    "boundary_test_note": "Exact 2048/2049-token and six-root branch tests use a synthetic internal counter. Other integration cases and the CLI example use the real pinned local tokenizer.",
+    "initial_check_limitations": "Initial sandbox temp storage was inaccessible. Initial direct full discovery lacked Chainlit, blocked loopback and bypassed the historical-fixture override. Corrected runs used writable temp storage, existing application dependencies and the maintained loader with loopback access. No historical tests changed."
+  },
+  "cli_development_example": {
+    "input": "examples/structured-control/washing-partial.json",
+    "input_sha256_lf": "df840443ae21a57f879b96c2d59764fb1a91794f4ef2590b7a77d4330751ab37",
+    "output_local_only": ".local-tools/structured-control/washing-partial-01.json",
+    "output_sha256": "4506af006496312f04cfe1c5fc29e5f99724cb2ba11036460890beeb71cdde84",
+    "unit_states": [
+      "needs_clarification",
+      "supported"
+    ],
+    "source_passages": 5,
+    "context_tokens": 816,
+    "independent_prospective_question": false
+  },
+  "preservation": {
+    "baseline_tracked_and_design_files_checked": 346,
+    "changed_baseline_files": [],
+    "previous_trials_and_reviews": "Unchanged; no historical runner executed or output overwritten.",
+    "source_exclusions": [
+      "E118-I",
+      "E121-EQ"
+    ]
+  },
+  "limits": [
+    "Structured input only; no free-text interpreter, answering model, Chainlit wiring or Neo4j integration.",
+    "No prospective retrieval performance, scientific suitability or real-process authorization established.",
+    "Not frozen as v06; code/conformance review precedes prospective evaluation."
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "packages_installed": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

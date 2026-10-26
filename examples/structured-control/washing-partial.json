@@ -1,0 +1,31 @@
+{
+  "document_kind": "structured_submission",
+  "contract_version": "task-request-0.1-tech-proposed",
+  "input_mode": "structured",
+  "language": "en",
+  "tasks": [
+    {
+      "task_id": "A",
+      "sample_ref": null,
+      "intent": "documentary_procedure_lookup",
+      "product": {"state": "provided", "value": "HiTrap Blue HP"},
+      "column": {"state": "unknown", "value": null},
+      "facts": [],
+      "items": [
+        {
+          "item_id": "A-wash",
+          "stage": {"kind": "operating_phase", "code": "washing"},
+          "information": ["flow_rate", "stopping_criteria"],
+          "answer_mode": "single_context",
+          "techniques": {"state": "not_applicable", "value": null, "reason": "Product-specific documentary lookup"},
+          "facets": {
+            "buffer_use": {"state": "not_applicable", "value": null, "reason": "No formulation request"},
+            "elution_mode": {"state": "not_applicable", "value": null, "reason": "Washing item"},
+            "syringe_query_mode": {"state": "not_applicable", "value": null, "reason": "No syringe-note request"}
+          }
+        }
+      ],
+      "exclusions": []
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "id": "task-request-principles-review-2026-10-25",
+  "decision": "approved_principles_and_initial_scope",
+  "recorded_at_utc": "2026-10-25T14:41:29.161600+00:00",
+  "human_quote": "Je valide D01–D08 et tes propositions C01–C04. Enregistre mes décisions, puis prépare la matrice des contextes nécessaires et les fiches représentatives à revoir avant l’implémentation. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective human message; not twelve independent review events.",
+  "approved_decisions": [
+    {
+      "id": "D01",
+      "decision": "approved",
+      "proposal_summary_en": "One task owns one product/column context; several steps may belong to it. Different column sizes or product scopes require distinct tasks, even for the same sample."
+    },
+    {
+      "id": "D02",
+      "decision": "approved",
+      "proposal_summary_en": "Keep the step distinct from requested information such as flow, buffer, volumes and endpoints. A flow request does not automatically request the whole protocol."
+    },
+    {
+      "id": "D03",
+      "decision": "approved",
+      "proposal_summary_en": "Buffer formulation is separate from an operating procedure; an elution-buffer request does not request operating elution flow or gradient settings."
+    },
+    {
+      "id": "D04",
+      "decision": "approved",
+      "proposal_summary_en": "Distinguish provided, explicitly unknown, not supplied and justified not applicable. Missing data is not zero, false or a value borrowed from another task."
+    },
+    {
+      "id": "D05",
+      "decision": "approved",
+      "proposal_summary_en": "Attach each exclusion to a task or information item. Inclusion for A and exclusion for B is not a contradiction."
+    },
+    {
+      "id": "D06",
+      "decision": "approved",
+      "proposal_summary_en": "A contradiction blocks affected items. An unavailable item does not remove unrelated supported documentary requests."
+    },
+    {
+      "id": "D07",
+      "decision": "approved",
+      "proposal_summary_en": "Preserve units, alternatives, approximations and conditions; no automatic conversion in the initial version. Keep bed volume, sample volume and flow distinct."
+    },
+    {
+      "id": "D08",
+      "decision": "approved",
+      "proposal_summary_en": "Preserve request-field origins separately from manual evidence. User input is not scientific evidence and cannot lift source quarantine."
+    },
+    {
+      "id": "C01",
+      "decision": "approved",
+      "proposal_summary_en": "Initial scope: HiTrap Blue HP 1 mL and 5 mL, plus general IEX/HIC/SEC questions needed for current cases. Other products remain outside scope or require clarification."
+    },
+    {
+      "id": "C02",
+      "decision": "approved",
+      "proposal_summary_en": "Ask for clarification only where missing information changes the requested answer; do not demand irrelevant context for general documentary principles. Resolve contradictions before affected parameters."
+    },
+    {
+      "id": "C03",
+      "decision": "approved",
+      "proposal_summary_en": "Start with offline structured cards and a readable per-task preview. Validate them before Chainlit integration; free text will later target the same contract."
+    },
+    {
+      "id": "C04",
+      "decision": "approved",
+      "proposal_summary_en": "Keep six selected seeds and 2048 serialized context tokens for the whole request, alternating requested items, deduplicating shared passages, retaining atomic dependencies and explicitly reporting unserved items."
+    }
+  ],
+  "context_document_sha256_lf_before_status_update": {
+    "docs/REQUEST-CONTRACT-V01.md": "460a48949113063373499cfc1f58041a276b54f94558a0db60b3e817d34da233",
+    "docs/experiments/structured-request-comparison-protocol.md": "a3f12d2b5f9548ceba1befd5160fd5ad9d91cc0a79e357db7f6112ef8b3fa1b9"
+  },
+  "scope_limits": [
+    "Only D01-D08 and the stated C01-C04 proposals are approved.",
+    "Detailed context matrix, cards, field taxonomy, aliases and canonical mappings still require review.",
+    "No schema, form, v06 code, retrieval experiment, source approval or scientific suitability is approved or executed by this record."
+  ],
+  "pending_review_artifacts": [
+    "docs/REQUEST-CONTEXT-MATRIX-V01.md",
+    "docs/experiments/structured-request-review-cards-v01.md"
+  ]
+}

@@ -1,0 +1,934 @@
+{
+  "id": "task-request-source-adapter-v01-proposed",
+  "status": "technical_design_approved_not_implemented",
+  "purpose": "Reviewed source-role navigation for the structured control, not a free-corpus semantic retriever or a claim of performance improvement.",
+  "basis": {
+    "registry_file": "experiments/cytiva/contaminants-pilot-v01/evidence.json",
+    "registry_sha256_lf": "ccf4a498e16446e30289a7e864de715f3c3bb4377785df607a38f54fd97a84ca",
+    "policy_file": "experiments/cytiva/v05-evaluation-v01/candidate.json",
+    "policy_pointer": "/source_runtime_policy",
+    "policy_file_sha256_lf": "1c9731df951c00435aa51e21deb5a5859f9e6acf0650c87cfd83a66ce6125f3a",
+    "source_review_manifest": "experiments/cytiva/reviewed-contaminant-questions/manifest.json",
+    "source_review_manifest_sha256_lf": "6b997e9c3eb5a1a3d6e7e3f2ad5a90b9a2259b9498f04df995c5407447d18ef1",
+    "pdf_identity": {
+      "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+      "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "pdf_page_count": 183,
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "Existing project registry; not newly certified"
+    },
+    "eligible_source_ids": [
+      "E118-USE",
+      "E118-C",
+      "E118-M",
+      "E119-BH",
+      "E119-B",
+      "E119-BI",
+      "E119-S",
+      "E119-X",
+      "E119-AH",
+      "E119-A",
+      "E119-I",
+      "E119-H",
+      "E119-BL",
+      "E120-H",
+      "E120-A",
+      "E120-U",
+      "E120-W",
+      "E120-P",
+      "E121-BH",
+      "E121-B",
+      "E121-PH",
+      "E121-L",
+      "E121-W",
+      "E121-E",
+      "E121-F"
+    ],
+    "excluded_source_ids": [
+      "E118-I",
+      "E121-EQ"
+    ]
+  },
+  "roles": [
+    {
+      "id": "role:general.principle",
+      "matrix_rows": [
+        "M01"
+      ],
+      "selector": {
+        "stage_kind": "general_topic",
+        "stage_code": "method_selection",
+        "information": [
+          "principle"
+        ],
+        "facet": null
+      },
+      "product_scope": [],
+      "method_scope": [
+        "method:iex",
+        "method:hic",
+        "method:sec",
+        "method:cation_exchange"
+      ],
+      "required_context": [
+        "technique_family"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E118-M"
+          ],
+          "reviewed_information": [
+            "principle"
+          ],
+          "lexical_terms": "ion exchange charge hydrophobic interaction size exclusion principle",
+          "root_source_ids": [
+            "E118-M"
+          ],
+          "candidate_id": "role:general.principle:E118-M",
+          "scope_specificity": {
+            "product_grade": 0,
+            "product_basis_source_ids": [],
+            "product_basis": "Product-free general topic; neutral grade.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:general.clarification",
+      "matrix_rows": [
+        "M01"
+      ],
+      "selector": {
+        "stage_kind": "general_topic",
+        "stage_code": "method_selection",
+        "information": [
+          "clarification_context"
+        ],
+        "facet": null
+      },
+      "product_scope": [],
+      "method_scope": [],
+      "required_context": [
+        "intent=context_clarification"
+      ],
+      "candidates": [
+        {
+          "root_source_ids": [
+            "E118-USE",
+            "E118-C",
+            "E118-M"
+          ],
+          "direct_support_source_ids": [
+            "E118-USE",
+            "E118-C",
+            "E118-M"
+          ],
+          "reviewed_information": [
+            "clarification_context"
+          ],
+          "lexical_terms": "minor contaminants intended application separation principle",
+          "note": "Joint bundle for general uncertainty clarification; not three interchangeable one-source answers. All three selected roots count toward the six-root cap.",
+          "candidate_id": "role:general.clarification:E118-C,E118-M,E118-USE",
+          "scope_specificity": {
+            "product_grade": 0,
+            "product_basis_source_ids": [],
+            "product_basis": "Product-free general topic; neutral grade.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.loading_flow",
+      "matrix_rows": [
+        "M02"
+      ],
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "sample_application",
+        "information": [
+          "flow_rate"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "supported_column"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-L"
+          ],
+          "reviewed_information": [
+            "flow_rate"
+          ],
+          "lexical_terms": "HiTrap Blue HP sample application loading flow",
+          "root_source_ids": [
+            "E121-L"
+          ],
+          "candidate_id": "role:blue.loading_flow:E121-L",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 1,
+            "column_basis_source_ids": [
+              "E120-P"
+            ],
+            "column_basis": "Explicit documented set of 1 mL and 5 mL formats; selected format must be in this set."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.washing_flow",
+      "matrix_rows": [
+        "M03"
+      ],
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "washing",
+        "information": [
+          "flow_rate"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "supported_column"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-W"
+          ],
+          "reviewed_information": [
+            "flow_rate"
+          ],
+          "lexical_terms": "HiTrap Blue HP washing flow",
+          "root_source_ids": [
+            "E121-W"
+          ],
+          "candidate_id": "role:blue.washing_flow:E121-W",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 1,
+            "column_basis_source_ids": [
+              "E120-P"
+            ],
+            "column_basis": "Explicit documented set of 1 mL and 5 mL formats; selected format must be in this set."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.washing_context",
+      "matrix_rows": [
+        "M04"
+      ],
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "washing",
+        "information": [
+          "buffer_role",
+          "column_volumes",
+          "stopping_criteria"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-W"
+          ],
+          "reviewed_information": [
+            "buffer_role",
+            "column_volumes",
+            "stopping_criteria"
+          ],
+          "lexical_terms": "HiTrap Blue HP washing binding buffer column volumes baseline effluent",
+          "root_source_ids": [
+            "E121-W"
+          ],
+          "candidate_id": "role:blue.washing_context:E121-W",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.elution_flow",
+      "matrix_rows": [
+        "M05"
+      ],
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "elution",
+        "information": [
+          "flow_rate"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "supported_column"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-E"
+          ],
+          "reviewed_information": [
+            "flow_rate"
+          ],
+          "lexical_terms": "HiTrap Blue HP elution flow",
+          "root_source_ids": [
+            "E121-E"
+          ],
+          "candidate_id": "role:blue.elution_flow:E121-E",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 1,
+            "column_basis_source_ids": [
+              "E120-P"
+            ],
+            "column_basis": "Explicit documented set of 1 mL and 5 mL formats; selected format must be in this set."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.elution_quantity",
+      "matrix_rows": [
+        "M06"
+      ],
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "elution",
+        "information": [
+          "column_volumes",
+          "elution_mode"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "provided_elution_mode_or_explicit_comparison"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-E"
+          ],
+          "reviewed_information": [
+            "column_volumes",
+            "elution_mode"
+          ],
+          "lexical_terms": "HiTrap Blue HP elution step linear gradient column volumes",
+          "root_source_ids": [
+            "E121-E"
+          ],
+          "candidate_id": "role:blue.elution_quantity:E121-E",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.binding_formulations",
+      "matrix_rows": [
+        "M07"
+      ],
+      "selector": {
+        "stage_kind": "preparation",
+        "stage_code": "buffer_preparation",
+        "information": [
+          "buffer_formulation"
+        ],
+        "facet": {
+          "buffer_use": "binding"
+        }
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "provided_buffer_use"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-B"
+          ],
+          "reviewed_information": [
+            "buffer_formulation"
+          ],
+          "lexical_terms": "HiTrap Blue HP binding buffer formulation",
+          "root_source_ids": [
+            "E121-B"
+          ],
+          "candidate_id": "role:blue.binding_formulations:E121-B",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.elution_formulations",
+      "matrix_rows": [
+        "M08"
+      ],
+      "selector": {
+        "stage_kind": "preparation",
+        "stage_code": "buffer_preparation",
+        "information": [
+          "buffer_formulation"
+        ],
+        "facet": {
+          "buffer_use": "elution"
+        }
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "provided_buffer_use"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-B"
+          ],
+          "reviewed_information": [
+            "buffer_formulation"
+          ],
+          "lexical_terms": "HiTrap Blue HP elution buffer formulation",
+          "root_source_ids": [
+            "E121-B"
+          ],
+          "candidate_id": "role:blue.elution_formulations:E121-B",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": []
+        }
+      ]
+    },
+    {
+      "id": "role:blue.syringe_note",
+      "matrix_rows": [
+        "M09"
+      ],
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "sample_application",
+        "information": [
+          "syringe_correspondence"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product",
+        "supported_column",
+        "provided_syringe_query_mode"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E121-F"
+          ],
+          "reviewed_information": [
+            "syringe_correspondence"
+          ],
+          "lexical_terms": "HiTrap Blue HP syringe drops flow sample application note",
+          "root_source_ids": [
+            "E121-L"
+          ],
+          "candidate_id": "role:blue.syringe_note:E121-L",
+          "scope_specificity": {
+            "product_grade": 2,
+            "product_basis_source_ids": [
+              "E120-P"
+            ],
+            "product_basis": "Protocol explicitly scoped to HiTrap Blue HP by E120-P; inherited full bundle required.",
+            "column_grade": 1,
+            "column_basis_source_ids": [
+              "E120-P"
+            ],
+            "column_basis": "Explicit documented set of 1 mL and 5 mL formats; selected format must be in this set."
+          },
+          "required_guard_source_ids": []
+        }
+      ],
+      "note": "F is direct support; L is the selected root so the reviewed loading association and its F dependency stay together. No interpolation or computed conversion."
+    },
+    {
+      "id": "role:blue.workflow_position",
+      "matrix_rows": [
+        "M10"
+      ],
+      "selector": {
+        "stage_kind": "general_topic",
+        "stage_code": "product_applicability",
+        "information": [
+          "relative_position_in_workflow"
+        ],
+        "facet": null
+      },
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ],
+      "method_scope": [],
+      "required_context": [
+        "exact_product"
+      ],
+      "candidates": [
+        {
+          "direct_support_source_ids": [
+            "E120-A"
+          ],
+          "reviewed_information": [
+            "relative_position_in_workflow"
+          ],
+          "lexical_terms": "HiTrap Blue HP albumin before after purification steps",
+          "root_source_ids": [
+            "E120-A"
+          ],
+          "candidate_id": "role:blue.workflow_position:E120-A",
+          "scope_specificity": {
+            "product_grade": 1,
+            "product_basis_source_ids": [
+              "E120-A"
+            ],
+            "product_basis": "Explicit multiple-product paragraph containing HiTrap Blue HP.",
+            "column_grade": 0,
+            "column_basis_source_ids": [],
+            "column_basis": "No size required for this role; neutral grade, no size inference."
+          },
+          "required_guard_source_ids": [
+            "E120-W"
+          ],
+          "guard_basis": "Design-approved role-level guard preserving the existing product warning for workflow-position lookup; additional to unchanged inherited requires, not a new source approval."
+        }
+      ]
+    }
+  ],
+  "unavailable_selectors": [
+    {
+      "matrix_row": "M11",
+      "selector": {
+        "stage_kind": "general_topic",
+        "stage_code": "operating_limits",
+        "information": [
+          "maximum_pressure"
+        ]
+      },
+      "state": "missing",
+      "scope": "No maximum pressure in the exact 25 eligible excerpts; no whole-manual or external-document claim.",
+      "roots": []
+    },
+    {
+      "matrix_row": "M12",
+      "selector": {
+        "stage_kind": "operating_phase",
+        "stage_code": "equilibration",
+        "information": [
+          "flow_rate",
+          "buffer_role",
+          "column_volumes"
+        ]
+      },
+      "state": "quarantined",
+      "excluded_source_ids": [
+        "E121-EQ"
+      ],
+      "roots": [],
+      "product_scope": [
+        "product:hitrap_blue_hp"
+      ]
+    },
+    {
+      "matrix_row": "M13",
+      "selector": {
+        "stage_kind": "general_topic",
+        "stage_code": "method_selection",
+        "information": [
+          "ph_vs_pi_condition"
+        ]
+      },
+      "state": "quarantined",
+      "excluded_source_ids": [
+        "E118-I"
+      ],
+      "roots": [],
+      "method_scope": [
+        "method:iex",
+        "method:cation_exchange"
+      ]
+    }
+  ],
+  "initial_content_root_ids": [
+    "E118-C",
+    "E118-M",
+    "E118-USE",
+    "E120-A",
+    "E121-B",
+    "E121-E",
+    "E121-L",
+    "E121-W"
+  ],
+  "dependency_source_ids": [
+    "E119-AH",
+    "E119-BH",
+    "E120-H",
+    "E120-P",
+    "E120-W",
+    "E121-BH",
+    "E121-F",
+    "E121-PH"
+  ],
+  "source_fingerprints": {
+    "E118-USE": {
+      "quote_sha256": "353719de9177ea9d6b00bb5aaac1470a50ea3a083db5f615a4e9284091a1fb2e",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "page_text_start": 0,
+      "page_text_end": 311
+    },
+    "E118-C": {
+      "quote_sha256": "b961c80dda07292a0520ff7fda7116e0af15de4498923da84a9a09cce7336ba4",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "page_text_start": 541,
+      "page_text_end": 1292
+    },
+    "E118-M": {
+      "quote_sha256": "65a84cb4b12cfd35901e7245c9be1bef786860db8b80fd1b212b38bd6ee0cb3c",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "page_text_start": 1580,
+      "page_text_end": 2047
+    },
+    "E118-I": {
+      "quote_sha256": "bc5b8bc05d0362d3df93c45509ca149a1b3ebc25598fbbf1c31fab117fd95461",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "page_text_start": 2048,
+      "page_text_end": 2449
+    },
+    "E119-BH": {
+      "quote_sha256": "c5f0af951f4b9ec8b0da709c60833346337b9077da89e58c1ad69fb21a13f71b",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 0,
+      "page_text_end": 22
+    },
+    "E119-B": {
+      "quote_sha256": "3cfa038db9aadb4ae1a986b8a37214e7d658a38d13113b5acf7cd195c1faa4c3",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 23,
+      "page_text_end": 431
+    },
+    "E119-BI": {
+      "quote_sha256": "dba348e8e3dd9c320f962ceed1025882e42d5781aeddfdd63f67c570d779a634",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 432,
+      "page_text_end": 772
+    },
+    "E119-S": {
+      "quote_sha256": "6741c581e5bc9fdfd5aad6f728f5e9e5dc438d26155cd1a0bde2846ffd1302a8",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 773,
+      "page_text_end": 984
+    },
+    "E119-X": {
+      "quote_sha256": "b7f9b22e4a4b994c309bba80c118736640dea30ad3fbef4593ac2239ac5f8dcb",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 985,
+      "page_text_end": 1380
+    },
+    "E119-AH": {
+      "quote_sha256": "c083fa89230d3d7cd7cc963daeee26692ab7fc3397e3c24aac14c5a7db185051",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 1382,
+      "page_text_end": 1405
+    },
+    "E119-A": {
+      "quote_sha256": "135c9b62cfaaacc123b3a52e4da443397519cde3b20467d0d70836c6b4e69ce9",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 1407,
+      "page_text_end": 1681
+    },
+    "E119-I": {
+      "quote_sha256": "8c5889325bb188941f1a6ebace48bfa19be64eea938525ddb6fe835a1d313fd4",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 1682,
+      "page_text_end": 1994
+    },
+    "E119-H": {
+      "quote_sha256": "650aa882a10835929560563ee04fefca2ec7c25af12fa34e651d6accaebdafd7",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 1995,
+      "page_text_end": 2174
+    },
+    "E119-BL": {
+      "quote_sha256": "71be6d87e0a34cb6fde34b45d1a5c6b4c511f046bb624f618755bf126d335d86",
+      "pdf_page_1based": 119,
+      "pdf_page_index_0based": 118,
+      "page_text_start": 2175,
+      "page_text_end": 2280
+    },
+    "E120-H": {
+      "quote_sha256": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "page_text_start": 0,
+      "page_text_end": 60
+    },
+    "E120-A": {
+      "quote_sha256": "d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "page_text_start": 61,
+      "page_text_end": 412
+    },
+    "E120-U": {
+      "quote_sha256": "b9e56ceed5c1f4305abe4124ce7f2066b2a082967db6b07b7fef46d736e6b478",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "page_text_start": 413,
+      "page_text_end": 631
+    },
+    "E120-W": {
+      "quote_sha256": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "page_text_start": 632,
+      "page_text_end": 776
+    },
+    "E120-P": {
+      "quote_sha256": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "page_text_start": 1872,
+      "page_text_end": 1970
+    },
+    "E121-BH": {
+      "quote_sha256": "86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 1912,
+      "page_text_end": 1930
+    },
+    "E121-B": {
+      "quote_sha256": "bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 0,
+      "page_text_end": 247
+    },
+    "E121-PH": {
+      "quote_sha256": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 1931,
+      "page_text_end": 1946
+    },
+    "E121-EQ": {
+      "quote_sha256": "d5b4e1d80340e981432f0cc312f81b8e5141d0923f47247c5436904d2203011f",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 614,
+      "page_text_end": 769
+    },
+    "E121-L": {
+      "quote_sha256": "c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 770,
+      "page_text_end": 1003
+    },
+    "E121-W": {
+      "quote_sha256": "e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 1004,
+      "page_text_end": 1264
+    },
+    "E121-E": {
+      "quote_sha256": "e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 1265,
+      "page_text_end": 1568
+    },
+    "E121-F": {
+      "quote_sha256": "60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "page_text_start": 1720,
+      "page_text_end": 1911
+    }
+  },
+  "eligibility": "Use exact inherited transitive dependencies plus each candidate required_guard_source_ids and their inherited closure. Every member must be eligible. Raw preparation pending flags are historical and never confer approval.",
+  "ranking_policy": {
+    "min_direct_units_covered": 1,
+    "require_reviewed_role_mapping": true,
+    "require_eligible_transitive_bundle": true,
+    "allow_unknown_scope": false,
+    "min_raw_bm25_score": null,
+    "relative_bm25_cutoff": null,
+    "bm25_used_for": "Tie-breaking among already admissible mapped candidates only; a zero lexical score does not reject direct reviewed support.",
+    "bm25_k1": 1.2,
+    "bm25_b": 0.75,
+    "bm25_index_context": true,
+    "query_terms": "Positive canonical product/method/stage/information/facet lexemes only; never original question, exclusion text or gold answer.",
+    "ordering": [
+      "new_unblocked_information_units_covered_desc",
+      "product_scope_specificity_desc",
+      "column_scope_specificity_desc",
+      "bm25_score_desc",
+      "sorted_root_id_tuple_ascending"
+    ],
+    "score_quantization": "Round BM25 tie-break score to 12 decimal places using decimal ROUND_HALF_EVEN before comparison; raw score retained in audit.",
+    "no_fallback": "No best-family or relative-score fallback outside registered roles.",
+    "candidate_lexical_score": "Arithmetic mean of per-root BM25 scores; absent lexical root hit contributes zero. Round resulting tie-break score as specified.",
+    "bm25_bilingual_aliases": false,
+    "index_projection": "Original English source quotes plus inherited dependency quotes; no v05 vocabulary projection. The BM25 document universe is the inherited eligible searchable IDs, not only the eight interface roots.",
+    "lexical_primitive": {
+      "reference_file": "ingestion/local_passage_retrieval.py",
+      "reference_sha256_lf": "835daa9fb4de02e2578a0867f26233d198b542d0cc4a44914e25e88ab1c908d4",
+      "definition": "terms with bilingual=False, its fixed STOP list and the BM25 class equation/document statistics only. Sorted unique query tokens for reproducible floating-point summation. Do not call its old search top_k filter or assembler as the new planner.",
+      "query_construction": "One common query per item visit: concatenate lexical_terms of all mapped candidates for currently unblocked uncovered units, resolved product canonical_label if relevant, resolved technique canonical_labels if relevant, stage code, requested ready information codes, and provided relevant facet codes. Tokenize with the pinned primitive and sort unique tokens. Never include other tasks, original wording, exclusions, observed numbers or expected answers.",
+      "guard_indexing": "Extra role-level guards affect admission/context only, not the inherited dependency-based BM25 document statistics."
+    }
+  },
+  "execution_policy": {
+    "max_selected_distinct_roots": 6,
+    "max_serialized_context_tokens": 2048,
+    "tokenizer": {
+      "name": "cl100k_base",
+      "tiktoken_version": "0.12.0",
+      "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+    },
+    "counting_scope": "Actual compact source-context envelope including full original source metadata and all model-facing task/item bindings. Audit-only logs are separate and never smuggled into the model context.",
+    "scheduler": "Interleave item lists by task and item input order; one candidate per item visit; reuse order for subsequent rounds.",
+    "duplicate_root": "No new root slot, but additional binding tokens still count.",
+    "non_fitting_bundle": "Do not consume an admitted-root slot; log budget failure for affected units and continue other candidates/items without truncating a dependency.",
+    "stop": "Stop when all supported units are covered, or all item candidate queues are exhausted. Never revisit an already considered candidate for the same item.",
+    "bundle": "Ordered inherited dependency closure of candidate roots, followed by ordered inherited dependency closure of required_guard_source_ids, deduplicated at first appearance. All guards mandatory. Traverse declared requires in array order depth-first, dependencies before their root. Process root_source_ids in declared array order."
+  },
+  "not_implemented": [
+    "No runtime code loads this specification.",
+    "Catalog, source-role navigation and ranking approved as technical design only under T01-T08; implementation/conformance results remain pending.",
+    "No retrieval, benchmark, model call or new source approval performed."
+  ],
+  "approval_record": "docs/decisions/2026-10-25-task-request-technical-review.json",
+  "diagnostic_policy": {
+    "independent_dimensions": [
+      "interpretation",
+      "documentary_support",
+      "assembly"
+    ],
+    "retain_all_reasons": true,
+    "support_assessment": "Assess independently only if the relevant role is identifiable without resolving an unknown fact by assumption. Otherwise not_assessed, never missing_source. Clarifying input never changes quarantine.",
+    "summary_state": "Presentation summary only; never replaces independent states, scoped issue references or complete diagnostics. Blocked units have no context binding.",
+    "same_scenario_contradiction": "Preserve original assertions and their input origins, emit conflicting_input for affected units; no overwrite or automatic split into scenarios.",
+    "buffer_use_comparison": "Two explicit items in the same task, one binding and one elution preparation facet; never pair alternative formulations."
+  }
+}

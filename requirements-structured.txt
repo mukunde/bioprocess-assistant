@@ -1,0 +1,3 @@
+# Optional offline structured-control runtime; isolated from Chainlit/model SDKs.
+jsonschema==4.26.0
+tiktoken==0.12.0

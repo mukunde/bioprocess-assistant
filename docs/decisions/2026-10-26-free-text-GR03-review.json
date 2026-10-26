@@ -1,0 +1,100 @@
+{
+  "id": "free-text-GR03-human-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T15:30:22.548467+00:00",
+  "human_quote": "Je valide GR03 avec les réserves indiquées, en distinguant E04 des trois cas à registre préannoté. Enregistre ma décision et passons à GR04. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective approval for the four GR03 design cases with retained reservations; E04 caller-input expectations are distinct from E05/E12/E13 preclassified-ledger bridge fixtures.",
+  "group_id": "GR03",
+  "decision": "validated_with_reservations",
+  "example_ids": [
+    "E04",
+    "E05",
+    "E12",
+    "E13"
+  ],
+  "example_bindings": [
+    {
+      "example_id": "E04",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "2d43d3bdb849592c397a263e3840a5755bec58c668bc766cf98cfc3ffc7badcc",
+      "input_sha256_utf8": "a54ddf245664fc9d2c47658edc2f1efd3cd1868c22c078f20b3f5c0d6a411676",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "51cff7820e68f269300c432481ae94f5eccb31679a26e7f1b721794efc799ed1",
+      "retained_reservations": [
+        "Caller-input design case: do not remove mandatory warnings or approve E121-EQ from user text.",
+        "Preblock A while keeping the independent C principle request eligible; no implied new equilibration request.",
+        "Two known units, one projected and one preblocked; partial service only."
+      ]
+    },
+    {
+      "example_id": "E05",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "4f1e711a41a19e4f8579dbca14c5b3d5ed55203e0f377b99f9c5d8bf29471095",
+      "input_sha256_utf8": "14bf1ecd78703c964aadb7c8011d92072158102b831ca304dd1389bb4b503cad",
+      "test_conditions_sha256_canonical": "2feee6930095727bff5913973f95126e37330789ee3319c1f1b42430f17b37b3",
+      "origins_sha256_canonical": "c7b2ec013f51a79b4fb005780690182879b4b2185bd16f1f410c736b3169c262",
+      "retained_reservations": [
+        "Preclassified-ledger bridge test only: the imposed unresolved restriction is not inferred from ordinary caller prose.",
+        "Block washing flow only; retain stopping criteria and both known units in accounting.",
+        "No interpreter behavior or executed core result is claimed."
+      ]
+    },
+    {
+      "example_id": "E12",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "1abcfd384ceca7995f940b38fc45985e7558f1277af265443927c1405ffbce6a",
+      "input_sha256_utf8": "c94ea51dafc7595f19756e8b4b961f99e9355f501c6969d75454eb8931d8b139",
+      "test_conditions_sha256_canonical": "2feee6930095727bff5913973f95126e37330789ee3319c1f1b42430f17b37b3",
+      "origins_sha256_canonical": "6c6e3823cd71590fe3acf01f2d0c521baf627292269068df78038b31de29cdf6",
+      "retained_reservations": [
+        "Preclassified-ledger bridge test only: the unknown fragment is supplied test setup, not a trigger phrase for a future interpreter.",
+        "Inventory remains incomplete; do not infer the number of hidden requests or claim full service.",
+        "The known unit is projected only under this fixture independence assumption; do not generalize when an unknown fragment could contain a restriction."
+      ]
+    },
+    {
+      "example_id": "E13",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "da1f310445c23c79e3a0f5901caf421c4494f68e885fff0427eb752b849299a2",
+      "input_sha256_utf8": "34a1eb384bacd8eef92ffd2750ed602f8bd0b9875e975f13a6925366c3190d68",
+      "test_conditions_sha256_canonical": "2feee6930095727bff5913973f95126e37330789ee3319c1f1b42430f17b37b3",
+      "origins_sha256_canonical": "fc948b8e54512c4fd728b24369638603a8c4280263d927cdfb267dafb2cdf551",
+      "retained_reservations": [
+        "Preclassified-ledger bridge test only: forced preblocking does not establish that the prose is unrepresentable.",
+        "Remove loading-flow transmission only; retain washing stopping criteria and the exclusion audit without widening its scope.",
+        "Retain the task-level observed 1 mL/min as an unverified observation with no specified phase, not a prescribed washing flow."
+      ]
+    }
+  ],
+  "entry_stage_distinction": {
+    "caller_input": [
+      "E04"
+    ],
+    "preclassified_ledger": [
+      "E05",
+      "E12",
+      "E13"
+    ]
+  },
+  "prior_document_sha256_lf": {
+    "docs/experiments/free-text-interface-examples-v01.json": "c084cc2d256e94889d45e2d4ef43f36a87e80efa4a3ddb73b1c200da20a58590",
+    "docs/experiments/free-text-interface-group-review-v01.md": "51fc90ea3c9336b931ac0688050f65457f7973ca1898d8cef7c899ea2a67041f",
+    "docs/experiments/structured-free-text-comparison-v01.json": "9451f27581ae97a48550b8ae6d72ddc2154b66edcf5ecbcb34d2503391aa4995",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "c76b772ad9c74048e491cbdb2f07534eba389004256ef1cd0e038db1b5c550e2"
+  },
+  "reviewed_example_file_sha256_lf_at_decision": "c084cc2d256e94889d45e2d4ef43f36a87e80efa4a3ddb73b1c200da20a58590",
+  "all_examples_unchanged": true,
+  "remaining_group_ids": [
+    "GR04"
+  ],
+  "limits": [
+    "Design approval only; no executed interpretation, bridge or planning result.",
+    "No source approval, scientific validation, candidate freeze or prospective comparison."
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "planner_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

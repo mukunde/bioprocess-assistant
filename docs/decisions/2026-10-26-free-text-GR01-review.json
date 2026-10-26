@@ -1,0 +1,167 @@
+{
+  "id": "free-text-GR01-human-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T15:10:22.639997+00:00",
+  "human_quote": "Je valide GR01 avec les réserves indiquées et l’extension de l’origine E08 à [27, 92). Enregistre ma décision et passons à GR02. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective approval for the six GR01 examples with retained reservations and the explicit E08 correction; not six independent human messages.",
+  "group_id": "GR01",
+  "decision": "validated_with_reservations",
+  "example_ids": [
+    "E01",
+    "E07",
+    "E08",
+    "E09",
+    "E14",
+    "E15"
+  ],
+  "example_bindings": [
+    {
+      "example_id": "E01",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "78a0b28af6e055071fcc861f8e8480084e7d85c45183e63d9ed92a5f267b3ebe",
+      "input_sha256_utf8": "64382b2fbad305cce0d00920c950e53db8f3ba2a72605cc7ba02c80837fd0a30",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "34205833a63911608b856f9dd5c157f394e776500e734ae90648ff35ef2642e4",
+      "retained_reservations": [
+        "Both requested units belong to A; label-supplied size does not become a separately supplied column field.",
+        "Binding-buffer formulation is preparation information, not an added operating procedure or elution-mode choice."
+      ]
+    },
+    {
+      "example_id": "E07",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "89456573475c73dd433b65eb5c9ffce154067ea6e9e69da8831e98669a626edb",
+      "input_sha256_utf8": "32c07d2ad6d53a1d49c31df68fbd477712fad78ffffaedfee9e4933ded2c9630",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "d80c9a5e72be0dd0234c2cfc84e4295bcfe0a1a6a5f2fc7dab8bb3709b43ebfc",
+      "retained_reservations": [
+        "Negated exclusion creates neither a washing conflict nor an extra positive flow request.",
+        "The active ban is limited to operating elution for A."
+      ]
+    },
+    {
+      "example_id": "E08",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "d421b8d61bfaa4881b42cf8788ff4da84517840a26ace22df68c7e598791670b",
+      "input_sha256_utf8": "5c12983d8148452b99acbbf7a4eb93b436de86a7874138c6386fbbc3079b8c91",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "650256976f073b621ccca67a13606338a877c9e736139100854fbebf16bf5e30",
+      "retained_reservations": [
+        "False remains a documentary-scenario assertion relative to the intended application, not verified absence of risk.",
+        "SEC explanation is not selection for the sample; no product/column requirement is invented.",
+        "Retain the full conditioned fact in origin [27,92)."
+      ]
+    },
+    {
+      "example_id": "E09",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "c5971553f50018a35a9043ed8340c896430803ceef436e7941df569f2c5e4b52",
+      "input_sha256_utf8": "0f38f3e693a9f1d63b4ffc172c179cfaa17d60dd91f381e96829737b689d266b",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "96138bfb5a8f315f09492be507d39f14b193d7a09cbc3a338048fb3519775150",
+      "retained_reservations": [
+        "Available sample volume is not column bed volume or loaded volume.",
+        "Loaded volume is explicitly unknown; do not infer duration or add a flow request.",
+        "Preserve decomposed Unicode and emoji in original text and offsets; observations are not independently verified."
+      ]
+    },
+    {
+      "example_id": "E14",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "f15928789e6c65b162bcdc040360eb68c278c1b274a43029628b4ba716f02a9e",
+      "input_sha256_utf8": "a14563d5e6e793b7bd077b2950ce6219d5e1f810733877de44533d169dd78799",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "dfb26ed5034141c841ac2cdb047b98c4bb74d7f6af4547e7192d6f5ef73c39c4",
+      "retained_reservations": [
+        "Not only/but also retains both requested items.",
+        "Operating-elution exclusion does not remove binding preparation; no flow, mode or buffer pairing is added."
+      ]
+    },
+    {
+      "example_id": "E15",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "3aee45c76b9f20ef73bd9494bd5beb21f0a66ba914838a8603204b48e364fae0",
+      "input_sha256_utf8": "c627a5c76dc97dcf0bddec6b656561bd88d8b20d95288919126b8b4ee17907e6",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "b1c756152572c12035721440e8ce3eb939c8d717436cae7c895d70790aa56f88",
+      "retained_reservations": [
+        "Decimal punctuation normalization preserves value/unit and original lexeme without conversion.",
+        "Observed flow remains an unverified task-level observation with no specified phase, not prescribed washing flow.",
+        "No drop-rate correspondence or operating duration is inferred."
+      ]
+    }
+  ],
+  "approved_correction": {
+    "example_id": "E08",
+    "origin_before": {
+      "origin_id": "o-fact-A-minor_contaminants_interfere",
+      "kind": "text_span",
+      "input_sha256_utf8": "5c12983d8148452b99acbbf7a4eb93b436de86a7874138c6386fbbc3079b8c91",
+      "start": 27,
+      "end": 62,
+      "quote": "minor contaminants do not interfere"
+    },
+    "origin_after": {
+      "origin_id": "o-fact-A-minor_contaminants_interfere",
+      "kind": "text_span",
+      "input_sha256_utf8": "5c12983d8148452b99acbbf7a4eb93b436de86a7874138c6386fbbc3079b8c91",
+      "start": 27,
+      "end": 92,
+      "quote": "minor contaminants do not interfere with the intended application"
+    },
+    "literal_assertion_before": {
+      "assertion_id": "a1",
+      "role": "fact",
+      "subject_candidates": [
+        "A"
+      ],
+      "raw_lexeme": "minor contaminants do not interfere",
+      "normalized_value": false,
+      "origin_ids": [
+        "o-scope-A",
+        "o-fact-A-minor_contaminants_interfere",
+        "o-fact-role-A-minor_contaminants_interfere"
+      ]
+    },
+    "literal_assertion_after": {
+      "assertion_id": "a1",
+      "role": "fact",
+      "subject_candidates": [
+        "A"
+      ],
+      "raw_lexeme": "minor contaminants do not interfere with the intended application",
+      "normalized_value": false,
+      "origin_ids": [
+        "o-scope-A",
+        "o-fact-A-minor_contaminants_interfere",
+        "o-fact-role-A-minor_contaminants_interfere"
+      ]
+    },
+    "input_unchanged": true,
+    "projection_unchanged": true,
+    "normalized_fact_value_unchanged": true
+  },
+  "prior_document_sha256_lf": {
+    "docs/experiments/free-text-interface-examples-v01.json": "1302d55201eb2607a94309ed7d50a846b4ffc3bbd2f9ea942b13adfbb0810a45",
+    "docs/experiments/free-text-interface-group-review-v01.md": "eb793c1eeadcd6f708708d07cffee95fac071280136cb95bfdccecb64f00de8e",
+    "docs/experiments/structured-free-text-comparison-v01.json": "7426b891efbb76548e360d99137b0230bce141876cf48ab41e76bc0ad3b2f1a2",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "55ce4a34c35e691efc8af7325453a858f2e91fd52739cc8b0eadab5e232c3c03"
+  },
+  "reviewed_example_file_sha256_lf_at_decision": "1fd025ada4f422513a75588890b9acdff3f7940eef2afd6a939b59f08f8355b7",
+  "other_fifteen_examples_unchanged": true,
+  "remaining_group_ids": [
+    "GR02",
+    "GR03",
+    "GR04"
+  ],
+  "limits": [
+    "Design/annotation approval only; no actual interpreter or planner output.",
+    "No new source approval, scientific validation, candidate freeze or prospective comparison."
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "planner_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

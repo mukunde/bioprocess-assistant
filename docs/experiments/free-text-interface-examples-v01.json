@@ -1,5 +1,5 @@
 {
-  "status": "draft_machine_examples_pending_review",
+  "status": "partially_reviewed_machine_examples",
   "interpreter_implemented": false,
   "examples_executed": false,
   "example_count": 16,
@@ -2389,6 +2389,21 @@
                 "o-scope-C",
                 "o-unit-u1"
               ]
+            },
+            {
+              "assertion_id": "a-stage-wash",
+              "role": "stage",
+              "subject_candidates": [
+                "A",
+                "B"
+              ],
+              "raw_lexeme": "Pour le lavage",
+              "normalized_value": "washing",
+              "origin_ids": [
+                "o-stage-u-wash",
+                "o-scope-A",
+                "o-scope-B"
+              ]
             }
           ],
           "tasks": [
@@ -2463,10 +2478,12 @@
                 "o-unit-u-wash",
                 "o-scope-A",
                 "o-scope-B",
-                "o-issue-i1"
+                "o-issue-i1",
+                "o-stage-u-wash"
               ],
               "assertion_ids": [
-                "a3"
+                "a3",
+                "a-stage-wash"
               ],
               "issue_ids": [
                 "i1"
@@ -2933,6 +2950,14 @@
               "input_sha256_utf8": "e5fd0ad242be01474e139cda6950d70fb5a4fb8280d9fb5cd0d8b93c99d5504f",
               "policy_rule": "matrix-inapplicable:/tasks/0/items/0/facets/syringe_query_mode/reason",
               "reason": "/tasks/0/items/0/facets/syringe_query_mode/reason: this slot is not required by the specific requested information; no user observation, selected mode or numeric value is invented. Exact matrix justification remains for group review."
+            },
+            {
+              "origin_id": "o-stage-u-wash",
+              "kind": "text_span",
+              "input_sha256_utf8": "e5fd0ad242be01474e139cda6950d70fb5a4fb8280d9fb5cd0d8b93c99d5504f",
+              "start": 64,
+              "end": 78,
+              "quote": "Pour le lavage"
             }
           ],
           "field_origins": [
@@ -3193,7 +3218,8 @@
                 "o-unit-u-wash",
                 "o-scope-A",
                 "o-scope-B",
-                "o-issue-i1"
+                "o-issue-i1",
+                "o-stage-u-wash"
               ]
             },
             {
@@ -3203,7 +3229,8 @@
                 "o-unit-u-wash",
                 "o-scope-A",
                 "o-scope-B",
-                "o-issue-i1"
+                "o-issue-i1",
+                "o-stage-u-wash"
               ]
             },
             {
@@ -7582,7 +7609,7 @@
               "subject_candidates": [
                 "A"
               ],
-              "raw_lexeme": "minor contaminants do not interfere",
+              "raw_lexeme": "minor contaminants do not interfere with the intended application",
               "normalized_value": false,
               "origin_ids": [
                 "o-scope-A",
@@ -7697,8 +7724,8 @@
               "kind": "text_span",
               "input_sha256_utf8": "5c12983d8148452b99acbbf7a4eb93b436de86a7874138c6386fbbc3079b8c91",
               "start": 27,
-              "end": 62,
-              "quote": "minor contaminants do not interfere"
+              "end": 92,
+              "quote": "minor contaminants do not interfere with the intended application"
             },
             {
               "origin_id": "o-fact-role-A-minor_contaminants_interfere",
@@ -17697,6 +17724,6 @@
     }
   ],
   "limits": "Draft expectations only. Whole-input origins are explicitly broad and require human field-entailment review. No runtime outcomes, timings or new source approvals are fabricated.",
-  "revision": 2,
-  "revision_note": "MC approval recorded separately; exact origins, external test conditions and grouped fixture review remain pending. No interpreter or bridge executed."
+  "revision": 4,
+  "revision_note": "Actual GR01 and GR02 approvals are recorded separately. E03 adds the explicit washing-stage origin [64,78), its assertion and field links; ownership remains unresolved. All other examples are unchanged. Per-example pending markers remain historical preparation fields; live group decisions are separate."
 }

@@ -1,7 +1,7 @@
 {
   "id": "structured-free-text-comparison-proposal-v01",
   "date": "2026-10-26",
-  "status": "CP_FI_MC_approved_refined_example_groups_pending",
+  "status": "CP_FI_MC_and_GR01_GR04_approved_with_reservations",
   "candidate_implemented": false,
   "candidate_frozen": false,
   "comparison_executed": false,
@@ -71,12 +71,21 @@
     "docs/technical/free-text-input-v01.schema.json": "334775d3756d839649d6a1e5cda1f4bb86f324d55aad89f2e6e1697c6d8e1aab",
     "docs/technical/free-text-interpretation-v01.schema.json": "1b6af9c461afb4b5d3761553b707dd3b6065c97d808c2e50394d8b2b6db49eeb",
     "docs/technical/free-text-outcome-v01.schema.json": "f071112f2837820cf01ad66de9bd32a580792c8bc8aff86d8a18794ac4131af3",
-    "docs/experiments/free-text-interface-examples-v01.json": "1302d55201eb2607a94309ed7d50a846b4ffc3bbd2f9ea942b13adfbb0810a45",
-    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "55ce4a34c35e691efc8af7325453a858f2e91fd52739cc8b0eadab5e232c3c03",
+    "docs/experiments/free-text-interface-examples-v01.json": "c084cc2d256e94889d45e2d4ef43f36a87e80efa4a3ddb73b1c200da20a58590",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "13516390e13777031624f179765a419c007f17a0f85f1520eff325711bb24091",
     "docs/technical/free-text-machine-design-checks-v01.json": "5279e90957a4e4eebda217f973cde992fa51fde5f13b176de86420a434927e6a",
     "docs/decisions/2026-10-26-free-text-machine-design-review.json": "7551e09f899609690597991f98e6eeadeb1bc49e0473c47de626c72a261cead6",
-    "docs/experiments/free-text-interface-group-review-v01.md": "eb793c1eeadcd6f708708d07cffee95fac071280136cb95bfdccecb64f00de8e",
-    "docs/technical/free-text-machine-design-checks-v02.json": "d0e7ef78ed57e0a56661941ce7159f01eb800b6ff690101adbebea89b6325155"
+    "docs/experiments/free-text-interface-group-review-v01.md": "cbda67fd9b5a304de85fbe65cd440d683baf58619085e02e2d3c89de04459bd8",
+    "docs/technical/free-text-machine-design-checks-v02.json": "d0e7ef78ed57e0a56661941ce7159f01eb800b6ff690101adbebea89b6325155",
+    "docs/decisions/2026-10-26-free-text-GR01-review.json": "09833d74c68448e55c63e1a59cd66a20c1bade376f6181994a7a1296e749a98e",
+    "docs/technical/free-text-machine-design-checks-v03.json": "82fc9564f6964284216a4eb47e5fefe21184169c1f96c6f4d0864dca94d378fb",
+    "docs/decisions/2026-10-26-free-text-GR02-review.json": "f3ddba3c65533078fae7123b42c1586ef3576d4600f899fe2a0ca2478375e8d8",
+    "docs/technical/free-text-machine-design-checks-v04.json": "1bd4aa7956ed3dcea5230ba62d93796c6a7aad0816926e94a471eb05c4343926",
+    "docs/decisions/2026-10-26-free-text-GR03-review.json": "e311fdfd06cfe5a4c5f94d45ef3539cb2e516613568baa288a9aa2e4da0b94fa",
+    "docs/technical/free-text-machine-design-checks-v05.json": "b22129544bdb13665dcc514c5a0e027587a904073064a1f40178f525e521a22b",
+    "docs/decisions/2026-10-26-free-text-GR04-review.json": "3778bee6c5b339c2b8856e6aa2e4559f4f4e4c71a40465a70a6d06be73ed57fb",
+    "docs/technical/free-text-machine-design-checks-v06.json": "26b6817e34ef39d5c0d8fa236a3a7c5a2df86fd145c44cf845be99550d55a007",
+    "docs/technical/free-text-machine-design-checks-v07.json": "890c50055e690aae6a05f3e378411fb7676973166e3dd484536de1baab9e81ec"
   },
   "known_pairs": [
     {
@@ -326,7 +335,7 @@
   },
   "interface_specification": {
     "path": "docs/technical/FREE-TEXT-INTERFACE-V01.md",
-    "status": "FI01_FI06_IF01_IF14_and_six_clarifications_approved_machine_design_pending",
+    "status": "FI01_FI06_IF01_IF14_MC01_MC06_and_GR01_GR04_approved_implementation_pending",
     "decision_ids": [
       "FI01",
       "FI02",
@@ -355,7 +364,7 @@
   },
   "future_count_approved_as_protocol": true,
   "machine_design": {
-    "status": "MC01_MC06_approved_grouped_fixture_review_pending",
+    "status": "MC01_MC06_and_GR01_GR04_approved_with_reservations",
     "schema_files": [
       "docs/technical/free-text-input-v01.schema.json",
       "docs/technical/free-text-interpretation-v01.schema.json",
@@ -365,19 +374,19 @@
     "implemented": false,
     "executed": false,
     "guide": "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md",
-    "static_checks": "docs/technical/free-text-machine-design-checks-v02.json",
+    "static_checks": "docs/technical/free-text-machine-design-checks-v07.json",
     "example_count": 16,
     "invalid_input_example_count": 3,
-    "human_machine_review_complete": false,
+    "human_machine_review_complete": true,
     "schema_choices_approved": true,
     "machine_review_record": "docs/decisions/2026-10-26-free-text-machine-design-review.json",
-    "refined_example_revision": 2,
+    "refined_example_revision": 4,
     "historical_static_checks": "docs/technical/free-text-machine-design-checks-v01.json",
     "group_review": "docs/experiments/free-text-interface-group-review-v01.md",
     "groups": [
       {
         "id": "GR01",
-        "status": "pending",
+        "status": "validated_with_reservations",
         "example_ids": [
           "E01",
           "E07",
@@ -385,39 +394,61 @@
           "E09",
           "E14",
           "E15"
-        ]
+        ],
+        "decision_record": "docs/decisions/2026-10-26-free-text-GR01-review.json",
+        "reviewed_at_utc": "2026-10-26T15:10:22.639997+00:00"
       },
       {
         "id": "GR02",
-        "status": "pending",
+        "status": "validated_with_reservations",
         "example_ids": [
           "E02",
           "E03",
           "E06",
           "E10"
-        ]
+        ],
+        "decision_record": "docs/decisions/2026-10-26-free-text-GR02-review.json",
+        "reviewed_at_utc": "2026-10-26T15:28:06.380054+00:00"
       },
       {
         "id": "GR03",
-        "status": "pending",
+        "status": "validated_with_reservations",
         "example_ids": [
           "E04",
           "E05",
           "E12",
           "E13"
-        ]
+        ],
+        "decision_record": "docs/decisions/2026-10-26-free-text-GR03-review.json",
+        "reviewed_at_utc": "2026-10-26T15:30:22.548467+00:00"
       },
       {
         "id": "GR04",
-        "status": "pending",
+        "status": "validated_with_reservations",
         "example_ids": [
           "E11",
           "E16",
           "N01",
           "N02",
           "N03"
-        ]
+        ],
+        "decision_record": "docs/decisions/2026-10-26-free-text-GR04-review.json",
+        "reviewed_at_utc": "2026-10-26T15:34:43.037016+00:00"
       }
-    ]
+    ],
+    "reviewed_groups": 4,
+    "pending_groups": 0,
+    "reviewed_examples": 16,
+    "pending_examples": 0,
+    "prior_static_checks": [
+      "docs/technical/free-text-machine-design-checks-v01.json",
+      "docs/technical/free-text-machine-design-checks-v02.json",
+      "docs/technical/free-text-machine-design-checks-v03.json",
+      "docs/technical/free-text-machine-design-checks-v04.json",
+      "docs/technical/free-text-machine-design-checks-v05.json",
+      "docs/technical/free-text-machine-design-checks-v06.json"
+    ],
+    "reviewed_invalid_inputs": 3,
+    "pending_invalid_inputs": 0
   }
 }

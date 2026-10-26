@@ -1,14 +1,13 @@
 # Free-text machine fixtures: grouped review v01
 
-Date: 26 October 2026. **All four group decisions pending.** MC01-MC06 and
-their clarifications were approved collectively; that is not approval of
-these newly refined exact origins, test conditions or expected records.
+Date: 26 October 2026. **All four groups GR01-GR04 validated with reservations.** MC01-MC06 and
+their clarifications were approved collectively. The separate GR01-GR04 decisions below now approve the refined exact origins, test conditions and expected records with reservations.
 See the [actual decision](../decisions/2026-10-26-free-text-machine-design-review.json)
 and [machine guide](../technical/FREE-TEXT-MACHINE-DESIGN-V01.md).
 
 All cards are design expectations, not measured F results. No parser, bridge
 or planner has executed them. Canonical records and full pointer annotations
-are in the [revision-2 examples](free-text-interface-examples-v01.json).
+are in the [revision-4 examples](free-text-interface-examples-v01.json).
 Previous drafts/checks are preserved; the original S trial remains unchanged.
 
 ## How to review
@@ -31,7 +30,15 @@ language points to caller /language, not an invented word in the prose.
 
 ## GR01 — Representable inputs, polarity and numeric roles
 
-**Decision:** pending.
+**Decision:** validated with reservations, including the E08 origin correction.
+
+**Actual human message (French, verbatim):**
+
+> Je valide GR01 avec les réserves indiquées et l’extension de l’origine E08 à [27, 92). Enregistre ma décision et passons à GR02. Aucun LLM, API payante, commit ni push.
+
+See the [GR01 decision and content bindings](../decisions/2026-10-26-free-text-GR01-review.json). Approval concerns these design expectations, not executed interpretation, scientific suitability or IF implementation results.
+
+Per-example pending markers remain historical preparation fields; actual group progress is recorded separately.
 
 ### E01 — IF01, IF12
 
@@ -110,7 +117,7 @@ These are expected fixture values, not actual invocation counts or successful ge
 | Focused origin | Unicode interval | Exact passage |
 |---|---|---|
 | o-scope-A | [0, 25) | In documentary scenario A |
-| o-fact-A-minor_contaminants_interfere | [27, 62) | minor contaminants do not interfere |
+| o-fact-A-minor_contaminants_interfere | [27, 92) | minor contaminants do not interfere with the intended application |
 | o-fact-role-A-minor_contaminants_interfere | [0, 25) | In documentary scenario A |
 | o-unit-u1 | [106, 141) | general separation principle of SEC |
 | o-relation-0 | [143, 197) | do not choose a purification technique for this sample |
@@ -208,7 +215,13 @@ These are expected fixture values, not actual invocation counts or successful ge
 
 ## GR02 — Conflicts, unknown owners and ambiguous scope
 
-**Decision:** pending.
+**Decision:** validated with reservations, including the E03 washing-stage origin addition.
+
+**Actual human message (French, verbatim):**
+
+> Je valide GR02 avec les réserves indiquées et l’ajout de l’origine « Pour le lavage » à [64, 78) pour E03. Enregistre ma décision et passons à GR03. Aucun LLM, API payante, commit ni push.
+
+See the [GR02 decision and content bindings](../decisions/2026-10-26-free-text-GR02-review.json). Approval concerns design expectations only. Historical per-example preparation markers are retained.
 
 ### E02 — IF02
 
@@ -265,6 +278,7 @@ These are expected fixture values, not actual invocation counts or successful ge
 | o-scope-B | [33, 62) | B utilise HiTrap Blue HP 5 mL |
 | o-product-B | [43, 62) | HiTrap Blue HP 5 mL |
 | o-scope-C | [214, 253) | C demande le principe général de la SEC |
+| o-stage-u-wash | [64, 78) | Pour le lavage |
 | o-unit-u-wash | [154, 195) | Quel débit s’applique à cette préparation |
 | o-unit-u1 | [227, 253) | principe général de la SEC |
 | o-issue-i1 | [80, 152) | je parle de l’une de ces deux préparations sans préciser si c’est A ou B |
@@ -344,7 +358,13 @@ These are expected fixture values, not actual invocation counts or successful ge
 
 ## GR03 — Partial service, presentation policy and bridge boundaries
 
-**Decision:** pending.
+**Decision:** validated with reservations. E04 is a caller-input design case; E05/E12/E13 are preclassified-ledger bridge fixtures.
+
+**Actual human message (French, verbatim):**
+
+> Je valide GR03 avec les réserves indiquées, en distinguant E04 des trois cas à registre préannoté. Enregistre ma décision et passons à GR04. Aucun LLM, API payante, commit ni push.
+
+See the [GR03 decision and content bindings](../decisions/2026-10-26-free-text-GR03-review.json). Approval concerns design expectations only. Historical per-example preparation markers are retained.
 
 ### E04 — IF04
 
@@ -489,7 +509,13 @@ These are expected fixture values, not actual invocation counts or successful ge
 
 ## GR04 — Injected failures and rejected caller inputs
 
-**Decision:** pending.
+**Decision:** validated with reservations, including E11/E16 external fault injection and N01-N03 invalid caller envelopes.
+
+**Actual human message (French, verbatim):**
+
+> Je valide GR04 avec les réserves indiquées. Enregistre ma décision et fais le bilan final de la revue des quatre groupes. Aucun LLM, API payante, commit ni push.
+
+See the [GR04 decision and content bindings](../decisions/2026-10-26-free-text-GR04-review.json). These are approved design expectations, not observed runtime results.
 
 ### E11 — IF11
 
@@ -581,6 +607,8 @@ Do not fabricate a derived unit inventory for invalid caller envelopes. A caller
 
 ## Exit
 
-Record each actual group decision separately, bound to the exact fixture/condition/origin hashes.
-Preserve prior drafts on correction. Complete fixture and language-perimeter review
-before a separately requested implementation. Current checks validate declared data, not interpretation behavior.
+All four actual group decisions are recorded separately and bound to exact fixture, condition and origin hashes. The 16 design examples and three invalid-input examples are human-validated with reservations. E08 retains the complete application condition at [27,92); E03 has explicit washing-stage provenance at [64,78).
+
+Caller-input cases, preclassified-ledger bridge fixtures (E05/E12/E13), and external fault-injection cases (E11/E16) remain distinct. Per-example pending markers are historical preparation fields, not the live approval status. Prior drafts and static reports remain preserved.
+
+Next: consolidate the reviewed design package, then implement only on separate instruction. Prior P/G text/form equivalence reviews and a prospective evaluation dataset remain pending. No interpreter, bridge, candidate freeze or comparison has been executed; E118-I/E121-EQ remain excluded.

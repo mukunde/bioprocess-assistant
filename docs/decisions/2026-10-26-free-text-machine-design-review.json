@@ -1,0 +1,70 @@
+{
+  "id": "free-text-machine-design-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T14:12:10.947761+00:00",
+  "human_quote": "Je valide MC01–MC06 et tes clarifications. Enregistre mes décisions, précise les origines et les conditions de test des exemples, puis prépare leur revue par groupes avant l’implémentation. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective human message, not independent approvals of each fixture or origin.",
+  "approved_machine_choices": {
+    "MC01": "Separate caller input, interpretation ledger and bridge outcome schemas; caller input cannot override application identities/policy.",
+    "MC02": "Design expectations remain distinct from actual runtime outcomes, without fabricated core outputs or timings.",
+    "MC03": "Explicit ownership, polarity and unit outcomes without changing the existing core schemas.",
+    "MC04": "Approve intake bounds: 16000 Unicode code points, 16 tasks, 64 units/mappings, 256 ordinary list entries, 4096 origins/field links; reject over-limit input rather than truncate.",
+    "MC05": "Separate shape validation from semantic origin/reference/hash/accounting invariants.",
+    "MC06": "Use 16 representative expectations and three invalid caller inputs as review material; exact fixture annotations and test conditions require grouped review."
+  },
+  "approved_clarifications": {
+    "MA01": "Use focused spans for substantive values, ownership, full negation/scope and fact roles rather than whole-input anchors.",
+    "MA02": "Not-stated records name the missing field and checked scope; application metadata distinguishes generated identities, envelope language and justified inapplicable defaults.",
+    "MA03": "Default values require a named policy and may not derive from expected documentary answers.",
+    "MA04": "E05/E13 use external preclassified-ledger conditions rather than artificial trigger phrases inside caller prose.",
+    "MA05": "E11/E16 fault injection is explicitly outside caller input and cannot depend on example-ID routing.",
+    "MA06": "Preserve rejected candidate value/hash and pointer errors as a distinct audit, without a silent repaired retry."
+  },
+  "pre_refinement_artifact_sha256_lf": {
+    "docs/experiments/free-text-interface-examples-v01.json": "4565f5fe2ae048bf44afe38b633083cb222789a791d17b94f184ecb8fe9edd2d",
+    "docs/experiments/structured-free-text-comparison-v01.json": "532004d8d6a0ee8de941887e5a19d6700ac526cfa279b77b210f7cc7b4422b0f",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "a8e76e54f1f31ea95b06700d09829651f33bb01513118de586ebf7dad1d85727",
+    "docs/technical/free-text-machine-design-checks-v01.json": "5279e90957a4e4eebda217f973cde992fa51fde5f13b176de86420a434927e6a",
+    "docs/technical/free-text-input-v01.schema.json": "36ef49d902e09585e90de670be7495801ceed4de43c05c29a0dc22852f5e97a8",
+    "docs/technical/free-text-interpretation-v01.schema.json": "84b16b67b2ffb9e1db6f9a0e5e37234990cdc40339244a376f07d0266f53186b",
+    "docs/technical/free-text-outcome-v01.schema.json": "9f9e78d1131960d21f9077df1d84e96e00a07adc310d2e9a5ded7c428c71edb8"
+  },
+  "unchanged_baseline_files_sha256_lf": {
+    "experiments/cytiva/structured-control-evaluation-v01/method-lock.json": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+    "experiments/cytiva/structured-control-evaluation-v01/manifest.json": "e37ae3c4d00e254fcc422e1aea4c8c9b8f2532237415445c72a7975b6182f84d",
+    "experiments/cytiva/structured-control-evaluation-v01/questions.json": "f31aba706e4bb8602b8d912439e9781b716b6065bc7f00e19e4876629665c863",
+    "experiments/cytiva/structured-control-evaluation-v01/submissions.json": "772b948fc808ecb031ea44c7d9c75374e834e8b37a25865e9aca14260983f63d",
+    "experiments/cytiva/structured-control-evaluation-v01/references.json": "286fb3880ce01400547bfd745ee2a8677fc80d269af0bc642e84ae4d2d1604de",
+    "experiments/cytiva/reviewed-structured-control/README.md": "f07ed7a9af02c4a76087b71d10ede971f16e2c23edd50fbadffbcc90b4141699",
+    "experiments/cytiva/reviewed-structured-control/review.json": "0d9a40e1827ce4e914cd353ce12170267cd617c7df787ae523c4d5773ad71700",
+    "experiments/cytiva/reviewed-structured-control/results.json": "80b54f7c51dfc2363deee23273ff94b30c92080dece8f7bb595c6bf1a160f7d6",
+    "experiments/cytiva/reviewed-structured-control/events.json": "7ae3cb17e9b906cc2e9e24ac9c126bf16ade93a4a0c1b4a021e15c2257ccba10",
+    "experiments/cytiva/reviewed-structured-control/provenance.json": "046f8685d48b3caa143a5a625a7995186350dad9debba11291d815736f29a5c8",
+    "experiments/cytiva/reviewed-structured-control/manifest.json": "c71614afd95b214396ab4fbe346bc4a1f0b4d9ae9f2401f81e52c65ae281a411",
+    "ingestion/structured_request.py": "6a179d94882c4f38cb2024f2a003510d57833b4375b1905f96a240aeaf3b6d92",
+    "ingestion/structured_sources.py": "d727721333f6d367391b865bf474ae59a35551633cdf4a0590ecbcb0c8e9b33c",
+    "docs/technical/task-request-v01.schema.json": "88a20bd3a7e3c5514f6b51521f284eade4fc7a308cc1e5ac9c8e96da6503f0ea",
+    "docs/technical/task-request-catalog-v01.json": "8678171880f700d774dc75a13645ab2a998a0ed65bcf590c34a422220772b278",
+    "docs/technical/task-request-source-adapter-v01.json": "5e31df49eab70787afd22c379be4e7b77acb300f4c1fca486e6e89903a5d7f2b"
+  },
+  "fixture_refinements": {
+    "revision": 2,
+    "changed_caller_text_ids": [
+      "E05",
+      "E13"
+    ],
+    "test_only_entry_ids": [
+      "E05",
+      "E12",
+      "E13"
+    ],
+    "fault_injection_ids": [
+      "E11",
+      "E16"
+    ],
+    "general_SEC_projection_intent": "mechanism_explanation replaces generic procedure lookup in the draft projections; exact revised fixtures remain pending review."
+  },
+  "not_approved_or_performed": [
+    "Exact new fixture origins and condition serialization are pending grouped review.",
+    "No interpreter/bridge execution, planner/source lookup, model/API call, source-policy change, commit or push."
+  ]
+}

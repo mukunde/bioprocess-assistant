@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess-assistant:free-text-input:0.1-draft",
+  "title": "Proposed free-text caller input; no current runtime accepts this type",
+  "$comment": "MC04 approves the 16000-code-point intake bound; no performance claim or interpreter implementation.",
+  "type": "object",
+  "properties": {
+    "language": {
+      "enum": [
+        "en",
+        "fr"
+      ]
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 16000,
+      "pattern": "\\S"
+    }
+  },
+  "required": [
+    "language",
+    "text"
+  ],
+  "additionalProperties": false
+}

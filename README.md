@@ -10,25 +10,31 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Current status
 
-Updated 25 October 2026. The merged checkpoint before this update is `main`
-at `a6026ca`, after [PR #37](https://github.com/mukunde/bioprocess-assistant/pull/37)
-(reviewed frozen v04) and [PR #38](https://github.com/mukunde/bioprocess-assistant/pull/38)
-(v05 development). This workspace additionally contains the completed, reviewed
-X01-X12 frozen v05 trial and its compact export, prepared for versioning but not
-yet merged. Its gate is blocked. Reviewed manual knowledge remains separate from
-the chat; no experimental retrieval candidate is activated by these results.
+Updated 26 October 2026. The merged code/evidence checkpoint is `main` at
+`1b852f4`, after [PR #39](https://github.com/mukunde/bioprocess-assistant/pull/39)
+(reviewed v05 X trial), [PR #40](https://github.com/mukunde/bioprocess-assistant/pull/40)
+(request contract/specification), [PR #41](https://github.com/mukunde/bioprocess-assistant/pull/41)
+(corrected structured control) and [PR #42](https://github.com/mukunde/bioprocess-assistant/pull/42)
+(reviewed S01-S12 trial). The complete maintained suite passed **556/556 tests**
+on that checkpoint, with no skipped tests or external connection attempts.
+
+The free-text comparison protocol, interface and machine-schema choices are
+human-approved **local design artifacts, not yet merged or implemented**. Refined
+examples still await grouped review. Reviewed manual knowledge remains separate
+from the chat, and no experimental retriever is activated by these results.
 
 | Component | Status and scope |
 |---|---|
-| Troubleshooting chat | Implemented: six curated Protein A symptoms, English full-text retrieval in Neo4j, Anthropic tool use and application-controlled rendering |
-| French and English questions | Supported by the agent's English search-phrase selection; headings and refusals are localized, technical graph facts remain in English |
-| Local PDF ingestion | Experimental: Docling Graph with Ollama, structural chunking, source localization and a local review UI; optional publication creates a separate graph |
-| Reviewed manual extraction | Completed development example: 33 statements reviewed against pages 100–102, with 14 retaining reservations; not served by the chatbot |
-| Conversion and structural chunking | Targeted human reviews completed on pages 77, 88, 104 and 152–153, including deterministic table repairs, note scope and figure limitations; three ambiguous rows remain quarantined on 152–153 |
-| Local passage retrieval | Merged experimental BM25 and atomic context assembly, with opt-in v04/v05 development variants; known-case coverage is not generalization. The frozen v03b and v04 gates are blocked; none is the chat default |
-| Frozen v05 challenge | Completed local X01-X12 review and single run, prepared for versioning: 7/12 intents have complete evidence in both languages, but only X02/X05/X09 also satisfy explicit scope and diagnostic criteria |
-| Reviewed records → chatbot | Adapter pending; ingestion does not automatically expand the serving graph |
-| Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo are planned; LightRAG is a comparison candidate, KAG remains conditional |
+| Troubleshooting chat | Implemented: six curated Protein A symptoms, English full-text Neo4j retrieval, Anthropic tool use and application-controlled rendering |
+| French and English questions | Agent selects English search phrases; headings/refusals are localized and technical graph facts remain in English |
+| Local PDF ingestion | Experimental Docling Graph/Ollama route with structural chunking, localization and review UI; separate optional evidence publication |
+| Reviewed manual extraction | Merged development example: 33 statements reviewed on pages 100–102, with 14 reservations; not served by the chatbot |
+| Conversion and chunking | Selected page 77/88/104/152–153 reviews and repairs are merged; three ambiguous rows remain quarantined on 152–153 |
+| Passage retrieval | Merged BM25/atomic assembly experiments; frozen v03b, v04 and v05 gates remain blocked and none is the chat default |
+| Structured request control | Merged offline control. S01-S12: all 24 EN/FR submissions and all 12 paired scenarios pass reviewed context/diagnostic criteria; known-corpus diagnostic evidence only |
+| Free-text interface | Local approved CP/FI/MC design and three machine schemas; 16 refined examples plus three invalid inputs await GR01–GR04 review. No interpreter/bridge implementation or S/F trial |
+| Reviewed records → chatbot | Adapter pending; ingestion does not automatically enrich the serving graph |
+| Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
 The current chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
 
@@ -113,22 +119,31 @@ For an application container, configure a database address reachable **from that
 Install the additional test dependencies into the application environment:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r eval/requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r eval/requirements.txt -r requirements-structured.txt
 .\.venv\Scripts\python.exe -m unittest tests -v
 ```
 
 The [current suite notes](tests/README.md) explain the maintained entry point and preservation of frozen historical fixtures.
 
-These tests mock external model/database calls; some start loopback HTTP servers.
-They need neither paid APIs nor an external service. **463/463 tests passed on
-the merged `main` checkpoint `a6026ca`.** The local X preparation adds 15 integrity
-and synthetic-harness checks, and its compact export adds five portable checks.
-The complete current local suite passed **483/483 tests** on 25 October 2026,
-including this prepared, uncommitted packet.
-The X harness tests do not search, plan or score the actual X questions; the
-single real X trial is a separate, preserved result. Counts use existing local
-application/ingestion environments, not a fresh-install certification or an
-answer-quality evaluation. Earlier counts remain in historical reports.
+These tests mock external model/database calls; some use loopback HTTP servers
+and Windows asynchronous sockets. They need no paid API or external service.
+The **556/556** result above is from the existing local verification environment,
+not a fresh-install certification or an answer-quality measurement. Structured
+runtime dependencies are listed separately in `requirements-structured.txt`;
+private tokenizer assets may also be required by optional runtime workflows.
+
+The merged structured export can be verified with only the standard library,
+without PDFs, tokenizer assets, credentials, models or private run files:
+
+```powershell
+python -S -m experiments.cytiva.verify_structured_reviewed_package
+python -S -m unittest tests.test_structured_reviewed_package -v
+```
+
+These commands inspect saved evidence; they never rerun S01-S12. The new
+free-text schemas/examples have static shape, origin geometry, reference,
+accounting and corruption checks only. Those checks are not executed IF
+implementation tests and do not establish language understanding.
 
 | Development evidence | What it establishes | Limits |
 |---|---|---|
@@ -142,7 +157,9 @@ answer-quality evaluation. Earlier counts remain in historical reports.
 | [v04 development A-D](experiments/cytiva/compositional-navigation-v04-results/README.md) | Composes requests and handles bounded negations; final known-case coverage V12/12, H10/10, C10/10 in both languages; no unrequested or outside-acceptable V context | Merged development result after inspecting failures; no independent validation or default activation. One optional V03 seed still exceeds the six-seed cap |
 | [Frozen v04 / W01-W12](experiments/cytiva/reviewed-v04-evaluation/README.md) | Merged review and 24 saved contexts: 8/12 intents evidence-complete in both languages, but only W10/W11 satisfy completeness, explicit scope and diagnostics | Gate blocked: 13/24 explicit scope failures and 2/24 diagnostic failures; no generated answers evaluated |
 | [v05 development A-B](experiments/cytiva/polarity-navigation-v05-results/README.md) | Merged known-case coverage W12/12, V12/12, H10/10, C10/10; both attempts retained, including intermediate C02 failure | Tuned after inspecting W failures; not prospective validation or default activation; absent H/C scope annotations remain unavailable |
-| [Frozen v05 / X01-X12](experiments/cytiva/reviewed-v05-evaluation/README.md) | Local compact export: 12 reviewed intents and 24 contexts; EN 8/12, FR 7/12 complete; only X02/X05/X09 satisfy all scope/diagnostic criteria in both languages | Gate blocked: 9/24 explicit scope failures and 6/24 diagnostic failures; task ownership, nested negation and routing/lexical disagreement remain unresolved |
+| [Frozen v05 / X01-X12](experiments/cytiva/reviewed-v05-evaluation/README.md) | Merged compact export: 12 reviewed intents and 24 contexts; EN 8/12, FR 7/12 complete; only X02/X05/X09 satisfy all scope/diagnostic criteria in both languages | Gate blocked: 9/24 explicit scope failures and 6/24 diagnostic failures; task ownership, nested negation and routing/lexical disagreement remain unresolved |
+| [Structured S01-S12 trial](experiments/cytiva/reviewed-structured-control/README.md) | Merged: 12 human-reviewed scenarios, all 24 saved submissions pass context/diagnostics; no EN/FR semantic divergence; 348–1,504 context tokens | Structured intent control on known sources/code, not free-text or generated-answer validation; E118-I/E121-EQ remain excluded |
+| [Free-text design and grouped examples](docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md) | Local CP01–CP06, FI01–FI06/IF01–IF14 and MC01–MC06 decisions recorded; exact refined fixtures remain pending | Declarative design only; no parser, bridge, S/F experiment, performance result or new source approval |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
 The question series have distinct histories: Q/N/C contain 28 reviewed development
@@ -152,26 +169,25 @@ source facts overlap, and the author knows the implementation: these are not
 independently authored or new-manual evaluations. Do not compare v04's W score
 with v05's X score as though they were the same questions.
 
-The [completed X review and frozen outcome](docs/experiments/cytiva-v05-prospective-results.md)
-are local additions in this update. All twelve references are validated with
-reservations; X03-X12 were approved collectively in one actual message. The
-original preparation's pending flags remain historical, not a current review
-queue. All contexts, diagnostics, timings and original hashes are retained.
+The [X review and blocked outcome](docs/experiments/cytiva-v05-prospective-results.md)
+are merged historical evidence. Their failures motivated the now-implemented
+structured request contract/control. The separate S trial passes its own
+reviewed structured references; it does not retroactively repair X or prove that
+free text is understood. S and X are different diagnostic experiments, not a
+controlled before/after answer-quality comparison.
 
-The frozen gate requires complete evidence in both languages for all twelve
-intents, no explicitly unrequested source, no failed required diagnostic and no
-hard invariant violation. v05 does not pass. Outside-acceptable context is a noise
-proxy, not measured precision; answer quality, refusal quality and scientific
-suitability have not been established. E118-I and E121-EQ remain excluded. Missing
-pressure is bounded to 25 eligible excerpts, not the full manual. The 2,048-token
-context cap excludes future prompts and generated output.
+E118-I and E121-EQ remain excluded. Pressure absence is bounded to 25 eligible
+excerpts, not the full manual. S's 2,048-token budget counts serialized context
+including bindings, not a future answer prompt or output. The source-reviewed
+claims have not been connected to the chatbot's serving path.
 
-**Next priority:** design task-scoped requests with explicit products, column sizes,
-phases, parameters and exclusions; compare a structured-input control with free
-text mapped to that same contract. Avoid another isolated synonym expansion.
-This redesign is proposed, not implemented. Then reserve a new reviewed challenge
-before evaluating a new variant. The reviewed-record serving adapter is still
-missing; adding it does not promote a blocked retriever.
+**Next priority:** complete [GR01–GR04 fixture review](docs/experiments/free-text-interface-group-review-v01.md),
+then implement the bounded deterministic free-text interpreter/bridge under the
+approved design. Use known P/G cases for development, freeze that candidate,
+then author and review the new 12-intent bilingual prospective set before one
+preserved S/F run. Do not tune after its results or treat schema validation as
+proof of faithful interpretation. The local [design delivery scope](docs/experiments/free-text-design-package-v01.md)
+separates approved choices from pending exact example/origin decisions.
 
 The three-arm graph/passages/LightRAG comparison remains unexecuted. Current BM25
 trials are a lexical baseline, not the multilingual vector arm specified in that
@@ -185,16 +201,15 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Preserve the completed X review/results and design an explicit task-scoped request contract before coding another variant: product, column size, phase, requested parameters, exclusions and uncertainty.
-2. Compare deterministic structured input with free text mapped to that same contract, separating retrieval quality from language interpretation. Neither path is implemented. Use X as regression evidence, then freeze a new version before preparing another reviewed challenge.
-3. Build the missing reviewed-records-to-chatbot slice with the v0.2 adapter and validated renderer: retain source snapshots, conditions, reservations and quarantine; exercise clarification, correction, revocation and rollback. This does not activate a blocked retriever.
-4. Instrument that integration with minimal OpenTelemetry spans and portable accounting; then evaluate actual answers, citations and abstentions with deterministic checks, calibrated local Ragas and Promptfoo plus benign controls.
-5. Compare graph/passages/LightRAG on a common corpus and budget once adapters and evaluation inputs exist. Keep KAG and fine-tuning conditional on measured unmet needs.
+1. Review the four refined fixture groups, including exact origins, task ownership, preblocking and external test conditions. The protocol/interface/schema choices are approved; the examples are still pending.
+2. Implement the smallest deterministic EN/FR interpreter and bridge without changing the structured core. Pass IF01–IF14, freeze the candidate, then prepare/review the new prospective S/F set. No additional design cycle is needed unless a concrete unresolved interface gap appears.
+3. Build the reviewed-records-to-chatbot slice with the v0.2 adapter and validated renderer, retaining conditions, reservations and quarantine. This does not activate a blocked retriever.
+4. Instrument that path with OpenTelemetry and portable accounting; evaluate actual answers/citations/abstentions with deterministic checks, calibrated local Ragas and Promptfoo plus benign controls.
+5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.
 
-The X result is a reason to revisit request representation, not to expand synonyms
-indefinitely. No new variant or architecture comparison has been executed here.
-No additional whole-manual page review is a prerequisite unless a measured failure
-or a newly required format exposes a concrete conversion/chunking gap.
+No free-text candidate or architecture comparison has executed. No additional
+whole-manual page review is required unless a measured failure or newly required
+format exposes a concrete conversion/chunking gap.
 
 The [active roadmap](docs/ROADMAP.md) defines acceptance criteria. The earlier vector experiment is recorded in [ADR-002](docs/ADR-002-multilingual-retrieval.md); it does not settle the planned comparison on a larger reviewed corpus.
 

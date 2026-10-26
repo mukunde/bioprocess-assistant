@@ -1,0 +1,898 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess-assistant:free-text-outcome:0.1-draft",
+  "title": "Proposed actual bridge result; design fixtures use a separate definition",
+  "type": "object",
+  "properties": {
+    "document_kind": {
+      "const": "free_text_bridge_outcome"
+    },
+    "interface_version": {
+      "const": "free-text-interface-0.1-draft"
+    },
+    "record_status": {
+      "const": "runtime_record"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+    },
+    "interpretation_ledger": {
+      "oneOf": [
+        {
+          "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "projection": {
+      "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/projection"
+    },
+    "projection_mapping": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/mapping"
+      },
+      "minItems": 0,
+      "maxItems": 64
+    },
+    "core_result": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/core_result"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "core_result_sha256_canonical": {
+      "oneOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "core_calls": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "unit_outcomes": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/unit_outcome"
+      },
+      "minItems": 0,
+      "maxItems": 64
+    },
+    "request_summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "failure": {
+      "$ref": "#/$defs/failure"
+    },
+    "timings": {
+      "$ref": "#/$defs/timings"
+    },
+    "rejection_audit": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/rejection_audit"
+        }
+      ]
+    }
+  },
+  "required": [
+    "document_kind",
+    "interface_version",
+    "record_status",
+    "request_id",
+    "interpretation_ledger",
+    "projection",
+    "projection_mapping",
+    "core_result",
+    "core_result_sha256_canonical",
+    "core_calls",
+    "unit_outcomes",
+    "request_summary",
+    "failure",
+    "timings",
+    "rejection_audit"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "core_calls": {
+            "const": 0
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "core_result": {
+            "type": "null"
+          },
+          "core_result_sha256_canonical": {
+            "type": "null"
+          },
+          "unit_outcomes": {
+            "items": {
+              "properties": {
+                "status": {
+                  "enum": [
+                    "preblocked",
+                    "not_evaluated_due_to_error"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "core_result": {
+            "type": "object"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "core_calls": {
+            "const": 1
+          },
+          "core_result_sha256_canonical": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "interpretation_ledger": {
+            "type": "object"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "interpretation_ledger": {
+            "properties": {
+              "system_identity": {
+                "properties": {
+                  "schema": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  "catalog": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  "adapter": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  "source_review": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  "interpreter": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  "bridge": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  },
+                  "policy": {
+                    "properties": {
+                      "status": {
+                        "const": "pinned"
+                      },
+                      "sha256_lf": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{64}$"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "core_result": {
+      "type": "object",
+      "properties": {
+        "canonical_request": {
+          "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/canonical_request"
+        },
+        "plan": {
+          "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/plan_result"
+        },
+        "audit": {
+          "type": "object",
+          "$comment": "Opaque existing immutable core audit; full-content hash and provenance checked semantically."
+        }
+      },
+      "required": [
+        "canonical_request",
+        "plan",
+        "audit"
+      ],
+      "additionalProperties": false
+    },
+    "unit_outcome": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "unit_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "status": {
+              "const": "planner_evaluated"
+            },
+            "issue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+              },
+              "minItems": 0,
+              "maxItems": 256,
+              "uniqueItems": true
+            },
+            "core_unit_key": {
+              "type": "object",
+              "properties": {
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+                },
+                "item_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+                },
+                "information": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "task_id",
+                "item_id",
+                "information"
+              ],
+              "additionalProperties": false
+            },
+            "binding_index": {
+              "oneOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "minItems": 0,
+              "maxItems": 256,
+              "uniqueItems": true
+            },
+            "interpretation_state": {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/unit_result/properties/interpretation_state"
+            },
+            "documentary_support_state": {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/unit_result/properties/documentary_support_state"
+            },
+            "summary_state": {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/unit_result/properties/state"
+            }
+          },
+          "required": [
+            "unit_id",
+            "status",
+            "issue_ids",
+            "core_unit_key",
+            "binding_index",
+            "source_ids",
+            "interpretation_state",
+            "documentary_support_state",
+            "summary_state"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "unit_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "status": {
+              "const": "preblocked"
+            },
+            "issue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+              },
+              "minItems": 1,
+              "maxItems": 256
+            },
+            "core_unit_key": {
+              "type": "null"
+            },
+            "binding_index": {
+              "type": "null"
+            },
+            "source_ids": {
+              "type": "array",
+              "maxItems": 0
+            },
+            "interpretation_state": {
+              "const": "needs_clarification"
+            },
+            "documentary_support_state": {
+              "const": "not_assessed_by_planner"
+            },
+            "summary_state": {
+              "const": "preblocked"
+            }
+          },
+          "required": [
+            "unit_id",
+            "status",
+            "issue_ids",
+            "core_unit_key",
+            "binding_index",
+            "source_ids",
+            "interpretation_state",
+            "documentary_support_state",
+            "summary_state"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "unit_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "status": {
+              "const": "not_evaluated_due_to_error"
+            },
+            "issue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+              },
+              "minItems": 0,
+              "maxItems": 256,
+              "uniqueItems": true
+            },
+            "core_unit_key": {
+              "type": "null"
+            },
+            "binding_index": {
+              "type": "null"
+            },
+            "source_ids": {
+              "type": "array",
+              "maxItems": 0
+            },
+            "interpretation_state": {
+              "const": "not_assessed_due_to_error"
+            },
+            "documentary_support_state": {
+              "const": "not_assessed_by_planner"
+            },
+            "summary_state": {
+              "const": "error"
+            }
+          },
+          "required": [
+            "unit_id",
+            "status",
+            "issue_ids",
+            "core_unit_key",
+            "binding_index",
+            "source_ids",
+            "interpretation_state",
+            "documentary_support_state",
+            "summary_state"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "summary": {
+      "type": "object",
+      "properties": {
+        "inventory_complete": {
+          "type": "boolean"
+        },
+        "known_unit_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "evaluated_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "preblocked_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "error_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "all_known_units_accounted_for": {
+          "type": "boolean"
+        },
+        "any_unit_unserved": {
+          "type": "boolean"
+        },
+        "has_interpretation_issues": {
+          "type": "boolean"
+        },
+        "full_service": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "complete",
+            "partial",
+            "blocked",
+            "rejected",
+            "error",
+            "incomplete_inventory"
+          ]
+        }
+      },
+      "required": [
+        "inventory_complete",
+        "known_unit_count",
+        "evaluated_count",
+        "preblocked_count",
+        "error_count",
+        "all_known_units_accounted_for",
+        "any_unit_unserved",
+        "has_interpretation_issues",
+        "full_service",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "failure": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "stage": {
+              "enum": [
+                "input",
+                "interpretation",
+                "projection",
+                "runtime"
+              ]
+            },
+            "code": {
+              "type": "string",
+              "minLength": 1
+            },
+            "detail": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "stage",
+            "code",
+            "detail"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "timings": {
+      "type": "object",
+      "properties": {
+        "interpretation_ms": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "projection_ms": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "core_ms": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "total_ms": {
+          "oneOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "interpretation_ms",
+        "projection_ms",
+        "core_ms",
+        "total_ms"
+      ],
+      "additionalProperties": false
+    },
+    "design_expectation": {
+      "type": "object",
+      "properties": {
+        "schema_stage": {
+          "const": "specified_not_executed"
+        },
+        "ledger": {
+          "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft"
+        },
+        "projection": {
+          "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/projection"
+        },
+        "projection_mapping": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/mapping"
+          },
+          "minItems": 0,
+          "maxItems": 64
+        },
+        "expected_core_calls": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "expected_preblocked_unit_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "expected_error_unit_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "expected_evaluated_unit_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "expected_summary": {
+          "$ref": "#/$defs/summary"
+        },
+        "expected_failure": {
+          "$ref": "#/$defs/failure"
+        },
+        "expected_core_checks": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 0,
+          "maxItems": 256
+        },
+        "core_result": {
+          "type": "null"
+        },
+        "timings": {
+          "type": "null"
+        },
+        "rejection_audit_expectation": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "$ref": "#/$defs/rejection_audit"
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema_stage",
+        "ledger",
+        "projection",
+        "projection_mapping",
+        "expected_core_calls",
+        "expected_preblocked_unit_ids",
+        "expected_error_unit_ids",
+        "expected_evaluated_unit_ids",
+        "expected_summary",
+        "expected_failure",
+        "expected_core_checks",
+        "core_result",
+        "timings",
+        "rejection_audit_expectation"
+      ],
+      "additionalProperties": false
+    },
+    "design_example": {
+      "type": "object",
+      "properties": {
+        "document_kind": {
+          "const": "free_text_interface_design_example"
+        },
+        "example_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "review_status": {
+          "const": "pending_machine_fixture_review"
+        },
+        "coverage": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "IF01",
+              "IF02",
+              "IF03",
+              "IF04",
+              "IF05",
+              "IF06",
+              "IF07",
+              "IF08",
+              "IF09",
+              "IF10",
+              "IF11",
+              "IF12",
+              "IF13",
+              "IF14"
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 14,
+          "uniqueItems": true
+        },
+        "input": {
+          "$ref": "urn:bioprocess-assistant:free-text-input:0.1-draft"
+        },
+        "expected_output": {
+          "$ref": "#/$defs/design_expectation"
+        },
+        "test_conditions": {
+          "type": "object",
+          "properties": {
+            "entry_stage": {
+              "enum": [
+                "caller_input",
+                "preclassified_ledger"
+              ]
+            },
+            "preclassified_issue_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1
+              },
+              "uniqueItems": true
+            },
+            "fault_injection": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "properties": {
+                    "component": {
+                      "enum": [
+                        "core_call",
+                        "projection_validation"
+                      ]
+                    },
+                    "failure_code": {
+                      "enum": [
+                        "runtime_error",
+                        "projection_error"
+                      ]
+                    },
+                    "after_valid_interpretation": {
+                      "const": true
+                    }
+                  },
+                  "required": [
+                    "component",
+                    "failure_code",
+                    "after_valid_interpretation"
+                  ],
+                  "additionalProperties": false
+                }
+              ]
+            },
+            "instruction": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "entry_stage",
+            "preclassified_issue_ids",
+            "fault_injection",
+            "instruction"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "document_kind",
+        "example_id",
+        "review_status",
+        "coverage",
+        "input",
+        "expected_output",
+        "test_conditions"
+      ],
+      "additionalProperties": false
+    },
+    "rejection_audit": {
+      "type": "object",
+      "properties": {
+        "candidate_value": {},
+        "candidate_sha256_canonical": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "validation_errors": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "pointer": {
+                "type": "string",
+                "pattern": "^(?:/|$)"
+              },
+              "code": {
+                "type": "string",
+                "minLength": 1
+              },
+              "detail": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "pointer",
+              "code",
+              "detail"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "candidate_value",
+        "candidate_sha256_canonical",
+        "validation_errors"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

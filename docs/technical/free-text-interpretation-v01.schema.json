@@ -1,0 +1,1280 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft",
+  "title": "Proposed interpretation ledger; no interpretation performed by schema validation",
+  "$comment": "Cross-record IDs, origins, units, dispatch, quantities and semantics require the companion semantic invariants. Caps are draft resource bounds.",
+  "type": "object",
+  "properties": {
+    "document_kind": {
+      "const": "free_text_interpretation"
+    },
+    "interface_version": {
+      "const": "free-text-interface-0.1-draft"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+    },
+    "input_snapshot": {
+      "$ref": "urn:bioprocess-assistant:free-text-input:0.1-draft"
+    },
+    "input_sha256_utf8": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "system_identity": {
+      "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/system_identity"
+    },
+    "assertions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/assertion"
+      },
+      "minItems": 0,
+      "maxItems": 256
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/task"
+      },
+      "minItems": 0,
+      "maxItems": 16
+    },
+    "requested_units": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/unit"
+      },
+      "minItems": 0,
+      "maxItems": 64
+    },
+    "exclusions": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/exclusion"
+      },
+      "minItems": 0,
+      "maxItems": 256
+    },
+    "issues": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/issue"
+      },
+      "minItems": 0,
+      "maxItems": 256
+    },
+    "origins": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess-assistant:free-text-interpretation:0.1-draft#/$defs/origin"
+      },
+      "minItems": 1,
+      "maxItems": 4096
+    },
+    "field_origins": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target_document": {
+            "enum": [
+              "ledger",
+              "projection_submission"
+            ]
+          },
+          "target_pointer": {
+            "type": "string",
+            "pattern": "^/"
+          },
+          "origin_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "minItems": 1,
+            "maxItems": 256
+          }
+        },
+        "required": [
+          "target_document",
+          "target_pointer",
+          "origin_ids"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 4096
+    },
+    "unresolved_fragments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "fragment_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "origin_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "minItems": 1,
+            "maxItems": 256
+          },
+          "may_contain_request": {
+            "type": "boolean"
+          },
+          "issue_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "minItems": 1,
+            "maxItems": 256
+          }
+        },
+        "required": [
+          "fragment_id",
+          "origin_ids",
+          "may_contain_request",
+          "issue_ids"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 256
+    },
+    "inventory_complete": {
+      "type": "boolean"
+    },
+    "interpretation_status": {
+      "enum": [
+        "ready",
+        "partial",
+        "needs_clarification",
+        "rejected"
+      ]
+    }
+  },
+  "required": [
+    "document_kind",
+    "interface_version",
+    "request_id",
+    "input_snapshot",
+    "input_sha256_utf8",
+    "system_identity",
+    "assertions",
+    "tasks",
+    "requested_units",
+    "exclusions",
+    "issues",
+    "origins",
+    "field_origins",
+    "unresolved_fragments",
+    "inventory_complete",
+    "interpretation_status"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "origin": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "origin_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "kind": {
+              "const": "text_span"
+            },
+            "input_sha256_utf8": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "start": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "end": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "quote": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "origin_id",
+            "kind",
+            "input_sha256_utf8",
+            "start",
+            "end",
+            "quote"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "origin_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "kind": {
+              "const": "not_stated"
+            },
+            "input_sha256_utf8": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "checked_scope_origin_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+              },
+              "minItems": 1,
+              "maxItems": 256
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "origin_id",
+            "kind",
+            "input_sha256_utf8",
+            "checked_scope_origin_ids",
+            "reason"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "origin_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            "kind": {
+              "const": "application_metadata"
+            },
+            "input_sha256_utf8": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "policy_rule": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            },
+            "input_envelope_pointer": {
+              "const": "/language"
+            }
+          },
+          "required": [
+            "origin_id",
+            "kind",
+            "input_sha256_utf8",
+            "policy_rule",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "system_identity": {
+      "type": "object",
+      "properties": {
+        "schema": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "catalog": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "adapter": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "source_review": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "interpreter": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "bridge": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "policy": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "pinned",
+                "unimplemented"
+              ]
+            },
+            "sha256_lf": {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "pattern": "^[0-9a-f]{64}$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "status",
+            "sha256_lf"
+          ],
+          "additionalProperties": false,
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "status": {
+                    "const": "pinned"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  }
+                }
+              },
+              "else": {
+                "properties": {
+                  "sha256_lf": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      "required": [
+        "schema",
+        "catalog",
+        "adapter",
+        "source_review",
+        "interpreter",
+        "bridge",
+        "policy"
+      ],
+      "additionalProperties": false
+    },
+    "component_identity": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "pinned",
+            "unimplemented"
+          ]
+        },
+        "sha256_lf": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "sha256_lf"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "pinned"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "sha256_lf": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "sha256_lf": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "assertion": {
+      "type": "object",
+      "properties": {
+        "assertion_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "role": {
+          "enum": [
+            "product",
+            "column",
+            "stage",
+            "requested_information",
+            "exclusion",
+            "fact",
+            "relation"
+          ]
+        },
+        "subject_candidates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "raw_lexeme": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalized_value": {
+          "oneOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/quantity"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origin_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "assertion_id",
+        "role",
+        "subject_candidates",
+        "raw_lexeme",
+        "normalized_value",
+        "origin_ids"
+      ],
+      "additionalProperties": false
+    },
+    "task": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "product": {
+          "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/product"
+        },
+        "column": {
+          "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/column"
+        },
+        "facts": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/fact"
+          },
+          "minItems": 0,
+          "maxItems": 256
+        },
+        "assertion_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "task_id",
+        "order",
+        "product",
+        "column",
+        "facts",
+        "assertion_ids"
+      ],
+      "additionalProperties": false
+    },
+    "unit": {
+      "type": "object",
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "order": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "owner": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "state": {
+                  "const": "resolved"
+                },
+                "task_id": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+                },
+                "candidate_task_ids": {
+                  "type": "array",
+                  "maxItems": 0
+                }
+              },
+              "required": [
+                "state",
+                "task_id",
+                "candidate_task_ids"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "state": {
+                  "const": "unresolved"
+                },
+                "task_id": {
+                  "type": "null"
+                },
+                "candidate_task_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+                  },
+                  "minItems": 0,
+                  "maxItems": 16,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "state",
+                "task_id",
+                "candidate_task_ids"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "item_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stage": {
+          "oneOf": [
+            {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/stage"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "information": {
+          "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/item/properties/information/items"
+        },
+        "origin_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "assertion_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "issue_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "dispatch": {
+          "enum": [
+            "project",
+            "preblock"
+          ]
+        }
+      },
+      "required": [
+        "unit_id",
+        "order",
+        "owner",
+        "item_id",
+        "stage",
+        "information",
+        "origin_ids",
+        "assertion_ids",
+        "issue_ids",
+        "dispatch"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "dispatch": {
+                "const": "project"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "owner": {
+                "properties": {
+                  "state": {
+                    "const": "resolved"
+                  }
+                }
+              },
+              "item_id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "stage": {
+                "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/stage"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "exclusion": {
+      "type": "object",
+      "properties": {
+        "exclusion_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "task_id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "candidate_task_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "target_item_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "polarity": {
+          "enum": [
+            "active_ban",
+            "negated_ban"
+          ]
+        },
+        "active": {
+          "type": "boolean"
+        },
+        "selector": {
+          "oneOf": [
+            {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/exclusion/properties/selector"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "origin_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "exclusion_id",
+        "task_id",
+        "candidate_task_ids",
+        "target_item_ids",
+        "polarity",
+        "active",
+        "selector",
+        "origin_ids"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "polarity": {
+                "const": "active_ban"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "active": {
+                "const": true
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "active": {
+                "const": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "issue": {
+      "type": "object",
+      "properties": {
+        "issue_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "code": {
+          "enum": [
+            "unresolved_owner",
+            "unsupported_construction",
+            "ambiguous_restriction_scope",
+            "policy_override_rejected",
+            "presentation_policy_conflict",
+            "incomplete_inventory",
+            "conflicting_assertions",
+            "invalid_input",
+            "projection_error",
+            "runtime_error",
+            "unverifiable_origin"
+          ]
+        },
+        "blocking": {
+          "type": "boolean"
+        },
+        "affected_unit_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "affected_fragment_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 0,
+          "maxItems": 256,
+          "uniqueItems": true
+        },
+        "origin_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+          },
+          "minItems": 1,
+          "maxItems": 256
+        },
+        "detail": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "issue_id",
+        "code",
+        "blocking",
+        "affected_unit_ids",
+        "affected_fragment_ids",
+        "origin_ids",
+        "detail"
+      ],
+      "additionalProperties": false
+    },
+    "projection": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "const": "available"
+            },
+            "submission": {
+              "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/submission"
+            },
+            "sha256_canonical": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "status",
+            "submission",
+            "sha256_canonical"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "status": {
+              "enum": [
+                "empty",
+                "invalid",
+                "not_built"
+              ]
+            },
+            "submission": {
+              "type": "null"
+            },
+            "sha256_canonical": {
+              "type": "null"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "status",
+            "submission",
+            "sha256_canonical",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "unit_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "core_task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "core_item_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,63}$"
+        },
+        "information": {
+          "$ref": "urn:bioprocess-assistant:task-request:0.1-tech-proposed#/$defs/item/properties/information/items"
+        },
+        "projection_pointer": {
+          "type": "string",
+          "pattern": "^/"
+        }
+      },
+      "required": [
+        "unit_id",
+        "core_task_id",
+        "core_item_id",
+        "information",
+        "projection_pointer"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

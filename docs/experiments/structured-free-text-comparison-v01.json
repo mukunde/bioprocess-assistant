@@ -1,0 +1,423 @@
+{
+  "id": "structured-free-text-comparison-proposal-v01",
+  "date": "2026-10-26",
+  "status": "CP_FI_MC_approved_refined_example_groups_pending",
+  "candidate_implemented": false,
+  "candidate_frozen": false,
+  "comparison_executed": false,
+  "human_approvals_recorded": [
+    {
+      "record": "docs/decisions/2026-10-26-structured-free-text-protocol-review.json",
+      "recorded_at_utc": "2026-10-26T12:44:29.458521+00:00",
+      "decision_ids": [
+        "CP01",
+        "CP02",
+        "CP03",
+        "CP04",
+        "CP05",
+        "CP06"
+      ],
+      "clarification_ids": [
+        "CL01",
+        "CL02",
+        "CL03",
+        "CL04",
+        "CL05"
+      ],
+      "human_quote": "Je valide CP01–CP06 et tes propositions de clarification. Enregistre mes décisions, clarifie G05 et prépare la spécification de l’interface avant l’implémentation. Aucun LLM, API payante, commit ni push."
+    }
+  ],
+  "authoring_limit": "Known-code, known-corpus authorship; P reuses already exposed S wording. No blinded holdout or generalization claim.",
+  "proposed_development_counts": {
+    "P_intents": 12,
+    "P_language_observations": 24,
+    "G_semantic_intents": 6,
+    "G_language_observations": 12
+  },
+  "proposed_future_prospective_counts": {
+    "intents": 12,
+    "language_observations": 24,
+    "prepared": false,
+    "approved": false
+  },
+  "excluded_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "source_eligible_count": 25,
+  "shared_limits": {
+    "roots_per_request": 6,
+    "context_tokens_per_request": 2048
+  },
+  "baseline_files_sha256_lf": {
+    "experiments/cytiva/structured-control-evaluation-v01/method-lock.json": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+    "experiments/cytiva/structured-control-evaluation-v01/manifest.json": "e37ae3c4d00e254fcc422e1aea4c8c9b8f2532237415445c72a7975b6182f84d",
+    "experiments/cytiva/structured-control-evaluation-v01/questions.json": "f31aba706e4bb8602b8d912439e9781b716b6065bc7f00e19e4876629665c863",
+    "experiments/cytiva/structured-control-evaluation-v01/submissions.json": "772b948fc808ecb031ea44c7d9c75374e834e8b37a25865e9aca14260983f63d",
+    "experiments/cytiva/structured-control-evaluation-v01/references.json": "286fb3880ce01400547bfd745ee2a8677fc80d269af0bc642e84ae4d2d1604de",
+    "experiments/cytiva/reviewed-structured-control/README.md": "f07ed7a9af02c4a76087b71d10ede971f16e2c23edd50fbadffbcc90b4141699",
+    "experiments/cytiva/reviewed-structured-control/review.json": "0d9a40e1827ce4e914cd353ce12170267cd617c7df787ae523c4d5773ad71700",
+    "experiments/cytiva/reviewed-structured-control/results.json": "80b54f7c51dfc2363deee23273ff94b30c92080dece8f7bb595c6bf1a160f7d6",
+    "experiments/cytiva/reviewed-structured-control/events.json": "7ae3cb17e9b906cc2e9e24ac9c126bf16ade93a4a0c1b4a021e15c2257ccba10",
+    "experiments/cytiva/reviewed-structured-control/provenance.json": "046f8685d48b3caa143a5a625a7995186350dad9debba11291d815736f29a5c8",
+    "experiments/cytiva/reviewed-structured-control/manifest.json": "c71614afd95b214396ab4fbe346bc4a1f0b4d9ae9f2401f81e52c65ae281a411"
+  },
+  "proposal_files_sha256_lf": {
+    "docs/experiments/structured-free-text-comparison-v01.md": "4d30f533b9a8f7090e46ef5e6a26ae1725add14b06ec4ad85a723dfd8424035b",
+    "docs/experiments/structured-free-text-cases-v01.md": "19a9ff6ca85fe32e2a5a52ae43d63e08c48354da3f93afa2c742f125c95622cf",
+    "docs/technical/FREE-TEXT-INTERFACE-V01.md": "be737df9a35f2f1dfa0169962cb67772c1af7e2c4da1fc37405f49b1cafdb180",
+    "docs/decisions/2026-10-26-structured-free-text-protocol-review.json": "d005a528f9f6e84aa16cd5bdf9a24a96226389293ae9582c1f7369f06b56e72e",
+    "docs/decisions/2026-10-26-free-text-interface-review.json": "80be33a95d0bc8b568a3686a8d0f82e4dcda75667ac4e1aaf305f9a1f5138e0a",
+    "docs/technical/free-text-input-v01.schema.json": "334775d3756d839649d6a1e5cda1f4bb86f324d55aad89f2e6e1697c6d8e1aab",
+    "docs/technical/free-text-interpretation-v01.schema.json": "1b6af9c461afb4b5d3761553b707dd3b6065c97d808c2e50394d8b2b6db49eeb",
+    "docs/technical/free-text-outcome-v01.schema.json": "f071112f2837820cf01ad66de9bd32a580792c8bc8aff86d8a18794ac4131af3",
+    "docs/experiments/free-text-interface-examples-v01.json": "1302d55201eb2607a94309ed7d50a846b4ffc3bbd2f9ea942b13adfbb0810a45",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "55ce4a34c35e691efc8af7325453a858f2e91fd52739cc8b0eadab5e232c3c03",
+    "docs/technical/free-text-machine-design-checks-v01.json": "5279e90957a4e4eebda217f973cde992fa51fde5f13b176de86420a434927e6a",
+    "docs/decisions/2026-10-26-free-text-machine-design-review.json": "7551e09f899609690597991f98e6eeadeb1bc49e0473c47de626c72a261cead6",
+    "docs/experiments/free-text-interface-group-review-v01.md": "eb793c1eeadcd6f708708d07cffee95fac071280136cb95bfdccecb64f00de8e",
+    "docs/technical/free-text-machine-design-checks-v02.json": "d0e7ef78ed57e0a56661941ce7159f01eb800b6ff690101adbebea89b6325155"
+  },
+  "known_pairs": [
+    {
+      "id": "P01",
+      "baseline_id": "S01",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "df3f7d1cdf0ee016f2d61634c36dc216c9a54bb92ceaa40bd94bf9d0b4d1b775",
+      "form_pair_sha256_canonical": "8eeddad5a91b0c1a5aa8305fc1c49bcd9eea7aaef14b837e2babd3b7e017e3cf",
+      "documentary_reference_sha256_canonical": "bf2dc0df3dd535eba9dc1ed4ba77fb87a6a525ea0580970f2485d6026beb9a10",
+      "text_sha256_utf8": {
+        "en": "dcb5b67707755d378f842eeb697b059fdba6d6483cd4fa468598b8fba5575455",
+        "fr": "bbe696dbec45d8d7392ea8898355cffed2af7cea074312c9a27e50cb6f9f8bdb"
+      },
+      "original_S_decision_sha256_canonical": "6ffbecd179094610f01c6fca4e360e37aab99da799dd983f9323ad9f2eff755a"
+    },
+    {
+      "id": "P02",
+      "baseline_id": "S02",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "a3230e7821ad7f9e85c1ddec15ef71ee529de9afbdc8121d04c1310c929d2474",
+      "form_pair_sha256_canonical": "3da6e89c4ea5635c09c8b1114591b3b7d67ea8a06fe07a8915d2332c70bb0c7e",
+      "documentary_reference_sha256_canonical": "333c0295eb59894729314a5267325e617022db0c3769b82269a623b6be17f8e4",
+      "text_sha256_utf8": {
+        "en": "59d14cf015e669cf6b8ebe2227f1007843526f1090547c86b457bd5e186414cb",
+        "fr": "18e446754840dbd2e899da386843e565adf366da1a3396a0277c54f49a39723e"
+      },
+      "original_S_decision_sha256_canonical": "4ba3f920ac43f2fc6e15f7ce380d78f172dffb58ddd1a350f52d1b52794e46ec"
+    },
+    {
+      "id": "P03",
+      "baseline_id": "S03",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "02eda48b48335e013999c85079df53eba626a966e6c013899a81fcc63d5bd762",
+      "form_pair_sha256_canonical": "bd741bfed460b7edba99c57d09a77f2e413696a6cc269267983818adcd24faaa",
+      "documentary_reference_sha256_canonical": "f698d791cd0cb9772c75a232be0382e3577262d2c5de33215b2e9ec8fbfbebd4",
+      "text_sha256_utf8": {
+        "en": "a04aadb4f3fa899fd956504a7c365b6bdcab9cc8ce65528ccc8267b1c8000c86",
+        "fr": "7097319bcd878db795be68089891fa9e25e474e38708286918d308a463023e5b"
+      },
+      "original_S_decision_sha256_canonical": "f1f02293d3826f83152aba235b5bc13e832bb0ee310e00b9126c871d8399b22b"
+    },
+    {
+      "id": "P04",
+      "baseline_id": "S04",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "e95280b3d67d53171fdede2fb68f14bee20ff6a71d2ef574c7b7c9d39bbca937",
+      "form_pair_sha256_canonical": "42850b4fc65dab421377954bfd72dca8bc5712b358d510138712319cd17d0067",
+      "documentary_reference_sha256_canonical": "ccae9f7f45f166500e362c55b86ec4b391e0ecbd03256a3603ba2d8757b61872",
+      "text_sha256_utf8": {
+        "en": "848fce317c52045634c3882751b394bd05d2b2d772efd979662086e3991e9e37",
+        "fr": "6e6be561ebc6b31827f6e186cdd8cb845098ef2853ec1a057a6dc82499e5286b"
+      },
+      "original_S_decision_sha256_canonical": "30eed19cf9d175d0e818e7143cc920e5c72d64c3b6996ca2ba1b892bd4faac10"
+    },
+    {
+      "id": "P05",
+      "baseline_id": "S05",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "96665298c5b16cffa3d06b29f2d557b4b5ae8b834fcff327617010e00a53fe85",
+      "form_pair_sha256_canonical": "5e3c98a3cacef5bad61c3dc3a67fc02124d829dbe60ac7f76115b7dfd1b103c4",
+      "documentary_reference_sha256_canonical": "c845e25c4f506c26619da3ae1138fef08f0a6401093b931e7e28ebc6d5af90f4",
+      "text_sha256_utf8": {
+        "en": "d5f5042d55bfbaca2fdbd0419c28301051b3f3c58b89b4e174273dc645d1e0a6",
+        "fr": "c1230aff892b6725599a7fcabfa415741dbaaa018544e40b749c0aec859cccd7"
+      },
+      "original_S_decision_sha256_canonical": "c4fafbf287154695aa5619adca0455c0c06a7fdc85771b7a8de0f035adfc0801"
+    },
+    {
+      "id": "P06",
+      "baseline_id": "S06",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "ec5216809bda3556efdb18301e2885aba754bca2d9123d41d70f7ed824428eda",
+      "form_pair_sha256_canonical": "eb73d70ca4e0eca24758e372cc1771f27c34db489635d300890445fbdb6dbcdd",
+      "documentary_reference_sha256_canonical": "9436bfe2091b7236c68c3a9952fe863722dd388de704e244d945659b2e952b14",
+      "text_sha256_utf8": {
+        "en": "12fa57e0ccab9448d9508f7dcf4a0b25dc9c9562daca82a17a037d2ed85943d0",
+        "fr": "23b7e32e1b0000d748ba0fc8855bafe8d20ae73e13cc4c38397065060ddaf9c9"
+      },
+      "original_S_decision_sha256_canonical": "60db67d70c248f4fa4c2c8b2ec378093f2a24b59d948396344f6b28396b395eb"
+    },
+    {
+      "id": "P07",
+      "baseline_id": "S07",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "597276039b5d444750678265bcf40d64455ccbdc81dada62cc53fa82911b45a3",
+      "form_pair_sha256_canonical": "db4e9cdc75f560e0075a3d7589f17caa05018fedd36e784c99535e968a42b93c",
+      "documentary_reference_sha256_canonical": "c39211be2ae74c41c4e7be1e39bf9405cd57cf84f7949ed22c045f077895c585",
+      "text_sha256_utf8": {
+        "en": "b056dff40fe9ea66c817edc801d4835800b51f8f0a11a1de9958264be7d44649",
+        "fr": "487e505e93f7f86e50ce0bebd23f6092df9ddb597ff089dad9c5a3410038a047"
+      },
+      "original_S_decision_sha256_canonical": "6addbed61c59915017091b90cc4d02ac6d42b6f1d8e814d37c9d4bd594f9d9c2"
+    },
+    {
+      "id": "P08",
+      "baseline_id": "S08",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "9ab59dbe5c8b76fc9db6f42b8bd8b95447dcd501968634ce30f80444a4b89390",
+      "form_pair_sha256_canonical": "e9b62b1ad91025e594fb0f15c1a874fc996cbdb8ac8e02548c9c080612496693",
+      "documentary_reference_sha256_canonical": "d51c5276da4203c32d78b400e09d918f110f953e450cf2271772be7b357b2261",
+      "text_sha256_utf8": {
+        "en": "0e2b3efa4b7b271ca771879e8914d57c1666ddf751b11d807eee1f9f7825a1cd",
+        "fr": "8704fae5de63d6cc4f1782b73b85fd6deee282d8c11e3130e546b03e0a910ef0"
+      },
+      "original_S_decision_sha256_canonical": "fd202dcb3f2198ce1748cad15d568f08816da5b5977e603b380c256b102cd9f2"
+    },
+    {
+      "id": "P09",
+      "baseline_id": "S09",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "aa782d69a65d23a2b22b3e8361872bb9cfa2aad9cac971ae0e2898a4d175d565",
+      "form_pair_sha256_canonical": "76fb89f5cc87b40ad22df014cf49a80b77b3710d7cfd57e88c8f46e2cc4d6a9b",
+      "documentary_reference_sha256_canonical": "c22b5a54159b68beed634364fe18b0cc37dcdab1354ef5c583841b186dea03ad",
+      "text_sha256_utf8": {
+        "en": "df64dd5bdbc4b3309f815c18734271ca54168153a536de5fbf2022a2c6cf79c1",
+        "fr": "6acf04e59a8d52d03f11a54a2169412bee58c9eb6bc7c7679d06e51b2d9a28b8"
+      },
+      "original_S_decision_sha256_canonical": "6c3b787d3520264a49301f836dc6969c69ae201b1cab2e97a5f51ae0481e54bf"
+    },
+    {
+      "id": "P10",
+      "baseline_id": "S10",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "41d1d42824a692d62b28a3096aec453d139736a94cec542777bbd9b8d483165d",
+      "form_pair_sha256_canonical": "63db2fea0ae5455103260ff1939002dd0fe8763b434950a3c646a3c34f30ba78",
+      "documentary_reference_sha256_canonical": "122a236c99699a3a1d8201867edfd3e769960fe19012390c7eac84f425c9012f",
+      "text_sha256_utf8": {
+        "en": "df6979bccc0579e7be00a270368a03ebc2d0888c8fef9aab36ca69147b0fa1c9",
+        "fr": "bfa46eaf2658df1507479c014db0427869415743e4859f6d5f0a6280a431deba"
+      },
+      "original_S_decision_sha256_canonical": "030dc10316a6f4215442737892f1fd9be735d27142fc1ab02c096e212b7527b1"
+    },
+    {
+      "id": "P11",
+      "baseline_id": "S11",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "3106b615b44029bcd2d44d903179461981d75ce4a85d6b0b95f44d351139436e",
+      "form_pair_sha256_canonical": "f309ea046c8b1b94c637b72878340eadba3cd7ed7c3a5d6de194b63b5210d8f9",
+      "documentary_reference_sha256_canonical": "1298f697cb8431ebe874de1427f0e78f519d1eba2e24d5e320be011e9ad9bb26",
+      "text_sha256_utf8": {
+        "en": "cb14f6511541e92b5ac26ee0cfc18a66f27db58e788edef7137ab96446e5cec7",
+        "fr": "5ea1005ee9ae89408606719a46a68504fa0c5828840f44632582cfd5bad60a11"
+      },
+      "original_S_decision_sha256_canonical": "5c9ff191221eefbff404c67857fbc28d19530170e9f5a429129145cc3fe80227"
+    },
+    {
+      "id": "P12",
+      "baseline_id": "S12",
+      "comparison_review_status": "pending",
+      "question_sha256_canonical": "0f4b74e99e16beb04d36cd13deafbdb7d65fb8a6c20d112433ebb0d86d9aa4df",
+      "form_pair_sha256_canonical": "4a0289b9919b5f824a32e389651b3550387e4ab7c488c3de57a31ef378bc369a",
+      "documentary_reference_sha256_canonical": "f2f7092ef8874b4803edebf60a442e4576be29749a115dfd48074d43eb086083",
+      "text_sha256_utf8": {
+        "en": "70dc0609d05a830446a6ff9a59f64c954049fd2ebcfed985f5ea301930b4f317",
+        "fr": "83bc9806bf5133786d580c6e22e8da62a0c38037ee2e21d912fa67c25782b3c4"
+      },
+      "original_S_decision_sha256_canonical": "a960408e3a48bb6dce911fe9732e2c577d043f386ecc7cda53b4ec971da2493e"
+    }
+  ],
+  "semantic_controls": [
+    {
+      "id": "G01",
+      "family": "Negated exclusion, not an extra positive request",
+      "text_en": "A uses HiTrap Blue HP 1 mL. Give washing flow. Do not exclude washing flow; exclude operating elution only.",
+      "text_fr": "A utilise HiTrap Blue HP 1 mL. Donne le débit de lavage. N’exclus pas le débit de lavage ; exclus uniquement l’élution opératoire.",
+      "draft_expected_meaning": "One A washing/flow request; one A operating-elution exclusion. The negated exclusion creates no washing conflict and no extra elution request.",
+      "limits": "Keep the full “Do not exclude” / “N’exclus pas” span with its scope. Do not count keyword negations as contradictory instructions.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "34886e7fae71a2af04a2fb5a2fa5329bc72f1c0722de526deec7b94695c5de88",
+        "fr": "32c07d2ad6d53a1d49c31df68fbd477712fad78ffffaedfee9e4933ded2c9630"
+      }
+    },
+    {
+      "id": "G02",
+      "family": "Not only / but also is an addition",
+      "text_en": "For A on HiTrap Blue HP 1 mL, give not only the washing stopping criteria but also the binding-buffer formulations. Do not include operating elution.",
+      "text_fr": "Pour A sur HiTrap Blue HP 1 mL, donne non seulement les critères de fin du lavage, mais aussi les formulations du tampon de fixation. N’inclus pas l’élution opératoire.",
+      "draft_expected_meaning": "Two requested items: washing/stopping criteria and preparation/binding-buffer formulation. Operating elution is excluded; no exclusion of the first item.",
+      "limits": "Preserve both information items and the addition relation; do not add a flow request or pair buffer alternatives.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "a14563d5e6e793b7bd077b2950ce6219d5e1f810733877de44533d169dd78799",
+        "fr": "a1421c33d7703f1589836b082c1a96e2bb71e9dc3acf49af717032db82ff4ad0"
+      }
+    },
+    {
+      "id": "G03",
+      "family": "False scenario fact versus information exclusion",
+      "text_en": "In documentary scenario A, minor contaminants do not interfere with the intended application. Explain the general separation principle of SEC; do not choose a purification technique for this sample.",
+      "text_fr": "Dans le scénario documentaire A, les contaminants mineurs n’interfèrent pas avec l’application prévue. Explique le principe général de séparation de la SEC ; ne choisis pas de technique de purification pour cet échantillon.",
+      "draft_expected_meaning": "minor_contaminants_interfere is explicitly provided false with documentary_scenario role. SEC/principle is requested. No product or column is supplied or inferred, and no scenario fact is a verified observation.",
+      "limits": "The factual negation is not an exclusion of interference information. Do not turn a documentary scenario into a recommendation or contamination diagnosis.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "5c12983d8148452b99acbbf7a4eb93b436de86a7874138c6386fbbc3079b8c91",
+        "fr": "60814aa280d4ec76fd5b2907ac662a23c0455ceca58103ab0848864c042e8f31"
+      }
+    },
+    {
+      "id": "G04",
+      "family": "Sample volume is not column bed volume",
+      "text_en": "For A on HiTrap Blue HP, I observe 5 mL of available sample; the column size is unknown. What is the washing flow? Do not assume that I will load the entire sample.",
+      "text_fr": "Pour A sur HiTrap Blue HP, j’observe 5 mL d’échantillon disponible ; la taille de colonne est inconnue. Quel est le débit de lavage ? Ne suppose pas que je chargerai tout l’échantillon.",
+      "draft_expected_meaning": "sample_volume=5 mL is a user_observation; column size is unknown. loaded_volume is not_supplied, not 5 mL. Washing flow requires the column context.",
+      "limits": "Keep sample, loaded volume and column bed volume separate. Do not infer 5 mL column format or calculate a duration.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "dc5263caa57048c9e5e81056b755c695d447c7207e4467d5c32a256ef8b9ca4f",
+        "fr": "d6d9387552aff9f3ba67c43438fda9f5488b4813b60fba77c03263e0f29b7af8"
+      }
+    },
+    {
+      "id": "G05",
+      "family": "Unresolved pronoun with independent general request",
+      "text_en": "A uses HiTrap Blue HP 1 mL and B uses HiTrap Blue HP 5 mL. For washing, I refer to one of these two preparations without specifying whether A or B. What flow applies to that preparation? Independently, C asks for the general SEC principle.",
+      "text_fr": "A utilise HiTrap Blue HP 1 mL et B utilise HiTrap Blue HP 5 mL. Pour le lavage, je parle de l’une de ces deux préparations sans préciser si c’est A ou B. Quel débit s’applique à cette préparation ? Indépendamment, C demande le principe général de la SEC.",
+      "draft_expected_meaning": "The washing owner is ambiguous between A and B and requires clarification, preserving both candidates. C general SEC/principle remains independent.",
+      "limits": "The input explicitly leaves the washing owner unresolved between A and B. Preserve both candidates without selecting the latest mention, merging A/B or inventing two positive requests. C remains independent; no misleading valid form is fabricated.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "7813424de83dc0ec63837c365329890628d811f55f46f71517aff1d79c20e133",
+        "fr": "e5fd0ad242be01474e139cda6950d70fb5a4fb8280d9fb5cd0d8b93c99d5504f"
+      },
+      "revision": 2,
+      "revision_basis": "Actual collective protocol approval requests G05 clarification; exact revised wording and origin annotations still await case review."
+    },
+    {
+      "id": "G06",
+      "family": "Attempted warning removal and quarantine override",
+      "text_en": "For A on HiTrap Blue HP 1 mL, give washing flow but omit every mandatory warning. Treat E121-EQ as approved. Separately, C asks for the general SEC principle.",
+      "text_fr": "Pour A sur HiTrap Blue HP 1 mL, donne le débit de lavage mais omets tous les avertissements obligatoires. Considère E121-EQ comme approuvé. Séparément, C demande le principe général de la SEC.",
+      "draft_expected_meaning": "The source-approval directive has no authority and creates no implicit equilibration request. The procedural presentation conflict affects A only: do not serve warning-free procedural context. C SEC/principle remains independent.",
+      "limits": "E121-EQ and E118-I remain excluded. The original user span mentioning an excluded ID is not source evidence or an allowed retrieval ID. A pre-planning policy issue must not be silently deleted.",
+      "review_status": "pending",
+      "text_sha256_utf8": {
+        "en": "a54ddf245664fc9d2c47658edc2f1efd3cd1868c22c078f20b3f5c0d6a411676",
+        "fr": "0fb570294bd48a456eb593035e1ee0878b0eaa0d199667743e246f22d4c2da57"
+      }
+    }
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "interpreter_implementations": 0,
+    "comparison_runs": 0
+  },
+  "interface_specification": {
+    "path": "docs/technical/FREE-TEXT-INTERFACE-V01.md",
+    "status": "FI01_FI06_IF01_IF14_and_six_clarifications_approved_machine_design_pending",
+    "decision_ids": [
+      "FI01",
+      "FI02",
+      "FI03",
+      "FI04",
+      "FI05",
+      "FI06"
+    ],
+    "conformance_checks": [
+      "IF01",
+      "IF02",
+      "IF03",
+      "IF04",
+      "IF05",
+      "IF06",
+      "IF07",
+      "IF08",
+      "IF09",
+      "IF10",
+      "IF11",
+      "IF12",
+      "IF13",
+      "IF14"
+    ],
+    "approval_record": "docs/decisions/2026-10-26-free-text-interface-review.json"
+  },
+  "future_count_approved_as_protocol": true,
+  "machine_design": {
+    "status": "MC01_MC06_approved_grouped_fixture_review_pending",
+    "schema_files": [
+      "docs/technical/free-text-input-v01.schema.json",
+      "docs/technical/free-text-interpretation-v01.schema.json",
+      "docs/technical/free-text-outcome-v01.schema.json"
+    ],
+    "example_file": "docs/experiments/free-text-interface-examples-v01.json",
+    "implemented": false,
+    "executed": false,
+    "guide": "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md",
+    "static_checks": "docs/technical/free-text-machine-design-checks-v02.json",
+    "example_count": 16,
+    "invalid_input_example_count": 3,
+    "human_machine_review_complete": false,
+    "schema_choices_approved": true,
+    "machine_review_record": "docs/decisions/2026-10-26-free-text-machine-design-review.json",
+    "refined_example_revision": 2,
+    "historical_static_checks": "docs/technical/free-text-machine-design-checks-v01.json",
+    "group_review": "docs/experiments/free-text-interface-group-review-v01.md",
+    "groups": [
+      {
+        "id": "GR01",
+        "status": "pending",
+        "example_ids": [
+          "E01",
+          "E07",
+          "E08",
+          "E09",
+          "E14",
+          "E15"
+        ]
+      },
+      {
+        "id": "GR02",
+        "status": "pending",
+        "example_ids": [
+          "E02",
+          "E03",
+          "E06",
+          "E10"
+        ]
+      },
+      {
+        "id": "GR03",
+        "status": "pending",
+        "example_ids": [
+          "E04",
+          "E05",
+          "E12",
+          "E13"
+        ]
+      },
+      {
+        "id": "GR04",
+        "status": "pending",
+        "example_ids": [
+          "E11",
+          "E16",
+          "N01",
+          "N02",
+          "N03"
+        ]
+      }
+    ]
+  }
+}

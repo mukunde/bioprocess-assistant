@@ -1,0 +1,12 @@
+{
+  "id": "free-text-deterministic-runtime-0.1",
+  "status": "implementation_candidate_not_frozen",
+  "languages": ["en", "fr"],
+  "limits": {"text_code_points": 16000, "tasks": 16, "units": 64, "ordinary_array": 256, "origins_and_links": 4096},
+  "grammar": "Explicit named preparation scopes attached to individual selectors; catalog-exact positive labels; operating-phase flow, endpoints, formulation, volume, pressure and principle requests; positive requests and restrictions in the same sentence are separate instructions. Typed exclusions retain their selectors and known owners; observations and explicitly unknown columns retain literal provenance. Unsupported substantive fragments prevent full-inventory reporting.",
+  "normalization": "Accent-insensitive casefolded matching with Unicode code-point index mapping; immutable original UTF-8 text and literal origins; same-unit decimal punctuation only.",
+  "dispatch": "One unchanged StructuredControl.evaluate invocation at most; unresolved owners and ambiguous restrictions are preblocked; supported semantic conflicts go to the core.",
+  "defaults": "No inferred supplied column from product labels, no unit conversion, no guessed product or task identity. General method principles do not require a product or column.",
+  "source_policy": "The unchanged structured adapter is authoritative; caller text cannot approve E118-I or E121-EQ.",
+  "test_boundaries": "Preclassified ledgers and injected faults are internal test fixtures only, not public caller keys or example-ID routing."
+}

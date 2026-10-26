@@ -1,0 +1,122 @@
+{
+  "id": "free-text-GR02-human-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T15:28:06.380054+00:00",
+  "human_quote": "Je valide GR02 avec les réserves indiquées et l’ajout de l’origine « Pour le lavage » à [64, 78) pour E03. Enregistre ma décision et passons à GR03. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective approval for four GR02 examples with retained reservations and the explicit E03 origin addition; not four independent messages.",
+  "group_id": "GR02",
+  "decision": "validated_with_reservations",
+  "example_ids": [
+    "E02",
+    "E03",
+    "E06",
+    "E10"
+  ],
+  "example_bindings": [
+    {
+      "example_id": "E02",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "1687deaeee97699fa2ecbc4b0d549b2c03974cb9ffb9be5cffa074fe974edd10",
+      "input_sha256_utf8": "020e9a126138cac930dfc316d202f7ce6cc156cf958f126abe8c652c384576b6",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "447545696483c741c7add658b0c484cca9eb49b7fdf4fcbff5a375ddc266ef3e",
+      "retained_reservations": [
+        "Keep the 5 mL product label and contradictory 1 mL column field; do not resolve by proximity, last value or inventing two preparations.",
+        "Projection is for core clarification, not a supported documentary answer; shared stopping criteria do not resolve the input conflict."
+      ]
+    },
+    {
+      "example_id": "E03",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "49afc5e7fc9f24cef34b2ee416ba4783e65cf342708179ac850d5e28ec0b694a",
+      "input_sha256_utf8": "e5fd0ad242be01474e139cda6950d70fb5a4fb8280d9fb5cd0d8b93c99d5504f",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "b9adc4fd3f754afe965ef96dec86196ce235c7a78b7be6b6ed56671ef527aaa6",
+      "retained_reservations": [
+        "Washing owner remains unresolved between A and B; do not choose B by proximity or duplicate the request.",
+        "C remains independent; the washing stage is explicitly supported by Pour le lavage at [64,78).",
+        "Semantic comparison only until the structured form faithfully represents ambiguous ownership; no actual execution."
+      ]
+    },
+    {
+      "example_id": "E06",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "2185e019fbc38cad0ca353c995d2ba49030d7b94b5b582ad806824d4d9628930",
+      "input_sha256_utf8": "6b64a884cc2dc680b5ecc6c2cccca20843c7b2e690c639b275c7ab2f1872f942",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "8136d0a287f531554ec6f4312782511c55bab6ae76705d19e710ae6260c411da",
+      "retained_reservations": [
+        "Do not default a product, format or preparation identity.",
+        "Retain the known washing-flow unit in accounting despite empty projection; missing user context is not absence from the manual."
+      ]
+    },
+    {
+      "example_id": "E10",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "ed32cbef96561dbef8b812f256fc37ade21a50c4d223e1ee0190c265f701ba01",
+      "input_sha256_utf8": "f9b6e4fea427832b71312714ce927d01cbe7e85790d48d6178795a1b06a3355b",
+      "test_conditions_sha256_canonical": "ba54078516c04f6d3beb9dcb64f79dc636ad6b0ea852f5dde898684b1e75f861",
+      "origins_sha256_canonical": "8def3c39ac54713497378ca71a29ab01776e7659d0f0efaa347a2146f5c10922",
+      "retained_reservations": [
+        "Keep two distinct positive requests and one ambiguously scoped exclusion; do not invent two confirmed exclusions.",
+        "Both potentially affected units remain preblocked pending clarification; neither arbitrary allocation nor silent removal from accounting is allowed."
+      ]
+    }
+  ],
+  "approved_correction": {
+    "example_id": "E03",
+    "added_origin": {
+      "origin_id": "o-stage-u-wash",
+      "kind": "text_span",
+      "input_sha256_utf8": "e5fd0ad242be01474e139cda6950d70fb5a4fb8280d9fb5cd0d8b93c99d5504f",
+      "start": 64,
+      "end": 78,
+      "quote": "Pour le lavage"
+    },
+    "added_stage_assertion": {
+      "assertion_id": "a-stage-wash",
+      "role": "stage",
+      "subject_candidates": [
+        "A",
+        "B"
+      ],
+      "raw_lexeme": "Pour le lavage",
+      "normalized_value": "washing",
+      "origin_ids": [
+        "o-stage-u-wash",
+        "o-scope-A",
+        "o-scope-B"
+      ]
+    },
+    "stage_field_pointers": [
+      "/requested_units/0/stage/kind",
+      "/requested_units/0/stage/code"
+    ],
+    "input_unchanged": true,
+    "projection_unchanged": true,
+    "summary_unchanged": true,
+    "owner_remains_unresolved": true
+  },
+  "prior_document_sha256_lf": {
+    "docs/experiments/free-text-interface-examples-v01.json": "1fd025ada4f422513a75588890b9acdff3f7940eef2afd6a939b59f08f8355b7",
+    "docs/experiments/free-text-interface-group-review-v01.md": "b4f3adfd96b25db005a7867533788854a0d98aa585454e7787ca0201b7c11ccc",
+    "docs/experiments/structured-free-text-comparison-v01.json": "b9c8ed1ee9401ede6aeca1cea06d78bb1b228ef877aaba82f2a6a1502b6ed47f",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "69d408bcdfb73af843ec3e20bb480fd7c0841a7fce03b19374d0f19f71d6845e"
+  },
+  "reviewed_example_file_sha256_lf_at_decision": "c084cc2d256e94889d45e2d4ef43f36a87e80efa4a3ddb73b1c200da20a58590",
+  "other_fifteen_examples_unchanged": true,
+  "remaining_group_ids": [
+    "GR03",
+    "GR04"
+  ],
+  "limits": [
+    "Design/annotation approval only, not executed interpretation or planning.",
+    "No source approval, scientific validation, candidate freeze or prospective comparison."
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "planner_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

@@ -1,7 +1,7 @@
 # Free-text machine design v01: schemas and input/output expectations
 
 Date: 26 October 2026. **MC01-MC06 and clarifications approved; refined fixtures
-and their grouped review remain pending. No interpreter or bridge implementation,
+have all four groups GR01-GR04 validated with reservations. No interpreter or bridge implementation,
 freeze or comparison execution.** The [machine-design decision](../decisions/2026-10-26-free-text-machine-design-review.json)
 preserves the actual collective approval. FI01-FI06, IF01-IF14
 and the six preceding clarifications were approved in one
@@ -17,8 +17,8 @@ completed review of the newly refined individual origins and test conditions.
 | [Interpretation schema](free-text-interpretation-v01.schema.json) | Ledger, typed origins, literal assertions, tasks, known units, unresolved fragments, issues and projection/mapping definitions |
 | [Outcome schema](free-text-outcome-v01.schema.json) | Actual application-side bridge outcome, immutable core result or explicit absence/error, unit accounting, failure and timings |
 | [Examples](../experiments/free-text-interface-examples-v01.json) | Sixteen hand-specified I/O expectations and three invalid caller inputs; none is an observed F result |
-| [Current static checks](free-text-machine-design-checks-v02.json) | Revised fixture shapes, origin/pointer/hash and external-condition checks; no parser, planning or model inference |
-| [Grouped review](../experiments/free-text-interface-group-review-v01.md) | Four groups covering every refined example and invalid caller input; all decisions pending |
+| [Current static checks](free-text-machine-design-checks-v07.json) | Revised fixture shapes, origin/pointer/hash and external-condition checks after GR01-GR04; no parser, planning or model inference |
+| [Grouped review](../experiments/free-text-interface-group-review-v01.md) | Four groups covering every refined example and invalid caller input; GR01-GR04 validated with reservations |
 
 The schemas use JSON Schema Draft 2020-12 with closed application objects and
 versioned URNs. Existing structured definitions are referenced, not copied or
@@ -96,7 +96,7 @@ future runtime result is accepted, require all of the following:
    to a field is not evidence that its value follows from its text. Default or
    not-applicable claims must match reviewed policy. Refined fixtures now use
    focused request/scope/value spans and field-specific absence/default reasons;
-   their semantic entailment and exact spans remain pending group review.
+   their semantic entailment and exact spans are human-validated with reservations in GR01-GR04; this does not measure interpreter behavior.
 4. Every known unit is represented exactly once in the final unit outcomes.
    Counters and inventory flags agree; unknown possible requests prevent a
    complete-inventory claim. Report known-unit accounting separately from full
@@ -158,16 +158,14 @@ fragment boundary. E11/E16 declare external fault injection outside caller text;
 the same input as E04 does not secretly trigger a different route by example ID.
 Test conditions exist only in the design-example definition, not caller input.
 E01 is not a
-measured S/F comparison. All exact fixtures, origins and expected summary values
-remain pending human review. N01-N03 reject blank input, extra source-approval
+measured S/F comparison. GR01 fixtures (E01/E07/E08/E09/E14/E15), including the corrected E08 origin, are human-validated with reservations. GR02 fixtures (E02/E03/E06/E10), including the added E03 washing-stage origin, are also human-validated with reservations. GR03 fixtures (E04/E05/E12/E13) are human-validated with reservations, distinguishing caller-input E04 from the three preclassified-ledger bridge cases. GR04 fixtures E11/E16 and invalid inputs N01-N03 are also human-validated with reservations; fault injection remains external to caller input. N01-N03 reject blank input, extra source-approval
 keys and undeclared language. Shape/semantic corruption checks are separate from
 these interpretation examples and are not extra benchmark cases.
 
-## Next review
+## Review completed and next steps
 
-MC01-MC06 and their clarifications are approved. Review the refined examples in
-groups GR01-GR04, including exact origins, application/default justifications,
-preclassified/fault conditions and the rejection-audit example. Finalize the
-fixtures and language perimeter before implementation. Prior P/G
-text/form equivalence reviews and the future prospective dataset remain pending.
-No runtime code, existing schema, source policy or frozen S artifact is changed.
+MC01-MC06 and GR01-GR04 are approved with their recorded clarifications and reservations. All 16 design examples and three invalid-input cases have actual human decisions. The historical per-example preparation markers remain unchanged; live approvals and content bindings are recorded separately.
+
+E05/E12/E13 test a preclassified-ledger boundary, E11/E16 test external fault injection, and E04 starts from caller input. These distinctions must be preserved in implementation and reporting. No design expectation is an observed interpreter or core result.
+
+Next: consolidate the reviewed design package before separately requested implementation. Prior P/G text/form equivalence reviews and the future prospective dataset remain pending. No runtime code, existing schema, source policy or frozen S artifact is changed; E118-I/E121-EQ remain excluded.

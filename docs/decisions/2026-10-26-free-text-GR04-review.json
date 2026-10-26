@@ -1,0 +1,90 @@
+{
+  "id": "free-text-GR04-human-review-2026-10-26",
+  "recorded_at_utc": "2026-10-26T15:34:43.037016+00:00",
+  "human_quote": "Je valide GR04 avec les réserves indiquées. Enregistre ma décision et fais le bilan final de la revue des quatre groupes. Aucun LLM, API payante, commit ni push.",
+  "approval_basis": "One actual collective approval for E11/E16 and N01-N03 with the previously presented reservations; not five independent messages.",
+  "group_id": "GR04",
+  "decision": "validated_with_reservations",
+  "example_ids": [
+    "E11",
+    "E16"
+  ],
+  "example_bindings": [
+    {
+      "example_id": "E11",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "2278d507357b73b0b81a66fb33867b7355a849ee46afee19ad2d98e1488252b1",
+      "input_sha256_utf8": "a54ddf245664fc9d2c47658edc2f1efd3cd1868c22c078f20b3f5c0d6a411676",
+      "test_conditions_sha256_canonical": "bf9cfab3ca998301b3caa03363074318bd6df66c474fd39c62efc3188368bdae",
+      "origins_sha256_canonical": "51cff7820e68f269300c432481ae94f5eccb31679a26e7f1b721794efc799ed1",
+      "retained_reservations": [
+        "Fault injection is supplied by the test harness outside caller text, after valid interpretation; same input as E04 and E16, without example-ID routing.",
+        "Keep A preblocked and record a technical runtime error for C; two known units remain accounted for, one preblocked and one in error, with one expected core attempt.",
+        "Do not convert a technical failure into documentary absence or fabricate an answer; no source-policy override."
+      ]
+    },
+    {
+      "example_id": "E16",
+      "decision": "validated_with_reservations",
+      "example_sha256_canonical": "1ce30cbd824a1b06c3a670d0d7a759c0b12e2e69ec9ba44e65a5d4ad19ad3ed9",
+      "input_sha256_utf8": "a54ddf245664fc9d2c47658edc2f1efd3cd1868c22c078f20b3f5c0d6a411676",
+      "test_conditions_sha256_canonical": "dd8411c3a858ea4f3729d25401765360d61d419cbbc953f89e277f6fb127a649",
+      "origins_sha256_canonical": "c4ef117068ea4105d70b4b8415fc22377a383e68930326e1dfe929e85fc53ae1",
+      "retained_reservations": [
+        "Fault injection is supplied by the test harness outside caller text after valid interpretation; no example-ID routing.",
+        "Reject the synthetic projection with forbidden _test_extra before any core attempt; do not silently repair or submit it.",
+        "Preserve the rejected candidate, its canonical hash and root-pointer validation error; A remains preblocked and C receives a projection error."
+      ]
+    }
+  ],
+  "negative_input_bindings": [
+    {
+      "case_id": "N01",
+      "decision": "validated_with_reservations",
+      "case_sha256_canonical": "163d3abe9dd50fdbc6eb64594f7c8bcbd1370704f97affcbd9eed54124dccd1b",
+      "retained_reservations": [
+        "Reject whitespace-only input before interpretation or planning.",
+        "Do not fabricate a derived request inventory for a rejected caller envelope; caller input cannot enable test controls."
+      ]
+    },
+    {
+      "case_id": "N02",
+      "decision": "validated_with_reservations",
+      "case_sha256_canonical": "1a3bc281a7023784c31837bbc3bbcf645db676b1e06220915daca64c7bfeb546",
+      "retained_reservations": [
+        "Reject the extra approved_sources field; caller input cannot approve E121-EQ.",
+        "Do not fabricate a derived request inventory for a rejected caller envelope; caller input cannot enable test controls."
+      ]
+    },
+    {
+      "case_id": "N03",
+      "decision": "validated_with_reservations",
+      "case_sha256_canonical": "de77d38b450449404ca628a288e296dfc926f23fa575ac64f78af4a4eaf19ee3",
+      "retained_reservations": [
+        "Reject undeclared language de without guessing or automatic translation.",
+        "Do not fabricate a derived request inventory for a rejected caller envelope; caller input cannot enable test controls."
+      ]
+    }
+  ],
+  "prior_document_sha256_lf": {
+    "docs/experiments/free-text-interface-examples-v01.json": "c084cc2d256e94889d45e2d4ef43f36a87e80efa4a3ddb73b1c200da20a58590",
+    "docs/experiments/free-text-interface-group-review-v01.md": "4ec9f7e90a6cec875579b0b68af641192b0a1653916189794f716bfce1b52207",
+    "docs/experiments/structured-free-text-comparison-v01.json": "4b5253d4aaf60fdf556120b2f4a316a839eb0967e96cfd3be290e28b58b85d3a",
+    "docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md": "a5b56afea139c628087eb1b6d4a38e03d0f271f8020c854df3dcf4e621fd572c"
+  },
+  "reviewed_example_file_sha256_lf_at_decision": "c084cc2d256e94889d45e2d4ef43f36a87e80efa4a3ddb73b1c200da20a58590",
+  "all_examples_unchanged": true,
+  "remaining_group_ids": [],
+  "limits": [
+    "Design and annotation approval only; injected failures are expectations, not observed runtime failures.",
+    "No interpreter, bridge, candidate freeze or prospective comparison execution.",
+    "No source approval or scientific suitability validation."
+  ],
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "planner_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

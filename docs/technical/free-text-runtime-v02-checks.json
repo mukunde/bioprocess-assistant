@@ -1,0 +1,77 @@
+{
+  "id": "free-text-runtime-v02-correction-checks",
+  "verified_at_utc": "2026-10-26T17:22:33.084301+00:00",
+  "status": "five_findings_corrected_no_remaining_blocker_identified_in_reviewed_scope",
+  "baseline_main_commit": "e82de807532b0a51fad5efe7ba84560aaf40e6c8",
+  "full_suite": {
+    "tests": 603,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 33,
+    "elapsed_seconds": 172.176,
+    "real_S_trial_repeated": false
+  },
+  "original_IF01_IF14_tests_unchanged": 33,
+  "new_review_regression_tests": 14,
+  "targeted_tests_passed": 47,
+  "finding_regression_inventory": {
+    "R01": [
+      "test_r01_mixed_request_and_exclusion_keeps_positive_denominator",
+      "test_r01_binding_facet_not_contaminated_by_later_elution_ban",
+      "test_r01_restriction_before_positive_command_does_not_consume_it",
+      "test_r01_french_mixed_clause_preserves_offsets_and_polarity"
+    ],
+    "R02": [
+      "test_r02_precise_exclusion_does_not_ban_other_information",
+      "test_r02_phase_only_coordination_keeps_owner_and_c_independent",
+      "test_r02_unrepresentable_scoped_restriction_blocks_a_not_c"
+    ],
+    "R03": [
+      "test_r03_inconsistent_unit_selector_or_phase_rejected_before_core",
+      "test_r03_forged_ledger_values_cannot_reuse_real_origins",
+      "test_r03_projection_context_tampering_rejected_with_candidate_audit",
+      "test_r03_projection_cannot_drop_or_widen_an_exclusion"
+    ],
+    "R04": [
+      "test_r04_explicit_unknown_column_is_not_not_stated"
+    ],
+    "R05": [
+      "test_r05_each_selector_uses_its_explicit_owner",
+      "test_r05_prefix_owner_is_not_a_suffix_of_previous_selector"
+    ]
+  },
+  "component_sha256_lf": {
+    "ingestion/free_text_contract.py": "c64139801938c9297168683c7dbf72283f6bc4893bf971dcb472e5dcce81b3a6",
+    "ingestion/free_text_interpreter.py": "8108b6c50d17fb6d0adb27c660b15ae3897fe6c6a7b1fe10958d600afe0574f9",
+    "ingestion/free_text_bridge.py": "dac29e4f4203909ea61a4fd7f68af7f5c1cb26eee164dc3a3726f056f7e8ae85",
+    "tests/test_free_text_interface.py": "5187bd0d026a773099c403ba14557ff8cc33311a2ab0e4d591eb91c57c1c3fd6",
+    "tests/test_free_text_review_regressions.py": "c6da6eda7663bdc7d6580aa0a9e373103a2fb22c502fd9e3fcb8953e462bdaeb",
+    "docs/technical/free-text-runtime-policy-v01.json": "60b590e45700ce2e8f949b340b63dd87539912df96e11611c4ef1f516c4d8cfb",
+    "docs/technical/FREE-TEXT-RUNTIME-V01.md": "bd81922635c10dcd385009f5cc7934806bbc05b11a0d9acf8ebcf8ff0eb0d3ca",
+    "docs/technical/FREE-TEXT-RUNTIME-REVIEW-V02.md": "5d09a1b34bb19ff909afc19b6c6c54c77458314afc3a8b20e84968021e67a01e"
+  },
+  "historical_v01_report_sha256_lf": "79b051f214031feb83ed62114ec92170867c181195dd6115efcf9312be13eff0",
+  "reviewed_GR01_GR04_examples_and_decisions_unchanged": true,
+  "frozen_baseline_unchanged": true,
+  "all_previously_tracked_files_unchanged": true,
+  "old_16_notes_byte_identical_and_untracked": true,
+  "git_index_empty": true,
+  "freeze_performed": false,
+  "prospective_evaluation_run": false,
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  },
+  "limits": [
+    "Bounded EN/FR grammar; unsupported constructions are retained explicitly rather than guessed.",
+    "Unknown column state is preserved; the common engine remains authoritative for qualified-label/format resolution.",
+    "Internal preclassified ledgers and injected failures remain separate from caller-input tests.",
+    "No universal semantic entailment, scientific suitability, serving activation or held-out accuracy is established.",
+    "P/G equivalence review and a new human-reviewed prospective paired dataset remain planned after a separately requested freeze."
+  ]
+}

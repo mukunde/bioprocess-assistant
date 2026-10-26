@@ -1,0 +1,65 @@
+{
+  "id": "free-text-runtime-delivery-v01",
+  "document_kind": "implementation_delivery_manifest",
+  "prepared_at_utc": "2026-10-26T17:39:09.407387+00:00",
+  "status": "prepared_not_committed_or_frozen",
+  "baseline_main_commit": "e82de807532b0a51fad5efe7ba84560aaf40e6c8",
+  "proposed_branch": "codex/free-text-runtime",
+  "proposed_commit_subject": "feat(cytiva): add deterministic EN/FR interpreter and structured bridge",
+  "proposed_commit_body": "Preserve literal provenance, scoped exclusions and whole-request accounting.\nValidate ledger/projection consistency before a single unchanged core invocation.\nAdd IF01-IF14 coverage, review regressions and the corrected implementation report.",
+  "file_count": 12,
+  "files": [
+    "ingestion/free_text_contract.py",
+    "ingestion/free_text_interpreter.py",
+    "ingestion/free_text_bridge.py",
+    "tests/test_free_text_interface.py",
+    "tests/test_free_text_review_regressions.py",
+    "docs/technical/free-text-runtime-policy-v01.json",
+    "docs/technical/FREE-TEXT-RUNTIME-V01.md",
+    "docs/technical/FREE-TEXT-RUNTIME-REVIEW-V02.md",
+    "docs/technical/free-text-runtime-v01-checks.json",
+    "docs/technical/free-text-runtime-v02-checks.json",
+    "docs/technical/free-text-runtime-package-v01.md",
+    "docs/technical/free-text-runtime-package-v01.json"
+  ],
+  "hash_policy": "SHA256 bytes with CRLF normalized to LF; manifest itself is excluded to avoid a hash cycle.",
+  "artifact_sha256_lf": {
+    "ingestion/free_text_contract.py": "c64139801938c9297168683c7dbf72283f6bc4893bf971dcb472e5dcce81b3a6",
+    "ingestion/free_text_interpreter.py": "8108b6c50d17fb6d0adb27c660b15ae3897fe6c6a7b1fe10958d600afe0574f9",
+    "ingestion/free_text_bridge.py": "dac29e4f4203909ea61a4fd7f68af7f5c1cb26eee164dc3a3726f056f7e8ae85",
+    "tests/test_free_text_interface.py": "5187bd0d026a773099c403ba14557ff8cc33311a2ab0e4d591eb91c57c1c3fd6",
+    "tests/test_free_text_review_regressions.py": "c6da6eda7663bdc7d6580aa0a9e373103a2fb22c502fd9e3fcb8953e462bdaeb",
+    "docs/technical/free-text-runtime-policy-v01.json": "60b590e45700ce2e8f949b340b63dd87539912df96e11611c4ef1f516c4d8cfb",
+    "docs/technical/FREE-TEXT-RUNTIME-V01.md": "bd81922635c10dcd385009f5cc7934806bbc05b11a0d9acf8ebcf8ff0eb0d3ca",
+    "docs/technical/FREE-TEXT-RUNTIME-REVIEW-V02.md": "5d09a1b34bb19ff909afc19b6c6c54c77458314afc3a8b20e84968021e67a01e",
+    "docs/technical/free-text-runtime-v01-checks.json": "79b051f214031feb83ed62114ec92170867c181195dd6115efcf9312be13eff0",
+    "docs/technical/free-text-runtime-v02-checks.json": "12e2855493786848932e8f07eaf976ce4f39bea137f26ddd654570b08926fe92",
+    "docs/technical/free-text-runtime-package-v01.md": "482e9daf7f2e7923c72b4bbae57c74d9033be9c1bcc85ce56179cb6203e73f92"
+  },
+  "checks": {
+    "current_v02_component_hashes_verified": true,
+    "historical_v01_report_unchanged": true,
+    "full_suite_record_verified": 603,
+    "targeted_tests_record_verified": 47,
+    "test_method_counts": [
+      33,
+      14
+    ],
+    "IF01_IF14_and_R01_R05_inventory_verified": true,
+    "local_markdown_links_checked": 10,
+    "no_code_changes_since_complete_run": true,
+    "tests_rerun_for_packaging": false,
+    "previously_tracked_files_unchanged": true,
+    "frozen_baseline_hashes_unchanged": true,
+    "excluded_old_notes_count": 16,
+    "excluded_old_notes_byte_identical": true,
+    "git_index_empty": true,
+    "freeze_performed": false,
+    "prospective_evaluation_performed": false
+  },
+  "limits": [
+    "Bounded deterministic grammar, not universal semantic entailment or scientific validation.",
+    "P/G equivalence review and a new reviewed prospective paired dataset remain planned.",
+    "No serving path is activated; private notes and raw artifacts are excluded."
+  ]
+}

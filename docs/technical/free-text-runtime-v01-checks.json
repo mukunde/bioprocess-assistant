@@ -1,0 +1,91 @@
+{
+  "id": "free-text-runtime-v01-implementation-checks",
+  "verified_at_utc": "2026-10-26T16:41:18.574637+00:00",
+  "status": "passed_local_implementation_checks_not_frozen",
+  "baseline_main_commit": "e82de807532b0a51fad5efe7ba84560aaf40e6c8",
+  "full_suite": {
+    "tests": 589,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 33,
+    "elapsed_seconds": 149.155,
+    "real_S_trial_repeated": false
+  },
+  "new_test_methods": 33,
+  "IF01_IF14_runtime_test_inventory": {
+    "IF01": [
+      "test_if01_en_fr_positive_requests_one_call"
+    ],
+    "IF02": [
+      "test_if02_conflict_preserves_both_assertions_no_split"
+    ],
+    "IF03": [
+      "test_if03_unresolved_owner_not_duplicated_independent_c"
+    ],
+    "IF04": [
+      "test_if04_policy_override_and_warning_conflict_keep_c"
+    ],
+    "IF05": [
+      "test_if05_preclassified_partial_selector_only",
+      "test_if05_surviving_selector_keeps_applicable_task_exclusion"
+    ],
+    "IF06": [
+      "test_if06_all_blocked_no_dummy_core_or_context"
+    ],
+    "IF07": [
+      "test_if07_negation_and_not_only_addition"
+    ],
+    "IF08": [
+      "test_if08_false_and_distinct_volume_roles"
+    ],
+    "IF09": [
+      "test_if09_unicode_decimal_original_hashes_and_map"
+    ],
+    "IF10": [
+      "test_if10_ambiguous_exclusion_keeps_both_requests"
+    ],
+    "IF11": [
+      "test_if11_core_failure_retains_preblock_and_no_retry",
+      "test_if11_projection_rejection_audit_no_silent_repair"
+    ],
+    "IF12": [
+      "test_if12_shared_core_semantics_under_one_ordered_id_bijection",
+      "test_if12_projection_preserves_task_and_item_order"
+    ],
+    "IF13": [
+      "test_if13_missing_origin_rejected_and_incomplete_inventory"
+    ],
+    "IF14": [
+      "test_if14_removed_item_ban_stays_local_shared_fact_survives"
+    ]
+  },
+  "frozen_baseline_unchanged": true,
+  "all_previously_tracked_files_unchanged": true,
+  "reviewed_GR_records_and_examples_unchanged": true,
+  "old_16_local_notes_byte_identical_and_untracked": true,
+  "git_index_empty": true,
+  "component_sha256_lf": {
+    "ingestion/free_text_contract.py": "73cfee5d40da6e43a484f5ce44566e0664e55fe4b4c0aaa9b74f146503ee8444",
+    "ingestion/free_text_interpreter.py": "ada003d9d7b5f5eb4a437fe631cb61e2491a6c64a9037b51cd8b0275eeb9b5fe",
+    "ingestion/free_text_bridge.py": "c0a7cb266095025831f324f227582c06b7c0595f8e97509f209e6d84326c6d94",
+    "docs/technical/free-text-runtime-policy-v01.json": "423f3f84f65fe1a8c67b4da51c00be044f5e497102ad48045f91dd37a536a019",
+    "docs/technical/FREE-TEXT-RUNTIME-V01.md": "85dbc6ca7160042e458e3119e920333891dd24503e9e4f95ece31a47d3d80db6",
+    "tests/test_free_text_interface.py": "5187bd0d026a773099c403ba14557ff8cc33311a2ab0e4d591eb91c57c1c3fd6"
+  },
+  "operations": {
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "prospective_comparisons": 0,
+    "commits": 0,
+    "pushes": 0
+  },
+  "limits": [
+    "Bounded EN/FR grammar; unsupported substantive text remains explicit and blocks full-inventory claims.",
+    "E05/E12/E13 are internal preclassified-ledger tests; E11/E16 failures are injected outside caller input.",
+    "No chatbot path activated, no scientific suitability or generated-answer quality evaluated.",
+    "IF12 development conformance does not replace pending P/G equivalence review or a new prospective paired dataset."
+  ]
+}

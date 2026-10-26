@@ -1,0 +1,84 @@
+{
+  "source_run": "structured-control-evaluation-v01/locked-run",
+  "reservation": {
+    "status": "reserved_no_retry",
+    "integrity": "verified",
+    "scenarios": 12,
+    "structured_submissions": 24,
+    "pending_human_reviews": 12,
+    "manifest_sha256_lf": "e37ae3c4d00e254fcc422e1aea4c8c9b8f2532237415445c72a7975b6182f84d",
+    "method_lock_sha256_lf": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+    "evaluation_executed_by_this_command": false
+  },
+  "verification": {
+    "status": "completed",
+    "network_attempts": [],
+    "frozen_files_unchanged": true,
+    "earlier_files_unchanged": true,
+    "review_sha256_canonical": "216e02b694efdf76c57022a41ddc3fd59f57d2a3ec72f04f2c787b5804652780"
+  },
+  "original_artifact_sha256_lf": {
+    "contexts-unscored.json": "9f7a200caeae0d8c12fb4545b4cbc9c0ecd16fc686e48fb9f05a83fd52ac0f64",
+    "metrics.json": "bd11fa97656b4b17b448eda978a30f1f41825dfefbf5dc6a490888aa8a4f6fab",
+    "human-review-snapshot.json": "0d9a40e1827ce4e914cd353ce12170267cd617c7df787ae523c4d5773ad71700",
+    "verification.json": "1be6ceb521630934b094d70f6441d6c2e3587014f903965d8bd23e541b044e37",
+    "reservation.json": "5fe442374551f78129a5474a0685071bb8c7aa7c157045951761bf7785ba64e6"
+  },
+  "source_pdf": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "document_reference": "CY13981-25Jan21-HB",
+    "edition_metadata_origin": "Existing project registry; not newly certified"
+  },
+  "recorded_summary": {
+    "id": "structured-control-s01-s12-frozen-results",
+    "date": "2026-10-26",
+    "manifest_sha256_lf": "e37ae3c4d00e254fcc422e1aea4c8c9b8f2532237415445c72a7975b6182f84d",
+    "method_lock_sha256_lf": "36e6e1b0888e9e7b92eca89eb33dbc79986eb4263e43cc9a47609dac9d2248b9",
+    "saved_submissions": 24,
+    "passed_submissions": 24,
+    "passed_paired_scenarios": 12,
+    "bilingual_semantic_failures": [],
+    "gate": "context_and_diagnostics_pass",
+    "runtime_errors": 0,
+    "network_attempts": [],
+    "excluded_source_ids": [
+      "E118-I",
+      "E121-EQ"
+    ],
+    "excluded_source_assignments": 0,
+    "unit_states_per_scenario_counted_once": {
+      "supported": 21,
+      "needs_clarification": 5,
+      "quarantined": 3,
+      "unsupported_selector": 2,
+      "missing_source": 2,
+      "unsupported_transformation": 1,
+      "out_of_scope": 1
+    },
+    "context_tokens_min": 348,
+    "context_tokens_max": 1504,
+    "selected_roots_max": 2,
+    "timing_descriptive_only": {
+      "runtime_initialization_ms": 317.2412000130862,
+      "first_evaluation_ms": 862.4386999872513,
+      "other_evaluations_min_ms": 44.817599991802126,
+      "other_evaluations_max_ms": 99.03430001577362,
+      "other_evaluations_median_ms": 70.52070001373067
+    },
+    "frozen_files_unchanged": true,
+    "earlier_files_unchanged": true,
+    "answer_quality_evaluated": false,
+    "free_text_interpretation_evaluated": false,
+    "automatic_adoption": false
+  },
+  "tokenizer": {
+    "name": "cl100k_base",
+    "tiktoken_version": "0.12.0",
+    "asset_sha256": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7"
+  },
+  "scope": "Known-source, known-code structured diagnostic challenge; paired EN/FR observations are correlated. No free-text or generated-answer evaluation, scientific validation or automatic adoption.",
+  "preservation_limit": "Historical run attestation; private intermediate inventories and absolute paths are not exported. Raw local run and review records remain unchanged.",
+  "portable_verification_limit": "Frozen scorer rechecks saved states, sources, dependencies, bindings, aggregates and recorded resource bounds. Original run recounted tokens; portable stdlib verification does not retokenize or execute planning."
+}

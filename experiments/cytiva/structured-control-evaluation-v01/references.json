@@ -1,0 +1,2104 @@
+{
+  "status": "pending_human_review",
+  "source_pdf": {
+    "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+    "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+    "pdf_page_count": 183,
+    "document_reference": "CY13981-25Jan21-HB",
+    "edition_metadata_origin": "Existing project registry; not newly certified"
+  },
+  "source_registry_file": "experiments/cytiva/contaminants-pilot-v01/evidence.json",
+  "source_review_manifest_sha256_lf": "6b997e9c3eb5a1a3d6e7e3f2ad5a90b9a2259b9498f04df995c5407447d18ef1",
+  "eligible_source_ids": [
+    "E118-USE",
+    "E118-C",
+    "E118-M",
+    "E119-BH",
+    "E119-B",
+    "E119-BI",
+    "E119-S",
+    "E119-X",
+    "E119-AH",
+    "E119-A",
+    "E119-I",
+    "E119-H",
+    "E119-BL",
+    "E120-H",
+    "E120-A",
+    "E120-U",
+    "E120-W",
+    "E120-P",
+    "E121-BH",
+    "E121-B",
+    "E121-PH",
+    "E121-L",
+    "E121-W",
+    "E121-E",
+    "E121-F"
+  ],
+  "excluded_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "source_passages": [
+    {
+      "id": "E118-M",
+      "pdf_page_1based": 118,
+      "pdf_page_index_0based": 117,
+      "printed_page": "118",
+      "quote": " Select chromatography techniques that utilize differences in the characteristics of the contaminant and target \nmolecule: ion exchange chromatography (IEX) for separation by differences in charge; hydrophobic interaction \nchromatography (HIC) for separation by differences in hydrophobicity; and size exclusion chromatography (SEC) for \nseparation by size. See Appendix 9 for an overview of the principles of the chromatography techniques used  \nat laboratory scale.",
+      "quote_sha256": "65a84cb4b12cfd35901e7245c9be1bef786860db8b80fd1b212b38bd6ee0cb3c",
+      "page_text_start": 1580,
+      "page_text_end": 2047,
+      "scope": "Contaminants after initial antibody purification; laboratory-scale guidance",
+      "role": "method_selection",
+      "visual_region": "second advice paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E120-A",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "Blue Sepharose 6 Fast Flow or prepacked HiTrap Blue HP 1 mL and 5 mL columns (Fig 4.2) can be used to remove albumin \neither before or after other purification steps (see Table 4.1). The albumin binds in a nonspecific manner by electrostatic \nand/or hydrophobic interactions with the aromatic anionic ligand, Cibacron Blue F3G-A, coupled to Sepharose.",
+      "quote_sha256": "d457eb060e8461acc32b0ed4ed355f2d04d9a626f436e9cd0cb7704ee5cdced4",
+      "page_text_start": 61,
+      "page_text_end": 412,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "product_scope_and_mechanism",
+      "visual_region": "top left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-H",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "Removal of albumin using Blue Sepharose chromatography media",
+      "quote_sha256": "cf0861746d3aa51923ea1e6aaae14a792a33c66c8ac9b81da63b7cd6857f1d8a",
+      "page_text_start": 0,
+      "page_text_end": 60,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "section_heading",
+      "visual_region": "top left heading",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [],
+      "quarantined": false
+    },
+    {
+      "id": "E120-P",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": "The protocol for removal of albumin using HiTrap Blue HP 1 mL and 5 mL columns is described below.",
+      "quote_sha256": "8f1eaab7e91708443d6a516475fbe99cf6bd74c42128b2af304e27657db19024",
+      "page_text_start": 1872,
+      "page_text_end": 1970,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "cross_page_protocol_scope",
+      "visual_region": "bottom left paragraph",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H",
+        "E120-W"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E120-W",
+      "pdf_page_1based": 120,
+      "pdf_page_index_0based": 119,
+      "printed_page": "120",
+      "quote": " Do not use Blue Sepharose chromatography media if the immunoglobulin or other target molecule has a \nhydrophobicity similar to that of albumin.",
+      "quote_sha256": "642c9862aa8781018e99a2c9897854a1a677c97c2e68bd28e1d5aeaadd4e854f",
+      "page_text_start": 632,
+      "page_text_end": 776,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "warning",
+      "visual_region": "warning above table",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-H"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-B",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Binding buffer: 20 mM sodium phosphate, pH 7.0, or 50 mM potassium hydrogen phosphate (KH 2PO4), pH 7.0\nElution buffer: 0.02 M sodium phosphate, 2 M sodium chloride, pH 7.0, or 0.05 M potassium hydrogen phosphate, \n1.5 M potassium chloride, pH 7.0",
+      "quote_sha256": "bbe92945231d9c82b5d77b08b1c9eb4dc47cdb612a1732fa9d2e25e4a6aa9fb8",
+      "page_text_start": 0,
+      "page_text_end": 247,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "buffer_alternatives",
+      "visual_region": "orange buffer box, upper left",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-BH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-BH",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Buffer preparation",
+      "quote_sha256": "86e72933c928c728d0277e231df9978349a323149e840e5ef77aec9e83164b3e",
+      "page_text_start": 1912,
+      "page_text_end": 1930,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "buffer_heading",
+      "visual_region": "top left heading despite late native-text order",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-P"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-E",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 7. Elute with elution buffer using a one-step or linear gradient. For step elution, 5 column volumes is usually \nsufficient. For linear gradient elution, 10 to 20  column volumes are usually sufficient. Maintain a flow rate of  \n1 to 2 mL/min (1 mL column) and 5 to 10 mL/min (5 mL column) for elution.",
+      "quote_sha256": "e2cb1e39abbe1be68e2a9c37de255d9b1df49264d5f9c635e92ee799c02fd46e",
+      "page_text_start": 1265,
+      "page_text_end": 1568,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "elution_alternatives",
+      "visual_region": "green protocol box step 7",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-F",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "*       1 mL/min corresponds to approximately 30 drops/min when using a syringe with a 1 mL HiTrap column; 5 mL/min corresponds to approximately \n120 drops/min when using a 5 mL HiTrap column",
+      "quote_sha256": "60150c398638bde7024189e42f5200066cc28a27710339f968af191102adc0b9",
+      "page_text_start": 1720,
+      "page_text_end": 1911,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "sample_application_footnote",
+      "visual_region": "footnote under green protocol box",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-L",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 5. Apply the sample using a syringe fitted to the Luer connector or by pumping it onto the column. For optimal \nresults, use a flow rate of 0.2 to 1 mL/min (1 mL column) and 0.5 to 5 mL/min (5 mL column) during sample \napplication*.",
+      "quote_sha256": "c85ab1e3b05380fe87353a29c0e949e026f9ce408dba5f14644cffdf3d8b703c",
+      "page_text_start": 770,
+      "page_text_end": 1003,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "sample_application",
+      "visual_region": "green protocol box step 5",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH",
+        "E121-F"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-PH",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": "Albumin removal",
+      "quote_sha256": "f708d870fb373002f24aa04554ec0a9e6cba4efe169e3286ba1dd898766b44f5",
+      "page_text_start": 1931,
+      "page_text_end": 1946,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "protocol_heading",
+      "visual_region": "heading above green protocol box",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E120-P"
+      ],
+      "quarantined": false
+    },
+    {
+      "id": "E121-W",
+      "pdf_page_1based": 121,
+      "pdf_page_index_0based": 120,
+      "printed_page": "121",
+      "quote": " 6. Wash with binding buffer (generally at least 5 to 10 column volumes) until the absorbance reaches a steady \nbaseline or no material remains in the effluent. Maintain a flow rate of 1 to 2 mL/min (1 mL column) and  \n5 to 10 mL/min (5 mL column) for washing.",
+      "quote_sha256": "e2ff3ff7dcdfa2b00c0863bc64d7cb07bff07e6e7f83489581fe2a6291453cc3",
+      "page_text_start": 1004,
+      "page_text_end": 1264,
+      "scope": "Albumin removal using Blue Sepharose / HiTrap Blue HP 1 mL and 5 mL",
+      "role": "wash_conditions",
+      "visual_region": "green protocol box step 6",
+      "association_basis": "Assistant visual check of Poppler rendering; pending human review",
+      "human_review_status": "pending",
+      "requires": [
+        "E121-PH"
+      ],
+      "quarantined": false
+    }
+  ],
+  "publication_allowed": false,
+  "answer_quality_evaluated": false,
+  "references": [
+    {
+      "question_id": "S01",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-elution-buffer",
+          "information": "buffer_formulation",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-B"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-BH",
+              "E121-B"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "preparation",
+              "code": "buffer_preparation"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "provided",
+                "value": "elution"
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-wash",
+          "information": "column_volumes",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-W"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-W"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "washing"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-wash",
+          "information": "stopping_criteria",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-W"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-W"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "washing"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-B",
+        "E121-BH",
+        "E121-PH",
+        "E121-W"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-BH",
+        "E121-B",
+        "E121-PH",
+        "E121-W"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": false,
+        "has_unserved_units": false
+      },
+      "expected_answer_en": "A: 0.02 M sodium phosphate, 2 M sodium chloride, pH 7.0, OR 0.05 M potassium hydrogen phosphate, 1.5 M potassium chloride, pH 7.0. B: binding-buffer wash, generally at least 5 to 10 column volumes, until a steady absorbance baseline OR no material remains in the effluent. Preserve the product warning; do not supply operating elution or flow.",
+      "expected_answer_fr": "A : 0,02 M de phosphate de sodium, 2 M de chlorure de sodium, pH 7,0, OU 0,05 M d’hydrogénophosphate de potassium, 1,5 M de chlorure de potassium, pH 7,0. B : lavage au tampon de fixation, généralement au moins 5 à 10 CV, jusqu’à une ligne de base d’absorbance stable OU l’absence de matière dans l’effluent. Conserver l’avertissement du produit ; ne pas fournir d’élution opératoire ni de débit.",
+      "reservations": [
+        "Keep A/B distinct; the stated 5 mL product label is explicit input, not an inferred size.",
+        "Do not pair alternative buffers or turn CV into mL.",
+        "The target hydrophobicity/applicability is not established; retain E120-W."
+      ]
+    },
+    {
+      "question_id": "S02",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "flow_rate",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-L"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-F",
+              "E121-L"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "sample_application"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "provided",
+                "value": "note_lookup"
+              }
+            }
+          }
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "syringe_correspondence",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-F"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-F",
+              "E121-L"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "sample_application"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "provided",
+                "value": "note_lookup"
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-elute",
+          "information": "flow_rate",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-E"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-E"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "elution"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-E",
+        "E121-F",
+        "E121-L",
+        "E121-PH"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-F",
+        "E121-L",
+        "E121-E"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": false,
+        "has_unserved_units": false
+      },
+      "expected_answer_en": "A: for optimal sample application, 0.5 to 5 mL/min; the specific 5 mL-column syringe reference is 5 mL/min corresponding to approximately 120 drops/min. B: elution flow 1 to 2 mL/min. Opposite-format exclusions do not conflict with the explicitly selected formats; they are not whole-product bans.",
+      "expected_answer_fr": "A : pour un chargement optimal, 0,5 à 5 mL/min ; pour la note spécifique à la colonne de 5 mL, 5 mL/min correspondent à environ 120 gouttes/min avec la seringue. B : débit d’élution de 1 à 2 mL/min. Les exclusions du format opposé ne visent pas les formats explicitement sélectionnés et ne constituent pas des interdictions de tout le produit.",
+      "reservations": [
+        "Preserve optimal-results and approximate-note qualifications.",
+        "No universal drop conversion, operating duration or chosen elution recipe.",
+        "Preserve E120-W and the separate task/column bindings."
+      ]
+    },
+    {
+      "question_id": "S03",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-end",
+          "information": "stopping_criteria",
+          "expected": {
+            "state": "needs_clarification",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [
+            "unresolved_binding"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-principles",
+          "information": "principle",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E118-M"
+          ],
+          "required_source_sets": [
+            [
+              "E118-M"
+            ]
+          ],
+          "binding": {
+            "product_ref": null,
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "stage": {
+              "kind": "general_topic",
+              "code": "method_selection"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E118-M"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-W",
+        "E118-M"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "A needs its column format clarified to scope the exclusion; do not choose 5 mL by elimination or admit A-specific operating context. B: SEC separates by size; HIC by hydrophobicity differences. No contaminant or technique is selected.",
+      "expected_answer_fr": "Il faut clarifier le format de A pour appliquer l’exclusion ; ne pas choisir 5 mL par élimination ni attribuer de contexte opératoire à A. B : la SEC sépare selon la taille ; la HIC selon les différences d’hydrophobicité. Aucun contaminant ni aucune technique ne sont sélectionnés.",
+      "reservations": [
+        "Washing endpoints are shared in the source, but this format-specific permission scope is unresolved.",
+        "General B support remains independent; no diagnosis or process suitability is established."
+      ]
+    },
+    {
+      "question_id": "S04",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "flow_rate",
+          "expected": {
+            "state": "needs_clarification",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [
+            "conflicting_exclusion"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-binding",
+          "information": "buffer_formulation",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-B"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-BH",
+              "E121-B"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "preparation",
+              "code": "buffer_preparation"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "provided",
+                "value": "binding"
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-B",
+        "E121-BH"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-F",
+        "E121-L",
+        "E121-BH",
+        "E121-B"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "Clarify the same-item loading inclusion/exclusion conflict and withhold its flow. Binding formulations remain available: 20 mM sodium phosphate, pH 7.0, OR 50 mM potassium hydrogen phosphate (printed KH 2PO4), pH 7.0. Keep both alternatives and the warning without silently correcting nomenclature.",
+      "expected_answer_fr": "Clarifier le conflit d’inclusion/exclusion du chargement et retenir son débit. Les formulations de fixation restent disponibles : 20 mM de phosphate de sodium, pH 7,0, OU 50 mM d’hydrogénophosphate de potassium (notation imprimée KH 2PO4), pH 7,0. Conserver les alternatives et l’avertissement sans correction implicite de nomenclature.",
+      "reservations": [
+        "The restriction belongs only to A-load; it must not suppress A-binding.",
+        "Printed formulation fidelity is not independent chemical validation."
+      ]
+    },
+    {
+      "question_id": "S05",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-flow",
+          "information": "flow_rate",
+          "expected": {
+            "state": "needs_clarification",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [
+            "missing_context"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-position",
+          "information": "relative_position_in_workflow",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E120-A"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-A",
+              "E120-W"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "stage": {
+              "kind": "general_topic",
+              "code": "product_applicability"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-flow",
+          "information": "flow_rate",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-W"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-W"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "washing"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-A",
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-PH",
+        "E121-W"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-A",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-W"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true,
+        "selected_root_ids": [
+          "E120-A",
+          "E121-W"
+        ]
+      },
+      "expected_answer_en": "A washing flow needs a size; do not borrow B’s 1 mL. The manual permits albumin removal before or after other purification steps; retain the warning not to use this medium when target hydrophobicity is similar to albumin, whose applicability is unknown here. B washing flow is 1 to 2 mL/min. First admissible roots are A-position then B-flow.",
+      "expected_answer_fr": "Le débit de lavage de A nécessite sa taille ; ne pas emprunter le format 1 mL de B. Le manuel permet le retrait de l’albumine avant ou après les autres étapes ; conserver l’avertissement de ne pas utiliser le milieu si l’hydrophobicité de la cible est similaire à celle de l’albumine, condition inconnue ici. Pour B, le débit de lavage est de 1 à 2 mL/min. Les premières racines admissibles sont celles de A-position puis B-flow.",
+      "reservations": [
+        "Unknown hydrophobicity remains unknown; no process authorization.",
+        "Skip blocked A-flow when interleaving admissible items.",
+        "The expected selected-root order is a plan-level criterion, not a procedural sequence."
+      ]
+    },
+    {
+      "question_id": "S06",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-equilibrate",
+          "information": "flow_rate",
+          "expected": {
+            "state": "quarantined",
+            "interpretation_state": "ready",
+            "documentary_support_state": "quarantined"
+          },
+          "required_diagnostic_codes": [
+            "quarantined"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-equilibrate",
+          "information": "buffer_role",
+          "expected": {
+            "state": "quarantined",
+            "interpretation_state": "ready",
+            "documentary_support_state": "quarantined"
+          },
+          "required_diagnostic_codes": [
+            "quarantined"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-wash-buffer",
+          "information": "buffer_role",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-W"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-W"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "washing"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-ion",
+          "information": "principle",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E118-M"
+          ],
+          "required_source_sets": [
+            [
+              "E118-M"
+            ]
+          ],
+          "binding": {
+            "product_ref": null,
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "stage": {
+              "kind": "general_topic",
+              "code": "method_selection"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-ion",
+          "information": "ph_vs_pi_condition",
+          "expected": {
+            "state": "quarantined",
+            "interpretation_state": "ready",
+            "documentary_support_state": "quarantined"
+          },
+          "required_diagnostic_codes": [
+            "quarantined"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        }
+      ],
+      "acceptable_context_ids": [
+        "E118-M",
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-PH",
+        "E121-W"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-W",
+        "E118-M"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": false,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "Withhold equilibration parameters and the pH/pI rule because their relevant sources remain quarantined. Washing uses binding buffer. General ion exchange separates by charge differences; retain the cation-exchange subtype without reconstructing a specific pH/pI rule. No loading/washing values substitute for equilibration.",
+      "expected_answer_fr": "Retenir les paramètres d’équilibrage et la règle pH/pI, car les sources concernées restent en quarantaine. Le lavage utilise le tampon de fixation. L’échange d’ions sépare selon les différences de charge ; conserver le sous-type cationique sans reconstruire de règle pH/pI. Ne pas substituer les valeurs de chargement ou de lavage à l’équilibrage.",
+      "reservations": [
+        "E118-I and E121-EQ remain excluded; their text is not admitted as reference context.",
+        "General E118-M support does not certify the withheld cation-exchange condition."
+      ]
+    },
+    {
+      "question_id": "S07",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-joint",
+          "information": "flow_rate",
+          "expected": {
+            "state": "unsupported_selector",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "not_assessed"
+          },
+          "required_diagnostic_codes": [
+            "unsupported_selector"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-elution-buffer",
+          "information": "buffer_formulation",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-B"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-BH",
+              "E121-B"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "preparation",
+              "code": "buffer_preparation"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "provided",
+                "value": "elution"
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-pressure",
+          "information": "maximum_pressure",
+          "expected": {
+            "state": "missing_source",
+            "interpretation_state": "ready",
+            "documentary_support_state": "missing_source"
+          },
+          "required_diagnostic_codes": [
+            "missing_source"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-B",
+        "E121-BH"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-BH",
+        "E121-B",
+        "E121-PH",
+        "E121-W"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": false,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "The joint product/IEX washing role is not registered: identify the mapping limit and do not supply that flow under this description. The two printed elution-buffer alternatives remain available. No maximum pressure is available in the exact 25 eligible excerpts. The aggregate cannot report complete coverage by ignoring the adapter gap.",
+      "expected_answer_fr": "Le rôle conjoint produit/IEX pour ce lavage n’est pas enregistré : signaler cette limite de correspondance et ne pas fournir le débit sous cette description. Les deux formulations imprimées du tampon d’élution restent disponibles. Aucune pression maximale n’est disponible dans les 25 extraits admissibles précis. L’agrégat ne doit pas masquer cette lacune d’adaptateur.",
+      "reservations": [
+        "No claim that the manual or chemistry forbids IEX globally; this is a bounded role-mapping gap.",
+        "Pressure absence is limited to the 25 eligible excerpts, not the full manual.",
+        "Buffer alternatives stay separate; no operating elution values requested."
+      ],
+      "absence_assertion": {
+        "scope": "Exactly the 25 eligible excerpts, not the whole manual.",
+        "eligible_source_ids": [
+          "E118-USE",
+          "E118-C",
+          "E118-M",
+          "E119-BH",
+          "E119-B",
+          "E119-BI",
+          "E119-S",
+          "E119-X",
+          "E119-AH",
+          "E119-A",
+          "E119-I",
+          "E119-H",
+          "E119-BL",
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W",
+          "E120-P",
+          "E121-BH",
+          "E121-B",
+          "E121-PH",
+          "E121-L",
+          "E121-W",
+          "E121-E",
+          "E121-F"
+        ]
+      }
+    },
+    {
+      "question_id": "S08",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "flow_rate",
+          "expected": {
+            "state": "unsupported_selector",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [
+            "unsupported_selector"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-position",
+          "information": "relative_position_in_workflow",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E120-A"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-A",
+              "E120-W"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "general_topic",
+              "code": "product_applicability"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-A",
+        "E120-H",
+        "E120-W"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-F",
+        "E121-L",
+        "E120-A"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": false,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "Clarify the incoherent preparation/flow restriction before supplying loading flow; do not discard it because it does not intersect loading syntactically. Workflow position remains before or after other purification steps with the product warning. The valid nonintersecting equilibration exclusion neither blocks workflow nor releases its quarantined source.",
+      "expected_answer_fr": "Clarifier l’exclusion incohérente préparation/débit avant de donner le débit de chargement ; ne pas l’ignorer parce qu’elle ne recoupe pas syntaxiquement le chargement. La position dans le processus reste avant ou après les autres étapes, avec l’avertissement du produit. L’exclusion valide et disjointe de l’équilibrage ne bloque pas cette information et ne libère pas sa source en quarantaine.",
+      "reservations": [
+        "Invalid restriction blocks its declared item only.",
+        "Semantic invalidity is intentional; the submitted JSON remains structurally valid.",
+        "No transfer of forbidden/unavailable parameters."
+      ]
+    },
+    {
+      "question_id": "S09",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "flow_rate",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-L"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-F",
+              "E121-L"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "sample_application"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "provided",
+                "value": "reference_flow_check"
+              }
+            }
+          }
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "syringe_correspondence",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-F"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-F",
+              "E121-L"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "sample_application"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "provided",
+                "value": "reference_flow_check"
+              }
+            }
+          }
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-pressure",
+          "information": "maximum_pressure",
+          "expected": {
+            "state": "missing_source",
+            "interpretation_state": "ready",
+            "documentary_support_state": "missing_source"
+          },
+          "required_diagnostic_codes": [
+            "missing_source"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-F",
+        "E121-L",
+        "E121-PH"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-F",
+        "E121-L"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": false,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "For optimal sample application on the 1 mL column, 0.2 to 1 mL/min. The specific 1 mL/min syringe reference corresponds to approximately 30 drops/min; 1.0 is the same explicit decimal value, not a new conversion. Maximum pressure is unavailable within the 25 eligible excerpts. No pressure is computed from flow.",
+      "expected_answer_fr": "Pour un chargement optimal sur la colonne de 1 mL : 0,2 à 1 mL/min. La référence de 1 mL/min avec la seringue correspond à environ 30 gouttes/min ; 1,0 est la même valeur décimale explicite, sans nouvelle conversion. La pression maximale n’est pas disponible dans les 25 extraits admissibles. Ne pas calculer une pression à partir du débit.",
+      "reservations": [
+        "The approximate correspondence is confined to the printed syringe/column reference.",
+        "Observed flow is a user observation, not independent verification or process authorization.",
+        "No universal drop-rate relation or pressure value."
+      ],
+      "absence_assertion": {
+        "scope": "Exactly the 25 eligible excerpts, not the whole manual.",
+        "eligible_source_ids": [
+          "E118-USE",
+          "E118-C",
+          "E118-M",
+          "E119-BH",
+          "E119-B",
+          "E119-BI",
+          "E119-S",
+          "E119-X",
+          "E119-AH",
+          "E119-A",
+          "E119-I",
+          "E119-H",
+          "E119-BL",
+          "E120-H",
+          "E120-A",
+          "E120-U",
+          "E120-W",
+          "E120-P",
+          "E121-BH",
+          "E121-B",
+          "E121-PH",
+          "E121-L",
+          "E121-W",
+          "E121-E",
+          "E121-F"
+        ]
+      }
+    },
+    {
+      "question_id": "S10",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-note",
+          "information": "syringe_correspondence",
+          "expected": {
+            "state": "unsupported_transformation",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [
+            "unsupported_transformation"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-load",
+          "information": "flow_rate",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-L"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-F",
+              "E121-L"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "sample_application"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-F",
+        "E121-L",
+        "E121-PH"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-F",
+        "E121-L"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "The 2 mL/min observation does not match the printed 5 mL-column reference; do not calculate a drop rate. Separately, the documented optimal sample-application range is 0.5 to 5 mL/min for the 5 mL column. E121-F may accompany the loading bundle, but cannot be bound as a successful reference check for A-note.",
+      "expected_answer_fr": "L’observation de 2 mL/min ne correspond pas à la référence imprimée pour la colonne de 5 mL ; ne pas calculer de débit en gouttes. Séparément, la plage documentaire de chargement optimal est de 0,5 à 5 mL/min pour cette colonne. E121-F peut accompagner le contexte de chargement, sans être attribuée comme vérification réussie de A-note.",
+      "reservations": [
+        "Source presence for a sibling does not authorize the blocked note assignment.",
+        "No interpolation, calculated drops or inferred operating duration."
+      ]
+    },
+    {
+      "question_id": "S11",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-end",
+          "information": "stopping_criteria",
+          "expected": {
+            "state": "needs_clarification",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "not_assessed"
+          },
+          "required_diagnostic_codes": [
+            "conflicting_input"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-flow",
+          "information": "flow_rate",
+          "expected": {
+            "state": "out_of_scope",
+            "interpretation_state": "out_of_scope",
+            "documentary_support_state": "not_assessed"
+          },
+          "required_diagnostic_codes": [
+            "out_of_scope_product"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        },
+        {
+          "task_id": "C",
+          "item_id": "C-principle",
+          "information": "principle",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E118-M"
+          ],
+          "required_source_sets": [
+            [
+              "E118-M"
+            ]
+          ],
+          "binding": {
+            "product_ref": null,
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "No column context needed for this general topic."
+            },
+            "stage": {
+              "kind": "general_topic",
+              "code": "method_selection"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "D",
+          "item_id": "D-flow",
+          "information": "flow_rate",
+          "expected": {
+            "state": "needs_clarification",
+            "interpretation_state": "needs_clarification",
+            "documentary_support_state": "not_assessed"
+          },
+          "required_diagnostic_codes": [
+            "ambiguous_identity"
+          ],
+          "direct_support_ids": [],
+          "required_source_sets": [],
+          "binding": null
+        }
+      ],
+      "acceptable_context_ids": [
+        "E118-M"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-W",
+        "E118-M"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": true,
+        "has_unserved_units": true
+      },
+      "expected_answer_en": "Preserve both conflicting A sizes and clarify; do not resolve them automatically. B is understood but outside the initial product perimeter, not an unidentified Blue product. D needs exact product identity; its 5 mL size does not identify it. C remains supported: IEX separates by charge differences. Do not transfer Blue HP flow values to B or D.",
+      "expected_answer_fr": "Conserver les deux tailles contradictoires de A et clarifier, sans résolution automatique. B est identifié mais hors du périmètre produit initial, et non un produit Blue inconnu. D nécessite l’identité exacte du produit ; sa taille de 5 mL ne l’identifie pas. C reste pris en charge : l’IEX sépare selon les différences de charge. Ne pas transférer les débits Blue HP à B ou D.",
+      "reservations": [
+        "A same-scenario conflict must not become two invented tasks.",
+        "Do not repeatedly ask B to identify an already identified out-of-scope product.",
+        "General charge separation does not supply the quarantined pH/pI condition."
+      ]
+    },
+    {
+      "question_id": "S12",
+      "human_review_status": "pending",
+      "units": [
+        {
+          "task_id": "A",
+          "item_id": "A-modes",
+          "information": "column_volumes",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-E"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-E"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "elution"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "A",
+          "item_id": "A-modes",
+          "information": "elution_mode",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-E"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-PH",
+              "E121-E"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "stage": {
+              "kind": "operating_phase",
+              "code": "elution"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No buffer formulation use selected for this item."
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        },
+        {
+          "task_id": "B",
+          "item_id": "B-binding",
+          "information": "buffer_formulation",
+          "expected": {
+            "state": "supported",
+            "interpretation_state": "ready",
+            "documentary_support_state": "eligible"
+          },
+          "required_diagnostic_codes": [],
+          "direct_support_ids": [
+            "E121-B"
+          ],
+          "required_source_sets": [
+            [
+              "E120-H",
+              "E120-W",
+              "E120-P",
+              "E121-BH",
+              "E121-B"
+            ]
+          ],
+          "binding": {
+            "product_ref": "product:hitrap_blue_hp",
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "1",
+                  "unit": "mL"
+                }
+              }
+            },
+            "stage": {
+              "kind": "preparation",
+              "code": "buffer_preparation"
+            },
+            "facets": {
+              "buffer_use": {
+                "state": "provided",
+                "value": "binding"
+              },
+              "elution_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No single elution mode selected; explicit comparison if requested."
+              },
+              "syringe_query_mode": {
+                "state": "not_applicable",
+                "value": null,
+                "reason": "No syringe-note request."
+              }
+            }
+          }
+        }
+      ],
+      "acceptable_context_ids": [
+        "E120-H",
+        "E120-P",
+        "E120-W",
+        "E121-B",
+        "E121-BH",
+        "E121-E",
+        "E121-PH"
+      ],
+      "review_source_ids": [
+        "E120-H",
+        "E120-W",
+        "E120-P",
+        "E121-PH",
+        "E121-E",
+        "E121-BH",
+        "E121-B"
+      ],
+      "expected_aggregates": {
+        "all_requested_units_accounted_for": true,
+        "all_supported_ready_units_covered": true,
+        "has_interpretation_issues": false,
+        "has_unserved_units": false
+      },
+      "expected_answer_en": "A: one-step elution usually needs 5 column volumes; linear-gradient elution usually needs 10 to 20 column volumes. Keep the alternatives separate without selecting a mode or needing a size solely for these CV statements. B: 20 mM sodium phosphate pH 7.0 OR 50 mM potassium hydrogen phosphate (printed KH 2PO4) pH 7.0. No pairing with an elution formulation, flow, duration or gradient profile.",
+      "expected_answer_fr": "A : une élution en une étape nécessite habituellement 5 CV ; une élution en gradient linéaire nécessite habituellement 10 à 20 CV. Conserver ces alternatives sans choisir un mode ni demander une taille pour ces seules indications en CV. B : 20 mM de phosphate de sodium pH 7,0 OU 50 mM d’hydrogénophosphate de potassium (notation imprimée KH 2PO4) pH 7,0. Aucun appariement avec un tampon d’élution, débit, durée ou profil de gradient.",
+      "reservations": [
+        "Preserve usually-sufficient and alternative qualifications; no CV-to-mL calculation.",
+        "Adjacent flow values or elution-buffer formulations in atomic source passages are not requested answers.",
+        "Printed buffer nomenclature is preserved without independent chemical correction."
+      ]
+    }
+  ]
+}

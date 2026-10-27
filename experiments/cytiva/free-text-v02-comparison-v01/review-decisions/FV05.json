@@ -1,0 +1,45 @@
+{
+  "id": "FV05-actual-human-pair-review",
+  "case_id": "FV05",
+  "recorded_at_utc": "2026-10-27T01:16:52.512880+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV05",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV05 à FV12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:16:52.512880+00:00",
+    "question_sha256_canonical": "ffc7cfb3b388cf2ba6acbe2e8d12d03bc43322cd203ea7876c9a7c19adc74131",
+    "submission_sha256_canonical": "d8dae1052aff42c5be162a2ed42ed227238f47cb167b86a7e0033b27e77ae686",
+    "reference_sha256_canonical": "d5f42f24ea6eed5cd65ccdf40ba568fb59350960b110f3a21f38233e55a42335",
+    "retained_reservations": [
+      "General pressure precedes the loading selector and must not acquire its phase. No pressure is invented or inferred from flow.",
+      "Keep pressure absence bounded to the eligible excerpt set; both independently supported units remain counted and served."
+    ],
+    "clarifications": [
+      "This case is covered by the single collective human approval of FV05–FV12; it is not a separate human message.",
+      "General maximum pressure remains an operating-limit request before the loading selector, with missing evidence bounded to the exact 25 eligible excerpts; no inferred pressure or phase inheritance.",
+      "Keep P loading 0.5–5 mL/min and Q qualitative washing endpoints (steady absorbance baseline OR no remaining material in effluent) independently supported.",
+      "Retain the shared albumin-removal scope and mandatory Blue Sepharose warning for procedural support. No additional approval of a source or execution is inferred."
+    ],
+    "decision_record": "review-decisions/FV05.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

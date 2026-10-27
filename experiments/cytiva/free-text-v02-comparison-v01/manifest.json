@@ -1,0 +1,36 @@
+{
+  "id": "free-text-v02-comparison-v01-preparation",
+  "prepared_at_utc": "2026-10-27T00:32:20.930452+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "dataset_status": "pending_human_pair_review",
+  "evaluation_executed": false,
+  "semantic_scenarios": 12,
+  "language_observations": 24,
+  "planned_arm_executions": 48,
+  "family_counts": {
+    "buffer_and_operating_scope": 2,
+    "context_uncertainty": 2,
+    "numeric_roles": 2,
+    "ownership_and_order": 2,
+    "partial_support_and_quarantine": 2,
+    "pressure_routing": 2
+  },
+  "context_ambiguity_case_ids": [
+    "FV07",
+    "FV08"
+  ],
+  "explicit_partial_support_case_ids": [
+    "FV11",
+    "FV12"
+  ],
+  "authored_after_lock": true,
+  "authorship_limit": "Same code/source-aware assistant; post-freeze prospective, not blinded independent validation.",
+  "prior_P_G_reviews": "still pending and excluded from this denominator",
+  "dataset_sha256_lf": {
+    "REVIEW.md": "e9d63ba8775cdd503e0975c954742a90d2bcd0f662143ac8d47b9e531cf81a34",
+    "questions.json": "2bd5cb04dee9610d1fcdfda85263e10a4a818603ea436ae1767f40a0247c310b",
+    "references.json": "3659b308aea6a9fe7aef5a6070731c04b19e6b726cb854b255621eded5d489c2",
+    "review-template.json": "192ea1f2ae921696bdd7f6c8ed10ba3c7a0c9b0518e7b52152f91e794b09e8c3",
+    "submissions.json": "3c977c97baea006eff8a387f7314f87b27e93c9b7f15937619a0b528876261b2"
+  }
+}

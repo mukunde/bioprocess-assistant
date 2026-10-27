@@ -1,0 +1,162 @@
+{
+  "status": "template_not_an_actual_approval",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "decisions": [
+    {
+      "case_id": "FV01",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "78cb881638b1f4af5775af24d2bc143adc78795f3f2f7d8a966e3d96dfbb17b7",
+      "submission_sha256_canonical": "ca8c2219b415a332a32045e73446945dc69049ae32aafca1cf3d578b6edbb31f",
+      "reference_sha256_canonical": "0c8669d3a3fc3d9eb1a8475703e120c0af359bed3196aaa21a45a5ec7746bbd0",
+      "retained_reservations": [
+        "Three independent tasks and three requested units; no flow range or scientific suitability transfers between them.",
+        "The syringe correspondence is inherited approximate context, not a requested conversion or an extra unit."
+      ]
+    },
+    {
+      "case_id": "FV02",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "b73cb570ccf5afba2c859a8e55c777492ca421eeee2800eb98d74f942371fcca",
+      "submission_sha256_canonical": "8d9859f932dafe7eedf2e1c456c7b4ea164eb92e10c18e58632d1c600716caf7",
+      "reference_sha256_canonical": "4b8c41d0292f160c0053815d0d6f41e26e82593788b079e526d84911a9d5d633",
+      "retained_reservations": [
+        "Two distinct stages for Q, not a merged flow selector; P and Q remain separate.",
+        "No duration or universal drops/min conversion is derived. Natural question wording is not repaired after results."
+      ]
+    },
+    {
+      "case_id": "FV03",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "47df93d6217099d23cd464a09b98a178e43d3d66fd0d86775898d60e25c07701",
+      "submission_sha256_canonical": "b88bf47408944619b361857c37c64e61b1649cea468facac8c57173516912a85",
+      "reference_sha256_canonical": "d7f756e13b7c8d0f3b9fe0ffb088229e8aac4c7c74e24228a850ad59fe5134e0",
+      "retained_reservations": [
+        "Formulating an elution buffer is not requesting operating elution. The exclusion for P cannot suppress Q.",
+        "Do not select an elution mode or duration, pair buffers, or silently correct the manual nomenclature."
+      ]
+    },
+    {
+      "case_id": "FV04",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "c589c5caa7f9cbbd7c163c4f25abe996749909c1a6ba1263bab801ff98962889",
+      "submission_sha256_canonical": "f86dbc9556690e4cfad93238b2e34cf6447b069d942cc79a913fbafbb1fc89ba",
+      "reference_sha256_canonical": "14da6c05d34ca5da7e4f718250835d2ce60d4c6219dc5fe5d2a6f6c00b713dcb",
+      "retained_reservations": [
+        "Binding and elution require two separate preparation items despite sharing the same source and stage code; their identities must not collapse.",
+        "Retain all four alternative formulations without pairing, correction or recipe selection. The negated exclusion is inactive and does not add a positive request."
+      ]
+    },
+    {
+      "case_id": "FV05",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "ffc7cfb3b388cf2ba6acbe2e8d12d03bc43322cd203ea7876c9a7c19adc74131",
+      "submission_sha256_canonical": "d8dae1052aff42c5be162a2ed42ed227238f47cb167b86a7e0033b27e77ae686",
+      "reference_sha256_canonical": "d5f42f24ea6eed5cd65ccdf40ba568fb59350960b110f3a21f38233e55a42335",
+      "retained_reservations": [
+        "General pressure precedes the loading selector and must not acquire its phase. No pressure is invented or inferred from flow.",
+        "Keep pressure absence bounded to the eligible excerpt set; both independently supported units remain counted and served."
+      ]
+    },
+    {
+      "case_id": "FV06",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "9ac9f71627a85246585447bb259e6373dd2bdd6db2bb35227b81c98f01c1b0d3",
+      "submission_sha256_canonical": "2da367c59c471bb53d7163c0e844157d0005c3525f0f284fb77bc87a401603c5",
+      "reference_sha256_canonical": "9933e8768bb08aa494078d01fc8dca3075566f92ab771c3d363baf9e5b5d3e2f",
+      "retained_reservations": [
+        "Distinguish unsupported representation from bounded missing documentary evidence; neither authorizes inventing pressure.",
+        "The phase-specific P request must not be silently changed into a general operating-limit question or suppress Q loading."
+      ]
+    },
+    {
+      "case_id": "FV07",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "e92f0dee2e7b3ab223a51b8b16da6b156a64477e7df9c90f62b75a2f7f3dca4d",
+      "submission_sha256_canonical": "43ec3654f4cf5b2a11b3698a5ab3945b4ee0ff4a50826f4e78953b99b5ba559a",
+      "reference_sha256_canonical": "c907518ef467699795d47281062bc434d934b5bed982b6393a1c4cc82d56b486",
+      "retained_reservations": [
+        "Real context ambiguity: the size is explicitly unknown; do not select 1 mL or 5 mL by elimination.",
+        "Only the size-dependent flow needs clarification; qualitative endpoints and the independent principle remain served. No scientific suitability is inferred."
+      ]
+    },
+    {
+      "case_id": "FV08",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "e85ba5f832a1cdfb0b61e119f05197a1f33bb4373a62a63d97790e57e451cb5a",
+      "submission_sha256_canonical": "8376275791a621fdbab5f4357485e3f6ec8f0141a084c4d870f98b1f2a7d2eaa",
+      "reference_sha256_canonical": "03f9522b43ee519070f5ad97ba98afd679684a82785d83364b7511d688f857ef",
+      "retained_reservations": [
+        "Real contradiction differs from an unknown optional column field. Do not select one assertion, split P into invented preparations, or create task S from son.",
+        "This expected block reflects the current conservative policy, not a scientific claim that qualitative washing information depends on column size. Q remains independent."
+      ]
+    },
+    {
+      "case_id": "FV09",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "757065ad9e4865863961f6345ada6bd4f135d173a0f81537539001feb0c7d9e9",
+      "submission_sha256_canonical": "d519197e588c0ac80eabb7a879a0c16f6073ee761529f35ef70694fa9626a342",
+      "reference_sha256_canonical": "1b006ded79fce8bc9133cdf0d40a8d25a64e64bb1cae359093a8efb907cd0456",
+      "retained_reservations": [
+        "Retain all three numerical/unknown fact roles and the original zero lexeme; do not turn zero into missing input or infer a pump fault.",
+        "The two documentary ranges belong to different stages. Do not choose an elution mode or interpolate the approximate syringe note."
+      ]
+    },
+    {
+      "case_id": "FV10",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "6ee63d4a135b7807ae0f4d90b36a2aa2f7ac323f5e74cbe21f19ff069dca79eb",
+      "submission_sha256_canonical": "866ed6b9923efe1100879292e082d8f74440a5329606ff35698aec873aa5b752",
+      "reference_sha256_canonical": "38a534bd217e100a0773f3dd2859e7d6fa8078ae6e7ad1458e3b43ad4e2042ca",
+      "retained_reservations": [
+        "The 5 mL bed volume is a separate supplied column field, not an inferred product-label suffix or available sample volume.",
+        "Keep generally/at least, do not compute duration, and do not turn false into missing context or authorization to use an actual sample."
+      ]
+    },
+    {
+      "case_id": "FV11",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "63612a1683ce9a4699b1330c7d0f27bde3f336a4868b2cfe04cc8766ebc1783c",
+      "submission_sha256_canonical": "e39e46fb8a27b6e9c489467ad98e5f46cc982d95a84060bf1abc6f78699437ef",
+      "reference_sha256_canonical": "a583a31383e49fe0670a411a6e6823066281992ecd1916665dd3c13562d03b95",
+      "retained_reservations": [
+        "One quarantined unit and two supported units remain in the denominator; same-task and independent siblings both remain served.",
+        "No source approval, elution mode, duration or inferred equivalence between steps is introduced."
+      ]
+    },
+    {
+      "case_id": "FV12",
+      "decision": "pending",
+      "human_quote": null,
+      "reviewed_at_utc": null,
+      "question_sha256_canonical": "bc8853409dce04a5508b43af69d48e916f6bc3d0236d32ed4996425f85a93a2c",
+      "submission_sha256_canonical": "3e64e916ec6bee7c7d301bd819269d79aedac8ee3644e4b73f2282c1ca35d1b8",
+      "reference_sha256_canonical": "8804f23cc7aadf9f989f23ed55c83f739f18afd5ccc43a1c6f8c0db56bf51d29",
+      "retained_reservations": [
+        "Do not inherit equilibration or washing for unqualified maximum pressure; no pressure number or whole-manual absence claim.",
+        "Both withheld units remain counted without suppressing washing or SEC; E118-I and E121-EQ remain excluded."
+      ]
+    }
+  ]
+}

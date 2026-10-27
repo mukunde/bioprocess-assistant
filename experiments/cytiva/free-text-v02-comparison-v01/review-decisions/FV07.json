@@ -1,0 +1,43 @@
+{
+  "id": "FV07-actual-human-pair-review",
+  "case_id": "FV07",
+  "recorded_at_utc": "2026-10-27T01:16:53.834014+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV07",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV05 à FV12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:16:53.834014+00:00",
+    "question_sha256_canonical": "e92f0dee2e7b3ab223a51b8b16da6b156a64477e7df9c90f62b75a2f7f3dca4d",
+    "submission_sha256_canonical": "43ec3654f4cf5b2a11b3698a5ab3945b4ee0ff4a50826f4e78953b99b5ba559a",
+    "reference_sha256_canonical": "c907518ef467699795d47281062bc434d934b5bed982b6393a1c4cc82d56b486",
+    "retained_reservations": [
+      "Real context ambiguity: the size is explicitly unknown; do not select 1 mL or 5 mL by elimination.",
+      "Only the size-dependent flow needs clarification; qualitative endpoints and the independent principle remain served. No scientific suitability is inferred."
+    ],
+    "clarifications": [
+      "This case is covered by the single collective human approval of FV05–FV12; it is not a separate human message.",
+      "Preserve P column unknown without selecting 1 mL or 5 mL by elimination. Clarify only the size-dependent loading flow; serve P qualitative washing endpoints and Q general HIC principle.",
+      "No scientific suitability or sample-specific technique selection follows from the general HIC principle.",
+      "Retain the shared albumin-removal scope and mandatory Blue Sepharose warning for procedural support. No additional approval of a source or execution is inferred."
+    ],
+    "decision_record": "review-decisions/FV07.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

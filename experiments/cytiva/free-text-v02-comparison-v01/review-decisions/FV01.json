@@ -1,0 +1,49 @@
+{
+  "id": "FV01-actual-human-pair-review",
+  "case_id": "FV01",
+  "recorded_at_utc": "2026-10-27T01:03:09.769862+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV01",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV01 avec les réserves indiquées, en conservant les trois tâches indépendantes et l’ordre P/Q/R. Enregistre ma décision et passons à FV02. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:03:09.769862+00:00",
+    "question_sha256_canonical": "78cb881638b1f4af5775af24d2bc143adc78795f3f2f7d8a966e3d96dfbb17b7",
+    "submission_sha256_canonical": "ca8c2219b415a332a32045e73446945dc69049ae32aafca1cf3d578b6edbb31f",
+    "reference_sha256_canonical": "0c8669d3a3fc3d9eb1a8475703e120c0af359bed3196aaa21a45a5ec7746bbd0",
+    "retained_reservations": [
+      "Three independent tasks and three requested units; no flow range or scientific suitability transfers between them.",
+      "The syringe correspondence is inherited approximate context, not a requested conversion or an extra unit."
+    ],
+    "clarifications": [
+      "Retain three independent tasks and units in declaration order P/Q/R, although the request order is R/Q/P: P washing for the 1 mL product, Q loading for the 5 mL product, and R general HIC principle.",
+      "Qualified product sizes remain product assertions; no separate supplied column field, observation or exclusion is invented. No flow range or phase is transferred between P and Q.",
+      "Retain the albumin-removal scope and mandatory Blue Sepharose hydrophobicity warning. The general HIC principle establishes no sample-specific technique choice or scientific suitability.",
+      "Keep the inherited syringe correspondence approximate and reference-specific, without an extra requested unit, universal drops/min conversion or derived duration."
+    ],
+    "decision_record": "review-decisions/FV01.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV02",
+    "FV03",
+    "FV04",
+    "FV05",
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

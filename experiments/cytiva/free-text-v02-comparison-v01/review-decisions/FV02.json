@@ -1,0 +1,48 @@
+{
+  "id": "FV02-actual-human-pair-review",
+  "case_id": "FV02",
+  "recorded_at_utc": "2026-10-27T01:05:14.929688+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV02",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV02 avec les réserves indiquées, en gardant les deux étapes de Q distinctes et l’ordre Q/P. Enregistre ma décision et passons à FV03. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:05:14.929688+00:00",
+    "question_sha256_canonical": "b73cb570ccf5afba2c859a8e55c777492ca421eeee2800eb98d74f942371fcca",
+    "submission_sha256_canonical": "8d9859f932dafe7eedf2e1c456c7b4ea164eb92e10c18e58632d1c600716caf7",
+    "reference_sha256_canonical": "4b8c41d0292f160c0053815d0d6f41e26e82593788b079e526d84911a9d5d633",
+    "retained_reservations": [
+      "Two distinct stages for Q, not a merged flow selector; P and Q remain separate.",
+      "No duration or universal drops/min conversion is derived. Natural question wording is not repaired after results."
+    ],
+    "clarifications": [
+      "Retain two tasks in declaration order Q/P and three requested units: Q loading flow for the 1 mL product, Q washing flow for that same product, and P washing flow for the 5 mL product. Q loading and washing remain separate items despite the question for P appearing first.",
+      "Product-qualified formats remain product assertions; no separately supplied column field, observation, exclusion or operating parameter is invented. No flow range is transferred between stages or preparations.",
+      "Retain the albumin-removal scope and mandatory Blue Sepharose hydrophobicity warning. No scientific applicability or sample suitability is inferred.",
+      "No duration or universal drops/min conversion is derived. Preserve the natural question wording even if the frozen interpreter cannot process it."
+    ],
+    "decision_record": "review-decisions/FV02.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV03",
+    "FV04",
+    "FV05",
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

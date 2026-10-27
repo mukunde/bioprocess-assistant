@@ -20,22 +20,46 @@ clarification behavior. Source quotations remain in their original English.
 
 ## Launch on the prepared Windows workstation
 
-No installation, Neo4j, model download, API key or paid call is required in the
-existing verification environment. From the repository root:
+From the repository root in Windows PowerShell 5.1 or PowerShell 7:
 
 ```powershell
-.\.local-tools\verification-venv\Scripts\python.exe -m experiments.cytiva.free_text_v03_freeze --environment
-.\.local-tools\verification-venv\Scripts\python.exe -m demo.cytiva --port 8766
+.\Start-CytivaDemo.ps1
 ```
+
+The launcher first tries `.venv-demo`, the prepared `.local-tools/verification-venv`
+and `.venv`, then available Python 3.13/system commands. It selects the first
+environment that passes all checks. An explicit `-PythonPath` disables fallback.
+Paths containing spaces and invocation from another working directory are
+supported; relative Python paths are resolved from the caller's directory.
+
+Before constructing the engine, it verifies the recorded Python version, all
+12 dependency versions, all 36 frozen files, and the offline tokenizer cache and
+its hash. Missing/mismatched versions and invalid cache/frozen files produce
+diagnostics and a nonzero exit. No packages, model weights or tokenizer data are
+installed or downloaded; no database or API key is used.
 
 Open [the local demo](http://127.0.0.1:8766/). Stop the server with Ctrl+C. It binds
 only to loopback, keeps no conversational state and writes no submitted text or
 results to disk. This is a workstation demo, not a hosted deployment.
 
+Optional commands:
+
+```powershell
+.\Start-CytivaDemo.ps1 -CheckOnly
+.\Start-CytivaDemo.ps1 -Port 8767
+.\Start-CytivaDemo.ps1 -PythonPath "C:\path with spaces\python.exe" -CheckOnly
+```
+
+`-CheckOnly` validates readiness without binding a port or starting an engine.
+A port already in use is never reclaimed or its process killed: the launcher
+reports it and suggests choosing another port or stopping the existing server.
+Keep the terminal open while using the demo. Closing it stops the foreground
+service; the launcher does not create a hidden persistent service.
+
 For a different machine, reproduce the versions in the runtime lock and supply
 the offline tokenizer asset with its recorded hash before using the environment
-check. The private verification environment/cache is not redistributed; a clean
-installation/packaging path is the next delivery step, not already certified.
+check. The private verification environment/cache is not redistributed. The
+launcher checks an existing installation; it is not a clean-machine installer.
 
 ## Five-minute walkthrough
 

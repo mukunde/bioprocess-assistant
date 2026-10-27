@@ -1,0 +1,90 @@
+{
+  "id": "cytiva-windows-launcher-verification",
+  "verified_at_utc": "2026-10-27T16:57:58.165263+00:00",
+  "status": "local_launcher_ready_not_committed",
+  "command": ".\\Start-CytivaDemo.ps1",
+  "targeted_suite": {
+    "tests": 31,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 15,
+    "elapsed_seconds": 25.843,
+    "real_S_trial_repeated": false
+  },
+  "new_automated_launcher_tests": 11,
+  "full_suite_rerun": false,
+  "real_command_checks": {
+    "windows_powershell_5_1_check_only": true,
+    "powershell_7_check_only": true,
+    "foreground_launcher_port_8767_health_and_guided_request": true,
+    "guided_request_supported": true,
+    "complete_source_passages_returned": 5,
+    "test_server_stopped_with_ctrl_c": true
+  },
+  "startup_contract": {
+    "python_selection": "Explicit executable or first verified local candidate.",
+    "checks": [
+      "Python version",
+      "12 dependency versions",
+      "36 frozen files",
+      "offline tokenizer hash"
+    ],
+    "no_automatic_installation_download_policy_change_or_process_killing": true,
+    "check_only_does_not_bind_port_or_construct_engine": true,
+    "port_conflict": "Nonzero exit with alternate-port guidance; existing service preserved."
+  },
+  "file_sha256_lf": {
+    "Start-CytivaDemo.ps1": "64ecd421f856c44d6e0475ee07eee51e01af2796ad1083e133203b84631efeed",
+    "demo/launch.py": "8b2f908139fd5e071219988191240fb3385431b00a068455c0f042cd26f4207c",
+    "tests/test_cytiva_launcher.py": "ccaf642f8a624ea07dc8c2b7b5b97201ff24bcf25017a59239ff705583b7f027",
+    "README.md": "09e84be8b3eadb33efc4e7c049aa2801632d453b30c6521814cbd0ca05b91285",
+    "docs/DEMO-FIRST.md": "d932f67204f4a2973244dd1c94f078822d62774089663ef4918787bd22577980",
+    "experiments/cytiva/compositional-navigation-v04-results/manifest.json": "7b1c91137c8f685a9a74c8c43f41fe79a4f4fa222e3871f7262d3eec1e58b93b",
+    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "1d49ce2c5bc47199f5727b51fab2a87113f101e58f8a1d02394b240927413f1a",
+    "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json": "afc63584c12266eba29171bf4f509a0afd5b137b19ec3386a08a7909e43035c0"
+  },
+  "freeze": {
+    "id": "free-text-v03-corrected-runtime-freeze-v01",
+    "status": "frozen",
+    "pinned_files": 36,
+    "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "environment_verified": true,
+    "runtime_instantiated": false,
+    "prospective_trial_executed": false
+  },
+  "preservation": {
+    "old_16_notes_byte_identical": true,
+    "old_notes_sha256": {
+      "docs/experiments/cytiva-structured-control-s-preparation-checks.json": "e60bfd23d4cc240a8933be2c6f088ab99cb5b8a7d76d6e6e9e73bc616539f359",
+      "docs/experiments/cytiva-structured-control-s-preparation.md": "e25416e7e7679b7440ce7d413bbcfa9033eeccfd9bd82b4a09a79fa42760ca45",
+      "docs/experiments/cytiva-structured-control-s-results-checks.json": "de46b3b99a47b36282283b1996c58a396cc7353912f74983ea796bf3e75a9c92",
+      "docs/experiments/cytiva-structured-control-s-review-amendment-001.json": "192bbfa5db84324a0ff99d9fadac9adc2a3c441b6cf34f3c2c5ba8797b15034a",
+      "docs/experiments/cytiva-structured-control-s-review-decision-002.json": "275581a8b80993a09ededd5b7c1a1344e028be0beacbedd54568964a5401cfab",
+      "docs/experiments/cytiva-structured-control-s-review-decision-003.json": "ea69afe6966a362ac8187e1096d689404daa0ef58c0b48d3b0c1bb8f735e2b30",
+      "docs/experiments/cytiva-structured-control-s-review-decision-004.json": "415a530b71891400870943e0cf2e31867f38b683cf39fd3db6511261d7cff4f3",
+      "docs/experiments/cytiva-structured-control-s-review-decision-005.json": "338d4319cb450c1f9917cc1920f6ce86eaebb3f1d8a34b4a406036c70531e62e",
+      "docs/experiments/cytiva-structured-control-s-review-decision-006.json": "250c22152c5c36fe83e1ba6687879ae1bc504bf83200223d594053bca5184a8c",
+      "docs/experiments/cytiva-structured-control-s-review-decision-007.json": "0a1f1a712a54aac8fdba9d50b1fd3e971c60d7f471e60a92cde2cb636f2447b8",
+      "docs/experiments/cytiva-structured-control-s-review-decision-008.json": "95fb80e669deb0e20513c4550ba801be91b98a083b6cee1ecc238a3179dacbbe",
+      "docs/experiments/cytiva-structured-control-s-review-decision-009.json": "b70854c3f2e17dfd590cc8368e0b328ec2c1d5bdcc289076f3d11c8ce9ec6acc",
+      "docs/experiments/cytiva-structured-control-s-review-decision-010.json": "7550928314ceb2a1352e60b02187854c4ed663962d0f75f67858de10b9f338d0",
+      "docs/experiments/cytiva-structured-control-s-review-decision-011.json": "4e4bda31b80b53af98f727974243aa7bedc828223dc9eafa1093d4aff27e54ba",
+      "docs/experiments/cytiva-structured-control-s-review-decision-012.json": "feb8f32542561d15f8482abf9ad86723d8ba82c6e98f21d1460c2eac5e8e5510",
+      "docs/experiments/cytiva-structured-control-s-review.md": "6b9bb438b4eb2ad8809aaeef6bb5c3bac246e75e090b54e79892113d85135ede"
+    },
+    "frozen_v03_and_prior_FT_FV_locks_and_environments_verified": true,
+    "historical_manifest_changes_documentation_pointers_only": true,
+    "staged_files": 0
+  },
+  "limitations": [
+    "Requires an existing compatible Python environment and the pinned offline tokenizer cache.",
+    "Launcher verifies installation; it is not an installer or hosted service."
+  ],
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

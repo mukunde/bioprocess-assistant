@@ -1,0 +1,46 @@
+{
+  "id": "FT02-actual-human-pair-review",
+  "case_id": "FT02",
+  "recorded_at_utc": "2026-10-26T21:30:15.679035+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT02",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT02 avec les réserves indiquées, en gardant chargement et lavage distincts et la portée limitée de la note sur la seringue. Enregistre ma décision et passons à FT03. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:30:15.679035+00:00",
+    "question_sha256_canonical": "6b24c3ff694ec8ae4f39d4add3f55ac3702517dab4e0afef3f750b1ae6d71227",
+    "submission_sha256_canonical": "b7c8919226adc3432ca0b32eff559799bb6197f2ad89d47674c8175c5d0ef6ef",
+    "reference_sha256_canonical": "d7b088d15c84cc345bf4f604a063d1f50284f0e2f1961e3773282da69aa475e2",
+    "retained_reservations": [
+      "Loading and washing are different phases with different flow ranges.",
+      "Natural wording is retained even if outside the bounded interpreter grammar; do not rewrite it after results.",
+      "The inherited syringe note is not a universal conversion or a requested additional unit."
+    ],
+    "clarifications": [
+      "The human retains the separation between sample loading and washing and the limited, approximate column/flow-specific scope of the syringe note."
+    ],
+    "decision_record": "review-decisions/FT02.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, source/intent references and retained reservations; loading/washing and limited syringe-note scope remain distinct.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT03",
+    "FT04",
+    "FT05",
+    "FT06",
+    "FT07",
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

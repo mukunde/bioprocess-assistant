@@ -1,0 +1,579 @@
+{
+  "id": "FT01-FT12-frozen-comparison-results",
+  "exported_at_utc": "2026-10-27T00:13:58.211313+00:00",
+  "status": "completed_frozen_acceptance_not_met",
+  "scores": {
+    "observations": [
+      {
+        "case_id": "FT01",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT01",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT02",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT02",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "task_unit_inventory",
+            "whole_request_denominator",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT03",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT03",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT04",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "task_unit_inventory",
+            "stage_or_information",
+            "whole_request_denominator",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT04",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "task_unit_inventory",
+            "stage_or_information",
+            "whole_request_denominator",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT05",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT05",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT06",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT06",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT07",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT07",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT08",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT08",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "task_inventory",
+            "task:product",
+            "task:column",
+            "task_unit_inventory",
+            "unrepresentable_or_preblocked_intent"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT09",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT09",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT10",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT10",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT11",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "stage_or_information",
+            "inconsistent_item_bijection",
+            "submitted_intent"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT11",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "stage_or_information",
+            "inconsistent_item_bijection",
+            "submitted_intent"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      },
+      {
+        "case_id": "FT12",
+        "language": "en",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": true,
+          "failures": []
+        },
+        "F0_context": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "paired_semantics_equal": true,
+        "passed": true
+      },
+      {
+        "case_id": "FT12",
+        "language": "fr",
+        "S": {
+          "passed": true,
+          "failures": [],
+          "answer_quality_evaluated": false
+        },
+        "F0_intent": {
+          "passed": false,
+          "failures": [
+            "incomplete_intent_inventory",
+            "missing_projection"
+          ]
+        },
+        "F0_context": {
+          "passed": false,
+          "failures": [
+            "execution_error"
+          ]
+        },
+        "paired_semantics_equal": false,
+        "passed": false
+      }
+    ],
+    "passed_observations": 12,
+    "observation_denominator": 24,
+    "passed_bilingual_pairs": 4,
+    "pair_denominator": 12,
+    "answer_quality_evaluated": false,
+    "latency_claim": "descriptive only; no p95/p99 estimate"
+  },
+  "scores_sha256_canonical": "8394de76ed557f9311e1bafbca4479627b7dd773a1e528b5a52fe6bd58b45e90",
+  "native_scores_sha256_lf": "627d125aa6598fe472f40fb2e2c76e05bb933b12ff1b7041ec4bd734f5e15695",
+  "attempt": {
+    "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+    "review_sha256_canonical": "a615c9ca19a4f1242edc240e3c743b97e7f1bb92fd742e0cb3b0d710cc32d4f4",
+    "dataset_sha256_lf": {
+      "REVIEW.md": "7ac12ca7b4ce9aed2332a1b517cd49c79e74c2727facf9d27d1795e868b46035",
+      "questions.json": "fc58019e36eca20598b40d29507a2d0f5c17420b0d56be5f77b698945ed22c1d",
+      "references.json": "42eaee45393e572d0c50f600e9c9d7c80bef92866a19ae0e79412593fa076162",
+      "review-template.json": "a59186d46669a21ee1a13fba77b2bd80e85ace4e3281602ac00847acaa5308db",
+      "submissions.json": "284c7e9b46a34024aa097c8924eeef4ef969f23fd4791b34d6153c1b45606e73"
+    },
+    "status": "started"
+  },
+  "completion": {
+    "outputs": 48,
+    "initialization_ms": 618.8633000128902,
+    "network_attempts": [],
+    "status": "completed_no_retry"
+  },
+  "scope": "Compact public diagnostic scores; no raw arm output, source PDF or generated answer.",
+  "raw_outputs": "Retained unchanged locally under data/experiments/cytiva/free-text-comparison-v01/locked-run; hashes are in the results audit.",
+  "interpretation_note": "F0_context execution_error is a default unassessed score label after failed intent, not an exception; raw error fields are all null."
+}

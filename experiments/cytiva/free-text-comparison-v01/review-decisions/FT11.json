@@ -1,0 +1,37 @@
+{
+  "id": "FT11-actual-human-pair-review",
+  "case_id": "FT11",
+  "recorded_at_utc": "2026-10-26T22:16:30.168477+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT11",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT11 avec les réserves indiquées, en limitant l’absence aux 25 extraits admissibles et en gardant les autres demandes servies. Enregistre ma décision et passons à FT12. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T22:16:30.168477+00:00",
+    "question_sha256_canonical": "9cc9b02e31b13610c03a4d23153949af01d451d638a854176d94596eb2d5f4a1",
+    "submission_sha256_canonical": "7518ee50c4dfd5159e1165d017514b4f99b04062a673fcbd2958c22be0608dab",
+    "reference_sha256_canonical": "d3638e1844b7d8e5f58b2662dd7a3b6f8258b2cc66cb756f81856d4aba05bab2",
+    "retained_reservations": [
+      "First explicit mixed documentary-support request: supported siblings must remain served despite bounded pressure absence.",
+      "Pressure is a general operating-limit selector, not a washing-flow parameter or a conversion.",
+      "All 25 eligible excerpts support only the bounded absence audit, not an assigned pressure binding."
+    ],
+    "clarifications": [
+      "Limit the maximum-pressure absence statement to the exact 25 eligible excerpts; do not infer pressure or whole-manual absence. Keep all three requests counted, serve D washing flow and the independent E IEX principle, and assign no source binding to pressure."
+    ],
+    "decision_record": "review-decisions/FT11.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

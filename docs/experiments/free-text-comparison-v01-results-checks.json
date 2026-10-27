@@ -1,0 +1,466 @@
+{
+  "id": "free-text-comparison-v01-locked-run-audit",
+  "verified_at_utc": "2026-10-26T22:27:08.122036+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "raw_outcomes_sha256_lf": {
+    "FT01-en-S.json": "a81b2a511d9daf2095136bc589b91558c59f115bb1371d02de91a2abe2f4b191",
+    "FT01-en-F0.json": "77ec68bd39ed350edefcbd33616b5af1f929e773728036c9bd8f33c335b7a5b6",
+    "FT01-fr-S.json": "8873851a6bac9053375bda37879985c7e9f7c781751a7877ab6b6e269e05f37d",
+    "FT01-fr-F0.json": "b28211b713c647e2d5c31f4e1d223b16dcc992fa9316449cdc2d4012f903147b",
+    "FT02-en-S.json": "88ae34e52ceb585d0be0bccdfcbdd768cf6dcd89af74b4287a89f4385b249ec2",
+    "FT02-en-F0.json": "2157e7a3c0cae22556fe7f351a273117ab1da09a20e7bdbe949e9b3cae30be55",
+    "FT02-fr-S.json": "6558c463b83f58f407399470b7ff29ec73d60e59e023c60d570cea260090d724",
+    "FT02-fr-F0.json": "281ac6e30b0fff367fa2035d90bf4671deabd2a08f1e0ebc7be6da4684b3b621",
+    "FT03-en-S.json": "2a1b35603151b8a430984e2ebda3cc961d9493a50110a204c8294028555989d4",
+    "FT03-en-F0.json": "445b774aa6d1275f04fb20c958a53bb3afe927c4163b04fa6430f84e1200f632",
+    "FT03-fr-S.json": "806637754190834baa5470930cef81a4b2663a22500c4fe4143c7305af2d8078",
+    "FT03-fr-F0.json": "749ca089e994b19b7dd07e5c1d059f2b3e8b9e99a2aa9ea274b034b4c238cbe4",
+    "FT04-en-S.json": "f2be42ded76df84f75b18a94e4c5345a495dba2babcc5d269798d0f1780e95cf",
+    "FT04-en-F0.json": "9e42cb16213f85632f7b95aef1118c597f79e248186d1883245e9e58ed78f496",
+    "FT04-fr-S.json": "680c0f7fb043882d452e63e3c23d9d240d5109bbb7c0ba7287e9e51e4b9d16b2",
+    "FT04-fr-F0.json": "199a4ab20299fe5142c48396dae047ab85d08c7da0d18aaa53fd28edf58e2485",
+    "FT05-en-S.json": "bfa0e2ce0b1bb7db71e2e752bf13e61009498cfd0227f515e2596498b99412b7",
+    "FT05-en-F0.json": "76920831a53726e3585ce2e22542d83e66a388ddf1505be1e08e3fbc9d17a7ba",
+    "FT05-fr-S.json": "ac82c82986f18add2bbbe5e37f7672a175b45cc2ecc4dae0f79ebc4bfc63ffd7",
+    "FT05-fr-F0.json": "4e377f6a5b138cfb609835a375be8efa3c320c304607fb3c4c245a1a50097ec9",
+    "FT06-en-S.json": "123dd175680f744dd1005283cab20b4a55044f948f3002d4ab4752c290c44e0d",
+    "FT06-en-F0.json": "4c767f0492a60ad97be0a72176dbaa8e77d34a5edfd2774fdc2a482357cb1e15",
+    "FT06-fr-S.json": "79ca5805c01720e795c00539dab38f540ef8ce6488a8e753d4a92e8ce398ea0b",
+    "FT06-fr-F0.json": "dfd1966fdac30ad578ed46b2e2f0622b0fd1fefdcd47e0bb9ded609c1f706e9f",
+    "FT07-en-S.json": "11ec6ba95c85c97c0f77fb186018af29e5f8912ad4506f9cb62fb305ece6cd29",
+    "FT07-en-F0.json": "1fed0fe23b4b988df36bf815893c842d04cb02d81050fab95f8b8764bae74c91",
+    "FT07-fr-S.json": "ef683305627a7b29753bae5d76f0000c08d3a6f21b64aedd797888363d0cb1e7",
+    "FT07-fr-F0.json": "9a8a90f12761d3f1f8a13b55c785c0286404b6ccd428743fb0158ac4839da54f",
+    "FT08-en-S.json": "60a7479ebdf312a566a22de247431ecc7a75df234c0a330c672c2040c62b3ba3",
+    "FT08-en-F0.json": "a8afd3b5675f52de05ab2f7a3bbf20c5a08157a23403ceb830ee191fa4445833",
+    "FT08-fr-S.json": "e9cecbe1eb3aeef41391a30f7c1371ba4dc6f8a3270bdb527af3829391cdad74",
+    "FT08-fr-F0.json": "242f841a7a28105bfe7c1a1f2560c4c6060ac78ae5055c4771dd95f4ea12fde6",
+    "FT09-en-S.json": "201560dc8a9babbdc2e75c52550dce3a073d48fad8948d4fd87360c945ef3a5e",
+    "FT09-en-F0.json": "59c9472cbe34794f66efc29120fc0fb77e238592eb089b26d6c648f3e0e5f3ac",
+    "FT09-fr-S.json": "7b43416ca3c1e25b202865db0622122b366dfb8bc2583ef3e4268a081034b759",
+    "FT09-fr-F0.json": "ed5d0e6bce62384388338692df79e1253884d6b92cbd13a854cd4ddac1f80133",
+    "FT10-en-S.json": "3da4213a0d1d29465e9720cb3106e1b8e49d1325439c03cb87a11d37a9dd07fe",
+    "FT10-en-F0.json": "6ef522a28dbbd6955777bd988d6265a849c5c1ee8745bd56060e6dd51762551f",
+    "FT10-fr-S.json": "9be667d7904588ae2e53adeb9f1eb346478d6ba19b5f5151cfb023952f513e73",
+    "FT10-fr-F0.json": "fe82592cc11164cd0b92c1a228f87fc3bb518a94c456b1991e9682435f81edb7",
+    "FT11-en-S.json": "524d26209ef31ccdeeb5438d42f3a908a20fb542edd2336836302c21dac4efa5",
+    "FT11-en-F0.json": "08f0521e2c6de4e80348ac8c912f0834ce14e6b3de4cdc8bb97f4f435361b78e",
+    "FT11-fr-S.json": "8bd1ffde6bf9d49609e40c118a9fcc054741df3056233bc53aca0e4735c37b6b",
+    "FT11-fr-F0.json": "b5b052fbaa07f27092a2dfef36b36f39d538cf0afa5b4b952efead7833b309aa",
+    "FT12-en-S.json": "6fe423c887d003c24a658a187aa6bde67d5a08e4796e25eeaeb5251ace28cf6f",
+    "FT12-en-F0.json": "dd75c900cb01d59983dbd368a0770e993150561a885724a823106088bccca161",
+    "FT12-fr-S.json": "a95bf671b9d07c0647b9fb4e01920dd04d1417be015bfb682cd1a130f32d70de",
+    "FT12-fr-F0.json": "0f41173ea3f758a19ceb6d1332b414889865f5d14e1cdb39b2732b78cdf71b17"
+  },
+  "scores_sha256_lf": "627d125aa6598fe472f40fb2e2c76e05bb933b12ff1b7041ec4bd734f5e15695",
+  "completion_sha256_lf": "a9a912a65e36f2f1d9822c6d91204336e1be6e611dab4b3e0731c6045311b917",
+  "raw_outcomes": 48,
+  "execution_exceptions": 0,
+  "structured_passed": 24,
+  "free_text_passed": 12,
+  "language_passes": {
+    "en": 8,
+    "fr": 4
+  },
+  "bilingual_pairs_passed": 4,
+  "failed_observations": [
+    {
+      "case_id": "FT02",
+      "language": "en",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " For E, I need the loading flow."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1",
+            "u2"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o11"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 2,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT02",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "task_unit_inventory",
+        "whole_request_denominator",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " Pour E, il me faut le débit de chargement."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o10"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 1,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT03",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " Donne pour D le débit de chargement et le volume de lavage en volumes de colonne."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1",
+            "u2"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o9"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 2,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT04",
+      "language": "en",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "task_unit_inventory",
+        "stage_or_information",
+        "whole_request_denominator",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " List the elution-buffer formulations for D;"
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o9"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 1,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT04",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "task_unit_inventory",
+        "stage_or_information",
+        "whole_request_denominator",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " Liste les formulations du tampon d’élution pour D ;",
+        " donne séparément les critères de fin du lavage."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o9"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        },
+        {
+          "issue_id": "i2",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f2"
+          ],
+          "origin_ids": [
+            "o10"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 1,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT07",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " L’échantillon contient 7,5 mL disponibles."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1",
+            "u2"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o12"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 2,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT08",
+      "language": "fr",
+      "scorer_failures": [
+        "task_inventory",
+        "task:product",
+        "task:column",
+        "task_unit_inventory",
+        "unrepresentable_or_preblocked_intent"
+      ],
+      "unresolved_quotes": [],
+      "issues": [],
+      "projection_status": "available",
+      "known_units": 2,
+      "core_calls": 1
+    },
+    {
+      "case_id": "FT10",
+      "language": "en",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " What loading flow does the manual give for D?"
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o9"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 1,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT10",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " L’échantillon contient 7,5 mL disponibles.",
+        " Quel débit de chargement le manuel indique-t-il pour D ?"
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o9"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        },
+        {
+          "issue_id": "i2",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1"
+          ],
+          "affected_fragment_ids": [
+            "f2"
+          ],
+          "origin_ids": [
+            "o10"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 1,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FT11",
+      "language": "en",
+      "scorer_failures": [
+        "stage_or_information",
+        "inconsistent_item_bijection",
+        "submitted_intent"
+      ],
+      "unresolved_quotes": [],
+      "issues": [],
+      "projection_status": "available",
+      "known_units": 3,
+      "core_calls": 1
+    },
+    {
+      "case_id": "FT11",
+      "language": "fr",
+      "scorer_failures": [
+        "stage_or_information",
+        "inconsistent_item_bijection",
+        "submitted_intent"
+      ],
+      "unresolved_quotes": [],
+      "issues": [],
+      "projection_status": "available",
+      "known_units": 3,
+      "core_calls": 1
+    },
+    {
+      "case_id": "FT12",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "missing_projection"
+      ],
+      "unresolved_quotes": [
+        " Donne le débit d’équilibrage et le débit de chargement pour D."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1",
+            "u2",
+            "u3"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o14"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 3,
+      "core_calls": 0
+    }
+  ],
+  "free_text_core_calls": 15,
+  "contexts_checked": 39,
+  "excluded_sources_absent_from_all_emitted_contexts": true,
+  "budget_maxima": {
+    "context_tokens": 1439,
+    "selected_roots": 2
+  },
+  "elapsed_ms_descriptive_only": {
+    "S": {
+      "min": 15.281600004527718,
+      "median": 26.10964997438714,
+      "max": 270.565600018017,
+      "sum": 975.2357000834309
+    },
+    "F0": {
+      "min": 27.45860000140965,
+      "median": 118.59570001251996,
+      "max": 355.7988999527879,
+      "sum": 3379.8703998327255
+    }
+  },
+  "old_16_notes_byte_identical": true,
+  "tracked_files_unchanged": true,
+  "frozen_method_dataset_and_review_records_unchanged": true,
+  "network_attempts": [],
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0,
+  "retries": 0
+}

@@ -1,0 +1,43 @@
+{
+  "id": "FT04-actual-human-pair-review",
+  "case_id": "FT04",
+  "recorded_at_utc": "2026-10-26T21:34:08.431148+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT04",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT04 avec les réserves indiquées, en distinguant formulation du tampon et élution opératoire, sans choisir de mode. Enregistre ma décision et passons à FT05. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:34:08.431148+00:00",
+    "question_sha256_canonical": "9b42da1cf13ba7d14ac8ac36bd7c8cf5f9c0c5b56cbd9744b2ed7a7d9038fd9f",
+    "submission_sha256_canonical": "ad85824ea9a3d0a242e1209185890b00aae2a1f096a3715612bf8c13fe116cdd",
+    "reference_sha256_canonical": "cae7cb3fe206b713be59e17ec4befb329766a44ba8684c9c2c5593b6fb9be822",
+    "retained_reservations": [
+      "Buffer preparation is distinct from operating elution; the exclusion must not remove the formulation request.",
+      "Preserve the manual nomenclature without silently correcting it, pairing binding/elution alternatives, or selecting a mode."
+    ],
+    "clarifications": [
+      "Keep buffer formulation distinct from operating elution. The operating-elution exclusion does not remove the elution-buffer formulation request; no mode is selected."
+    ],
+    "decision_record": "review-decisions/FT04.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT05",
+    "FT06",
+    "FT07",
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

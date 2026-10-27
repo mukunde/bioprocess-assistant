@@ -1,0 +1,36 @@
+{
+  "id": "free-text-comparison-v01-preparation",
+  "prepared_at_utc": "2026-10-26T19:57:28.092669+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "dataset_status": "pending_human_pair_review",
+  "evaluation_executed": false,
+  "semantic_scenarios": 12,
+  "language_observations": 24,
+  "planned_arm_executions": 48,
+  "family_counts": {
+    "facts_and_uncertainty": 2,
+    "multi_task_ownership": 2,
+    "negation_and_restriction_scope": 2,
+    "numeric_roles": 2,
+    "partial_support_and_policy": 2,
+    "stage_vs_formulation": 2
+  },
+  "context_ambiguity_case_ids": [
+    "FT07",
+    "FT08"
+  ],
+  "explicit_partial_support_case_ids": [
+    "FT11",
+    "FT12"
+  ],
+  "authored_after_lock": true,
+  "authorship_limit": "Same code/source-aware assistant; post-freeze prospective, not blinded independent validation.",
+  "prior_P_G_reviews": "still pending and excluded from this denominator",
+  "dataset_sha256_lf": {
+    "REVIEW.md": "7ac12ca7b4ce9aed2332a1b517cd49c79e74c2727facf9d27d1795e868b46035",
+    "questions.json": "fc58019e36eca20598b40d29507a2d0f5c17420b0d56be5f77b698945ed22c1d",
+    "references.json": "42eaee45393e572d0c50f600e9c9d7c80bef92866a19ae0e79412593fa076162",
+    "review-template.json": "a59186d46669a21ee1a13fba77b2bd80e85ace4e3281602ac00847acaa5308db",
+    "submissions.json": "284c7e9b46a34024aa097c8924eeef4ef969f23fd4791b34d6153c1b45606e73"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "id": "FT10-actual-human-pair-review",
+  "case_id": "FT10",
+  "recorded_at_utc": "2026-10-26T22:14:42.800120+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT10",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT10 avec les réserves indiquées, en distinguant les volumes, sans durée déduite et en conservant la question naturelle. Enregistre ma décision et passons à FT11. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T22:14:42.800120+00:00",
+    "question_sha256_canonical": "2afe04c574497214d350d478fc51b3341d2de1a9be0d8adeb578df2911857734",
+    "submission_sha256_canonical": "52e62ff5f0b77fa58b2c7ee8142a6988ff3799bac4f60927f6c9e461819e69f1",
+    "reference_sha256_canonical": "e296a2b9887f9be786e47d141c671a8f4b49818bc775c4473de9ace10242e4d6",
+    "retained_reservations": [
+      "Preserve available, loaded and bed-volume roles separately.",
+      "A qualified product label supplies its own size without filling a separate column field.",
+      "Do not silently replace the natural question by a supported command after results."
+    ],
+    "clarifications": [
+      "Keep available sample volume, unknown loaded volume and qualified-label column size distinct. Do not derive a duration or assume all available sample is loaded; preserve the natural EN/FR question and the limited approximate syringe-note scope."
+    ],
+    "decision_record": "review-decisions/FT10.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

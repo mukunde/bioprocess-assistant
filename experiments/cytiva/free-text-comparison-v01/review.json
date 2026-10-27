@@ -1,0 +1,222 @@
+{
+  "status": "actual_human_review_complete",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "decisions": [
+    {
+      "case_id": "FT01",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT01 avec les réserves indiquées, en confirmant que « stopping criteria » désigne la fin du lavage. Enregistre ma décision et passons à FT02. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:22:46.267767+00:00",
+      "question_sha256_canonical": "789576cf245e126d2aadb5398c55d12f996519a30873c9f623b6e1f8f8f9c2fa",
+      "submission_sha256_canonical": "1e91266d419065ca886c3f6ee0c403349bb795b9c1977ef8b0b523a32d713f7a",
+      "reference_sha256_canonical": "aa319a7c845099760f28d6fd24c48997028fd40c552b53190d1c01220634b684",
+      "retained_reservations": [
+        "The text mentions D before E; preserve task order D/E even though the first requested information is for E.",
+        "Do not transfer the 1 mL flow to D or infer a duration; the endpoint alternatives are not cumulative requirements."
+      ],
+      "clarifications": [
+        "The human explicitly confirms that English stopping criteria refers to the end of washing for D. The FR text states washing explicitly."
+      ],
+      "decision_record": "review-decisions/FT01.json"
+    },
+    {
+      "case_id": "FT02",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT02 avec les réserves indiquées, en gardant chargement et lavage distincts et la portée limitée de la note sur la seringue. Enregistre ma décision et passons à FT03. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:30:15.679035+00:00",
+      "question_sha256_canonical": "6b24c3ff694ec8ae4f39d4add3f55ac3702517dab4e0afef3f750b1ae6d71227",
+      "submission_sha256_canonical": "b7c8919226adc3432ca0b32eff559799bb6197f2ad89d47674c8175c5d0ef6ef",
+      "reference_sha256_canonical": "d7b088d15c84cc345bf4f604a063d1f50284f0e2f1961e3773282da69aa475e2",
+      "retained_reservations": [
+        "Loading and washing are different phases with different flow ranges.",
+        "Natural wording is retained even if outside the bounded interpreter grammar; do not rewrite it after results.",
+        "The inherited syringe note is not a universal conversion or a requested additional unit."
+      ],
+      "clarifications": [
+        "The human retains the separation between sample loading and washing and the limited, approximate column/flow-specific scope of the syringe note."
+      ],
+      "decision_record": "review-decisions/FT02.json"
+    },
+    {
+      "case_id": "FT03",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT03 avec les réserves indiquées, en conservant « généralement au moins » et sans conversion des CV en mL ni durée déduite. Enregistre ma décision et passons à FT04. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:32:51.980070+00:00",
+      "question_sha256_canonical": "e103fb588746e67b37187a374ac052fda6450136dede5ebb0184721fd7547f38",
+      "submission_sha256_canonical": "bb840c36dd989e8a7ccd37ad04d7734f3eb48b5a5a4c172b48c81abb0d2e4c23",
+      "reference_sha256_canonical": "ecb0c0240479d9a1a853dce61c252b33245b17ef659cd0cce852b189cbaea84c",
+      "retained_reservations": [
+        "Keep the generally/at-least qualification; the requested volume does not imply a washing-flow request.",
+        "The inherited endpoint and syringe-note text must not become additional requested quantities."
+      ],
+      "clarifications": [
+        "Retain generally at least for the washing volume; do not convert CV to mL or derive a duration. Loading flow and washing volume remain separate requested quantities."
+      ],
+      "decision_record": "review-decisions/FT03.json"
+    },
+    {
+      "case_id": "FT04",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT04 avec les réserves indiquées, en distinguant formulation du tampon et élution opératoire, sans choisir de mode. Enregistre ma décision et passons à FT05. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:34:08.431148+00:00",
+      "question_sha256_canonical": "9b42da1cf13ba7d14ac8ac36bd7c8cf5f9c0c5b56cbd9744b2ed7a7d9038fd9f",
+      "submission_sha256_canonical": "ad85824ea9a3d0a242e1209185890b00aae2a1f096a3715612bf8c13fe116cdd",
+      "reference_sha256_canonical": "cae7cb3fe206b713be59e17ec4befb329766a44ba8684c9c2c5593b6fb9be822",
+      "retained_reservations": [
+        "Buffer preparation is distinct from operating elution; the exclusion must not remove the formulation request.",
+        "Preserve the manual nomenclature without silently correcting it, pairing binding/elution alternatives, or selecting a mode."
+      ],
+      "clarifications": [
+        "Keep buffer formulation distinct from operating elution. The operating-elution exclusion does not remove the elution-buffer formulation request; no mode is selected."
+      ],
+      "decision_record": "review-decisions/FT04.json"
+    },
+    {
+      "case_id": "FT05",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT05 avec les réserves indiquées, en limitant l’exclusion aux critères de fin du lavage de D et en gardant E indépendant. Enregistre ma décision et passons à FT06. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:35:20.819478+00:00",
+      "question_sha256_canonical": "a2b0bace9fb2a466d60b600626ebd01f08b2044994664ab1be635ea02d12d435",
+      "submission_sha256_canonical": "d50388e649ed7cb9ea530cfdd329fbf4c9376b9eabf4f65339181fb18cb5ed3f",
+      "reference_sha256_canonical": "40628b22b8624a9db0f38750b237e6f325d5f8a0077a1dacacc03dc9ebaef7bb",
+      "retained_reservations": [
+        "Retain the positive D request before processing its exclusion; both units remain counted.",
+        "An atomic source may contain endpoint text, but no endpoint unit may be created or bound.",
+        "SEC principle is not selection or suitability for the sample."
+      ],
+      "clarifications": [
+        "Limit the exclusion to washing stopping criteria for D. Retain the positive washing-flow request for D and keep the general SEC principle request for E independent; source presence is not a binding of excluded information."
+      ],
+      "decision_record": "review-decisions/FT05.json"
+    },
+    {
+      "case_id": "FT06",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT06 avec les réserves indiquées, en gardant l’exclusion niée inactive et une seule demande de débit de chargement. Enregistre ma décision et passons à FT07. Aucun LLM, API payante, commit ni push",
+      "reviewed_at_utc": "2026-10-26T21:36:11.577758+00:00",
+      "question_sha256_canonical": "2a70a13eaf1c37727249d85de7c3c1d0b2c0c9551b1b14053496a9edc69dbdad",
+      "submission_sha256_canonical": "9527f095ebc0ac55257932b6f2123e682bdc67fc2a7a34c4d1d127843c955702",
+      "reference_sha256_canonical": "985878f810dd193a292f7621563c55bd0e176a48365ad42c65791e330b17e365",
+      "retained_reservations": [
+        "Preserve full negation and owner spans; a negated ban is auditable but inactive.",
+        "Do not transfer the washing range or turn the approximate syringe note into a universal conversion."
+      ],
+      "clarifications": [
+        "Keep the negated exclusion inactive and auditable. Count exactly one positive loading-flow request for D; the active operating-elution ban must not block loading, and the syringe note remains approximate and column/flow-specific."
+      ],
+      "decision_record": "review-decisions/FT06.json"
+    },
+    {
+      "case_id": "FT07",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT07 avec les réserves indiquées, sans déduire le format ni le volume chargé et en gardant E indépendant. Enregistre ma décision et passons à FT08. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:45:37.422949+00:00",
+      "question_sha256_canonical": "86f3aa2fca0d6155eca0d4a5b194962151e0dc245ddc9f9d4ed2b4ca83a634a4",
+      "submission_sha256_canonical": "901b1bb661b2080882ed8789059aeb5e4fafae8928c813508817d81b9791e20f",
+      "reference_sha256_canonical": "0798bddd355aec3dd6f7518aeffb1ae75e0e803eeb26d088904ec11441bda958",
+      "retained_reservations": [
+        "First real context ambiguity: explicit unknown column, not an ambiguous preparation owner.",
+        "Do not infer a format by elimination, invent loaded volume or suppress E.",
+        "Only D flow is withheld; a nearby available source is not a D binding."
+      ],
+      "clarifications": [
+        "Do not infer column format or loaded volume from available sample volume. Preserve explicit unknown states, withhold D washing-flow assignment pending column clarification, and keep E SEC principle independent."
+      ],
+      "decision_record": "review-decisions/FT07.json"
+    },
+    {
+      "case_id": "FT08",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT08 avec les réserves indiquées, sans privilégier l’une des valeurs de D et en gardant E indépendant. Enregistre ma décision et passons à FT09. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T21:53:18.627483+00:00",
+      "question_sha256_canonical": "8f544c848030fa91b98d65fcc0043425a0a10d1241f8e48355b7abf752a0c84a",
+      "submission_sha256_canonical": "061228fb67fe8b4f7b477ae8cc381c31805345f185e8d10289b3c8e9dc032d45",
+      "reference_sha256_canonical": "506a6745ebaffde22e74abc66a9888e34480fed33bbfb9ed4526b87c477f53a7",
+      "retained_reservations": [
+        "Second real context ambiguity: two conflicting assertions in one preparation, not two invented preparations.",
+        "Preserve qualified-label provenance separately from the explicit column field.",
+        "E may use a source shared with D without assigning that source to the blocked D unit."
+      ],
+      "clarifications": [
+        "Preserve both conflicting D assertions without privileging either value or inventing a second preparation. Withhold D flow assignment pending clarification and keep E independent; a source assigned to E is not a binding for D."
+      ],
+      "decision_record": "review-decisions/FT08.json"
+    },
+    {
+      "case_id": "FT09",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT09 avec les réserves indiquées, en conservant zéro et faux comme valeurs fournies et la condition d’application. Enregistre ma décision et passons à FT10. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T22:02:42.319237+00:00",
+      "question_sha256_canonical": "d74d7f2d944f3b56f77556e17264eac77613954188d484a4c1381b8d9b3e36e0",
+      "submission_sha256_canonical": "a9c3cc6c3c807bc984f4a4edcfd56fba04b7deead9d808e2c1570af13219a6f0",
+      "reference_sha256_canonical": "e128391e84e01ed3a20e8233893408b1a7840e03970a13b05eedf10bc80356ea",
+      "retained_reservations": [
+        "Zero and false are supplied values, not missing context.",
+        "No inference of stopped-pump cause, target hydrophobicity, sample suitability, or additional purification is authorized.",
+        "Decimal punctuation may normalize within mL/min; the original lexeme and full application condition remain."
+      ],
+      "clarifications": [
+        "Retain zero observed flow and false interference as explicitly supplied values, with their original roles and lexemes. Preserve the full intended-application condition; do not infer a flow-zero cause, scientific suitability or a purification recommendation."
+      ],
+      "decision_record": "review-decisions/FT09.json"
+    },
+    {
+      "case_id": "FT10",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT10 avec les réserves indiquées, en distinguant les volumes, sans durée déduite et en conservant la question naturelle. Enregistre ma décision et passons à FT11. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T22:14:42.800120+00:00",
+      "question_sha256_canonical": "2afe04c574497214d350d478fc51b3341d2de1a9be0d8adeb578df2911857734",
+      "submission_sha256_canonical": "52e62ff5f0b77fa58b2c7ee8142a6988ff3799bac4f60927f6c9e461819e69f1",
+      "reference_sha256_canonical": "e296a2b9887f9be786e47d141c671a8f4b49818bc775c4473de9ace10242e4d6",
+      "retained_reservations": [
+        "Preserve available, loaded and bed-volume roles separately.",
+        "A qualified product label supplies its own size without filling a separate column field.",
+        "Do not silently replace the natural question by a supported command after results."
+      ],
+      "clarifications": [
+        "Keep available sample volume, unknown loaded volume and qualified-label column size distinct. Do not derive a duration or assume all available sample is loaded; preserve the natural EN/FR question and the limited approximate syringe-note scope."
+      ],
+      "decision_record": "review-decisions/FT10.json"
+    },
+    {
+      "case_id": "FT11",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT11 avec les réserves indiquées, en limitant l’absence aux 25 extraits admissibles et en gardant les autres demandes servies. Enregistre ma décision et passons à FT12. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T22:16:30.168477+00:00",
+      "question_sha256_canonical": "9cc9b02e31b13610c03a4d23153949af01d451d638a854176d94596eb2d5f4a1",
+      "submission_sha256_canonical": "7518ee50c4dfd5159e1165d017514b4f99b04062a673fcbd2958c22be0608dab",
+      "reference_sha256_canonical": "d3638e1844b7d8e5f58b2662dd7a3b6f8258b2cc66cb756f81856d4aba05bab2",
+      "retained_reservations": [
+        "First explicit mixed documentary-support request: supported siblings must remain served despite bounded pressure absence.",
+        "Pressure is a general operating-limit selector, not a washing-flow parameter or a conversion.",
+        "All 25 eligible excerpts support only the bounded absence audit, not an assigned pressure binding."
+      ],
+      "clarifications": [
+        "Limit the maximum-pressure absence statement to the exact 25 eligible excerpts; do not infer pressure or whole-manual absence. Keep all three requests counted, serve D washing flow and the independent E IEX principle, and assign no source binding to pressure."
+      ],
+      "decision_record": "review-decisions/FT11.json"
+    },
+    {
+      "case_id": "FT12",
+      "decision": "validated_with_reservations",
+      "human_quote": "Je valide FT12 avec les réserves indiquées, en maintenant la quarantaine sans bloquer les autres demandes. Enregistre ma décision et fais le bilan des douze questions. Aucun LLM, API payante, commit ni push.",
+      "reviewed_at_utc": "2026-10-26T22:20:22.454972+00:00",
+      "question_sha256_canonical": "c84ad0ef3f1105c098c1451764f252bfc3501732999ab38bbf962cedcbd39352",
+      "submission_sha256_canonical": "1f45d7ed0a1233580d28b486a680dfeb4086967520241d9cca7944bddf382bec",
+      "reference_sha256_canonical": "a6fe33c3cfeadc1c20735261d851add90a8bfac0cfb942ddac9165d078434abe",
+      "retained_reservations": [
+        "Second explicit mixed documentary-support request: withholding equilibration must not suppress loading or the independent E formulation.",
+        "No transfer from loading or washing to equilibration, and no source-approval override.",
+        "Preserve the manual nomenclature and alternatives without correcting formulas, pairing buffers or choosing a recipe."
+      ],
+      "clarifications": [
+        "Keep E121-EQ quarantined with no equilibration-flow source assignment or transfer from loading/washing. Retain all three requests, serve D loading flow and E binding-buffer alternatives independently, and preserve nomenclature without selecting or pairing recipes."
+      ],
+      "decision_record": "review-decisions/FT12.json"
+    }
+  ],
+  "reviewed_cases": 12,
+  "pending_cases": 0,
+  "clarification_policy": "Human clarification retained separately; draft questions/forms/references are unchanged.",
+  "completed_at_utc": "2026-10-26T22:20:22.454972+00:00"
+}

@@ -1,0 +1,41 @@
+{
+  "id": "FT07-actual-human-pair-review",
+  "case_id": "FT07",
+  "recorded_at_utc": "2026-10-26T21:45:37.422949+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT07",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT07 avec les réserves indiquées, sans déduire le format ni le volume chargé et en gardant E indépendant. Enregistre ma décision et passons à FT08. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:45:37.422949+00:00",
+    "question_sha256_canonical": "86f3aa2fca0d6155eca0d4a5b194962151e0dc245ddc9f9d4ed2b4ca83a634a4",
+    "submission_sha256_canonical": "901b1bb661b2080882ed8789059aeb5e4fafae8928c813508817d81b9791e20f",
+    "reference_sha256_canonical": "0798bddd355aec3dd6f7518aeffb1ae75e0e803eeb26d088904ec11441bda958",
+    "retained_reservations": [
+      "First real context ambiguity: explicit unknown column, not an ambiguous preparation owner.",
+      "Do not infer a format by elimination, invent loaded volume or suppress E.",
+      "Only D flow is withheld; a nearby available source is not a D binding."
+    ],
+    "clarifications": [
+      "Do not infer column format or loaded volume from available sample volume. Preserve explicit unknown states, withhold D washing-flow assignment pending column clarification, and keep E SEC principle independent."
+    ],
+    "decision_record": "review-decisions/FT07.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

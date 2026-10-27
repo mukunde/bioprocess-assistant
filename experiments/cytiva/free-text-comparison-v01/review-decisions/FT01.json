@@ -1,0 +1,46 @@
+{
+  "id": "FT01-actual-human-pair-review",
+  "case_id": "FT01",
+  "recorded_at_utc": "2026-10-26T21:22:46.267767+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT01",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT01 avec les réserves indiquées, en confirmant que « stopping criteria » désigne la fin du lavage. Enregistre ma décision et passons à FT02. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:22:46.267767+00:00",
+    "question_sha256_canonical": "789576cf245e126d2aadb5398c55d12f996519a30873c9f623b6e1f8f8f9c2fa",
+    "submission_sha256_canonical": "1e91266d419065ca886c3f6ee0c403349bb795b9c1977ef8b0b523a32d713f7a",
+    "reference_sha256_canonical": "aa319a7c845099760f28d6fd24c48997028fd40c552b53190d1c01220634b684",
+    "retained_reservations": [
+      "The text mentions D before E; preserve task order D/E even though the first requested information is for E.",
+      "Do not transfer the 1 mL flow to D or infer a duration; the endpoint alternatives are not cumulative requirements."
+    ],
+    "clarifications": [
+      "The human explicitly confirms that English stopping criteria refers to the end of washing for D. The FR text states washing explicitly."
+    ],
+    "decision_record": "review-decisions/FT01.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, source/intent references and retained reservations, including the confirmed EN washing ellipsis.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT02",
+    "FT03",
+    "FT04",
+    "FT05",
+    "FT06",
+    "FT07",
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "coverage-v03-encoding-static-audit",
+  "verified_at_utc": "2026-10-27T02:55:02.376189+00:00",
+  "status": "static_design_consistent_not_runtime_conformance",
+  "semantic_decisions": "CC01-CC06 approved collectively; new schema/fixtures are specified encoding, not separately human-reviewed outputs.",
+  "valid_design_examples": 12,
+  "rejected_negative_examples": 12,
+  "schema_meta_validation": true,
+  "file_sha256_lf": {
+    "docs/technical/COVERAGE-CONTRACT-V03-PROPOSAL.md": "b9761dd53944bdc26e159b3e90bc8322718873ce7d01636cb75cf8427d10ea93",
+    "docs/decisions/2026-10-27-coverage-contract-CC-review.json": "b45d63e2a4dbd9692fcd9920df6e8d187fa46da1d72df9f0107b12b64fc8d07a",
+    "docs/technical/COVERAGE-CONTRACT-V03-ENCODING.md": "23d944c1f04778f5bafbe70c6afae0a298b0fcb323e42a134a816b8e785dcae0",
+    "docs/technical/coverage-summary-v03.schema.json": "55d96a87c535fa29652af05b67d2bfdba676b476fe080df7f7c8645d7bb36efe",
+    "docs/technical/coverage-summary-v03-examples.json": "f1fc2d41e727b8d4350c22800063f0620bf3c04c8fb3c2bfb5e2b451b99cdcca"
+  },
+  "all_tracked_files_unchanged": true,
+  "old_16_notes_byte_identical": true,
+  "historical_raw_outputs_and_scores_unchanged": true,
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "runtime_implementation": false,
+  "real_runtime_calls": 0,
+  "new_trial": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

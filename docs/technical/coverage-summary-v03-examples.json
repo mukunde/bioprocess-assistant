@@ -1,0 +1,354 @@
+{
+  "status": "proposed_encoding_after_CC_approval_not_runtime_validated",
+  "schema_file": "docs/technical/coverage-summary-v03.schema.json",
+  "examples": [
+    {
+      "id": "CE01",
+      "description": "FV06 meaning, not a rescore",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 3,
+        "accounted_units": 3,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "complete",
+          "scope": "complete_request",
+          "eligible_ready_units": 1,
+          "covered_units": 1
+        },
+        "request_support": {
+          "supported_units": 1,
+          "known_requested_units": 3,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE02",
+      "description": "Full support for a nonempty request",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "complete",
+          "scope": "complete_request",
+          "eligible_ready_units": 2,
+          "covered_units": 2
+        },
+        "request_support": {
+          "supported_units": 2,
+          "known_requested_units": 2,
+          "all_requested_units_supported": true
+        },
+        "has_unserved_known_units": false,
+        "full_service": true
+      }
+    },
+    {
+      "id": "CE03",
+      "description": "One eligible unit exceeds budget",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "partial",
+          "scope": "complete_request",
+          "eligible_ready_units": 2,
+          "covered_units": 1
+        },
+        "request_support": {
+          "supported_units": 1,
+          "known_requested_units": 2,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE04",
+      "description": "All known positive units quarantined",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "not_applicable",
+          "scope": "complete_request",
+          "eligible_ready_units": 0,
+          "covered_units": 0
+        },
+        "request_support": {
+          "supported_units": 0,
+          "known_requested_units": 2,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE05",
+      "description": "Only missing documentary evidence",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 1,
+        "accounted_units": 1,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "not_applicable",
+          "scope": "complete_request",
+          "eligible_ready_units": 0,
+          "covered_units": 0
+        },
+        "request_support": {
+          "supported_units": 0,
+          "known_requested_units": 1,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE06",
+      "description": "No positive request, e.g. restriction directive only",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 0,
+        "accounted_units": 0,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "not_applicable",
+          "scope": "complete_request",
+          "eligible_ready_units": 0,
+          "covered_units": 0
+        },
+        "request_support": {
+          "supported_units": 0,
+          "known_requested_units": 0,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": false,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE07",
+      "description": "Known supported subset but incomplete text inventory",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": false,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "not_assessed",
+          "scope": "known_units_only",
+          "eligible_ready_units": 2,
+          "covered_units": 2
+        },
+        "request_support": {
+          "supported_units": 2,
+          "known_requested_units": 2,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": false,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE08",
+      "description": "Eligibility cannot yet be assessed",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 1,
+        "accounted_units": 1,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": false,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "not_assessed",
+          "scope": "unassessed",
+          "eligible_ready_units": null,
+          "covered_units": null
+        },
+        "request_support": {
+          "supported_units": 0,
+          "known_requested_units": 1,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE09",
+      "description": "Unit-local execution error, independent sibling still supported",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": false,
+        "has_assessment_error": true,
+        "eligible_ready_context_coverage": {
+          "state": "error",
+          "scope": "unassessed",
+          "eligible_ready_units": null,
+          "covered_units": null
+        },
+        "request_support": {
+          "supported_units": 1,
+          "known_requested_units": 2,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE10",
+      "description": "Global context integrity failure, no unvalidated support counted",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": false,
+        "has_assessment_error": true,
+        "eligible_ready_context_coverage": {
+          "state": "error",
+          "scope": "unassessed",
+          "eligible_ready_units": null,
+          "covered_units": null
+        },
+        "request_support": {
+          "supported_units": 0,
+          "known_requested_units": 2,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE11",
+      "description": "Missing outcome for one identified unit",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": false,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 3,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": false,
+        "assessment_complete": false,
+        "has_assessment_error": true,
+        "eligible_ready_context_coverage": {
+          "state": "error",
+          "scope": "known_units_only",
+          "eligible_ready_units": 2,
+          "covered_units": 2
+        },
+        "request_support": {
+          "supported_units": 2,
+          "known_requested_units": 3,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    },
+    {
+      "id": "CE12",
+      "description": "One positive unit blocked by an active restriction",
+      "kind": "declarative_design_fixture_not_runtime_output",
+      "identity_audit_passed": true,
+      "summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": true,
+        "known_requested_units": 2,
+        "accounted_units": 2,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": true,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "complete",
+          "scope": "complete_request",
+          "eligible_ready_units": 1,
+          "covered_units": 1
+        },
+        "request_support": {
+          "supported_units": 1,
+          "known_requested_units": 2,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      }
+    }
+  ]
+}

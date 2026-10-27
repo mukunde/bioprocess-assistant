@@ -7,7 +7,8 @@ review extracted claims before publication, and measure both answer quality and
 cost. Adopt useful KAG principles incrementally; do not migrate to OpenSPG yet.
 The reliability baseline is implemented. Ingestion/review and local passage
 retrieval have been exercised on selected real-manual examples; the reviewed
-knowledge is not yet served by the chatbot. Portable telemetry, independent
+extraction is not yet served by the legacy chatbot. A separate model-free guided
+demo now serves 25 reviewed passages through frozen v03. Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
@@ -50,7 +51,8 @@ Migration from the legacy dense template/review database is still pending.
 
 Phase numbers identify workstreams and acceptance gates, not a completed linear
 sequence. Documentary work advanced before telemetry; manifests and timings do
-not complete phase 1. The reviewed manual data is not yet served by the chatbot.
+not complete phase 1. The legacy chatbot still uses its curated graph; the
+separate local demo serves a bounded set of 25 reviewed passages.
 
 | Workstream | Merged/observed | Remaining gate |
 |---|---|---|
@@ -58,19 +60,19 @@ not complete phase 1. The reviewed manual data is not yet served by the chatbot.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons and corrected opt-in v03 merged; v03 runtime freeze and local guided demo prepared locally | User walkthrough, reproducible launch, serving/answer evaluation and incremental scope extension |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03, its runtime freeze, corrected local demo and Windows launcher merged | Fresh-clone installation/second-machine walkthrough, serving/answer evaluation and incremental scope extension |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-The merged baseline is `main` at `173497f`, after
-[PR48](https://github.com/mukunde/bioprocess-assistant/pull/48) (FV review/results),
-[PR49](https://github.com/mukunde/bioprocess-assistant/pull/49) (coverage contract)
-and [PR50](https://github.com/mukunde/bioprocess-assistant/pull/50) (corrected v03).
-The full maintained suite passed **757/757 tests** on that integrated baseline,
+The merged baseline is `main` at `82b16b6`, including
+[PR51](https://github.com/mukunde/bioprocess-assistant/pull/51) (v03 runtime freeze),
+[PR52](https://github.com/mukunde/bioprocess-assistant/pull/52) (demo and usability fixes)
+and [PR53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher).
+The full maintained suite passed **780/780 tests** on that integrated baseline,
 with no errors, failures, skips or external connection attempts. Earlier 556,
-603 and 667 checkpoints remain historical. This is neither fresh-install
+603, 667 and 757 checkpoints remain historical. This is neither fresh-install
 certification nor a generated-answer benchmark.
 
-### Merged evidence versus local freeze/demo additions
+### Merged evidence, runtime freeze and demo
 
 - **Merged:** the [v05 X export](../experiments/cytiva/reviewed-v05-evaluation/README.md)
   preserves its blocked outcome. The [structured S export](../experiments/cytiva/reviewed-structured-control/README.md)
@@ -98,10 +100,18 @@ certification nor a generated-answer benchmark.
   unrepresented coordination, retains inherited French phase origins and checks
   contradictory counts. Its 76 checks use known development inputs; historical
   FT/FV gates and scores are unchanged.
-- **Local, not yet merged:** the [v03 runtime freeze](../experiments/cytiva/free-text-v03-freeze-v01/README.md)
-  pins engine/shared dependencies, policies and environment. The user selected
-  the local guided Cytiva demo; the [demo-first guide](DEMO-FIRST.md) describes the
-  implemented request-to-source slice and walkthrough. No new trial is run.
+- **Merged in PR51:** the [v03 runtime freeze](../experiments/cytiva/free-text-v03-freeze-v01/README.md)
+  pins 36 engine/shared dependency, policy and environment files. Runtime integrity
+  does not supply a new prospective score or change the legacy chat default.
+- **Merged in PR52:** the user-selected [guided Cytiva demo](DEMO-FIRST.md)
+  serves the 25 eligible excerpts without a model or Neo4j. The browser walkthrough
+  covers citations, clarification, partial service and quarantine. Corrections
+  make stale results, missing-format recovery and source/result navigation explicit;
+  quote highlighting preserves the original text.
+- **Merged in PR53:** the Windows launcher starts the demo in one command after
+  checking Python, 12 dependency versions, offline tokenizer integrity and all
+  36 frozen files. It installs/downloads nothing and does not establish that a
+  fresh machine can reproduce the prepared environment. No new trial was run.
 
 The [historical delivery inventory](experiments/free-text-v02-reviewed-package.md)
 keeps raw outputs and the 16 older S preparation/review notes outside the lot.
@@ -110,12 +120,17 @@ No experimental interpreter or retriever is activated by this documentation.
 
 ### Next delivery priorities
 
-1. **Demonstrate the guided Cytiva slice now.** Use frozen v03 and the existing
-   eligible excerpts to show a supported request, citations/conditions, missing
-   evidence, quarantine and clarification. No new research campaign blocks this
-   demonstration. Cosmetic and wider-language refinements can follow user feedback.
-2. **Make launch reproducible and improve usability.** Package the runtime/cache
-   prerequisites, add a one-command launcher and record a short walkthrough.
+1. **Validate fresh-clone setup on a second Windows environment.** The local
+   walkthrough, usability corrections and one-command launcher are complete.
+   Prepare a reproducible isolated dependency installation and tokenizer-cache
+   setup, then verify recorded versions/hashes with `-CheckOnly` and execute the
+   five-minute walkthrough. Success requires supported citations, format
+   clarification, partial service and quarantine without a model, API or Neo4j;
+   retain installation diagnostics. Keep the current freeze unchanged. This is
+   the next delivery gate, not another twelve-question research campaign.
+2. **Record a short demonstration and collect user feedback.** Improve usability
+   and bounded language coverage from observed needs. A prepared-workstation run
+   remains distinct from fresh-install certification or hosted deployment.
 3. **Extend one useful workflow.** Add a confirmed troubleshooting use case or
    the reviewed-record serving adapter. Keep source versions, conditions,
    reservations, quarantine and rollback. Do not equate procedural lookup with

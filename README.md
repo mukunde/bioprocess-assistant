@@ -10,11 +10,11 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Current status
 
-Updated 27 October 2026. The merged checkpoint is `main` at `173497f`, after
-[PR #48](https://github.com/mukunde/bioprocess-assistant/pull/48) (reviewed FV trial),
-[PR #49](https://github.com/mukunde/bioprocess-assistant/pull/49) (coverage contract)
-and [PR #50](https://github.com/mukunde/bioprocess-assistant/pull/50) (corrected v03).
-The complete maintained suite passed **757/757 tests** on that merged baseline,
+Updated 27 October 2026. The merged checkpoint is `main` at `82b16b6`, including
+[PR #51](https://github.com/mukunde/bioprocess-assistant/pull/51) (v03 runtime freeze),
+[PR #52](https://github.com/mukunde/bioprocess-assistant/pull/52) (guided demo and usability fixes)
+and [PR #53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher).
+The complete maintained suite passed **780/780 tests** on that merged baseline,
 with no skipped tests or external connection attempts.
 
 The merged v02/FV trial preserves all twelve human approvals and its completed
@@ -26,10 +26,12 @@ its individual unit states match the reference. See the
 The failures informed corrected v03; they were not rescored. No experimental
 interpreter is the legacy chat default.
 
-**Prepared locally, not yet merged:** the corrected-v03 runtime freeze and a
-free local guided demo over the 25 reviewed excerpts. It displays documentary
-support, source quotations, missing evidence and quarantine without a model or
-Neo4j. See [the demo-first guide](docs/DEMO-FIRST.md) for launch and walkthrough.
+**Merged and demonstrable locally:** corrected v03 is frozen with 36 pinned files.
+The free guided demo uses 25 reviewed excerpts to display documentary support,
+source quotations, clarification, missing evidence and quarantine without a model
+or Neo4j. Usability corrections and a Windows launcher with dependency/cache and
+freeze checks are merged. The launcher checks an existing environment; clean-machine
+installation remains unverified. See [the demo-first guide](docs/DEMO-FIRST.md).
 
 | Component | Status and scope |
 |---|---|
@@ -40,7 +42,7 @@ Neo4j. See [the demo-first guide](docs/DEMO-FIRST.md) for launch and walkthrough
 | Conversion and chunking | Selected page 77/88/104/152–153 reviews and repairs are merged; three ambiguous rows remain quarantined on 152–153 |
 | Passage retrieval | Merged BM25/atomic assembly experiments; frozen v03b, v04 and v05 gates remain blocked and none is the chat default |
 | Structured request control | Merged offline control. S01-S12: all 24 EN/FR submissions and all 12 paired scenarios pass reviewed context/diagnostic criteria; known-corpus diagnostic evidence only |
-| Free-text interface | v01/v02, reviewed FT/FV trials and corrected opt-in v03 merged. Historical gates remain blocked; v03 runtime freeze and local guided/text demo are prepared locally |
+| Free-text interface and local demo | v01/v02, reviewed FT/FV trials, corrected opt-in v03, its runtime freeze, corrected guided/text demo and Windows launcher merged. Historical gates remain blocked; fresh-install reproducibility remains pending |
 | Reviewed records → chatbot | Adapter pending; ingestion does not automatically enrich the serving graph |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
@@ -152,7 +154,7 @@ The [current suite notes](tests/README.md) explain the maintained entry point an
 
 These tests mock external model/database calls; some use loopback HTTP servers
 and Windows asynchronous sockets. They need no paid API or external service.
-The **757/757** merged-main result above is from the existing local verification environment,
+The **780/780** merged-main result above is from the existing local verification environment,
 not a fresh-install certification or an answer-quality measurement. Structured
 runtime dependencies are listed separately in `requirements-structured.txt`;
 private tokenizer assets may also be required by optional runtime workflows.
@@ -188,7 +190,8 @@ does not establish general language understanding or generated-answer quality.
 | [Frozen v01 / FT01-FT12](experiments/cytiva/free-text-comparison-v01/README.md) | Merged: S 24/24, F0 12/24 observations and 4/12 bilingual pairs | Acceptance blocked; inspected FT cases became v02 development regressions |
 | [Opt-in v02](docs/technical/FREE-TEXT-CANDIDATE-V02.md) | Merged candidate; 57 targeted checks and FT development regressions pass | Does not replace v01 or demonstrate independent performance |
 | [Frozen v02 / FV01-FV12](experiments/cytiva/free-text-v02-comparison-v01/README.md) | Merged reviewed delivery: S 22/24, F0 17/24, 7/12 pairs; 48 outcomes retained; 1,674-token maximum | Gate blocked by item identity, FR phase association and FV06 shared-flag/reference mismatch. No reference amendment or rescoring |
-| [Corrected v03](docs/technical/FREE-TEXT-CANDIDATE-V03-REVIEW-FIXES.md) | Merged: versioned coverage, buffer occurrences and French phase-origin fixes; 76 v03 checks pass | Known development regressions, not a new prospective score. [Runtime freeze](experiments/cytiva/free-text-v03-freeze-v01/README.md) and guided demo are local additions |
+| [Corrected v03](docs/technical/FREE-TEXT-CANDIDATE-V03-REVIEW-FIXES.md) | Merged: versioned coverage, buffer occurrences and French phase-origin fixes; 76 v03 checks pass; [runtime freeze](experiments/cytiva/free-text-v03-freeze-v01/README.md) pins 36 files | Known development regressions and runtime integrity, not a new prospective score or legacy chat activation |
+| [Guided demo and Windows launcher](docs/DEMO-FIRST.md) | Merged: request-to-source walkthrough, usability corrections and one-command launch with environment/cache/freeze checks | 25-excerpt scope; no generated advice, whole-manual coverage or clean-machine installation certification |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
 The question series have distinct histories: Q/N/C contain 28 reviewed development
@@ -210,13 +213,12 @@ excerpts, not the full manual. S's 2,048-token budget counts serialized context
 including bindings, not a future answer prompt or output. The source-reviewed
 claims have not been connected to the chatbot's serving path.
 
-**Next priority:** preserve the reviewed FV trial and its blocked scores, then
-clarify eligible-unit coverage versus whole-request service (FV06). A separate
-candidate can repair distinct buffer-use item identities and local phase
-association. Keep FV as development evidence after repairs; use a fresh reviewed
-set for another prospective freeze rather than retuning this trial. The
-[delivery inventory](docs/experiments/free-text-v02-reviewed-package.md) separates
-this local package from the merged baseline and the 16 excluded older notes.
+**Next priority:** reproduce the model-free demo from a fresh clone on a second
+Windows environment. Document and test isolated dependency installation and
+tokenizer-cache preparation, then run the launcher readiness check and five-minute
+walkthrough. The current launcher verifies prerequisites but does not install
+them. Preserve frozen v03, historical blocked scores and excluded sources; a new
+question-review campaign is not a prerequisite for this delivery step.
 
 The three-arm graph/passages/LightRAG comparison remains unexecuted. Current BM25
 trials are a lexical baseline, not the multilingual vector arm specified in that
@@ -230,8 +232,8 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Try the local guided Cytiva demo with frozen v03: request, source passages, conditions, partial service and clarification. Fix walkthrough blockers first; a new twelve-question review campaign is not a prerequisite.
-2. Make installation/launch reproducible and record a short demonstration. Iterate on usability and bounded language coverage from concrete feedback.
+1. Validate fresh-clone setup on a second Windows environment: isolated dependencies, verified tokenizer cache, launcher `-CheckOnly`, then the existing five-minute walkthrough. Keep frozen v03 unchanged and record setup failures explicitly.
+2. Record a short demonstration and collect user feedback. The corrected walkthrough and one-command launcher are already merged; improve usability and bounded language coverage from concrete feedback.
 3. Extend one confirmed troubleshooting workflow or the reviewed-records-to-chatbot adapter, retaining source versions, conditions, reservations and quarantine.
 4. Instrument the actual path with OpenTelemetry and portable call/retry/cost accounting; add generated-answer evaluation with Ragas and Promptfoo when that answering path exists. Fresh holdouts accompany later behavior changes.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.

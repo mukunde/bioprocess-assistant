@@ -18,6 +18,65 @@ reviewed excerpts. Pressure and equilibration demonstrate missing evidence and
 quarantine. The optional EN/FR text input retains the bounded parser and its
 clarification behavior. Source quotations remain in their original English.
 
+## Install from a fresh Windows clone
+
+Prerequisites: Git and **CPython 3.13.0 x64** installed separately. The exact Python
+version is part of the unchanged v03 freeze; another 3.13 patch version is rejected.
+This procedure targets Windows x64, not ARM64, and needs no Docker, source PDF,
+model weights, account, API key or existing project environment.
+
+From PowerShell, clone the project, then run the explicit installation step:
+
+```powershell
+git clone https://github.com/mukunde/bioprocess-assistant.git
+cd bioprocess-assistant
+.\Install-CytivaDemo.ps1
+.\Start-CytivaDemo.ps1 -CheckOnly
+.\Start-CytivaDemo.ps1
+```
+
+The installer is a local, uncommitted addition until this delivery is merged;
+a remote clone of the preceding main revision does not include it yet.
+
+Installation creates the ignored `.venv-demo` in this clone. It installs all 12
+runtime dependencies from `demo/requirements-windows.lock`, with exact versions,
+SHA-256 wheel hashes and no source builds or dependency expansion. It downloads
+`cl100k_base.tiktoken` from the public OpenAI encoding-asset endpoint, verifies the
+SHA-256 recorded in the freeze and writes the ignored cache at the frozen path.
+These are package/static-file downloads, not model calls; no manual or question
+is transmitted. The engine continues to read only the verified local cache.
+
+The setup runs `pip check` and the launcher's readiness check. It never modifies
+global Python, the previous verification environment, the frozen lock or the
+serving engine. A ready installation is a no-op; a corrupt cache or a non-isolated
+existing `.venv-demo` fails with a diagnostic. After an interrupted dependency
+installation, rerun the command. If virtual-environment creation itself was
+interrupted and left no working Python/pip, retry in a fresh clone instead of
+reusing that incomplete environment. Never regenerate the v03 lock to hide a failure.
+
+If Python is not discoverable, use a caller-relative or absolute executable path:
+
+```powershell
+.\Install-CytivaDemo.ps1 -PythonPath "C:\path with spaces\python.exe"
+```
+
+For a disconnected machine, prepare the wheelhouse on a matching Windows x64 /
+Python 3.13.0 machine and separately obtain the tokenizer asset from
+`https://openaipublic.blob.core.windows.net/encodings/cl100k_base.tiktoken`:
+
+```powershell
+py -3.13 -m pip --isolated download --require-hashes --only-binary=:all: --no-deps --index-url https://pypi.org/simple -r demo/requirements-windows.lock -d "D:\demo wheels"
+.\Install-CytivaDemo.ps1 -Offline -Wheelhouse "D:\demo wheels" -TokenizerFile "D:\cl100k_base.tiktoken"
+```
+
+The offline installation uses `--no-index` and the supplied files; it fails if a
+required wheel/cache asset is absent or has the wrong hash. Keep wheels, caches
+and virtual environments outside Git. No execution-policy changes are made.
+
+The [installation review](experiments/cytiva-demo-installation-review.md) records
+the fresh-clone test, Windows PowerShell 5.1/7 checks, browser walkthrough and
+remaining second-machine limitation.
+
 ## Launch on the prepared Windows workstation
 
 From the repository root in Windows PowerShell 5.1 or PowerShell 7:
@@ -56,10 +115,9 @@ reports it and suggests choosing another port or stopping the existing server.
 Keep the terminal open while using the demo. Closing it stops the foreground
 service; the launcher does not create a hidden persistent service.
 
-For a different machine, reproduce the versions in the runtime lock and supply
-the offline tokenizer asset with its recorded hash before using the environment
-check. The private verification environment/cache is not redistributed. The
-launcher checks an existing installation; it is not a clean-machine installer.
+For a different machine, use the separate installation step above. The private
+verification environment/cache is not redistributed. The launcher itself remains
+read-only with respect to installation: it checks an existing environment.
 
 ## Five-minute walkthrough
 

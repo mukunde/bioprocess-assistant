@@ -30,8 +30,9 @@ interpreter is the legacy chat default.
 The free guided demo uses 25 reviewed excerpts to display documentary support,
 source quotations, clarification, missing evidence and quarantine without a model
 or Neo4j. Usability corrections and a Windows launcher with dependency/cache and
-freeze checks are merged. The launcher checks an existing environment; clean-machine
-installation remains unverified. See [the demo-first guide](docs/DEMO-FIRST.md).
+freeze checks are merged. The launcher checks an existing environment. A separate
+installer is now prepared locally and tested in a fresh clone on the same PC;
+validation on a second physical machine remains pending. See [the demo-first guide](docs/DEMO-FIRST.md).
 
 | Component | Status and scope |
 |---|---|
@@ -66,7 +67,13 @@ Ingestion has two separate routes: **Docling â†’ Docling Graph + local Ollama â†
 
 ## Run locally
 
-### Quick local Cytiva demo (prepared workstation)
+### Local Cytiva demo (Windows)
+
+For a fresh Windows x64 clone, install CPython **3.13.0** separately, then run
+`.\Install-CytivaDemo.ps1` to create `.venv-demo`, install hash-locked dependencies
+and prepare the verified tokenizer cache. This installer is a local addition
+pending publication; see the [setup guide](docs/DEMO-FIRST.md#install-from-a-fresh-windows-clone)
+for prerequisites and offline installation.
 
 The Windows launcher finds a compatible local Python environment, checks the
 frozen dependency versions and offline tokenizer, verifies v03 and starts the demo:

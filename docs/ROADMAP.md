@@ -118,6 +118,14 @@ keeps raw outputs and the 16 older S preparation/review notes outside the lot.
 Original decisions, reference reservations, locks and results remain unchanged.
 No experimental interpreter or retriever is activated by this documentation.
 
+**Local addition, not yet merged:** an explicit Windows setup command creates
+an isolated `.venv-demo`, installs the 12 frozen dependencies from a wheel-hash
+lock and prepares the verified tokenizer cache. Installation and the guided
+walkthrough were exercised in a fresh local clone, with no old project environment
+or tokenizer copied into it. Package downloads could use the workstation's pip
+cache. This is same-PC reproducibility evidence, not a second physical-machine or
+clean-OS certification; the latter remains the next delivery check. v03 is unchanged.
+
 ### Next delivery priorities
 
 1. **Validate fresh-clone setup on a second Windows environment.** The local

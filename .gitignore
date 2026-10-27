@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.egg-info/
 .venv/
+.venv-demo/
 venv/
 env/
 build/

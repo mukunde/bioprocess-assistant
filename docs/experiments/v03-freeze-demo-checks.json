@@ -1,0 +1,95 @@
+{
+  "id": "v03-freeze-and-guided-demo-checks",
+  "verified_at_utc": "2026-10-27T04:35:33.881941+00:00",
+  "status": "local_runtime_freeze_and_demo_ready_for_walkthrough_not_committed",
+  "freeze": {
+    "id": "free-text-v03-corrected-runtime-freeze-v01",
+    "status": "frozen",
+    "pinned_files": 36,
+    "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "environment_verified": true,
+    "runtime_instantiated": false,
+    "prospective_trial_executed": false
+  },
+  "full_suite": {
+    "tests": 769,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 48,
+    "elapsed_seconds": 136.978,
+    "real_S_trial_repeated": false
+  },
+  "new_tests": 12,
+  "browser_walkthrough": {
+    "url": "http://127.0.0.1:8766/",
+    "default_washing_request_source_bundle_visible": true,
+    "mixed_request_support": "1/3",
+    "mixed_request_eligible_context": "1/1",
+    "missing_pressure_and_quarantined_equilibration_visible": true,
+    "warning_and_bound_source_links_visible": true,
+    "preview": "Local screenshot retained outside versioned files."
+  },
+  "file_sha256_lf": {
+    "README.md": "66cd334d9d1858cfa984ad832f38b2a6bf65034a1c907ddb6697616a83f88f06",
+    "docs/ROADMAP.md": "5e10a2e351db35350c1186159e33c4a3a5b361492abf98c2351059fb5d49b57e",
+    "docs/DEMO-FIRST.md": "89c4bfe76b9da13bb49fad8b2dfe6f6359d5c81eb6d76c3880dd0694f5d196e9",
+    "demo/__init__.py": "db7d5061508f74166f85934f26caeb16d5773601651cb0f8301985bc4b102bf8",
+    "demo/cytiva.py": "7efacdadadccd0fd29a6d6b6a9cb87b72f3a6c911979f4c9bcf443d22f9e6b31",
+    "demo/static/cytiva.html": "b6b44ffe9feae6f6f3155c7dc4cbf1a7dfdcaeff4b38fc4a40d1c74bcd7219db",
+    "tests/test_cytiva_demo.py": "86379a0d2e1bbf78178ce7bea448fe67e32d4f422de204e6bea47dc73c301a38",
+    "tests/test_free_text_v03_freeze.py": "20d02b9fa13d1bfeb2821830d420441d5092e3e3763d50d2465d91e436499410",
+    "experiments/cytiva/free_text_v03_freeze.py": "dbd1f0b2308f14b4dfb71281924d2e727617bd5ed67aedad0e5c16770436b547",
+    "experiments/cytiva/free-text-v03-freeze-v01/README.md": "0f741ae0e888a7a0ea04547d82a99187658869db904e3eb1066be38e0492909b",
+    "experiments/cytiva/free-text-v03-freeze-v01/METHOD.md": "35ee583c2418bdf220c69dce4c95cce8d6c0ae14df9152ac02bd017c095742d3",
+    "experiments/cytiva/free-text-v03-freeze-v01/freeze-decision.json": "484e0241fd23a408aa363a4206ad96eeaba6683f35df068c8c4a8d41c492c9ea",
+    "experiments/cytiva/free-text-v03-freeze-v01/method-lock.json": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "experiments/cytiva/compositional-navigation-v04-results/manifest.json": "7fd52d1e107aaedfdf1499f6a4fe39465482e5c5786535b76a5c1d3f23ae27b0",
+    "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json": "915850f5ee0be4c5fd621a339d389c93ccfb13027478ec4ae062b773d2a76ca7",
+    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "bdaf9c03206068f1cae77a5e20f65e39c7171cf9269b1c62bc08a2fedbef7117"
+  },
+  "local_links_checked": 87,
+  "preservation": {
+    "old_16_notes_byte_identical": true,
+    "old_notes_sha256": {
+      "docs/experiments/cytiva-structured-control-s-preparation-checks.json": "e60bfd23d4cc240a8933be2c6f088ab99cb5b8a7d76d6e6e9e73bc616539f359",
+      "docs/experiments/cytiva-structured-control-s-preparation.md": "e25416e7e7679b7440ce7d413bbcfa9033eeccfd9bd82b4a09a79fa42760ca45",
+      "docs/experiments/cytiva-structured-control-s-results-checks.json": "de46b3b99a47b36282283b1996c58a396cc7353912f74983ea796bf3e75a9c92",
+      "docs/experiments/cytiva-structured-control-s-review-amendment-001.json": "192bbfa5db84324a0ff99d9fadac9adc2a3c441b6cf34f3c2c5ba8797b15034a",
+      "docs/experiments/cytiva-structured-control-s-review-decision-002.json": "275581a8b80993a09ededd5b7c1a1344e028be0beacbedd54568964a5401cfab",
+      "docs/experiments/cytiva-structured-control-s-review-decision-003.json": "ea69afe6966a362ac8187e1096d689404daa0ef58c0b48d3b0c1bb8f735e2b30",
+      "docs/experiments/cytiva-structured-control-s-review-decision-004.json": "415a530b71891400870943e0cf2e31867f38b683cf39fd3db6511261d7cff4f3",
+      "docs/experiments/cytiva-structured-control-s-review-decision-005.json": "338d4319cb450c1f9917cc1920f6ce86eaebb3f1d8a34b4a406036c70531e62e",
+      "docs/experiments/cytiva-structured-control-s-review-decision-006.json": "250c22152c5c36fe83e1ba6687879ae1bc504bf83200223d594053bca5184a8c",
+      "docs/experiments/cytiva-structured-control-s-review-decision-007.json": "0a1f1a712a54aac8fdba9d50b1fd3e971c60d7f471e60a92cde2cb636f2447b8",
+      "docs/experiments/cytiva-structured-control-s-review-decision-008.json": "95fb80e669deb0e20513c4550ba801be91b98a083b6cee1ecc238a3179dacbbe",
+      "docs/experiments/cytiva-structured-control-s-review-decision-009.json": "b70854c3f2e17dfd590cc8368e0b328ec2c1d5bdcc289076f3d11c8ce9ec6acc",
+      "docs/experiments/cytiva-structured-control-s-review-decision-010.json": "7550928314ceb2a1352e60b02187854c4ed663962d0f75f67858de10b9f338d0",
+      "docs/experiments/cytiva-structured-control-s-review-decision-011.json": "4e4bda31b80b53af98f727974243aa7bedc828223dc9eafa1093d4aff27e54ba",
+      "docs/experiments/cytiva-structured-control-s-review-decision-012.json": "feb8f32542561d15f8482abf9ad86723d8ba82c6e98f21d1460c2eac5e8e5510",
+      "docs/experiments/cytiva-structured-control-s-review.md": "6b9bb438b4eb2ad8809aaeef6bb5c3bac246e75e090b54e79892113d85135ede"
+    },
+    "old_method_locks_runtime_sources_decisions_and_scores_unchanged": true,
+    "tracked_changes_limited_to_docs_and_3_documentation_digest_updates": [
+      "README.md",
+      "docs/ROADMAP.md",
+      "experiments/cytiva/compositional-navigation-v04-results/manifest.json",
+      "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json",
+      "experiments/cytiva/reviewed-v05-evaluation/manifest.json"
+    ],
+    "historical_FT_FV_locks_and_environment_verified": true,
+    "current_frozen_v03_dependency_files": 36
+  },
+  "limitations": [
+    "Prepared-workstation demo, not a certified clean installation or hosted service.",
+    "Guided HiTrap Blue HP procedural scope over 25 excerpts; no causal diagnosis or generated advice.",
+    "No new prospective trial; examples and regression tests remain development evidence."
+  ],
+  "first_full_suite_attempt": "Documentation support digests were stale after README/roadmap changes; only those metadata pointers were synchronized before the passing rerun.",
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

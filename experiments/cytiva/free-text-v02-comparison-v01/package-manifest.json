@@ -6,14 +6,14 @@
   "hash_convention": "SHA-256 after CRLF-to-LF normalization; this manifest is excluded to avoid self-reference.",
   "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
   "files_sha256_lf": {
-    "README.md": "5cd38d9bbd7aff3c91f577203658a5458e833f8ce72d86b196148f5f29f266ff",
-    "docs/ROADMAP.md": "0db8b4024eb971c9b446412011f399e3d001e884933368f35ff4aca5108ee517",
+    "README.md": "66cd334d9d1858cfa984ad832f38b2a6bf65034a1c907ddb6697616a83f88f06",
+    "docs/ROADMAP.md": "5e10a2e351db35350c1186159e33c4a3a5b361492abf98c2351059fb5d49b57e",
     "docs/experiments/free-text-v02-comparison-v01-preparation.json": "ba570461f709c631def2a870d969c41bf98b344abcfc9fbd939f151fe0139ce5",
     "docs/experiments/free-text-v02-comparison-v01-preparation.md": "f60aa911cafed0cde387356586025b29052f7c62e8bb3c1fa283723f6c3f2aca",
     "docs/experiments/free-text-v02-comparison-v01-results-checks.json": "984a4ced15ab31aed4844f7a7718429002e1bca2704d7bf50e05630ab8d29f3c",
     "docs/experiments/free-text-v02-comparison-v01-results.md": "7ddddf5c200d2dcfe596a62580ff95ca5ec292e136cec0ec396b15c85e5452f1",
     "docs/experiments/free-text-v02-reviewed-package.md": "f1bf5fab3407d9ad107cc6bb33f99c62b67b2c1081ccffa95f580281bcd612f1",
-    "experiments/cytiva/compositional-navigation-v04-results/manifest.json": "96fea67da25f8dc80f3707f0cc89221a5fac224d55527d86ec9f9f4568d7887c",
+    "experiments/cytiva/compositional-navigation-v04-results/manifest.json": "7fd52d1e107aaedfdf1499f6a4fe39465482e5c5786535b76a5c1d3f23ae27b0",
     "experiments/cytiva/free-text-v02-comparison-v01/METHOD.md": "1d2980424bac2346c701b96e110e70958949aa124364298ce0e9463e543345ae",
     "experiments/cytiva/free-text-v02-comparison-v01/README.md": "857e666322caf93dd827db2f64a59517f94193e4cb27ee5592a86782de73042d",
     "experiments/cytiva/free-text-v02-comparison-v01/REVIEW-PROGRESS.md": "000f3120da801dd353eaa3fe73ceb6dbbd40b33ba563a0d6e4e05447ed5a595d",
@@ -41,7 +41,7 @@
     "experiments/cytiva/free-text-v02-comparison-v01/review.json": "f22dcb2bbff636e612aee617544cc262a918fab1d5bd981587171a046fef9d3f",
     "experiments/cytiva/free-text-v02-comparison-v01/submissions.json": "3c977c97baea006eff8a387f7314f87b27e93c9b7f15937619a0b528876261b2",
     "experiments/cytiva/free_text_v02_evaluation.py": "1fc3229a3230b84297ab49413c4c9a1118569c3c9529b28cc65392eff471eccf",
-    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "a44af53eda5821ecca3b27901cc835ad90c7d3eb42b47de298d438a8fe9ecedd",
+    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "bdaf9c03206068f1cae77a5e20f65e39c7171cf9269b1c62bc08a2fedbef7117",
     "tests/test_free_text_v02_evaluation.py": "3bff85e5a44967c1e6834b91f520a9d9dea33e9c46d323bcff3fd052f1b9780e"
   },
   "prior_merged_main": {

@@ -1,0 +1,94 @@
+{
+  "id": "cytiva-demo-corrected-ux-checks",
+  "verified_at_utc": "2026-10-27T11:59:06.851135+00:00",
+  "status": "guided_walkthrough_passed_local_demo_not_committed",
+  "frozen_runtime_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+  "full_suite": {
+    "tests": 769,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 48,
+    "elapsed_seconds": 521.829,
+    "real_S_trial_repeated": false
+  },
+  "automated_demo_test_methods": 7,
+  "interactive_browser_checks": {
+    "UX01_guided_support": "1/1 known requests; 1/1 eligible context",
+    "UX02_navigation": "Source E121-W and return link verified; correction button focuses column field.",
+    "UX03_source_text": {
+      "admitted_quotes": 5,
+      "exact_textContent_equality_to_registry": true,
+      "highlighted_literal": "1 mL column",
+      "quotation_rewriting": false
+    },
+    "UX04_stale_result": "Warning visible after format change; previous request summary remains explicit.",
+    "UX05_clarification": "0/1 support, No eligible context, choose 1 mL or 5 mL; no assumed format.",
+    "UX06_correction_action": "Returns to request and focuses format without selecting it.",
+    "UX07_mixed_support": "1/3 known requests, 1/1 eligible context; supported/missing_source/quarantined.",
+    "UX08_resubmission": "Stale warning hidden after fresh submission; absence/quarantine explanations visible."
+  },
+  "browser_tests_are_additional_to_unit_test_count": true,
+  "file_sha256_lf": {
+    "demo/__init__.py": "db7d5061508f74166f85934f26caeb16d5773601651cb0f8301985bc4b102bf8",
+    "demo/cytiva.py": "7efacdadadccd0fd29a6d6b6a9cb87b72f3a6c911979f4c9bcf443d22f9e6b31",
+    "demo/static/cytiva.html": "63678f6803d2f0ba0ae3fe0af4d60a0a3f017b148bb060ff669be8665ac9b365",
+    "tests/test_cytiva_demo.py": "86379a0d2e1bbf78178ce7bea448fe67e32d4f422de204e6bea47dc73c301a38",
+    "docs/DEMO-FIRST.md": "3a3f000637b89ac7873167e7affc566edb4319af758571ab18003851843482c0",
+    "README.md": "66cd334d9d1858cfa984ad832f38b2a6bf65034a1c907ddb6697616a83f88f06",
+    "docs/ROADMAP.md": "5e10a2e351db35350c1186159e33c4a3a5b361492abf98c2351059fb5d49b57e",
+    "docs/experiments/v03-freeze-demo-checks.json": "eae1ca61f557f8e9bdff1e9b9e16a3526c6b8dffc09ded97422464f8092367c8",
+    "docs/experiments/cytiva-demo-ux-review.md": "6418a88135ca2745285fecc85a90da8079d6c54ee1b318cf8e56c25dad965430",
+    "experiments/cytiva/compositional-navigation-v04-results/manifest.json": "7fd52d1e107aaedfdf1499f6a4fe39465482e5c5786535b76a5c1d3f23ae27b0",
+    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "bdaf9c03206068f1cae77a5e20f65e39c7171cf9269b1c62bc08a2fedbef7117",
+    "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json": "915850f5ee0be4c5fd621a339d389c93ccfb13027478ec4ae062b773d2a76ca7"
+  },
+  "previous_initial_interface_report": {
+    "file": "docs/experiments/v03-freeze-demo-checks.json",
+    "sha256_lf": "eae1ca61f557f8e9bdff1e9b9e16a3526c6b8dffc09ded97422464f8092367c8",
+    "scope": "Historical initial interface. Its earlier HTML/guide fingerprints remain historical, not current."
+  },
+  "preservation": {
+    "frozen_36_files_unchanged": true,
+    "old_16_notes_byte_identical": true,
+    "old_notes_sha256": {
+      "docs/experiments/cytiva-structured-control-s-preparation-checks.json": "e60bfd23d4cc240a8933be2c6f088ab99cb5b8a7d76d6e6e9e73bc616539f359",
+      "docs/experiments/cytiva-structured-control-s-preparation.md": "e25416e7e7679b7440ce7d413bbcfa9033eeccfd9bd82b4a09a79fa42760ca45",
+      "docs/experiments/cytiva-structured-control-s-results-checks.json": "de46b3b99a47b36282283b1996c58a396cc7353912f74983ea796bf3e75a9c92",
+      "docs/experiments/cytiva-structured-control-s-review-amendment-001.json": "192bbfa5db84324a0ff99d9fadac9adc2a3c441b6cf34f3c2c5ba8797b15034a",
+      "docs/experiments/cytiva-structured-control-s-review-decision-002.json": "275581a8b80993a09ededd5b7c1a1344e028be0beacbedd54568964a5401cfab",
+      "docs/experiments/cytiva-structured-control-s-review-decision-003.json": "ea69afe6966a362ac8187e1096d689404daa0ef58c0b48d3b0c1bb8f735e2b30",
+      "docs/experiments/cytiva-structured-control-s-review-decision-004.json": "415a530b71891400870943e0cf2e31867f38b683cf39fd3db6511261d7cff4f3",
+      "docs/experiments/cytiva-structured-control-s-review-decision-005.json": "338d4319cb450c1f9917cc1920f6ce86eaebb3f1d8a34b4a406036c70531e62e",
+      "docs/experiments/cytiva-structured-control-s-review-decision-006.json": "250c22152c5c36fe83e1ba6687879ae1bc504bf83200223d594053bca5184a8c",
+      "docs/experiments/cytiva-structured-control-s-review-decision-007.json": "0a1f1a712a54aac8fdba9d50b1fd3e971c60d7f471e60a92cde2cb636f2447b8",
+      "docs/experiments/cytiva-structured-control-s-review-decision-008.json": "95fb80e669deb0e20513c4550ba801be91b98a083b6cee1ecc238a3179dacbbe",
+      "docs/experiments/cytiva-structured-control-s-review-decision-009.json": "b70854c3f2e17dfd590cc8368e0b328ec2c1d5bdcc289076f3d11c8ce9ec6acc",
+      "docs/experiments/cytiva-structured-control-s-review-decision-010.json": "7550928314ceb2a1352e60b02187854c4ed663962d0f75f67858de10b9f338d0",
+      "docs/experiments/cytiva-structured-control-s-review-decision-011.json": "4e4bda31b80b53af98f727974243aa7bedc828223dc9eafa1093d4aff27e54ba",
+      "docs/experiments/cytiva-structured-control-s-review-decision-012.json": "feb8f32542561d15f8482abf9ad86723d8ba82c6e98f21d1460c2eac5e8e5510",
+      "docs/experiments/cytiva-structured-control-s-review.md": "6b9bb438b4eb2ad8809aaeef6bb5c3bac246e75e090b54e79892113d85135ede"
+    },
+    "source_decisions_references_native_scores_and_prior_locks_unchanged": true,
+    "tracked_edits_limited_to_docs_and_documentation_manifest_pointers": [
+      "README.md",
+      "docs/ROADMAP.md",
+      "experiments/cytiva/compositional-navigation-v04-results/manifest.json",
+      "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json",
+      "experiments/cytiva/reviewed-v05-evaluation/manifest.json"
+    ]
+  },
+  "limitations": [
+    "Bounded guided HiTrap Blue HP scope over 25 reviewed excerpts.",
+    "Language selector identifies input language; UI and source quotations remain English.",
+    "Server must remain running; clean-machine setup and hosted deployment are not certified."
+  ],
+  "no_frozen_engine_or_backend_changes_for_usability_fixes": true,
+  "new_prospective_trial": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

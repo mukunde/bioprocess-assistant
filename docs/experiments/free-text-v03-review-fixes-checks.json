@@ -1,0 +1,126 @@
+{
+  "id": "free-text-v03-review-fixes-audit",
+  "verified_at_utc": "2026-10-27T03:38:11.060906+00:00",
+  "status": "original_findings_addressed_no_additional_blocker_in_review_scope_not_frozen",
+  "findings": {
+    "VR03-01": {
+      "status": "addressed_conservative_clarification",
+      "input": "B : HiTrap Blue HP 1 mL. Donne les formulations du tampon de fixation et du tampon d’élution pour B.",
+      "coverage_summary": {
+        "document_kind": "request_coverage_summary",
+        "contract_version": "coverage-0.3-proposed",
+        "inventory_complete": false,
+        "known_requested_units": 1,
+        "accounted_units": 1,
+        "all_known_units_accounted_for": true,
+        "assessment_complete": false,
+        "has_assessment_error": false,
+        "eligible_ready_context_coverage": {
+          "state": "not_assessed",
+          "scope": "unassessed",
+          "eligible_ready_units": null,
+          "covered_units": null
+        },
+        "request_support": {
+          "supported_units": 0,
+          "known_requested_units": 1,
+          "all_requested_units_supported": false
+        },
+        "has_unserved_known_units": true,
+        "full_service": false
+      },
+      "unresolved_fragments": 1
+    },
+    "VR03-02": {
+      "status": "addressed",
+      "input": "B : HiTrap Blue HP 1 mL. Pour le chargement. Donne le débit et les critères de fin du lavage pour B.",
+      "stage": {
+        "kind": "operating_phase",
+        "code": "sample_application"
+      },
+      "phase_quote": "Pour le chargement",
+      "stage_assertion_present": true,
+      "both_projection_leaves_bound": true
+    },
+    "VR03-03": {
+      "status": "addressed",
+      "original_producer_input_rejected": true,
+      "equal_cardinality_mismatched_sets_rejected": true,
+      "contradictory_numeric_summary_rejected": true
+    }
+  },
+  "full_suite": {
+    "tests": 757,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 33,
+    "elapsed_seconds": 152.703,
+    "real_S_trial_repeated": false
+  },
+  "new_regression_test_methods": 6,
+  "total_v03_test_methods": 76,
+  "file_sha256_lf": {
+    "docs/technical/FREE-TEXT-CANDIDATE-V03-REVIEW-FIXES.md": "dbc3ef3449ca63fe384ccd476e6ce979973d4dca753afc39c027d3c097333cd7",
+    "docs/technical/FREE-TEXT-CANDIDATE-V03.md": "fea3616c8014f8c38940eb04442227992a28ed9990ac3fef913b9efd98de0f94",
+    "docs/technical/control-v03-outcome.schema.json": "515ff0956ce5d563ccf547491caf58d4e7b0bd3b73f3fb50f5c4810feae076a9",
+    "ingestion/coverage_v03.py": "0b12a574e8928781700fa83bee75c2873963350d2a341d669863f07f11b9bf47",
+    "ingestion/free_text_bridge_v03.py": "42f8d29b8eb6c06ef890d0eb182a913be957916c04f6073bb348443e73f5199d",
+    "ingestion/free_text_interpreter_v03.py": "de641421f362d70eb25088c5577a4486940740a403935cd89e5adf4eb4fd2061",
+    "ingestion/structured_request_v03.py": "fc42cc958a19f1cea398d9a067aaefc2a1d9a4e48863ac4b24aada0bd71bca4a",
+    "tests/test_coverage_v03.py": "30178f96c5f08123be90d37be52a339f1a7f4521c44d75be5f3303a333400654",
+    "tests/test_free_text_v03.py": "45342c9d6f26da92b0ee78a4b31892f608f0a8c1c17dfd571a0c9f629df99843"
+  },
+  "modified_candidate_files": [
+    "ingestion/coverage_v03.py",
+    "ingestion/free_text_interpreter_v03.py",
+    "tests/test_coverage_v03.py",
+    "tests/test_free_text_v03.py"
+  ],
+  "previous_reports_preserved": {
+    "docs/experiments/free-text-v03-implementation-checks.json": "c9ca67a892cb16e204d307904ac92cb7c7790c150f07d15433eace02b1cbce33",
+    "docs/experiments/free-text-v03-review-checks.json": "dea00122877bf12804061690931f7746df6df64d59f9b3924ddfeb92595706db"
+  },
+  "preservation": {
+    "baseline_files_byte_identical": 608,
+    "old_notes_byte_identical": 16,
+    "old_notes_sha256": {
+      "docs/experiments/cytiva-structured-control-s-preparation-checks.json": "e60bfd23d4cc240a8933be2c6f088ab99cb5b8a7d76d6e6e9e73bc616539f359",
+      "docs/experiments/cytiva-structured-control-s-preparation.md": "e25416e7e7679b7440ce7d413bbcfa9033eeccfd9bd82b4a09a79fa42760ca45",
+      "docs/experiments/cytiva-structured-control-s-results-checks.json": "de46b3b99a47b36282283b1996c58a396cc7353912f74983ea796bf3e75a9c92",
+      "docs/experiments/cytiva-structured-control-s-review-amendment-001.json": "192bbfa5db84324a0ff99d9fadac9adc2a3c441b6cf34f3c2c5ba8797b15034a",
+      "docs/experiments/cytiva-structured-control-s-review-decision-002.json": "275581a8b80993a09ededd5b7c1a1344e028be0beacbedd54568964a5401cfab",
+      "docs/experiments/cytiva-structured-control-s-review-decision-003.json": "ea69afe6966a362ac8187e1096d689404daa0ef58c0b48d3b0c1bb8f735e2b30",
+      "docs/experiments/cytiva-structured-control-s-review-decision-004.json": "415a530b71891400870943e0cf2e31867f38b683cf39fd3db6511261d7cff4f3",
+      "docs/experiments/cytiva-structured-control-s-review-decision-005.json": "338d4319cb450c1f9917cc1920f6ce86eaebb3f1d8a34b4a406036c70531e62e",
+      "docs/experiments/cytiva-structured-control-s-review-decision-006.json": "250c22152c5c36fe83e1ba6687879ae1bc504bf83200223d594053bca5184a8c",
+      "docs/experiments/cytiva-structured-control-s-review-decision-007.json": "0a1f1a712a54aac8fdba9d50b1fd3e971c60d7f471e60a92cde2cb636f2447b8",
+      "docs/experiments/cytiva-structured-control-s-review-decision-008.json": "95fb80e669deb0e20513c4550ba801be91b98a083b6cee1ecc238a3179dacbbe",
+      "docs/experiments/cytiva-structured-control-s-review-decision-009.json": "b70854c3f2e17dfd590cc8368e0b328ec2c1d5bdcc289076f3d11c8ce9ec6acc",
+      "docs/experiments/cytiva-structured-control-s-review-decision-010.json": "7550928314ceb2a1352e60b02187854c4ed663962d0f75f67858de10b9f338d0",
+      "docs/experiments/cytiva-structured-control-s-review-decision-011.json": "4e4bda31b80b53af98f727974243aa7bedc828223dc9eafa1093d4aff27e54ba",
+      "docs/experiments/cytiva-structured-control-s-review-decision-012.json": "feb8f32542561d15f8482abf9ad86723d8ba82c6e98f21d1460c2eac5e8e5510",
+      "docs/experiments/cytiva-structured-control-s-review.md": "6b9bb438b4eb2ad8809aaeef6bb5c3bac246e75e090b54e79892113d85135ede"
+    },
+    "all_tracked_files_unchanged": true,
+    "design_hashes_unchanged": true,
+    "historical_method_locks_and_environment_verified": true,
+    "baseline_sha256": "fc63ca2ea4184e51f3e066a7c269c6bc1153f21075af9bfe7d2fece0cae36176"
+  },
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "limits": [
+    "Conservative global blocking may affect siblings of unresolved buffer coordination.",
+    "Bounded grammar; no new ellipsis expansion or scientific validation.",
+    "Existing FV cases and counterexamples are development evidence, not prospective results."
+  ],
+  "new_frozen_trial": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

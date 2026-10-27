@@ -10,23 +10,26 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Current status
 
-Updated 27 October 2026. The merged checkpoint is `main` at `1696c69`, after
-[PR #43](https://github.com/mukunde/bioprocess-assistant/pull/43) (free-text design),
-[PR #44](https://github.com/mukunde/bioprocess-assistant/pull/44) (GR01–GR04 review),
-[PR #45](https://github.com/mukunde/bioprocess-assistant/pull/45) (EN/FR runtime),
-[PR #46](https://github.com/mukunde/bioprocess-assistant/pull/46) (reviewed FT trial)
-and [PR #47](https://github.com/mukunde/bioprocess-assistant/pull/47) (opt-in v02).
-The complete maintained suite passed **669/669 tests** on that merged baseline,
+Updated 27 October 2026. The merged checkpoint is `main` at `173497f`, after
+[PR #48](https://github.com/mukunde/bioprocess-assistant/pull/48) (reviewed FV trial),
+[PR #49](https://github.com/mukunde/bioprocess-assistant/pull/49) (coverage contract)
+and [PR #50](https://github.com/mukunde/bioprocess-assistant/pull/50) (corrected v03).
+The complete maintained suite passed **757/757 tests** on that merged baseline,
 with no skipped tests or external connection attempts.
 
-**Prepared locally, not yet merged:** the v02 freeze, all twelve FV01–FV12 human
-approvals and the completed one-pass comparison. The structured arm passes
+The merged v02/FV trial preserves all twelve human approvals and its completed
+one-pass comparison. The structured arm passes
 **22/24**, free text **17/24** (EN 10/12, FR 7/12), and **7/12 bilingual pairs**
 pass. Acceptance is not met. FV06 fails both arms only on a shared coverage flag;
 its individual unit states match the reference. See the
 [compact FV package](experiments/cytiva/free-text-v02-comparison-v01/README.md).
-No experimental interpreter is the chat default; reviewed manual knowledge still
-needs a serving adapter.
+The failures informed corrected v03; they were not rescored. No experimental
+interpreter is the legacy chat default.
+
+**Prepared locally, not yet merged:** the corrected-v03 runtime freeze and a
+free local guided demo over the 25 reviewed excerpts. It displays documentary
+support, source quotations, missing evidence and quarantine without a model or
+Neo4j. See [the demo-first guide](docs/DEMO-FIRST.md) for launch and walkthrough.
 
 | Component | Status and scope |
 |---|---|
@@ -37,7 +40,7 @@ needs a serving adapter.
 | Conversion and chunking | Selected page 77/88/104/152–153 reviews and repairs are merged; three ambiguous rows remain quarantined on 152–153 |
 | Passage retrieval | Merged BM25/atomic assembly experiments; frozen v03b, v04 and v05 gates remain blocked and none is the chat default |
 | Structured request control | Merged offline control. S01-S12: all 24 EN/FR submissions and all 12 paired scenarios pass reviewed context/diagnostic criteria; known-corpus diagnostic evidence only |
-| Free-text interface | Design, grouped review, default v01 runtime and opt-in v02 merged. FT comparison gate blocked; reviewed v02/FV trial completed locally, also blocked. Neither candidate is connected to the chat |
+| Free-text interface | v01/v02, reviewed FT/FV trials and corrected opt-in v03 merged. Historical gates remain blocked; v03 runtime freeze and local guided/text demo are prepared locally |
 | Reviewed records → chatbot | Adapter pending; ingestion does not automatically enrich the serving graph |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
@@ -60,6 +63,21 @@ Ingestion has two separate routes: **Docling → Docling Graph + local Ollama �
 [Full-size SVG](docs/architecture/architecture-detailed.svg) · [Diagram notes and logo sources](docs/architecture/README.md) · [Grounding decision](docs/ADR-001-knowledge-graph-grounding.md)
 
 ## Run locally
+
+### Quick local Cytiva demo (prepared workstation)
+
+The local guided demo uses the existing verification environment and frozen v03:
+
+```powershell
+.\.local-tools\verification-venv\Scripts\python.exe -m demo.cytiva --port 8766
+```
+
+Open [localhost:8766](http://127.0.0.1:8766/). Start with washing flow, then add
+maximum pressure and equilibration flow to inspect partial service. It uses no
+model or database. The [demo guide](docs/DEMO-FIRST.md) covers the walkthrough and
+the separate prerequisites for another machine. Ctrl+C stops the local server.
+
+### Existing Chainlit/Neo4j chat
 
 The reference workstation uses **Windows, Python 3.13 and Docker Desktop**. The application Dockerfile targets Python 3.11. These are documented configurations, not a cross-platform certification. PDF ingestion uses a separate optional environment.
 
@@ -132,7 +150,7 @@ The [current suite notes](tests/README.md) explain the maintained entry point an
 
 These tests mock external model/database calls; some use loopback HTTP servers
 and Windows asynchronous sockets. They need no paid API or external service.
-The **669/669** merged-main result above is from the existing local verification environment,
+The **757/757** merged-main result above is from the existing local verification environment,
 not a fresh-install certification or an answer-quality measurement. Structured
 runtime dependencies are listed separately in `requirements-structured.txt`;
 private tokenizer assets may also be required by optional runtime workflows.
@@ -146,7 +164,7 @@ python -S -m unittest tests.test_structured_reviewed_package -v
 ```
 
 These commands inspect saved evidence; they never rerun S01-S12. The merged
-EN/FR runtime has IF01–IF14 conformance and regression checks. The local FV
+EN/FR runtime has IF01–IF14 conformance and regression checks. The merged FV
 package adds static freeze/review/export guards; passing tests or reviewed forms
 does not establish general language understanding or generated-answer quality.
 
@@ -167,7 +185,8 @@ does not establish general language understanding or generated-answer quality.
 | [Free-text design and grouped examples](docs/technical/FREE-TEXT-MACHINE-DESIGN-V01.md) | CP/FI/MC decisions, GR01–GR04 review and deterministic EN/FR runtime merged | Bounded offline interface; no default chat activation or source approval |
 | [Frozen v01 / FT01-FT12](experiments/cytiva/free-text-comparison-v01/README.md) | Merged: S 24/24, F0 12/24 observations and 4/12 bilingual pairs | Acceptance blocked; inspected FT cases became v02 development regressions |
 | [Opt-in v02](docs/technical/FREE-TEXT-CANDIDATE-V02.md) | Merged candidate; 57 targeted checks and FT development regressions pass | Does not replace v01 or demonstrate independent performance |
-| [Frozen v02 / FV01-FV12](experiments/cytiva/free-text-v02-comparison-v01/README.md) | Local reviewed delivery: S 22/24, F0 17/24, 7/12 pairs; 48 outcomes retained; 1,674-token maximum | Gate blocked by item identity, FR phase association and FV06 shared-flag/reference mismatch. No reference amendment or rescoring |
+| [Frozen v02 / FV01-FV12](experiments/cytiva/free-text-v02-comparison-v01/README.md) | Merged reviewed delivery: S 22/24, F0 17/24, 7/12 pairs; 48 outcomes retained; 1,674-token maximum | Gate blocked by item identity, FR phase association and FV06 shared-flag/reference mismatch. No reference amendment or rescoring |
+| [Corrected v03](docs/technical/FREE-TEXT-CANDIDATE-V03-REVIEW-FIXES.md) | Merged: versioned coverage, buffer occurrences and French phase-origin fixes; 76 v03 checks pass | Known development regressions, not a new prospective score. [Runtime freeze](experiments/cytiva/free-text-v03-freeze-v01/README.md) and guided demo are local additions |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
 The question series have distinct histories: Q/N/C contain 28 reviewed development
@@ -209,10 +228,10 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Consolidate the local FV review/results package without changing its frozen method, raw outcomes or scores.
-2. Decide the coverage-flag contract explicitly, separating covered eligible units from complete request service. Prepare targeted item-identity and phase-association repairs in a new candidate, with FV retained as regressions and fresh prospective review after freezing.
-3. Build a bounded reviewed-records-to-chatbot slice with structured input or explicit confirmation, the v0.2 adapter and validated renderer; retain conditions, reservations, clarification/refusal and quarantine. Do not activate a blocked interpreter implicitly.
-4. Instrument that path with OpenTelemetry and portable call/retry/cost accounting; evaluate actual answers/citations/abstentions with deterministic checks, calibrated local Ragas and Promptfoo plus benign controls.
+1. Try the local guided Cytiva demo with frozen v03: request, source passages, conditions, partial service and clarification. Fix walkthrough blockers first; a new twelve-question review campaign is not a prerequisite.
+2. Make installation/launch reproducible and record a short demonstration. Iterate on usability and bounded language coverage from concrete feedback.
+3. Extend one confirmed troubleshooting workflow or the reviewed-records-to-chatbot adapter, retaining source versions, conditions, reservations and quarantine.
+4. Instrument the actual path with OpenTelemetry and portable call/retry/cost accounting; add generated-answer evaluation with Ragas and Promptfoo when that answering path exists. Fresh holdouts accompany later behavior changes.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.
 
 The FT and FV free-text comparisons have executed; the architecture comparison

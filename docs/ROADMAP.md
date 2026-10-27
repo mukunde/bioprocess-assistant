@@ -56,23 +56,21 @@ not complete phase 1. The reviewed manual data is not yet served by the chatbot.
 |---|---|---|
 | 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation |
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
-| 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S and FT deliveries merged, FV reviewed locally | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
+| 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, design/group reviews, default EN/FR runtime, FT comparison and opt-in v02 merged; new FV trial completed locally | Resolve shared coverage semantics and parser failures; fresh prospective checks after repair; serving adapter and answer evaluation |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons and corrected opt-in v03 merged; v03 runtime freeze and local guided demo prepared locally | User walkthrough, reproducible launch, serving/answer evaluation and incremental scope extension |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-The merged baseline is `main` at `1696c69`, after
-[PR43](https://github.com/mukunde/bioprocess-assistant/pull/43) (design),
-[PR44](https://github.com/mukunde/bioprocess-assistant/pull/44) (GR01–GR04),
-[PR45](https://github.com/mukunde/bioprocess-assistant/pull/45) (runtime),
-[PR46](https://github.com/mukunde/bioprocess-assistant/pull/46) (FT review/results)
-and [PR47](https://github.com/mukunde/bioprocess-assistant/pull/47) (opt-in v02).
-The full maintained suite passed **669/669 tests** on that integrated baseline,
+The merged baseline is `main` at `173497f`, after
+[PR48](https://github.com/mukunde/bioprocess-assistant/pull/48) (FV review/results),
+[PR49](https://github.com/mukunde/bioprocess-assistant/pull/49) (coverage contract)
+and [PR50](https://github.com/mukunde/bioprocess-assistant/pull/50) (corrected v03).
+The full maintained suite passed **757/757 tests** on that integrated baseline,
 with no errors, failures, skips or external connection attempts. Earlier 556,
 603 and 667 checkpoints remain historical. This is neither fresh-install
 certification nor a generated-answer benchmark.
 
-### Merged evidence versus the local FV package
+### Merged evidence versus local freeze/demo additions
 
 - **Merged:** the [v05 X export](../experiments/cytiva/reviewed-v05-evaluation/README.md)
   preserves its blocked outcome. The [structured S export](../experiments/cytiva/reviewed-structured-control/README.md)
@@ -86,7 +84,7 @@ certification nor a generated-answer benchmark.
   4/12 bilingual pairs. The freeze was not retuned. Consulted FT inputs became
   [opt-in v02](technical/FREE-TEXT-CANDIDATE-V02.md) development regressions; v02
   passes 57 targeted checks but is not the default runtime or chat route.
-- **Local, completed and not yet merged:** the
+- **Merged in PR48:** the
   [FV01–FV12 package](../experiments/cytiva/free-text-v02-comparison-v01/README.md)
   freezes v02 before new wording, preserves twelve human approvals (including
   one collective FV05–FV12 message) and all 48 native outcomes. Official gates:
@@ -95,33 +93,39 @@ certification nor a generated-answer benchmark.
   association failures. FV06 fails only a shared aggregate flag in both arms:
   individual states/bindings match, and no adjusted score is substituted.
 
-The [local delivery inventory](experiments/free-text-v02-reviewed-package.md)
+- **Merged in PR49/PR50:** the coverage contract separates eligible context from
+  whole-request support. Corrected v03 preserves buffer occurrences, rejects
+  unrepresented coordination, retains inherited French phase origins and checks
+  contradictory counts. Its 76 checks use known development inputs; historical
+  FT/FV gates and scores are unchanged.
+- **Local, not yet merged:** the [v03 runtime freeze](../experiments/cytiva/free-text-v03-freeze-v01/README.md)
+  pins engine/shared dependencies, policies and environment. The user selected
+  the local guided Cytiva demo; the [demo-first guide](DEMO-FIRST.md) describes the
+  implemented request-to-source slice and walkthrough. No new trial is run.
+
+The [historical delivery inventory](experiments/free-text-v02-reviewed-package.md)
 keeps raw outputs and the 16 older S preparation/review notes outside the lot.
 Original decisions, reference reservations, locks and results remain unchanged.
 No experimental interpreter or retriever is activated by this documentation.
 
 ### Next delivery priorities
 
-1. **Preserve the local FV checkpoint.** Version its review, compact scores,
-   provenance and failure analysis, retaining the native run locally and keeping
-   historical labels distinct from current status. Do not rescore FV06 after
-   changing the reference.
-2. **Resolve the coverage contract and repair bounded interpretation separately.**
-   Decide eligible-ready-unit coverage versus whole-request service; the current
-   core intentionally marks coverage false for an unsupported selector while the
-   FV06 reference expects true. A future candidate should keep buffer-use items
-   distinct and bind phases locally, including French coordinated/apostrophe
-   constructions. Use FV as regressions after repair, freeze before authoring
-   fresh questions and review them before one prospective run.
-3. **Build a bounded serving slice.** Start with structured input or explicit
-   confirmation, connect eligible reviewed v0.2 records to the renderer, and retain
-   versions, conditions, reservations and quarantine. Exercise clarification,
-   refusal, correction, revocation and rollback. A blocked F0 must not be silently
-   promoted or expand the legacy seed's scope.
-4. **Instrument and evaluate the actual answering path.** Add OpenTelemetry spans,
+1. **Demonstrate the guided Cytiva slice now.** Use frozen v03 and the existing
+   eligible excerpts to show a supported request, citations/conditions, missing
+   evidence, quarantine and clarification. No new research campaign blocks this
+   demonstration. Cosmetic and wider-language refinements can follow user feedback.
+2. **Make launch reproducible and improve usability.** Package the runtime/cache
+   prerequisites, add a one-command launcher and record a short walkthrough.
+3. **Extend one useful workflow.** Add a confirmed troubleshooting use case or
+   the reviewed-record serving adapter. Keep source versions, conditions,
+   reservations, quarantine and rollback. Do not equate procedural lookup with
+   causal diagnosis or silently promote blocked free text.
+4. **Instrument and evaluate the actual answering path incrementally.** Add OpenTelemetry spans,
    call/retry/cost accounting and budget enforcement. Evaluate generated answers,
    citations and abstentions with deterministic checks, calibrated local Ragas
-   and Promptfoo attacks with benign controls; these integrations remain pending.
+   and Promptfoo attacks with benign controls; these integrations remain pending
+   and do not block the model-free demo. Use fresh reviewed holdouts for future
+   behavior changes; do not overwrite the current freeze or historical results.
 5. **Compare architectures after prerequisites.** Run graph/passages/LightRAG on a
    common corpus and budget. Benchmark local answering separately; keep KAG and
    fine-tuning conditional on failures simpler approaches cannot address.

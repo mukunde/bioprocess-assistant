@@ -1,0 +1,119 @@
+{
+  "id": "free-text-v03-implementation-audit",
+  "verified_at_utc": "2026-10-27T03:20:46.254609+00:00",
+  "status": "development_candidate_not_frozen_not_prospectively_validated",
+  "base_commit": "cbb6bfab5bb50e433069ed01ef1b62fa157da11d",
+  "full_suite": {
+    "tests": 751,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 33,
+    "elapsed_seconds": 139.889,
+    "real_S_trial_repeated": false
+  },
+  "new_tests": 70,
+  "coverage_design_boundaries_executed": 12,
+  "FV_development_replay": {
+    "language_inputs": 24,
+    "reviewed_intent_and_unit_context_regressions_pass": true,
+    "legacy_FV06_aggregate_failure_retained": true,
+    "new_FV06_eligible_context": {
+      "covered": 1,
+      "eligible": 1,
+      "state": "complete"
+    },
+    "new_FV06_whole_request": {
+      "supported": 1,
+      "requested": 3,
+      "full_service": false
+    },
+    "use": "development_regressions_only_not_a_new_frozen_trial_or_score"
+  },
+  "file_sha256_lf": {
+    "ingestion/coverage_v03.py": "97235f4f708375908cd766785d282da5fed5272bcd5435243d9fc39b1d6d40d0",
+    "ingestion/structured_request_v03.py": "fc42cc958a19f1cea398d9a067aaefc2a1d9a4e48863ac4b24aada0bd71bca4a",
+    "ingestion/free_text_interpreter_v03.py": "a9672691dc7ac29c8c59f597777d59d76551a57c2b6b70a8da521810c3948463",
+    "ingestion/free_text_bridge_v03.py": "42f8d29b8eb6c06ef890d0eb182a913be957916c04f6073bb348443e73f5199d",
+    "tests/test_coverage_v03.py": "c562f606c2b9bc64840bfb97524874849319e13f805fd8324d61f7c2f8d0e216",
+    "tests/test_free_text_v03.py": "afa3befb88e3c42591b68035861bc630b17fe14efbdd1c2fa05093606006ced9",
+    "docs/technical/control-v03-outcome.schema.json": "515ff0956ce5d563ccf547491caf58d4e7b0bd3b73f3fb50f5c4810feae076a9",
+    "docs/technical/FREE-TEXT-CANDIDATE-V03.md": "fea3616c8014f8c38940eb04442227992a28ed9990ac3fef913b9efd98de0f94"
+  },
+  "design_fingerprints_unchanged": {
+    "docs/technical/COVERAGE-CONTRACT-V03-PROPOSAL.md": "b9761dd53944bdc26e159b3e90bc8322718873ce7d01636cb75cf8427d10ea93",
+    "docs/decisions/2026-10-27-coverage-contract-CC-review.json": "b45d63e2a4dbd9692fcd9920df6e8d187fa46da1d72df9f0107b12b64fc8d07a",
+    "docs/technical/COVERAGE-CONTRACT-V03-ENCODING.md": "23d944c1f04778f5bafbe70c6afae0a298b0fcb323e42a134a816b8e785dcae0",
+    "docs/technical/coverage-summary-v03.schema.json": "55d96a87c535fa29652af05b67d2bfdba676b476fe080df7f7c8645d7bb36efe",
+    "docs/technical/coverage-summary-v03-examples.json": "f1fc2d41e727b8d4350c22800063f0620bf3c04c8fb3c2bfb5e2b451b99cdcca"
+  },
+  "preservation": {
+    "baseline_files": 608,
+    "baseline_manifest_sha256": "fc63ca2ea4184e51f3e066a7c269c6bc1153f21075af9bfe7d2fece0cae36176",
+    "all_baseline_bytes_unchanged": true,
+    "all_tracked_files_unchanged": true,
+    "old_16_notes_byte_identical": true,
+    "old_notes_sha256": {
+      "docs/experiments/cytiva-structured-control-s-preparation-checks.json": "e60bfd23d4cc240a8933be2c6f088ab99cb5b8a7d76d6e6e9e73bc616539f359",
+      "docs/experiments/cytiva-structured-control-s-preparation.md": "e25416e7e7679b7440ce7d413bbcfa9033eeccfd9bd82b4a09a79fa42760ca45",
+      "docs/experiments/cytiva-structured-control-s-results-checks.json": "de46b3b99a47b36282283b1996c58a396cc7353912f74983ea796bf3e75a9c92",
+      "docs/experiments/cytiva-structured-control-s-review-amendment-001.json": "192bbfa5db84324a0ff99d9fadac9adc2a3c441b6cf34f3c2c5ba8797b15034a",
+      "docs/experiments/cytiva-structured-control-s-review-decision-002.json": "275581a8b80993a09ededd5b7c1a1344e028be0beacbedd54568964a5401cfab",
+      "docs/experiments/cytiva-structured-control-s-review-decision-003.json": "ea69afe6966a362ac8187e1096d689404daa0ef58c0b48d3b0c1bb8f735e2b30",
+      "docs/experiments/cytiva-structured-control-s-review-decision-004.json": "415a530b71891400870943e0cf2e31867f38b683cf39fd3db6511261d7cff4f3",
+      "docs/experiments/cytiva-structured-control-s-review-decision-005.json": "338d4319cb450c1f9917cc1920f6ce86eaebb3f1d8a34b4a406036c70531e62e",
+      "docs/experiments/cytiva-structured-control-s-review-decision-006.json": "250c22152c5c36fe83e1ba6687879ae1bc504bf83200223d594053bca5184a8c",
+      "docs/experiments/cytiva-structured-control-s-review-decision-007.json": "0a1f1a712a54aac8fdba9d50b1fd3e971c60d7f471e60a92cde2cb636f2447b8",
+      "docs/experiments/cytiva-structured-control-s-review-decision-008.json": "95fb80e669deb0e20513c4550ba801be91b98a083b6cee1ecc238a3179dacbbe",
+      "docs/experiments/cytiva-structured-control-s-review-decision-009.json": "b70854c3f2e17dfd590cc8368e0b328ec2c1d5bdcc289076f3d11c8ce9ec6acc",
+      "docs/experiments/cytiva-structured-control-s-review-decision-010.json": "7550928314ceb2a1352e60b02187854c4ed663962d0f75f67858de10b9f338d0",
+      "docs/experiments/cytiva-structured-control-s-review-decision-011.json": "4e4bda31b80b53af98f727974243aa7bedc828223dc9eafa1093d4aff27e54ba",
+      "docs/experiments/cytiva-structured-control-s-review-decision-012.json": "feb8f32542561d15f8482abf9ad86723d8ba82c6e98f21d1460c2eac5e8e5510",
+      "docs/experiments/cytiva-structured-control-s-review.md": "6b9bb438b4eb2ad8809aaeef6bb5c3bac246e75e090b54e79892113d85135ede"
+    },
+    "method_locks": {
+      "FT-v01": {
+        "status": "verified_with_environment",
+        "pinned_files": 40
+      },
+      "FV-v02": {
+        "status": "verified_with_environment",
+        "pinned_files": 44
+      }
+    },
+    "historical_runs": {
+      "free-text-comparison-v01": {
+        "raw_outcomes_unchanged": 48,
+        "scores_sha256_lf": "627d125aa6598fe472f40fb2e2c76e05bb933b12ff1b7041ec4bd734f5e15695"
+      },
+      "free-text-v02-comparison-v01": {
+        "raw_outcomes_unchanged": 48,
+        "scores_sha256_lf": "143d45a0cbcaec484e340205ca056a2c77a0a6012b7180bd37e0a19eb9233ba6"
+      }
+    },
+    "staged_files": 0
+  },
+  "documentation_links_checked": 6,
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "resource_limits": {
+    "max_distinct_roots": 6,
+    "max_context_tokens": 2048,
+    "max_core_calls": 1
+  },
+  "limitations": [
+    "Existing FV questions were used during repair; they are development evidence.",
+    "Opt-in entry points only; default serving interface unchanged.",
+    "Some error and accounting boundaries use isolated summarizer fixtures; no new per-unit recovery.",
+    "Review before freezing and author fresh reviewed questions before prospective evaluation."
+  ],
+  "new_frozen_trial": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

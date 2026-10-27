@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess-assistant:control-outcome:v03",
+  "title": "Opt-in v03 envelope around explicitly legacy compatibility payloads",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "document_kind": {
+          "const": "structured_control_v03_outcome"
+        },
+        "interface_version": {
+          "const": "control-v03"
+        },
+        "system_identity": {
+          "type": "object",
+          "properties": {
+            "candidate": {
+              "const": "v03"
+            },
+            "sha256_lf": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "candidate",
+            "sha256_lf"
+          ],
+          "additionalProperties": false
+        },
+        "coverage_summary": {
+          "$ref": "urn:bioprocess-assistant:coverage-summary:0.3-proposed"
+        },
+        "compatibility_result": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "failure": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "unit_errors": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "task_id": {
+                "type": "string"
+              },
+              "item_id": {
+                "type": "string"
+              },
+              "information": {
+                "type": "string"
+              },
+              "state": {
+                "const": "assessment_error"
+              },
+              "code": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "task_id",
+              "item_id",
+              "information",
+              "state",
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "document_kind",
+        "interface_version",
+        "system_identity",
+        "coverage_summary",
+        "compatibility_result",
+        "failure",
+        "unit_errors"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "document_kind": {
+          "const": "free_text_control_v03_outcome"
+        },
+        "interface_version": {
+          "const": "control-v03"
+        },
+        "system_identity": {
+          "type": "object",
+          "properties": {
+            "candidate": {
+              "const": "v03"
+            },
+            "sha256_lf": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            }
+          },
+          "required": [
+            "candidate",
+            "sha256_lf"
+          ],
+          "additionalProperties": false
+        },
+        "coverage_summary": {
+          "$ref": "urn:bioprocess-assistant:coverage-summary:0.3-proposed"
+        },
+        "compatibility_outcome": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "document_kind",
+        "interface_version",
+        "system_identity",
+        "coverage_summary",
+        "compatibility_outcome"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

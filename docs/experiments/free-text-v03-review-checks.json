@@ -1,0 +1,47 @@
+{
+  "id": "free-text-v03-pre-freeze-review",
+  "verified_at_utc": "2026-10-27T03:30:28.084476+00:00",
+  "status": "changes_required_before_freeze",
+  "findings": [
+    "VR03-01",
+    "VR03-02",
+    "VR03-03"
+  ],
+  "targeted_suite": {
+    "tests": 70,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 0,
+    "elapsed_seconds": 25.87,
+    "real_S_trial_repeated": false
+  },
+  "additional_local_probe_count": 14,
+  "previous_full_suite": {
+    "tests": 751,
+    "passed": true,
+    "rerun_in_this_review": false
+  },
+  "preservation": {
+    "baseline_files_byte_identical": 608,
+    "old_notes_byte_identical": 16,
+    "v03_implementation_hashes_unchanged": true,
+    "design_hashes_unchanged": true,
+    "historical_locks_and_environment_verified": true,
+    "all_tracked_files_unchanged": true,
+    "baseline_sha256": "fc63ca2ea4184e51f3e066a7c269c6bc1153f21075af9bfe7d2fece0cae36176"
+  },
+  "review_document_sha256_lf": "ac22d522097537949e0316b18175027c459fed09aec759b4891a02a9848924f6",
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "implementation_changes": false,
+  "new_frozen_trial": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

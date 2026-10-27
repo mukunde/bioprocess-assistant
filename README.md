@@ -66,16 +66,18 @@ Ingestion has two separate routes: **Docling â†’ Docling Graph + local Ollama â†
 
 ### Quick local Cytiva demo (prepared workstation)
 
-The local guided demo uses the existing verification environment and frozen v03:
+The Windows launcher finds a compatible local Python environment, checks the
+frozen dependency versions and offline tokenizer, verifies v03 and starts the demo:
 
 ```powershell
-.\.local-tools\verification-venv\Scripts\python.exe -m demo.cytiva --port 8766
+.\Start-CytivaDemo.ps1
 ```
 
 Open [localhost:8766](http://127.0.0.1:8766/). Start with washing flow, then add
 maximum pressure and equilibration flow to inspect partial service. It uses no
-model or database. The [demo guide](docs/DEMO-FIRST.md) covers the walkthrough and
-the separate prerequisites for another machine. Ctrl+C stops the local server.
+model or database and does not install or download anything. The
+[demo guide](docs/DEMO-FIRST.md) covers `-CheckOnly`, `-PythonPath`, `-Port`, the
+walkthrough and prerequisites for another machine. Ctrl+C stops the local server.
 
 ### Existing Chainlit/Neo4j chat
 

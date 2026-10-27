@@ -35,8 +35,9 @@ cd bioprocess-assistant
 .\Start-CytivaDemo.ps1
 ```
 
-The installer is a local, uncommitted addition until this delivery is merged;
-a remote clone of the preceding main revision does not include it yet.
+The installer is merged in [PR #55](https://github.com/mukunde/bioprocess-assistant/pull/55)
+and available in new clones of main. Setup and the walkthrough were verified in
+a fresh clone on the same PC; a second-machine check remains pending.
 
 Installation creates the ignored `.venv-demo` in this clone. It installs all 12
 runtime dependencies from `demo/requirements-windows.lock`, with exact versions,

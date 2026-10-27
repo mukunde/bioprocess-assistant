@@ -60,17 +60,20 @@ separate local demo serves a bounded set of 25 reviewed passages.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03, its runtime freeze, corrected local demo and Windows launcher merged | Fresh-clone installation/second-machine walkthrough, serving/answer evaluation and incremental scope extension |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03, its runtime freeze, corrected local demo, Windows installer and launcher merged; same-PC fresh-clone setup verified | Second-machine setup/walkthrough, serving/answer evaluation and incremental scope extension |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-The merged baseline is `main` at `82b16b6`, including
+The merged baseline is `main` at `4b2bfa5`, including
 [PR51](https://github.com/mukunde/bioprocess-assistant/pull/51) (v03 runtime freeze),
 [PR52](https://github.com/mukunde/bioprocess-assistant/pull/52) (demo and usability fixes)
-and [PR53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher).
-The full maintained suite passed **780/780 tests** on that integrated baseline,
+and [PR53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher),
+followed by [PR55](https://github.com/mukunde/bioprocess-assistant/pull/55)
+(isolated Windows installation and verified tokenizer setup).
+The full maintained suite passed **790/790 tests** on that integrated baseline,
 with no errors, failures, skips or external connection attempts. Earlier 556,
-603, 667 and 757 checkpoints remain historical. This is neither fresh-install
-certification nor a generated-answer benchmark.
+603, 667, 757 and 780 checkpoints remain historical. This is neither clean-OS
+certification nor a generated-answer benchmark. Separate installation evidence
+comes from a fresh clone on the same PC, not a second physical machine.
 
 ### Merged evidence, runtime freeze and demo
 
@@ -118,24 +121,29 @@ keeps raw outputs and the 16 older S preparation/review notes outside the lot.
 Original decisions, reference reservations, locks and results remain unchanged.
 No experimental interpreter or retriever is activated by this documentation.
 
-**Local addition, not yet merged:** an explicit Windows setup command creates
+**Merged in PR55:** an explicit Windows setup command creates
 an isolated `.venv-demo`, installs the 12 frozen dependencies from a wheel-hash
 lock and prepares the verified tokenizer cache. Installation and the guided
 walkthrough were exercised in a fresh local clone, with no old project environment
 or tokenizer copied into it. Package downloads could use the workstation's pip
 cache. This is same-PC reproducibility evidence, not a second physical-machine or
-clean-OS certification; the latter remains the next delivery check. v03 is unchanged.
+clean-OS certification. Ten installer regressions and seven browser/HTTP scenarios
+passed; all five displayed source quotations matched their returned text exactly.
+The launcher readiness check passed again on merged main. See the
+[installation review](experiments/cytiva-demo-installation-review.md). v03 is unchanged.
 
 ### Next delivery priorities
 
-1. **Validate fresh-clone setup on a second Windows environment.** The local
-   walkthrough, usability corrections and one-command launcher are complete.
-   Prepare a reproducible isolated dependency installation and tokenizer-cache
-   setup, then verify recorded versions/hashes with `-CheckOnly` and execute the
-   five-minute walkthrough. Success requires supported citations, format
+1. **Validate the merged installer on a second Windows PC.** The installer,
+   local walkthrough, usability corrections and launcher are complete. Use a
+   fresh clone and the existing guide, with CPython 3.13.0 x64 installed separately;
+   create a new environment/cache rather than copying the prepared workstation.
+   Verify recorded versions/hashes with `-CheckOnly` and execute the five-minute
+   walkthrough. Success requires supported citations and warnings, format
    clarification, partial service and quarantine without a model, API or Neo4j;
-   retain installation diagnostics. Keep the current freeze unchanged. This is
-   the next delivery gate, not another twelve-question research campaign.
+   retain installation diagnostics and the Python/Windows versions. Keep the
+   current freeze unchanged. This is the next portability check, not another
+   installer implementation or twelve-question research campaign.
 2. **Record a short demonstration and collect user feedback.** Improve usability
    and bounded language coverage from observed needs. A prepared-workstation run
    remains distinct from fresh-install certification or hosted deployment.

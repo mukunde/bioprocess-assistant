@@ -1,0 +1,30 @@
+{
+  "id": "2026-10-27-coverage-contract-CC-review",
+  "status": "semantic_choices_approved_encoding_to_specify",
+  "recorded_at_utc": "2026-10-27T02:49:47.022550+00:00",
+  "human_quote": "ok go",
+  "approval_basis": "One actual affirmative reply to the preceding six recommended CC01-CC06 choices. Context establishes collective approval; this is not six separate human approval messages.",
+  "proposal_file": "docs/technical/COVERAGE-CONTRACT-V03-PROPOSAL.md",
+  "proposal_sha256_lf": "b9761dd53944bdc26e159b3e90bc8322718873ce7d01636cb75cf8427d10ea93",
+  "approved_choices": {
+    "CC01": "Separate inventory, known-unit accounting, eligible-ready context coverage and whole-request support.",
+    "CC02": "Expose information-unit denominators, retain all known positive units globally and retain budget-rejected eligible units in eligible-ready coverage.",
+    "CC03": "Keep partial service and distinct diagnostic states without suppressing independently supported units or relaxing scope/quarantine.",
+    "CC04": "Avoid 0/0 success and distinguish not applicable, not assessed, incomplete inventory and execution/integrity errors.",
+    "CC05": "Version new semantics separately; preserve v01/v02 code, locks, actual decisions, references and official scores.",
+    "CC06": "Evaluate correct handling separately from full answerability; retain exact intent, diagnostics, provenance and resource gates."
+  },
+  "implementation_details_status": "Machine encoding to be specified separately; no claim that subsequently authored schema/examples were individually reviewed.",
+  "source_exclusions": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "operations": {
+    "runtime_implementation": false,
+    "actual_model_or_core_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

@@ -1,0 +1,374 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess-assistant:coverage-summary:0.3-proposed",
+  "title": "Proposed application-produced v03 coverage summary; no runtime implemented",
+  "type": "object",
+  "properties": {
+    "document_kind": {
+      "const": "request_coverage_summary"
+    },
+    "contract_version": {
+      "const": "coverage-0.3-proposed"
+    },
+    "inventory_complete": {
+      "type": "boolean"
+    },
+    "known_requested_units": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "accounted_units": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "all_known_units_accounted_for": {
+      "type": "boolean"
+    },
+    "assessment_complete": {
+      "type": "boolean"
+    },
+    "has_assessment_error": {
+      "type": "boolean"
+    },
+    "eligible_ready_context_coverage": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "enum": [
+            "complete",
+            "partial",
+            "not_applicable",
+            "not_assessed",
+            "error"
+          ]
+        },
+        "scope": {
+          "enum": [
+            "complete_request",
+            "known_units_only",
+            "unassessed"
+          ]
+        },
+        "eligible_ready_units": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "covered_units": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      },
+      "required": [
+        "state",
+        "scope",
+        "eligible_ready_units",
+        "covered_units"
+      ],
+      "additionalProperties": false
+    },
+    "request_support": {
+      "type": "object",
+      "properties": {
+        "supported_units": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "known_requested_units": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "all_requested_units_supported": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "supported_units",
+        "known_requested_units",
+        "all_requested_units_supported"
+      ],
+      "additionalProperties": false
+    },
+    "has_unserved_known_units": {
+      "type": "boolean"
+    },
+    "full_service": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "document_kind",
+    "contract_version",
+    "inventory_complete",
+    "known_requested_units",
+    "accounted_units",
+    "all_known_units_accounted_for",
+    "assessment_complete",
+    "has_assessment_error",
+    "eligible_ready_context_coverage",
+    "request_support",
+    "has_unserved_known_units",
+    "full_service"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "state": {
+                "const": "not_applicable"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "eligible_ready_units": {
+                "const": 0
+              },
+              "covered_units": {
+                "const": 0
+              },
+              "scope": {
+                "const": "complete_request"
+              }
+            }
+          },
+          "full_service": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "complete",
+                  "partial"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "eligible_ready_units": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "covered_units": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "scope": {
+                "const": "complete_request"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "state": {
+                "enum": [
+                  "not_assessed",
+                  "error",
+                  "partial"
+                ]
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "full_service": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "scope": {
+                "const": "complete_request"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "inventory_complete": {
+            "const": true
+          },
+          "all_known_units_accounted_for": {
+            "const": true
+          },
+          "assessment_complete": {
+            "const": true
+          },
+          "has_assessment_error": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "full_service": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "known_requested_units": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "inventory_complete": {
+            "const": true
+          },
+          "all_known_units_accounted_for": {
+            "const": true
+          },
+          "assessment_complete": {
+            "const": true
+          },
+          "has_assessment_error": {
+            "const": false
+          },
+          "has_unserved_known_units": {
+            "const": false
+          },
+          "request_support": {
+            "properties": {
+              "all_requested_units_supported": {
+                "const": true
+              }
+            }
+          },
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "state": {
+                "const": "complete"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "full_service": {
+            "const": false
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "request_support": {
+            "properties": {
+              "all_requested_units_supported": {
+                "const": false
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "known_requested_units": {
+            "const": 0
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "full_service": {
+            "const": false
+          },
+          "has_unserved_known_units": {
+            "const": false
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "has_assessment_error": {
+            "const": true
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "state": {
+                "const": "error"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "scope": {
+                "const": "unassessed"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "eligible_ready_context_coverage": {
+            "properties": {
+              "eligible_ready_units": {
+                "type": "null"
+              },
+              "covered_units": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

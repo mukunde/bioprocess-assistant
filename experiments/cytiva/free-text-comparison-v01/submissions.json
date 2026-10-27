@@ -1,0 +1,2726 @@
+{
+  "status": "pending_human_pair_review",
+  "runtime_input_rule": "Only input_en/input_fr is passed to S; never question/reference records.",
+  "submissions": [
+    {
+      "id": "FT01",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT02",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT03",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "column_volumes"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "column_volumes"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT04",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-buffer_preparation",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "elution"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "D-ban-1",
+                "scope": {
+                  "task_id": "D"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-buffer_preparation",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "elution"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "stopping_criteria"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "D-ban-1",
+                "scope": {
+                  "task_id": "D"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT05",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "D-ban-1",
+                "scope": {
+                  "task_id": "D"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "washing",
+                  "information": [
+                    "stopping_criteria"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "SEC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "D-ban-1",
+                "scope": {
+                  "task_id": "D"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "washing",
+                  "information": [
+                    "stopping_criteria"
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "SEC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT06",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "D-ban-1",
+                "scope": {
+                  "task_id": "D"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": [
+              {
+                "exclusion_id": "D-ban-1",
+                "scope": {
+                  "task_id": "D"
+                },
+                "selector": {
+                  "kind": "operating_phase",
+                  "code": "elution",
+                  "information": "all"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT07",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "sample_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "7.5",
+                    "unit": "mL"
+                  }
+                }
+              },
+              {
+                "key": "loaded_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "unknown",
+                  "value": null
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "SEC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP"
+            },
+            "column": {
+              "state": "unknown",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "sample_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "7.5",
+                    "unit": "mL"
+                  }
+                }
+              },
+              {
+                "key": "loaded_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "unknown",
+                  "value": null
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "SEC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT08",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "provided",
+              "value": {
+                "bed_volume": {
+                  "value": "5",
+                  "unit": "mL"
+                }
+              }
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT09",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "observed_flow",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "0.0",
+                    "unit": "mL/min"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [
+              {
+                "key": "minor_contaminants_interfere",
+                "input_role": "documentary_scenario",
+                "value": {
+                  "state": "provided",
+                  "value": false
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "HIC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "observed_flow",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "0.0",
+                    "unit": "mL/min"
+                  }
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [
+              {
+                "key": "minor_contaminants_interfere",
+                "input_role": "documentary_scenario",
+                "value": {
+                  "state": "provided",
+                  "value": false
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "HIC"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT10",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "sample_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "7.5",
+                    "unit": "mL"
+                  }
+                }
+              },
+              {
+                "key": "loaded_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "unknown",
+                  "value": null
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [
+              {
+                "key": "sample_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "provided",
+                  "value": {
+                    "value": "7.5",
+                    "unit": "mL"
+                  }
+                }
+              },
+              {
+                "key": "loaded_volume",
+                "input_role": "user_observation",
+                "value": {
+                  "state": "unknown",
+                  "value": null
+                }
+              }
+            ],
+            "items": [
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT11",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-operating_limits",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "operating_limits"
+                },
+                "information": [
+                  "maximum_pressure"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "IEX"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-washing",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "washing"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-operating_limits",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "operating_limits"
+                },
+                "information": [
+                  "maximum_pressure"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "mechanism_explanation",
+            "product": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "column": {
+              "state": "not_applicable",
+              "value": null,
+              "reason": "Not required for the explicitly requested documentary information."
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-method_selection",
+                "stage": {
+                  "kind": "general_topic",
+                  "code": "method_selection"
+                },
+                "information": [
+                  "principle"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "provided",
+                  "value": [
+                    "IEX"
+                  ]
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "FT12",
+      "input_en": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-equilibration",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "equilibration"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-buffer_preparation",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "binding"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      },
+      "input_fr": {
+        "document_kind": "structured_submission",
+        "contract_version": "task-request-0.1-tech-proposed",
+        "input_mode": "structured",
+        "language": "fr",
+        "tasks": [
+          {
+            "task_id": "D",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 5 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "D-equilibration",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "equilibration"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              },
+              {
+                "item_id": "D-sample_application",
+                "stage": {
+                  "kind": "operating_phase",
+                  "code": "sample_application"
+                },
+                "information": [
+                  "flow_rate"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          },
+          {
+            "task_id": "E",
+            "sample_ref": null,
+            "intent": "documentary_procedure_lookup",
+            "product": {
+              "state": "provided",
+              "value": "HiTrap Blue HP 1 mL"
+            },
+            "column": {
+              "state": "not_supplied",
+              "value": null
+            },
+            "facts": [],
+            "items": [
+              {
+                "item_id": "E-buffer_preparation",
+                "stage": {
+                  "kind": "preparation",
+                  "code": "buffer_preparation"
+                },
+                "information": [
+                  "buffer_formulation"
+                ],
+                "answer_mode": "single_context",
+                "techniques": {
+                  "state": "not_applicable",
+                  "value": null,
+                  "reason": "Not required for the explicitly requested documentary information."
+                },
+                "facets": {
+                  "buffer_use": {
+                    "state": "provided",
+                    "value": "binding"
+                  },
+                  "elution_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  },
+                  "syringe_query_mode": {
+                    "state": "not_applicable",
+                    "value": null,
+                    "reason": "Not required for the explicitly requested documentary information."
+                  }
+                }
+              }
+            ],
+            "exclusions": []
+          }
+        ]
+      }
+    }
+  ]
+}

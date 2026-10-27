@@ -1,0 +1,42 @@
+{
+  "id": "FT01-FT12-human-review-completion",
+  "verified_at_utc": "2026-10-26T22:21:40.226377+00:00",
+  "status": "all_12_validated_with_reservations_not_executed",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "review_sha256_canonical": "a615c9ca19a4f1242edc240e3c743b97e7f1bb92fd742e0cb3b0d710cc32d4f4",
+  "decision_record_sha256_lf": {
+    "FT01.json": "8463e82c972817aa331a051991a2a28622ac6f41048332cdf611b2df05973fdc",
+    "FT02.json": "82f4c6fe7f068317a9b9c088686a1f36827b4ce2100ef6ab1c94dcf652929c61",
+    "FT03.json": "fce616cb4d7dc2ca2b666a73dbab9a3738f20fd0246ed64721dfb3b96a04a979",
+    "FT04.json": "ef878e01606a3f6dbbd77b5bc0f0283e81980dadb3f0692193f1162c72015f53",
+    "FT05.json": "33b9836e7b846fdb5fd7303cca3db1cf71048cd364c90c229dc9c48dc5bf59cf",
+    "FT06.json": "0740007a37ccf51151300f197230cbc1f6737d6005c568c7bf3ca73f074fe752",
+    "FT07.json": "92a485cf38ab36e35be3a4384bad75f57b59df2a5e394f5d6b74012283a1a358",
+    "FT08.json": "3402930d115cb100d397b24e1219013c078981cc10434d5daeac3753052d3935",
+    "FT09.json": "e78707f614dfbd88202c249e7f291394d4165bb5e1c857abf4f94350fb04b349",
+    "FT10.json": "7c5e3ae80f9b2bd61e8eee957df4ac7e1b5100bb51bb96895566556601158b77",
+    "FT11.json": "ed993c33f5681a9044477711c0fec5a1a98b1369d27566829fb7f54af649a36a",
+    "FT12.json": "63318735271bff998813a26c751a74c514a2b3e59d97455b831b55608b7d17e5"
+  },
+  "review_summary_sha256_lf": "82cc6549fbaa8dccb21b56818f9fb507231bf4dadb01068c8ea6ec9a99e3870a",
+  "reviewed_semantic_scenarios": 12,
+  "reviewed_language_observations": 24,
+  "planned_arm_executions": 48,
+  "all_content_bindings_and_reservations_verified": true,
+  "actual_review_gate_passed": true,
+  "method_and_dataset_unchanged": true,
+  "prior_decision_records_unchanged": true,
+  "old_16_notes_byte_identical": true,
+  "previously_tracked_files_unchanged": true,
+  "no_trial_output_directory": true,
+  "prior_P_G_reviews_still_pending": true,
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "comparison_runs": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

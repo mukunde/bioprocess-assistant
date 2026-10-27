@@ -1,0 +1,40 @@
+{
+  "id": "FT08-actual-human-pair-review",
+  "case_id": "FT08",
+  "recorded_at_utc": "2026-10-26T21:53:18.627483+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT08",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT08 avec les réserves indiquées, sans privilégier l’une des valeurs de D et en gardant E indépendant. Enregistre ma décision et passons à FT09. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:53:18.627483+00:00",
+    "question_sha256_canonical": "8f544c848030fa91b98d65fcc0043425a0a10d1241f8e48355b7abf752a0c84a",
+    "submission_sha256_canonical": "061228fb67fe8b4f7b477ae8cc381c31805345f185e8d10289b3c8e9dc032d45",
+    "reference_sha256_canonical": "506a6745ebaffde22e74abc66a9888e34480fed33bbfb9ed4526b87c477f53a7",
+    "retained_reservations": [
+      "Second real context ambiguity: two conflicting assertions in one preparation, not two invented preparations.",
+      "Preserve qualified-label provenance separately from the explicit column field.",
+      "E may use a source shared with D without assigning that source to the blocked D unit."
+    ],
+    "clarifications": [
+      "Preserve both conflicting D assertions without privileging either value or inventing a second preparation. Withhold D flow assignment pending clarification and keep E independent; a source assigned to E is not a binding for D."
+    ],
+    "decision_record": "review-decisions/FT08.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

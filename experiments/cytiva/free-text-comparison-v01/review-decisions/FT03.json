@@ -1,0 +1,44 @@
+{
+  "id": "FT03-actual-human-pair-review",
+  "case_id": "FT03",
+  "recorded_at_utc": "2026-10-26T21:32:51.980070+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT03",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT03 avec les réserves indiquées, en conservant « généralement au moins » et sans conversion des CV en mL ni durée déduite. Enregistre ma décision et passons à FT04. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:32:51.980070+00:00",
+    "question_sha256_canonical": "e103fb588746e67b37187a374ac052fda6450136dede5ebb0184721fd7547f38",
+    "submission_sha256_canonical": "bb840c36dd989e8a7ccd37ad04d7734f3eb48b5a5a4c172b48c81abb0d2e4c23",
+    "reference_sha256_canonical": "ecb0c0240479d9a1a853dce61c252b33245b17ef659cd0cce852b189cbaea84c",
+    "retained_reservations": [
+      "Keep the generally/at-least qualification; the requested volume does not imply a washing-flow request.",
+      "The inherited endpoint and syringe-note text must not become additional requested quantities."
+    ],
+    "clarifications": [
+      "Retain generally at least for the washing volume; do not convert CV to mL or derive a duration. Loading flow and washing volume remain separate requested quantities."
+    ],
+    "decision_record": "review-decisions/FT03.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations; generally at least is retained without volume conversion or derived duration.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT04",
+    "FT05",
+    "FT06",
+    "FT07",
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

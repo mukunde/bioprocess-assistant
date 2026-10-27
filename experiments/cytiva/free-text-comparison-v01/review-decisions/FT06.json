@@ -1,0 +1,41 @@
+{
+  "id": "FT06-actual-human-pair-review",
+  "case_id": "FT06",
+  "recorded_at_utc": "2026-10-26T21:36:11.577758+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT06",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT06 avec les réserves indiquées, en gardant l’exclusion niée inactive et une seule demande de débit de chargement. Enregistre ma décision et passons à FT07. Aucun LLM, API payante, commit ni push",
+    "reviewed_at_utc": "2026-10-26T21:36:11.577758+00:00",
+    "question_sha256_canonical": "2a70a13eaf1c37727249d85de7c3c1d0b2c0c9551b1b14053496a9edc69dbdad",
+    "submission_sha256_canonical": "9527f095ebc0ac55257932b6f2123e682bdc67fc2a7a34c4d1d127843c955702",
+    "reference_sha256_canonical": "985878f810dd193a292f7621563c55bd0e176a48365ad42c65791e330b17e365",
+    "retained_reservations": [
+      "Preserve full negation and owner spans; a negated ban is auditable but inactive.",
+      "Do not transfer the washing range or turn the approximate syringe note into a universal conversion."
+    ],
+    "clarifications": [
+      "Keep the negated exclusion inactive and auditable. Count exactly one positive loading-flow request for D; the active operating-elution ban must not block loading, and the syringe note remains approximate and column/flow-specific."
+    ],
+    "decision_record": "review-decisions/FT06.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT07",
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

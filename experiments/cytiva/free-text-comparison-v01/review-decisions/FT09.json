@@ -1,0 +1,39 @@
+{
+  "id": "FT09-actual-human-pair-review",
+  "case_id": "FT09",
+  "recorded_at_utc": "2026-10-26T22:02:42.319237+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT09",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT09 avec les réserves indiquées, en conservant zéro et faux comme valeurs fournies et la condition d’application. Enregistre ma décision et passons à FT10. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T22:02:42.319237+00:00",
+    "question_sha256_canonical": "d74d7f2d944f3b56f77556e17264eac77613954188d484a4c1381b8d9b3e36e0",
+    "submission_sha256_canonical": "a9c3cc6c3c807bc984f4a4edcfd56fba04b7deead9d808e2c1570af13219a6f0",
+    "reference_sha256_canonical": "e128391e84e01ed3a20e8233893408b1a7840e03970a13b05eedf10bc80356ea",
+    "retained_reservations": [
+      "Zero and false are supplied values, not missing context.",
+      "No inference of stopped-pump cause, target hydrophobicity, sample suitability, or additional purification is authorized.",
+      "Decimal punctuation may normalize within mL/min; the original lexeme and full application condition remain."
+    ],
+    "clarifications": [
+      "Retain zero observed flow and false interference as explicitly supplied values, with their original roles and lexemes. Preserve the full intended-application condition; do not infer a flow-zero cause, scientific suitability or a purification recommendation."
+    ],
+    "decision_record": "review-decisions/FT09.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

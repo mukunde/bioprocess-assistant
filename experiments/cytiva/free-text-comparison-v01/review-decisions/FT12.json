@@ -1,0 +1,35 @@
+{
+  "id": "FT12-actual-human-pair-review",
+  "case_id": "FT12",
+  "recorded_at_utc": "2026-10-26T22:20:22.454972+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT12",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT12 avec les réserves indiquées, en maintenant la quarantaine sans bloquer les autres demandes. Enregistre ma décision et fais le bilan des douze questions. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T22:20:22.454972+00:00",
+    "question_sha256_canonical": "c84ad0ef3f1105c098c1451764f252bfc3501732999ab38bbf962cedcbd39352",
+    "submission_sha256_canonical": "1f45d7ed0a1233580d28b486a680dfeb4086967520241d9cca7944bddf382bec",
+    "reference_sha256_canonical": "a6fe33c3cfeadc1c20735261d851add90a8bfac0cfb942ddac9165d078434abe",
+    "retained_reservations": [
+      "Second explicit mixed documentary-support request: withholding equilibration must not suppress loading or the independent E formulation.",
+      "No transfer from loading or washing to equilibration, and no source-approval override.",
+      "Preserve the manual nomenclature and alternatives without correcting formulas, pairing buffers or choosing a recipe."
+    ],
+    "clarifications": [
+      "Keep E121-EQ quarantined with no equilibration-flow source assignment or transfer from loading/washing. Retain all three requests, serve D loading flow and E binding-buffer alternatives independently, and preserve nomenclature without selecting or pairing recipes."
+    ],
+    "decision_record": "review-decisions/FT12.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

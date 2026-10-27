@@ -1,0 +1,43 @@
+{
+  "id": "FT05-actual-human-pair-review",
+  "case_id": "FT05",
+  "recorded_at_utc": "2026-10-26T21:35:20.819478+00:00",
+  "method_lock_sha256_lf": "1ecd9e3cd101405ec045adc47e16549bb2fcb6728096e803afed58773b966cb8",
+  "actual_decision": {
+    "case_id": "FT05",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FT05 avec les réserves indiquées, en limitant l’exclusion aux critères de fin du lavage de D et en gardant E indépendant. Enregistre ma décision et passons à FT06. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-26T21:35:20.819478+00:00",
+    "question_sha256_canonical": "a2b0bace9fb2a466d60b600626ebd01f08b2044994664ab1be635ea02d12d435",
+    "submission_sha256_canonical": "d50388e649ed7cb9ea530cfdd329fbf4c9376b9eabf4f65339181fb18cb5ed3f",
+    "reference_sha256_canonical": "40628b22b8624a9db0f38750b237e6f325d5f8a0077a1dacacc03dc9ebaef7bb",
+    "retained_reservations": [
+      "Retain the positive D request before processing its exclusion; both units remain counted.",
+      "An atomic source may contain endpoint text, but no endpoint unit may be created or bound.",
+      "SEC principle is not selection or suitability for the sample."
+    ],
+    "clarifications": [
+      "Limit the exclusion to washing stopping criteria for D. Retain the positive washing-flow request for D and keep the general SEC principle request for E independent; source presence is not a binding of excluded information."
+    ],
+    "decision_record": "review-decisions/FT05.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FT06",
+    "FT07",
+    "FT08",
+    "FT09",
+    "FT10",
+    "FT11",
+    "FT12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

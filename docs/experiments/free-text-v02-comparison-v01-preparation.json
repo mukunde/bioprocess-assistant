@@ -1,0 +1,65 @@
+{
+  "id": "free-text-v02-comparison-v01-preparation-checks",
+  "verified_at_utc": "2026-10-27T00:35:48.322232+00:00",
+  "static_verification": {
+    "method": "frozen",
+    "cases": 12,
+    "languages": 24,
+    "planned_arm_executions": 48,
+    "review_status": "pending",
+    "evaluation_executed_by_verifier": false,
+    "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af"
+  },
+  "frozen_files": 44,
+  "locked_at_utc": "2026-10-27T00:28:51.027792+00:00",
+  "questions_authored_at_utc": "2026-10-27T00:32:20.364124+00:00",
+  "authored_after_lock": true,
+  "dataset_sha256_lf": {
+    "REVIEW.md": "e9d63ba8775cdd503e0975c954742a90d2bcd0f662143ac8d47b9e531cf81a34",
+    "questions.json": "2bd5cb04dee9610d1fcdfda85263e10a4a818603ea436ae1767f40a0247c310b",
+    "references.json": "3659b308aea6a9fe7aef5a6070731c04b19e6b726cb854b255621eded5d489c2",
+    "review-template.json": "192ea1f2ae921696bdd7f6c8ed10ba3c7a0c9b0518e7b52152f91e794b09e8c3",
+    "submissions.json": "3c977c97baea006eff8a387f7314f87b27e93c9b7f15937619a0b528876261b2"
+  },
+  "new_case_ids": [
+    "FV01",
+    "FV02",
+    "FV03",
+    "FV04",
+    "FV05",
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "pending_real_human_reviews": 12,
+  "guard_tests_passed": 10,
+  "real_runtime_initializations": 0,
+  "prospective_S_calls": 0,
+  "prospective_F0_calls": 0,
+  "output_directory_absent": true,
+  "method_default_and_sources_unchanged": true,
+  "old_16_notes_byte_identical": true,
+  "all_previously_tracked_files_byte_identical": true,
+  "preserved_tracked_file_count": 456,
+  "preserved_tracked_inventory_sha256_canonical": "a8c6b705c7e3d823413106205a631168a98cad1d89da518247dc2d4bbff51662",
+  "local_links_checked": 147,
+  "excluded_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "prior_merged_main_tests": {
+    "tests": 669,
+    "passed": true,
+    "historical_not_repeated": true
+  },
+  "new_texts_not_identical_to_FT": true,
+  "independent_blinded_validation": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

@@ -1,0 +1,39 @@
+{
+  "id": "FV11-actual-human-pair-review",
+  "case_id": "FV11",
+  "recorded_at_utc": "2026-10-27T01:16:57.257064+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV11",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV05 à FV12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:16:57.257064+00:00",
+    "question_sha256_canonical": "63612a1683ce9a4699b1330c7d0f27bde3f336a4868b2cfe04cc8766ebc1783c",
+    "submission_sha256_canonical": "e39e46fb8a27b6e9c489467ad98e5f46cc982d95a84060bf1abc6f78699437ef",
+    "reference_sha256_canonical": "a583a31383e49fe0670a411a6e6823066281992ecd1916665dd3c13562d03b95",
+    "retained_reservations": [
+      "One quarantined unit and two supported units remain in the denominator; same-task and independent siblings both remain served.",
+      "No source approval, elution mode, duration or inferred equivalence between steps is introduced."
+    ],
+    "clarifications": [
+      "This case is covered by the single collective human approval of FV05–FV12; it is not a separate human message.",
+      "Keep P equilibration quarantined without assigning E121-EQ or transferring another phase flow; retain all three units.",
+      "Serve P elution 1–2 mL/min and independent Q loading 0.5–5 mL/min. No source approval, mode, duration or equivalence between steps is inferred.",
+      "Retain the shared albumin-removal scope and mandatory Blue Sepharose warning for procedural support. No additional approval of a source or execution is inferred."
+    ],
+    "decision_record": "review-decisions/FV11.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

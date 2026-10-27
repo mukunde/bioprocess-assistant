@@ -1,0 +1,37 @@
+{
+  "id": "FV12-actual-human-pair-review",
+  "case_id": "FV12",
+  "recorded_at_utc": "2026-10-27T01:16:58.255726+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV12",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV05 à FV12 avec toutes les réserves indiquées. Enregistre mes décisions et fais le bilan de la revue des douze questions. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:16:58.255726+00:00",
+    "question_sha256_canonical": "bc8853409dce04a5508b43af69d48e916f6bc3d0236d32ed4996425f85a93a2c",
+    "submission_sha256_canonical": "3e64e916ec6bee7c7d301bd819269d79aedac8ee3644e4b73f2282c1ca35d1b8",
+    "reference_sha256_canonical": "8804f23cc7aadf9f989f23ed55c83f739f18afd5ccc43a1c6f8c0db56bf51d29",
+    "retained_reservations": [
+      "Do not inherit equilibration or washing for unqualified maximum pressure; no pressure number or whole-manual absence claim.",
+      "Both withheld units remain counted without suppressing washing or SEC; E118-I and E121-EQ remain excluded."
+    ],
+    "clarifications": [
+      "This case is covered by the single collective human approval of FV05–FV12; it is not a separate human message.",
+      "Retain four units: P equilibration quarantined, P general maximum pressure missing only within the 25 eligible excerpts, P washing 5–10 mL/min and Q general SEC principle (size).",
+      "Do not inherit washing/equilibration for general pressure or invent a pressure value. Withheld units do not suppress supported siblings; E118-I and E121-EQ remain excluded.",
+      "Retain the shared albumin-removal scope and mandatory Blue Sepharose warning for procedural support. No additional approval of a source or execution is inferred."
+    ],
+    "decision_record": "review-decisions/FV12.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

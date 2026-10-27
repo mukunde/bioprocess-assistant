@@ -1,0 +1,90 @@
+{
+  "status": "pending_human_pair_review",
+  "authored_after_method_lock_utc": "2026-10-27T00:32:20.364124+00:00",
+  "questions": [
+    {
+      "id": "FV01",
+      "family": "ownership_and_order",
+      "question_en": "P: HiTrap Blue HP 1 mL. Q: HiTrap Blue HP 5 mL. Independently, R asks for the general HIC principle. For Q, I need the loading flow; for P, give washing flow.",
+      "question_fr": "P : HiTrap Blue HP 1 mL. Q : HiTrap Blue HP 5 mL. Indépendamment, R demande le principe général de la HIC. Pour Q, il me faut le débit de chargement ; pour P, donne le débit de lavage.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV02",
+      "family": "ownership_and_order",
+      "question_en": "Q: HiTrap Blue HP 1 mL. P: HiTrap Blue HP 5 mL. What washing flow does the manual give for P? For Q, give loading flow and washing flow.",
+      "question_fr": "Q : HiTrap Blue HP 1 mL. P : HiTrap Blue HP 5 mL. Quel débit de lavage le manuel indique-t-il pour P ? Pour Q, donne le débit de chargement et le débit de lavage.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV03",
+      "family": "buffer_and_operating_scope",
+      "question_en": "P: HiTrap Blue HP 1 mL. Q: HiTrap Blue HP 5 mL. List elution-buffer formulations for P and give elution flow for Q. Exclude operating elution for P.",
+      "question_fr": "P : HiTrap Blue HP 1 mL. Q : HiTrap Blue HP 5 mL. Liste les formulations du tampon d’élution pour P et donne le débit d’élution pour Q. Exclus l’élution opératoire pour P.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV04",
+      "family": "buffer_and_operating_scope",
+      "question_en": "P: HiTrap Blue HP 5 mL. List binding-buffer formulations for P. Separately, list elution-buffer formulations for P. Do not exclude washing flow for P; give washing flow for P.",
+      "question_fr": "P : HiTrap Blue HP 5 mL. Liste les formulations du tampon de fixation pour P. Séparément, liste les formulations du tampon d’élution pour P. N’exclus pas le débit de lavage pour P ; donne le débit de lavage pour P.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV05",
+      "family": "pressure_routing",
+      "question_en": "P: HiTrap Blue HP 5 mL. Q: HiTrap Blue HP 1 mL. For P, give maximum pressure and loading flow. For Q, give washing stopping criteria.",
+      "question_fr": "P : HiTrap Blue HP 5 mL. Q : HiTrap Blue HP 1 mL. Pour P, donne la pression maximale et le débit de chargement. Pour Q, donne les critères de fin du lavage.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV06",
+      "family": "pressure_routing",
+      "question_en": "P: HiTrap Blue HP 1 mL. Q: HiTrap Blue HP 5 mL. Give maximum pressure for washing for P. Independently, give maximum pressure for Q and loading flow for Q.",
+      "question_fr": "P : HiTrap Blue HP 1 mL. Q : HiTrap Blue HP 5 mL. Donne pour P la pression maximale du lavage. Indépendamment, donne la pression maximale pour Q et le débit de chargement pour Q.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV07",
+      "family": "context_uncertainty",
+      "question_en": "P: HiTrap Blue HP. Column size is unknown. Give loading flow and washing stopping criteria for P. Independently, Q asks for the general HIC principle.",
+      "question_fr": "P : HiTrap Blue HP. Le volume de colonne est inconnu. Donne le débit de chargement et les critères de fin du lavage pour P. Indépendamment, Q demande le principe général de la HIC.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV08",
+      "family": "context_uncertainty",
+      "question_en": "P is named HiTrap Blue HP 5 mL, but its column field says 1 mL. Give washing flow and washing column volumes for P. Q: HiTrap Blue HP 1 mL. Give loading flow for Q.",
+      "question_fr": "P est nommé HiTrap Blue HP 5 mL, mais son volume de colonne est 1 mL. Donne le débit de lavage et le volume de lavage en volumes de colonne pour P. Q : HiTrap Blue HP 1 mL. Donne le débit de chargement pour Q.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV09",
+      "family": "numeric_roles",
+      "question_en": "P: HiTrap Blue HP 1 mL. My observed flow is 0.0 mL/min. Available sample volume is 2.5 mL. Loaded volume is unknown. What loading flow does the manual give for P? Separately, give elution flow for P.",
+      "question_fr": "P : HiTrap Blue HP 1 mL. Le débit observé est de 0,0 mL/min. L’échantillon contient 2,5 mL disponibles. Le volume chargé est inconnu. Quel débit de chargement le manuel indique-t-il pour P ? Séparément, donne le débit d’élution pour P.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV10",
+      "family": "numeric_roles",
+      "question_en": "P: HiTrap Blue HP. Column size is 5 mL. Give washing column volumes and washing flow for P. In documentary scenario Q, minor contaminants do not interfere with the intended application. Explain the general IEX principle for Q.",
+      "question_fr": "P : HiTrap Blue HP. Le volume de colonne est 5 mL. Donne le volume de lavage en volumes de colonne et le débit de lavage pour P. Dans le scénario documentaire Q, les contaminants mineurs n’interfèrent pas avec l’application prévue. Explique le principe général de l’IEX pour Q.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV11",
+      "family": "partial_support_and_quarantine",
+      "question_en": "P: HiTrap Blue HP 1 mL. Give equilibration flow and elution flow for P. Q: HiTrap Blue HP 5 mL. For Q, I need the loading flow.",
+      "question_fr": "P : HiTrap Blue HP 1 mL. Donne le débit d’équilibrage et le débit d’élution pour P. Q : HiTrap Blue HP 5 mL. Pour Q, il me faut le débit de chargement.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    },
+    {
+      "id": "FV12",
+      "family": "partial_support_and_quarantine",
+      "question_en": "P: HiTrap Blue HP 5 mL. Give equilibration flow, maximum pressure and washing flow for P. Independently, Q asks for the general SEC principle.",
+      "question_fr": "P : HiTrap Blue HP 5 mL. Donne le débit d’équilibrage, la pression maximale et le débit de lavage pour P. Indépendamment, Q demande le principe général de la SEC.",
+      "authorship_note": "Synthetic prospective wording/recombination written after method freeze by the same source/code-aware assistant; not blinded independent evidence."
+    }
+  ]
+}

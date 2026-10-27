@@ -1,0 +1,46 @@
+{
+  "id": "FV04-actual-human-pair-review",
+  "case_id": "FV04",
+  "recorded_at_utc": "2026-10-27T01:08:17.928512+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV04",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV04 avec les réserves indiquées, en gardant les formulations distinctes et l’exclusion niée inactive. Enregistre ma décision et passons aux suivants. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:08:17.928512+00:00",
+    "question_sha256_canonical": "c589c5caa7f9cbbd7c163c4f25abe996749909c1a6ba1263bab801ff98962889",
+    "submission_sha256_canonical": "f86dbc9556690e4cfad93238b2e34cf6447b069d942cc79a913fbafbb1fc89ba",
+    "reference_sha256_canonical": "14da6c05d34ca5da7e4f718250835d2ce60d4c6219dc5fe5d2a6f6c00b713dcb",
+    "retained_reservations": [
+      "Binding and elution require two separate preparation items despite sharing the same source and stage code; their identities must not collapse.",
+      "Retain all four alternative formulations without pairing, correction or recipe selection. The negated exclusion is inactive and does not add a positive request."
+    ],
+    "clarifications": [
+      "Retain one P task for HiTrap Blue HP 5 mL and three distinct positive units: binding-buffer formulation, elution-buffer formulation, and washing flow. The two formulation items must not collapse despite a shared source and stage code.",
+      "Keep the negated washing-flow exclusion inactive and auditable; transmit no active exclusion and count only one positive washing-flow request.",
+      "Preserve all four alternative formulations separately, without mixing, automatic binding/elution pairing, chemical nomenclature correction, or recipe selection. No preparation volume, duration or operating-elution mode is inferred.",
+      "Retain the albumin-removal scope and mandatory Blue Sepharose hydrophobicity warning. The product-qualified size does not invent a separately supplied column field or scientific suitability."
+    ],
+    "decision_record": "review-decisions/FV04.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV05",
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

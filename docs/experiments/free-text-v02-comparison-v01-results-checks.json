@@ -1,0 +1,1215 @@
+{
+  "id": "free-text-v02-comparison-v01-locked-run-audit",
+  "verified_at_utc": "2026-10-27T01:38:31.635903+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "raw_outcomes_sha256_lf": {
+    "FV01-en-S.json": "ebe61819f2e9aed6c44fc228527a2ee80babefc2ec381bbdf210168a667bcde8",
+    "FV01-en-F0.json": "95b590bba003d64515850d136c5e80d6b03051beaa2584a668dbdfbf73c52b74",
+    "FV01-fr-S.json": "5592706ae76c0966bb02c6a60d8cc5ca76150e413a3d4a572dd2954a90ca93a5",
+    "FV01-fr-F0.json": "cb7208263d8c059a786830ce71a64aa2e4530bfb8bc731231a924622287e890a",
+    "FV02-en-S.json": "9a378a5663e24c1361c86de9f5d55c98162635abb17019384f32271be0314e34",
+    "FV02-en-F0.json": "63a07618c3bbd4723a6547859f49c234caf0081e9e7d8815afa353b13bbec6c2",
+    "FV02-fr-S.json": "d257b9263388e90c451efaf42833165a63c2b9868d57378b4f06f955102b729e",
+    "FV02-fr-F0.json": "b9f89b894b92c499ae1ee37dc5ec4b33bd8ad1f143b19a94160813859f3f606c",
+    "FV03-en-S.json": "b3b8b719b6c64908d3826974cde8a658721304e1c9554d6ca743a33d7f9ca877",
+    "FV03-en-F0.json": "587af1eb9c29993bb262d62af2497c71a00e8fd30e4aa625de6b0ac422da3af5",
+    "FV03-fr-S.json": "0d6caf5d58ec40b032791c4fd4ef64b03952d173f919b04beed2fa447715c129",
+    "FV03-fr-F0.json": "2d0c4cc1f7372ebc5f594d3b13f18284c6c9ea5eb1e95fab62061234fc3f19d8",
+    "FV04-en-S.json": "f1ddc4d389548eee60b649eea65c973af5b1f09e4d4e3a75a4ee9b36e48aa112",
+    "FV04-en-F0.json": "2e3afa66884efe7721e967df363314564cf8c42562e85bf0ce7f9ca3e706e64c",
+    "FV04-fr-S.json": "ed04fd12013bf11570b5125cc866858ebe027ff55ce27b639dc9f88c32c8110e",
+    "FV04-fr-F0.json": "2f7f35c9bd49dd2996d622787e2a48e0d3c74fcbdb43bbe88eb81351e91628b4",
+    "FV05-en-S.json": "f748cef42cb7a188e65402e0335d05ddfdda1a951aee5a909b944eb5f9e7f03d",
+    "FV05-en-F0.json": "b890dfd994fbbb0de79989ffd0e9b78aec2929c0dc31c08b1a409117d87ac973",
+    "FV05-fr-S.json": "37c7cf6a8d6e1d78e7e23c88ae1bd8e9e7736fcb90b0389d8ba957e251d2a8c5",
+    "FV05-fr-F0.json": "d087fc78720cb3da2a384302ec584393546d0b3a46483e4ba971afc8f7410331",
+    "FV06-en-S.json": "66bce3f58f016899829edd581b7ef9928d5cc6a75662a36998813b9a3998419d",
+    "FV06-en-F0.json": "b1ee1e1f77b5356abafbd4189a3801c060c3c3997727cbed826df1a5c2481c7d",
+    "FV06-fr-S.json": "0c006b4645b4effed3aed89e9f91ab0770e2b27193bbb62ad3964697de33c812",
+    "FV06-fr-F0.json": "05706ce5d035bc1da0980b349627ab3279cbcb027864155ce2570bc48c098258",
+    "FV07-en-S.json": "0f40b865a51c9b095a8e12544fce3dabdfb900032418a9dc9fd0cbfd38d81972",
+    "FV07-en-F0.json": "0193ded53ac85ee48dc5525a0fdbc4940abd8706d1642ccedce0d8f033de3a34",
+    "FV07-fr-S.json": "e97ddac02416021e901a7c5fe2bbb1635cb2b2a3e637930dfd893df0b794e56f",
+    "FV07-fr-F0.json": "6235eb06b028189345b055f1b92966a1cfb4889d6be64bfbea2f6be0e06bc71a",
+    "FV08-en-S.json": "bff7787fcf84b973cd6ba1ef9efca9cb94427d2f07ff97b49ad92e11d93a678b",
+    "FV08-en-F0.json": "98ef075dfaa819b0df66b518a644217b0cfa212b3488bea9f8ec6df9c71b4e76",
+    "FV08-fr-S.json": "a7a4041c4a1ab026efc68f35f7d80caa4b7aee594df9835d3f2b065f0aed3c11",
+    "FV08-fr-F0.json": "5fd54743f7f56c1ca7e2eb4c337380d587373cd53d686a015d094f6f0fd85b09",
+    "FV09-en-S.json": "b011c202d9c497bf35b60bc9c0f6319f9cef891f320fd7f87be85c1ecdf81ac6",
+    "FV09-en-F0.json": "8cf9326be1faf3db8847d66b966f29a5699a9bae1eb334dea027cef59e0a6dae",
+    "FV09-fr-S.json": "388c6c0252d953035348971c7a57d14b9dc9ad4e31a2ef5c66d0a9e0bf41ee87",
+    "FV09-fr-F0.json": "826be89f6bf077e7738443348a2761830691dd984361906798cef8c4fdb60148",
+    "FV10-en-S.json": "58708fa1037ea380cbfcce299a89064d2e87ee3ac4c3059215db41d9d37cba4a",
+    "FV10-en-F0.json": "8ed65787d89912eb0a189bace5642b60d75d0db5ecbda8356ab929c0732b6758",
+    "FV10-fr-S.json": "82e64201809ee10cd16e77cb3ee901af5bab004092a1194d3803d1e3b4b7a7d7",
+    "FV10-fr-F0.json": "63b92e60cdae22f841c70d0153fc71eeaf719b5c7609866705ad3ca7348720bf",
+    "FV11-en-S.json": "2cb598542918f594cf85db6cab29826d590e802ae4616623984dd655fa042f38",
+    "FV11-en-F0.json": "0592ca7247f82238cb902bdf03f646c49176ec5fd1e89d8c469650345564204d",
+    "FV11-fr-S.json": "3a6ec138cf7739abf4b80ef94ed1d2f84d47500a497c794e7633c5938d6305b3",
+    "FV11-fr-F0.json": "afd8107191d7d36de987088f71b6b93da943c1758e8b0f1d525efae557cca065",
+    "FV12-en-S.json": "3b2b75c040204732b2a897b568c8c960291d39b33ba2eb4377f321b673d8ab44",
+    "FV12-en-F0.json": "06e4565d56c7c7c9b2bd15ec806bfb3661880c50baaae062694edbaeab392b2a",
+    "FV12-fr-S.json": "d39ed34f205eb1a31d2e5da8fc87ba7d37bb64c85857b2c9d965e307822d7219",
+    "FV12-fr-F0.json": "2bbdf47a1621950f0afc201d51cf6d0289f8383d759259ddfed80f348e9155c3"
+  },
+  "scores_sha256_lf": "143d45a0cbcaec484e340205ca056a2c77a0a6012b7180bd37e0a19eb9233ba6",
+  "completion_sha256_lf": "a6e5b3b2b202c7c483d55ca1b5bfd86fde0d9b1881a3c938cf0e39234cc432c4",
+  "raw_outcomes": 48,
+  "execution_exceptions": 0,
+  "bridge_failures": [
+    {
+      "file": "FV04-en-F0.json",
+      "failure": {
+        "stage": "projection",
+        "code": "projection_error",
+        "detail": "FreeTextValidationError"
+      }
+    },
+    {
+      "file": "FV04-fr-F0.json",
+      "failure": {
+        "stage": "projection",
+        "code": "projection_error",
+        "detail": "FreeTextValidationError"
+      }
+    }
+  ],
+  "coreless_F0_observations": [
+    "FV04-en-F0.json",
+    "FV04-fr-F0.json",
+    "FV07-fr-F0.json",
+    "FV11-fr-F0.json"
+  ],
+  "preserved_original_file_count": 551,
+  "source_provenance_and_all_context_token_counts_verified": true,
+  "structured_passed": 22,
+  "free_text_passed": 17,
+  "free_text_intent_passed": 19,
+  "language_passes": {
+    "en": 10,
+    "fr": 7
+  },
+  "bilingual_pairs_passed": 7,
+  "failed_observations": [
+    {
+      "case_id": "FV04",
+      "language": "en",
+      "scorer_failures": [
+        "inconsistent_item_bijection",
+        "missing_projection"
+      ],
+      "S_failures": [],
+      "F0_context_failures": [
+        "execution_error"
+      ],
+      "bridge_failure": {
+        "stage": "projection",
+        "code": "projection_error",
+        "detail": "FreeTextValidationError"
+      },
+      "unresolved_quotes": [],
+      "issues": [],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-buffer_preparation",
+          "stage": {
+            "kind": "preparation",
+            "code": "buffer_preparation"
+          },
+          "information": "buffer_formulation",
+          "origin_ids": [
+            "o4",
+            "o5",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a2"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-buffer_preparation",
+          "stage": {
+            "kind": "preparation",
+            "code": "buffer_preparation"
+          },
+          "information": "buffer_formulation",
+          "origin_ids": [
+            "o7",
+            "o8",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a3"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-washing",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "washing"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o12",
+            "o13",
+            "o14",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a5",
+            "a6"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "not_evaluated_due_to_error",
+          "interpretation_state": "not_assessed_due_to_error",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "error"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "not_evaluated_due_to_error",
+          "interpretation_state": "not_assessed_due_to_error",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "error"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "not_evaluated_due_to_error",
+          "interpretation_state": "not_assessed_due_to_error",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "error"
+        }
+      ],
+      "projection_status": "invalid",
+      "known_units": 3,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FV04",
+      "language": "fr",
+      "scorer_failures": [
+        "inconsistent_item_bijection",
+        "missing_projection"
+      ],
+      "S_failures": [],
+      "F0_context_failures": [
+        "execution_error"
+      ],
+      "bridge_failure": {
+        "stage": "projection",
+        "code": "projection_error",
+        "detail": "FreeTextValidationError"
+      },
+      "unresolved_quotes": [],
+      "issues": [],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-buffer_preparation",
+          "stage": {
+            "kind": "preparation",
+            "code": "buffer_preparation"
+          },
+          "information": "buffer_formulation",
+          "origin_ids": [
+            "o4",
+            "o5",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a2"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-buffer_preparation",
+          "stage": {
+            "kind": "preparation",
+            "code": "buffer_preparation"
+          },
+          "information": "buffer_formulation",
+          "origin_ids": [
+            "o7",
+            "o8",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a3"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-washing",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "washing"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o12",
+            "o13",
+            "o14",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a5",
+            "a6"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "not_evaluated_due_to_error",
+          "interpretation_state": "not_assessed_due_to_error",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "error"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "not_evaluated_due_to_error",
+          "interpretation_state": "not_assessed_due_to_error",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "error"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "not_evaluated_due_to_error",
+          "interpretation_state": "not_assessed_due_to_error",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "error"
+        }
+      ],
+      "projection_status": "invalid",
+      "known_units": 3,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FV06",
+      "language": "en",
+      "scorer_failures": [],
+      "S_failures": [
+        "aggregate:all_supported_ready_units_covered"
+      ],
+      "F0_context_failures": [
+        "aggregate:all_supported_ready_units_covered"
+      ],
+      "bridge_failure": null,
+      "unresolved_quotes": [],
+      "issues": [],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-washing",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "washing"
+          },
+          "information": "maximum_pressure",
+          "origin_ids": [
+            "o6",
+            "o7",
+            "o8",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a3",
+            "a4"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-operating_limits",
+          "stage": {
+            "kind": "general_topic",
+            "code": "operating_limits"
+          },
+          "information": "maximum_pressure",
+          "origin_ids": [
+            "o11",
+            "o12",
+            "o3"
+          ],
+          "assertion_ids": [
+            "a5"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-sample_application",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "sample_application"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o13",
+            "o14",
+            "o15",
+            "o3"
+          ],
+          "assertion_ids": [
+            "a6",
+            "a7"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "P",
+            "item_id": "P-washing",
+            "information": "maximum_pressure"
+          },
+          "binding_index": null,
+          "source_ids": [],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "unsupported_selector",
+          "summary_state": "unsupported_selector"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "Q",
+            "item_id": "Q-operating_limits",
+            "information": "maximum_pressure"
+          },
+          "binding_index": null,
+          "source_ids": [],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "missing_source",
+          "summary_state": "missing_source"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "Q",
+            "item_id": "Q-sample_application",
+            "information": "flow_rate"
+          },
+          "binding_index": 0,
+          "source_ids": [
+            "E121-L"
+          ],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "eligible",
+          "summary_state": "supported"
+        }
+      ],
+      "projection_status": "available",
+      "known_units": 3,
+      "core_calls": 1
+    },
+    {
+      "case_id": "FV06",
+      "language": "fr",
+      "scorer_failures": [],
+      "S_failures": [
+        "aggregate:all_supported_ready_units_covered"
+      ],
+      "F0_context_failures": [
+        "aggregate:all_supported_ready_units_covered"
+      ],
+      "bridge_failure": null,
+      "unresolved_quotes": [],
+      "issues": [],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-washing",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "washing"
+          },
+          "information": "maximum_pressure",
+          "origin_ids": [
+            "o6",
+            "o7",
+            "o8",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a3",
+            "a4"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-operating_limits",
+          "stage": {
+            "kind": "general_topic",
+            "code": "operating_limits"
+          },
+          "information": "maximum_pressure",
+          "origin_ids": [
+            "o11",
+            "o12",
+            "o3"
+          ],
+          "assertion_ids": [
+            "a5"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-sample_application",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "sample_application"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o13",
+            "o14",
+            "o15",
+            "o3"
+          ],
+          "assertion_ids": [
+            "a6",
+            "a7"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "P",
+            "item_id": "P-washing",
+            "information": "maximum_pressure"
+          },
+          "binding_index": null,
+          "source_ids": [],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "unsupported_selector",
+          "summary_state": "unsupported_selector"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "Q",
+            "item_id": "Q-operating_limits",
+            "information": "maximum_pressure"
+          },
+          "binding_index": null,
+          "source_ids": [],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "missing_source",
+          "summary_state": "missing_source"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "Q",
+            "item_id": "Q-sample_application",
+            "information": "flow_rate"
+          },
+          "binding_index": 0,
+          "source_ids": [
+            "E121-L"
+          ],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "eligible",
+          "summary_state": "supported"
+        }
+      ],
+      "projection_status": "available",
+      "known_units": 3,
+      "core_calls": 1
+    },
+    {
+      "case_id": "FV07",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "stage_or_information",
+        "inconsistent_item_bijection",
+        "missing_projection"
+      ],
+      "S_failures": [],
+      "F0_context_failures": [
+        "execution_error"
+      ],
+      "bridge_failure": null,
+      "unresolved_quotes": [
+        " Donne le débit de chargement et les critères de fin du lavage pour P."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1",
+            "u2",
+            "u3"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o12"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-sample_application",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "sample_application"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o5",
+            "o6",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a3",
+            "a4"
+          ],
+          "issue_ids": [
+            "i1"
+          ],
+          "dispatch": "preblock"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-sample_application",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "sample_application"
+          },
+          "information": "stopping_criteria",
+          "origin_ids": [
+            "o7",
+            "o8",
+            "o9",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a5",
+            "a6"
+          ],
+          "issue_ids": [
+            "i1"
+          ],
+          "dispatch": "preblock"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-method_selection",
+          "stage": {
+            "kind": "general_topic",
+            "code": "method_selection"
+          },
+          "information": "principle",
+          "origin_ids": [
+            "o11",
+            "o10"
+          ],
+          "assertion_ids": [
+            "a7"
+          ],
+          "issue_ids": [
+            "i1"
+          ],
+          "dispatch": "preblock"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [
+            "i1"
+          ],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "preblocked",
+          "interpretation_state": "needs_clarification",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "preblocked"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [
+            "i1"
+          ],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "preblocked",
+          "interpretation_state": "needs_clarification",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "preblocked"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [
+            "i1"
+          ],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "preblocked",
+          "interpretation_state": "needs_clarification",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "preblocked"
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 3,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FV11",
+      "language": "fr",
+      "scorer_failures": [
+        "incomplete_intent_inventory",
+        "stage_or_information",
+        "inconsistent_item_bijection",
+        "missing_projection"
+      ],
+      "S_failures": [],
+      "F0_context_failures": [
+        "execution_error"
+      ],
+      "bridge_failure": null,
+      "unresolved_quotes": [
+        " Donne le débit d’équilibrage et le débit d’élution pour P."
+      ],
+      "issues": [
+        {
+          "issue_id": "i1",
+          "code": "incomplete_inventory",
+          "blocking": true,
+          "affected_unit_ids": [
+            "u1",
+            "u2",
+            "u3"
+          ],
+          "affected_fragment_ids": [
+            "f1"
+          ],
+          "origin_ids": [
+            "o14"
+          ],
+          "detail": "Unsupported substantive text may change scope or add a request; no complete inventory claim."
+        }
+      ],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-equilibration",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "equilibration"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o4",
+            "o5",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a2",
+            "a3"
+          ],
+          "issue_ids": [
+            "i1"
+          ],
+          "dispatch": "preblock"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-equilibration",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "equilibration"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o6",
+            "o7",
+            "o8",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a4",
+            "a5"
+          ],
+          "issue_ids": [
+            "i1"
+          ],
+          "dispatch": "preblock"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-sample_application",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "sample_application"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o12",
+            "o13",
+            "o9"
+          ],
+          "assertion_ids": [
+            "a7",
+            "a8"
+          ],
+          "issue_ids": [
+            "i1"
+          ],
+          "dispatch": "preblock"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [
+            "i1"
+          ],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "preblocked",
+          "interpretation_state": "needs_clarification",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "preblocked"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [
+            "i1"
+          ],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "preblocked",
+          "interpretation_state": "needs_clarification",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "preblocked"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [
+            "i1"
+          ],
+          "core_unit_key": null,
+          "binding_index": null,
+          "source_ids": [],
+          "status": "preblocked",
+          "interpretation_state": "needs_clarification",
+          "documentary_support_state": "not_assessed_by_planner",
+          "summary_state": "preblocked"
+        }
+      ],
+      "projection_status": "empty",
+      "known_units": 3,
+      "core_calls": 0
+    },
+    {
+      "case_id": "FV12",
+      "language": "fr",
+      "scorer_failures": [
+        "stage_or_information",
+        "inconsistent_item_bijection",
+        "submitted_intent"
+      ],
+      "S_failures": [],
+      "F0_context_failures": [
+        "execution_error"
+      ],
+      "bridge_failure": null,
+      "unresolved_quotes": [],
+      "issues": [],
+      "interpreted_units": [
+        {
+          "unit_id": "u1",
+          "order": 0,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-equilibration",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "equilibration"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o4",
+            "o5",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a2",
+            "a3"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u2",
+          "order": 1,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-equilibration",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "equilibration"
+          },
+          "information": "maximum_pressure",
+          "origin_ids": [
+            "o6",
+            "o7",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a4",
+            "a5"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u3",
+          "order": 2,
+          "owner": {
+            "state": "resolved",
+            "task_id": "P",
+            "candidate_task_ids": []
+          },
+          "item_id": "P-washing",
+          "stage": {
+            "kind": "operating_phase",
+            "code": "washing"
+          },
+          "information": "flow_rate",
+          "origin_ids": [
+            "o8",
+            "o9",
+            "o10",
+            "o1"
+          ],
+          "assertion_ids": [
+            "a6",
+            "a7"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        },
+        {
+          "unit_id": "u4",
+          "order": 3,
+          "owner": {
+            "state": "resolved",
+            "task_id": "Q",
+            "candidate_task_ids": []
+          },
+          "item_id": "Q-method_selection",
+          "stage": {
+            "kind": "general_topic",
+            "code": "method_selection"
+          },
+          "information": "principle",
+          "origin_ids": [
+            "o12",
+            "o11"
+          ],
+          "assertion_ids": [
+            "a8"
+          ],
+          "issue_ids": [],
+          "dispatch": "project"
+        }
+      ],
+      "unit_outcomes": [
+        {
+          "unit_id": "u1",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "P",
+            "item_id": "P-equilibration",
+            "information": "flow_rate"
+          },
+          "binding_index": null,
+          "source_ids": [],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "quarantined",
+          "summary_state": "quarantined"
+        },
+        {
+          "unit_id": "u2",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "P",
+            "item_id": "P-equilibration",
+            "information": "maximum_pressure"
+          },
+          "binding_index": null,
+          "source_ids": [],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "unsupported_selector",
+          "summary_state": "unsupported_selector"
+        },
+        {
+          "unit_id": "u3",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "P",
+            "item_id": "P-washing",
+            "information": "flow_rate"
+          },
+          "binding_index": 0,
+          "source_ids": [
+            "E121-W"
+          ],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "eligible",
+          "summary_state": "supported"
+        },
+        {
+          "unit_id": "u4",
+          "issue_ids": [],
+          "core_unit_key": {
+            "task_id": "Q",
+            "item_id": "Q-method_selection",
+            "information": "principle"
+          },
+          "binding_index": 1,
+          "source_ids": [
+            "E118-M"
+          ],
+          "status": "planner_evaluated",
+          "interpretation_state": "ready",
+          "documentary_support_state": "eligible",
+          "summary_state": "supported"
+        }
+      ],
+      "projection_status": "available",
+      "known_units": 4,
+      "core_calls": 1
+    }
+  ],
+  "free_text_core_calls": 20,
+  "contexts_checked": 44,
+  "excluded_sources_absent_from_all_emitted_contexts": true,
+  "budget_maxima": {
+    "context_tokens": 1674,
+    "selected_roots": 3
+  },
+  "elapsed_ms_descriptive_only": {
+    "S": {
+      "min": 24.291199981234968,
+      "median": 40.853750018868595,
+      "max": 641.7813000152819,
+      "sum": 1602.3561001056805
+    },
+    "F0": {
+      "min": 55.2456000004895,
+      "median": 219.46309998747893,
+      "max": 659.3414000235498,
+      "sum": 5365.254799777176
+    }
+  },
+  "old_16_notes_byte_identical": true,
+  "tracked_files_unchanged": true,
+  "frozen_method_dataset_and_review_records_unchanged": true,
+  "network_attempts": [],
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0,
+  "retries": 0
+}

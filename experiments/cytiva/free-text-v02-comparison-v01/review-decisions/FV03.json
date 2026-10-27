@@ -1,0 +1,47 @@
+{
+  "id": "FV03-actual-human-pair-review",
+  "case_id": "FV03",
+  "recorded_at_utc": "2026-10-27T01:07:15.954122+00:00",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "actual_decision": {
+    "case_id": "FV03",
+    "decision": "validated_with_reservations",
+    "human_quote": "Je valide FV03 avec les réserves indiquées, en distinguant formulation du tampon et élution opératoire, avec l’exclusion limitée à P. Enregistre ma décision et passons à FV04. Aucun LLM, API payante, commit ni push.",
+    "reviewed_at_utc": "2026-10-27T01:07:15.954122+00:00",
+    "question_sha256_canonical": "47df93d6217099d23cd464a09b98a178e43d3d66fd0d86775898d60e25c07701",
+    "submission_sha256_canonical": "b88bf47408944619b361857c37c64e61b1649cea468facac8c57173516912a85",
+    "reference_sha256_canonical": "d7f756e13b7c8d0f3b9fe0ffb088229e8aac4c7c74e24228a850ad59fe5134e0",
+    "retained_reservations": [
+      "Formulating an elution buffer is not requesting operating elution. The exclusion for P cannot suppress Q.",
+      "Do not select an elution mode or duration, pair buffers, or silently correct the manual nomenclature."
+    ],
+    "clarifications": [
+      "Retain two separate tasks and units in P/Q order: P elution-buffer formulations for the 1 mL product and Q operating-elution flow for the 5 mL product.",
+      "Buffer preparation is distinct from operating elution. The active all-information operating-elution exclusion belongs only to P, neither removing P formulation nor suppressing Q elution flow.",
+      "Retain both alternative formulations separately and the source nomenclature without chemical correction, buffer pairing or automatic selection. Do not infer an elution mode, volume, duration or complete operating protocol.",
+      "Keep the albumin-removal scope and mandatory Blue Sepharose hydrophobicity warning; no scientific suitability is inferred. Product-qualified sizes do not create separately supplied column fields."
+    ],
+    "decision_record": "review-decisions/FV03.json"
+  },
+  "approval_scope": "One actual human approval covers both EN/FR texts, forms, references and retained reservations, with the recorded human clarification.",
+  "dataset_unchanged": true,
+  "remaining_case_ids": [
+    "FV04",
+    "FV05",
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

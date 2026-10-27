@@ -1,0 +1,56 @@
+{
+  "id": "FV01-FV12-human-review-completion",
+  "verified_at_utc": "2026-10-27T01:16:59.890051+00:00",
+  "status": "all_12_validated_with_reservations_not_executed",
+  "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
+  "review_sha256_canonical": "0ed745222a8499eacc3034de4eee0f4c278f333f80136b0b233d4c1d28c69e2c",
+  "decision_record_sha256_lf": {
+    "FV01.json": "22a33cb517d3239780676f57282439fc12e6e4791c0b26c81289ef121069acb1",
+    "FV02.json": "4baf7ed85ea546319d86aed5212f9bf19a160d18e1c51f7381ed3d69b7f67028",
+    "FV03.json": "1cfcca49917908badff65c5aa28aa7d6133d2de827457d18700a7239a5cd75f3",
+    "FV04.json": "fea6c4acbbb795c467f35485bc27d8b64122d3ccc9c289ca024f92c3d4c990eb",
+    "FV05.json": "26b9e108fc236ec13d22c992810665d2338c747d7e5c0d1ee917d04188ff752d",
+    "FV06.json": "c5199cffc90d13e4e7d7d5997f7425a27ebadcbfd4e269c9f131d29a3481156c",
+    "FV07.json": "1a6f726b949b17b0dd2881c7a86e105ff244285f19b24bc0c3231b25472c268e",
+    "FV08.json": "7cf7c267287c6d4353ea22e81fc61ee66e48b72cc3a19af118f9b3322f7999b6",
+    "FV09.json": "6fec7fed771d5e9faacb78b1219d9bf3707e77c153fdd35cfdca56bdfe35cc47",
+    "FV10.json": "d70accfb153a96a3bd54e1d8019de1bbc27de0281844f3b43d05349731c24780",
+    "FV11.json": "add180019c4c3ddf1d9bf200e41bb5040cf5a4419258196c2283425568d06654",
+    "FV12.json": "f365a2865c3e22cf6f79c673d9a1d64839bdbd650510430ecc52b0c624027deb"
+  },
+  "review_summary_sha256_lf": "1dd32060b8f86fdb53155fe47d2ccc81d4186cd378d3ce55c3f9f645d7aaef37",
+  "reviewed_semantic_scenarios": 12,
+  "reviewed_language_observations": 24,
+  "planned_arm_executions": 48,
+  "individual_approval_messages": 4,
+  "collective_approval_messages": 1,
+  "collective_approval_case_ids": [
+    "FV05",
+    "FV06",
+    "FV07",
+    "FV08",
+    "FV09",
+    "FV10",
+    "FV11",
+    "FV12"
+  ],
+  "actual_review_gate_passed": true,
+  "method_and_dataset_unchanged": true,
+  "prior_FV01_FV04_records_unchanged": true,
+  "old_16_notes_byte_identical": true,
+  "previously_tracked_files_unchanged": true,
+  "no_trial_output_directory": true,
+  "excluded_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ],
+  "operations": {
+    "prospective_S_calls": 0,
+    "prospective_F0_calls": 0,
+    "comparison_runs": 0,
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "commits": 0,
+    "pushes": 0
+  }
+}

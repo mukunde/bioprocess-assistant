@@ -1,0 +1,7 @@
+{
+  "id": "2026-10-27-corrected-v03-freeze-request",
+  "recorded_at_utc": "2026-10-27T04:21:58.138891+00:00",
+  "human_quote": "Fige v03 corrigée.\net peut-on essayer d'avancer rapidement vers une version démontrable?\non ajouterais les détails et subtilités après, au fur et à mesure",
+  "decision": "freeze_corrected_runtime_and_prioritize_a_demonstrable_slice",
+  "scope": "No new trial approval, source approval, generated-answer validation or Git operation inferred."
+}

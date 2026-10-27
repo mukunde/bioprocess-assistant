@@ -1,0 +1,44 @@
+{
+  "id": "v03-runtime-freeze-static-and-suite-checks",
+  "verified_at_utc": "2026-10-27T11:59:06.851135+00:00",
+  "status": "local_freeze_verified_not_committed",
+  "freeze": {
+    "id": "free-text-v03-corrected-runtime-freeze-v01",
+    "status": "frozen",
+    "pinned_files": 36,
+    "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "environment_verified": true,
+    "runtime_instantiated": false,
+    "prospective_trial_executed": false
+  },
+  "automated_freeze_test_methods": 5,
+  "full_workspace_suite": {
+    "tests": 769,
+    "passed": true,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "external_connection_attempts": [],
+    "loopback_operations": 48,
+    "elapsed_seconds": 521.829,
+    "real_S_trial_repeated": false
+  },
+  "suite_scope": "Full suite ran with the dependent local demo; this package has no runtime or file dependency on that demo.",
+  "file_sha256_lf": {
+    "experiments/cytiva/free-text-v03-freeze-v01/METHOD.md": "35ee583c2418bdf220c69dce4c95cce8d6c0ae14df9152ac02bd017c095742d3",
+    "experiments/cytiva/free-text-v03-freeze-v01/README.md": "0f741ae0e888a7a0ea04547d82a99187658869db904e3eb1066be38e0492909b",
+    "experiments/cytiva/free-text-v03-freeze-v01/freeze-decision.json": "484e0241fd23a408aa363a4206ad96eeaba6683f35df068c8c4a8d41c492c9ea",
+    "experiments/cytiva/free-text-v03-freeze-v01/method-lock.json": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "experiments/cytiva/free_text_v03_freeze.py": "dbd1f0b2308f14b4dfb71281924d2e727617bd5ed67aedad0e5c16770436b547",
+    "tests/test_free_text_v03_freeze.py": "20d02b9fa13d1bfeb2821830d420441d5092e3e3763d50d2465d91e436499410"
+  },
+  "all_36_pinned_dependencies_unchanged": true,
+  "previous_method_locks_and_native_results_unchanged": true,
+  "old_16_notes_byte_identical": true,
+  "runtime_instantiated_by_static_verifier": false,
+  "new_prospective_trial": false,
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "commits": 0,
+  "pushes": 0
+}

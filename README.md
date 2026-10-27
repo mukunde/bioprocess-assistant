@@ -10,11 +10,13 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Current status
 
-Updated 27 October 2026. The merged checkpoint is `main` at `82b16b6`, including
+Updated 27 October 2026. The merged checkpoint is `main` at `4b2bfa5`, including
 [PR #51](https://github.com/mukunde/bioprocess-assistant/pull/51) (v03 runtime freeze),
 [PR #52](https://github.com/mukunde/bioprocess-assistant/pull/52) (guided demo and usability fixes)
-and [PR #53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher).
-The complete maintained suite passed **780/780 tests** on that merged baseline,
+and [PR #53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher),
+followed by [PR #55](https://github.com/mukunde/bioprocess-assistant/pull/55)
+(isolated Windows installation and verified tokenizer setup).
+The complete maintained suite passed **790/790 tests** on that merged baseline,
 with no skipped tests or external connection attempts.
 
 The merged v02/FV trial preserves all twelve human approvals and its completed
@@ -30,9 +32,11 @@ interpreter is the legacy chat default.
 The free guided demo uses 25 reviewed excerpts to display documentary support,
 source quotations, clarification, missing evidence and quarantine without a model
 or Neo4j. Usability corrections and a Windows launcher with dependency/cache and
-freeze checks are merged. The launcher checks an existing environment. A separate
-installer is now prepared locally and tested in a fresh clone on the same PC;
-validation on a second physical machine remains pending. See [the demo-first guide](docs/DEMO-FIRST.md).
+freeze checks are merged. The separate Windows installer is also merged: it creates
+an isolated environment, installs 12 hash-locked dependencies and prepares the
+verified tokenizer cache. Setup and the walkthrough passed in a fresh clone on
+the same PC; validation on a second physical machine remains pending. See
+[the demo-first guide](docs/DEMO-FIRST.md).
 
 | Component | Status and scope |
 |---|---|
@@ -43,7 +47,7 @@ validation on a second physical machine remains pending. See [the demo-first gui
 | Conversion and chunking | Selected page 77/88/104/152–153 reviews and repairs are merged; three ambiguous rows remain quarantined on 152–153 |
 | Passage retrieval | Merged BM25/atomic assembly experiments; frozen v03b, v04 and v05 gates remain blocked and none is the chat default |
 | Structured request control | Merged offline control. S01-S12: all 24 EN/FR submissions and all 12 paired scenarios pass reviewed context/diagnostic criteria; known-corpus diagnostic evidence only |
-| Free-text interface and local demo | v01/v02, reviewed FT/FV trials, corrected opt-in v03, its runtime freeze, corrected guided/text demo and Windows launcher merged. Historical gates remain blocked; fresh-install reproducibility remains pending |
+| Free-text interface and local demo | v01/v02, reviewed FT/FV trials, corrected opt-in v03, its runtime freeze, corrected guided/text demo, Windows installer and launcher merged. Same-PC fresh-clone setup verified; second-machine validation pending. Historical gates remain blocked |
 | Reviewed records → chatbot | Adapter pending; ingestion does not automatically enrich the serving graph |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
@@ -71,20 +75,24 @@ Ingestion has two separate routes: **Docling → Docling Graph + local Ollama �
 
 For a fresh Windows x64 clone, install CPython **3.13.0** separately, then run
 `.\Install-CytivaDemo.ps1` to create `.venv-demo`, install hash-locked dependencies
-and prepare the verified tokenizer cache. This installer is a local addition
-pending publication; see the [setup guide](docs/DEMO-FIRST.md#install-from-a-fresh-windows-clone)
+and prepare the verified tokenizer cache. The installer is merged; see the
+[setup guide](docs/DEMO-FIRST.md#install-from-a-fresh-windows-clone)
 for prerequisites and offline installation.
 
 The Windows launcher finds a compatible local Python environment, checks the
-frozen dependency versions and offline tokenizer, verifies v03 and starts the demo:
+frozen dependency versions and offline tokenizer, verifies v03 and starts the demo.
+From the repository root:
 
 ```powershell
+.\Install-CytivaDemo.ps1
+.\Start-CytivaDemo.ps1 -CheckOnly
 .\Start-CytivaDemo.ps1
 ```
 
 Open [localhost:8766](http://127.0.0.1:8766/). Start with washing flow, then add
 maximum pressure and equilibration flow to inspect partial service. It uses no
-model or database and does not install or download anything. The
+model or database. The explicit installer downloads packages and tokenizer data;
+the launcher and running demo do not install or download anything. The
 [demo guide](docs/DEMO-FIRST.md) covers `-CheckOnly`, `-PythonPath`, `-Port`, the
 walkthrough and prerequisites for another machine. Ctrl+C stops the local server.
 
@@ -161,10 +169,12 @@ The [current suite notes](tests/README.md) explain the maintained entry point an
 
 These tests mock external model/database calls; some use loopback HTTP servers
 and Windows asynchronous sockets. They need no paid API or external service.
-The **780/780** merged-main result above is from the existing local verification environment,
-not a fresh-install certification or an answer-quality measurement. Structured
-runtime dependencies are listed separately in `requirements-structured.txt`;
-private tokenizer assets may also be required by optional runtime workflows.
+The **790/790** merged-main result above is from the existing local verification
+environment, not a clean-OS certification or an answer-quality measurement.
+The separate demo setup also passed in a fresh clone on the same PC. Its twelve
+dependencies and wheel hashes are in `demo/requirements-windows.lock`; its installer
+prepares the public tokenizer asset with the frozen hash. Other structured runtime
+workflows use `requirements-structured.txt` and may need their own local cache setup.
 
 The merged structured export can be verified with only the standard library,
 without PDFs, tokenizer assets, credentials, models or private run files:
@@ -198,7 +208,7 @@ does not establish general language understanding or generated-answer quality.
 | [Opt-in v02](docs/technical/FREE-TEXT-CANDIDATE-V02.md) | Merged candidate; 57 targeted checks and FT development regressions pass | Does not replace v01 or demonstrate independent performance |
 | [Frozen v02 / FV01-FV12](experiments/cytiva/free-text-v02-comparison-v01/README.md) | Merged reviewed delivery: S 22/24, F0 17/24, 7/12 pairs; 48 outcomes retained; 1,674-token maximum | Gate blocked by item identity, FR phase association and FV06 shared-flag/reference mismatch. No reference amendment or rescoring |
 | [Corrected v03](docs/technical/FREE-TEXT-CANDIDATE-V03-REVIEW-FIXES.md) | Merged: versioned coverage, buffer occurrences and French phase-origin fixes; 76 v03 checks pass; [runtime freeze](experiments/cytiva/free-text-v03-freeze-v01/README.md) pins 36 files | Known development regressions and runtime integrity, not a new prospective score or legacy chat activation |
-| [Guided demo and Windows launcher](docs/DEMO-FIRST.md) | Merged: request-to-source walkthrough, usability corrections and one-command launch with environment/cache/freeze checks | 25-excerpt scope; no generated advice, whole-manual coverage or clean-machine installation certification |
+| [Guided demo and Windows setup](docs/DEMO-FIRST.md) | Merged: request-to-source walkthrough, usability corrections, isolated hash-locked installation and launcher checks; seven browser/HTTP scenarios and five exact displayed quotations checked | Same-PC fresh-clone evidence; second-machine/clean-OS validation pending. 25-excerpt scope; no generated advice or whole-manual coverage |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
 The question series have distinct histories: Q/N/C contain 28 reviewed development
@@ -221,11 +231,12 @@ including bindings, not a future answer prompt or output. The source-reviewed
 claims have not been connected to the chatbot's serving path.
 
 **Next priority:** reproduce the model-free demo from a fresh clone on a second
-Windows environment. Document and test isolated dependency installation and
-tokenizer-cache preparation, then run the launcher readiness check and five-minute
-walkthrough. The current launcher verifies prerequisites but does not install
-them. Preserve frozen v03, historical blocked scores and excluded sources; a new
-question-review campaign is not a prerequisite for this delivery step.
+Windows PC using the merged installer and existing guide, without copying the
+prepared environment or tokenizer cache. Success requires `-CheckOnly`, citations
+and warnings, missing-format clarification, partial service and quarantine to work;
+retain setup diagnostics and the Python/Windows versions. This is a portability
+check, not another installer implementation or question-review campaign. Preserve
+frozen v03, historical blocked scores and excluded sources.
 
 The three-arm graph/passages/LightRAG comparison remains unexecuted. Current BM25
 trials are a lexical baseline, not the multilingual vector arm specified in that
@@ -235,12 +246,12 @@ With Neo4j running, `python eval/run_eval.py` evaluates the eligible English lex
 
 The [conversion/chunking launcher](experiments/cytiva/README.md#local-table-conversion-and-chunking-no-llm) runs without extraction LLMs or paid APIs, using the selected manual and cached weights. General local extraction and manual review have separate [installation and workflow instructions](docs/INGESTION.md).
 
-Manuals and raw experiment outputs stay local and ignored. A fresh clone includes code, curated reports and the selected review package, but not PDFs, model weights or full local journals. Requirements are not a complete dependency lock.
+Manuals and raw experiment outputs stay local and ignored. A fresh clone includes code, curated reports and the selected review package, but not PDFs, model weights or full local journals. The demo has a Windows x64 wheel-hash lock; other requirements files are not a complete project-wide dependency lock.
 
 ## Next steps
 
-1. Validate fresh-clone setup on a second Windows environment: isolated dependencies, verified tokenizer cache, launcher `-CheckOnly`, then the existing five-minute walkthrough. Keep frozen v03 unchanged and record setup failures explicitly.
-2. Record a short demonstration and collect user feedback. The corrected walkthrough and one-command launcher are already merged; improve usability and bounded language coverage from concrete feedback.
+1. Validate the merged installer on a second Windows PC from a fresh clone: isolated dependencies, newly prepared verified tokenizer cache, launcher `-CheckOnly`, then the existing five-minute walkthrough. Keep frozen v03 unchanged and record setup failures explicitly.
+2. Record a short demonstration and collect user feedback. Setup and launch are implemented; improve usability and bounded language coverage from concrete feedback.
 3. Extend one confirmed troubleshooting workflow or the reviewed-records-to-chatbot adapter, retaining source versions, conditions, reservations and quarantine.
 4. Instrument the actual path with OpenTelemetry and portable call/retry/cost accounting; add generated-answer evaluation with Ragas and Promptfoo when that answering path exists. Fresh holdouts accompany later behavior changes.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.

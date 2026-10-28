@@ -39,6 +39,10 @@ The installer is merged in [PR #55](https://github.com/mukunde/bioprocess-assist
 and available in new clones of main. Setup and the walkthrough were verified in
 a fresh clone on the same PC; a second-machine check remains pending.
 
+For that next check, use the [second-PC protocol](validation/WINDOWS-SECOND-PC.md)
+and its [blank result sheet](validation/windows-second-pc-results-template.md).
+They pin a merged revision and separate real observations from expected outcomes.
+
 Installation creates the ignored `.venv-demo` in this clone. It installs all 12
 runtime dependencies from `demo/requirements-windows.lock`, with exact versions,
 SHA-256 wheel hashes and no source builds or dependency expansion. It downloads
@@ -146,11 +150,12 @@ limited to the selected excerpts, not the entire Cytiva manual.
 
 ## Next deliveries and stop rules
 
-1. **Try the walkthrough with the user.** Fix only blockers to understanding,
+1. **Validate on a second Windows PC.** The installer, launcher and corrected
+   walkthrough are merged and have same-PC evidence. Execute the pinned protocol
+   above and review its completed sheet; keep failures and retries visible.
+2. **Record a short demo and collect feedback.** Fix blockers to understanding,
    navigation or correct transmission. A scope or provenance defect remains a
    release blocker; cosmetic and broader language refinements can be iterative.
-2. **Make launch reproducible.** One setup/launch command, packaged runtime
-   dependencies, explicit tokenizer-cache preparation and a short demo recording.
 3. **Extend one useful workflow.** Add a confirmed troubleshooting use case or
    connect the reviewed records to the existing chat, keeping serving provenance
    and rollback. Do not claim a procedural lookup is a causal diagnosis.

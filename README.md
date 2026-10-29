@@ -19,12 +19,21 @@ and quarantine are displayed. Understandable without sound, with French guidance
 and the actual English interface. This local demo uses **25 reviewed excerpts**
 without an LLM or database; it is separate from the Neo4j troubleshooting chat.
 
-Browser playback is prepared locally and awaits GitHub Pages publication; see
-[hosting and verification](docs/CYTIVA-VIDEO-HOSTING.md). The MP4 download remains available.
+Published on GitHub Pages on 29 October 2026. The README poster → player → Play
+path was verified as a signed-out visitor; the video plays in the browser without
+a manual download. See [hosting and verification](docs/CYTIVA-VIDEO-HOSTING.md).
+The optional MP4 download remains available. This hosts the video, not the interactive application.
 
 ## Current status
 
-Updated 27 October 2026. The merged checkpoint is `main` at `4b2bfa5`, including
+Documentation updated 29 October 2026. The published video checkpoint is `main`
+at `497f0f1`: the approved v05 package ([PR #58](https://github.com/mukunde/bioprocess-assistant/pull/58)),
+README integration ([PR #59](https://github.com/mukunde/bioprocess-assistant/pull/59))
+and the GitHub Pages player ([PR #60](https://github.com/mukunde/bioprocess-assistant/pull/60))
+are merged. The [manual deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/40862970741)
+succeeded; live playback is a media-delivery check, not a new answer-quality result.
+
+Historical Windows setup checkpoint (27 October 2026): `main` at `4b2bfa5`, including
 [PR #51](https://github.com/mukunde/bioprocess-assistant/pull/51) (v03 runtime freeze),
 [PR #52](https://github.com/mukunde/bioprocess-assistant/pull/52) (guided demo and usability fixes)
 and [PR #53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher),
@@ -265,7 +274,7 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 ## Next steps
 
 1. Validate the merged installer on a second Windows PC from a fresh clone: isolated dependencies, newly prepared verified tokenizer cache, launcher `-CheckOnly`, then the existing five-minute walkthrough. Keep frozen v03 unchanged and record setup failures explicitly.
-2. Record a short demonstration and collect user feedback. Setup and launch are implemented; improve usability and bounded language coverage from concrete feedback.
+2. Collect feedback using the published 34-second video and the local demo. Video recording and browser playback are complete; improve usability and bounded language coverage from concrete feedback.
 3. Extend one confirmed troubleshooting workflow or the reviewed-records-to-chatbot adapter, retaining source versions, conditions, reservations and quarantine.
 4. Instrument the actual path with OpenTelemetry and portable call/retry/cost accounting; add generated-answer evaluation with Ragas and Promptfoo when that answering path exists. Fresh holdouts accompany later behavior changes.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.

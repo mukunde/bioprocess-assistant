@@ -132,6 +132,13 @@ passed; all five displayed source quotations matched their returned text exactly
 The launcher readiness check passed again on merged main. See the
 [installation review](experiments/cytiva-demo-installation-review.md). v03 is unchanged.
 
+**Published on 29 October 2026:** the human-approved 34-second onboarding v05
+package (PR58), README integration (PR59) and GitHub Pages player (PR60) are merged.
+The [video](https://mukunde.github.io/bioprocess-assistant/) plays from the README
+poster without a manual download. The [successful deployment and public check](CYTIVA-VIDEO-HOSTING.md)
+concern media delivery, not hosted interactive assistance, answer quality or
+second-PC installation. Frozen v03 and all prior experiment results are unchanged.
+
 ### Next delivery priorities
 
 1. **Validate the merged installer on a second Windows PC.** The installer,
@@ -144,9 +151,10 @@ The launcher readiness check passed again on merged main. See the
    retain installation diagnostics and the Python/Windows versions. Keep the
    current freeze unchanged. This is the next portability check, not another
    installer implementation or twelve-question research campaign.
-2. **Record a short demonstration and collect user feedback.** Improve usability
-   and bounded language coverage from observed needs. A prepared-workstation run
-   remains distinct from fresh-install certification or hosted deployment.
+2. **Collect feedback using the published video and local demo.** The short video
+   and browser playback are complete. Improve usability and bounded language
+   coverage from observed needs. The static video site does not host the
+   interactive demo or establish fresh-install certification.
 3. **Extend one useful workflow.** Add a confirmed troubleshooting use case or
    the reviewed-record serving adapter. Keep source versions, conditions,
    reservations, quarantine and rollback. Do not equate procedural lookup with

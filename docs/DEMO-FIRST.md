@@ -150,10 +150,15 @@ limited to the selected excerpts, not the entire Cytiva manual.
 
 ## Next deliveries and stop rules
 
+The approved [34-second video](https://mukunde.github.io/bioprocess-assistant/)
+is published on GitHub Pages (29 October 2026). Clicking the README poster and
+playing the video was verified publicly; see [hosting and verification](CYTIVA-VIDEO-HOSTING.md).
+The interactive demo still runs locally using the installation steps above.
+
 1. **Validate on a second Windows PC.** The installer, launcher and corrected
    walkthrough are merged and have same-PC evidence. Execute the pinned protocol
    above and review its completed sheet; keep failures and retries visible.
-2. **Record a short demo and collect feedback.** Fix blockers to understanding,
+2. **Collect feedback using the published video and local demo.** Fix blockers to understanding,
    navigation or correct transmission. A scope or provenance defect remains a
    release blocker; cosmetic and broader language refinements can be iterative.
 3. **Extend one useful workflow.** Add a confirmed troubleshooting use case or

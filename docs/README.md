@@ -6,6 +6,7 @@
 | Where are contribution and Git-operation instructions? | [Repository instructions](../AGENTS.md) |
 | What is next and what is already implemented? | [Active roadmap](ROADMAP.md) |
 | How do I validate the demo on a second Windows PC? | [Pinned setup and five-minute protocol](validation/WINDOWS-SECOND-PC.md), [blank results](validation/windows-second-pc-results-template.md) |
+| Where can I watch the demo, and how is the video published? | [Watch the 34-second video](https://mukunde.github.io/bioprocess-assistant/), [Pages hosting and verified playback](CYTIVA-VIDEO-HOSTING.md) |
 | How are answers constrained and evaluated? | [Grounding ADR](ADR-001-knowledge-graph-grounding.md), [evaluation](../eval/README.md) |
 | How does the existing PDF ingestion/review work? | [Ingestion](INGESTION.md) |
 | How are Cytiva tables, captions, diagrams and chunking validated? | [Protocol and selected pages](experiments/cytiva-conversion-chunking-protocol.md), [first results on 77 and 88](experiments/cytiva-conversion-chunking-results-077-088.md) |

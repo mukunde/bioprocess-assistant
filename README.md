@@ -6,7 +6,20 @@ For example: *“My column pressure is unusually high. What should I check?”* 
 
 The project explores two engineering questions: how to constrain an assistant to traceable knowledge, and how to turn public technical manuals into reviewable, source-linked records. It is a development project, **not a scientifically validated or GxP-qualified system**.
 
-[Architecture](#architecture) · [Run locally](#run-locally) · [Validation](#validation-and-results) · [Documentation](#documentation)
+[Watch the demo](#watch-the-demo) · [Architecture](#architecture) · [Run locally](#run-locally) · [Validation](#validation-and-results) · [Documentation](#documentation)
+
+## Watch the demo
+
+[![Watch the 34-second Cytiva demo: a guided request, the original quotation and its handbook page.](media/cytiva-onboarding-v05/exports/onboarding.jpg)](https://github.com/mukunde/bioprocess-assistant/raw/refs/heads/main/media/cytiva-onboarding-v05/exports/onboarding.mp4)
+
+[▶ Open the video (34 seconds · MP4, 2.6 MB)](https://github.com/mukunde/bioprocess-assistant/raw/refs/heads/main/media/cytiva-onboarding-v05/exports/onboarding.mp4) · [Editable sources and credits](media/cytiva-onboarding-v05/README.md)
+
+Follow a guided request, verify its quotation and page, and see how clarification
+and quarantine are displayed. Understandable without sound, with French guidance
+and the actual English interface. This local demo uses **25 reviewed excerpts**
+without an LLM or database; it is separate from the Neo4j troubleshooting chat.
+
+GitHub serves this MP4 as a download. Open the downloaded file in your video player.
 
 ## Current status
 

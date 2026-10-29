@@ -1,0 +1,21 @@
+{
+  "id": "perfect-arrows-review-case-1-decision-002",
+  "recorded_date": "2026-10-29",
+  "human_quote": "je valide le cas 1. mais pour le 3 garde le même emplacement de l'encadré qu'avant et essaie une flèche en S",
+  "scope": "Approve static case 1 from board v02 only; case 2 remains approved; case 3 and any new video remain pending.",
+  "validated_case": "case-short",
+  "source_version": "perfect-arrows-review-2026-10-29-v02",
+  "approved_image_sha256": "7ae65b827a67488f2cbd555dcddc2de7acbf52722ae396ac13eb397f4b2684c1",
+  "approved_svg_sha256": "6f3c2e9ccddc0642efb51060a36d910dfe25f71bfff7b56b0c5b856beb4f71cb",
+  "case_3_trial": {
+    "status": "pending_human_review",
+    "shape": "S",
+    "callout_restore_source": "perfect-arrows-review-2026-10-29-v01",
+    "callout_rect": [
+      1120,
+      115,
+      430,
+      330
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "onboarding-v05-video-approval-005",
+  "recorded_date": "2026-10-29",
+  "human_quote": "validé",
+  "status": "human_approved",
+  "scope": "Approval of the delivered onboarding v05 video, including the GUIDE editorial treatment and previously approved arrow designs.",
+  "video": {
+    "file": "onboarding.mp4",
+    "sha256": "08beb28cbc3951c504e1c4b8cf7d4b4c6fb62bb9324502dac0eac52504637200"
+  },
+  "poster": {
+    "file": "onboarding.jpg",
+    "sha256": "8ba9c7c29d1dbab062b27032c8e2083a6c2f769e5c30cfe9559b201af1d27dbd"
+  },
+  "supersedes": "The pending human video-review status in the earlier production receipts."
+}

@@ -1,0 +1,70 @@
+{
+  "production_receipt": {
+    "original_capture_date": "2026-10-28",
+    "app_commit": "f96f039ef4aa719cd2c1cd76f35c0cfc65fdbd32",
+    "source": "preserved real DOM captures from the local Cytiva demo",
+    "original_capture_sha256": {
+      "demo-form-parts.json": "cf64f7bf1672d9ed7a06ac958e383b7a0c3b4b0c40ec205210d0d476a3526466",
+      "demo-supported.json": "6df7f3077961c9c708a6d6f89aeb57d074c3c70602b7179462044ab1455092b0",
+      "demo-mixed.json": "5458eaca11c7224673b8f0bfbf2380a69d4cd1c3cb738dc0697b6b2e0a6084d0"
+    },
+    "runtime_changed": false,
+    "editorial_changes": "Cubic curve leaders with solid 42 px arrowheads; dim, outlines and timing unchanged.",
+    "production_date": "2026-10-29",
+    "duration_seconds": 34,
+    "manual": {
+      "filename": "cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf",
+      "sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "pdf_page_count": 183,
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "Existing project registry; not newly certified"
+    },
+    "shown_quote": {
+      "id": "E121-W",
+      "pdf_page_1based": 121,
+      "mode": "labelled continuous excerpt with ellipses",
+      "text": "Maintain a flow rate of 1 to 2 mL/min (1 mL column)",
+      "scope": "washing, HiTrap Blue HP 1 mL"
+    },
+    "quarantine_remains_excluded": [
+      "E118-I",
+      "E121-EQ"
+    ],
+    "intro_manual": "Illustrative drawing, not a reproduction of a PDF page.",
+    "language": "French editorial explanations, English real UI/source text",
+    "audio_required_to_understand": false,
+    "narration": false,
+    "first_cut_preservation": "Verified byte hashes of original first cut and its prepared versioning package.",
+    "external_model_or_paid_API_calls": 0,
+    "revision": "onboarding-v05-editorial-guide",
+    "parent_version": "brag-onboarding-2026-10-29-v02",
+    "source_board": "perfect-arrows-review-2026-10-29-v03",
+    "arrow_validation": "Canonical SVG graphics and target/callout placements match human-approved cases.",
+    "derived_operation_arrow": "Case 1 translated vertically by 99.5 px, without shape/size changes.",
+    "human_decision_records": [
+      "human-decision-001.json",
+      "human-decision-002.json",
+      "human-decision-003.json",
+      "human-decision-004.json"
+    ],
+    "new_video_human_review": "pending",
+    "editorial_style": "GUIDE badge, Georgia, pale cream #fff8ed, dark brown #4c2c1a; annotation cards only."
+  },
+  "packaging_date": "2026-10-29",
+  "current_status": "human_approved",
+  "approval_record": "decisions/human-decision-005.json",
+  "historical_fields": "production_receipt contains superseded editorial_changes and pending-review fields; current approval and integration-map.json are authoritative for v05.",
+  "final_arrow_geometry": "34px heads, 6px shafts; short/long canonical SVGs, approved cubic S for source; operation is a 99.5px vertical translation.",
+  "export_path_mapping": {
+    "onboarding.mp4": "exports/onboarding.mp4",
+    "onboarding.jpg": "exports/onboarding.jpg"
+  },
+  "evidence_file": "experiments/cytiva/contaminants-pilot-v01/evidence.json",
+  "decision_sha256": {
+    "human-decision-001.json": "ed7a211246c4d5f229f55d7513b28eb461956a93649b4f98461161c3fbdef4a2",
+    "human-decision-002.json": "dde0c401c03644e25813328f318060d005b46883259d1e371aa8589895081a6c",
+    "human-decision-003.json": "bc001d03b9b975e44433fd85e5e6a2bd217793ac74b192dfe7987923aaaf5da6",
+    "human-decision-004.json": "a50b1af5ac6b1ab8735a71c9cf956b0a40ec2ec76f909921d129b93039d55875",
+    "human-decision-005.json": "24fe63e814a7cc345424cc9d67b7ac6f497557de17ffdfb9e32a9660161dc8ad"
+  }
+}

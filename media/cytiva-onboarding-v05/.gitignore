@@ -1,0 +1,8 @@
+node_modules/
+composition/assets/vendor/
+**/.hyperframes/
+**/.thumbnails/
+**/.waveform-cache/
+renders/
+*.log
+__pycache__/

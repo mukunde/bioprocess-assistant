@@ -1,0 +1,2 @@
+Un assistant local pour retrouver les passages d’un manuel de laboratoire et vérifier leur contexte et leur source. Une démonstration guidée, avec ses limites visibles, fondée sur 25 extraits revus.
+Music: Sascha Ende, ende.app (CC BY 4.0).

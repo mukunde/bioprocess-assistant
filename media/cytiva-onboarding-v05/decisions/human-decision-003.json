@@ -1,0 +1,10 @@
+{
+  "id": "perfect-arrows-case-3-video-decision-003",
+  "recorded_date": "2026-10-29",
+  "human_quote": "Je valide le cas 3. Intègre les trois tracés validés dans une nouvelle version de la vidéo, puis montre-moi le résultat. Conserve les versions précédentes, le gel v03 et les 16 notes. Aucun commit ni push.",
+  "scope": "Approve static case 3; authorize integration of cases 1/2/3 into a new local video; no Git operation authorized.",
+  "approved_case": "case-source",
+  "source_version": "perfect-arrows-review-2026-10-29-v03",
+  "approved_image_sha256": "63410e884cdb16301c02ab87bee19e56f81965108f8783c82ee71ba78ca1bd19",
+  "approved_svg_sha256": "526ea5dc46ffe89c341994b1caa4556c08e3092d4c1084176130c46e74e4a4f2"
+}

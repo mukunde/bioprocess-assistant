@@ -1,0 +1,224 @@
+{
+  "tool": "perfect-arrows",
+  "version": "0.3.7",
+  "body_width_px": 6,
+  "head_length_px": 34,
+  "head_width_px": 34,
+  "shaft_ends_at_head_base": true,
+  "cases": [
+    {
+      "id": "case-short",
+      "title": "Cas 1 — Liaison droite horizontale",
+      "kind": "CHAMP / FORMAT",
+      "target": [
+        28,
+        205,
+        685,
+        130
+      ],
+      "callout": [
+        1000,
+        145,
+        550,
+        250
+      ],
+      "heading": "Son format",
+      "body": "Ici, une colonne de 1 mL.",
+      "explicitAnchor": true,
+      "orientation": "horizontal",
+      "options": {
+        "bow": 0,
+        "stretch": 0,
+        "straights": true,
+        "padStart": 12,
+        "padEnd": 46,
+        "flip": false
+      },
+      "cubic_controls": null,
+      "function": "getArrow",
+      "anchors": {
+        "start": [
+          1000,
+          270
+        ],
+        "end": [
+          713,
+          270
+        ]
+      },
+      "values": [
+        988,
+        270,
+        873.5,
+        270,
+        759,
+        270,
+        3.142,
+        3.142,
+        3.142
+      ],
+      "head_angle_radians": 3.141592653589793,
+      "path": "M988 270 Q873.5 270 759 270",
+      "tip": [
+        725,
+        270
+      ],
+      "head": [
+        [
+          759,
+          253
+        ],
+        [
+          725,
+          270
+        ],
+        [
+          759,
+          287
+        ]
+      ]
+    },
+    {
+      "id": "case-long",
+      "title": "Cas 2 — Liaison plus longue",
+      "kind": "CHAMP / MATÉRIEL",
+      "target": [
+        28,
+        83,
+        685,
+        105
+      ],
+      "callout": [
+        1050,
+        330,
+        500,
+        280
+      ],
+      "heading": "Le matériel",
+      "body": "Ici, une colonne de laboratoire.",
+      "options": {
+        "bow": 0.13,
+        "stretch": 0,
+        "straights": false,
+        "padStart": 12,
+        "padEnd": 46,
+        "flip": true
+      },
+      "cubic_controls": null,
+      "function": "getBoxToBoxArrow",
+      "anchors": null,
+      "values": [
+        1118.414,
+        318,
+        963.628,
+        181.206,
+        759,
+        152.945,
+        -3.004,
+        0.724,
+        -2.711
+      ],
+      "head_angle_radians": -3.004349878712719,
+      "path": "M1118.414 318 Q963.628 181.206 759 152.945",
+      "tip": [
+        725.32,
+        148.293
+      ],
+      "head": [
+        [
+          761.326,
+          136.105
+        ],
+        [
+          725.32,
+          148.293
+        ],
+        [
+          756.674,
+          169.785
+        ]
+      ]
+    },
+    {
+      "id": "case-source",
+      "title": "Cas 3 — Liaison en S",
+      "kind": "CITATION / PAGE",
+      "target": [
+        23,
+        80,
+        880,
+        80
+      ],
+      "callout": [
+        1120,
+        115,
+        430,
+        330
+      ],
+      "heading": "Sa page<br>pour vérifier",
+      "body": "PDF page 121.",
+      "explicitAnchor": true,
+      "orientation": "s-curve",
+      "options": {
+        "bow": 0,
+        "stretch": 0,
+        "straights": true,
+        "padStart": 12,
+        "padEnd": 46,
+        "flip": false
+      },
+      "cubic_controls": [
+        [
+          1020.55,
+          280
+        ],
+        [
+          1036.45,
+          119.99999999999999
+        ]
+      ],
+      "function": "getArrow socket padding + edge-anchored cubic S",
+      "anchors": {
+        "start": [
+          1120,
+          280
+        ],
+        "end": [
+          903,
+          120
+        ]
+      },
+      "values": [
+        1108,
+        280,
+        1036.45,
+        120,
+        949,
+        120,
+        3.142,
+        0,
+        -2.353
+      ],
+      "head_angle_radians": 3.141592653589793,
+      "path": "M1108 280 C1020.55 280 1036.45 120 949 120",
+      "tip": [
+        915,
+        120
+      ],
+      "head": [
+        [
+          949,
+          103
+        ],
+        [
+          915,
+          120
+        ],
+        [
+          949,
+          137
+        ]
+      ]
+    }
+  ]
+}

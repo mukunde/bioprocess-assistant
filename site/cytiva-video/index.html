@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A 34-second tour of the local Cytiva manual evidence explorer: guided requests, citations and explicit limits.">
+  <title>Cytiva demo — Bioprocess Troubleshooting Assistant</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #192d34; background: #f4f7f8; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 1040px; margin: 0 auto; padding: 40px 24px; }
+    .label { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: #41616c; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.15; }
+    p { line-height: 1.65; max-width: 76ch; }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #17272d; border-radius: 12px; margin: 24px 0 16px; }
+    a { color: #12576a; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid #a54200; outline-offset: 4px; }
+    .links { display: flex; gap: 12px 24px; flex-wrap: wrap; }
+    .limits { border-left: 4px solid #a54200; padding-left: 16px; margin-top: 28px; }
+    footer { border-top: 1px solid #ccd7da; padding-top: 16px; margin-top: 32px; font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">Bioprocess Troubleshooting Assistant · 34-second demo</p>
+    <h1>Find a documented answer. Check its source.</h1>
+    <p>A guided tour of the local Cytiva manual evidence explorer: make a request,
+      inspect the original quotation and its page, and see when clarification or quarantine is needed.</p>
+    <video controls playsinline preload="metadata" poster="assets/onboarding.jpg"
+      aria-label="Cytiva demo, 34 seconds, French guidance with the actual English interface">
+      <source src="assets/onboarding.mp4" type="video/mp4">
+      Your browser cannot play this video. <a href="assets/onboarding.mp4">Download the MP4</a>.
+    </video>
+    <p>Press Play to watch in your browser. Understandable without sound: French guidance,
+      English interface and source quotation. Optional background music; no spoken narration.</p>
+    <nav class="links" aria-label="Project resources">
+      <a href="https://github.com/mukunde/bioprocess-assistant#run-locally">Try the local demo</a>
+      <a href="https://github.com/mukunde/bioprocess-assistant/tree/main/media/cytiva-onboarding-v05">Video sources and credits</a>
+      <a href="assets/onboarding.mp4" download>Download MP4 (2.6 MB)</a>
+    </nav>
+    <p class="limits">Scope: 25 reviewed excerpts, without an LLM or database. This is a local
+      documentary demo, separate from the Neo4j troubleshooting chat. It is not a laboratory
+      protocol or a scientifically validated system.</p>
+    <footer>
+      Music: Happy Beats / Business Moves Vol. 12 — Sascha Ende,
+      <a href="https://ende.app/en">ende.app</a>,
+      <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.
+      <a href="https://github.com/mukunde/bioprocess-assistant/blob/main/media/cytiva-onboarding-v05/ATTRIBUTION.md">Full credits</a>.
+    </footer>
+  </main>
+</body>
+</html>

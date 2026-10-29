@@ -1,0 +1,8 @@
+# Preserve approval hashes across Windows and Unix checkouts.
+* text=auto eol=lf
+decisions/** -text
+approved-arrows/** -text
+*.mp4 -text
+*.jpg -text
+*.mp3 -text
+*.ogg -text

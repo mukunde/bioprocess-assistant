@@ -1,0 +1,89 @@
+{
+  "source_board": "perfect-arrows-review-2026-10-29-v03",
+  "request": {
+    "product": {
+      "case": "case-long",
+      "target": [
+        28,
+        83,
+        685,
+        105
+      ],
+      "callout": [
+        1050,
+        330,
+        500,
+        280
+      ],
+      "heading": "Le matériel",
+      "body": "Ici, une colonne de laboratoire.",
+      "start": 0.25,
+      "end": 2.65,
+      "dy": 0
+    },
+    "format": {
+      "case": "case-short",
+      "target": [
+        28,
+        205,
+        685,
+        130
+      ],
+      "callout": [
+        1000,
+        145,
+        550,
+        250
+      ],
+      "heading": "Son format",
+      "body": "Ici, une colonne de 1 mL.",
+      "start": 2.7,
+      "end": 4.9,
+      "dy": 0
+    },
+    "operation": {
+      "case": "case-short",
+      "target": [
+        28,
+        329,
+        685,
+        81
+      ],
+      "callout": [
+        1000,
+        244.5,
+        550,
+        250
+      ],
+      "heading": "L’opération",
+      "body": "Ici, le lavage de la colonne.",
+      "start": 4.95,
+      "end": 8,
+      "dy": 99.5
+    }
+  },
+  "source": {
+    "case": "case-source",
+    "target": [
+      23,
+      80,
+      880,
+      80
+    ],
+    "callout": [
+      1120,
+      115,
+      430,
+      330
+    ],
+    "start": 17.3,
+    "end": 24
+  },
+  "source_svg_sha256": {
+    "case-short": "6f3c2e9ccddc0642efb51060a36d910dfe25f71bfff7b56b0c5b856beb4f71cb",
+    "case-long": "17cc2ba5ad2f809949b3711eb6bdc9f0e4d7daf0d56bfa46f65408ca61c5922d",
+    "case-source": "526ea5dc46ffe89c341994b1caa4556c08e3092d4c1084176130c46e74e4a4f2"
+  },
+  "limits": "Existing alternating card highlights, without additional guide arrows.",
+  "duration_seconds": 34
+}

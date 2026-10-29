@@ -1,0 +1,172 @@
+{
+  "id": "cytiva-onboarding-v05-reviewed",
+  "excluded_from_self_hash": [
+    "manifest.json"
+  ],
+  "files": {
+    ".gitattributes": {
+      "algorithm": "sha256_lf",
+      "digest": "e33504204fe3050e7c9c51c706b251d9559c5d75338e3d6a63530a05f57a1cf2"
+    },
+    ".gitignore": {
+      "algorithm": "sha256_lf",
+      "digest": "c2d4d098795c1034180c6baf3f4c8f66e01a725d4215c4d61fb098ebbf2f51b2"
+    },
+    "ATTRIBUTION.md": {
+      "algorithm": "sha256_lf",
+      "digest": "73b7df6be11980b2a8cf74ba4e5887586cb9b692c5e6d9a956ffd992a585551d"
+    },
+    "Invoke-Onboarding.ps1": {
+      "algorithm": "sha256_lf",
+      "digest": "67937a8ad727171371c4a0f069f833fe118ed3e8a773c1c2f2e9670f19ad9b11"
+    },
+    "README.md": {
+      "algorithm": "sha256_lf",
+      "digest": "167f448199da22eeb2e7b0c0fd9e3567b72a24263c441e26f2496557fdf191bf"
+    },
+    "REVIEW.md": {
+      "algorithm": "sha256_lf",
+      "digest": "74f775e5ded1ae244f1b1cf3bb847b17e0903e11fdd9ce1931e9c77dcf462f69"
+    },
+    "approved-arrows/case-long.svg": {
+      "algorithm": "sha256",
+      "digest": "17cc2ba5ad2f809949b3711eb6bdc9f0e4d7daf0d56bfa46f65408ca61c5922d"
+    },
+    "approved-arrows/case-short.svg": {
+      "algorithm": "sha256",
+      "digest": "6f3c2e9ccddc0642efb51060a36d910dfe25f71bfff7b56b0c5b856beb4f71cb"
+    },
+    "approved-arrows/case-source.svg": {
+      "algorithm": "sha256",
+      "digest": "526ea5dc46ffe89c341994b1caa4556c08e3092d4c1084176130c46e74e4a4f2"
+    },
+    "approved-arrows/geometry.json": {
+      "algorithm": "sha256",
+      "digest": "82136909f71a42f0469edac5994d607d3f7ad0848627531d2b0beb447e5d9170"
+    },
+    "approved-arrows/perfect-arrows-LICENSE.txt": {
+      "algorithm": "sha256",
+      "digest": "a27e806eb2a0974cb95cf4c1dc23f77a09bdace53f0e6788a4bcb4b8f34c2f95"
+    },
+    "brag-plan.md": {
+      "algorithm": "sha256_lf",
+      "digest": "3bedc4134e976d02fb5903e4e38f7e964c2e5947fdec930fdd0235e1790d233c"
+    },
+    "composition-brief.md": {
+      "algorithm": "sha256_lf",
+      "digest": "73236066ebc20d1227684facccf4432d7e2c42ab812018b817667f8109ea94e0"
+    },
+    "composition/assets/music/bed.mp3": {
+      "algorithm": "sha256",
+      "digest": "5888d4bd2ba0119b87a94e502ae2cc401c08192945cc5e5c2f8e8a33aa47a0a1"
+    },
+    "composition/assets/sfx/click.ogg": {
+      "algorithm": "sha256",
+      "digest": "2fa929138bc3a0f432696588f66eac94b8f6d463905ec8808c6461ce4b054292"
+    },
+    "composition/assets/sfx/reveal.ogg": {
+      "algorithm": "sha256",
+      "digest": "7642a4fd43e547afe4f7adfadb3dabb681c0ff512f52c1674bae30a726841faf"
+    },
+    "composition/assets/theme.css": {
+      "algorithm": "sha256_lf",
+      "digest": "e3457b6fdd453fefbfafe1040197f14007435d34d6af5d7d92ace8aed22b530e"
+    },
+    "composition/compositions/evidence.html": {
+      "algorithm": "sha256_lf",
+      "digest": "301fd092dcdd28e98336dbcee5be782a13c1815e7fd414c76435beb57520ca77"
+    },
+    "composition/compositions/limits.html": {
+      "algorithm": "sha256_lf",
+      "digest": "3661d30ff6aaaca4292a5a95ba1dd958bf299d44b6c235fc761cb08d17a8cd24"
+    },
+    "composition/compositions/outro.html": {
+      "algorithm": "sha256_lf",
+      "digest": "4bf833eb47ed11a042744d596ba8aae9270d55219d2634a764e11148cd2e2546"
+    },
+    "composition/compositions/problem.html": {
+      "algorithm": "sha256_lf",
+      "digest": "d1a4b804b32d64e9cff52588ca233409bbf7308b0eb887cc0976db4563fc1b48"
+    },
+    "composition/compositions/purpose.html": {
+      "algorithm": "sha256_lf",
+      "digest": "52ae715b737099887d4b61b55a9b86316c1cab6851092f15c99654f69bb9d7ce"
+    },
+    "composition/compositions/request.html": {
+      "algorithm": "sha256_lf",
+      "digest": "f90fa9ed914ee87db72aabff8ff00b4b929473838943b12bc393ad11950c3109"
+    },
+    "composition/index.html": {
+      "algorithm": "sha256_lf",
+      "digest": "00e6a7f0958aceeba5bd5d86427b4df5af8fd14f4ae9e7cfa638f57016e432bd"
+    },
+    "decisions/human-decision-001.json": {
+      "algorithm": "sha256",
+      "digest": "ed7a211246c4d5f229f55d7513b28eb461956a93649b4f98461161c3fbdef4a2"
+    },
+    "decisions/human-decision-002.json": {
+      "algorithm": "sha256",
+      "digest": "dde0c401c03644e25813328f318060d005b46883259d1e371aa8589895081a6c"
+    },
+    "decisions/human-decision-003.json": {
+      "algorithm": "sha256",
+      "digest": "bc001d03b9b975e44433fd85e5e6a2bd217793ac74b192dfe7987923aaaf5da6"
+    },
+    "decisions/human-decision-004.json": {
+      "algorithm": "sha256",
+      "digest": "a50b1af5ac6b1ab8735a71c9cf956b0a40ec2ec76f909921d129b93039d55875"
+    },
+    "decisions/human-decision-005.json": {
+      "algorithm": "sha256",
+      "digest": "24fe63e814a7cc345424cc9d67b7ac6f497557de17ffdfb9e32a9660161dc8ad"
+    },
+    "exports/onboarding.jpg": {
+      "algorithm": "sha256",
+      "digest": "8ba9c7c29d1dbab062b27032c8e2083a6c2f769e5c30cfe9559b201af1d27dbd"
+    },
+    "exports/onboarding.mp4": {
+      "algorithm": "sha256",
+      "digest": "08beb28cbc3951c504e1c4b8cf7d4b4c6fb62bb9324502dac0eac52504637200"
+    },
+    "finalize-video.py": {
+      "algorithm": "sha256_lf",
+      "digest": "fd3d6447e5b42e33f423cede923b68987b8d448fab7f5673637d02ad2aebfb66"
+    },
+    "integration-map.json": {
+      "algorithm": "sha256_lf",
+      "digest": "6bccbba59ec3c00b47e34d96835bef2d2f5316baf279b73309a7324e05fd94ab"
+    },
+    "licenses/Hyperframes-Apache-2.0.txt": {
+      "algorithm": "sha256_lf",
+      "digest": "4259155fb06f127687ee7b0a8a3682d45132db0f2da26cbc0b7a2d1e796436b8"
+    },
+    "licenses/brag-MIT.txt": {
+      "algorithm": "sha256_lf",
+      "digest": "92d538e0da9abeaafff8ecfc62e142f5053fa92b2c3ef29978742c325c554089"
+    },
+    "package-lock.json": {
+      "algorithm": "sha256_lf",
+      "digest": "9342c45c23231f82feef17cd96184e94d95c64548f1339d2b4830c175b0020e2"
+    },
+    "package.json": {
+      "algorithm": "sha256_lf",
+      "digest": "92c202634fea5a2845708b4c8444fbee70333f628f79653ccb44270ec208d343"
+    },
+    "provenance.json": {
+      "algorithm": "sha256_lf",
+      "digest": "540191733cb3591fc81a9ab1cf9c0eca42be654a7d1ca433fa5fb3256cf2fd94"
+    },
+    "share-copy.txt": {
+      "algorithm": "sha256_lf",
+      "digest": "09070d839319804694f6bdd0ca50005a9492fb0cd02a37da708654bb87e47b63"
+    },
+    "verification.json": {
+      "algorithm": "sha256_lf",
+      "digest": "102ea5346854dc285f453b47357f7398a0fd6510b83f736d6b6d538a6333f1d2"
+    },
+    "verify-package.py": {
+      "algorithm": "sha256_lf",
+      "digest": "e54ca71240c1fc4a8e1832b52b30e175d48fbb395c01824ce1e1a2b5f6f48960"
+    }
+  }
+}

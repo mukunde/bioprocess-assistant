@@ -1,0 +1,15 @@
+{
+  "id": "perfect-arrows-review-case-2-decision-001",
+  "recorded_date": "2026-10-29",
+  "human_quote": "je valide le cas 2 uniquement. la flèche peut être droite si les encadrés en surbrillance sont relativement à la même hauteur ou dans la même verticale",
+  "scope": "Static case 2 only; not approval of all cases or of a new video.",
+  "validated_case": "case-long",
+  "pending_cases": [
+    "case-short",
+    "case-source"
+  ],
+  "approved_source_version": "perfect-arrows-review-2026-10-29-v01",
+  "approved_image_sha256": "dc5448da8abedf89939ea9dc7a75552441afd23dc7266c45f7d6827515aafbc1",
+  "approved_svg_sha256": "17cc2ba5ad2f809949b3711eb6bdc9f0e4d7daf0d56bfa46f65408ca61c5922d",
+  "layout_rule": "Use a straight leader when source and target are horizontally or vertically aligned; retain the approved curved case 2."
+}

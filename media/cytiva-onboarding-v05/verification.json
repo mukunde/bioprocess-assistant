@@ -1,0 +1,214 @@
+{
+  "date": "2026-10-29",
+  "scope": "Approved media packaging and relocated composition; no application regression suite rerun.",
+  "approval": "decisions/human-decision-005.json",
+  "approved_exports": {
+    "onboarding.jpg": {
+      "sha256": "8ba9c7c29d1dbab062b27032c8e2083a6c2f769e5c30cfe9559b201af1d27dbd",
+      "bytes": 151073
+    },
+    "onboarding.mp4": {
+      "sha256": "08beb28cbc3951c504e1c4b8cf7d4b4c6fb62bb9324502dac0eac52504637200",
+      "bytes": 2555914
+    }
+  },
+  "video": {
+    "duration_seconds": 34.0,
+    "frames": 1020,
+    "fps": 30,
+    "width": 1920,
+    "height": 1080,
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "relocated_hyperframes_check": {
+    "lint": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "filesScanned": 7
+    },
+    "runtime": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0
+    },
+    "layout": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 4,
+      "duration": 34,
+      "transitionSamplesDropped": 0,
+      "tolerance": 2,
+      "totalIssueCount": 4,
+      "truncated": false
+    },
+    "contrast": {
+      "ok": true,
+      "errorCount": 0,
+      "warningCount": 0,
+      "infoCount": 0,
+      "enabled": true,
+      "checked": 61,
+      "passed": 61
+    },
+    "layout_findings": [
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 10.5,
+        "selector": "#arrow-product > path:nth-of-type(1)",
+        "message": "Connector shaft is visible while its endpoint #problem-title is not on stage.",
+        "rect": {
+          "left": 911,
+          "top": 429.95,
+          "right": 1270.41,
+          "bottom": 595,
+          "width": 359.41,
+          "height": 165.05
+        },
+        "containerSelector": "#arrow-product",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-id": "hf-siz6"
+        },
+        "sourceFile": "compositions/request.html",
+        "bbox": {
+          "x": 911,
+          "y": 429.95,
+          "width": 359.41,
+          "height": 165.05
+        },
+        "firstSeen": 10.5,
+        "lastSeen": 10.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 10.5,
+        "selector": "#arrow-product > path:nth-of-type(2)",
+        "message": "Connector shaft is visible while its endpoint #problem-title is not on stage.",
+        "rect": {
+          "left": 911,
+          "top": 429.95,
+          "right": 1270.41,
+          "bottom": 595,
+          "width": 359.41,
+          "height": 165.05
+        },
+        "containerSelector": "#arrow-product",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-id": "hf-ohog"
+        },
+        "sourceFile": "compositions/request.html",
+        "bbox": {
+          "x": 911,
+          "y": 429.95,
+          "width": 359.41,
+          "height": 165.05
+        },
+        "firstSeen": 10.5,
+        "lastSeen": 10.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          10.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 15.5,
+        "selector": "#arrow-operation > g:nth-of-type(1) > path:nth-of-type(1)",
+        "message": "Connector shaft is visible while its endpoint #purpose-route is not on stage.",
+        "rect": {
+          "left": 911,
+          "top": 646.5,
+          "right": 1140,
+          "bottom": 646.5,
+          "width": 229,
+          "height": 0
+        },
+        "containerSelector": "#arrow-operation",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-id": "hf-folp"
+        },
+        "sourceFile": "compositions/request.html",
+        "bbox": {
+          "x": 911,
+          "y": 646.5,
+          "width": 229,
+          "height": 0
+        },
+        "firstSeen": 15.5,
+        "lastSeen": 15.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          15.5
+        ]
+      },
+      {
+        "code": "connector_orphan",
+        "severity": "info",
+        "time": 15.5,
+        "selector": "#arrow-operation > g:nth-of-type(1) > path:nth-of-type(2)",
+        "message": "Connector shaft is visible while its endpoint #purpose-route is not on stage.",
+        "rect": {
+          "left": 911,
+          "top": 646.5,
+          "right": 1140,
+          "bottom": 646.5,
+          "width": 229,
+          "height": 0
+        },
+        "containerSelector": "#arrow-operation",
+        "fixHint": "Show the shaft only after both ends are on, and hide it with the earlier exit. Do not give the line its own clock.",
+        "dataAttributes": {
+          "data-hf-id": "hf-88rh"
+        },
+        "sourceFile": "compositions/request.html",
+        "bbox": {
+          "x": 911,
+          "y": 646.5,
+          "width": 229,
+          "height": 0
+        },
+        "firstSeen": 15.5,
+        "lastSeen": 15.5,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          15.5
+        ]
+      }
+    ]
+  },
+  "known_warning_assessment": "The relocated eight-time check has zero warnings and four connector_orphan informational findings: product (two paths at 10.5s) and operation (two paths at 15.5s), associated heuristically with hidden problem-title/purpose-route elements. The four shapes match the human-approved canonical SVGs. Earlier production checks reported two source-S warnings; these are historical, not the relocated check counts. No new waiver was added.",
+  "python_scripts": "AST parse passed",
+  "powershell_launcher": "PowerShell AST parse and local Check invocation passed",
+  "preservation": {
+    "old_notes_verified": 16,
+    "previous_production_and_first_teaser_files_verified": 100,
+    "freeze": {
+      "id": "free-text-v03-corrected-runtime-freeze-v01",
+      "status": "frozen",
+      "pinned_files": 36,
+      "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+      "environment_verified": true,
+      "runtime_instantiated": false,
+      "prospective_trial_executed": false
+    }
+  },
+  "excluded": "No dependencies, fonts, executables, PDF pages, private DOM captures, raw video, renderer caches, logs or temporary files are package members."
+}

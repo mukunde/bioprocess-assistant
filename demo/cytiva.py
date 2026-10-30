@@ -58,6 +58,9 @@ class Demo:
         if not isinstance(payload, dict):
             raise ValueError('Expected a request object')
         verify(environment=True)  # Refuse drift rather than silently use a new candidate.
+        if payload.get('mode') == 'troubleshooting':
+            from demo.troubleshooting import evaluate
+            return evaluate(payload)
         started = perf_counter()
         if payload.get('mode') == 'guided':
             submission = guided_submission(payload)

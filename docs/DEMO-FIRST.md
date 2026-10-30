@@ -20,6 +20,12 @@ clarification behavior. Source quotations remain in their original English.
 
 ## Install from a fresh Windows clone
 
+The current local development checkout also includes a first bounded
+[backpressure troubleshooting journey](validation/CYTIVA-TROUBLESHOOTING-DEMO.md).
+Choose **Troubleshooting · rising backpressure** to explore the reviewed Protein
+A/G Sepharose cleaning context and its documentary alternatives. It is separate
+from frozen v03 and has not been promoted to an independent production result.
+
 Prerequisites: Git and **CPython 3.13.0 x64** installed separately. The exact Python
 version is part of the unchanged v03 freeze; another 3.13 patch version is rejected.
 This procedure targets Windows x64, not ARM64, and needs no Docker, source PDF,

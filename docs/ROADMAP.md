@@ -8,7 +8,9 @@ cost. Adopt useful KAG principles incrementally; do not migrate to OpenSPG yet.
 The reliability baseline is implemented. Ingestion/review and local passage
 retrieval have been exercised on selected real-manual examples; the reviewed
 extraction is not yet served by the legacy chatbot. A separate model-free guided
-demo now serves 25 reviewed passages through frozen v03. Portable telemetry, independent
+demo serves 25 reviewed passages through frozen v03. A merged, separate
+Protein A/G Sepharose backpressure journey now reuses scoped cleaning reviews
+and original citations, without a model or database. Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
@@ -47,12 +49,14 @@ Migration from the legacy dense template/review database is still pending.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Current checkpoint — 27 October 2026
+## Current checkpoint — 31 October 2026
 
 Phase numbers identify workstreams and acceptance gates, not a completed linear
 sequence. Documentary work advanced before telemetry; manifests and timings do
 not complete phase 1. The legacy chatbot still uses its curated graph; the
-separate local demo serves a bounded set of 25 reviewed passages.
+separate local guided/text demo serves a bounded set of 25 reviewed passages.
+The first product/context troubleshooting journey is now merged and independent
+of that frozen interpreter; it does not change the legacy chat graph.
 
 | Workstream | Merged/observed | Remaining gate |
 |---|---|---|
@@ -60,10 +64,18 @@ separate local demo serves a bounded set of 25 reviewed passages.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03, its runtime freeze, corrected local demo, Windows installer and launcher merged; same-PC fresh-clone setup verified | Second-machine setup/walkthrough, serving/answer evaluation and incremental scope extension |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03, its runtime freeze, corrected local demo, Windows installer and launcher merged; same-PC fresh-clone setup verified; bounded Protein A/G backpressure journey merged | Product-specific scope extension, second-machine setup/walkthrough and independent serving/answer evaluation |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-The merged baseline is `main` at `4b2bfa5`, including
+Current merged baseline: `main` at `7d6b9c2`, including
+[PR62](https://github.com/mukunde/bioprocess-assistant/pull/62) (bounded
+backpressure journey) and [PR63](https://github.com/mukunde/bioprocess-assistant/pull/63)
+(documentation digest repair). The exact merged files passed the full
+**800-test suite: 799 passed, one optional PDFium preview dependency skipped,
+no failures or errors**. Twenty affected-package checks passed again after merge.
+These regressions do not validate diagnosis, operational use or generated answers.
+
+The historical 27 October baseline is `main` at `4b2bfa5`, including
 [PR51](https://github.com/mukunde/bioprocess-assistant/pull/51) (v03 runtime freeze),
 [PR52](https://github.com/mukunde/bioprocess-assistant/pull/52) (demo and usability fixes)
 and [PR53](https://github.com/mukunde/bioprocess-assistant/pull/53) (Windows launcher),
@@ -139,26 +151,48 @@ poster without a manual download. The [successful deployment and public check](C
 concern media delivery, not hosted interactive assistance, answer quality or
 second-PC installation. Frozen v03 and all prior experiment results are unchanged.
 
+### Merged bounded troubleshooting journey
+
+[PR62](https://github.com/mukunde/bioprocess-assistant/pull/62) adds the
+[Protein A/G Sepharose backpressure journey](validation/CYTIVA-TROUBLESHOOTING-DEMO.md).
+It reuses the reviewed cleaning source pool (17 excerpts on PDF pages 166–167),
+selecting the complete required bundle for each reviewed branch. Users choose
+an exact product and a context to explore; this selection establishes no cause.
+Unknown product/context yields clarification, hydrophobic treatments remain
+separate alternatives and the ethanol pressure precaution stays attached.
+MabSelect is explicitly outside this first journey. The local response retains
+original quotations, PDF identity, page/offset/hash provenance and reservations.
+
+The four agent browser scenarios and 17 journey/demo regressions passed. The
+long context label now has a complete wrapping summary, and clarification sources
+are explicitly labelled as context/headings rather than a selected recipe.
+These checks do not create new human scientific approval, an independent
+retrieval benchmark, a v03 prospective score or operational authorization.
+Frozen v03, historical scores and E118-I/E121-EQ quarantine remain unchanged.
+The existing onboarding video shows the earlier guided route, not this new UI.
+
 ### Next delivery priorities
 
-1. **Validate the merged installer on a second Windows PC.** The installer,
-   local walkthrough, usability corrections and launcher are complete. Use a
-   fresh clone and the existing guide, with CPython 3.13.0 x64 installed separately;
-   create a new environment/cache rather than copying the prepared workstation.
-   Verify recorded versions/hashes with `-CheckOnly` and execute the five-minute
-   walkthrough. Success requires supported citations and warnings, format
-   clarification, partial service and quarantine without a model, API or Neo4j;
-   retain installation diagnostics and the Python/Windows versions. Keep the
-   current freeze unchanged. This is the next portability check, not another
-   installer implementation or twelve-question research campaign.
-2. **Collect feedback using the published video and local demo.** The short video
-   and browser playback are complete. Improve usability and bounded language
-   coverage from observed needs. The static video site does not host the
-   interactive demo or establish fresh-install certification.
-3. **Extend one useful workflow.** Add a confirmed troubleshooting use case or
-   the reviewed-record serving adapter. Keep source versions, conditions,
-   reservations, quarantine and rollback. Do not equate procedural lookup with
-   causal diagnosis or silently promote blocked free text.
+1. **Scope and review one adjacent product-specific journey.** Collect a short
+   usability response to the merged Protein A/G route, then prepare a bounded
+   MabSelect cleaning journey from already reviewed sources. Before coding, agree
+   exact product identities, deposit-context categories, source bundles, conditions,
+   alternatives, warnings and clarification/outside-scope cases. Require no recipe
+   from pressure alone, no Sepharose recipe transfer and no SuRe/SuRe LX-only
+   condition applied to other products. Reuse the existing deterministic renderer
+   and preserve the current journey and frozen v03; do not start another broad
+   parser-tuning or whole-manual review campaign. This is a proposed next scope,
+   not an implemented or scientifically approved product route.
+2. **Run second-PC Windows validation in parallel when available.** Use a fresh
+   clone, separately installed CPython 3.13.0 x64 and a newly prepared environment
+   and tokenizer cache. Record readiness versions/hashes, citations/warnings,
+   missing-format clarification, partial service and quarantine using the existing
+   walkthrough. A physical second PC remains a separate portability gate; it does
+   not block scoping the next bounded journey.
+3. **Keep serving migration separate.** Define an explicit reviewed-record adapter
+   contract before enriching the legacy Neo4j chatbot. The local documentary
+   journey does not publish new graph records or provide generated advice.
+
 4. **Instrument and evaluate the actual answering path incrementally.** Add OpenTelemetry spans,
    call/retry/cost accounting and budget enforcement. Evaluate generated answers,
    citations and abstentions with deterministic checks, calibrated local Ragas
@@ -309,7 +343,7 @@ preserved and no experiment silently changes the chat default.
 | [Merged free-text interface](technical/FREE-TEXT-MACHINE-DESIGN-V01.md) | CP/FI/MC and GR01–GR04 reviewed; interpreter/bridge and IF checks implemented | Bounded offline interface; no default chat activation |
 | [FT01–FT12](../experiments/cytiva/free-text-comparison-v01/README.md) | Merged S 24/24, F0 12/24, 4/12 pairs | Gate blocked; now v02 development material, not discarded failures |
 | [Opt-in v02](technical/FREE-TEXT-CANDIDATE-V02.md) | Merged candidate, 57 targeted tests pass | FT repair results do not establish independent generalization |
-| [FV01–FV12](../experiments/cytiva/free-text-v02-comparison-v01/README.md) | Local reviewed one-pass run: S 22/24, F0 17/24, 7/12 pairs, maximum 1,674 tokens | Gate blocked; shared FV06 aggregate mismatch is separate from parser failures; no rescoring or method repair |
+| [FV01–FV12](../experiments/cytiva/free-text-v02-comparison-v01/README.md) | Merged reviewed one-pass run: S 22/24, F0 17/24, 7/12 pairs, maximum 1,674 tokens | Gate blocked; shared FV06 aggregate mismatch is separate from parser failures; no rescoring or method repair |
 
 The original Q/N/C series contains 28 intents with paired FR/EN formulations,
 not 56 independent observations. H/V/W/X/FT/FV add same-corpus challenges with known-code
@@ -338,7 +372,7 @@ metadata flags do not certify actual clarification or correct sample attribution
 The X traces identify finite exclusion/uncertainty vocabulary, nested negation,
 request-wide conflict sets without task ownership, and routing/lexical mismatch.
 For X10, English family support even relies on incidental words while French
-has no general-family lexical hit. The task-scoped contract, structured control, EN/FR interpreter/bridge and opt-in v02 are merged. FT and the local FV trial remain blocked. A passing structured trial does not establish unrestricted free-text understanding; FV06 additionally exposes a shared coverage-contract mismatch.
+has no general-family lexical hit. The task-scoped contract, structured control, EN/FR interpreter/bridge and opt-in v02 are merged. FT and the merged FV trial remain blocked. A passing structured trial does not establish unrestricted free-text understanding; FV06 additionally exposes a shared coverage-contract mismatch.
 
 ### Remaining product and reasoning requirements
 

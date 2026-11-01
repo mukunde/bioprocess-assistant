@@ -9,6 +9,10 @@ completed successfully from commit `497f0f152aa8aebc5ead72b62b8cc3612661f7c7`.
 The README poster and browser-playback link open this player; the optional MP4
 download remains available. Only the video is hosted, not the interactive demo.
 
+## Pending extension — 1 November 2026
+
+A local integration adds the wide recorded Flowshot tour under `/flowshot/`, alongside the existing video. It has not been published. The twelve-file output and local browser checks are described in [Flowshot hosting](CYTIVA-FLOWSHOT-HOSTING.md). The three-file inventory below describes the currently published video and its historical verification.
+
 ## Choice
 
 Use [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages),

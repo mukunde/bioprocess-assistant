@@ -1,0 +1,71 @@
+{
+  "id": "mabselect-cleaning-design-review-v01",
+  "recorded_at_utc": "2026-10-31T13:51:01.107272+00:00",
+  "reviewer": "project_user_via_conversation",
+  "scope": "Application design approval only; original source/review decisions and scientific/operational limitations remain unchanged.",
+  "original_human_message": "Je valide MS01–MS08 et C1–C4. Enregistre mes décisions, puis implémente le parcours MabSelect avec les tests MC01–MC12. Garde v03 et les 16 notes inchangés. Aucun LLM, API payante, commit ni push.",
+  "contract_before_review_sha256_lf": "1506c3e1d3045d97b0fa0ee53e81b4a4bb3dbad92093f00e2d0ac6752de61f9c",
+  "source_dossier_sha256_lf": "d536bc2755325c5c5617462d4b5cf3485776703c27eb7ff521c34d5161eb7bf1",
+  "decisions": [
+    {
+      "id": "MS01",
+      "statement": "Use a separate MabSelect cleaning entry point; do not extend the Sepharose pressure-trigger claim to MabSelect",
+      "decision": "validated"
+    },
+    {
+      "id": "MS02",
+      "statement": "Distinguish family-unknown, plain MabSelect, SuRe and SuRe LX; allow recipe cards only for the three exact identities initially",
+      "decision": "validated"
+    },
+    {
+      "id": "MS03",
+      "statement": "Keep A1–A4 separate, minimum contact and immediate wash intact, with no automatic treatment selection",
+      "decision": "validated"
+    },
+    {
+      "id": "MS04",
+      "statement": "Show the additional restricted block only for SuRe/SuRe LX in the reviewed precipitated/denatured context; do not concatenate or rank it",
+      "decision": "validated"
+    },
+    {
+      "id": "MS05",
+      "statement": "Keep detergent versus solvents, and ethanol versus 2-propanol, as separate alternatives, with both precautions attached",
+      "decision": "validated"
+    },
+    {
+      "id": "MS06",
+      "statement": "Unknown/mixed context yields clarification, not a diagnosis or a combined recipe; bounded missing-parameter messages retain available guidance",
+      "decision": "validated"
+    },
+    {
+      "id": "MS07",
+      "statement": "Reuse Q05/Q06/N06/N07/Q09 only within their entire scoped bundles and original reservations; source flags and original human messages remain unchanged",
+      "decision": "validated"
+    },
+    {
+      "id": "MS08",
+      "statement": "Implement incrementally only after this contract review: no v03 modification, no source publication, no new parser/model/database or expanded scientific claim",
+      "decision": "validated"
+    },
+    {
+      "id": "C1",
+      "statement": "Distinguish the exact unsuffixed MabSelect product from the MabSelect family with unknown variant; unknown exact identity gets headings/context and clarification only.",
+      "decision": "validated"
+    },
+    {
+      "id": "C2",
+      "statement": "For SuRe/SuRe LX, display general alternatives and the restricted sequence in two separate blocks, with no preselection, ranking or implied succession.",
+      "decision": "validated"
+    },
+    {
+      "id": "C3",
+      "statement": "Unknown or mixed context requires exploration of one category at a time, without a confirmed diagnosis and without merging procedures.",
+      "decision": "validated"
+    },
+    {
+      "id": "C4",
+      "statement": "pH 7.0–8.0 applies to the following binding-buffer wash, with no automatic adjustment; absent flow, pressure, solvent duration or CV-to-mL parameters stay unspecified within the selected block.",
+      "decision": "validated"
+    }
+  ]
+}

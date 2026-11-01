@@ -1,6 +1,11 @@
 # Flowshot on GitHub Pages
 
-Status: integration prepared locally on 1 November 2026. The public `/flowshot/` route has not been published or verified. The previously published video remains available at the site root.
+Published on **1 November 2026** at [the wide walkthrough](https://mukunde.github.io/bioprocess-assistant/flowshot/).
+[PR #65](https://github.com/mukunde/bioprocess-assistant/pull/65) (package) and
+[PR #66](https://github.com/mukunde/bioprocess-assistant/pull/66) (integration) are merged.
+The [manual deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/41350245456)
+succeeded from `5decd53487709044f6f110f8eb010d2df3debc50`. The README-to-walkthrough
+route was verified as a signed-out visitor. The existing video remains at the site root.
 
 ## Delivery
 
@@ -17,17 +22,30 @@ python scripts/prepare_cytiva_video_site.py --output .local-tools/cytiva-pages-f
 python -m http.server 8782 --bind 127.0.0.1 --directory .local-tools/cytiva-pages-flowshot-preview
 ```
 
-The output must be new or empty. Check `/` → walkthrough → problem → result → E167-W citation → clarification → Restart. Verify Back and the return-to-video link. The README link targets the future public `/flowshot/` URL; using the local site does not prove that public link works.
+The output must be new or empty. Check `/` → walkthrough → problem → result → E167-W citation → clarification → Restart. Verify Back and the return-to-video link. Local checks remain useful before later deployments; they do not replace public verification.
 
-## Publication gate and limits
+## Repeat publication and limits
 
-The manual workflow executes repository files from GitHub. It cannot publish these local builder and README edits until they are integrated into the remote repository. Dispatching the current unchanged workflow would only republish the video. After integration, run the manual Pages workflow from `main`, wait for successful deployment, then verify the README link and all four screens as a signed-out visitor. Public verification remains pending until that happens.
+The manual workflow executes committed repository files from GitHub. For a later
+reviewed revision, run **Publish Cytiva video and walkthrough** from `main`, wait
+for successful deployment, then repeat the public README-link and four-screen
+checks. The workflow has no automatic push trigger. The first public verification
+is recorded below.
 
 This is a captured tour of the separately developed MabSelect journey, not a live backend, a new scientific validation or an operational cleaning authorization. The captured local implementation has not been included in this site integration. Rasterized screenshots are less accessible than live text and require sufficient display width. Flowshot credits and original Cytiva source attribution remain attached. See the [wide package credits](../media/cytiva-flowshot-pilot-v02/CREDITS.md).
 
-## Preparation checks — 1 November 2026
+## Historical preparation checks — 1 November 2026, before publication
 
 - Three targeted tests passed: exact twelve-file allowlist and original assets, altered-capture rejection, and preservation of nonempty output. Tests used a workspace-local temporary directory because the managed environment's default temporary location denied access.
 - The assembled local site was exercised at the video root and `/flowshot/`: all four screens, three hotspots, Back, Restart and return-to-video navigation worked. No console warning or error was observed during the walkthrough.
-- This is local output verification, not public deployment verification. The README's future HTTPS link remains unverified until publication.
+- At preparation time, only local output had been verified. The public verification below supersedes that pending status.
 - Frozen v03 and its environment were verified; prior pilots, sixteen excluded notes and unrelated local work were checked by hashes. No application suite or new retrieval experiment was run for this static hosting change.
+
+## Public verification — 1 November 2026
+
+- Opened the public repository while signed out and clicked the README's **Explore the interactive walkthrough — no installation** link. It opened the published HTTPS `/flowshot/` route.
+- Exercised problem → result → E167-W citation → clarification, using all three hotspots. The original product scope, PDF page 167 and pressure warning remained visible. Back and Restart worked.
+- Followed **Watch the video** to the existing root player, then its walkthrough link back to `/flowshot/`. This checks navigation; video playback was not re-evaluated in this session.
+- No console warnings or errors were observed during the walkthrough. This does not certify every browser or mobile display, accessibility, backend execution, retrieval accuracy or scientific suitability.
+- Build and deploy jobs succeeded. Three targeted publication tests passed on merged `main`; the full application suite was not rerun for this publication. Frozen v03 verified its 36 pins and environment. Sixteen excluded notes, the first pilot and unrelated local work retained their hashes.
+- The package manifest's preparation status, captured source hashes and original local HTML labels remain historical provenance. The deployment builder adapts the served HTML without editing those source assets. Subsequent documentation edits refresh only the affected documentation digests.

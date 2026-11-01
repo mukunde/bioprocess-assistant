@@ -7,11 +7,18 @@ GitHub Pages is configured to use GitHub Actions with HTTPS enforced. The
 [manual deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/40862970741)
 completed successfully from commit `497f0f152aa8aebc5ead72b62b8cc3612661f7c7`.
 The README poster and browser-playback link open this player; the optional MP4
-download remains available. Only the video is hosted, not the interactive demo.
+download remains available. The root hosts this video; a recorded Flowshot walkthrough is also hosted under `/flowshot/`. The executable application remains local.
 
-## Pending extension — 1 November 2026
+## Published Flowshot extension — 1 November 2026
 
-A local integration adds the wide recorded Flowshot tour under `/flowshot/`, alongside the existing video. It has not been published. The twelve-file output and local browser checks are described in [Flowshot hosting](CYTIVA-FLOWSHOT-HOSTING.md). The three-file inventory below describes the currently published video and its historical verification.
+The [wide recorded walkthrough](https://mukunde.github.io/bioprocess-assistant/flowshot/)
+is published alongside the video. [PR #66](https://github.com/mukunde/bioprocess-assistant/pull/66)
+is merged and [deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/41350245456)
+succeeded from `5decd53`. The README entry and the four-screen route, including
+citations, clarification and round-trip video navigation, were verified while
+signed out. See [Flowshot hosting](CYTIVA-FLOWSHOT-HOSTING.md) for the twelve-file
+output and exact limits. The three-file inventory below describes the historical
+video-only deployment, not the total current site.
 
 ## Choice
 
@@ -21,7 +28,7 @@ play/pause, seeking, volume and fullscreen without a plugin, account or forced
 file download. Playback still transfers video bytes to the browser. There is no
 analytics script, external player library, embedded advertising or autoplay.
 
-The static deployment contains exactly three files: `index.html`,
+The original video-only deployment contained exactly three files: `index.html`,
 `assets/onboarding.mp4` and `assets/onboarding.jpg`. The original approved exports
 are copied byte-for-byte after their decision-005 hashes are checked. No re-render,
 application environment, PDF, prior video, local note or frozen runtime is deployed.
@@ -43,7 +50,7 @@ is preserved. `.local-tools` is ignored by Git.
 ## Configuration and repeat publication
 
 **Settings → Pages → Source: GitHub Actions** is configured. To publish a later
-reviewed revision, manually run **Publish Cytiva video player** from `main`.
+reviewed revision, manually run **Publish Cytiva video and walkthrough** from `main`.
 The workflow has no push trigger. Its deploy job requests only Pages publication
 and its short-lived identity token; repository content access stays read-only.
 The actions are official GitHub actions pinned to verified commit references.

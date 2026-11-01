@@ -1,14 +1,36 @@
 # Current complete test suite
 
-From the repository root, run:
+For the MC12 interface regressions, install Node.js >=22.12 and the isolated
+locked test dependencies first (no browser or model download). From the repository
+root, run:
 
 ```powershell
+npm ci --prefix tests/ui --ignore-scripts --no-audit --no-fund
 .\.venv\Scripts\python.exe -m unittest tests -v
 ```
 
 Root discovery (`python -m unittest discover -v`) also uses the package hook.
 Choose the project's environment with its required application/ingestion
-packages. No LLM or paid API is required.
+packages. No LLM or paid API is required. Node/jsdom is a development-test
+requirement only; the Cytiva runtime installer and its twelve Python dependencies
+are unchanged. MC12 fails rather than silently skipping if the tools are absent.
+See the [UI test guide](ui/README.md) for DOM/HTTP scope and mutation witnesses.
+
+## Windows temporary paths
+
+Nested synthetic snapshots can exceed legacy Windows path limits when TEMP points
+inside a deep checkout. The maintained runner validates a short root, creates a
+unique owned child, restores Python's prior temp setting and removes only that
+child on exit. It neither changes the system TEMP setting nor deletes existing
+root contents. Choose a writable root of at most 60 characters. For example:
+
+```powershell
+python scripts/run_tests.py --temp-root "$env:LOCALAPPDATA\Temp"
+```
+
+The normal `python -m unittest tests -v` entry point remains supported when its
+system temporary path is suitable. This runner changes fixture placement only;
+it does not alter frozen methods, skip tests or retry failures.
 
 ## Frozen historical fixture
 

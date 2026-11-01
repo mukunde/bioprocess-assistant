@@ -58,6 +58,9 @@ class Demo:
         if not isinstance(payload, dict):
             raise ValueError('Expected a request object')
         verify(environment=True)  # Refuse drift rather than silently use a new candidate.
+        if payload.get('mode') == 'mabselect':
+            from demo.mabselect import evaluate
+            return evaluate(payload)
         if payload.get('mode') == 'troubleshooting':
             from demo.troubleshooting import evaluate
             return evaluate(payload)

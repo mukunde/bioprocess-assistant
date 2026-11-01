@@ -1,0 +1,12 @@
+{
+  "name": "cytiva-ui-regressions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Development-only DOM/HTTP conformance; separate from frozen Python runtime",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "jsdom": "27.0.1"
+  }
+}

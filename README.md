@@ -10,6 +10,14 @@ The project explores two engineering questions: how to constrain an assistant to
 
 ## Watch the demo
 
+[**Explore the interactive walkthrough — no installation**](https://mukunde.github.io/bioprocess-assistant/flowshot/)
+
+Four recorded screens: a MabSelect request, a documented result, its original
+Cytiva citation, and clarification when context is missing. Click the highlights
+or Next. This is a screenshot walkthrough, separate from the executable local
+application. **Integration prepared locally; publication and the public route
+remain pending.** [Hosting details](docs/CYTIVA-FLOWSHOT-HOSTING.md).
+
 [![Watch the 34-second Cytiva demo: a guided request, the original quotation and its handbook page.](media/cytiva-onboarding-v05/exports/onboarding.jpg)](https://mukunde.github.io/bioprocess-assistant/)
 
 [▶ Watch in your browser (34 seconds)](https://mukunde.github.io/bioprocess-assistant/) · [Download MP4 (2.6 MB)](https://github.com/mukunde/bioprocess-assistant/raw/refs/heads/main/media/cytiva-onboarding-v05/exports/onboarding.mp4) · [Editable sources and credits](media/cytiva-onboarding-v05/README.md)

@@ -1,0 +1,64 @@
+{
+  "id": "cytiva-flowshot-pilot-wide-v02",
+  "prepared_on": "2026-11-01",
+  "status": "prepared_local_pilot_not_published",
+  "hash_convention": "SHA-256 of CRLF-to-LF normalized bytes for text; exact bytes for JPEG; manifest excludes itself",
+  "upstream": {
+    "repository": "https://github.com/jgalea/flowshot",
+    "revision": "e5680ac04f7ceb3290fe79dad1caf0dafcd13c76",
+    "player_path": "player/flowshot.js",
+    "license": "MIT"
+  },
+  "captured_application": {
+    "repository_head": "9b4bd25f539eabc64246d4fc29b13cf18d1893a6",
+    "includes_uncommitted_mabselect_changes": true,
+    "files_sha256_lf": {
+      "demo/cytiva.py": "46924f544aa8ac0402289e96f0cbeeaf87463b40480f1807b90f36efd74b9976",
+      "demo/mabselect.py": "7cf84c9a8c150dffb6d5e4530fa20af2cd8d4facd1f14e4cc391d9e1842e2807",
+      "demo/static/cytiva.html": "5328e9cee1559ce3773b68d883d09170a02b1a83be39cfa94254f651b88175d6",
+      "docs/technical/mabselect-cleaning-sources-v01.json": "d536bc2755325c5c5617462d4b5cf3485776703c27eb7ff521c34d5161eb7bf1",
+      "docs/technical/mabselect-cleaning-review-v01.json": "2386cb3d6d19e454a61c945a7946891e5f269fd133488b2e4335bbedea1627ed"
+    }
+  },
+  "browser_viewport": {
+    "width": 1200,
+    "height": 800
+  },
+  "images": {
+    "shots/01-problem.jpg": {
+      "width": 1185,
+      "height": 790,
+      "bytes": 72657
+    },
+    "shots/02-result.jpg": {
+      "width": 1185,
+      "height": 790,
+      "bytes": 125661
+    },
+    "shots/03-citation.jpg": {
+      "width": 1185,
+      "height": 790,
+      "bytes": 68385
+    },
+    "shots/04-clarification.jpg": {
+      "width": 1185,
+      "height": 790,
+      "bytes": 125089
+    }
+  },
+  "files_sha256_lf_or_raw": {
+    ".gitignore": "4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97",
+    "CREDITS.md": "8c41c9f59cdff0e1d4268d55a7a23b20b88ce420fc3e0b0f28f5fa09321b3bc7",
+    "demo.json": "cc1631504631be3c045c1b38c97fb51f041d461762f9f35f51739ef321731ca2",
+    "FLOWShot-LICENSE.txt": "b7a970fd03dda39b60bde900fe111308aae531893b86ab1b87656ae55eb09efe",
+    "flowshot.js": "1c690e27c0e8d876603c2cf33d5ebd0eafbaccfc515da917f729d2dba0c03ff8",
+    "index.html": "c46a4185603de6d6c9f07857ba5ac63484d921ff998ba87e8457c24c1b3805b3",
+    "README.md": "4c140aaed6ada257cbe9576273132712127fb5d42b42810f235c57fe2d67ed52",
+    "REVIEW.md": "c3820df9a2608b76753329b8fde1f21c4f23f30441522d7c342250e9492d6c3e",
+    "shots/01-problem.jpg": "f09e375f11beb94745ccd6d40f2f7607fc878cf8bd9437d958981498d57d1f3b",
+    "shots/02-result.jpg": "e298adc5aebb42a9ac7a34d64253a0b0849d2954754863574dfbef41cd73a1e4",
+    "shots/03-citation.jpg": "b8c99b6b71587c2f443441946e6ccdf4828e1508b9d3a76bc6f42aca3b0febf1",
+    "shots/04-clarification.jpg": "626a4864524f3b5ff817adbf26bb0237cc42de5614335324ca032b5c5955880b",
+    "shots/capture-positions.json": "f85a2d1ba852b374cf17bffc5e7948ac754c8365ce94c2c12807699aca2bba43"
+  }
+}

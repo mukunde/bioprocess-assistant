@@ -1,6 +1,9 @@
 # Wide Flowshot pilot — package review
 
-Prepared on 2026-11-01. Status: local pilot, ready for repository review; public deployment and human acceptance of the wide presentation remain separate decisions.
+Prepared on 2026-11-01 as a local pilot. The package was merged in PR #65;
+Pages integration was merged in PR #66 and published on 1 November 2026.
+See the [publication and public-browser verification](../../docs/CYTIVA-FLOWSHOT-HOSTING.md).
+Publication does not imply human scientific approval of the captured implementation.
 
 ## Included behavior
 
@@ -24,10 +27,18 @@ The frozen v03 verifier remains the authority for its 36 pinned files and enviro
 - The clarification case is intentionally a second request, not a consequence inferred from the preceding result.
 - The captures include a pending local MabSelect implementation; publishing this tour does not merge that implementation.
 - This package contains static HTML, JSON, JavaScript, four images, documentation and the license. Exclude dependencies, vendor Git metadata, source PDFs, temporary previews and private audit logs.
-- The root README, GitHub Pages deployment and previous pilot are outside this lot.
+- The root README and Pages integration were outside the original 14-file package and were merged separately in PR #66. The previous pilot remains separate.
 
-## Proposed commit
+## Historical package commit
 
 `docs(demo): add wide Flowshot walkthrough with source citations`
 
 The explicit file inventory is `files_sha256_lf_or_raw` in `package-manifest.json`, plus the manifest itself: 14 files total.
+
+## Publication follow-up — 1 November 2026
+
+The README link, all four published screens, three hotspots, Back, Restart and
+round-trip video navigation were exercised as a signed-out visitor without
+observed console errors. This updates delivery status only; the capture-session
+checks above and their limitations remain historical evidence. No new extraction,
+scientific review, backend execution or answer-quality score was added.

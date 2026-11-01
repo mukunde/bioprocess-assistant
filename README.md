@@ -15,8 +15,10 @@ The project explores two engineering questions: how to constrain an assistant to
 Four recorded screens: a MabSelect request, a documented result, its original
 Cytiva citation, and clarification when context is missing. Click the highlights
 or Next. This is a screenshot walkthrough, separate from the executable local
-application. **Integration prepared locally; publication and the public route
-remain pending.** [Hosting details](docs/CYTIVA-FLOWSHOT-HOSTING.md).
+application. **Published on 1 November 2026.** The README link, all four
+screens, citation, clarification, Back, Restart and video navigation were verified
+as a signed-out visitor, with no console errors observed.
+[Hosting and verification](docs/CYTIVA-FLOWSHOT-HOSTING.md).
 
 [![Watch the 34-second Cytiva demo: a guided request, the original quotation and its handbook page.](media/cytiva-onboarding-v05/exports/onboarding.jpg)](https://mukunde.github.io/bioprocess-assistant/)
 
@@ -30,11 +32,19 @@ without an LLM or database; it is separate from the Neo4j troubleshooting chat.
 Published on GitHub Pages on 29 October 2026. The README poster → player → Play
 path was verified as a signed-out visitor; the video plays in the browser without
 a manual download. See [hosting and verification](docs/CYTIVA-VIDEO-HOSTING.md).
-The optional MP4 download remains available. This hosts the video, not the interactive application.
+The optional MP4 download remains available. The same site now hosts the recorded Flowshot walkthrough; the executable Python application remains local.
 
 ## Current status
 
-Documentation updated 31 October 2026. Current merged checkpoint: `main` at
+Publication checkpoint (1 November 2026): `main` at `5decd53`, with the wide
+Flowshot package ([PR #65](https://github.com/mukunde/bioprocess-assistant/pull/65))
+and Pages integration ([PR #66](https://github.com/mukunde/bioprocess-assistant/pull/66))
+merged. [Deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/41350245456)
+succeeded and the public README-to-walkthrough route was verified. Three targeted
+publication tests pass. This is media delivery evidence, not a new application or
+answer-quality benchmark; the captured MabSelect implementation remains separate.
+
+Earlier application verification checkpoint (31 October 2026): `main` at
 `7d6b9c2`, including the bounded backpressure journey
 ([PR #62](https://github.com/mukunde/bioprocess-assistant/pull/62)) and historical
 documentation-binding repair

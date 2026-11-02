@@ -36,7 +36,25 @@ The optional MP4 download remains available. The same site now hosts the recorde
 
 ## Current status
 
-Latest merged application checkpoint (2 November 2026): `main` at `e2b8531`, including
+Latest merged application checkpoint (2 November 2026): `main` at `37a44eb`, including
+[PR #74](https://github.com/mukunde/bioprocess-assistant/pull/74). The local
+release/withdrawal registry is merged around the unchanged frozen handoff.
+Candidate **`mabselect-local-v02` remains staged, not activated**: five bundle
+purposes, thirteen source objects, five scoped reviews and 56 bound dependencies.
+It checks authority and citations per operation, applies scoped withdrawals,
+rejects restored old active pointers and distinguishes backend failure from
+authority drift. Historical validation is deduplicated within each operation.
+The original v01 artifacts/results remain historical evidence.
+
+On merged `main`, **896 tests executed: 895 passed, one optional PDFium preview
+skip**. Both freezes verified with their original digests: v03 (36 pins) and
+MabSelect (52 pins). The v02 SX01–SX06 replay and inventory-only reproduction
+passed before merge; these are known-case conformance checks, not independent
+answer-quality or scientific validation. No active pointer or activation journal
+exists, and the registry is not connected to the UI or legacy chat. See the
+[registry correction review and limits](docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md).
+
+Earlier freeze checkpoint (2 November 2026): `main` at `e2b8531`, including
 [PR #72](https://github.com/mukunde/bioprocess-assistant/pull/72). The corrected
 MabSelect handoff now has a separate **52-file local freeze**. SX01–SX06 replay
 with complete responses/citations identical to the retained output, including
@@ -147,6 +165,7 @@ and usability fixes were agent checks, not new human scientific approval.
 | Bounded backpressure journey | Merged: deterministic Protein A/G Sepharose product/context selection, clarification, separate alternatives and original citations; independent of frozen v03. MabSelect is outside scope |
 | MabSelect cleaning journey | Merged in PR #68: exact-product/context controls, source-linked general/restricted alternatives, warnings and no-recipe clarification; portable approval verification and DOM/API mutation checks; separate from v03 and the legacy chat |
 | Reviewed documentary handoff | Implementation merged in PR #70; separate 52-file freeze and accepted-case replay merged in PR #72. Typed task-bound support, citations/reservations, clarification, scoped abstention and contained failures. Local preview only; no activated release or legacy chat/graph integration |
+| Local release/withdrawal registry | Merged in PR #74: staged v02, versioned inventory, scoped withdrawals, citation resolution and durable authority checks. No activation, UI dispatch or legacy chat integration; local single-writer trust boundary |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
 The current chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
@@ -381,6 +400,7 @@ does not establish general language understanding or generated-answer quality.
 | [Bounded backpressure journey](docs/validation/CYTIVA-TROUBLESHOOTING-DEMO.md) | Merged: four agent browser scenarios, 17 journey/demo regressions and scoped cleaning-review reuse; exact source quotations and pressure warning retained | Product/context exploration, not diagnosis; no independent retrieval/answer benchmark or operational approval. MabSelect outside scope; frozen v03 unchanged |
 | [MabSelect and suite repairs](docs/validation/MABSELECT-CLEANING-PACKAGE.md) | Merged in PR #68: MS01–MS08/C1–C4 design approval replay, MC01–MC12, DOM/API control and mutation tests; merged-main suite 829 passed / one optional skip | Known reviewed sources and code; no new runtime freeze, source approval or independent answer-quality result; no legacy chat enrichment |
 | [Corrected documentary handoff](docs/validation/MABSELECT-DOCUMENTARY-HANDOFF-PACKAGE.md) | Merged in PR #70: accepted DS/TS design, typed schemas, 24 handoff tests, exact task/context references, complete excerpt views, clarification and scoped abstention; merged-main suite 853 passed / one optional skip | Local development preview, not an activated release or independent answer benchmark. Production withdrawal authority and parsed numerical annotations remain deferred; quantities remain verbatim |
+| [Local registry review](docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md) | Merged in PR #74: corrected staged v02, 32 registry tests, six accepted-case replays and inventory-only reproduction; merged-main suite 895 passed / one optional skip | No activation or new source approval; cooperative single-process writers, whole-directory rollback needs an external anchor, interrupted activation needs operator review |
 | [MabSelect freeze and replay](docs/validation/MABSELECT-DOCUMENTARY-FREEZE-PACKAGE.md) | Merged in PR #72: 52-file inventory, standard-library verifier, ten freeze tests and full SX01–SX06 replay; inventory-only output identical; merged-main suite 863 passed / one optional skip | Known-case reproducibility and conformance; no serving activation, independent answer benchmark or new source approval; v03 unchanged |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
@@ -403,14 +423,14 @@ excerpts, not the full manual. S's 2,048-token budget counts serialized context
 including bindings, not a future answer prompt or output. The source-reviewed
 claims have not been connected to the chatbot's serving path.
 
-**Next priority:** implement and verify a **nonactivated local release/withdrawal
-registry around the frozen handoff**. Bind the frozen inventory to versioned
-mapping/source indices and an explicit withdrawal register, check authority on
-each request and fail closed on missing, changed or revoked support. Reuse the
-accepted cases and drift/withdrawal regressions; present the concrete candidate
-inventory and results before requesting activation. The two freezes stay intact.
-The freeze/replay is complete; release authority and any typed legacy-chat
-connection remain pending. No new whole-manual review is needed for this step.
+**Next priority:** review the **explicit local activation decision for staged
+`mabselect-local-v02`**. Use its existing inventory and replay, confirm the five
+bundle purposes/thirteen sources, proposed empty withdrawal register, trusted
+local storage and interrupted-activation recovery limits. Then obtain an explicit
+activation decision; passing tests or merging PR #74 does not grant one. The
+registry stays inactive until that decision. No new whole-manual review or
+redesign is required. Any UI or legacy-chat dispatch is a later, separately tested
+integration; the current previews and both freezes remain unchanged.
 
 Second-physical-PC validation remains a parallel portability check. The
 three-arm graph/passages/LightRAG comparison is unexecuted; current BM25 trials
@@ -425,9 +445,9 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Implement the nonactivated local release/withdrawal registry around the frozen handoff, with versioned authority, source-view resolution and drift/revocation checks. Keep both freezes unchanged.
+1. Review the concrete v02 local activation decision against the merged inventory/replay and storage/recovery limits. Keep the registry inactive until explicit approval; preserve both freezes.
 2. Gather a short usability response to the merged Protein A/G and MabSelect entries; retain v03 and the historical scores. Validate installation on a second physical Windows PC when available as a separate portability gate.
-3. Review the registry candidate and its replay before explicit local activation. Any legacy-chat integration needs a separate typed dispatch; keep source publication and generated-answer evaluation distinct.
+3. After approved activation and lifecycle checks, connect one bounded UI path through an explicit typed dispatch. Keep the current previews available and source publication distinct from generated-answer evaluation; legacy chat integration remains separate.
 4. Instrument the serving path with OpenTelemetry and portable call/retry/cost accounting; add Ragas and Promptfoo when the answering path exists.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.
 

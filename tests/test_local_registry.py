@@ -234,3 +234,74 @@ class LocalRegistryTests(unittest.TestCase):
         release=subject.read(self.folder/'release.json');release['activation_decision_ref']=subject.binding('activation-decision',p);replace(self.folder/'release.json',release)
         with self.assertRaisesRegex(ValueError,'authorization'):self.registry.activate(self.folder.name)
         self.assertFalse((self.root/'active.json').exists())
+
+    def test_restored_valid_pointer_cannot_restore_withdrawn_quote_even_after_restart(self):
+        self.activate_first();backup=(self.root/'active.json').read_bytes()
+        second=subject.prepare(self.root,'release-v02')
+        approve_fixture(second,version=2,entries=[event(self.folder,'source','E167-W')]);self.registry.activate(second.name)
+        self.assertEqual(self.registry.source(self.folder.name,'E167-W')['status'],'quarantined')
+        (self.root/'active.json').write_bytes(backup)
+        restarted=subject.Registry(self.root)
+        out=restarted.evaluate(request());self.assertEqual(out['response_reason'],'invalid_authority')
+        self.assertEqual(out['context']['passages'],[])
+        with self.assertRaisesRegex(ValueError,'durable authority head'):restarted.source(self.folder.name,'E167-W')
+
+    def test_missing_or_corrupted_durable_head_never_reconstructs_it_from_old_pointer(self):
+        self.activate_first();log=self.root/'authority-log';head=next(log.glob('*.json'))
+        original=head.read_bytes();head.write_text('{}',encoding='utf-8')
+        self.assertEqual(self.registry.evaluate(request())['response_reason'],'invalid_authority')
+        head.write_bytes(original);log.rename(self.root/'saved-authority-log')
+        self.assertEqual(subject.Registry(self.root).evaluate(request())['response_reason'],'invalid_authority')
+
+    def test_interrupted_pointer_replace_keeps_new_head_and_fails_closed_after_restart(self):
+        self.activate_first();old_pointer=(self.root/'active.json').read_bytes()
+        second=subject.prepare(self.root,'release-v02')
+        approve_fixture(second,version=2,entries=[event(self.folder,'source','E167-W')])
+        with patch.object(subject.os,'replace',side_effect=OSError('simulated interrupted replace')):
+            with self.assertRaises(OSError):self.registry.activate(second.name)
+        self.assertEqual((self.root/'active.json').read_bytes(),old_pointer)
+        restarted=subject.Registry(self.root);self.assertEqual(restarted._head()['record']['generation'],2)
+        self.assertEqual(restarted.evaluate(request())['response_reason'],'invalid_authority')
+        self.assertEqual(list(self.root.glob('.active-*')),[])
+
+    def test_authority_journal_chain_and_contiguous_generations_are_checked(self):
+        self.activate_first();second=subject.prepare(self.root,'release-v02');approve_fixture(second,version=2);self.registry.activate(second.name)
+        head=self.root/'authority-log'/'00000000000000000002.json';record=subject.read(head)
+        record['previous_sha256_lf']='0'*64;replace(head,record)
+        self.assertEqual(self.registry.evaluate(request())['response_reason'],'invalid_authority')
+        head.rename(head.with_name('00000000000000000003.json'))
+        with self.assertRaisesRegex(ValueError,'incomplete'):self.registry._head()
+
+    def test_historical_versions_are_fully_validated_once_per_digest_per_operation(self):
+        history=[];first=self.folder
+        for version in range(1,6):
+            folder=first if version==1 else subject.prepare(self.root,'release-v0'+str(version))
+            history=history+[event(first,'source','E167-W',action='withdraw' if version%2 else 'reinstate',number=version)]
+            approve_fixture(folder,version=version,entries=history)
+            history=subject.read(folder/'withdrawals.json')['entries']
+        with patch.object(self.registry,'_load_uncached',wraps=self.registry._load_uncached) as load:
+            self.registry._load(folder.name);self.assertEqual(load.call_count,5)
+            self.registry._load(folder.name);self.assertEqual(load.call_count,10)  # No stale cross-request cache.
+
+    def test_backend_failure_with_unchanged_authority_has_service_outcomes_and_private_diagnostic(self):
+        value=request(items=['cleaning_options','pressure_limit']);value['tasks'][0]['excluded_items']=['pressure_limit']
+        with patch.object(subject.core.Handoff,'evaluate',side_effect=RuntimeError('private exception contents')),self.assertLogs(subject.LOGGER,level='ERROR') as logs:
+            out=self.registry.evaluate(value,candidate=self.folder.name)
+        self.assertEqual(out['status'],'unavailable');self.assertEqual(out['response_reason'],'item_outcomes')
+        self.assertEqual([i['state'] for i in out['items']],['unavailable','excluded'])
+        self.assertEqual(out['items'][0]['reason'],'required_dependency_unavailable')
+        self.assertEqual(out['items'][1]['reason'],'excluded_by_request')
+        self.assertEqual(out['context']['bundles'],[]);self.assertEqual(out['coverage']['unavailable'],1)
+        self.assertIn('RuntimeError',''.join(logs.output))
+        self.assertNotIn('private exception contents',json.dumps(out)+''.join(logs.output))
+
+    def test_backend_failure_and_real_authority_change_still_report_authority_changed(self):
+        self.activate_first()
+        def changed(*_args):
+            (self.root/'active.json').write_text('{}',encoding='utf-8');raise RuntimeError('backend and authority changed')
+        with patch.object(subject.core.Handoff,'evaluate',side_effect=changed):out=self.registry.evaluate(request())
+        self.assertEqual(out['response_reason'],'authority_changed');self.assertEqual(out['context']['passages'],[])
+
+    def test_removed_pointer_after_activation_is_invalid_authority_not_never_activated(self):
+        self.activate_first();(self.root/'active.json').unlink()
+        self.assertEqual(subject.Registry(self.root).evaluate(request())['response_reason'],'invalid_authority')

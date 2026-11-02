@@ -18,12 +18,12 @@ These commands explicitly inspect the candidate, not the active service.
 `--output new-result.json` retains a separate replay and refuses an existing file.
 `--prepare --release-id another-version` creates another staged directory and
 never replaces a version. The CLI deliberately provides no activation command.
-Use the [candidate review](../docs/validation/MABSELECT-LOCAL-REGISTRY-CANDIDATE.md)
+Use the [corrected candidate review](../docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md)
 for the actual inventory, results, tests and pending approval.
 
 ## Files and authority
 
-`serving-data/releases/mabselect-local-v01/` contains:
+The corrected `serving-data/releases/mabselect-local-v02/` contains:
 
 - `release.json`: versions, limits and complete artifact bindings;
 - `catalog.json`: fixed registered IDs to repository/release paths;
@@ -40,6 +40,10 @@ their decisions have additional explicit references. The catalog contains safe
 paths only; exact scope and source/review objects are checked against the frozen
 handoff, even if somebody refreshes a changed artifact's declared digest.
 
+The original v01 data and replay are preserved as historical pre-review evidence.
+Their old registry-code binding is not refreshed to fit the correction; use v02
+with the corrected runtime. Neither candidate is activated.
+
 `Registry(data_root).evaluate(request)` requires current active authority. With
 the delivered candidate it returns `unavailable: release_not_activated`.
 `evaluate(request, candidate=release_id)` is an explicit server/developer preview
@@ -52,6 +56,13 @@ invalid global authority yields an empty `unavailable` response. A mid-request
 change discards the response as `authority_changed`, without hidden retry or
 fallback. Version-bound source views check current withdrawal authority, including
 when displaying an older release; they never silently redirect to a new source.
+
+Full release/history validation is deduplicated by version and manifest digest
+within one operation. The final authority check uses a fresh cache, so reuse
+cannot hide drift between requests. A backend error with unchanged authority
+instead returns `unavailable` item outcomes (`required_dependency_unavailable`),
+retaining exclusions and a private exception-class diagnostic. No new value is
+added to the frozen response schemas.
 
 ## Withdrawals and history
 
@@ -67,6 +78,27 @@ Reinstatement requires a preceding withdrawal and a new reviewed inventory/versi
 An explicitly reviewed new release is a distinct identity: an event targeting an
 older version is not silently promoted to a withdrawal of every later edition.
 Unknown/stale targets, dropped history and missing approvals are rejected.
+
+## Durable authority head
+
+On reviewed activation only, `authority-log/00000000000000000001.json` and later
+generations form an exclusive, append-only, hash-linked journal. Each record
+binds its predecessor, withdrawal version and the complete active-pointer value.
+Every active request/source view requires `active.json` to equal the latest
+durable head. Restoring only an older valid pointer is rejected even after a new
+Registry instance or process restart. Missing, partial or corrupted history is
+not reconstructed from a pointer and never treated as an initial empty registry.
+
+The journal append is flushed before replacing `active.json`. If activation is
+interrupted between those steps, the old pointer is blocked by the newer head;
+it cannot silently revive withdrawn support. Such an interrupted store requires
+explicit operator review/recovery; no automatic rollback or recovery command is
+provided by this candidate. No journal is created for candidate preview/replay.
+
+This detects pointer-only rollback, not replacement of the entire trusted
+authority directory (including its complete journal) by an older backup. Protection
+against malicious whole-store rollback needs an independent external anchor and
+is outside this local, user-controlled, single-writer trust boundary.
 
 For later reviewed activation, the internal `Registry.activate(release_id)` method
 requires an already activated manifest and matching, approved local decision

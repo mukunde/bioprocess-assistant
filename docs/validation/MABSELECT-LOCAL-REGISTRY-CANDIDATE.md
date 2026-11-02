@@ -1,5 +1,11 @@
 # MabSelect local registry — candidate before activation
 
+**Historical v01 checkpoint, before the three PR74 review corrections.** The
+current staged candidate is v02; see the
+[correction/review report](MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md). Original v01
+artifacts/results below are retained with their original code bindings and are
+not refreshed or implicitly activated by the corrected runtime.
+
 Prepared on 2 November 2026 on merged `main` at `4f35ea9`.
 Candidate: `mabselect-local-v01`. **Staged only; no activation authorized or
 performed by this candidate.** Both earlier freezes, original decisions and

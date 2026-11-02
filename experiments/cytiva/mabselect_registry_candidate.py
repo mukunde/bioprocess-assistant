@@ -17,6 +17,7 @@ def check(data_root,release_id):
             'bundles':len(state['mapping']['entries']),'sources':len(state['sources']['passages']),
             'reviews':len(state['sources']['reviews']),'dependencies':len(state['release']['dependencies']),
             'authority_digest':state['token'],'active_pointer_exists':(Path(data_root)/'active.json').exists(),
+            'durable_head_exists':(Path(data_root)/'authority-log').exists(),
             'serving_activated':False,'freeze':freeze.verify(environment=True)}
 
 
@@ -48,7 +49,7 @@ def replay(data_root,release_id):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--data-root',type=Path,default=ROOT/'serving-data')
-    parser.add_argument('--release-id',default='mabselect-local-v01')
+    parser.add_argument('--release-id',default='mabselect-local-v02')
     parser.add_argument('--prepare',action='store_true')
     parser.add_argument('--replay',action='store_true')
     parser.add_argument('--output',type=Path)

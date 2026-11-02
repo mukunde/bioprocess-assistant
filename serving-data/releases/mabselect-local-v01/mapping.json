@@ -1,0 +1,274 @@
+{
+  "kind": "reviewed_serving_mapping/v1",
+  "release_id": "mabselect-local-v01",
+  "entries": [
+    {
+      "bundle_key": "mabselect.precipitated.general",
+      "mapping_version": "staging-v1",
+      "review_scope": "Q05",
+      "allowed_products": [
+        "mabselect",
+        "sure",
+        "sure_lx"
+      ],
+      "allowed_contexts": [
+        "precipitated_substances"
+      ],
+      "request_items": [
+        "cleaning_options",
+        "followup_buffer_pH"
+      ],
+      "role": "procedure",
+      "required_source_ids": [
+        "E167-H",
+        "E167-PH",
+        "E167-P"
+      ],
+      "review_ref": {
+        "artifact_id": "reviewed-cleaning-retrieval-review-json",
+        "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+        "hash_convention": "sha256_lf"
+      },
+      "conditions": {
+        "kind": "all_of",
+        "children": [
+          {
+            "kind": "product_in",
+            "values": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "source_ids": [
+              "E167-H"
+            ]
+          },
+          {
+            "kind": "category_in",
+            "values": [
+              "precipitated_substances"
+            ],
+            "source_ids": [
+              "E167-PH"
+            ]
+          }
+        ]
+      },
+      "alternative_policy": "all_general_alternatives"
+    },
+    {
+      "bundle_key": "mabselect.precipitated.restricted",
+      "mapping_version": "staging-v1",
+      "review_scope": "Q06",
+      "allowed_products": [
+        "sure",
+        "sure_lx"
+      ],
+      "allowed_contexts": [
+        "precipitated_substances"
+      ],
+      "request_items": [
+        "cleaning_options",
+        "restricted_sequence",
+        "followup_buffer_pH"
+      ],
+      "role": "procedure",
+      "required_source_ids": [
+        "E167-H",
+        "E167-PH",
+        "E167-SH",
+        "E167-S"
+      ],
+      "review_ref": {
+        "artifact_id": "reviewed-cleaning-retrieval-review-json",
+        "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+        "hash_convention": "sha256_lf"
+      },
+      "conditions": {
+        "kind": "all_of",
+        "children": [
+          {
+            "kind": "product_in",
+            "values": [
+              "sure",
+              "sure_lx"
+            ],
+            "source_ids": [
+              "E167-SH"
+            ]
+          },
+          {
+            "kind": "category_in",
+            "values": [
+              "precipitated_substances"
+            ],
+            "source_ids": [
+              "E167-PH"
+            ]
+          }
+        ]
+      },
+      "alternative_policy": "separate_restricted_block"
+    },
+    {
+      "bundle_key": "mabselect.hydrophobic.detergent",
+      "mapping_version": "staging-v1",
+      "review_scope": "N06",
+      "allowed_products": [
+        "mabselect",
+        "sure",
+        "sure_lx"
+      ],
+      "allowed_contexts": [
+        "hydrophobic_deposits"
+      ],
+      "request_items": [
+        "cleaning_options",
+        "followup_buffer_pH"
+      ],
+      "role": "procedure",
+      "required_source_ids": [
+        "E167-H",
+        "E167-LH",
+        "E167-D"
+      ],
+      "review_ref": {
+        "artifact_id": "reviewed-section-questions-review-json",
+        "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+        "hash_convention": "sha256_lf"
+      },
+      "conditions": {
+        "kind": "all_of",
+        "children": [
+          {
+            "kind": "product_in",
+            "values": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "source_ids": [
+              "E167-H"
+            ]
+          },
+          {
+            "kind": "category_in",
+            "values": [
+              "hydrophobic_deposits"
+            ],
+            "source_ids": [
+              "E167-LH"
+            ]
+          }
+        ]
+      },
+      "alternative_policy": "detergent_alternative"
+    },
+    {
+      "bundle_key": "mabselect.hydrophobic.solvent",
+      "mapping_version": "staging-v1",
+      "review_scope": "N07",
+      "allowed_products": [
+        "mabselect",
+        "sure",
+        "sure_lx"
+      ],
+      "allowed_contexts": [
+        "hydrophobic_deposits"
+      ],
+      "request_items": [
+        "cleaning_options",
+        "followup_buffer_pH"
+      ],
+      "role": "procedure",
+      "required_source_ids": [
+        "E167-H",
+        "E167-LH",
+        "E167-E",
+        "E167-W"
+      ],
+      "review_ref": {
+        "artifact_id": "reviewed-section-questions-review-json",
+        "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+        "hash_convention": "sha256_lf"
+      },
+      "conditions": {
+        "kind": "all_of",
+        "children": [
+          {
+            "kind": "product_in",
+            "values": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "source_ids": [
+              "E167-H"
+            ]
+          },
+          {
+            "kind": "category_in",
+            "values": [
+              "hydrophobic_deposits"
+            ],
+            "source_ids": [
+              "E167-LH"
+            ]
+          }
+        ]
+      },
+      "alternative_policy": "solvent_alternatives"
+    },
+    {
+      "bundle_key": "mabselect.context.clarify",
+      "mapping_version": "staging-v1",
+      "review_scope": "Q09",
+      "allowed_products": [
+        "unknown",
+        "family_unknown",
+        "mabselect",
+        "sure",
+        "sure_lx",
+        "other",
+        "contradictory"
+      ],
+      "allowed_contexts": [
+        "unknown",
+        "precipitated_substances",
+        "hydrophobic_deposits",
+        "mixed_other"
+      ],
+      "request_items": [
+        "cleaning_options",
+        "restricted_sequence",
+        "followup_buffer_pH",
+        "pressure_limit",
+        "solvent_hold_time"
+      ],
+      "role": "clarification_context",
+      "required_source_ids": [
+        "E166-H",
+        "E166-T",
+        "E166-PH",
+        "E166-LH",
+        "E167-H",
+        "E167-PH",
+        "E167-SH",
+        "E167-LH"
+      ],
+      "review_ref": {
+        "artifact_id": "reviewed-cleaning-retrieval-review-json",
+        "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+        "hash_convention": "sha256_lf"
+      },
+      "conditions": {
+        "kind": "source_text",
+        "text": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+        "source_ids": [
+          "E167-H"
+        ]
+      },
+      "alternative_policy": "context_only"
+    }
+  ]
+}

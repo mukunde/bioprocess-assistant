@@ -1,0 +1,249 @@
+{
+  "kind": "local_registry_catalog/v1",
+  "artifacts": {
+    "demo-__init__-py": {
+      "namespace": "repository",
+      "path": "demo/__init__.py"
+    },
+    "demo-documentary-py": {
+      "namespace": "repository",
+      "path": "demo/documentary.py"
+    },
+    "demo-documentary_preview-py": {
+      "namespace": "repository",
+      "path": "demo/documentary_preview.py"
+    },
+    "demo-mabselect-py": {
+      "namespace": "repository",
+      "path": "demo/mabselect.py"
+    },
+    "static-documentary-html": {
+      "namespace": "repository",
+      "path": "demo/static/documentary.html"
+    },
+    "experiments-cytiva-cleaning-retrieval-human-review-md": {
+      "namespace": "repository",
+      "path": "docs/experiments/cytiva-cleaning-retrieval-human-review.md"
+    },
+    "experiments-cytiva-cleaning-retrieval-pilot-md": {
+      "namespace": "repository",
+      "path": "docs/experiments/cytiva-cleaning-retrieval-pilot.md"
+    },
+    "experiments-cytiva-section-questions-human-review-md": {
+      "namespace": "repository",
+      "path": "docs/experiments/cytiva-section-questions-human-review.md"
+    },
+    "reviewed-serving-v1-authority-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/authority.schema.json"
+    },
+    "reviewed-serving-v1-common-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/common.schema.json"
+    },
+    "reviewed-serving-v1-mapping-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/mapping.schema.json"
+    },
+    "reviewed-serving-v1-release-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/release.schema.json"
+    },
+    "reviewed-serving-v1-request-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/request.schema.json"
+    },
+    "reviewed-serving-v1-response-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/response.schema.json"
+    },
+    "reviewed-serving-v1-source-index-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/source-index.schema.json"
+    },
+    "reviewed-serving-v1-source-view-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/source-view.schema.json"
+    },
+    "reviewed-serving-v1-validation-error-schema-json": {
+      "namespace": "repository",
+      "path": "docs/schemas/reviewed-serving-v1/validation-error.schema.json"
+    },
+    "technical-REVIEWED-DOSSIER-SERVING-CASES-V01-md": {
+      "namespace": "repository",
+      "path": "docs/technical/REVIEWED-DOSSIER-SERVING-CASES-V01.md"
+    },
+    "technical-REVIEWED-DOSSIER-SERVING-CONTRACT-V01-md": {
+      "namespace": "repository",
+      "path": "docs/technical/REVIEWED-DOSSIER-SERVING-CONTRACT-V01.md"
+    },
+    "technical-REVIEWED-DOSSIER-SERVING-REVIEW-V01-md": {
+      "namespace": "repository",
+      "path": "docs/technical/REVIEWED-DOSSIER-SERVING-REVIEW-V01.md"
+    },
+    "technical-REVIEWED-DOSSIER-SERVING-TECHNICAL-V01-md": {
+      "namespace": "repository",
+      "path": "docs/technical/REVIEWED-DOSSIER-SERVING-TECHNICAL-V01.md"
+    },
+    "technical-mabselect-cleaning-approved-contract-v01-md": {
+      "namespace": "repository",
+      "path": "docs/technical/mabselect-cleaning-approved-contract-v01.md"
+    },
+    "technical-mabselect-cleaning-review-v01-json": {
+      "namespace": "repository",
+      "path": "docs/technical/mabselect-cleaning-review-v01.json"
+    },
+    "technical-mabselect-cleaning-sources-v01-json": {
+      "namespace": "repository",
+      "path": "docs/technical/mabselect-cleaning-sources-v01.json"
+    },
+    "technical-reviewed-dossier-serving-decisions-v01-json": {
+      "namespace": "repository",
+      "path": "docs/technical/reviewed-dossier-serving-decisions-v01.json"
+    },
+    "technical-reviewed-dossier-serving-interface-examples-v01-json": {
+      "namespace": "repository",
+      "path": "docs/technical/reviewed-dossier-serving-interface-examples-v01.json"
+    },
+    "technical-reviewed-dossier-serving-technical-decisions-v01-json": {
+      "namespace": "repository",
+      "path": "docs/technical/reviewed-dossier-serving-technical-decisions-v01.json"
+    },
+    "experiments-__init__-py": {
+      "namespace": "repository",
+      "path": "experiments/__init__.py"
+    },
+    "cytiva-__init__-py": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/__init__.py"
+    },
+    "cytiva-cleaning_section_questions_v01-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/cleaning_section_questions_v01.json"
+    },
+    "mabselect-handoff-freeze-v01-METHOD-md": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/mabselect-handoff-freeze-v01/METHOD.md"
+    },
+    "mabselect-handoff-freeze-v01-README-md": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/mabselect-handoff-freeze-v01/README.md"
+    },
+    "mabselect-handoff-freeze-v01-freeze-decision-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/mabselect-handoff-freeze-v01/freeze-decision.json"
+    },
+    "cytiva-mabselect_handoff_freeze-py": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/mabselect_handoff_freeze.py"
+    },
+    "retrieval-pilot-v01-evidence-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/retrieval-pilot-v01/evidence.json"
+    },
+    "retrieval-pilot-v01-manifest-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/retrieval-pilot-v01/manifest.json"
+    },
+    "retrieval-pilot-v01-questions-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/retrieval-pilot-v01/questions.json"
+    },
+    "reviewed-cleaning-retrieval-README-md": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-cleaning-retrieval/README.md"
+    },
+    "reviewed-cleaning-retrieval-events-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-cleaning-retrieval/events.json"
+    },
+    "reviewed-cleaning-retrieval-manifest-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-cleaning-retrieval/manifest.json"
+    },
+    "reviewed-cleaning-retrieval-review-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-cleaning-retrieval/review.json"
+    },
+    "reviewed-section-questions-README-md": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-section-questions/README.md"
+    },
+    "reviewed-section-questions-events-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-section-questions/events.json"
+    },
+    "reviewed-section-questions-manifest-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-section-questions/manifest.json"
+    },
+    "reviewed-section-questions-provenance-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-section-questions/provenance.json"
+    },
+    "reviewed-section-questions-review-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/reviewed-section-questions/review.json"
+    },
+    "cytiva-verify_cleaning_retrieval_package-py": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/verify_cleaning_retrieval_package.py"
+    },
+    "cytiva-verify_mabselect_design-py": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/verify_mabselect_design.py"
+    },
+    "cytiva-verify_section_questions_package-py": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/verify_section_questions_package.py"
+    },
+    "tests-test_cleaning_retrieval_package-py": {
+      "namespace": "repository",
+      "path": "tests/test_cleaning_retrieval_package.py"
+    },
+    "tests-test_mabselect_handoff_freeze-py": {
+      "namespace": "repository",
+      "path": "tests/test_mabselect_handoff_freeze.py"
+    },
+    "tests-test_section_questions_package-py": {
+      "namespace": "repository",
+      "path": "tests/test_section_questions_package.py"
+    },
+    "mabselect-handoff-freeze-v01-method-lock-json": {
+      "namespace": "repository",
+      "path": "experiments/cytiva/mabselect-handoff-freeze-v01/method-lock.json"
+    },
+    "serving-__init__-py": {
+      "namespace": "repository",
+      "path": "serving/__init__.py"
+    },
+    "serving-local_registry-py": {
+      "namespace": "repository",
+      "path": "serving/local_registry.py"
+    },
+    "mapping": {
+      "namespace": "release",
+      "path": "mapping.json"
+    },
+    "source-index": {
+      "namespace": "release",
+      "path": "source-index.json"
+    },
+    "withdrawals": {
+      "namespace": "release",
+      "path": "withdrawals.json"
+    },
+    "activation-decision": {
+      "namespace": "release",
+      "path": "activation-decision.json"
+    },
+    "catalog": {
+      "namespace": "release",
+      "path": "catalog.json"
+    },
+    "mabselect-local-v01-withdrawal-decision": {
+      "namespace": "release",
+      "path": "withdrawal-decision.json"
+    }
+  }
+}

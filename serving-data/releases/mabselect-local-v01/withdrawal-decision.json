@@ -1,0 +1,9 @@
+{
+  "kind": "local_registry_decision/v1",
+  "operation": "withdrawals",
+  "release_id": "mabselect-local-v01",
+  "status": "proposed",
+  "validator": "project_user_via_conversation",
+  "content_sha256": "60daeb488f04e2ed2cd298f51ab637677f9dafc10cb1e6d88a788c6436428b6d",
+  "original_human_message": null
+}

@@ -13,8 +13,10 @@ Protein A/G Sepharose backpressure journey and a separate merged MabSelect
 cleaning entry now reuse scoped cleaning reviews and original citations, without
 a model or database. The corrected MabSelect documentary handoff and its typed
 local preview are merged; PR72 adds its separate 52-file freeze and accepted-case
-replay. PR74 adds the corrected local release/withdrawal registry; v02 remains
-staged and inactive, with no UI/legacy-chat connection. Portable telemetry, independent
+replay. PR74 adds the corrected local registry; PR76 records the explicitly
+approved local v02 activation and its replay. One private verification store is
+active; Git still ships the staged candidate, with no UI/legacy-chat connection.
+Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
@@ -49,8 +51,8 @@ Migration from the legacy dense template/review database is still pending.
   This development review is not an exhaustive gold benchmark or a causal retrieval
   evaluation. Reviewed cleaning and contaminant sources/questions now extend the
   procedural sample; their retrieval results are summarized below. The separate
-  handoff freeze/replay and nonactivated registry are now merged.
-  Next: review explicit v02 local activation, then measure coverage independently.
+  handoff freeze/replay, registry and local activation record are now merged.
+  Next: connect one bounded opt-in UI path, then measure coverage independently.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
@@ -70,10 +72,23 @@ is published, while the executable Python application remains local.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds corrected local release/withdrawal authority, staged v02 | Explicit local activation review, typed UI dispatch, second-machine validation and independent answer evaluation; registry inactive, no legacy chat integration |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation and verified active citations/replay | Typed opt-in UI dispatch and end-to-end checks, second-machine validation and independent answer evaluation; fresh clones staged, no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest merged baseline: `main` at `37a44eb`, including
+Latest merged baseline: `main` at `59b5aee`, including
+[PR76](https://github.com/mukunde/bioprocess-assistant/pull/76). The eight-file
+[activation record](../experiments/cytiva/mabselect-local-activation-v02/README.md)
+is merged: explicit LA01–LA08 approval, initial empty withdrawal inventory,
+private local activation (generation 1, withdrawal version 1), six accepted active
+cases, 25 citation occurrences and thirteen source views verified. The activation's
+32 disposable lifecycle tests passed. Merged-main complete suite: **896 executed,
+895 passed, one optional PDFium preview skip**. Both original freezes remain valid.
+The private store is not in Git; fresh clones retain the staged candidate and
+require their own reviewed activation. No UI/launcher/legacy-chat dispatch is
+connected, no automatic activation is provided and no independent answer-quality
+score is claimed. See the [operator limits](validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.md).
+
+Earlier registry implementation baseline: `main` at `37a44eb`, including
 [PR74](https://github.com/mukunde/bioprocess-assistant/pull/74). The corrected local
 release/withdrawal registry is integrated; v02 remains staged, with no active
 pointer, activation journal or UI/legacy-chat dispatch. The merged-main complete
@@ -291,9 +306,10 @@ to verify or replay. This freeze does not replace v03 (36 pins), create an activ
 release/withdrawal registry, change source approvals or supply a prospective score.
 Original decisions, results, notes and pilots remain unchanged. Runtime integrity
 is complete for this frozen candidate; PR74 adds the nonactivated authority layer
-below. An explicit local activation decision is the next gate.
+below. PR76 subsequently records the approved local activation; typed UI
+dispatch is now the next gate.
 
-### Merged local release/withdrawal registry — inactive
+### Merged registry and approved private local activation
 
 [PR74](https://github.com/mukunde/bioprocess-assistant/pull/74) integrates the
 [corrected registry and review](validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md).
@@ -309,8 +325,19 @@ including eight added regressions. SX01–SX06 retain their citations/reservatio
 a 62-file inventory-only copy reproduces v02 with `python -S`. Original v01
 artifacts/results remain historical; no source review was rewritten.
 
-The candidate is **not activated**. Its empty withdrawal decision is proposed,
-not approved; merging code or passing tests supplies no activation authority.
+The **versioned candidate remains staged** with its original proposed decision.
+Subsequently, [LA01–LA08 and the empty inventory were explicitly approved](decisions/MABSELECT-REGISTRY-V02-ACTIVATION-DECISIONS.json).
+The private copy was activated and its eight-file audit record merged in PR76.
+Generation 1 and withdrawal version 1 contain zero events. The active-path six-case
+replay verifies 25 citation occurrences and all thirteen source views. This
+activation changes only approved metadata/bindings in the private copy, preserving
+mapping, quotations, conditions, reservations, code and both freezes.
+
+The private store is not an installable artifact. A fresh clone contains the
+staged candidate and the local-run evidence, not an active pointer or authority
+journal. Its owner needs a separate reviewed activation; neither merging the
+record nor passing tests grants it. The current UI/preview, launcher and legacy
+chat do not dispatch to the active registry.
 The local directory is trusted, with cooperating single-process writers:
 whole-directory rollback needs an external anchor to detect, and interrupted
 activation requires explicit operator review. No multiwriter/signature service,
@@ -318,14 +345,17 @@ UI dispatch or new answer-quality claim is implied.
 
 ### Next delivery priorities
 
-1. **Review the concrete v02 local activation decision.** Use the existing
-   [candidate inventory and replay](../serving/README.md), confirm the five bundle
-   purposes/thirteen sources, proposed empty withdrawal register and trusted
-   storage/recovery limits. Acceptance: an explicit decision identifies the exact
-   release/authority and scope; no prior source approval or freeze stands in for
-   it. Keep the registry inactive until approval. After approval, activation and
-   lifecycle verification are a separate action. No additional design cycle or
-   whole-manual review is needed to present that decision.
+1. **Connect one bounded opt-in MabSelect UI path through the registry.**
+   Use an explicit server-side data-root configuration and the existing typed
+   request/response/source-view methods. Preserve both freezes, the private store
+   and current previews; do not add a client path override or auto-activation.
+   Acceptance: a normal answer with its original citation, clarification,
+   abstention and withdrawn/unavailable support are observable end to end.
+   Missing/invalid authority must refuse service without preview/model fallback.
+   Exercise lifecycle faults only in disposable stores, with no real withdrawals
+   or new approvals introduced merely for tests. Activation review/replay is
+   complete; no further design cycle or whole-manual review is required for this
+   integration. Legacy chat/graph dispatch remains a separate scope.
 2. **Consolidate the demonstrable baseline in parallel.** Gather a short usability
    response to the merged Protein A/G and MabSelect entries; keep the published
    screenshot tour distinct from live execution. Use the existing second-PC
@@ -333,12 +363,12 @@ UI dispatch or new answer-quality claim is implied.
    setup/readiness, citations, warnings and clarification/quarantine behavior are
    recorded without treating documentary checks as scientific validation. Preserve
    both freezes; later behavior changes require a new candidate/version.
-3. **Connect one bounded UI path after approved activation/lifecycle checks.**
-   Add an explicitly typed dispatch through the registered response/source path,
-   with withdrawal, citation, clarification and abstention regressions. Keep the
-   current local previews available and both freezes unchanged. Legacy chat/graph
-   integration remains separate; do not fall back to free model prose. Preserve
-   historical scores and distinguish source publication from answer evaluation.
+3. **Evaluate the integrated bounded answering path.** Retain the known-case
+   UI/citation and withdrawal checks, then prepare an independent evaluation of
+   answers, missing context and abstentions once that path exists. Do not reuse
+   development replays as prospective quality scores or operational approval.
+   Source publication and answer evaluation remain distinct; preserve historical
+   results and the two freezes.
 4. **Instrument and evaluate the actual answering path incrementally.** Add
    OpenTelemetry spans, call/retry/cost accounting and budget enforcement. Evaluate
    citations and abstentions with deterministic checks, calibrated Ragas and
@@ -729,6 +759,7 @@ Selected table repairs and conservation checks do not complete phase 3 extractio
 precision/recall, lifecycle or publication acceptance. Ragas evaluation,
 OpenTelemetry instrumentation and Promptfoo testing remain pending. The minimal MabSelect documentary
 handoff, its separate freeze/replay and corrected local release/withdrawal registry
-are merged. Explicit local activation and UI/legacy-chat integration remain pending,
-as described in the current checkpoint above.
+and the approved private local activation record are merged. One verification
+store is active; Git still ships staged data. Typed UI dispatch and legacy-chat
+integration remain pending, as described in the current checkpoint above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

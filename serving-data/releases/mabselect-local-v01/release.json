@@ -1,0 +1,325 @@
+{
+  "kind": "reviewed_serving_release/v1",
+  "release_id": "mabselect-local-v01",
+  "stage": "staged",
+  "mode": "local_opt_in_no_model",
+  "contract_version": "1",
+  "prepared_on": "2026-11-02",
+  "adapter_version": "local-registry-v01",
+  "renderer_version": "frozen-documentary-preview-v01",
+  "design_decision_refs": [
+    {
+      "artifact_id": "technical-reviewed-dossier-serving-decisions-v01-json",
+      "sha256": "6dbe3937da292bf4cd9d10ef6ed58ee57fa13b8fff14188be02195728a0f9487",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-reviewed-dossier-serving-technical-decisions-v01-json",
+      "sha256": "9f2545b6c50dae75de211fe478092ed64b6969849d97b13c6bb2eeddae915773",
+      "hash_convention": "sha256_lf"
+    }
+  ],
+  "activation_decision_ref": null,
+  "mapping_ref": {
+    "artifact_id": "mapping",
+    "sha256": "3a2196a2a1d6f22bfd5602d274feed4a46c6b77e9dcf665c703c28588ee6a004",
+    "hash_convention": "sha256_lf"
+  },
+  "withdrawals_ref": {
+    "artifact_id": "withdrawals",
+    "sha256": "a398410c8e03601c4bad20771f0319fcc93bcf61603be7cfeda0ec855c8755fa",
+    "hash_convention": "sha256_lf"
+  },
+  "source_index_ref": {
+    "artifact_id": "source-index",
+    "sha256": "2aa9f5dd3a41e31922f332158d4cfcbf3097cf421174d0b0e529e749d637a917",
+    "hash_convention": "sha256_lf"
+  },
+  "dependencies": [
+    {
+      "artifact_id": "demo-__init__-py",
+      "sha256": "db7d5061508f74166f85934f26caeb16d5773601651cb0f8301985bc4b102bf8",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "demo-documentary-py",
+      "sha256": "87bcb5527ed3070b0e227e9792bb4585e6a0fbfd29f435be97bbe7c9ab4fada8",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "demo-documentary_preview-py",
+      "sha256": "0e36e7d089014ef30bfc7a5e7e22d6e7e0849c997fad9d363b2952ad63ca8ccf",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "demo-mabselect-py",
+      "sha256": "7cf84c9a8c150dffb6d5e4530fa20af2cd8d4facd1f14e4cc391d9e1842e2807",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "static-documentary-html",
+      "sha256": "5b41486b05a39a882f867d31eee03b04e026ed22d362ce751f75601f0a1b57e7",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "experiments-cytiva-cleaning-retrieval-human-review-md",
+      "sha256": "ec378005873d35b764ed50f146d233e215752408e6151c1197a7af2a311b557b",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "experiments-cytiva-cleaning-retrieval-pilot-md",
+      "sha256": "9c71291a17f0a66cb2edcb38b2524c75aef2c3921807b5e752e668048950a10d",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "experiments-cytiva-section-questions-human-review-md",
+      "sha256": "15c2487ae09e5dd9b9a9e60788b69c96624de6c527fc474df9e5dc1da142ed5a",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-authority-schema-json",
+      "sha256": "b2ae693f405367817b7449892020fb246230529c611ed450f5c6ac81fbd3fd15",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-common-schema-json",
+      "sha256": "7c12fddb12d91b142fc72620b17b3b36039ae4c4a77bb3d0ae5c8f96f4828dd4",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-mapping-schema-json",
+      "sha256": "4a4f9adc15d924169f4fad114d3fe99d21e8405182f51949ebbafe8ccda6ac7e",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-release-schema-json",
+      "sha256": "1c103499bd2c8f7bffb78c89833749cff6b4637e9b2b0e2c102697f481ff58b9",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-request-schema-json",
+      "sha256": "a23e42d79f6e88e1ce3e43a7319f670048e5716a3d53c96c59da57d6314553e8",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-response-schema-json",
+      "sha256": "2187cdfb6fc82d7b2daeff8bdbf20305d02708572f34c3ea974ad061d15778c6",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-source-index-schema-json",
+      "sha256": "58e3ef582b1f3504105ca4cff52c30f06acf766e50c9214431f035e2f4e87287",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-source-view-schema-json",
+      "sha256": "8c604044eb9b732cc94447b3648cf122e064652f665cc35cd3e315be1466966b",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-serving-v1-validation-error-schema-json",
+      "sha256": "08e88a73ac461bfc20cb3c0222d2bf6f757305dbaee25fe7f74fdbd449cdaaed",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-REVIEWED-DOSSIER-SERVING-CASES-V01-md",
+      "sha256": "4a8dd637b02e7699f397843f8b9330b2e0a95eb921ca014de2b58d67fbfa0f88",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-REVIEWED-DOSSIER-SERVING-CONTRACT-V01-md",
+      "sha256": "d01606ad38e9109a8205a76ea1a1f0ca81d883c689c8ed1a47ba04cea7ededaa",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-REVIEWED-DOSSIER-SERVING-REVIEW-V01-md",
+      "sha256": "67456329facb1738085a725bb6f2eea99900fbe3376bcb8636ab75826c13a0df",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-REVIEWED-DOSSIER-SERVING-TECHNICAL-V01-md",
+      "sha256": "eb823186e773267ff8ab441867b0a03d555e25604a2834559ba02fea50ec6e16",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-mabselect-cleaning-approved-contract-v01-md",
+      "sha256": "1506c3e1d3045d97b0fa0ee53e81b4a4bb3dbad92093f00e2d0ac6752de61f9c",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-mabselect-cleaning-review-v01-json",
+      "sha256": "2386cb3d6d19e454a61c945a7946891e5f269fd133488b2e4335bbedea1627ed",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-mabselect-cleaning-sources-v01-json",
+      "sha256": "d536bc2755325c5c5617462d4b5cf3485776703c27eb7ff521c34d5161eb7bf1",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-reviewed-dossier-serving-decisions-v01-json",
+      "sha256": "6dbe3937da292bf4cd9d10ef6ed58ee57fa13b8fff14188be02195728a0f9487",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-reviewed-dossier-serving-interface-examples-v01-json",
+      "sha256": "9521e2cc028fdbb6d55b438ff6c5b9b83193f67572b7daa0214bef9d4f84fd1d",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "technical-reviewed-dossier-serving-technical-decisions-v01-json",
+      "sha256": "9f2545b6c50dae75de211fe478092ed64b6969849d97b13c6bb2eeddae915773",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "experiments-__init__-py",
+      "sha256": "d85a9055e7803d57f122dc0a6b28cd2d1e803ac33ca8b8f6cc16b9bbc0de0f66",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "cytiva-__init__-py",
+      "sha256": "0fccc52c2f507235d49de438ac1daeaa193bfefdcb8c3069a89a405de45d1aa5",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "cytiva-cleaning_section_questions_v01-json",
+      "sha256": "0b4ad5c9d15cbdfe9150d838e0b7f026ebcf3e63946186a28d35b5580b5df67b",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "mabselect-handoff-freeze-v01-METHOD-md",
+      "sha256": "ecd8b8d39abc33b8d48c655e92a54127ea90a44cd367656e85782c865f11407d",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "mabselect-handoff-freeze-v01-README-md",
+      "sha256": "133ea9a36c966ab97f213d7f7a4eed871f9fecc7b9af95018699dd9ab344a8bc",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "mabselect-handoff-freeze-v01-freeze-decision-json",
+      "sha256": "f4e34bff0e7f47b4429fe17cb9cd80d04c6b9ee316e9313ee39596cb57b19c24",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "cytiva-mabselect_handoff_freeze-py",
+      "sha256": "cf26c115ae339654f7d984e8b208e7445165d16797f38365d1b73b2a69f4ec2e",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "retrieval-pilot-v01-evidence-json",
+      "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "retrieval-pilot-v01-manifest-json",
+      "sha256": "fdc6505cc876ce4de17658cf7b84275a9f264f40d87b4ab88b87e2db70804d2a",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "retrieval-pilot-v01-questions-json",
+      "sha256": "a952dbf6b3e2ea010a67024f9a6625b2c6a4600a80c68c27e2e4b7b286d96bd3",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-cleaning-retrieval-README-md",
+      "sha256": "40a232f746283c26c6dee67b48eea102f42e8fd85ed0723421285a02f4e58665",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-cleaning-retrieval-events-json",
+      "sha256": "7ce4328d0008582b338ffd1eb3c6843514b48bd58b037fb26cb308a7bd9192bd",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-cleaning-retrieval-manifest-json",
+      "sha256": "a3a6a66e1a7c0541603347264021e11eb3f146018ac3a55828446db95fa6d27c",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-cleaning-retrieval-review-json",
+      "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-section-questions-README-md",
+      "sha256": "f6d92555ef7b21d00b09ea756c9948231e99e1a37b5f45f7fce86cf37c0dc40b",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-section-questions-events-json",
+      "sha256": "35282ac6fcfa31f98452c49783099e98ae5b660f926006a22d05f6cf661229d0",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-section-questions-manifest-json",
+      "sha256": "40b8be6ea9ea7e89d387196d8942e8f88e9fb3be48c7f123c2f302bca405b683",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-section-questions-provenance-json",
+      "sha256": "5888ed18c1f2357cfa89f8f0cd5d82df84dbce3b36d6d388b9cc97929a2d0ada",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "reviewed-section-questions-review-json",
+      "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "cytiva-verify_cleaning_retrieval_package-py",
+      "sha256": "122b8bca64e23b5e72289612a80a599612abb06c5ae71739f76000eb291ea38c",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "cytiva-verify_mabselect_design-py",
+      "sha256": "dcf4cad5165c045f57c9a6dc998f9e07e831a2c7877aeab41b00c19082cfc1b3",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "cytiva-verify_section_questions_package-py",
+      "sha256": "260baa5c9f7ad1558a8b2404c66d5e3fec70bc32b8d93a375edfd75d895bbe9f",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "tests-test_cleaning_retrieval_package-py",
+      "sha256": "c6d08016c75f9378081cb70ea4b01f2f821d2aa62a82d2973af1f09221953dc6",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "tests-test_mabselect_handoff_freeze-py",
+      "sha256": "305407687159ada948e6b741bed7085de1d6688bb327d982deaa90887391f3db",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "tests-test_section_questions_package-py",
+      "sha256": "48c3e9330fbb43c3af4fbabd838ad335ee84d53b0f514ae65f5fd160cc7057b0",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "mabselect-handoff-freeze-v01-method-lock-json",
+      "sha256": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "serving-__init__-py",
+      "sha256": "01d848339406a0fd793329da85336639610e5a771a44f33458009e296c97cd3f",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "serving-local_registry-py",
+      "sha256": "9490698b57c1103ad0f622225f25da2b5b6f6aef9b89920c1dd39cdba276f51e",
+      "hash_convention": "sha256_lf"
+    },
+    {
+      "artifact_id": "catalog",
+      "sha256": "c394914ba4cc2696af312987eba7fc0b301846c2aab475e217dbdb14c6b5c290",
+      "hash_convention": "sha256_lf"
+    }
+  ],
+  "limits": {
+    "context_bytes": 65536,
+    "request_bytes": 32768,
+    "max_tasks": 8
+  }
+}

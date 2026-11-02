@@ -1,0 +1,2107 @@
+{
+  "id": "mabselect-local-v02-candidate-replay-v01",
+  "candidate": {
+    "release_id": "mabselect-local-v02",
+    "stage": "staged",
+    "withdrawal_decision": "proposed_not_approved",
+    "withdrawal_entries": 0,
+    "bundles": 5,
+    "sources": 13,
+    "reviews": 5,
+    "dependencies": 56,
+    "authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+    "active_pointer_exists": false,
+    "durable_head_exists": false,
+    "serving_activated": false,
+    "freeze": {
+      "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+      "status": "frozen",
+      "pinned_files": 52,
+      "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+      "environment_verified": true,
+      "runtime_instantiated": false,
+      "serving_activated": false,
+      "prospective_evaluation": false
+    }
+  },
+  "status": "passed",
+  "scope": "accepted_examples_not_independent_answer_or_scientific_validation",
+  "registry_code_sha256_lf": "0c5be9d00d72ca5034080c41668ab8fa967ef389fb97f1dfb13b2a015730db04",
+  "network_attempts": [],
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "serving_activated": false,
+  "cases": [
+    {
+      "case_id": "SX01",
+      "status": "passed",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "response": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "example-01",
+        "release_id": "mabselect-local-v02",
+        "authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+        "status": "supported",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "supported",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0"
+            ],
+            "bundle_keys": [
+              "mabselect.precipitated.general"
+            ],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "context": {
+          "bundles": [
+            {
+              "bundle_key": "mabselect.precipitated.general",
+              "mapping_version": "staging-v1",
+              "review_scope": "Q05",
+              "product": "mabselect",
+              "deposit_context": "precipitated_substances",
+              "required_source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-P"
+              ],
+              "review_ids": [
+                "Q05"
+              ],
+              "conditions": {
+                "kind": "all_of",
+                "children": [
+                  {
+                    "kind": "product_in",
+                    "values": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ],
+                    "source_ids": [
+                      "E167-H"
+                    ]
+                  },
+                  {
+                    "kind": "category_in",
+                    "values": [
+                      "precipitated_substances"
+                    ],
+                    "source_ids": [
+                      "E167-PH"
+                    ]
+                  }
+                ]
+              },
+              "applicability": "true",
+              "condition_explanation": "The manual documents four separate general formulations for this context. No formulation has been selected as suitable.",
+              "options": [
+                {
+                  "option_id": "Q05-block",
+                  "role": "procedure",
+                  "alternative_group_id": "general-formulations",
+                  "sequence_id": "Q05-original-sequence",
+                  "wording": "General block — four separate alternatives",
+                  "source_ids": [
+                    "E167-H",
+                    "E167-PH",
+                    "E167-P"
+                  ],
+                  "steps": [
+                    {
+                      "step_id": "E167-P-1",
+                      "order": 1,
+                      "phase": "cleaning",
+                      "wording": "1.  Wash the medium with 2 column volumes of 50 mM sodium hydroxide in 500  mM sodium sulfate, or 50 mM   \nsodium hydroxide in 1 M sodium chloride, or 100 mM sodium phosphate, or 6 M guanidine hydrochloride in  \n10 mM sodium hydroxide. Contact time: at least 10 min. \n",
+                      "force_text": "Wash",
+                      "source_ids": [
+                        "E167-P"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": null
+                    },
+                    {
+                      "step_id": "E167-P-2",
+                      "order": 2,
+                      "phase": "followup_wash",
+                      "wording": "2. Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                      "force_text": "Immediately wash",
+                      "source_ids": [
+                        "E167-P"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": "E167-P-1"
+                    }
+                  ],
+                  "warnings": []
+                }
+              ],
+              "visible_reservations": [
+                "Approval covers Q05 documentary fidelity only, requiring E167-H, E167-PH and E167-P together: MabSelect media and precipitated or denatured substances.",
+                "Keep four separate alternatives, each at 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide. Do not combine them or turn them into successive steps.",
+                "Preserve each concentration pairing; do not add sodium hydroxide to the phosphate alternative. Preserve contact time of at least 10 minutes, not exactly 10 minutes.",
+                "Preserve the immediate follow-up wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                "Do not infer which alternative is suitable for a real case. No independent scientific validation, operational authorization or approval of other questions is implied.",
+                "Application note: Each alternative: 2 column volumes; contact at least 10 min; immediately the documented follow-up wash. The complete source below retains all conditions."
+              ],
+              "suitability": "not_established"
+            }
+          ],
+          "passages": [
+            {
+              "source_id": "E167-H",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 0,
+              "page_text_end": 94,
+              "scope": "MabSelect media",
+              "quote": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+              "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-PH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 96,
+              "page_text_end": 143,
+              "scope": "MabSelect media",
+              "quote": "To remove precipitated or denatured substances:",
+              "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-P",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 144,
+              "page_text_end": 515,
+              "scope": "MabSelect media",
+              "quote": "1.  Wash the medium with 2 column volumes of 50 mM sodium hydroxide in 500  mM sodium sulfate, or 50 mM   \nsodium hydroxide in 1 M sodium chloride, or 100 mM sodium phosphate, or 6 M guanidine hydrochloride in  \n10 mM sodium hydroxide. Contact time: at least 10 min. \n2. Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+              "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ],
+          "reviews": [
+            {
+              "review_id": "Q05",
+              "kind": "scoped_documentary_review",
+              "question_id": "Q05",
+              "event_id": "005-Q05",
+              "decision": "validated_with_reservation",
+              "original_decision_date": "2026-10-23T11:08:56.852582+00:00",
+              "original_human_message": "Je valide Q05 avec les limites indiquées, en conservant les quatre alternatives et leurs conditions, sans les combiner. Enregistre ma décision et passons à Q06. Aucun LLM, API payante, commit ni push.",
+              "reservations": [
+                "Approval covers Q05 documentary fidelity only, requiring E167-H, E167-PH and E167-P together: MabSelect media and precipitated or denatured substances.",
+                "Keep four separate alternatives, each at 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide. Do not combine them or turn them into successive steps.",
+                "Preserve each concentration pairing; do not add sodium hydroxide to the phosphate alternative. Preserve contact time of at least 10 minutes, not exactly 10 minutes.",
+                "Preserve the immediate follow-up wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                "Do not infer which alternative is suitable for a real case. No independent scientific validation, operational authorization or approval of other questions is implied."
+              ],
+              "evidence_record_sha256": {
+                "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+                "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+                "E167-P": "0763639136da4e71c403fef218209281114f2fd9810376f3d283a0cf2ac7b2bd"
+              },
+              "review_artifact": {
+                "artifact_id": "reviewed-cleaning-retrieval-review-json",
+                "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ]
+        },
+        "citation_refs": [
+          {
+            "source_id": "E167-H",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+          },
+          {
+            "source_id": "E167-PH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-PH"
+          },
+          {
+            "source_id": "E167-P",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-P"
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "needs_clarification": 0,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 7739,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "citations": [
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b"
+        },
+        {
+          "source_id": "E167-PH",
+          "status": "available",
+          "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a"
+        },
+        {
+          "source_id": "E167-P",
+          "status": "available",
+          "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8"
+        }
+      ]
+    },
+    {
+      "case_id": "SX02",
+      "status": "passed",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-02",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "family_unknown",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "response": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "example-02",
+        "release_id": "mabselect-local-v02",
+        "authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+        "status": "needs_clarification",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "needs_clarification",
+            "reason": "product_unknown",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0"
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [
+              "product"
+            ],
+            "absence_scope": null
+          }
+        ],
+        "context": {
+          "bundles": [
+            {
+              "bundle_key": "mabselect.context.clarify",
+              "mapping_version": "staging-v1",
+              "review_scope": "Q09",
+              "product": "family_unknown",
+              "deposit_context": "precipitated_substances",
+              "required_source_ids": [
+                "E166-H",
+                "E166-T",
+                "E166-PH",
+                "E166-LH",
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-LH"
+              ],
+              "review_ids": [
+                "Q09"
+              ],
+              "conditions": {
+                "kind": "source_text",
+                "text": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+                "source_ids": [
+                  "E167-H"
+                ]
+              },
+              "applicability": "unknown",
+              "condition_explanation": "Please confirm the exact product label; the family name or conflicting labels do not select a recipe.",
+              "options": [
+                {
+                  "option_id": "Q09-context",
+                  "role": "clarification_context",
+                  "alternative_group_id": null,
+                  "sequence_id": null,
+                  "wording": "Please confirm the exact product label; the family name or conflicting labels do not select a recipe.",
+                  "source_ids": [
+                    "E166-H",
+                    "E166-T",
+                    "E166-PH",
+                    "E166-LH",
+                    "E167-H",
+                    "E167-PH",
+                    "E167-SH",
+                    "E167-LH"
+                  ],
+                  "steps": [],
+                  "warnings": []
+                }
+              ],
+              "visible_reservations": [
+                "Approval covers Q09 documentary expected clarification behaviour only, with E166-H, E166-T, E166-PH, E166-LH, E167-H, E167-PH, E167-SH and E167-LH jointly required.",
+                "Ask for the exact resin/product and available problem or deposit context before selecting treatment. Do not assume a protein or lipid deposit from increased backpressure alone.",
+                "Do not require an already confirmed scientific diagnosis; unknown context remains unknown. Do not automatically select a sodium hydroxide or ethanol recipe.",
+                "The clarification policy is an application response rule supported by the documentary distinctions, not a verbatim instruction from the manual.",
+                "Approval does not establish that clarification alone determines an operational procedure; no independent scientific validation, operational authorization or approval of other questions is implied."
+              ],
+              "suitability": "not_established"
+            }
+          ],
+          "passages": [
+            {
+              "source_id": "E166-H",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 0,
+              "page_text_end": 51,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "Cleaning of Protein G and Protein A Sepharose media",
+              "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E166-T",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 136,
+              "page_text_end": 319,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "When an increase in backpressure is seen, the medium should be cleaned. In some applications, substances like \ndenatured proteins or lipids do not elute in the regeneration procedure.",
+              "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E166-PH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 320,
+              "page_text_end": 365,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "To remove precipitated or denatured proteins:",
+              "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E166-LH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 366,
+              "page_text_end": 437,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "To remove strongly bound hydrophobic proteins, lipoproteins and lipids:",
+              "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-H",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 0,
+              "page_text_end": 94,
+              "scope": "MabSelect media",
+              "quote": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+              "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-PH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 96,
+              "page_text_end": 143,
+              "scope": "MabSelect media",
+              "quote": "To remove precipitated or denatured substances:",
+              "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-SH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 1259,
+              "page_text_end": 1386,
+              "scope": "MabSelect SuRe and MabSelect SuRe LX only for this stronger-alkali block",
+              "quote": "MabSelect SuRe and MabSelect SuRe LX are alkali-tolerant, allowing the use of more concentrated solutions of sodium \nhydroxide:",
+              "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-LH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 1387,
+              "page_text_end": 1459,
+              "scope": "MabSelect media",
+              "quote": "To remove strongly bound hydrophobic proteins, lipoproteins, and lipids:",
+              "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ],
+          "reviews": [
+            {
+              "review_id": "Q09",
+              "kind": "scoped_documentary_review",
+              "question_id": "Q09",
+              "event_id": "009-Q09",
+              "decision": "validated_with_reservation",
+              "original_decision_date": "2026-10-23T11:49:07.597066+00:00",
+              "original_human_message": "Je valide Q09 avec les limites indiquées, en demandant le produit et le contexte sans supposer de dépôt ni choisir de recette. Enregistre ma décision et passons à Q10. Aucun LLM, API payante, commit ni push.",
+              "reservations": [
+                "Approval covers Q09 documentary expected clarification behaviour only, with E166-H, E166-T, E166-PH, E166-LH, E167-H, E167-PH, E167-SH and E167-LH jointly required.",
+                "Ask for the exact resin/product and available problem or deposit context before selecting treatment. Do not assume a protein or lipid deposit from increased backpressure alone.",
+                "Do not require an already confirmed scientific diagnosis; unknown context remains unknown. Do not automatically select a sodium hydroxide or ethanol recipe.",
+                "The clarification policy is an application response rule supported by the documentary distinctions, not a verbatim instruction from the manual.",
+                "Approval does not establish that clarification alone determines an operational procedure; no independent scientific validation, operational authorization or approval of other questions is implied."
+              ],
+              "evidence_record_sha256": {
+                "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+                "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26",
+                "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+                "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+                "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+                "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+                "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+                "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8"
+              },
+              "review_artifact": {
+                "artifact_id": "reviewed-cleaning-retrieval-review-json",
+                "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ]
+        },
+        "citation_refs": [
+          {
+            "source_id": "E166-H",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-H"
+          },
+          {
+            "source_id": "E166-T",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-T"
+          },
+          {
+            "source_id": "E166-PH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-PH"
+          },
+          {
+            "source_id": "E166-LH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-LH"
+          },
+          {
+            "source_id": "E167-H",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+          },
+          {
+            "source_id": "E167-PH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-PH"
+          },
+          {
+            "source_id": "E167-SH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-SH"
+          },
+          {
+            "source_id": "E167-LH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-LH"
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 1,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 11962,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "citations": [
+        {
+          "source_id": "E166-H",
+          "status": "available",
+          "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303"
+        },
+        {
+          "source_id": "E166-T",
+          "status": "available",
+          "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa"
+        },
+        {
+          "source_id": "E166-PH",
+          "status": "available",
+          "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690"
+        },
+        {
+          "source_id": "E166-LH",
+          "status": "available",
+          "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b"
+        },
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b"
+        },
+        {
+          "source_id": "E167-PH",
+          "status": "available",
+          "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a"
+        },
+        {
+          "source_id": "E167-SH",
+          "status": "available",
+          "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7"
+        },
+        {
+          "source_id": "E167-LH",
+          "status": "available",
+          "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6"
+        }
+      ]
+    },
+    {
+      "case_id": "SX03",
+      "status": "passed",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-03",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure_lx",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "response": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "example-03",
+        "release_id": "mabselect-local-v02",
+        "authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+        "status": "partial",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "supported",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0",
+              "/context/bundles/1"
+            ],
+            "bundle_keys": [
+              "mabselect.hydrophobic.detergent",
+              "mabselect.hydrophobic.solvent"
+            ],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          },
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "abstained",
+            "reason": "not_in_selected_excerpts",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/1"
+              }
+            ],
+            "bundle_refs": [],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": "Selected edition-bound MabSelect blocks only; not the entire manual."
+          }
+        ],
+        "context": {
+          "bundles": [
+            {
+              "bundle_key": "mabselect.hydrophobic.detergent",
+              "mapping_version": "staging-v1",
+              "review_scope": "N06",
+              "product": "sure_lx",
+              "deposit_context": "hydrophobic_deposits",
+              "required_source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-D"
+              ],
+              "review_ids": [
+                "N06"
+              ],
+              "conditions": {
+                "kind": "all_of",
+                "children": [
+                  {
+                    "kind": "product_in",
+                    "values": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ],
+                    "source_ids": [
+                      "E167-H"
+                    ]
+                  },
+                  {
+                    "kind": "category_in",
+                    "values": [
+                      "hydrophobic_deposits"
+                    ],
+                    "source_ids": [
+                      "E167-LH"
+                    ]
+                  }
+                ]
+              },
+              "applicability": "true",
+              "condition_explanation": "Explore the documented hydrophobic-context alternatives; no detergent or solvent is selected for your process. Detergent and organic solvents are alternative routes. Within the solvent route, ethanol OR 2-propanol remains a choice, not a mixture or succession.",
+              "options": [
+                {
+                  "option_id": "N06-block",
+                  "role": "procedure",
+                  "alternative_group_id": "hydrophobic-routes",
+                  "sequence_id": "N06-original-sequence",
+                  "wording": "Nonionic detergent — 0.1% is an example",
+                  "source_ids": [
+                    "E167-H",
+                    "E167-LH",
+                    "E167-D"
+                  ],
+                  "steps": [
+                    {
+                      "step_id": "E167-D-1",
+                      "order": 1,
+                      "phase": "cleaning",
+                      "wording": "1. Wash with 2 column volumes of a nonionic detergent (e.g., 0.1% solution).\n",
+                      "force_text": "Wash",
+                      "source_ids": [
+                        "E167-D"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": null
+                    },
+                    {
+                      "step_id": "E167-D-2",
+                      "order": 2,
+                      "phase": "followup_wash",
+                      "wording": "2 Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                      "force_text": "Immediately wash",
+                      "source_ids": [
+                        "E167-D"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": "E167-D-1"
+                    }
+                  ],
+                  "warnings": []
+                }
+              ],
+              "visible_reservations": [
+                "Approval covers N06 documentary expected answer only; E167-H, E167-LH and E167-D are jointly indispensable, preserving MabSelect scope and the targeted hydrophobic proteins, lipoproteins and lipids.",
+                "The pH 7.0–8.0 applies to the binding buffer of the follow-up wash, not to the detergent solution. Do not convert that range into a unique target or automatic adjustment rule.",
+                "Preserve the preceding 2-column-volume nonionic-detergent wash and the example status of a 0.1% solution.",
+                "Preserve the immediate follow-up wash with at least 5 column volumes of sterile and filtered binding buffer; do not invent a specific detergent, temperature, duration or flow rate.",
+                "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied.",
+                "Application note: pH applies to the following binding buffer. No named detergent, temperature, duration or numerical flow is specified in this block."
+              ],
+              "suitability": "not_established"
+            },
+            {
+              "bundle_key": "mabselect.hydrophobic.solvent",
+              "mapping_version": "staging-v1",
+              "review_scope": "N07",
+              "product": "sure_lx",
+              "deposit_context": "hydrophobic_deposits",
+              "required_source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-E",
+                "E167-W"
+              ],
+              "review_ids": [
+                "N07"
+              ],
+              "conditions": {
+                "kind": "all_of",
+                "children": [
+                  {
+                    "kind": "product_in",
+                    "values": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ],
+                    "source_ids": [
+                      "E167-H"
+                    ]
+                  },
+                  {
+                    "kind": "category_in",
+                    "values": [
+                      "hydrophobic_deposits"
+                    ],
+                    "source_ids": [
+                      "E167-LH"
+                    ]
+                  }
+                ]
+              },
+              "applicability": "true",
+              "condition_explanation": "Explore the documented hydrophobic-context alternatives; no detergent or solvent is selected for your process. Detergent and organic solvents are alternative routes. Within the solvent route, ethanol OR 2-propanol remains a choice, not a mixture or succession.",
+              "options": [
+                {
+                  "option_id": "N07-block",
+                  "role": "procedure",
+                  "alternative_group_id": "hydrophobic-routes",
+                  "sequence_id": "N07-original-sequence",
+                  "wording": "Organic-solvent alternative — ethanol OR 2-propanol",
+                  "source_ids": [
+                    "E167-H",
+                    "E167-LH",
+                    "E167-E",
+                    "E167-W"
+                  ],
+                  "steps": [
+                    {
+                      "step_id": "E167-E-1",
+                      "order": 1,
+                      "phase": "cleaning",
+                      "wording": "2a. Alternatively, wash with 3 to 4 column volumes of 70% ethanol or 30% 2-propanol. ",
+                      "force_text": "Wash",
+                      "source_ids": [
+                        "E167-E"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": null
+                    },
+                    {
+                      "step_id": "E167-E-2",
+                      "order": 2,
+                      "phase": "followup_wash",
+                      "wording": "Wash immediately with at \nleast 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0. Apply increasing gradients to avoid air \nbubble formation when using high concentrations of organic solvents.",
+                      "force_text": "Wash immediately",
+                      "source_ids": [
+                        "E167-E"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": "E167-E-1"
+                    }
+                  ],
+                  "warnings": [
+                    {
+                      "wording": "2a. Alternatively, wash with 3 to 4 column volumes of 70% ethanol or 30% 2-propanol. Wash immediately with at \nleast 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0. Apply increasing gradients to avoid air \nbubble formation when using high concentrations of organic solvents.",
+                      "source_ids": [
+                        "E167-E"
+                      ]
+                    },
+                    {
+                      "wording": "Washing with 70% ethanol and 30% 2-propanol will increase backpressure. Use a lower flow rate when cleaning \nwith 70% ethanol or 30% 2-propanol.",
+                      "source_ids": [
+                        "E167-W"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "visible_reservations": [
+                "Approval covers N07 documentary partial-answer/scoped-refusal behaviour only; E167-H, E167-LH, E167-E and E167-W are jointly indispensable, preserving MabSelect scope and the targeted deposit category.",
+                "Keep the two precautions distinct: increasing gradients to avoid air bubbles at high organic-solvent concentrations; lower flow because washing with 70% ethanol or 30% 2-propanol increases backpressure.",
+                "Do not state that increasing gradients are prescribed to reduce pressure; do not invent a numerical gradient profile, flow rate or pressure limit in bar.",
+                "Preserve the alternative ethanol OR 2-propanol route. Return the supported explanations while refusing only the unsupported numerical pressure limit.",
+                "Limit the absence conclusion to the selected block, without implying no product pressure limit exists elsewhere.",
+                "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied.",
+                "Application note: Increasing gradients address air bubbles; lower flow addresses increased backpressure. No numerical gradient, flow or pressure limit, or solvent contact time is specified in this block. No page-166 12-hour hold is transferred."
+              ],
+              "suitability": "not_established"
+            }
+          ],
+          "passages": [
+            {
+              "source_id": "E167-H",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 0,
+              "page_text_end": 94,
+              "scope": "MabSelect media",
+              "quote": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+              "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-LH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 1387,
+              "page_text_end": 1459,
+              "scope": "MabSelect media",
+              "quote": "To remove strongly bound hydrophobic proteins, lipoproteins, and lipids:",
+              "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-D",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 781,
+              "page_text_end": 960,
+              "scope": "MabSelect media",
+              "quote": "1. Wash with 2 column volumes of a nonionic detergent (e.g., 0.1% solution).\n2 Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+              "quote_sha256": "96bec6ca131f56609bd54960ff8518adc1525413ca791b8cb60b0402f5266e76",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-E",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 962,
+              "page_text_end": 1258,
+              "scope": "MabSelect media",
+              "quote": "2a. Alternatively, wash with 3 to 4 column volumes of 70% ethanol or 30% 2-propanol. Wash immediately with at \nleast 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0. Apply increasing gradients to avoid air \nbubble formation when using high concentrations of organic solvents.",
+              "quote_sha256": "4ae45301795ef8ed166f21d2c38622d013e781799c1ed6ebecba1cf50f4f5af7",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-W",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 1461,
+              "page_text_end": 1605,
+              "scope": "MabSelect media",
+              "quote": "Washing with 70% ethanol and 30% 2-propanol will increase backpressure. Use a lower flow rate when cleaning \nwith 70% ethanol or 30% 2-propanol.",
+              "quote_sha256": "95d1c60e7132a6f0e08d252f8755661bb81b7bc35220e6013467357265427088",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ],
+          "reviews": [
+            {
+              "review_id": "N06",
+              "kind": "scoped_documentary_review",
+              "question_id": "N06",
+              "event_id": "006-N06",
+              "decision": "validated_with_reservation",
+              "original_decision_date": "2026-10-23T15:01:38.446343+00:00",
+              "original_human_message": "Je valide N06 avec les limites indiquées, en réservant le pH au tampon du lavage suivant, sans règle automatique d’ajustement. Enregistre ma décision et passons à N07. Aucun LLM, API payante, commit ni push.",
+              "reservations": [
+                "Approval covers N06 documentary expected answer only; E167-H, E167-LH and E167-D are jointly indispensable, preserving MabSelect scope and the targeted hydrophobic proteins, lipoproteins and lipids.",
+                "The pH 7.0–8.0 applies to the binding buffer of the follow-up wash, not to the detergent solution. Do not convert that range into a unique target or automatic adjustment rule.",
+                "Preserve the preceding 2-column-volume nonionic-detergent wash and the example status of a 0.1% solution.",
+                "Preserve the immediate follow-up wash with at least 5 column volumes of sterile and filtered binding buffer; do not invent a specific detergent, temperature, duration or flow rate.",
+                "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+              ],
+              "evidence_record_sha256": {
+                "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+                "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+                "E167-D": "ac364b229f1ca70a9c78288cf955daf21b288a60c162fbe15ae251d2e766da24"
+              },
+              "review_artifact": {
+                "artifact_id": "reviewed-section-questions-review-json",
+                "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "review_id": "N07",
+              "kind": "scoped_documentary_review",
+              "question_id": "N07",
+              "event_id": "007-N07",
+              "decision": "validated_with_reservation",
+              "original_decision_date": "2026-10-23T15:53:11.620052+00:00",
+              "original_human_message": "Je valide N07 avec les limites indiquées, en distinguant les deux précautions et sans limite de pression inventée. Enregistre ma décision et passons à N08. Aucun LLM, API payante, commit ni push.",
+              "reservations": [
+                "Approval covers N07 documentary partial-answer/scoped-refusal behaviour only; E167-H, E167-LH, E167-E and E167-W are jointly indispensable, preserving MabSelect scope and the targeted deposit category.",
+                "Keep the two precautions distinct: increasing gradients to avoid air bubbles at high organic-solvent concentrations; lower flow because washing with 70% ethanol or 30% 2-propanol increases backpressure.",
+                "Do not state that increasing gradients are prescribed to reduce pressure; do not invent a numerical gradient profile, flow rate or pressure limit in bar.",
+                "Preserve the alternative ethanol OR 2-propanol route. Return the supported explanations while refusing only the unsupported numerical pressure limit.",
+                "Limit the absence conclusion to the selected block, without implying no product pressure limit exists elsewhere.",
+                "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+              ],
+              "evidence_record_sha256": {
+                "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+                "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+                "E167-E": "e781189daa71a13b3e534852ac1cf01a6cf787f0a55bdd34610144aa660fd827",
+                "E167-W": "f01e9ff331f834e882befdd1bc83e92f24c74adc1e7c3a61f80285258aa4b154"
+              },
+              "review_artifact": {
+                "artifact_id": "reviewed-section-questions-review-json",
+                "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ]
+        },
+        "citation_refs": [
+          {
+            "source_id": "E167-H",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+          },
+          {
+            "source_id": "E167-LH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-LH"
+          },
+          {
+            "source_id": "E167-D",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-D"
+          },
+          {
+            "source_id": "E167-E",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-E"
+          },
+          {
+            "source_id": "E167-W",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-W"
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "needs_clarification": 0,
+          "abstained": 1,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 14902,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "citations": [
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b"
+        },
+        {
+          "source_id": "E167-LH",
+          "status": "available",
+          "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6"
+        },
+        {
+          "source_id": "E167-D",
+          "status": "available",
+          "quote_sha256": "96bec6ca131f56609bd54960ff8518adc1525413ca791b8cb60b0402f5266e76"
+        },
+        {
+          "source_id": "E167-E",
+          "status": "available",
+          "quote_sha256": "4ae45301795ef8ed166f21d2c38622d013e781799c1ed6ebecba1cf50f4f5af7"
+        },
+        {
+          "source_id": "E167-W",
+          "status": "available",
+          "quote_sha256": "95d1c60e7132a6f0e08d252f8755661bb81b7bc35220e6013467357265427088"
+        }
+      ]
+    },
+    {
+      "case_id": "SX04",
+      "status": "passed",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-04",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "unknown",
+            "deposit_context": "unknown",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "B",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "response": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "example-04",
+        "release_id": "mabselect-local-v02",
+        "authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+        "status": "partial",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "needs_clarification",
+            "reason": "product_and_context_unknown",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0"
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [
+              "product",
+              "deposit_context"
+            ],
+            "absence_scope": null
+          },
+          {
+            "task_id": "B",
+            "requested_item": "cleaning_options",
+            "state": "supported",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/1/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/1/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/1/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/1"
+            ],
+            "bundle_keys": [
+              "mabselect.precipitated.general"
+            ],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "context": {
+          "bundles": [
+            {
+              "bundle_key": "mabselect.context.clarify",
+              "mapping_version": "staging-v1",
+              "review_scope": "Q09",
+              "product": "unknown",
+              "deposit_context": "unknown",
+              "required_source_ids": [
+                "E166-H",
+                "E166-T",
+                "E166-PH",
+                "E166-LH",
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-LH"
+              ],
+              "review_ids": [
+                "Q09"
+              ],
+              "conditions": {
+                "kind": "source_text",
+                "text": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+                "source_ids": [
+                  "E167-H"
+                ]
+              },
+              "applicability": "unknown",
+              "condition_explanation": "Please confirm the exact product label; the family name or conflicting labels do not select a recipe.",
+              "options": [
+                {
+                  "option_id": "Q09-context",
+                  "role": "clarification_context",
+                  "alternative_group_id": null,
+                  "sequence_id": null,
+                  "wording": "Please confirm the exact product label; the family name or conflicting labels do not select a recipe.",
+                  "source_ids": [
+                    "E166-H",
+                    "E166-T",
+                    "E166-PH",
+                    "E166-LH",
+                    "E167-H",
+                    "E167-PH",
+                    "E167-SH",
+                    "E167-LH"
+                  ],
+                  "steps": [],
+                  "warnings": []
+                }
+              ],
+              "visible_reservations": [
+                "Approval covers Q09 documentary expected clarification behaviour only, with E166-H, E166-T, E166-PH, E166-LH, E167-H, E167-PH, E167-SH and E167-LH jointly required.",
+                "Ask for the exact resin/product and available problem or deposit context before selecting treatment. Do not assume a protein or lipid deposit from increased backpressure alone.",
+                "Do not require an already confirmed scientific diagnosis; unknown context remains unknown. Do not automatically select a sodium hydroxide or ethanol recipe.",
+                "The clarification policy is an application response rule supported by the documentary distinctions, not a verbatim instruction from the manual.",
+                "Approval does not establish that clarification alone determines an operational procedure; no independent scientific validation, operational authorization or approval of other questions is implied."
+              ],
+              "suitability": "not_established"
+            },
+            {
+              "bundle_key": "mabselect.precipitated.general",
+              "mapping_version": "staging-v1",
+              "review_scope": "Q05",
+              "product": "mabselect",
+              "deposit_context": "precipitated_substances",
+              "required_source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-P"
+              ],
+              "review_ids": [
+                "Q05"
+              ],
+              "conditions": {
+                "kind": "all_of",
+                "children": [
+                  {
+                    "kind": "product_in",
+                    "values": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ],
+                    "source_ids": [
+                      "E167-H"
+                    ]
+                  },
+                  {
+                    "kind": "category_in",
+                    "values": [
+                      "precipitated_substances"
+                    ],
+                    "source_ids": [
+                      "E167-PH"
+                    ]
+                  }
+                ]
+              },
+              "applicability": "true",
+              "condition_explanation": "The manual documents four separate general formulations for this context. No formulation has been selected as suitable.",
+              "options": [
+                {
+                  "option_id": "Q05-block",
+                  "role": "procedure",
+                  "alternative_group_id": "general-formulations",
+                  "sequence_id": "Q05-original-sequence",
+                  "wording": "General block — four separate alternatives",
+                  "source_ids": [
+                    "E167-H",
+                    "E167-PH",
+                    "E167-P"
+                  ],
+                  "steps": [
+                    {
+                      "step_id": "E167-P-1",
+                      "order": 1,
+                      "phase": "cleaning",
+                      "wording": "1.  Wash the medium with 2 column volumes of 50 mM sodium hydroxide in 500  mM sodium sulfate, or 50 mM   \nsodium hydroxide in 1 M sodium chloride, or 100 mM sodium phosphate, or 6 M guanidine hydrochloride in  \n10 mM sodium hydroxide. Contact time: at least 10 min. \n",
+                      "force_text": "Wash",
+                      "source_ids": [
+                        "E167-P"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": null
+                    },
+                    {
+                      "step_id": "E167-P-2",
+                      "order": 2,
+                      "phase": "followup_wash",
+                      "wording": "2. Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                      "force_text": "Immediately wash",
+                      "source_ids": [
+                        "E167-P"
+                      ],
+                      "quantities": [],
+                      "immediate_after_step_id": "E167-P-1"
+                    }
+                  ],
+                  "warnings": []
+                }
+              ],
+              "visible_reservations": [
+                "Approval covers Q05 documentary fidelity only, requiring E167-H, E167-PH and E167-P together: MabSelect media and precipitated or denatured substances.",
+                "Keep four separate alternatives, each at 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide. Do not combine them or turn them into successive steps.",
+                "Preserve each concentration pairing; do not add sodium hydroxide to the phosphate alternative. Preserve contact time of at least 10 minutes, not exactly 10 minutes.",
+                "Preserve the immediate follow-up wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                "Do not infer which alternative is suitable for a real case. No independent scientific validation, operational authorization or approval of other questions is implied.",
+                "Application note: Each alternative: 2 column volumes; contact at least 10 min; immediately the documented follow-up wash. The complete source below retains all conditions."
+              ],
+              "suitability": "not_established"
+            }
+          ],
+          "passages": [
+            {
+              "source_id": "E166-H",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 0,
+              "page_text_end": 51,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "Cleaning of Protein G and Protein A Sepharose media",
+              "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E166-T",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 136,
+              "page_text_end": 319,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "When an increase in backpressure is seen, the medium should be cleaned. In some applications, substances like \ndenatured proteins or lipids do not elute in the regeneration procedure.",
+              "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E166-PH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 320,
+              "page_text_end": 365,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "To remove precipitated or denatured proteins:",
+              "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E166-LH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "166",
+              "pdf_page_1based": 166,
+              "pdf_page_index_0based": 165,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 366,
+              "page_text_end": 437,
+              "scope": "Protein G and Protein A Sepharose media",
+              "quote": "To remove strongly bound hydrophobic proteins, lipoproteins and lipids:",
+              "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-H",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 0,
+              "page_text_end": 94,
+              "scope": "MabSelect media",
+              "quote": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+              "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-PH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 96,
+              "page_text_end": 143,
+              "scope": "MabSelect media",
+              "quote": "To remove precipitated or denatured substances:",
+              "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-SH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 1259,
+              "page_text_end": 1386,
+              "scope": "MabSelect SuRe and MabSelect SuRe LX only for this stronger-alkali block",
+              "quote": "MabSelect SuRe and MabSelect SuRe LX are alkali-tolerant, allowing the use of more concentrated solutions of sodium \nhydroxide:",
+              "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-LH",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 1387,
+              "page_text_end": 1459,
+              "scope": "MabSelect media",
+              "quote": "To remove strongly bound hydrophobic proteins, lipoproteins, and lipids:",
+              "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "source_id": "E167-P",
+              "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+              "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+              "document_reference": "CY13981-25Jan21-HB",
+              "edition_metadata_origin": "existing project registry; not newly certified",
+              "printed_page_label": "167",
+              "pdf_page_1based": 167,
+              "pdf_page_index_0based": 166,
+              "extraction_version": "pypdf-6.21.1",
+              "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+              "offset_unit": "unicode_code_points",
+              "interval": "start_inclusive_end_exclusive",
+              "page_text_start": 144,
+              "page_text_end": 515,
+              "scope": "MabSelect media",
+              "quote": "1.  Wash the medium with 2 column volumes of 50 mM sodium hydroxide in 500  mM sodium sulfate, or 50 mM   \nsodium hydroxide in 1 M sodium chloride, or 100 mM sodium phosphate, or 6 M guanidine hydrochloride in  \n10 mM sodium hydroxide. Contact time: at least 10 min. \n2. Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+              "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+              "source_artifact": {
+                "artifact_id": "retrieval-pilot-v01-evidence-json",
+                "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ],
+          "reviews": [
+            {
+              "review_id": "Q09",
+              "kind": "scoped_documentary_review",
+              "question_id": "Q09",
+              "event_id": "009-Q09",
+              "decision": "validated_with_reservation",
+              "original_decision_date": "2026-10-23T11:49:07.597066+00:00",
+              "original_human_message": "Je valide Q09 avec les limites indiquées, en demandant le produit et le contexte sans supposer de dépôt ni choisir de recette. Enregistre ma décision et passons à Q10. Aucun LLM, API payante, commit ni push.",
+              "reservations": [
+                "Approval covers Q09 documentary expected clarification behaviour only, with E166-H, E166-T, E166-PH, E166-LH, E167-H, E167-PH, E167-SH and E167-LH jointly required.",
+                "Ask for the exact resin/product and available problem or deposit context before selecting treatment. Do not assume a protein or lipid deposit from increased backpressure alone.",
+                "Do not require an already confirmed scientific diagnosis; unknown context remains unknown. Do not automatically select a sodium hydroxide or ethanol recipe.",
+                "The clarification policy is an application response rule supported by the documentary distinctions, not a verbatim instruction from the manual.",
+                "Approval does not establish that clarification alone determines an operational procedure; no independent scientific validation, operational authorization or approval of other questions is implied."
+              ],
+              "evidence_record_sha256": {
+                "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+                "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26",
+                "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+                "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+                "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+                "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+                "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+                "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8"
+              },
+              "review_artifact": {
+                "artifact_id": "reviewed-cleaning-retrieval-review-json",
+                "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+                "hash_convention": "sha256_lf"
+              }
+            },
+            {
+              "review_id": "Q05",
+              "kind": "scoped_documentary_review",
+              "question_id": "Q05",
+              "event_id": "005-Q05",
+              "decision": "validated_with_reservation",
+              "original_decision_date": "2026-10-23T11:08:56.852582+00:00",
+              "original_human_message": "Je valide Q05 avec les limites indiquées, en conservant les quatre alternatives et leurs conditions, sans les combiner. Enregistre ma décision et passons à Q06. Aucun LLM, API payante, commit ni push.",
+              "reservations": [
+                "Approval covers Q05 documentary fidelity only, requiring E167-H, E167-PH and E167-P together: MabSelect media and precipitated or denatured substances.",
+                "Keep four separate alternatives, each at 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide. Do not combine them or turn them into successive steps.",
+                "Preserve each concentration pairing; do not add sodium hydroxide to the phosphate alternative. Preserve contact time of at least 10 minutes, not exactly 10 minutes.",
+                "Preserve the immediate follow-up wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+                "Do not infer which alternative is suitable for a real case. No independent scientific validation, operational authorization or approval of other questions is implied."
+              ],
+              "evidence_record_sha256": {
+                "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+                "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+                "E167-P": "0763639136da4e71c403fef218209281114f2fd9810376f3d283a0cf2ac7b2bd"
+              },
+              "review_artifact": {
+                "artifact_id": "reviewed-cleaning-retrieval-review-json",
+                "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+                "hash_convention": "sha256_lf"
+              }
+            }
+          ]
+        },
+        "citation_refs": [
+          {
+            "source_id": "E166-H",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-H"
+          },
+          {
+            "source_id": "E166-T",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-T"
+          },
+          {
+            "source_id": "E166-PH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-PH"
+          },
+          {
+            "source_id": "E166-LH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-LH"
+          },
+          {
+            "source_id": "E167-H",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+          },
+          {
+            "source_id": "E167-PH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-PH"
+          },
+          {
+            "source_id": "E167-SH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-SH"
+          },
+          {
+            "source_id": "E167-LH",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-LH"
+          },
+          {
+            "source_id": "E167-P",
+            "release_id": "mabselect-local-v02",
+            "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-P"
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "needs_clarification": 1,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 17729,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "citations": [
+        {
+          "source_id": "E166-H",
+          "status": "available",
+          "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303"
+        },
+        {
+          "source_id": "E166-T",
+          "status": "available",
+          "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa"
+        },
+        {
+          "source_id": "E166-PH",
+          "status": "available",
+          "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690"
+        },
+        {
+          "source_id": "E166-LH",
+          "status": "available",
+          "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b"
+        },
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b"
+        },
+        {
+          "source_id": "E167-PH",
+          "status": "available",
+          "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a"
+        },
+        {
+          "source_id": "E167-SH",
+          "status": "available",
+          "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7"
+        },
+        {
+          "source_id": "E167-LH",
+          "status": "available",
+          "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6"
+        },
+        {
+          "source_id": "E167-P",
+          "status": "available",
+          "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8"
+        }
+      ]
+    },
+    {
+      "case_id": "SX05",
+      "status": "passed",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-05",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "pressure_limit"
+            ],
+            "excluded_items": [
+              "pressure_limit"
+            ]
+          }
+        ]
+      },
+      "response": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "example-05",
+        "release_id": "mabselect-local-v02",
+        "authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+        "status": "abstained",
+        "response_reason": "no_requested_item",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "excluded",
+            "reason": "excluded_by_request",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              },
+              {
+                "field": "exclusion",
+                "request_pointer": "/tasks/0/excluded_items/0"
+              }
+            ],
+            "bundle_refs": [],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "context": {
+          "bundles": [],
+          "passages": [],
+          "reviews": []
+        },
+        "citation_refs": [],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 1
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "citations": []
+    },
+    {
+      "case_id": "SX06",
+      "status": "passed",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-06",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ],
+        "approved_sources": [
+          "E167-W"
+        ]
+      },
+      "response": {
+        "kind": "reviewed_serving_validation_error/v1",
+        "request_id": "example-06",
+        "errors": [
+          {
+            "code": "unknown_authority_field",
+            "request_pointer": "/approved_sources"
+          }
+        ]
+      },
+      "citations": []
+    }
+  ]
+}

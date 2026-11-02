@@ -1,0 +1,12 @@
+{
+  "kind": "reviewed_serving_withdrawals/v1",
+  "inventory_id": "mabselect-local-v01-withdrawals-v01",
+  "version": 1,
+  "validator": "project_user_via_conversation",
+  "decision_ref": {
+    "artifact_id": "mabselect-local-v01-withdrawal-decision",
+    "sha256": "8bff259a21dfa017562fc359e99303987e55d6f591c22d5ba5866a6d8e8dbb8d",
+    "hash_convention": "sha256_lf"
+  },
+  "entries": []
+}

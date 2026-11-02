@@ -1,0 +1,16 @@
+{
+  "id": "mabselect-documentary-handoff-corrected-freeze-v01-decision",
+  "recorded_on": "2026-11-02",
+  "date_precision": "day; no exact decision timestamp asserted",
+  "reviewer": "project_user_via_conversation",
+  "original_human_message": "Fige le passage documentaire MabSelect corrigé avec son inventaire reproductible, puis rejoue les cas validés. Garde v03, les 16 notes et les pilotes inchangés. Aucun LLM, API payante, commit ni push.",
+  "decision": "freeze_corrected_documentary_handoff_and_replay_existing_accepted_cases",
+  "scope": "local runtime reproducibility and known-case replay only; no serving activation, scientific approval, commit or push",
+  "base_commit": "776dc12b73534620ae95afb9404e44776e4c228d",
+  "preserve": [
+    "frozen v03",
+    "16 historical notes",
+    "pilots",
+    "original source and review records"
+  ]
+}

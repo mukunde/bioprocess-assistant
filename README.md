@@ -36,7 +36,34 @@ The optional MP4 download remains available. The same site now hosts the recorde
 
 ## Current status
 
-Latest merged application checkpoint (2 November 2026): `main` at `59b5aee`, including
+Status reviewed on 3 November 2026. Latest merged application checkpoint:
+`main` at `c230f14`, including [PR #78](https://github.com/mukunde/bioprocess-assistant/pull/78).
+The **opt-in MabSelect registry UI** is merged: an explicit server-side authority
+root supplies typed responses and current-authority citation views. It handles
+clarification, scoped abstention and withdrawn support without preview fallback;
+independent support and essential warnings remain available. A 15-second request/
+body deadline allows manual retry and rejects late results. Unexpected citation
+failures return controlled 503 responses; truly unknown sources remain 404 under
+verified authority. See the [usage guide](docs/CYTIVA-REGISTRY-UI.md) and
+[nine-file delivery/review package](docs/validation/MABSELECT-REGISTRY-UI-PACKAGE.md).
+
+The complete suite on merged `main` passed **914 tests executed: 913 passed,
+one optional PDFium preview skip**, with no failures/errors. It includes **18 UI
+HTTP/DOM tests**, six added for failure containment and timeout/retry. Normal
+responses and source pages were checked in the browser; withdrawal/corruption/
+request-stall tests use disposable or controlled fixtures. Both original freezes
+remain valid and unchanged: v03 (36 pins), MabSelect (52 pins). This UI is outside
+those historical freeze closures; these are known-case conformance results, not
+an independent answer-quality or scientific benchmark.
+
+The private verification store is still active at generation 1 with zero
+withdrawals and is not shipped in Git. Fresh clones retain the staged candidate
+and require their own reviewed local activation. The new UI on port 8784 is an
+explicit opt-in; the original preview on 8783, Windows launchers, recorded tours
+and legacy chat remain separate and unchanged. No public executable deployment
+or automatic activation is introduced.
+
+Earlier local activation checkpoint (2 November 2026): `main` at `59b5aee`, including
 [PR #76](https://github.com/mukunde/bioprocess-assistant/pull/76). The approved
 **local activation of `mabselect-local-v02`** is recorded in the merged eight-file
 [audit package](experiments/cytiva/mabselect-local-activation-v02/README.md).
@@ -54,8 +81,8 @@ answer-quality or scientific validation.
 
 **Local activation is not deployment:** the private store is ignored and is not
 shipped in Git. A fresh clone still has the staged candidate and cannot serve it
-without its own reviewed local activation. The current UI, launcher and legacy
-chat remain unconnected to the active registry. The merged package records the
+without its own reviewed local activation. At that checkpoint the UI, launcher
+and legacy chat were unconnected to the active registry. The merged package records the
 completed local run; it does not activate anything on another machine. See the
 [activation report and recovery limits](docs/validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.md).
 
@@ -188,7 +215,8 @@ and usability fixes were agent checks, not new human scientific approval.
 | Bounded backpressure journey | Merged: deterministic Protein A/G Sepharose product/context selection, clarification, separate alternatives and original citations; independent of frozen v03. MabSelect is outside scope |
 | MabSelect cleaning journey | Merged in PR #68: exact-product/context controls, source-linked general/restricted alternatives, warnings and no-recipe clarification; portable approval verification and DOM/API mutation checks; separate from v03 and the legacy chat |
 | Reviewed documentary handoff | Implementation merged in PR #70; separate 52-file freeze and accepted-case replay merged in PR #72. Typed task-bound support, citations/reservations, clarification, scoped abstention and contained failures. Local preview only; no activated release or legacy chat/graph integration |
-| Local release/withdrawal registry | Implementation merged in PR #74; approved local v02 activation record merged in PR #76. Private verification store active with an empty withdrawal inventory; versioned candidate remains staged. No UI/legacy-chat dispatch or automatic activation in a fresh clone; local single-writer trust boundary |
+| Local release/withdrawal registry | Implementation merged in PR #74; approved private v02 activation record merged in PR #76. Empty initial withdrawal inventory; Git ships staged data, no automatic activation in a fresh clone; local single-writer trust boundary |
+| Opt-in MabSelect registry UI | Merged in PR #78: explicit-root typed responses/current-authority citations, clarification, scoped abstention, withdrawals and bounded retry. 18 HTTP/DOM tests pass; existing previews/launchers and legacy chat remain unchanged |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
 The current chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
@@ -283,6 +311,20 @@ Inspect the task attribution, scoped abstention and original E167-W citation.
 The preview needs no LLM, database, PDF or new download and does not change v03.
 Its default Python service remains inactive unless explicitly opened in preview
 mode. The published video/Flowshot captures are unchanged and predate this handoff.
+
+To use the separate **merged registry-backed UI**, provide an existing approved
+local authority root explicitly. On the verification checkout:
+
+```powershell
+.\.venv-demo\Scripts\python.exe -m demo.registry_ui --registry-root .local-tools\mabselect-registry-v02-runtime --port 8784
+```
+
+Open [localhost:8784](http://127.0.0.1:8784/). Citation pages use current withdrawal
+authority; missing or invalid authority returns unavailable, with no staging
+fallback. This command never creates/activates the root. A fresh clone does not
+contain the private store; use its own separately reviewed activation. See the
+[registry UI walkthrough](docs/CYTIVA-REGISTRY-UI.md) for setup, clarification,
+abstention, recovery and test commands. The original preview above remains available.
 
 Verify the new freeze or replay its accepted cases with the recorded CPython
 3.13.0 environment; no site packages, PDF, tokenizer cache or network is required:
@@ -423,7 +465,8 @@ does not establish general language understanding or generated-answer quality.
 | [Bounded backpressure journey](docs/validation/CYTIVA-TROUBLESHOOTING-DEMO.md) | Merged: four agent browser scenarios, 17 journey/demo regressions and scoped cleaning-review reuse; exact source quotations and pressure warning retained | Product/context exploration, not diagnosis; no independent retrieval/answer benchmark or operational approval. MabSelect outside scope; frozen v03 unchanged |
 | [MabSelect and suite repairs](docs/validation/MABSELECT-CLEANING-PACKAGE.md) | Merged in PR #68: MS01–MS08/C1–C4 design approval replay, MC01–MC12, DOM/API control and mutation tests; merged-main suite 829 passed / one optional skip | Known reviewed sources and code; no new runtime freeze, source approval or independent answer-quality result; no legacy chat enrichment |
 | [Corrected documentary handoff](docs/validation/MABSELECT-DOCUMENTARY-HANDOFF-PACKAGE.md) | Merged in PR #70: accepted DS/TS design, typed schemas, 24 handoff tests, exact task/context references, complete excerpt views, clarification and scoped abstention; merged-main suite 853 passed / one optional skip | Local development preview, not an activated release or independent answer benchmark. Production withdrawal authority and parsed numerical annotations remain deferred; quantities remain verbatim |
-| [Local activation record](experiments/cytiva/mabselect-local-activation-v02/README.md) | Merged in PR #76: LA01–LA08, six active cases, 25 citations, 13 source views and compact provenance; merged-main suite 895 passed / one optional skip | One private local store only, zero withdrawals; fresh clones remain staged, no UI dispatch, independent answer-quality result or change to either freeze |
+| [Opt-in registry UI](docs/validation/MABSELECT-REGISTRY-UI-PACKAGE.md) | Merged in PR #78: nine files, 18 HTTP/DOM checks, corrected source-error boundary and 15-second deadline/retry; merged-main suite 913 passed / one optional skip | Known-case conformance; faults only in disposable stores. Explicit authority root required, fresh clones staged; outside the two original freezes, no independent answer-quality score or legacy-chat dispatch |
+| [Local activation record](experiments/cytiva/mabselect-local-activation-v02/README.md) | Merged in PR #76: LA01–LA08, six active cases, 25 citations, 13 source views and compact provenance; merged-main suite 895 passed / one optional skip | One private local store only, zero withdrawals; at PR #76 no UI dispatch. PR #78 adds a separate opt-in UI; fresh clones remain staged, no independent answer-quality result or change to either freeze |
 | [Local registry review](docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md) | Merged in PR #74: corrected staged v02, 32 registry tests, six accepted-case replays and inventory-only reproduction; merged-main suite 895 passed / one optional skip | At PR #74: no activation. Later local activation is recorded separately in PR #76; no new source approval. Cooperative single-process writers; whole-directory rollback needs an external anchor and interrupted activation needs operator review |
 | [MabSelect freeze and replay](docs/validation/MABSELECT-DOCUMENTARY-FREEZE-PACKAGE.md) | Merged in PR #72: 52-file inventory, standard-library verifier, ten freeze tests and full SX01–SX06 replay; inventory-only output identical; merged-main suite 863 passed / one optional skip | Known-case reproducibility and conformance; no serving activation, independent answer benchmark or new source approval; v03 unchanged |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
@@ -447,16 +490,15 @@ excerpts, not the full manual. S's 2,048-token budget counts serialized context
 including bindings, not a future answer prompt or output. The source-reviewed
 claims have not been connected to the chatbot's serving path.
 
-**Next priority:** connect **one bounded MabSelect UI path to the explicitly
-configured local registry**, using its typed request/response and source-view
-methods. Activation and the local replay are complete; the current preview still
-bypasses the registry. Verify a normal answer/citation, clarification, abstention
-and withdrawal/unavailable behavior end to end, with fault simulations confined
-to disposable stores. Missing or invalid authority must not fall back to the
-preview or unsourced prose. Keep both freezes, the private active store and the
-existing previews unchanged; use an explicit server-side opt-in, not a client
-path override. No additional ontology or whole-manual review is needed for this
-bounded integration. Legacy chat integration remains separate.
+**Next priority:** prepare a **small held-out acceptance test of the integrated
+MabSelect path**, using new requests over the already reviewed bounded corpus.
+Record the merged code/UI identities and environment, define expected answers,
+required conditions/citations and clarification/abstention outcomes, then review
+those references before executing the trial. Include withdrawal/unavailable
+checks only in disposable stores. Keep the method fixed after results; report
+failures without treating development replays or regression counts as independent
+quality scores. No new runtime freeze, ontology redesign, whole-manual review or
+LLM is needed to prepare this test. Legacy chat integration remains separate.
 
 Second-physical-PC validation remains a parallel portability check. The
 three-arm graph/passages/LightRAG comparison is unexecuted; current BM25 trials
@@ -471,10 +513,10 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Connect one opt-in MabSelect UI path through the configured registry and its source views. Preserve both freezes and the existing preview; refuse missing/invalid authority without fallback.
+1. Prepare and review a small held-out acceptance set for the merged registry UI, with expected answers, conditions, citations and clarification/abstention outcomes. Record the existing baseline identities; preserve both freezes and the private store.
 2. Gather a short usability response to the merged Protein A/G and MabSelect entries; retain v03 and the historical scores. Validate installation on a second physical Windows PC when available as a separate portability gate.
-3. Verify the integrated answer/citation, clarification, abstention and withdrawal/unavailable paths end to end. Keep fault simulations in disposable stores and establish an independent evaluation after the answering path exists; legacy chat remains separate.
-4. Instrument the serving path with OpenTelemetry and portable call/retry/cost accounting; add Ragas and Promptfoo when the answering path exists.
+3. After reference review, execute the fixed acceptance trial through the UI/API without retuning on results. Report bounded success/failure and keep fault simulations in disposable stores; legacy chat remains separate.
+4. Instrument the registry UI/service with OpenTelemetry and portable latency/call accounting; this model-free path has no model-call cost. Keep calibrated Ragas for later generated answers and Promptfoo attack evaluation as separate pending work.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.
 
 The FT and FV free-text comparisons have executed; the architecture comparison

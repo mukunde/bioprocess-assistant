@@ -1,0 +1,122 @@
+{
+  "id": "reviewed-dossier-serving-design-review-v01",
+  "recorded_on": "2026-11-02",
+  "date_precision": "day; no exact decision timestamp asserted",
+  "reviewer": "project_user_via_conversation",
+  "original_human_message": "Je valide DS01–DS10, RC1–RC4 et tes clarifications. Enregistre mes décisions, puis prépare la spécification technique avant l’implémentation. Garde v03, les 16 notes et les pilotes inchangés. Aucun commit ni push.",
+  "scope": "Acceptance of DS01–DS10, RC1–RC4 and the four review clarifications as design decisions. Prepare technical specification only. No implementation, runtime activation, graph publication, new source/scientific approval or Git operation is authorized by this record.",
+  "approved_materials_sha256_lf": {
+    "docs/technical/REVIEWED-DOSSIER-SERVING-CONTRACT-V01.md": "d01606ad38e9109a8205a76ea1a1f0ca81d883c689c8ed1a47ba04cea7ededaa",
+    "docs/technical/REVIEWED-DOSSIER-SERVING-CASES-V01.md": "4a8dd637b02e7699f397843f8b9330b2e0a95eb921ca014de2b58d67fbfa0f88",
+    "docs/technical/REVIEWED-DOSSIER-SERVING-REVIEW-V01.md": "67456329facb1738085a725bb6f2eea99900fbe3376bcb8636ab75826c13a0df"
+  },
+  "decisions": [
+    {
+      "id": "DS01",
+      "statement": "Start with an opt-in local deterministic adapter/typed renderer for the registered MabSelect bundles; no graph write or new model call",
+      "points_to_confirm_accepted": "Keep r2, table/figure and comparison mappings out of this first release",
+      "decision": "validated"
+    },
+    {
+      "id": "DS02",
+      "statement": "Use a documentary payload distinct from legacy symptom/cause/action paths",
+      "points_to_confirm_accepted": "A procedure does not become a cause, trigger or capability; legacy chat and v03 are unchanged",
+      "decision": "validated"
+    },
+    {
+      "id": "DS03",
+      "statement": "Treat original scoped human review, bundle admissibility and explicit serving release as separate gates",
+      "points_to_confirm_accepted": "Q/N approvals stay question/context-specific; pending historical source flags are not rewritten; application-design approval alone is insufficient",
+      "decision": "validated"
+    },
+    {
+      "id": "DS04",
+      "statement": "Require complete review/source bindings and all indispensable headings, conditions and warnings per option",
+      "points_to_confirm_accepted": "A missing warning or invalid hash withholds that option; never supply an incomplete recipe",
+      "decision": "validated"
+    },
+    {
+      "id": "DS05",
+      "statement": "Preserve three-valued applicability, uncertainty and exact product/phase/task ownership",
+      "points_to_confirm_accepted": "Unknown is not true; category exploration is not diagnosis; no cross-task inference, default variant or conversion",
+      "decision": "validated"
+    },
+    {
+      "id": "DS06",
+      "statement": "Preserve quantities, force, alternatives/sequences, examples, pH ownership and all reservations",
+      "points_to_confirm_accepted": "Ordinary answers display necessary reservations; audit views retain original decisions/messages",
+      "decision": "validated"
+    },
+    {
+      "id": "DS07",
+      "statement": "Require exact original citations plus a service-owned versioned excerpt view",
+      "points_to_confirm_accepted": "No private file path dependency or full-PDF redistribution; exact quote hash is not semantic proof; printed and PDF page numbering remain distinct",
+      "decision": "validated"
+    },
+    {
+      "id": "DS08",
+      "statement": "Separate clarification, scoped abstention, quarantine and integrity/service unavailability",
+      "points_to_confirm_accepted": "Partial service is allowed only across independent complete units; global release failure blocks all tasks; counts/outcomes are derived",
+      "decision": "validated"
+    },
+    {
+      "id": "DS09",
+      "statement": "Enforce quarantine/withdrawal, versioned release and deterministic selection/rendering limits",
+      "points_to_confirm_accepted": "A model or user cannot approve a source, omit a prerequisite, select unknown IDs or inject executable instructions",
+      "decision": "validated"
+    },
+    {
+      "id": "DS10",
+      "statement": "Use SC01–SC14 plus tamper/budget controls before any initial serving release",
+      "points_to_confirm_accepted": "Cases are known-corpus conformance examples, not a new benchmark; later answering/architecture evaluations remain separate",
+      "decision": "validated"
+    },
+    {
+      "id": "RC1",
+      "original_proposal_markdown": "- **RC1 — First release medium:** local versioned bundle registry and excerpt view,\n  using existing dossier/review artifacts. Defer Neo4j schema and public publication\n  until the handoff is demonstrated. Contract acceptance does not itself authorize\n  graph writes or default activation.",
+      "decision": "validated"
+    },
+    {
+      "id": "RC2",
+      "original_proposal_markdown": "- **RC2 — Reader experience:** show product, explored category, conditional options,\n  attached warnings and scoped reservations first; make the full original excerpt\n  and audit trail one click away. Do not require a model to explain missing fields.",
+      "decision": "validated"
+    },
+    {
+      "id": "RC3",
+      "original_proposal_markdown": "- **RC3 — Withdrawal authority:** before a release, designate the human-reviewed\n  versioned withdrawal/revocation inventory checked during startup/lookup. Preserve\n  prior records; a changed authority creates a new release. Existing review\n  verifiers do not implement a universal revocation feed.",
+      "decision": "validated"
+    },
+    {
+      "id": "RC4",
+      "original_proposal_markdown": "- **RC4 — Publication and future selection:** implement a model-free local handoff\n  first. Only after its release checks should a separate opt-in chat route be\n  considered, with a tool schema and deterministic selector that cannot broaden\n  admitted support. No paid call is needed to validate this first handoff.",
+      "decision": "validated"
+    },
+    {
+      "id": "CL01",
+      "original_clarification_text": "Autorité de retrait : toi comme valideur ; registre initial explicitement vide, sans supposer que les anciennes validations sont universelles.",
+      "decision": "validated"
+    },
+    {
+      "id": "CL02",
+      "original_clarification_text": "Contrôle des versions : vérifier l’intégrité au chargement, puis vérifier à chaque requête que la version active et les retraits n’ont pas changé. Tout changement impose un rechargement.",
+      "decision": "validated"
+    },
+    {
+      "id": "CL03",
+      "original_clarification_text": "Budget initial : fixer une limite configurable sur le dossier sérialisé complet. S’il dépasse cette limite, retirer l’option avec une raison explicite plutôt que couper ses conditions ou citations. La valeur numérique reste à choisir.",
+      "decision": "validated"
+    },
+    {
+      "id": "CL04",
+      "original_clarification_text": "Activation locale : après les tests, préparer une version identifiée et son bilan pour ta revue avant activation. Cela ne constitue ni une autorisation de publier dans Neo4j ni une nouvelle approbation scientifique.",
+      "decision": "validated"
+    }
+  ],
+  "remaining_technical_parameters": {
+    "serialized_context_byte_limit": "not fixed by acceptance; numeric proposal must be identified separately"
+  },
+  "implementation_authorized": false,
+  "serving_release_activated": false,
+  "source_approval_expanded": false,
+  "historical_status_notice": "The three bound proposal documents remain byte-for-byte unchanged; their pending-review labels describe the proposal stage, superseded for design decisions by this new record. SC01–SC14 are accepted as design/conformance coverage, not separately asserted new scientific reference approvals."
+}

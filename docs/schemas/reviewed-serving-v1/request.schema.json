@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:request",
+  "title": "Reviewed serving v1 — request",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "const": "reviewed_serving_request/v1"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "language": {
+      "type": "string",
+      "enum": [
+        "en",
+        "fr"
+      ]
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "product": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "family_unknown",
+              "mabselect",
+              "sure",
+              "sure_lx",
+              "other",
+              "contradictory"
+            ]
+          },
+          "deposit_context": {
+            "type": "string",
+            "enum": [
+              "unknown",
+              "precipitated_substances",
+              "hydrophobic_deposits",
+              "mixed_other"
+            ]
+          },
+          "requested_items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cleaning_options",
+                "restricted_sequence",
+                "followup_buffer_pH",
+                "pressure_limit",
+                "solvent_hold_time"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 5,
+            "uniqueItems": true
+          },
+          "excluded_items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cleaning_options",
+                "restricted_sequence",
+                "followup_buffer_pH",
+                "pressure_limit",
+                "solvent_hold_time"
+              ]
+            },
+            "minItems": 0,
+            "maxItems": 5,
+            "uniqueItems": true,
+            "default": []
+          },
+          "input_label": {
+            "type": "string",
+            "maxLength": 2048
+          }
+        },
+        "required": [
+          "task_id",
+          "product",
+          "deposit_context",
+          "requested_items"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 8
+    }
+  },
+  "required": [
+    "kind",
+    "request_id",
+    "language",
+    "tasks"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,1562 @@
+{
+  "id": "reviewed-serving-schema-shapes-v01",
+  "status": "synthetic_structural_validation_only_not_adapter_results_not_activation",
+  "fixture_warning": "All SYNTHETIC identifiers, zero digests and expected response projections are nonauthoritative. Schema validity does not establish reviewed fidelity, current authority, complete semantic support or a serving release.",
+  "cases": [
+    {
+      "id": "SX01-request",
+      "schema": "request",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": "Accepted request shape only; expected answer projection is not a complete response and requires later adapter conformance checks."
+    },
+    {
+      "id": "SX02-request",
+      "schema": "request",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-02",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "family_unknown",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": "Accepted request shape only; expected answer projection is not a complete response and requires later adapter conformance checks."
+    },
+    {
+      "id": "SX03-request",
+      "schema": "request",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-03",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure_lx",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": "Accepted request shape only; expected answer projection is not a complete response and requires later adapter conformance checks."
+    },
+    {
+      "id": "SX04-request",
+      "schema": "request",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-04",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "unknown",
+            "deposit_context": "unknown",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "B",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": "Accepted request shape only; expected answer projection is not a complete response and requires later adapter conformance checks."
+    },
+    {
+      "id": "SX05-request",
+      "schema": "request",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-05",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "pressure_limit"
+            ],
+            "excluded_items": [
+              "pressure_limit"
+            ]
+          }
+        ]
+      },
+      "note": "Accepted request shape only; expected answer projection is not a complete response and requires later adapter conformance checks."
+    },
+    {
+      "id": "SX06-request",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-06",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ],
+        "approved_sources": [
+          "E167-W"
+        ]
+      },
+      "note": "Accepted request shape only; expected answer projection is not a complete response and requires later adapter conformance checks."
+    },
+    {
+      "id": "missing-product",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "false-product",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": false,
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "zero-product",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": 0,
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "nine-tasks",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "T0",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T1",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T2",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T3",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T4",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T5",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T6",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T7",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "T8",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "duplicate-request-item",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options",
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "path-as-request-id",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "../../other",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "unknown-selector",
+      "schema": "request",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "arbitrary_cypher"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "duplicate-task-id-needs-semantic-check",
+      "schema": "request",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "note": "JSON Schema cannot require uniqueness of task_id across different objects. Required later semantic check rejects duplicate_task_id; this shape pass never authorizes dispatch."
+    },
+    {
+      "id": "staged-release-shape",
+      "schema": "release",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_release/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "stage": "staged",
+        "mode": "local_opt_in_no_model",
+        "contract_version": "1",
+        "prepared_on": "2026-11-02",
+        "adapter_version": "SYNTHETIC-no-implementation",
+        "renderer_version": "SYNTHETIC-no-implementation",
+        "design_decision_refs": [
+          {
+            "artifact_id": "SYNTHETIC-design",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash_convention": "sha256_lf"
+          },
+          {
+            "artifact_id": "SYNTHETIC-technical",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash_convention": "sha256_lf"
+          }
+        ],
+        "activation_decision_ref": null,
+        "mapping_ref": {
+          "artifact_id": "SYNTHETIC-mapping",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "withdrawals_ref": {
+          "artifact_id": "SYNTHETIC-withdrawals",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "source_index_ref": {
+          "artifact_id": "SYNTHETIC-source-index",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "dependencies": [
+          {
+            "artifact_id": "SYNTHETIC-placeholder",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash_convention": "sha256_lf"
+          }
+        ],
+        "limits": {
+          "context_bytes": 65536,
+          "request_bytes": 32768,
+          "max_tasks": 8
+        }
+      },
+      "note": "Placeholder hashes and nonexistent implementation versions; never an authenticated or activatable release."
+    },
+    {
+      "id": "activated-without-decision",
+      "schema": "release",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_release/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "stage": "activated",
+        "mode": "local_opt_in_no_model",
+        "contract_version": "1",
+        "prepared_on": "2026-11-02",
+        "adapter_version": "SYNTHETIC-no-implementation",
+        "renderer_version": "SYNTHETIC-no-implementation",
+        "design_decision_refs": [
+          {
+            "artifact_id": "SYNTHETIC-design",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash_convention": "sha256_lf"
+          },
+          {
+            "artifact_id": "SYNTHETIC-technical",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash_convention": "sha256_lf"
+          }
+        ],
+        "activation_decision_ref": null,
+        "mapping_ref": {
+          "artifact_id": "SYNTHETIC-mapping",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "withdrawals_ref": {
+          "artifact_id": "SYNTHETIC-withdrawals",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "source_index_ref": {
+          "artifact_id": "SYNTHETIC-source-index",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "dependencies": [
+          {
+            "artifact_id": "SYNTHETIC-placeholder",
+            "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+            "hash_convention": "sha256_lf"
+          }
+        ],
+        "limits": {
+          "context_bytes": 65536,
+          "request_bytes": 32768,
+          "max_tasks": 8
+        }
+      },
+      "note": ""
+    },
+    {
+      "id": "explicit-empty-withdrawal-shape",
+      "schema": "authority",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_withdrawals/v1",
+        "inventory_id": "SYNTHETIC-empty",
+        "version": 1,
+        "validator": "project_user_via_conversation",
+        "decision_ref": {
+          "artifact_id": "SYNTHETIC-empty-register-design-only",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "entries": []
+      },
+      "note": "Illustrates shape; fake binding cannot activate authority."
+    },
+    {
+      "id": "missing-register-entries",
+      "schema": "authority",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_withdrawals/v1",
+        "inventory_id": "SYNTHETIC-empty",
+        "version": 1,
+        "validator": "project_user_via_conversation",
+        "decision_ref": {
+          "artifact_id": "SYNTHETIC-empty-register-design-only",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        }
+      },
+      "note": ""
+    },
+    {
+      "id": "old-unbound-empty-register-example",
+      "schema": "authority",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_withdrawals/v1",
+        "inventory_id": "SYNTHETIC-empty-v1",
+        "validator": "project_user_via_conversation",
+        "activation_decision_ref": null,
+        "entries": []
+      },
+      "note": "Earlier illustration was explicitly unbound and not an active registry; it is deliberately not accepted by the complete authority schema."
+    },
+    {
+      "id": "active-pointer-shape-not-approval",
+      "schema": "authority",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_active/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "manifest_sha256_lf": "0000000000000000000000000000000000000000000000000000000000000000",
+        "withdrawals_sha256_lf": "0000000000000000000000000000000000000000000000000000000000000000",
+        "activation_decision_ref": {
+          "artifact_id": "SYNTHETIC-activation-placeholder",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "hash_convention": "sha256_lf"
+        },
+        "mode": "local_opt_in_no_model"
+      },
+      "note": "Structural example only; no activation decision/artifact exists."
+    },
+    {
+      "id": "mapping-inventory-shape",
+      "schema": "mapping",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_mapping/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "entries": [
+          {
+            "bundle_key": "mabselect.precipitated.general",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q05",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "precipitated_substances"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-PH",
+              "E167-P"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q05",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-P"
+              ]
+            },
+            "alternative_policy": "all_general_alternatives"
+          },
+          {
+            "bundle_key": "mabselect.precipitated.restricted",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q06",
+            "allowed_products": [
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "precipitated_substances"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-PH",
+              "E167-SH",
+              "E167-S"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q06",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-S"
+              ]
+            },
+            "alternative_policy": "separate_restricted_block"
+          },
+          {
+            "bundle_key": "mabselect.hydrophobic.detergent",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "N06",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "hydrophobic_deposits"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-LH",
+              "E167-D"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-N06",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-D"
+              ]
+            },
+            "alternative_policy": "detergent_alternative"
+          },
+          {
+            "bundle_key": "mabselect.hydrophobic.solvent",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "N07",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "hydrophobic_deposits"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-LH",
+              "E167-E",
+              "E167-W"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-N07",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-E",
+                "E167-W"
+              ]
+            },
+            "alternative_policy": "solvent_alternatives"
+          },
+          {
+            "bundle_key": "mabselect.context.clarify",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q09",
+            "allowed_products": [
+              "unknown",
+              "family_unknown",
+              "mabselect",
+              "sure",
+              "sure_lx",
+              "other",
+              "contradictory"
+            ],
+            "allowed_contexts": [
+              "unknown",
+              "precipitated_substances",
+              "hydrophobic_deposits",
+              "mixed_other"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "clarification_context",
+            "required_source_ids": [
+              "E166-H",
+              "E166-T",
+              "E166-PH",
+              "E166-LH",
+              "E167-H",
+              "E167-PH",
+              "E167-SH",
+              "E167-LH"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q09",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E166-H",
+                "E166-T",
+                "E166-PH",
+                "E166-LH",
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-LH"
+              ]
+            },
+            "alternative_policy": "context_only"
+          }
+        ]
+      },
+      "note": "Inventory shape only. Conditions are unreviewed synthetic placeholders and do not establish executable eligibility."
+    },
+    {
+      "id": "missing-solvent-warning-id",
+      "schema": "mapping",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_mapping/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "entries": [
+          {
+            "bundle_key": "mabselect.precipitated.general",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q05",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "precipitated_substances"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-PH",
+              "E167-P"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q05",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-P"
+              ]
+            },
+            "alternative_policy": "all_general_alternatives"
+          },
+          {
+            "bundle_key": "mabselect.precipitated.restricted",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q06",
+            "allowed_products": [
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "precipitated_substances"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-PH",
+              "E167-SH",
+              "E167-S"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q06",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-S"
+              ]
+            },
+            "alternative_policy": "separate_restricted_block"
+          },
+          {
+            "bundle_key": "mabselect.hydrophobic.detergent",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "N06",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "hydrophobic_deposits"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-LH",
+              "E167-D"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-N06",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-D"
+              ]
+            },
+            "alternative_policy": "detergent_alternative"
+          },
+          {
+            "bundle_key": "mabselect.hydrophobic.solvent",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "N07",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "hydrophobic_deposits"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-LH",
+              "E167-E"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-N07",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-E"
+              ]
+            },
+            "alternative_policy": "solvent_alternatives"
+          },
+          {
+            "bundle_key": "mabselect.context.clarify",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q09",
+            "allowed_products": [
+              "unknown",
+              "family_unknown",
+              "mabselect",
+              "sure",
+              "sure_lx",
+              "other",
+              "contradictory"
+            ],
+            "allowed_contexts": [
+              "unknown",
+              "precipitated_substances",
+              "hydrophobic_deposits",
+              "mixed_other"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "clarification_context",
+            "required_source_ids": [
+              "E166-H",
+              "E166-T",
+              "E166-PH",
+              "E166-LH",
+              "E167-H",
+              "E167-PH",
+              "E167-SH",
+              "E167-LH"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q09",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E166-H",
+                "E166-T",
+                "E166-PH",
+                "E166-LH",
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-LH"
+              ]
+            },
+            "alternative_policy": "context_only"
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "restricted-block-expanded-to-plain",
+      "schema": "mapping",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_mapping/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "entries": [
+          {
+            "bundle_key": "mabselect.precipitated.general",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q05",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "precipitated_substances"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-PH",
+              "E167-P"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q05",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-P"
+              ]
+            },
+            "alternative_policy": "all_general_alternatives"
+          },
+          {
+            "bundle_key": "mabselect.precipitated.restricted",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q06",
+            "allowed_products": [
+              "sure",
+              "sure_lx",
+              "mabselect"
+            ],
+            "allowed_contexts": [
+              "precipitated_substances"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-PH",
+              "E167-SH",
+              "E167-S"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q06",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-S"
+              ]
+            },
+            "alternative_policy": "separate_restricted_block"
+          },
+          {
+            "bundle_key": "mabselect.hydrophobic.detergent",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "N06",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "hydrophobic_deposits"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-LH",
+              "E167-D"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-N06",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-D"
+              ]
+            },
+            "alternative_policy": "detergent_alternative"
+          },
+          {
+            "bundle_key": "mabselect.hydrophobic.solvent",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "N07",
+            "allowed_products": [
+              "mabselect",
+              "sure",
+              "sure_lx"
+            ],
+            "allowed_contexts": [
+              "hydrophobic_deposits"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "procedure",
+            "required_source_ids": [
+              "E167-H",
+              "E167-LH",
+              "E167-E",
+              "E167-W"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-N07",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E167-H",
+                "E167-LH",
+                "E167-E",
+                "E167-W"
+              ]
+            },
+            "alternative_policy": "solvent_alternatives"
+          },
+          {
+            "bundle_key": "mabselect.context.clarify",
+            "mapping_version": "SYNTHETIC-v1",
+            "review_scope": "Q09",
+            "allowed_products": [
+              "unknown",
+              "family_unknown",
+              "mabselect",
+              "sure",
+              "sure_lx",
+              "other",
+              "contradictory"
+            ],
+            "allowed_contexts": [
+              "unknown",
+              "precipitated_substances",
+              "hydrophobic_deposits",
+              "mixed_other"
+            ],
+            "request_items": [
+              "cleaning_options"
+            ],
+            "role": "clarification_context",
+            "required_source_ids": [
+              "E166-H",
+              "E166-T",
+              "E166-PH",
+              "E166-LH",
+              "E167-H",
+              "E167-PH",
+              "E167-SH",
+              "E167-LH"
+            ],
+            "review_ref": {
+              "artifact_id": "SYNTHETIC-Q09",
+              "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+              "hash_convention": "sha256_lf"
+            },
+            "conditions": {
+              "kind": "source_text",
+              "text": "SYNTHETIC condition placeholder; not an executable applicability mapping",
+              "source_ids": [
+                "E166-H",
+                "E166-T",
+                "E166-PH",
+                "E166-LH",
+                "E167-H",
+                "E167-PH",
+                "E167-SH",
+                "E167-LH"
+              ]
+            },
+            "alternative_policy": "context_only"
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "unactivated-response-shape",
+      "schema": "response",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "SYNTHETIC-request",
+        "release_id": null,
+        "authority_digest": null,
+        "status": "unavailable",
+        "response_reason": "release_not_activated",
+        "items": [],
+        "context": {
+          "bundles": [],
+          "passages": [],
+          "reviews": []
+        },
+        "citation_refs": [],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "note": "No active release and no technical context delivered; administrative empty-context JSON still has a measured byte size."
+    },
+    {
+      "id": "operational-authorization-forbidden",
+      "schema": "response",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "SYNTHETIC-request",
+        "release_id": null,
+        "authority_digest": null,
+        "status": "unavailable",
+        "response_reason": "release_not_activated",
+        "items": [],
+        "context": {
+          "bundles": [],
+          "passages": [],
+          "reviews": []
+        },
+        "citation_refs": [],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": true,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "note": ""
+    },
+    {
+      "id": "validation-error-SX06-shape",
+      "schema": "validation-error",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_validation_error/v1",
+        "request_id": "example-06",
+        "errors": [
+          {
+            "code": "unknown_authority_field",
+            "request_pointer": "/approved_sources"
+          }
+        ]
+      },
+      "note": ""
+    },
+    {
+      "id": "scoped-abstention-shape",
+      "schema": "response",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "SYNTHETIC-request",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "authority_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "status": "abstained",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "abstained",
+            "reason": "not_in_selected_excerpts",
+            "field_origins": [
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": "selected MabSelect excerpt bundle only"
+          }
+        ],
+        "context": {
+          "bundles": [],
+          "passages": [],
+          "reviews": []
+        },
+        "citation_refs": [],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 1,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "note": "Synthetic response shape, not an executed answer or authority proof."
+    },
+    {
+      "id": "abstention-cannot-use-supported-reason",
+      "schema": "response",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "SYNTHETIC-request",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "authority_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "status": "abstained",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "abstained",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": "selected MabSelect excerpt bundle only"
+          }
+        ],
+        "context": {
+          "bundles": [],
+          "passages": [],
+          "reviews": []
+        },
+        "citation_refs": [],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 1,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "note": ""
+    },
+    {
+      "id": "clarification-needs-explicit-target",
+      "schema": "response",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "contract_version": "1",
+        "request_id": "SYNTHETIC-request",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "authority_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "status": "needs_clarification",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "needs_clarification",
+            "reason": "product_unknown",
+            "field_origins": [
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "context": {
+          "bundles": [],
+          "passages": [],
+          "reviews": []
+        },
+        "citation_refs": [],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 1,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        }
+      },
+      "note": ""
+    },
+    {
+      "id": "held-source-view-has-no-usable-quote",
+      "schema": "source-view",
+      "expected_structural_validity": true,
+      "value": {
+        "kind": "reviewed_serving_source_view/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "source_id": "E167-W",
+        "authority_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "status": "quarantined",
+        "reason": "review_withdrawn",
+        "pdf_available": false,
+        "passage": null,
+        "reviews": [],
+        "scientific_validation_established": false
+      },
+      "note": "Only demonstrates a hold shape, not a real withdrawal."
+    },
+    {
+      "id": "available-view-cannot-omit-quote-and-review",
+      "schema": "source-view",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_source_view/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "source_id": "E167-W",
+        "authority_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+        "status": "available",
+        "reason": "registered_excerpt",
+        "pdf_available": false,
+        "passage": null,
+        "reviews": [],
+        "scientific_validation_established": false
+      },
+      "note": ""
+    },
+    {
+      "id": "source-index-cannot-be-empty",
+      "schema": "source-index",
+      "expected_structural_validity": false,
+      "value": {
+        "kind": "reviewed_serving_source_index/v1",
+        "release_id": "SYNTHETIC-NOT-ACTIVE",
+        "corpus_id": "SYNTHETIC-corpus",
+        "pdf_available": false,
+        "passages": [],
+        "reviews": [],
+        "source_artifacts": []
+      },
+      "note": ""
+    }
+  ]
+}

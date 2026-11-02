@@ -1,0 +1,311 @@
+{
+  "id": "reviewed-dossier-serving-technical-review-v01",
+  "recorded_on": "2026-11-02",
+  "date_precision": "day; no exact decision timestamp asserted",
+  "reviewer": "project_user_via_conversation",
+  "original_human_message": "Je valide TS01–TS06, SX01–SX06 et tes clarifications. Enregistre mes décisions, puis prépare les schémas machine avant l’implémentation. Garde v03, les 16 notes et les pilotes inchangés. Aucun commit ni push.",
+  "scope": "Technical design and six synthetic interface examples accepted. Prepare machine schemas before implementation. No adapter, serving release, runtime activation, new scientific/source approval or Git operation authorized.",
+  "approved_materials_sha256_lf": {
+    "docs/technical/REVIEWED-DOSSIER-SERVING-TECHNICAL-V01.md": "eb823186e773267ff8ab441867b0a03d555e25604a2834559ba02fea50ec6e16",
+    "docs/technical/reviewed-dossier-serving-interface-examples-v01.json": "9521e2cc028fdbb6d55b438ff6c5b9b83193f67572b7daa0214bef9d4f84fd1d",
+    "docs/technical/reviewed-dossier-serving-decisions-v01.json": "6dbe3937da292bf4cd9d10ef6ed58ee57fa13b8fff14188be02195728a0f9487"
+  },
+  "decisions": [
+    {
+      "id": "TS01",
+      "statement": "65,536-byte context ceiling; request limit 32,768 bytes; maximum eight tasks",
+      "original_boundary": "Numerical defaults were not fixed in the accepted design",
+      "decision": "validated"
+    },
+    {
+      "id": "TS02",
+      "statement": "Initial five request items and existing product/category enums; no unrestricted parser",
+      "original_boundary": "Check coverage against SC01–SC14 before coding",
+      "decision": "validated"
+    },
+    {
+      "id": "TS03",
+      "statement": "Versioned local files, atomic active pointer and explicit user-reviewed activation",
+      "original_boundary": "No Neo4j/public/default-chat activation",
+      "decision": "validated"
+    },
+    {
+      "id": "TS04",
+      "statement": "Canonical UTF-8 byte measurement, shared-object deduplication and atomic `cleaning_options` allocation in input order",
+      "original_boundary": "No model token budget or chemical ranking implied",
+      "decision": "validated"
+    },
+    {
+      "id": "TS05",
+      "statement": "Logical request/response shapes and source-view endpoint names above",
+      "original_boundary": "Machine schemas remain to generate and test; shape examples are synthetic",
+      "decision": "validated"
+    },
+    {
+      "id": "TS06",
+      "statement": "Recheck authority before response delivery; discard on mid-request change, without hidden retry",
+      "original_boundary": "Already delivered text cannot be retroactively erased by this contract",
+      "decision": "validated"
+    },
+    {
+      "id": "SX01",
+      "decision": "validated_as_interface_design_example",
+      "approved_example": {
+        "id": "SX01",
+        "request": {
+          "kind": "reviewed_serving_request/v1",
+          "request_id": "example-01",
+          "language": "en",
+          "tasks": [
+            {
+              "task_id": "A",
+              "product": "mabselect",
+              "deposit_context": "precipitated_substances",
+              "requested_items": [
+                "cleaning_options"
+              ],
+              "excluded_items": []
+            }
+          ]
+        },
+        "expected": {
+          "status": "supported",
+          "item_states": [
+            {
+              "task_id": "A",
+              "item": "cleaning_options",
+              "state": "supported"
+            }
+          ],
+          "bundle_keys": [
+            "mabselect.precipitated.general"
+          ],
+          "no_restricted_block": true
+        }
+      }
+    },
+    {
+      "id": "SX02",
+      "decision": "validated_as_interface_design_example",
+      "approved_example": {
+        "id": "SX02",
+        "request": {
+          "kind": "reviewed_serving_request/v1",
+          "request_id": "example-02",
+          "language": "en",
+          "tasks": [
+            {
+              "task_id": "A",
+              "product": "family_unknown",
+              "deposit_context": "precipitated_substances",
+              "requested_items": [
+                "cleaning_options"
+              ],
+              "excluded_items": []
+            }
+          ]
+        },
+        "expected": {
+          "status": "needs_clarification",
+          "clarification_target": "product",
+          "procedure_cards": 0
+        }
+      }
+    },
+    {
+      "id": "SX03",
+      "decision": "validated_as_interface_design_example",
+      "approved_example": {
+        "id": "SX03",
+        "request": {
+          "kind": "reviewed_serving_request/v1",
+          "request_id": "example-03",
+          "language": "en",
+          "tasks": [
+            {
+              "task_id": "A",
+              "product": "sure_lx",
+              "deposit_context": "hydrophobic_deposits",
+              "requested_items": [
+                "cleaning_options",
+                "pressure_limit"
+              ],
+              "excluded_items": []
+            }
+          ]
+        },
+        "expected": {
+          "status": "partial",
+          "item_states": [
+            {
+              "task_id": "A",
+              "item": "cleaning_options",
+              "state": "supported"
+            },
+            {
+              "task_id": "A",
+              "item": "pressure_limit",
+              "state": "abstained"
+            }
+          ],
+          "bundle_keys": [
+            "mabselect.hydrophobic.detergent",
+            "mabselect.hydrophobic.solvent"
+          ],
+          "invented_pressure_value": false
+        }
+      }
+    },
+    {
+      "id": "SX04",
+      "decision": "validated_as_interface_design_example",
+      "approved_example": {
+        "id": "SX04",
+        "request": {
+          "kind": "reviewed_serving_request/v1",
+          "request_id": "example-04",
+          "language": "en",
+          "tasks": [
+            {
+              "task_id": "A",
+              "product": "unknown",
+              "deposit_context": "unknown",
+              "requested_items": [
+                "cleaning_options"
+              ],
+              "excluded_items": []
+            },
+            {
+              "task_id": "B",
+              "product": "mabselect",
+              "deposit_context": "precipitated_substances",
+              "requested_items": [
+                "cleaning_options"
+              ],
+              "excluded_items": []
+            }
+          ]
+        },
+        "expected": {
+          "status": "partial",
+          "clarification_task": "A",
+          "supported_task": "B",
+          "product_inherited_from_B_to_A": false
+        }
+      }
+    },
+    {
+      "id": "SX05",
+      "decision": "validated_as_interface_design_example",
+      "approved_example": {
+        "id": "SX05",
+        "request": {
+          "kind": "reviewed_serving_request/v1",
+          "request_id": "example-05",
+          "language": "en",
+          "tasks": [
+            {
+              "task_id": "A",
+              "product": "sure",
+              "deposit_context": "hydrophobic_deposits",
+              "requested_items": [
+                "pressure_limit"
+              ],
+              "excluded_items": [
+                "pressure_limit"
+              ]
+            }
+          ]
+        },
+        "expected": {
+          "status": "abstained",
+          "reason": "no_requested_item",
+          "item_states": [
+            {
+              "task_id": "A",
+              "item": "pressure_limit",
+              "state": "excluded"
+            }
+          ],
+          "technical_context_empty": true
+        }
+      }
+    },
+    {
+      "id": "SX06",
+      "decision": "validated_as_interface_design_example",
+      "approved_example": {
+        "id": "SX06",
+        "request": {
+          "kind": "reviewed_serving_request/v1",
+          "request_id": "example-06",
+          "language": "en",
+          "tasks": [
+            {
+              "task_id": "A",
+              "product": "sure",
+              "deposit_context": "hydrophobic_deposits",
+              "requested_items": [
+                "cleaning_options"
+              ],
+              "excluded_items": []
+            }
+          ],
+          "approved_sources": [
+            "E167-W"
+          ]
+        },
+        "expected": {
+          "validation_error": "unknown_authority_field",
+          "lookup_executed": false,
+          "technical_context_empty": true
+        }
+      }
+    },
+    {
+      "id": "TC01",
+      "accepted_clarification_text": "Adopter les trois limites de TS01 comme valeurs initiales. Les tester aux frontières exactes : limite atteinte, dépassement d’un octet et dossiers partageant des sources. Elles ne garantissent pas que toute demande admissible tiendra dans le budget.",
+      "text_representation": "review prose with Markdown emphasis/code styling removed; not a new user quotation",
+      "decision": "validated"
+    },
+    {
+      "id": "TC02",
+      "accepted_clarification_text": "Distinguer champ manquant et valeur inconnue. Un produit absent du JSON est une requête mal formée ; product: \"unknown\" est une demande valide qui appelle une clarification. Les types incorrects sont rejetés, sans convertir false ou 0 en valeur inconnue.",
+      "text_representation": "review prose with Markdown emphasis/code styling removed; not a new user quotation",
+      "decision": "validated"
+    },
+    {
+      "id": "TC03",
+      "accepted_clarification_text": "Faire prévaloir les exclusions, comme dans SX05, en conservant leur trace. Elles restent propres à leur tâche et ne comptent pas comme information fournie.",
+      "text_representation": "review prose with Markdown emphasis/code styling removed; not a new user quotation",
+      "decision": "validated"
+    },
+    {
+      "id": "TC04",
+      "accepted_clarification_text": "Poser ensemble les seules questions encore nécessaires. Dans SX04, A peut demander produit et contexte puisqu’ils manquent tous deux. Un produit déjà connu ne sera pas redemandé et aucun diagnostic confirmé ne sera exigé.",
+      "text_representation": "review prose with Markdown emphasis/code styling removed; not a new user quotation",
+      "decision": "validated"
+    },
+    {
+      "id": "TC05",
+      "accepted_clarification_text": "Conserver l’ensemble des alternatives requis pour cleaning_options. Si l’ensemble ne tient pas, rendre cet item indisponible plutôt que ne montrer arbitrairement qu’une alternative. Une autre tâche indépendante peut néanmoins être servie.",
+      "text_representation": "review prose with Markdown emphasis/code styling removed; not a new user quotation",
+      "decision": "validated"
+    },
+    {
+      "id": "TC06",
+      "accepted_clarification_text": "Construire d’abord une version de test non activée. Produire les schémas, l’adaptateur et les contrôles ST01–ST12, puis présenter un inventaire et un bilan concrets avant toute activation locale.",
+      "text_representation": "review prose with Markdown emphasis/code styling removed; not a new user quotation",
+      "decision": "validated"
+    }
+  ],
+  "accepted_initial_limits": {
+    "context_bytes": 65536,
+    "request_bytes": 32768,
+    "max_tasks": 8
+  },
+  "schema_preparation_authorized": true,
+  "implementation_authorized": false,
+  "runtime_activated": false,
+  "historical_status_notice": "Bound technical proposal/example files remain unchanged. Their proposed labels describe the earlier stage; this record supersedes those labels for accepted design only."
+}

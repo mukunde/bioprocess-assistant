@@ -12,7 +12,8 @@ demo serves 25 reviewed passages through frozen v03. A merged, separate
 Protein A/G Sepharose backpressure journey and a separate merged MabSelect
 cleaning entry now reuse scoped cleaning reviews and original citations, without
 a model or database. The corrected MabSelect documentary handoff and its typed
-local preview are merged; the handoff is not yet frozen or activated. Portable telemetry, independent
+local preview are merged; PR72 adds its separate 52-file freeze and accepted-case
+replay. The handoff is still not activated. Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
@@ -67,10 +68,20 @@ is published, while the executable Python application remains local.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded Protein A/G and MabSelect journeys, approval/DOM safeguards and test-runner repairs merged. PR70 adds the accepted serving contract, schemas and corrected minimal documentary handoff | Handoff freeze/replay, explicit local release/withdrawal activation gate, second-machine validation and independent answer evaluation; no legacy chat integration |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay | Nonactivated local release/withdrawal authority, explicit activation review, second-machine validation and independent answer evaluation; no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest merged baseline: `main` at `ada012b`, including
+Latest merged baseline: `main` at `e2b8531`, including
+[PR72](https://github.com/mukunde/bioprocess-assistant/pull/72). The separate
+52-file MabSelect freeze, verifier, accepted-case replay and ten new integrity
+tests are integrated. The complete merged-main verification finished with
+**864 tests: 863 passed and one optional PDFium preview skip**. Its first run's
+HTTP-boundary test hit Windows `10053`; the three isolated HTTP tests and a
+second complete run passed without code/protection changes. Both freezes remain
+valid and SX01–SX06 remain identical to the saved full output. This is known-case
+reproducibility/conformance, not serving activation or independent answer quality.
+
+Previous handoff baseline: `main` at `ada012b`, including
 [PR70](https://github.com/mukunde/bioprocess-assistant/pull/70). The corrected
 documentary handoff is integrated. The complete suite finished with **854 tests:
 853 passed and one optional PDFium preview skip**. The first run's Windows
@@ -242,33 +253,58 @@ the earlier 848-test pre-correction run separately from subsequent checks.
 
 The dedicated preview is runnable with `python -m demo.documentary_preview` in
 the prepared demo environment (default loopback port 8783). The default service
-is inactive without explicit preview mode. This is merged local code, not an
-activated serving registry, new runtime freeze, hosted Python app, source
-publication or legacy-chat route. E118-I/E121-EQ remain excluded. Quantities stay
+is inactive without explicit preview mode. This is merged local code with the
+separate PR72 freeze below, not an activated serving registry, hosted Python app,
+source publication or legacy-chat route. E118-I/E121-EQ remain excluded. Quantities stay
 in original text; parsed numerical annotations and production withdrawal
 authority remain deferred. The published Flowshot/video captures are unchanged.
 
+### Merged MabSelect runtime freeze and accepted-case replay
+
+[PR72](https://github.com/mukunde/bioprocess-assistant/pull/72) integrates the
+[nine-file freeze package](validation/MABSELECT-DOCUMENTARY-FREEZE-PACKAGE.md).
+Its 52-file inventory pins the code/schema and original source/review dependency
+closure, including the method, decision and integrity-test source. The verifier
+checks the recorded CPython 3.13.0 environment and LF-normalized file identities.
+
+SX01–SX06 pass with full responses, lookup counts, original reservations and
+resolved citation identities preserved. A copy containing only the inventory
+and lock, executed with `python -S`, produced identical output without site
+packages, PDF, tokenizer cache, private audit files or network. The ten freeze
+tests cover drift, missing/incomplete inventory, environment mismatch, CRLF
+portability, pre-runtime refusal and no-overwrite replay output. The original
+39-test targeted check and the subsequent full-suite results remain distinct.
+
+Use the [commands and frozen method](../experiments/cytiva/mabselect-handoff-freeze-v01/README.md)
+to verify or replay. This freeze does not replace v03 (36 pins), create an active
+release/withdrawal registry, change source approvals or supply a prospective score.
+Original decisions, results, notes and pilots remain unchanged. Runtime integrity
+is complete for this frozen candidate; local serving authority is the next gate.
+
 ### Next delivery priorities
 
-1. **Freeze the corrected minimal handoff and verify a replayable local candidate.**
-   Pin the code, schemas, original source/review closure and required environment;
-   retain original decisions and the separate v03 freeze. Reuse SX01–SX06 and the
-   existing regressions to replay product ownership, complete citations,
-   clarification, scoped abstention, quarantine, atomic budgets and integrity
-   failure. Acceptance: the candidate verifies from the declared inventory and
-   the saved expected outcomes without hidden local files or model/API calls.
-   No new whole-manual review or new design questionnaire is needed. A freeze
-   records reproducibility; it neither activates serving nor approves procedures.
+1. **Implement and verify nonactivated local release/withdrawal authority.**
+   Wrap the frozen handoff with a versioned candidate inventory: release,
+   mapping/source index and explicit withdrawal register. Keep both freezes and
+   their original reviews intact. Distinguish missing/unreadable authority from
+   a declared empty register; recheck authority per request and before response
+   delivery. Missing/changed global authority must fail closed; withdrawn support
+   must be held without erasing independently valid tasks or essential warnings.
+   Acceptance: candidate schemas and the existing cases, citation resolution,
+   empty-vs-missing inventory, withdrawal and concurrent-change regressions pass;
+   no active pointer or automatic publication is created. Present the concrete
+   candidate and results for activation review, not another whole-manual review.
 2. **Consolidate the demonstrable baseline in parallel.** Gather a short usability
    response to the merged Protein A/G and MabSelect entries; keep the published
    screenshot tour distinct from live execution. Use the existing second-PC
    protocol on another physical Windows PC when available. Acceptance: versions,
    setup/readiness, citations, warnings and clarification/quarantine behavior are
    recorded without treating documentary checks as scientific validation. Preserve
-   v03; any new MabSelect freeze requires a separate reviewed inventory.
-3. **Review explicit serving activation after candidate checks.** Prepare the
-   versioned local release/withdrawal inventory and current-authority checks;
-   do not treat the preview's staging configuration as that registry. Any legacy
+   both freezes; later behavior changes require a new candidate/version.
+3. **Review explicit serving activation after authority checks.** The registry
+   candidate needs its own activation decision; the existing preview and runtime
+   freeze do not supply one. Do not treat staging configuration as current serving
+   authority. Any legacy
    chat connection needs a separately tested typed dispatch, not legacy graph
    paths or free model prose. Preserve historical scores and distinguish source
    review/publication from generated-answer evaluation.
@@ -661,6 +697,6 @@ retained in [its diagnostic](experiments/cytiva-local-extraction-diagnostic.md).
 Selected table repairs and conservation checks do not complete phase 3 extraction
 precision/recall, lifecycle or publication acceptance. Ragas evaluation,
 OpenTelemetry instrumentation and Promptfoo testing remain pending. The minimal MabSelect documentary
-handoff is merged as a local preview; activation/withdrawal authority and legacy
+handoff and its separate freeze/replay are merged; activation/withdrawal authority and legacy
 chat integration remain pending, as described in the current checkpoint above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

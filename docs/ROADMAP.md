@@ -11,7 +11,8 @@ extraction is not yet served by the legacy chatbot. A separate model-free guided
 demo serves 25 reviewed passages through frozen v03. A merged, separate
 Protein A/G Sepharose backpressure journey and a separate merged MabSelect
 cleaning entry now reuse scoped cleaning reviews and original citations, without
-a model or database. Portable telemetry, independent
+a model or database. The corrected MabSelect documentary handoff and its typed
+local preview are merged; the handoff is not yet frozen or activated. Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
@@ -46,7 +47,7 @@ Migration from the legacy dense template/review database is still pending.
   This development review is not an exhaustive gold benchmark or a causal retrieval
   evaluation. Reviewed cleaning and contaminant sources/questions now extend the
   procedural sample; their retrieval results are summarized below. Next: preserve
-  decisions/reservations in the serving adapter and measure coverage independently.
+  decisions/reservations in a frozen handoff replay and measure coverage independently.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
@@ -66,10 +67,19 @@ is published, while the executable Python application remains local.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03, its runtime freeze, corrected local demo, Windows installer and launcher merged; same-PC fresh-clone setup verified; bounded Protein A/G and separate MabSelect journeys, approval/DOM safeguards and Windows test-runner repairs merged | Reviewed-records serving contract/adapter, second-machine setup/walkthrough and independent answer evaluation |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded Protein A/G and MabSelect journeys, approval/DOM safeguards and test-runner repairs merged. PR70 adds the accepted serving contract, schemas and corrected minimal documentary handoff | Handoff freeze/replay, explicit local release/withdrawal activation gate, second-machine validation and independent answer evaluation; no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Current merged baseline: `main` at `4d2809b`, including
+Latest merged baseline: `main` at `ada012b`, including
+[PR70](https://github.com/mukunde/bioprocess-assistant/pull/70). The corrected
+documentary handoff is integrated. The complete suite finished with **854 tests:
+853 passed and one optional PDFium preview skip**. The first run's Windows
+HTTP `10053` interruption in an older demo test is retained; that module and a
+second full run passed without code or protection changes. Frozen v03 remains
+valid. These checks establish known-code conformance and integrity, not
+independent answer quality, scientific validation or a new activated release.
+
+Previous merged baseline: `main` at `4d2809b`, including
 [PR68](https://github.com/mukunde/bioprocess-assistant/pull/68). The MabSelect
 journey and suite repairs are integrated; the complete merged-main suite ran
 **830 tests: 829 passed, one optional PDFium preview skip, no failures or errors**.
@@ -213,16 +223,42 @@ remains historical; the subsequent 830-test repaired run and the merged-main
 timeout's unique cause remains unproven. Windows path handling is fixed without
 changing OS security settings or frozen test methods.
 
+### Merged minimal documentary handoff
+
+[PR70](https://github.com/mukunde/bioprocess-assistant/pull/70) merges the
+[accepted design, schemas, implementation and tests](validation/MABSELECT-DOCUMENTARY-HANDOFF-PACKAGE.md).
+The local service reuses the current selector, retains complete required passages,
+original quantities, product/context conditions, immediate following washes,
+human reservations and version-bound citation views. It does not synthesize a
+recipe or establish treatment suitability.
+
+The three review gaps are corrected: response-local references disambiguate
+bundles per task (including Q09), unexpected failures become scoped `unavailable`
+outcomes while independent tasks survive, and `Wash immediately` remains faithful
+in the machine field. There are 24 documentary-handoff tests; the nine schemas,
+32 structural fixtures and clean-main-plus-package smoke checks pass.
+The [implementation report](validation/MABSELECT-DOCUMENTARY-HANDOFF.md) retains
+the earlier 848-test pre-correction run separately from subsequent checks.
+
+The dedicated preview is runnable with `python -m demo.documentary_preview` in
+the prepared demo environment (default loopback port 8783). The default service
+is inactive without explicit preview mode. This is merged local code, not an
+activated serving registry, new runtime freeze, hosted Python app, source
+publication or legacy-chat route. E118-I/E121-EQ remain excluded. Quantities stay
+in original text; parsed numerical annotations and production withdrawal
+authority remain deferred. The published Flowshot/video captures are unchanged.
+
 ### Next delivery priorities
 
-1. **Review the reviewed-records-to-serving contract before coding the adapter.**
-   Define the handoff of exact product/phase bindings, applicability conditions,
-   quantities, alternatives, warnings, human reservations, citations and quarantine.
-   Prepare representative accepted, clarification and abstention cases; verify
-   that the handoff cannot combine alternatives or transfer product-specific
-   conditions. Acceptance: the user reviews the contract and cases, and source
-   eligibility and publication boundaries are explicit. This is the next design
-   deliverable, not an implemented adapter or authorization to generate advice.
+1. **Freeze the corrected minimal handoff and verify a replayable local candidate.**
+   Pin the code, schemas, original source/review closure and required environment;
+   retain original decisions and the separate v03 freeze. Reuse SX01–SX06 and the
+   existing regressions to replay product ownership, complete citations,
+   clarification, scoped abstention, quarantine, atomic budgets and integrity
+   failure. Acceptance: the candidate verifies from the declared inventory and
+   the saved expected outcomes without hidden local files or model/API calls.
+   No new whole-manual review or new design questionnaire is needed. A freeze
+   records reproducibility; it neither activates serving nor approves procedures.
 2. **Consolidate the demonstrable baseline in parallel.** Gather a short usability
    response to the merged Protein A/G and MabSelect entries; keep the published
    screenshot tour distinct from live execution. Use the existing second-PC
@@ -230,10 +266,12 @@ changing OS security settings or frozen test methods.
    setup/readiness, citations, warnings and clarification/quarantine behavior are
    recorded without treating documentary checks as scientific validation. Preserve
    v03; any new MabSelect freeze requires a separate reviewed inventory.
-3. **Implement and evaluate the adapter after contract review.** Keep source review,
-   publication to the serving store, retrieval and answer rendering separate.
-   Use fresh representative cases and preserve historical blocked scores; no
-   automatic ingestion-to-chat enrichment is currently available.
+3. **Review explicit serving activation after candidate checks.** Prepare the
+   versioned local release/withdrawal inventory and current-authority checks;
+   do not treat the preview's staging configuration as that registry. Any legacy
+   chat connection needs a separately tested typed dispatch, not legacy graph
+   paths or free model prose. Preserve historical scores and distinguish source
+   review/publication from generated-answer evaluation.
 4. **Instrument and evaluate the actual answering path incrementally.** Add
    OpenTelemetry spans, call/retry/cost accounting and budget enforcement. Evaluate
    citations and abstentions with deterministic checks, calibrated Ragas and
@@ -621,6 +659,8 @@ contract. Subsequent real-manual conversion/chunking reviews and passage-retriev
 experiments are summarized above; the initial local extraction's limitations are
 retained in [its diagnostic](experiments/cytiva-local-extraction-diagnostic.md).
 Selected table repairs and conservation checks do not complete phase 3 extraction
-precision/recall, lifecycle or publication acceptance. Ragas, OpenTelemetry,
-Promptfoo execution and the reviewed-record serving adapter remain unimplemented.
+precision/recall, lifecycle or publication acceptance. Ragas evaluation,
+OpenTelemetry instrumentation and Promptfoo testing remain pending. The minimal MabSelect documentary
+handoff is merged as a local preview; activation/withdrawal authority and legacy
+chat integration remain pending, as described in the current checkpoint above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

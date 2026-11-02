@@ -15,7 +15,9 @@ a model or database. The corrected MabSelect documentary handoff and its typed
 local preview are merged; PR72 adds its separate 52-file freeze and accepted-case
 replay. PR74 adds the corrected local registry; PR76 records the explicitly
 approved local v02 activation and its replay. One private verification store is
-active; Git still ships the staged candidate, with no UI/legacy-chat connection.
+active; Git still ships the staged candidate. PR78 adds a separate explicit-root
+registry UI with citations, clarification, abstention and withdrawal checks; the
+original preview/launchers and legacy chat remain separate.
 Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
@@ -51,12 +53,13 @@ Migration from the legacy dense template/review database is still pending.
   This development review is not an exhaustive gold benchmark or a causal retrieval
   evaluation. Reviewed cleaning and contaminant sources/questions now extend the
   procedural sample; their retrieval results are summarized below. The separate
-  handoff freeze/replay, registry and local activation record are now merged.
-  Next: connect one bounded opt-in UI path, then measure coverage independently.
+  handoff freeze/replay, registry, local activation record and opt-in registry UI
+  are now merged. Next: prepare reviewed held-out acceptance references, then
+  evaluate the integrated bounded path without retuning on the results.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Current checkpoint — 2 November 2026
+## Current checkpoint — 3 November 2026
 
 Phase numbers identify workstreams and acceptance gates, not a completed linear
 sequence. Documentary work advanced before telemetry; manifests and timings do
@@ -72,10 +75,27 @@ is published, while the executable Python application remains local.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation and verified active citations/replay | Typed opt-in UI dispatch and end-to-end checks, second-machine validation and independent answer evaluation; fresh clones staged, no legacy chat integration |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI and 18 HTTP/DOM tests | Reviewed held-out acceptance test, second-machine validation and independent answer evaluation; fresh clones staged, no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest merged baseline: `main` at `59b5aee`, including
+Latest merged baseline: `main` at `c230f14`, including
+[PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
+[nine-file registry UI package](validation/MABSELECT-REGISTRY-UI-PACKAGE.md) is
+integrated. Complete suite on merged `main`: **914 executed, 913 passed and one
+optional PDFium preview skip**, no failures/errors. Eighteen HTTP/DOM checks cover
+citations, clarification, scoped abstention, version-bound withdrawals and
+independent support, including six regressions for controlled source errors and
+a 15-second fetch/body deadline with safe manual retry/late-response handling.
+
+The local UI reads explicitly configured active authority; it neither creates
+nor activates a store and never falls back to the preview. Known-case browser/
+HTTP/DOM checks do not establish independent answer quality. Both original freezes
+remain valid and unchanged; new UI code is outside their closures. Private store,
+notes and pilots are preserved. Fresh clones remain staged, the UI requires its
+own approved root, and legacy chat/launchers/published tours are unchanged.
+[Usage and limits](CYTIVA-REGISTRY-UI.md).
+
+Earlier local activation baseline: `main` at `59b5aee`, including
 [PR76](https://github.com/mukunde/bioprocess-assistant/pull/76). The eight-file
 [activation record](../experiments/cytiva/mabselect-local-activation-v02/README.md)
 is merged: explicit LA01–LA08 approval, initial empty withdrawal inventory,
@@ -84,8 +104,8 @@ cases, 25 citation occurrences and thirteen source views verified. The activatio
 32 disposable lifecycle tests passed. Merged-main complete suite: **896 executed,
 895 passed, one optional PDFium preview skip**. Both original freezes remain valid.
 The private store is not in Git; fresh clones retain the staged candidate and
-require their own reviewed activation. No UI/launcher/legacy-chat dispatch is
-connected, no automatic activation is provided and no independent answer-quality
+require their own reviewed activation. At that checkpoint no UI/launcher/legacy-chat
+dispatch was connected; no automatic activation is provided and no independent answer-quality
 score is claimed. See the [operator limits](validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.md).
 
 Earlier registry implementation baseline: `main` at `37a44eb`, including
@@ -306,8 +326,8 @@ to verify or replay. This freeze does not replace v03 (36 pins), create an activ
 release/withdrawal registry, change source approvals or supply a prospective score.
 Original decisions, results, notes and pilots remain unchanged. Runtime integrity
 is complete for this frozen candidate; PR74 adds the nonactivated authority layer
-below. PR76 subsequently records the approved local activation; typed UI
-dispatch is now the next gate.
+below. PR76 records the approved local activation, and PR78 adds a separate
+opt-in registry UI. Held-out acceptance of the integrated path is the next gate.
 
 ### Merged registry and approved private local activation
 
@@ -336,26 +356,53 @@ mapping, quotations, conditions, reservations, code and both freezes.
 The private store is not an installable artifact. A fresh clone contains the
 staged candidate and the local-run evidence, not an active pointer or authority
 journal. Its owner needs a separate reviewed activation; neither merging the
-record nor passing tests grants it. The current UI/preview, launcher and legacy
-chat do not dispatch to the active registry.
+record nor passing tests grants it. PR78 adds a separately launched, explicit-root
+UI that dispatches to active authority. The original preview, launchers and legacy
+chat remain unchanged.
 The local directory is trusted, with cooperating single-process writers:
 whole-directory rollback needs an external anchor to detect, and interrupted
 activation requires explicit operator review. No multiwriter/signature service,
-UI dispatch or new answer-quality claim is implied.
+automatic deployment or new answer-quality claim is implied.
+
+### Merged opt-in MabSelect registry UI
+
+[PR78](https://github.com/mukunde/bioprocess-assistant/pull/78) adds a separate
+loopback server/page requiring `--registry-root`. Typed requests and source views
+use current authority without a candidate override. Missing/invalid authority
+refuses support. Withdrawals hold dependent procedures and old bookmarked
+sources, while independent support and its essential warnings remain available.
+The source renderer preserves original excerpts, page/provenance and scoped
+reservations; the UI handles clarification and scoped pressure abstention.
+
+The [corrected review](validation/MABSELECT-REGISTRY-UI-REVIEW-FIXES.md) resolves
+two gaps: unexpected source/renderer exceptions now return generic 503 responses,
+with 404 reserved for a verified unregistered source; a 15-second fetch/body
+deadline restores controls and permits manual retry without accepting late results.
+Client cancellation bounds UI waiting, not termination of server computation.
+The original implementation and two-gap review are retained as historical evidence.
+
+Eighteen HTTP/DOM tests pass. A normal response, source citation, clarification
+and abstention were also observed in the browser across the implementation and
+corrected runs. Corruption, withdrawals and request stalls are tested only in
+disposable/controlled fixtures. The live private store stays generation 1,
+withdrawal version 1, zero events. The new UI is outside both existing freeze
+closures; no new runtime freeze, activation, source approval or dependency is added.
+The original 8783 preview, Windows launchers, public tours and legacy chat remain
+separate. This closes the bounded UI integration gate, not independent quality,
+portability, public executable hosting or scientific validation.
 
 ### Next delivery priorities
 
-1. **Connect one bounded opt-in MabSelect UI path through the registry.**
-   Use an explicit server-side data-root configuration and the existing typed
-   request/response/source-view methods. Preserve both freezes, the private store
-   and current previews; do not add a client path override or auto-activation.
-   Acceptance: a normal answer with its original citation, clarification,
-   abstention and withdrawn/unavailable support are observable end to end.
-   Missing/invalid authority must refuse service without preview/model fallback.
-   Exercise lifecycle faults only in disposable stores, with no real withdrawals
-   or new approvals introduced merely for tests. Activation review/replay is
-   complete; no further design cycle or whole-manual review is required for this
-   integration. Legacy chat/graph dispatch remains a separate scope.
+1. **Prepare reviewed held-out acceptance references for the integrated UI.**
+   Start with a small set (for example six to eight new requests) over the existing
+   reviewed MabSelect corpus. Record the current merged code/UI/environment and
+   authority identities without copying the private store or altering either
+   freeze. Define expected answer content, necessary conditions/citations and
+   clarification/abstention outcomes before execution; review the references first.
+   Keep fault scenarios in disposable stores. Acceptance: an explicit bounded
+   protocol and reviewed references, distinct from the six development replays
+   and 18 regression tests. No new runtime-freeze machinery, ontology redesign,
+   whole-manual review or LLM is required to prepare this slice.
 2. **Consolidate the demonstrable baseline in parallel.** Gather a short usability
    response to the merged Protein A/G and MabSelect entries; keep the published
    screenshot tour distinct from live execution. Use the existing second-PC
@@ -363,16 +410,19 @@ UI dispatch or new answer-quality claim is implied.
    setup/readiness, citations, warnings and clarification/quarantine behavior are
    recorded without treating documentary checks as scientific validation. Preserve
    both freezes; later behavior changes require a new candidate/version.
-3. **Evaluate the integrated bounded answering path.** Retain the known-case
-   UI/citation and withdrawal checks, then prepare an independent evaluation of
-   answers, missing context and abstentions once that path exists. Do not reuse
-   development replays as prospective quality scores or operational approval.
-   Source publication and answer evaluation remain distinct; preserve historical
-   results and the two freezes.
-4. **Instrument and evaluate the actual answering path incrementally.** Add
-   OpenTelemetry spans, call/retry/cost accounting and budget enforcement. Evaluate
-   citations and abstentions with deterministic checks, calibrated Ragas and
-   Promptfoo attacks with benign controls when that path exists. These remain pending.
+3. **Execute the fixed integrated acceptance trial after reference review.**
+   Exercise the UI/API against the recorded baseline without retuning after
+   results. Preserve all outputs and explain failures; keep withdrawal/corruption
+   simulations separate from the real store. New wording on the same bounded
+   corpus is not evidence of whole-manual or scientific generalization. Do not
+   reuse development replays as prospective quality scores. Legacy chat/graph
+   integration remains separate; preserve historical results and both freezes.
+4. **Instrument and evaluate the serving path incrementally.** Add OpenTelemetry
+   spans and portable latency/call accounting to the registry UI/service; model
+   calls/cost remain zero on this deterministic path. Model-call retry/cost/budget
+   enforcement, calibrated Ragas for later generated answers and Promptfoo attacks
+   with benign controls remain separate pending work. Deterministic citation and
+   abstention checks already exist; they do not complete telemetry or red teaming.
 5. **Compare architectures after prerequisites.** Run graph/passages/LightRAG on a
    common corpus and budget. Benchmark local answering separately; keep KAG and
    fine-tuning conditional on failures simpler approaches cannot address.
@@ -760,6 +810,7 @@ precision/recall, lifecycle or publication acceptance. Ragas evaluation,
 OpenTelemetry instrumentation and Promptfoo testing remain pending. The minimal MabSelect documentary
 handoff, its separate freeze/replay and corrected local release/withdrawal registry
 and the approved private local activation record are merged. One verification
-store is active; Git still ships staged data. Typed UI dispatch and legacy-chat
-integration remain pending, as described in the current checkpoint above.
+store is active; Git still ships staged data. The separate opt-in registry UI is
+merged in PR78. Held-out integrated acceptance and legacy-chat integration remain
+pending, as described in the current checkpoint above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

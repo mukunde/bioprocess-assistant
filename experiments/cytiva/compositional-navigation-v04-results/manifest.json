@@ -6,7 +6,7 @@
     "results.json": "a7401fbed60bc15ebbcee873f90d35b08f0f236584cc8b32dde47a408cab2315"
   },
   "supporting_files": {
-    "README.md": "18782cdda0cd5a56ef213f44c8243d8e016c436f2d128f2d863ffc982ccdf35a",
+    "README.md": "f21850b23c57c7705a25e644ad35bb72df4e3b0fee73c0c5a72800cf148b9fc4",
     "docs/experiments/cytiva-compositional-context-results.md": "6f21186cf57d8ddde1c1bc3df499f318088b0e58807259f29d199ce632ae12a2",
     "experiments/cytiva/compositional_navigation_retrieval.py": "f8cfee21fa0764f58b621a969674f0dd4b2a26b1e2b5e93117d4aff9ea1b8183",
     "experiments/cytiva/section_navigation_v04.json": "cc8439f575216400fcd531e8a3e39f15d7bf438cce1f2f50e8dbd7b17a05e41e",

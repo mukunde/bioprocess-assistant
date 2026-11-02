@@ -36,13 +36,23 @@ The optional MP4 download remains available. The same site now hosts the recorde
 
 ## Current status
 
+Merged application checkpoint (2 November 2026): `main` at `4d2809b`, including
+[PR #68](https://github.com/mukunde/bioprocess-assistant/pull/68). The separate
+MabSelect cleaning journey, portable approval checks, DOM/API regressions and
+suite repairs are merged. On the exact merged files, **830 tests executed:
+829 passed, one optional PDFium preview skip, no failures or errors**.
+Frozen v03 and its 36 pins remain valid. These are regression and integrity
+checks, not independent retrieval, answer-quality or scientific validation.
+See the [combined package](docs/validation/MABSELECT-CLEANING-PACKAGE.md) and
+[suite repair analysis](docs/validation/MABSELECT-SUITE-REPAIR.md).
+
 Publication checkpoint (1 November 2026): `main` at `5decd53`, with the wide
 Flowshot package ([PR #65](https://github.com/mukunde/bioprocess-assistant/pull/65))
 and Pages integration ([PR #66](https://github.com/mukunde/bioprocess-assistant/pull/66))
 merged. [Deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/41350245456)
 succeeded and the public README-to-walkthrough route was verified. Three targeted
 publication tests pass. This is media delivery evidence, not a new application or
-answer-quality benchmark; the captured MabSelect implementation remains separate.
+answer-quality benchmark. The captured MabSelect implementation was separate at that publication checkpoint and has since merged in PR #68.
 
 Earlier application verification checkpoint (31 October 2026): `main` at
 `7d6b9c2`, including the bounded backpressure journey
@@ -93,7 +103,7 @@ for Protein A/G Sepharose, separate from frozen v03. Select an exact product and
 a deposit context to explore the original cleaning passages on PDF pages 166–167.
 Unknown context leads to clarification; hydrophobic cleaning routes stay
 alternative, with their quantities and pressure precaution. MabSelect remains
-explicitly outside this first journey. The documentary source pool contains 17
+outside this first Protein A/G entry and now has its own separate entry below. The documentary source pool contains 17
 reviewed cleaning excerpts; each response uses its own reviewed source bundle.
 This path uses no model, API or database and does not establish a cause, treatment
 suitability or authorization to reuse a medium. The four-scenario browser check
@@ -110,10 +120,20 @@ and usability fixes were agent checks, not new human scientific approval.
 | Structured request control | Merged offline control. S01-S12: all 24 EN/FR submissions and all 12 paired scenarios pass reviewed context/diagnostic criteria; known-corpus diagnostic evidence only |
 | Free-text interface and local demo | v01/v02, reviewed FT/FV trials, corrected opt-in v03, its runtime freeze, corrected guided/text demo, Windows installer and launcher merged. Same-PC fresh-clone setup verified; second-machine validation pending. Historical gates remain blocked |
 | Bounded backpressure journey | Merged: deterministic Protein A/G Sepharose product/context selection, clarification, separate alternatives and original citations; independent of frozen v03. MabSelect is outside scope |
-| Reviewed records → chatbot | Adapter pending; ingestion does not automatically enrich the serving graph |
+| MabSelect cleaning journey | Merged in PR #68: exact-product/context controls, source-linked general/restricted alternatives, warnings and no-recipe clarification; portable approval verification and DOM/API mutation checks; separate from v03 and the legacy chat |
+| Reviewed records → chatbot | Next design priority: explicit source/condition/quarantine serving contract; no automatic graph enrichment |
 | Observability and evaluation extensions | OpenTelemetry, Ragas and Promptfoo remain pending; LightRAG is a comparison candidate and KAG remains conditional |
 
 The current chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
+
+**MabSelect is also merged as a separate local entry:** choose **MabSelect · cleaning guidance**.
+Exact plain MabSelect, SuRe and SuRe LX retain their reviewed conditions and
+product-specific restrictions. General formulations and stronger-alkali blocks
+remain distinct; detergent/solvent alternatives keep their warning and citations.
+Unknown or conflicting inputs require clarification. This extends the local
+model-free demo, not the legacy Neo4j corpus. The [design and scope](docs/technical/MABSELECT-CLEANING-JOURNEY-V01.md)
+and [implementation checks](docs/validation/MABSELECT-CLEANING-DEMO.md) preserve
+original approvals and reservations; MabSelect has no new runtime freeze.
 
 ## Architecture
 
@@ -158,12 +178,19 @@ the launcher and running demo do not install or download anything. The
 [demo guide](docs/DEMO-FIRST.md) covers `-CheckOnly`, `-PythonPath`, `-Port`, the
 walkthrough and prerequisites for another machine. Ctrl+C stops the local server.
 
-For the new journey, choose **Troubleshooting · rising backpressure**, or open
+For the Protein A/G journey, choose **Troubleshooting · rising backpressure**, or open
 [the direct local link](http://127.0.0.1:8766/#troubleshooting-controls). Try an
 unspecified product, Protein A Sepharose with hydrophobic context, then MabSelect;
 open a citation to inspect the original product scope and warning. This journey
 is separate from the guided/text v03 route shown in the existing video. See
 [scope and verification](docs/validation/CYTIVA-TROUBLESHOOTING-DEMO.md).
+
+For MabSelect, choose **MabSelect · cleaning guidance** or open
+[the local entry](http://127.0.0.1:8766/#mabselect-controls). Try an unspecified
+variant, exact plain MabSelect with precipitated substances, SuRe with that same
+context, then SuRe LX with hydrophobic context. Check the separate alternatives,
+E167-W warning and citations; unknown/mixed context should request clarification,
+not select a recipe. This is documentary support, not a diagnosis.
 
 ### Existing Chainlit/Neo4j chat
 
@@ -231,17 +258,24 @@ Install the additional test dependencies into the application environment:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r eval/requirements.txt -r requirements-structured.txt
-.\.venv\Scripts\python.exe -m unittest tests -v
+npm ci --prefix tests/ui --ignore-scripts --no-audit --no-fund
+.\.venv\Scripts\python.exe scripts/run_tests.py --temp-root "$env:LOCALAPPDATA\Temp"
 ```
 
 The [current suite notes](tests/README.md) explain the maintained entry point and preservation of frozen historical fixtures.
 
 These tests mock external model/database calls; some use loopback HTTP servers
 and Windows asynchronous sockets. They need no paid API or external service.
-The current **799 passed / one skipped** result used the maintained local
-verification environment and offline cache. The skip concerns the optional PDFium
-preview dependency. The historical **790/790** result above used an earlier
-baseline. Neither result is clean-OS certification or an answer-quality measurement.
+The current **829 passed / one skipped (830 executed)** result on merged
+`4d2809b` used the maintained verification environment, offline cache, locked
+test-only Node/jsdom dependencies and a short temporary root. The skip concerns
+the optional PDFium preview dependency. The runner keeps nested Windows fixtures
+out of deep checkout paths; DOM HTTP waits are bounded and the subprocess ceiling
+remains 40 seconds. Three historical manifests refresh documentation support
+hashes only. The first failed run and the uncertainty about its DOM timeout
+remain recorded in the [repair analysis](docs/validation/MABSELECT-SUITE-REPAIR.md).
+The earlier **799/one skip** and **790/790** checkpoints above remain historical.
+None is clean-OS certification or an answer-quality measurement.
 The separate demo setup also passed in a fresh clone on the same PC. Its twelve
 dependencies and wheel hashes are in `demo/requirements-windows.lock`; its installer
 prepares the public tokenizer asset with the frozen hash. Other structured runtime
@@ -281,6 +315,7 @@ does not establish general language understanding or generated-answer quality.
 | [Corrected v03](docs/technical/FREE-TEXT-CANDIDATE-V03-REVIEW-FIXES.md) | Merged: versioned coverage, buffer occurrences and French phase-origin fixes; 76 v03 checks pass; [runtime freeze](experiments/cytiva/free-text-v03-freeze-v01/README.md) pins 36 files | Known development regressions and runtime integrity, not a new prospective score or legacy chat activation |
 | [Guided demo and Windows setup](docs/DEMO-FIRST.md) | Merged: request-to-source walkthrough, usability corrections, isolated hash-locked installation and launcher checks; seven browser/HTTP scenarios and five exact displayed quotations checked | Same-PC fresh-clone evidence; second-machine/clean-OS validation pending. 25-excerpt scope; no generated advice or whole-manual coverage |
 | [Bounded backpressure journey](docs/validation/CYTIVA-TROUBLESHOOTING-DEMO.md) | Merged: four agent browser scenarios, 17 journey/demo regressions and scoped cleaning-review reuse; exact source quotations and pressure warning retained | Product/context exploration, not diagnosis; no independent retrieval/answer benchmark or operational approval. MabSelect outside scope; frozen v03 unchanged |
+| [MabSelect and suite repairs](docs/validation/MABSELECT-CLEANING-PACKAGE.md) | Merged in PR #68: MS01–MS08/C1–C4 design approval replay, MC01–MC12, DOM/API control and mutation tests; merged-main suite 829 passed / one optional skip | Known reviewed sources and code; no new runtime freeze, source approval or independent answer-quality result; no legacy chat enrichment |
 | [Evaluation contract](eval/README.md) | 33 development cases covering scope, refusals and grounding | Existing cases and historical results are not independent validation |
 
 The question series have distinct histories: Q/N/C contain 28 reviewed development
@@ -302,18 +337,19 @@ excerpts, not the full manual. S's 2,048-token budget counts serialized context
 including bindings, not a future answer prompt or output. The source-reviewed
 claims have not been connected to the chatbot's serving path.
 
-**Next priority:** scope and review a second product-specific cleaning journey,
-provisionally MabSelect, using the existing reviewed sources. First collect a
-short usability response to the merged Protein A/G journey; then define exact
-product identities, conditions, alternatives, warnings and clarification cases
-before implementation. Never transfer Sepharose recipes or SuRe/SuRe LX-only
-conditions to another product. Preserve v03 and historical blocked scores; no
-new whole-manual extraction or unrestricted parser campaign is needed.
-Second-PC Windows installation remains a parallel portability check.
+**Next priority:** prepare and review the **reviewed-records-to-serving contract**
+before connecting the local evidence to the legacy chat. Define exact product and
+phase bindings, conditions, alternatives, warnings, reservations, citation
+provenance, admissible/quarantined sources, and clarification/abstention rules.
+Use a small representative set to check that quantities and applicability survive
+the handoff; no source approval or generation is implied. Implementation follows
+contract review. The merged local journeys and published Flowshot remain the
+immediately demonstrable baseline.
 
-The three-arm graph/passages/LightRAG comparison remains unexecuted. Current BM25
-trials are a lexical baseline, not the multilingual vector arm specified in that
-protocol. OpenTelemetry, Ragas and Promptfoo are not integrated yet.
+Second-physical-PC validation remains a parallel portability check. The
+three-arm graph/passages/LightRAG comparison is unexecuted; current BM25 trials
+are not its multilingual vector arm. OpenTelemetry, Ragas and Promptfoo remain
+pending; KAG and fine-tuning remain conditional on measured needs.
 
 With Neo4j running, `python eval/run_eval.py` evaluates the eligible English lexical subset without model calls. `--agent` additionally calls Anthropic for the assistant and judge and incurs API costs; it is a separate, deliberate evaluation step.
 
@@ -323,10 +359,10 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Review the usability of the merged Protein A/G backpressure journey, then specify a bounded MabSelect-specific cleaning extension from already reviewed sources. Agree product scope and source bundles before coding; retain alternatives, warnings and no-recipe clarification.
-2. Validate installation on a second physical Windows PC when available, using a fresh environment/cache, launcher checks and the existing walkthrough. This is a portability check; it does not block scoping the next local journey.
-3. Extend the reviewed-records-to-chatbot adapter only through a separate serving contract. The local journey and legacy Neo4j chat still serve different corpora and use different runtimes.
-4. Instrument the actual path with OpenTelemetry and portable call/retry/cost accounting; add generated-answer evaluation with Ragas and Promptfoo when that answering path exists. Fresh holdouts accompany later behavior changes.
+1. Prepare and review the reviewed-records-to-serving contract, with representative cases for product scope, conditions, quantities, alternatives, citations and clarification/quarantine. Do not connect the legacy chat before that review.
+2. Gather a short usability response to the merged Protein A/G and MabSelect entries; retain v03 and the historical scores. Validate installation on a second physical Windows PC when available as a separate portability gate.
+3. Implement the reviewed adapter only after the contract is accepted, then check it on fresh cases. Keep source publication, backend behavior and generated-answer evaluation distinct.
+4. Instrument the serving path with OpenTelemetry and portable call/retry/cost accounting; add Ragas and Promptfoo when the answering path exists.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.
 
 The FT and FV free-text comparisons have executed; the architecture comparison

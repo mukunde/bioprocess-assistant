@@ -1,0 +1,42 @@
+{
+  "kind": "compact_local_activation_package/v1",
+  "prepared_on": "2026-11-02",
+  "basis_commit": "ef58f0fb6eef8cc5c8ea595528c84f7c5df95994",
+  "release_id": "mabselect-local-v02",
+  "total_delivery_files": 8,
+  "hash_convention": "sha256_lf",
+  "manifest_self_hash_excluded": true,
+  "files_sha256_lf": {
+    "docs/decisions/MABSELECT-REGISTRY-V02-ACTIVATION-REVIEW.md": "5d27e812489aba95c6d3e13d7de96e91bd04a3f89be83b27994222e6993323d9",
+    "docs/decisions/MABSELECT-REGISTRY-V02-ACTIVATION-REVIEW.json": "ccb84af0a26c286d588b118350ccf22ceaa8a3dfb0af226ef8409f0a1e3bdd6d",
+    "docs/decisions/MABSELECT-REGISTRY-V02-ACTIVATION-DECISIONS.json": "be58a493e1a73050e7008dc13e232ccafe6fa49f5c7cb9638e1cfafb69d383d2",
+    "docs/validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.json": "a4d3d8b5046ead43a5e4bc5bffe21ff1fefd9d443e804aa5678cc6e9f2e60fa7",
+    "docs/validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.md": "b5c480ccbdb230b11c1b09be7e1414cf4699d12d52002f3af0e59d282cdc7a12",
+    "experiments/cytiva/mabselect-local-activation-v02/results.json": "f6f93cf6c83bd4f4f171b677ee8eb26a597b3f4afe78d7c7860025b801623597",
+    "experiments/cytiva/mabselect-local-activation-v02/README.md": "4bbe99e919122367c1096d51a494027a3bf374ab3c19051fe9b27180562de887"
+  },
+  "supporting_files_sha256_lf": {
+    "docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md": "afa9a559c093529aa625eac8c6a604d30cbd42f1c29a8136a43d8d2688aebdfe",
+    "experiments/cytiva/free-text-v03-freeze-v01/method-lock.json": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "experiments/cytiva/free_text_v03_freeze.py": "dbd1f0b2308f14b4dfb71281924d2e727617bd5ed67aedad0e5c16770436b547",
+    "experiments/cytiva/mabselect-handoff-freeze-v01/method-lock.json": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+    "experiments/cytiva/mabselect-registry-candidate-v02/replay-results.json": "d59eb97673b17d4ab129b332152aae838ad39a184146c2f98893b389d250dc72",
+    "experiments/cytiva/mabselect_handoff_freeze.py": "cf26c115ae339654f7d984e8b208e7445165d16797f38365d1b73b2a69f4ec2e",
+    "experiments/cytiva/mabselect_registry_candidate.py": "6d4e861aa8d976a8ecc24af59e5485b369a784b56403b78031f63ee7dfc6b53d",
+    "serving-data/releases/mabselect-local-v02/catalog.json": "b42b7e317705d86aa13abac5da76567f8d4622981dbdde6d207d811c491f354f",
+    "serving-data/releases/mabselect-local-v02/mapping.json": "acd5861adc7d9ad5ddac6ce92264e98a0399629c004e371bfa304585f5379839",
+    "serving-data/releases/mabselect-local-v02/release.json": "295f0b3c5483d3ecc0df715c3a5b2ff7ea511f7bfedf5f7dd9ba2bc7bb7ec44e",
+    "serving-data/releases/mabselect-local-v02/source-index.json": "025c3258398daee598e6d54c87e0ab280061c07927fee4b2f9915f6f57787eb5",
+    "serving-data/releases/mabselect-local-v02/withdrawal-decision.json": "1d8b24d7f5ec8b3ead8ddf2cd97e44d59ed6666c0c7b488b2887f97fc15a94c0",
+    "serving-data/releases/mabselect-local-v02/withdrawals.json": "d4e4f160aff24a2c3430447a569ffc9c5e35a6bc1bf88b05868f14d7068437bd",
+    "serving/README.md": "0c3299f8eeadeff10bd7410d31e8ee4ad3b6faef03ba9f29fe1bcb8942c4025d",
+    "serving/__init__.py": "01d848339406a0fd793329da85336639610e5a771a44f33458009e296c97cd3f",
+    "serving/local_registry.py": "0c5be9d00d72ca5034080c41668ab8fa967ef389fb97f1dfb13b2a015730db04",
+    "tests/test_local_registry.py": "1793159d1cc0aeb5f57ba770f67470c06bc450a8d4dcce9256ed766640b49bed"
+  },
+  "scope": "historical_local_activation_audit_not_runtime_authority",
+  "private_store_included": false,
+  "new_activation_performed_by_export": false,
+  "frozen_inputs_modified": false,
+  "original_decisions_modified": false
+}

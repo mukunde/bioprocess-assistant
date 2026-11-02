@@ -1,0 +1,699 @@
+{
+  "kind": "compact_local_activation_replay/v1",
+  "release_id": "mabselect-local-v02",
+  "scope": "known_case_conformance_not_independent_quality_or_scientific_validation",
+  "active_path_used": true,
+  "candidate_override_used": false,
+  "active_authority_digest": "6f3ab7eb77ed801941f3594a95b6832fd74a738b79c414c45a72b3922d46d96f",
+  "retained_candidate_replay": {
+    "path": "experiments/cytiva/mabselect-registry-candidate-v02/replay-results.json",
+    "sha256_lf": "d59eb97673b17d4ab129b332152aae838ad39a184146c2f98893b389d250dc72"
+  },
+  "response_reconstruction": "Use the retained case request/response; for documentary bundles replace only the top-level authority_digest with active_authority_digest. Validation errors stay unchanged. Compare canonical response SHA-256 and saved projections. This reconstructs retained content, not a new active-service execution.",
+  "cases": [
+    {
+      "case_id": "SX01",
+      "result": "passed",
+      "request_sha256_canonical": "0f00167e090b21c3becd87830d18bb1ef487da3335e9b9f923b3cec596618e36",
+      "active_response_sha256_canonical": "c7301dcd307d381a485c4235a01b255fa58398e2b3f7c329aa139f253e38da54",
+      "projection": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "request_id": "example-01",
+        "status": "supported",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "supported",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0"
+            ],
+            "bundle_keys": [
+              "mabselect.precipitated.general"
+            ],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "needs_clarification": 0,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 7739,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        },
+        "delivered_source_ids": [
+          "E167-H",
+          "E167-PH",
+          "E167-P"
+        ],
+        "delivered_review_ids": [
+          "Q05"
+        ]
+      },
+      "resolved_citations": [
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+        },
+        {
+          "source_id": "E167-PH",
+          "status": "available",
+          "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-PH"
+        },
+        {
+          "source_id": "E167-P",
+          "status": "available",
+          "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-P"
+        }
+      ],
+      "matches_retained_candidate_except_top_level_authority_digest": true
+    },
+    {
+      "case_id": "SX02",
+      "result": "passed",
+      "request_sha256_canonical": "8775ebfffd700e2f7552e1cb9e2a2951de1dad204aeace4bce81ee4ca45139d0",
+      "active_response_sha256_canonical": "1b7926e9659931dc215b6c965171b6d74be7392bd76eff9187f5eaa335b35a6e",
+      "projection": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "request_id": "example-02",
+        "status": "needs_clarification",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "needs_clarification",
+            "reason": "product_unknown",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0"
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [
+              "product"
+            ],
+            "absence_scope": null
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 1,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 11962,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        },
+        "delivered_source_ids": [
+          "E166-H",
+          "E166-T",
+          "E166-PH",
+          "E166-LH",
+          "E167-H",
+          "E167-PH",
+          "E167-SH",
+          "E167-LH"
+        ],
+        "delivered_review_ids": [
+          "Q09"
+        ]
+      },
+      "resolved_citations": [
+        {
+          "source_id": "E166-H",
+          "status": "available",
+          "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-H"
+        },
+        {
+          "source_id": "E166-T",
+          "status": "available",
+          "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-T"
+        },
+        {
+          "source_id": "E166-PH",
+          "status": "available",
+          "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-PH"
+        },
+        {
+          "source_id": "E166-LH",
+          "status": "available",
+          "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-LH"
+        },
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+        },
+        {
+          "source_id": "E167-PH",
+          "status": "available",
+          "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-PH"
+        },
+        {
+          "source_id": "E167-SH",
+          "status": "available",
+          "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-SH"
+        },
+        {
+          "source_id": "E167-LH",
+          "status": "available",
+          "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-LH"
+        }
+      ],
+      "matches_retained_candidate_except_top_level_authority_digest": true
+    },
+    {
+      "case_id": "SX03",
+      "result": "passed",
+      "request_sha256_canonical": "4ace96ce8ed7fd7367f579d5f2c5ccd6383845b592824c08a3eb260550507ba2",
+      "active_response_sha256_canonical": "e930035658cc22cac48ea1669fabca20a3ffb9ec3f351ee34d99cc800e90b280",
+      "projection": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "request_id": "example-03",
+        "status": "partial",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "supported",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0",
+              "/context/bundles/1"
+            ],
+            "bundle_keys": [
+              "mabselect.hydrophobic.detergent",
+              "mabselect.hydrophobic.solvent"
+            ],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          },
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "abstained",
+            "reason": "not_in_selected_excerpts",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/1"
+              }
+            ],
+            "bundle_refs": [],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": "Selected edition-bound MabSelect blocks only; not the entire manual."
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "needs_clarification": 0,
+          "abstained": 1,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 14902,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        },
+        "delivered_source_ids": [
+          "E167-H",
+          "E167-LH",
+          "E167-D",
+          "E167-E",
+          "E167-W"
+        ],
+        "delivered_review_ids": [
+          "N06",
+          "N07"
+        ]
+      },
+      "resolved_citations": [
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+        },
+        {
+          "source_id": "E167-LH",
+          "status": "available",
+          "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-LH"
+        },
+        {
+          "source_id": "E167-D",
+          "status": "available",
+          "quote_sha256": "96bec6ca131f56609bd54960ff8518adc1525413ca791b8cb60b0402f5266e76",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-D"
+        },
+        {
+          "source_id": "E167-E",
+          "status": "available",
+          "quote_sha256": "4ae45301795ef8ed166f21d2c38622d013e781799c1ed6ebecba1cf50f4f5af7",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-E"
+        },
+        {
+          "source_id": "E167-W",
+          "status": "available",
+          "quote_sha256": "95d1c60e7132a6f0e08d252f8755661bb81b7bc35220e6013467357265427088",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-W"
+        }
+      ],
+      "matches_retained_candidate_except_top_level_authority_digest": true
+    },
+    {
+      "case_id": "SX04",
+      "result": "passed",
+      "request_sha256_canonical": "6e080d6ca4bf50ce68f26c5aa2108530b0d0655cf074595a65dd844b4d0772f8",
+      "active_response_sha256_canonical": "2db87afc24c397c23e9e8bbed6b91b700aad3b759f11c711150aed1dc1fdb5b9",
+      "projection": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "request_id": "example-04",
+        "status": "partial",
+        "response_reason": "item_outcomes",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "cleaning_options",
+            "state": "needs_clarification",
+            "reason": "product_and_context_unknown",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/0"
+            ],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [
+              "product",
+              "deposit_context"
+            ],
+            "absence_scope": null
+          },
+          {
+            "task_id": "B",
+            "requested_item": "cleaning_options",
+            "state": "supported",
+            "reason": "documentary_support",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/1/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/1/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/1/requested_items/0"
+              }
+            ],
+            "bundle_refs": [
+              "/context/bundles/1"
+            ],
+            "bundle_keys": [
+              "mabselect.precipitated.general"
+            ],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "coverage": {
+          "supported": 1,
+          "needs_clarification": 1,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 0
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 17729,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        },
+        "delivered_source_ids": [
+          "E166-H",
+          "E166-T",
+          "E166-PH",
+          "E166-LH",
+          "E167-H",
+          "E167-PH",
+          "E167-SH",
+          "E167-LH",
+          "E167-P"
+        ],
+        "delivered_review_ids": [
+          "Q09",
+          "Q05"
+        ]
+      },
+      "resolved_citations": [
+        {
+          "source_id": "E166-H",
+          "status": "available",
+          "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-H"
+        },
+        {
+          "source_id": "E166-T",
+          "status": "available",
+          "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-T"
+        },
+        {
+          "source_id": "E166-PH",
+          "status": "available",
+          "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-PH"
+        },
+        {
+          "source_id": "E166-LH",
+          "status": "available",
+          "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E166-LH"
+        },
+        {
+          "source_id": "E167-H",
+          "status": "available",
+          "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-H"
+        },
+        {
+          "source_id": "E167-PH",
+          "status": "available",
+          "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-PH"
+        },
+        {
+          "source_id": "E167-SH",
+          "status": "available",
+          "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-SH"
+        },
+        {
+          "source_id": "E167-LH",
+          "status": "available",
+          "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-LH"
+        },
+        {
+          "source_id": "E167-P",
+          "status": "available",
+          "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+          "href": "/reviewed/v1/releases/mabselect-local-v02/sources/E167-P"
+        }
+      ],
+      "matches_retained_candidate_except_top_level_authority_digest": true
+    },
+    {
+      "case_id": "SX05",
+      "result": "passed",
+      "request_sha256_canonical": "425bfe1788e338c8766c24265a5666f7ef3dc397ed770ecb27a96355632b8476",
+      "active_response_sha256_canonical": "032aec1fb4ac090c6c0c09cf592fd425ddd7b5f5c64a7cebfaeed1dd0fad0df4",
+      "projection": {
+        "kind": "reviewed_documentary_bundle/v1",
+        "request_id": "example-05",
+        "status": "abstained",
+        "response_reason": "no_requested_item",
+        "items": [
+          {
+            "task_id": "A",
+            "requested_item": "pressure_limit",
+            "state": "excluded",
+            "reason": "excluded_by_request",
+            "field_origins": [
+              {
+                "field": "product",
+                "request_pointer": "/tasks/0/product"
+              },
+              {
+                "field": "deposit_context",
+                "request_pointer": "/tasks/0/deposit_context"
+              },
+              {
+                "field": "requested_item",
+                "request_pointer": "/tasks/0/requested_items/0"
+              },
+              {
+                "field": "exclusion",
+                "request_pointer": "/tasks/0/excluded_items/0"
+              }
+            ],
+            "bundle_refs": [],
+            "bundle_keys": [],
+            "withheld_bundle_keys": [],
+            "clarification_targets": [],
+            "absence_scope": null
+          }
+        ],
+        "coverage": {
+          "supported": 0,
+          "needs_clarification": 0,
+          "abstained": 0,
+          "quarantined": 0,
+          "unavailable": 0,
+          "excluded": 1
+        },
+        "context_measure": {
+          "convention": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan",
+          "delivered_bytes": 41,
+          "limit_bytes": 65536
+        },
+        "limits": {
+          "diagnosis_established": false,
+          "operational_suitability": "not_established",
+          "operational_authorization": false,
+          "absence_scope": "selected_release_bundles_only"
+        },
+        "delivered_source_ids": [],
+        "delivered_review_ids": []
+      },
+      "resolved_citations": [],
+      "matches_retained_candidate_except_top_level_authority_digest": true
+    },
+    {
+      "case_id": "SX06",
+      "result": "passed",
+      "request_sha256_canonical": "3bb463ead72f8d6b51ca3f06a1686b737b0f5b051cc159711aadc476dcd70223",
+      "active_response_sha256_canonical": "5df312428616b3641dccb0e27670c1b82db0e5ff0d612fefeb91c4eedd926e9f",
+      "projection": {
+        "kind": "reviewed_serving_validation_error/v1",
+        "request_id": "example-06",
+        "errors": [
+          {
+            "code": "unknown_authority_field",
+            "request_pointer": "/approved_sources"
+          }
+        ]
+      },
+      "resolved_citations": [],
+      "matches_retained_candidate_except_top_level_authority_digest": true
+    }
+  ],
+  "citation_occurrences": 25,
+  "all_source_views": [
+    {
+      "source_id": "E166-H",
+      "status": "available",
+      "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+      "source_object_sha256_canonical": "3f4f093da51f322eefb2fb2f8f1586cf735fd4c38c5296c71f7b0fbdd9ff1be2"
+    },
+    {
+      "source_id": "E166-LH",
+      "status": "available",
+      "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+      "source_object_sha256_canonical": "7926678ca75fe79b506e749479894db790079313c1e225c66fbe85f2e9f52001"
+    },
+    {
+      "source_id": "E166-PH",
+      "status": "available",
+      "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+      "source_object_sha256_canonical": "76ddc90d07cc5298bef7293304001aa4ba753a93a73a53d9f73d60d218ae364d"
+    },
+    {
+      "source_id": "E166-T",
+      "status": "available",
+      "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+      "source_object_sha256_canonical": "fba59321f824d33de8c225055a919faa330bc1353875d48f11778907094b624c"
+    },
+    {
+      "source_id": "E167-D",
+      "status": "available",
+      "quote_sha256": "96bec6ca131f56609bd54960ff8518adc1525413ca791b8cb60b0402f5266e76",
+      "source_object_sha256_canonical": "2815298ce09c227389b2650b6b82f59699202866b8ae1e16c4d2ff37ed6a7366"
+    },
+    {
+      "source_id": "E167-E",
+      "status": "available",
+      "quote_sha256": "4ae45301795ef8ed166f21d2c38622d013e781799c1ed6ebecba1cf50f4f5af7",
+      "source_object_sha256_canonical": "0a9f8248789c918efedd1d157d6b1aa9dcf572af4058b54476810d1ccc24ac2d"
+    },
+    {
+      "source_id": "E167-H",
+      "status": "available",
+      "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+      "source_object_sha256_canonical": "45ad2fc46003dc122b6f98d4b828251e11bd29b7e97eb70e0c18c369a2e39334"
+    },
+    {
+      "source_id": "E167-LH",
+      "status": "available",
+      "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+      "source_object_sha256_canonical": "53739778a3115b4978748e44341ef3060ddd7f6a4999556cc9ffc6ff8058a4be"
+    },
+    {
+      "source_id": "E167-P",
+      "status": "available",
+      "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+      "source_object_sha256_canonical": "2bff87d2cac0bec5cc110025d0d07a69c58dd14e25337b727831d5414a5acd66"
+    },
+    {
+      "source_id": "E167-PH",
+      "status": "available",
+      "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+      "source_object_sha256_canonical": "76093db65dc6f3f1ecfdbe9c4820e6a0a3b5c8f47a1b7d66ae346658a6122601"
+    },
+    {
+      "source_id": "E167-S",
+      "status": "available",
+      "quote_sha256": "ba17e3092a7866df3756d0048b8005352480b7cfa9888261de356620dfa4be14",
+      "source_object_sha256_canonical": "b8b88bbf862e52470b34bda6cefcbdda3d0efebe35de88f119d85638c40fbeae"
+    },
+    {
+      "source_id": "E167-SH",
+      "status": "available",
+      "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+      "source_object_sha256_canonical": "ee43322b08360b208614d033503013e61083e8143e1e5e58b4e1a1842979a0be"
+    },
+    {
+      "source_id": "E167-W",
+      "status": "available",
+      "quote_sha256": "95d1c60e7132a6f0e08d252f8755661bb81b7bc35220e6013467357265427088",
+      "source_object_sha256_canonical": "d07cb222bf0e45e2d3151e56d634cb02866c67b43ebbf1e4052c59ec30744a86"
+    }
+  ],
+  "network_attempts": [],
+  "llm_calls": 0,
+  "paid_api_calls": 0,
+  "source_of_execution_attestation": "docs/validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.json",
+  "runtime_authority_files_included": false
+}

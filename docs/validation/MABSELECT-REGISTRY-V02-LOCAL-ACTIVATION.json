@@ -1,0 +1,160 @@
+{
+  "kind": "local_activation_verification/v1",
+  "verified_at_utc": "2026-11-02T20:05:46.604557+00:00",
+  "basis_commit": "ef58f0fb6eef8cc5c8ea595528c84f7c5df95994",
+  "release_id": "mabselect-local-v02",
+  "local_status": "activated_and_verified",
+  "approval_record": "docs/decisions/MABSELECT-REGISTRY-V02-ACTIVATION-DECISIONS.json",
+  "approval_record_sha256_lf": "be58a493e1a73050e7008dc13e232ccafe6fa49f5c7cb9638e1cfafb69d383d2",
+  "runtime_root_relative": ".local-tools/mabselect-registry-v02-runtime",
+  "staged_authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+  "active_authority_digest": "6f3ab7eb77ed801941f3594a95b6832fd74a738b79c414c45a72b3922d46d96f",
+  "active_pointer": {
+    "kind": "reviewed_serving_active/v1",
+    "release_id": "mabselect-local-v02",
+    "manifest_sha256_lf": "a3e1a04fbb4fc1b01b1063714cb5b1ea7bdd0905c65dd7f1e344ede8e36ddecf",
+    "withdrawals_sha256_lf": "b6b46028a4aaae06262cfca76d21f5f36652140ea52363e42178d32487e1eece",
+    "activation_decision_ref": {
+      "artifact_id": "activation-decision",
+      "sha256": "b481e84eb7565e2595766c06e94d7068e04f0a58bfb77c7b890a3e3c6f064faa",
+      "hash_convention": "sha256_lf"
+    },
+    "mode": "local_opt_in_no_model"
+  },
+  "authority_head": {
+    "generation": 1,
+    "withdrawal_version": 1,
+    "sha256_lf": "2b7fbb6697f8469265af62c1cdc4ffab928f4ec3433e3b44b643bfe150a1f8aa"
+  },
+  "withdrawal_events": 0,
+  "active_replay": {
+    "cases": {
+      "SX01": "passed",
+      "SX02": "passed",
+      "SX03": "passed",
+      "SX04": "passed",
+      "SX05": "passed",
+      "SX06": "passed"
+    },
+    "citation_occurrences": 25,
+    "source_views": [
+      {
+        "source_id": "E166-H",
+        "status": "available",
+        "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+        "source_object_sha256_canonical": "3f4f093da51f322eefb2fb2f8f1586cf735fd4c38c5296c71f7b0fbdd9ff1be2"
+      },
+      {
+        "source_id": "E166-LH",
+        "status": "available",
+        "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+        "source_object_sha256_canonical": "7926678ca75fe79b506e749479894db790079313c1e225c66fbe85f2e9f52001"
+      },
+      {
+        "source_id": "E166-PH",
+        "status": "available",
+        "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+        "source_object_sha256_canonical": "76ddc90d07cc5298bef7293304001aa4ba753a93a73a53d9f73d60d218ae364d"
+      },
+      {
+        "source_id": "E166-T",
+        "status": "available",
+        "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+        "source_object_sha256_canonical": "fba59321f824d33de8c225055a919faa330bc1353875d48f11778907094b624c"
+      },
+      {
+        "source_id": "E167-D",
+        "status": "available",
+        "quote_sha256": "96bec6ca131f56609bd54960ff8518adc1525413ca791b8cb60b0402f5266e76",
+        "source_object_sha256_canonical": "2815298ce09c227389b2650b6b82f59699202866b8ae1e16c4d2ff37ed6a7366"
+      },
+      {
+        "source_id": "E167-E",
+        "status": "available",
+        "quote_sha256": "4ae45301795ef8ed166f21d2c38622d013e781799c1ed6ebecba1cf50f4f5af7",
+        "source_object_sha256_canonical": "0a9f8248789c918efedd1d157d6b1aa9dcf572af4058b54476810d1ccc24ac2d"
+      },
+      {
+        "source_id": "E167-H",
+        "status": "available",
+        "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+        "source_object_sha256_canonical": "45ad2fc46003dc122b6f98d4b828251e11bd29b7e97eb70e0c18c369a2e39334"
+      },
+      {
+        "source_id": "E167-LH",
+        "status": "available",
+        "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+        "source_object_sha256_canonical": "53739778a3115b4978748e44341ef3060ddd7f6a4999556cc9ffc6ff8058a4be"
+      },
+      {
+        "source_id": "E167-P",
+        "status": "available",
+        "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+        "source_object_sha256_canonical": "2bff87d2cac0bec5cc110025d0d07a69c58dd14e25337b727831d5414a5acd66"
+      },
+      {
+        "source_id": "E167-PH",
+        "status": "available",
+        "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+        "source_object_sha256_canonical": "76093db65dc6f3f1ecfdbe9c4820e6a0a3b5c8f47a1b7d66ae346658a6122601"
+      },
+      {
+        "source_id": "E167-S",
+        "status": "available",
+        "quote_sha256": "ba17e3092a7866df3756d0048b8005352480b7cfa9888261de356620dfa4be14",
+        "source_object_sha256_canonical": "b8b88bbf862e52470b34bda6cefcbdda3d0efebe35de88f119d85638c40fbeae"
+      },
+      {
+        "source_id": "E167-SH",
+        "status": "available",
+        "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+        "source_object_sha256_canonical": "ee43322b08360b208614d033503013e61083e8143e1e5e58b4e1a1842979a0be"
+      },
+      {
+        "source_id": "E167-W",
+        "status": "available",
+        "quote_sha256": "95d1c60e7132a6f0e08d252f8755661bb81b7bc35220e6013467357265427088",
+        "source_object_sha256_canonical": "d07cb222bf0e45e2d3151e56d634cb02866c67b43ebbf1e4052c59ec30744a86"
+      }
+    ],
+    "network_attempts": [],
+    "llm_calls": 0,
+    "paid_api_calls": 0,
+    "new_registry_instance_verified": true
+  },
+  "lifecycle_tests": {
+    "executed": 32,
+    "passed": 32,
+    "seconds": 46.868,
+    "scope": "disposable_test_roots_only_no_live_withdrawal_or_corruption"
+  },
+  "protected_freezes": {
+    "v03": {
+      "id": "free-text-v03-corrected-runtime-freeze-v01",
+      "status": "frozen",
+      "pinned_files": 36,
+      "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+      "environment_verified": true,
+      "runtime_instantiated": false,
+      "prospective_trial_executed": false
+    },
+    "mabselect": {
+      "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+      "status": "frozen",
+      "pinned_files": 52,
+      "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+      "environment_verified": true,
+      "runtime_instantiated": false,
+      "serving_activated": false,
+      "prospective_evaluation": false
+    }
+  },
+  "preexisting_files_unchanged": 688,
+  "old_notes_unchanged": 16,
+  "pilots_and_other_local_files_unchanged": true,
+  "versioned_candidate_unchanged": true,
+  "versioned_serving_root_activated": false,
+  "ui_dispatch_connected": false,
+  "http_server_added": false,
+  "activation_recovery_limits": "unchanged_from_LA06"
+}

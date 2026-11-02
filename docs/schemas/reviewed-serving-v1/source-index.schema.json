@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:source-index",
+  "title": "Reviewed serving v1 — source-index",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "const": "reviewed_serving_source_index/v1"
+    },
+    "release_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "corpus_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "pdf_available": {
+      "type": "boolean"
+    },
+    "passages": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/passage"
+      },
+      "minItems": 1
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/review"
+      },
+      "minItems": 1
+    },
+    "source_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "hash_convention": {
+            "type": "string",
+            "enum": [
+              "sha256_lf",
+              "raw_sha256"
+            ]
+          }
+        },
+        "required": [
+          "artifact_id",
+          "sha256",
+          "hash_convention"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1
+    }
+  },
+  "required": [
+    "kind",
+    "release_id",
+    "corpus_id",
+    "pdf_available",
+    "passages",
+    "reviews",
+    "source_artifacts"
+  ],
+  "additionalProperties": false
+}

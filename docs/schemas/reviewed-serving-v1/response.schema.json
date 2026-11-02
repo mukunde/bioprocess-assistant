@@ -1,0 +1,261 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:response",
+  "title": "Reviewed serving v1 — response",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "const": "reviewed_documentary_bundle/v1"
+    },
+    "contract_version": {
+      "const": "1"
+    },
+    "request_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "release_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "authority_digest": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "supported",
+        "partial",
+        "needs_clarification",
+        "abstained",
+        "unavailable"
+      ]
+    },
+    "response_reason": {
+      "type": "string",
+      "enum": [
+        "item_outcomes",
+        "no_requested_item",
+        "release_not_activated",
+        "invalid_authority",
+        "authority_changed"
+      ]
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/item_outcome"
+      },
+      "minItems": 0,
+      "maxItems": 40
+    },
+    "context": {
+      "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/context"
+    },
+    "citation_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "release_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "href": {
+            "type": "string",
+            "pattern": "^/reviewed/v1/releases/[A-Za-z0-9][A-Za-z0-9._-]{0,95}/sources/[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          }
+        },
+        "required": [
+          "source_id",
+          "release_id",
+          "href"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0
+    },
+    "coverage": {
+      "type": "object",
+      "properties": {
+        "supported": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "needs_clarification": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "abstained": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "quarantined": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "unavailable": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "excluded": {
+          "type": "integer",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "supported",
+        "needs_clarification",
+        "abstained",
+        "quarantined",
+        "unavailable",
+        "excluded"
+      ],
+      "additionalProperties": false
+    },
+    "context_measure": {
+      "type": "object",
+      "properties": {
+        "convention": {
+          "const": "utf8_json_sorted_keys_compact_unicode_preserved_no_nan"
+        },
+        "delivered_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "limit_bytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "convention",
+        "delivered_bytes",
+        "limit_bytes"
+      ],
+      "additionalProperties": false
+    },
+    "limits": {
+      "type": "object",
+      "properties": {
+        "diagnosis_established": {
+          "const": false
+        },
+        "operational_suitability": {
+          "const": "not_established"
+        },
+        "operational_authorization": {
+          "const": false
+        },
+        "absence_scope": {
+          "const": "selected_release_bundles_only"
+        }
+      },
+      "required": [
+        "diagnosis_established",
+        "operational_suitability",
+        "operational_authorization",
+        "absence_scope"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "kind",
+    "contract_version",
+    "request_id",
+    "release_id",
+    "authority_digest",
+    "status",
+    "response_reason",
+    "items",
+    "context",
+    "citation_refs",
+    "coverage",
+    "context_measure",
+    "limits"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "supported"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "items": {
+            "minItems": 1
+          },
+          "release_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "authority_digest": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "response_reason": {
+            "type": "string",
+            "enum": [
+              "release_not_activated",
+              "invalid_authority",
+              "authority_changed"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "status": {
+            "const": "unavailable"
+          },
+          "context": {
+            "properties": {
+              "bundles": {
+                "maxItems": 0
+              },
+              "passages": {
+                "maxItems": 0
+              },
+              "reviews": {
+                "maxItems": 0
+              }
+            }
+          },
+          "citation_refs": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ]
+}

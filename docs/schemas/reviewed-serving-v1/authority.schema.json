@@ -1,0 +1,200 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:authority",
+  "title": "Reviewed serving v1 — authority",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "reviewed_serving_active/v1"
+        },
+        "release_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "manifest_sha256_lf": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "withdrawals_sha256_lf": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "activation_decision_ref": {
+          "type": "object",
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "hash_convention": {
+              "type": "string",
+              "enum": [
+                "sha256_lf",
+                "raw_sha256"
+              ]
+            }
+          },
+          "required": [
+            "artifact_id",
+            "sha256",
+            "hash_convention"
+          ],
+          "additionalProperties": false
+        },
+        "mode": {
+          "const": "local_opt_in_no_model"
+        }
+      },
+      "required": [
+        "kind",
+        "release_id",
+        "manifest_sha256_lf",
+        "withdrawals_sha256_lf",
+        "activation_decision_ref",
+        "mode"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "const": "reviewed_serving_withdrawals/v1"
+        },
+        "inventory_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "validator": {
+          "const": "project_user_via_conversation"
+        },
+        "decision_ref": {
+          "type": "object",
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "hash_convention": {
+              "type": "string",
+              "enum": [
+                "sha256_lf",
+                "raw_sha256"
+              ]
+            }
+          },
+          "required": [
+            "artifact_id",
+            "sha256",
+            "hash_convention"
+          ],
+          "additionalProperties": false
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "event_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "action": {
+                "type": "string",
+                "enum": [
+                  "withdraw",
+                  "reinstate"
+                ]
+              },
+              "target_kind": {
+                "type": "string",
+                "enum": [
+                  "bundle",
+                  "review",
+                  "source"
+                ]
+              },
+              "target_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "target_release_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "target_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "decision_ref": {
+                "type": "object",
+                "properties": {
+                  "artifact_id": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  "hash_convention": {
+                    "type": "string",
+                    "enum": [
+                      "sha256_lf",
+                      "raw_sha256"
+                    ]
+                  }
+                },
+                "required": [
+                  "artifact_id",
+                  "sha256",
+                  "hash_convention"
+                ],
+                "additionalProperties": false
+              },
+              "reason": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "event_id",
+              "action",
+              "target_kind",
+              "target_id",
+              "target_release_id",
+              "target_sha256",
+              "decision_ref",
+              "reason"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "kind",
+        "inventory_id",
+        "version",
+        "validator",
+        "decision_ref",
+        "entries"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:source-view",
+  "title": "Reviewed serving v1 — versioned source view",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "const": "reviewed_serving_source_view/v1"
+    },
+    "release_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "authority_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "available",
+        "quarantined",
+        "unavailable"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "enum": [
+        "registered_excerpt",
+        "review_withdrawn",
+        "source_quarantined",
+        "invalid_authority",
+        "required_dependency_unavailable",
+        "authority_changed"
+      ]
+    },
+    "pdf_available": {
+      "type": "boolean"
+    },
+    "passage": {
+      "anyOf": [
+        {
+          "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/passage"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "reviews": {
+      "type": "array",
+      "items": {
+        "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/review"
+      },
+      "minItems": 0
+    },
+    "scientific_validation_established": {
+      "const": false
+    }
+  },
+  "required": [
+    "kind",
+    "release_id",
+    "source_id",
+    "authority_digest",
+    "status",
+    "reason",
+    "pdf_available",
+    "passage",
+    "reviews",
+    "scientific_validation_established"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "available"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "passage": {
+            "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/passage"
+          },
+          "reviews": {
+            "minItems": 1
+          },
+          "reason": {
+            "const": "registered_excerpt"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "passage": {
+            "type": "null"
+          },
+          "reviews": {
+            "maxItems": 0
+          },
+          "reason": {
+            "type": "string",
+            "enum": [
+              "review_withdrawn",
+              "source_quarantined",
+              "invalid_authority",
+              "required_dependency_unavailable",
+              "authority_changed"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

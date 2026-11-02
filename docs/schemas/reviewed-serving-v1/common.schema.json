@@ -1,0 +1,1609 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:common",
+  "title": "Reviewed serving v1 — common",
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "binding": {
+      "type": "object",
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "hash_convention": {
+          "type": "string",
+          "enum": [
+            "sha256_lf",
+            "raw_sha256"
+          ]
+        }
+      },
+      "required": [
+        "artifact_id",
+        "sha256",
+        "hash_convention"
+      ],
+      "additionalProperties": false
+    },
+    "product": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "family_unknown",
+        "mabselect",
+        "sure",
+        "sure_lx",
+        "other",
+        "contradictory"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "precipitated_substances",
+        "hydrophobic_deposits",
+        "mixed_other"
+      ]
+    },
+    "requested_item": {
+      "type": "string",
+      "enum": [
+        "cleaning_options",
+        "restricted_sequence",
+        "followup_buffer_pH",
+        "pressure_limit",
+        "solvent_hold_time"
+      ]
+    },
+    "bundle_key": {
+      "type": "string",
+      "enum": [
+        "mabselect.precipitated.general",
+        "mabselect.precipitated.restricted",
+        "mabselect.hydrophobic.detergent",
+        "mabselect.hydrophobic.solvent",
+        "mabselect.context.clarify"
+      ]
+    },
+    "condition": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "product_in"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "mabselect",
+                  "sure",
+                  "sure_lx"
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 3,
+              "uniqueItems": true
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "kind",
+            "values",
+            "source_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "category_in"
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "precipitated_substances",
+                  "hydrophobic_deposits"
+                ]
+              },
+              "minItems": 1,
+              "maxItems": 2,
+              "uniqueItems": true
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "kind",
+            "values",
+            "source_ids"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "type": "string",
+              "enum": [
+                "all_of",
+                "any_of"
+              ]
+            },
+            "children": {
+              "type": "array",
+              "items": {
+                "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/condition"
+              },
+              "minItems": 1
+            }
+          },
+          "required": [
+            "kind",
+            "children"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "kind": {
+              "const": "source_text"
+            },
+            "text": {
+              "type": "string",
+              "minLength": 1
+            },
+            "source_ids": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "kind",
+            "text",
+            "source_ids"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "passage": {
+      "type": "object",
+      "properties": {
+        "source_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "corpus_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "pdf_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "document_reference": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edition_metadata_origin": {
+          "type": "string",
+          "minLength": 1
+        },
+        "printed_page_label": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "pdf_page_1based": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "pdf_page_index_0based": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "extraction_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "page_text_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "offset_unit": {
+          "const": "unicode_code_points"
+        },
+        "interval": {
+          "const": "start_inclusive_end_exclusive"
+        },
+        "page_text_start": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "page_text_end": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote": {
+          "type": "string",
+          "minLength": 1
+        },
+        "quote_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "source_artifact": {
+          "type": "object",
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "hash_convention": {
+              "type": "string",
+              "enum": [
+                "sha256_lf",
+                "raw_sha256"
+              ]
+            }
+          },
+          "required": [
+            "artifact_id",
+            "sha256",
+            "hash_convention"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "source_id",
+        "corpus_id",
+        "pdf_sha256",
+        "document_reference",
+        "edition_metadata_origin",
+        "printed_page_label",
+        "pdf_page_1based",
+        "pdf_page_index_0based",
+        "extraction_version",
+        "page_text_sha256",
+        "offset_unit",
+        "interval",
+        "page_text_start",
+        "page_text_end",
+        "scope",
+        "quote",
+        "quote_sha256",
+        "source_artifact"
+      ],
+      "additionalProperties": false
+    },
+    "review": {
+      "type": "object",
+      "properties": {
+        "review_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "kind": {
+          "const": "scoped_documentary_review"
+        },
+        "question_id": {
+          "type": "string",
+          "enum": [
+            "Q05",
+            "Q06",
+            "Q09",
+            "N06",
+            "N07"
+          ]
+        },
+        "event_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "decision": {
+          "type": "string",
+          "enum": [
+            "validated",
+            "validated_with_reservation"
+          ]
+        },
+        "original_decision_date": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_human_message": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reservations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "evidence_record_sha256": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "additionalProperties": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "minProperties": 1
+        },
+        "review_artifact": {
+          "type": "object",
+          "properties": {
+            "artifact_id": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "hash_convention": {
+              "type": "string",
+              "enum": [
+                "sha256_lf",
+                "raw_sha256"
+              ]
+            }
+          },
+          "required": [
+            "artifact_id",
+            "sha256",
+            "hash_convention"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "review_id",
+        "kind",
+        "question_id",
+        "event_id",
+        "decision",
+        "original_decision_date",
+        "original_human_message",
+        "reservations",
+        "evidence_record_sha256",
+        "review_artifact"
+      ],
+      "additionalProperties": false
+    },
+    "bundle": {
+      "type": "object",
+      "properties": {
+        "bundle_key": {
+          "type": "string",
+          "enum": [
+            "mabselect.precipitated.general",
+            "mabselect.precipitated.restricted",
+            "mabselect.hydrophobic.detergent",
+            "mabselect.hydrophobic.solvent",
+            "mabselect.context.clarify"
+          ]
+        },
+        "mapping_version": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "review_scope": {
+          "type": "string",
+          "enum": [
+            "Q05",
+            "Q06",
+            "Q09",
+            "N06",
+            "N07"
+          ]
+        },
+        "product": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "family_unknown",
+            "mabselect",
+            "sure",
+            "sure_lx",
+            "other",
+            "contradictory"
+          ]
+        },
+        "deposit_context": {
+          "type": "string",
+          "enum": [
+            "unknown",
+            "precipitated_substances",
+            "hydrophobic_deposits",
+            "mixed_other"
+          ]
+        },
+        "required_source_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "review_ids": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "conditions": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "product_in"
+                },
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 3,
+                  "uniqueItems": true
+                },
+                "source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "kind",
+                "values",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "category_in"
+                },
+                "values": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "precipitated_substances",
+                      "hydrophobic_deposits"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 2,
+                  "uniqueItems": true
+                },
+                "source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "kind",
+                "values",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "all_of",
+                    "any_of"
+                  ]
+                },
+                "children": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/condition"
+                  },
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "kind",
+                "children"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "const": "source_text"
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "kind",
+                "text",
+                "source_ids"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "applicability": {
+          "type": "string",
+          "enum": [
+            "true",
+            "false",
+            "unknown"
+          ]
+        },
+        "condition_explanation": {
+          "type": "string",
+          "minLength": 1
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "option_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "procedure",
+                  "clarification_context"
+                ]
+              },
+              "alternative_group_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "sequence_id": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "wording": {
+                "type": "string",
+                "minLength": 1
+              },
+              "source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+              },
+              "steps": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "step_id": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                    },
+                    "order": {
+                      "type": "integer",
+                      "minimum": 1
+                    },
+                    "phase": {
+                      "type": "string",
+                      "enum": [
+                        "cleaning",
+                        "followup_wash",
+                        "conditioning"
+                      ]
+                    },
+                    "wording": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "force_text": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "source_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    },
+                    "quantities": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "value_text": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "owner_step_id": {
+                            "type": "string",
+                            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                          },
+                          "source_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string",
+                              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                            },
+                            "minItems": 1,
+                            "uniqueItems": true
+                          },
+                          "source_spans": {
+                            "type": "array",
+                            "minItems": 1,
+                            "items": {
+                              "type": "object",
+                              "additionalProperties": false,
+                              "required": [
+                                "source_id",
+                                "page_text_start",
+                                "page_text_end",
+                                "text",
+                                "quote_sha256"
+                              ],
+                              "properties": {
+                                "source_id": {
+                                  "type": "string",
+                                  "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                                },
+                                "page_text_start": {
+                                  "type": "integer",
+                                  "minimum": 0
+                                },
+                                "page_text_end": {
+                                  "type": "integer",
+                                  "minimum": 1
+                                },
+                                "text": {
+                                  "type": "string",
+                                  "minLength": 1
+                                },
+                                "quote_sha256": {
+                                  "type": "string",
+                                  "pattern": "^[0-9a-f]{64}$"
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "required": [
+                          "value_text",
+                          "owner_step_id",
+                          "source_ids",
+                          "source_spans"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "minItems": 0
+                    },
+                    "immediate_after_step_id": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "step_id",
+                    "order",
+                    "phase",
+                    "wording",
+                    "force_text",
+                    "source_ids",
+                    "quantities",
+                    "immediate_after_step_id"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0
+              },
+              "warnings": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "wording": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "source_ids": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                      },
+                      "minItems": 1,
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "wording",
+                    "source_ids"
+                  ],
+                  "additionalProperties": false
+                },
+                "minItems": 0
+              }
+            },
+            "required": [
+              "option_id",
+              "role",
+              "alternative_group_id",
+              "sequence_id",
+              "wording",
+              "source_ids",
+              "steps",
+              "warnings"
+            ],
+            "additionalProperties": false,
+            "allOf": [
+              {
+                "if": {
+                  "properties": {
+                    "role": {
+                      "const": "procedure"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "steps": {
+                      "minItems": 1
+                    }
+                  }
+                }
+              },
+              {
+                "if": {
+                  "properties": {
+                    "role": {
+                      "const": "clarification_context"
+                    }
+                  }
+                },
+                "then": {
+                  "properties": {
+                    "steps": {
+                      "maxItems": 0
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          "minItems": 1
+        },
+        "visible_reservations": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "minItems": 1
+        },
+        "suitability": {
+          "const": "not_established"
+        }
+      },
+      "required": [
+        "bundle_key",
+        "mapping_version",
+        "review_scope",
+        "product",
+        "deposit_context",
+        "required_source_ids",
+        "review_ids",
+        "conditions",
+        "applicability",
+        "condition_explanation",
+        "options",
+        "visible_reservations",
+        "suitability"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.context.clarify"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "options": {
+                "items": {
+                  "properties": {
+                    "role": {
+                      "const": "clarification_context"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "product": {
+                "type": "string",
+                "enum": [
+                  "mabselect",
+                  "sure",
+                  "sure_lx"
+                ]
+              },
+              "applicability": {
+                "const": "true"
+              },
+              "options": {
+                "items": {
+                  "properties": {
+                    "role": {
+                      "const": "procedure"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.precipitated.general"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "required_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "E167-H",
+                    "E167-PH",
+                    "E167-P"
+                  ]
+                },
+                "minItems": 3,
+                "maxItems": 3,
+                "uniqueItems": true,
+                "allOf": [
+                  {
+                    "contains": {
+                      "const": "E167-H"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-PH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-P"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.precipitated.restricted"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "required_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "E167-H",
+                    "E167-PH",
+                    "E167-SH",
+                    "E167-S"
+                  ]
+                },
+                "minItems": 4,
+                "maxItems": 4,
+                "uniqueItems": true,
+                "allOf": [
+                  {
+                    "contains": {
+                      "const": "E167-H"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-PH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-SH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-S"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.hydrophobic.detergent"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "required_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "E167-H",
+                    "E167-LH",
+                    "E167-D"
+                  ]
+                },
+                "minItems": 3,
+                "maxItems": 3,
+                "uniqueItems": true,
+                "allOf": [
+                  {
+                    "contains": {
+                      "const": "E167-H"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-LH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-D"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.hydrophobic.solvent"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "required_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "E167-H",
+                    "E167-LH",
+                    "E167-E",
+                    "E167-W"
+                  ]
+                },
+                "minItems": 4,
+                "maxItems": 4,
+                "uniqueItems": true,
+                "allOf": [
+                  {
+                    "contains": {
+                      "const": "E167-H"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-LH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-E"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-W"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.context.clarify"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "required_source_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": [
+                    "E166-H",
+                    "E166-T",
+                    "E166-PH",
+                    "E166-LH",
+                    "E167-H",
+                    "E167-PH",
+                    "E167-SH",
+                    "E167-LH"
+                  ]
+                },
+                "minItems": 8,
+                "maxItems": 8,
+                "uniqueItems": true,
+                "allOf": [
+                  {
+                    "contains": {
+                      "const": "E166-H"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E166-T"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E166-PH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E166-LH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-H"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-PH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-SH"
+                    }
+                  },
+                  {
+                    "contains": {
+                      "const": "E167-LH"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "bundles": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/bundle"
+          },
+          "minItems": 0
+        },
+        "passages": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/passage"
+          },
+          "minItems": 0
+        },
+        "reviews": {
+          "type": "array",
+          "items": {
+            "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/review"
+          },
+          "minItems": 0
+        }
+      },
+      "required": [
+        "bundles",
+        "passages",
+        "reviews"
+      ],
+      "additionalProperties": false
+    },
+    "item_outcome": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+        },
+        "requested_item": {
+          "type": "string",
+          "enum": [
+            "cleaning_options",
+            "restricted_sequence",
+            "followup_buffer_pH",
+            "pressure_limit",
+            "solvent_hold_time"
+          ]
+        },
+        "state": {
+          "type": "string",
+          "enum": [
+            "supported",
+            "needs_clarification",
+            "abstained",
+            "quarantined",
+            "unavailable",
+            "excluded"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "enum": [
+            "documentary_support",
+            "product_unknown",
+            "context_unknown",
+            "product_and_context_unknown",
+            "product_conflict",
+            "context_mixed",
+            "outside_release_scope",
+            "not_in_selected_excerpts",
+            "review_withdrawn",
+            "source_quarantined",
+            "required_dependency_unavailable",
+            "invalid_source_binding",
+            "invalid_review_binding",
+            "context_budget_incomplete",
+            "release_not_activated",
+            "invalid_authority",
+            "authority_changed",
+            "excluded_by_request"
+          ]
+        },
+        "field_origins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string",
+                "enum": [
+                  "product",
+                  "deposit_context",
+                  "requested_item",
+                  "exclusion"
+                ]
+              },
+              "request_pointer": {
+                "type": "string",
+                "pattern": "^/tasks/[0-7]/(product|deposit_context|requested_items/[0-4]|excluded_items/[0-4])$"
+              }
+            },
+            "required": [
+              "field",
+              "request_pointer"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
+        },
+        "bundle_keys": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "mabselect.precipitated.general",
+              "mabselect.precipitated.restricted",
+              "mabselect.hydrophobic.detergent",
+              "mabselect.hydrophobic.solvent",
+              "mabselect.context.clarify"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "withheld_bundle_keys": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "mabselect.precipitated.general",
+              "mabselect.precipitated.restricted",
+              "mabselect.hydrophobic.detergent",
+              "mabselect.hydrophobic.solvent",
+              "mabselect.context.clarify"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 5,
+          "uniqueItems": true
+        },
+        "clarification_targets": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "product",
+              "deposit_context"
+            ]
+          },
+          "minItems": 0,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "absence_scope": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "bundle_refs": {
+          "description": "Exact context object references for this task/item, including clarification-only context. bundle_keys alone is not an instance identifier.",
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^/context/bundles/[0-9]+$"
+          },
+          "maxItems": 5,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "task_id",
+        "requested_item",
+        "state",
+        "reason",
+        "field_origins",
+        "bundle_keys",
+        "withheld_bundle_keys",
+        "clarification_targets",
+        "absence_scope"
+      ],
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "supported"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "bundle_keys": {
+                "minItems": 1
+              },
+              "reason": {
+                "const": "documentary_support"
+              },
+              "clarification_targets": {
+                "maxItems": 0
+              },
+              "absence_scope": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "bundle_keys": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "needs_clarification"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "clarification_targets": {
+                "minItems": 1
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "clarification_targets": {
+                "maxItems": 0
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "abstained"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "absence_scope": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "excluded"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "const": "excluded_by_request"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "needs_clarification"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "product_unknown",
+                  "context_unknown",
+                  "product_and_context_unknown",
+                  "product_conflict",
+                  "context_mixed"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "abstained"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "outside_release_scope",
+                  "not_in_selected_excerpts"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "quarantined"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "review_withdrawn",
+                  "source_quarantined"
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "state": {
+                "const": "unavailable"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "required_dependency_unavailable",
+                  "invalid_source_binding",
+                  "invalid_review_binding",
+                  "context_budget_incomplete",
+                  "release_not_activated",
+                  "invalid_authority",
+                  "authority_changed"
+                ]
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

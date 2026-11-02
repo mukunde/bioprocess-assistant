@@ -1,0 +1,212 @@
+{
+  "id": "reviewed-serving-interface-examples-v01",
+  "status": "proposed_technical_shapes_not_executed_not_a_release",
+  "design_decision_record": "reviewed-dossier-serving-decisions-v01.json",
+  "specification": "REVIEWED-DOSSIER-SERVING-TECHNICAL-V01.md",
+  "assumptions": [
+    "A synthetic verified/activated fixture release and complete registered dependency closure are assumed only to illustrate expected shapes. No real serving release is activated.",
+    "Expected objects are assertion projections, not full API responses; omitted source/review/condition fields remain mandatory in the actual handoff.",
+    "Numeric budgets and technical defaults remain proposed. Examples contain no new scientific approvals or model-generated answers."
+  ],
+  "examples": [
+    {
+      "id": "SX01",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-01",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "expected": {
+        "status": "supported",
+        "item_states": [
+          {
+            "task_id": "A",
+            "item": "cleaning_options",
+            "state": "supported"
+          }
+        ],
+        "bundle_keys": [
+          "mabselect.precipitated.general"
+        ],
+        "no_restricted_block": true
+      }
+    },
+    {
+      "id": "SX02",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-02",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "family_unknown",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "expected": {
+        "status": "needs_clarification",
+        "clarification_target": "product",
+        "procedure_cards": 0
+      }
+    },
+    {
+      "id": "SX03",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-03",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure_lx",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "expected": {
+        "status": "partial",
+        "item_states": [
+          {
+            "task_id": "A",
+            "item": "cleaning_options",
+            "state": "supported"
+          },
+          {
+            "task_id": "A",
+            "item": "pressure_limit",
+            "state": "abstained"
+          }
+        ],
+        "bundle_keys": [
+          "mabselect.hydrophobic.detergent",
+          "mabselect.hydrophobic.solvent"
+        ],
+        "invented_pressure_value": false
+      }
+    },
+    {
+      "id": "SX04",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-04",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "unknown",
+            "deposit_context": "unknown",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          },
+          {
+            "task_id": "B",
+            "product": "mabselect",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "expected": {
+        "status": "partial",
+        "clarification_task": "A",
+        "supported_task": "B",
+        "product_inherited_from_B_to_A": false
+      }
+    },
+    {
+      "id": "SX05",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-05",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "pressure_limit"
+            ],
+            "excluded_items": [
+              "pressure_limit"
+            ]
+          }
+        ]
+      },
+      "expected": {
+        "status": "abstained",
+        "reason": "no_requested_item",
+        "item_states": [
+          {
+            "task_id": "A",
+            "item": "pressure_limit",
+            "state": "excluded"
+          }
+        ],
+        "technical_context_empty": true
+      }
+    },
+    {
+      "id": "SX06",
+      "request": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "example-06",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ],
+        "approved_sources": [
+          "E167-W"
+        ]
+      },
+      "expected": {
+        "validation_error": "unknown_authority_field",
+        "lookup_executed": false,
+        "technical_context_empty": true
+      }
+    }
+  ],
+  "empty_withdrawal_inventory_shape": {
+    "kind": "reviewed_serving_withdrawals/v1",
+    "inventory_id": "SYNTHETIC-empty-v1",
+    "validator": "project_user_via_conversation",
+    "activation_decision_ref": null,
+    "entries": []
+  },
+  "withdrawal_shape_notice": "An explicit empty register illustrates accepted CL01. This synthetic record has no release or activation binding and must not be treated as active authority."
+}

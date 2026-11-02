@@ -1,0 +1,956 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:bioprocess:reviewed-serving:v1:mapping",
+  "title": "Reviewed serving v1 — mapping",
+  "type": "object",
+  "properties": {
+    "kind": {
+      "const": "reviewed_serving_mapping/v1"
+    },
+    "release_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "bundle_key": {
+            "type": "string",
+            "enum": [
+              "mabselect.precipitated.general",
+              "mabselect.precipitated.restricted",
+              "mabselect.hydrophobic.detergent",
+              "mabselect.hydrophobic.solvent",
+              "mabselect.context.clarify"
+            ]
+          },
+          "mapping_version": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+          },
+          "review_scope": {
+            "type": "string",
+            "enum": [
+              "Q05",
+              "Q06",
+              "N06",
+              "N07",
+              "Q09"
+            ]
+          },
+          "allowed_products": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "family_unknown",
+                "mabselect",
+                "sure",
+                "sure_lx",
+                "other",
+                "contradictory"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 7,
+            "uniqueItems": true
+          },
+          "request_items": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "cleaning_options",
+                "restricted_sequence",
+                "followup_buffer_pH",
+                "pressure_limit",
+                "solvent_hold_time"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 5,
+            "uniqueItems": true
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "procedure",
+              "clarification_context"
+            ]
+          },
+          "required_source_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+            },
+            "minItems": 1,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "review_ref": {
+            "type": "object",
+            "properties": {
+              "artifact_id": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "hash_convention": {
+                "type": "string",
+                "enum": [
+                  "sha256_lf",
+                  "raw_sha256"
+                ]
+              }
+            },
+            "required": [
+              "artifact_id",
+              "sha256",
+              "hash_convention"
+            ],
+            "additionalProperties": false
+          },
+          "conditions": {
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "product_in"
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "mabselect",
+                        "sure",
+                        "sure_lx"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 3,
+                    "uniqueItems": true
+                  },
+                  "source_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "kind",
+                  "values",
+                  "source_ids"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "category_in"
+                  },
+                  "values": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "precipitated_substances",
+                        "hydrophobic_deposits"
+                      ]
+                    },
+                    "minItems": 1,
+                    "maxItems": 2,
+                    "uniqueItems": true
+                  },
+                  "source_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "kind",
+                  "values",
+                  "source_ids"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "all_of",
+                      "any_of"
+                    ]
+                  },
+                  "children": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "urn:bioprocess:reviewed-serving:v1:common#/$defs/condition"
+                    },
+                    "minItems": 1
+                  }
+                },
+                "required": [
+                  "kind",
+                  "children"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "kind": {
+                    "const": "source_text"
+                  },
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "source_ids": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,95}$"
+                    },
+                    "minItems": 1,
+                    "uniqueItems": true
+                  }
+                },
+                "required": [
+                  "kind",
+                  "text",
+                  "source_ids"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "alternative_policy": {
+            "type": "string",
+            "enum": [
+              "all_general_alternatives",
+              "separate_restricted_block",
+              "detergent_alternative",
+              "solvent_alternatives",
+              "context_only"
+            ]
+          },
+          "allowed_contexts": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "unknown",
+                "precipitated_substances",
+                "hydrophobic_deposits",
+                "mixed_other"
+              ]
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "bundle_key",
+          "mapping_version",
+          "review_scope",
+          "allowed_products",
+          "request_items",
+          "role",
+          "required_source_ids",
+          "review_ref",
+          "conditions",
+          "alternative_policy",
+          "allowed_contexts"
+        ],
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "bundle_key": {
+                  "const": "mabselect.precipitated.general"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "required_source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "E167-H",
+                      "E167-PH",
+                      "E167-P"
+                    ]
+                  },
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "E167-H"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-PH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-P"
+                      }
+                    }
+                  ]
+                },
+                "review_scope": {
+                  "const": "Q05"
+                },
+                "allowed_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ]
+                  },
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "mabselect"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure_lx"
+                      }
+                    }
+                  ]
+                },
+                "role": {
+                  "const": "procedure"
+                },
+                "alternative_policy": {
+                  "const": "all_general_alternatives"
+                },
+                "allowed_contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "precipitated_substances"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "precipitated_substances"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "bundle_key": {
+                  "const": "mabselect.precipitated.restricted"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "required_source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "E167-H",
+                      "E167-PH",
+                      "E167-SH",
+                      "E167-S"
+                    ]
+                  },
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "E167-H"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-PH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-SH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-S"
+                      }
+                    }
+                  ]
+                },
+                "review_scope": {
+                  "const": "Q06"
+                },
+                "allowed_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "sure",
+                      "sure_lx"
+                    ]
+                  },
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "sure"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure_lx"
+                      }
+                    }
+                  ]
+                },
+                "role": {
+                  "const": "procedure"
+                },
+                "alternative_policy": {
+                  "const": "separate_restricted_block"
+                },
+                "allowed_contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "precipitated_substances"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "precipitated_substances"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "bundle_key": {
+                  "const": "mabselect.hydrophobic.detergent"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "required_source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "E167-H",
+                      "E167-LH",
+                      "E167-D"
+                    ]
+                  },
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "E167-H"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-LH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-D"
+                      }
+                    }
+                  ]
+                },
+                "review_scope": {
+                  "const": "N06"
+                },
+                "allowed_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ]
+                  },
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "mabselect"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure_lx"
+                      }
+                    }
+                  ]
+                },
+                "role": {
+                  "const": "procedure"
+                },
+                "alternative_policy": {
+                  "const": "detergent_alternative"
+                },
+                "allowed_contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "hydrophobic_deposits"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "hydrophobic_deposits"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "bundle_key": {
+                  "const": "mabselect.hydrophobic.solvent"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "required_source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "E167-H",
+                      "E167-LH",
+                      "E167-E",
+                      "E167-W"
+                    ]
+                  },
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "E167-H"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-LH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-E"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-W"
+                      }
+                    }
+                  ]
+                },
+                "review_scope": {
+                  "const": "N07"
+                },
+                "allowed_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "mabselect",
+                      "sure",
+                      "sure_lx"
+                    ]
+                  },
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "mabselect"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure_lx"
+                      }
+                    }
+                  ]
+                },
+                "role": {
+                  "const": "procedure"
+                },
+                "alternative_policy": {
+                  "const": "solvent_alternatives"
+                },
+                "allowed_contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "hydrophobic_deposits"
+                    ]
+                  },
+                  "minItems": 1,
+                  "maxItems": 1,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "hydrophobic_deposits"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "if": {
+              "properties": {
+                "bundle_key": {
+                  "const": "mabselect.context.clarify"
+                }
+              }
+            },
+            "then": {
+              "properties": {
+                "required_source_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "E166-H",
+                      "E166-T",
+                      "E166-PH",
+                      "E166-LH",
+                      "E167-H",
+                      "E167-PH",
+                      "E167-SH",
+                      "E167-LH"
+                    ]
+                  },
+                  "minItems": 8,
+                  "maxItems": 8,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "E166-H"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E166-T"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E166-PH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E166-LH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-H"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-PH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-SH"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "E167-LH"
+                      }
+                    }
+                  ]
+                },
+                "review_scope": {
+                  "const": "Q09"
+                },
+                "allowed_products": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "unknown",
+                      "family_unknown",
+                      "mabselect",
+                      "sure",
+                      "sure_lx",
+                      "other",
+                      "contradictory"
+                    ]
+                  },
+                  "minItems": 7,
+                  "maxItems": 7,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "unknown"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "family_unknown"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "mabselect"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "sure_lx"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "other"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "contradictory"
+                      }
+                    }
+                  ]
+                },
+                "role": {
+                  "const": "clarification_context"
+                },
+                "alternative_policy": {
+                  "const": "context_only"
+                },
+                "allowed_contexts": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "unknown",
+                      "precipitated_substances",
+                      "hydrophobic_deposits",
+                      "mixed_other"
+                    ]
+                  },
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "uniqueItems": true,
+                  "allOf": [
+                    {
+                      "contains": {
+                        "const": "unknown"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "precipitated_substances"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "hydrophobic_deposits"
+                      }
+                    },
+                    {
+                      "contains": {
+                        "const": "mixed_other"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      },
+      "minItems": 5,
+      "maxItems": 5,
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.precipitated.general"
+              }
+            },
+            "required": [
+              "bundle_key"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.precipitated.restricted"
+              }
+            },
+            "required": [
+              "bundle_key"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.hydrophobic.detergent"
+              }
+            },
+            "required": [
+              "bundle_key"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.hydrophobic.solvent"
+              }
+            },
+            "required": [
+              "bundle_key"
+            ]
+          }
+        },
+        {
+          "contains": {
+            "properties": {
+              "bundle_key": {
+                "const": "mabselect.context.clarify"
+              }
+            },
+            "required": [
+              "bundle_key"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "kind",
+    "release_id",
+    "entries"
+  ],
+  "additionalProperties": false
+}

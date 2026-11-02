@@ -1,0 +1,98 @@
+{
+  "kind": "local_activation_human_decisions/v1",
+  "recorded_at_utc": "2026-11-02T20:03:25.422589+00:00",
+  "release_id": "mabselect-local-v02",
+  "status": "approved",
+  "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés.",
+  "review_file": "docs/decisions/MABSELECT-REGISTRY-V02-ACTIVATION-REVIEW.json",
+  "review_sha256_lf": "ccb84af0a26c286d588b118350ccf22ceaa8a3dfb0af226ef8409f0a1e3bdd6d",
+  "staged_authority_digest": "3aa0d8c42e4ba61d3964979196bc7d5d593db6392624c743e2205e3b4a1c87e5",
+  "decisions": [
+    {
+      "id": "LA01",
+      "topic": "Exact candidate",
+      "approved_proposal": "Review mabselect-local-v02 with the recorded staged authority digest, six release artifacts and 56 dependency bindings; preserve v01 as historical.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA02",
+      "topic": "Local scope",
+      "approved_proposal": "One configured private local authority root, one cooperating writer process, no model, paid API, HTTP exposure, UI dispatch or legacy-chat change.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA03",
+      "topic": "Allowed support",
+      "approved_proposal": "Only the five registered bundle purposes and thirteen exact source objects; Q09 provides clarification context, not a cleaning procedure. Preserve conditions, warnings, alternatives, quotations and reservations.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA04",
+      "topic": "Initial withdrawals",
+      "approved_proposal": "Explicitly approve version 1 with zero events if still appropriate. This is no additional withdrawal within this bounded release, not approval of all manual content or release of E118-I/E121-EQ.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA05",
+      "topic": "Failure and revocation policy",
+      "approved_proposal": "Unavailable on invalid global authority; hold scopes dependent on withdrawn support, preserve independent tasks and essential warnings. Source views use current withdrawal authority; drift discards results without fallback.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA06",
+      "topic": "Storage and recovery limits",
+      "approved_proposal": "Accept trusted local storage and pointer-only rollback detection. Whole-store rollback, multiple writers and malicious tampering need stronger external controls. Interrupted commit requires reviewed manual recovery; no automatic rollback.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA07",
+      "topic": "Post-approval execution",
+      "approved_proposal": "A later explicitly requested action may prepare approved decision records in the private runtime copy, preserve the exact human approval text, recompute consequential bindings and activate only the approved semantic scope. Keep staged versioned files and both freezes unchanged.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    },
+    {
+      "id": "LA08",
+      "topic": "Acceptance and stop conditions",
+      "approved_proposal": "After later activation, replay accepted cases and verify normal reads/citations, both freezes, head/pointer equality and unchanged protections. Lifecycle fault/withdrawal tests run in disposable copies; fail closed on any mismatch, never change the live register merely to test it.",
+      "status": "approved_with_stated_limits",
+      "original_human_message": "Je valide LA01–LA08 avec les limites indiquées et l’inventaire initial vide. Enregistre mes décisions, active localement v02 puis vérifie les citations et le rejeu. Garde les deux gels, les 16 notes et les pilotes inchangés."
+    }
+  ],
+  "initial_withdrawal_inventory": {
+    "inventory_id": "mabselect-local-v02-withdrawals-v01",
+    "version": 1,
+    "events": 0,
+    "status": "approved"
+  },
+  "runtime_root_relative": ".local-tools/mabselect-registry-v02-runtime",
+  "execution_explicitly_authorized": true,
+  "ui_dispatch_authorized": false,
+  "protected_freezes": {
+    "v03": {
+      "id": "free-text-v03-corrected-runtime-freeze-v01",
+      "status": "frozen",
+      "pinned_files": 36,
+      "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+      "environment_verified": true,
+      "runtime_instantiated": false,
+      "prospective_trial_executed": false
+    },
+    "mabselect": {
+      "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+      "status": "frozen",
+      "pinned_files": 52,
+      "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+      "environment_verified": true,
+      "runtime_instantiated": false,
+      "serving_activated": false,
+      "prospective_evaluation": false
+    }
+  }
+}

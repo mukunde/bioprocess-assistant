@@ -18,6 +18,20 @@ local authority directory. It neither prepares nor activates a registry. The
 existing `demo.registry_ui` entry point continues to serve the baseline page.
 Source links retain the current-authority checks of the original server.
 
+## Optional local tracing
+
+The local tracing implementation is opt-in and outside both frozen runtimes.
+The --trace-file option enables metadata-only JSONL in a new local file;
+--trace-otlp-endpoint accepts a loopback OTLP/HTTP collector. Export queues are
+bounded and asynchronous; SDK/sink failures do not select or block an answer.
+Source HTML and response bodies remain unchanged; enabled replies add an
+X-Trace-Id header. The baseline page remains separate.
+
+See [tracing setup, privacy contract and regression commands](REGISTRY-TRACING.md).
+Install its optional packages into a separate development environment, not the
+frozen demo environment. No dependency installation, activation or download is
+performed by the launcher or response path.
+
 ## Presentation changes
 
 - Outside-release abstention names the product/release boundary and distinguishes

@@ -8,3 +8,5 @@ matplotlib>=3.7      # threshold calibration plot
 pydantic>=2,<3
 pypdf>=5,<7
 pypdfium2==5.14.0
+# Manual local tracing and its offline/loopback regression fixtures.
+-r ../requirements-observability.txt

@@ -1,0 +1,91 @@
+{
+  "id": "registry-ui-v02-local-otel-corrected-delivery-v01",
+  "prepared_on": "2026-11-04",
+  "status": "prepared_not_staged",
+  "base_commit": "88a1177a4386c487be9d36da49538d2cd81463c2",
+  "proposed_branch": "codex/registry-ui-v02-otel",
+  "proposed_commit": "feat(observability): add safe local tracing for registry UI v02",
+  "file_count": 12,
+  "files": [
+    "demo/registry_tracing.py",
+    "demo/registry_ui_v02.py",
+    "requirements-observability.txt",
+    "eval/requirements.txt",
+    "tests/test_registry_tracing.py",
+    "docs/REGISTRY-TRACING.md",
+    "docs/CYTIVA-REGISTRY-UI-V02.md",
+    "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json",
+    "docs/validation/REGISTRY-TRACING-REVIEW.md",
+    "docs/validation/REGISTRY-TRACING-CORRECTIONS.md",
+    "docs/validation/REGISTRY-TRACING-PACKAGE.md",
+    "docs/validation/REGISTRY-TRACING-PACKAGE.json"
+  ],
+  "hash_convention": "SHA-256 after CRLF-to-LF normalization; inventory itself excluded to avoid self-reference.",
+  "files_sha256_lf": {
+    "demo/registry_tracing.py": "39ca3bdf0b489492ee69f125d49fdf107701b8bdf4f786f09d4855601616a4a9",
+    "demo/registry_ui_v02.py": "affbad4f838f2849fefd49bd50f53de1b67c3e4364a7b39d3763531a7bca7f46",
+    "requirements-observability.txt": "b7aa1130515d76f7d063ad8514e8c636b0a9feee01cdb626dad78b1e18c9ea17",
+    "eval/requirements.txt": "b6cbec9016e6085c2c96b3203c4f46762261eafa1461e77b83cbe77337e29a13",
+    "tests/test_registry_tracing.py": "d9adf39bf8a9fe12a16a4b59266cccae170ca9e24331fd7d097d7dd0b836d619",
+    "docs/REGISTRY-TRACING.md": "46dc83157c6604dc5f349d894560489fc12253ed8a078b2e0da79939d578e918",
+    "docs/CYTIVA-REGISTRY-UI-V02.md": "6d0c8fd3bc0dc30dff40c97df52cf4bc905a84e3d02fef415ea0ebbc773c8a74",
+    "experiments/cytiva/free-text-v02-comparison-v01/package-manifest.json": "4e2639001048482aa78d1447f480fc739db51b2e60c6d8df4c09c1d9faeab8b8",
+    "docs/validation/REGISTRY-TRACING-REVIEW.md": "81e0dbcbc8f21d095d3e47d21ca16e1aa2281fc9951da0e5e12c3645bc47849a",
+    "docs/validation/REGISTRY-TRACING-CORRECTIONS.md": "b22e6ef1def035fd4dbab6a9bbfd437b0e524f6c1dcad145da911c7dc514f6ab",
+    "docs/validation/REGISTRY-TRACING-PACKAGE.md": "bd1bb99b199f54525c6cd8a604f1d06ce2b4978f186da87a959fc0ec445ccbb8"
+  },
+  "verification": {
+    "targeted_tests_passed": 40,
+    "full_suite": {
+      "executed": 973,
+      "passed": 972,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "tracing_tests_passed": 28,
+      "duration_seconds": 1749.526,
+      "raw_log_sha256": "ac3576f3afaaf8d4d69914d3ff552f92e1c6b5e19540c852db15e39d02a4a349"
+    },
+    "runtime_and_test_files_unchanged_since_run": true,
+    "historical_manifest_only_two_documentary_digests_changed": true,
+    "diff_check_passed": true,
+    "freezes": {
+      "free_text_v03": {
+        "id": "free-text-v03-corrected-runtime-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 36,
+        "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "prospective_trial_executed": false
+      },
+      "mabselect": {
+        "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 52,
+        "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "serving_activated": false,
+        "prospective_evaluation": false
+      }
+    },
+    "private_registry_unchanged": true,
+    "old_notes_unchanged": 16,
+    "pilots_unchanged": true,
+    "original_trial_unchanged": true,
+    "unrelated_preexisting_files_unchanged": true,
+    "head_unchanged": true,
+    "index_empty": true
+  },
+  "excluded": [
+    "private registry",
+    "both frozen inventories and runtimes",
+    "16 old notes",
+    "both Flowshot pilots",
+    "raw acceptance-trial artifacts",
+    "temporary logs",
+    "dependencies and caches",
+    "README and roadmap"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "id": "mabselect-registry-presentation-v02-display-review",
+  "date": "2026-11-03",
+  "status": "corrected_with_targeted_regressions_passed_not_frozen",
+  "baseline_unchanged": true,
+  "baseline_trial": "experiments/cytiva/reviewed-registry-ui-acceptance-v01",
+  "opt_in_module": "demo.registry_ui_v02",
+  "files": [
+    "demo/registry_ui_v02.py",
+    "demo/static/registry-v02.html",
+    "tests/test_registry_ui_v02.py",
+    "tests/ui/registry-v02.cjs",
+    "docs/CYTIVA-REGISTRY-UI-V02.md",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.json",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.md"
+  ],
+  "tests": [
+    {
+      "command": ".local-tools/verification-venv/Scripts/python.exe -m unittest tests.test_registry_ui_v02 -v",
+      "passed": 26,
+      "seconds": 193.651
+    },
+    {
+      "command": ".local-tools/verification-venv/Scripts/python.exe -m unittest tests.test_registry_ui_v02.RegistryPresentationV02Tests.test_all_eight_control_combinations_preserve_baseline_response_and_source_html -v",
+      "passed": 1,
+      "seconds": 79.414
+    }
+  ],
+  "total_distinct_targeted_tests_passed": 27,
+  "full_project_suite_rerun": false,
+  "checks": {
+    "http_response_equality_control_combinations": 8,
+    "source_html_equal": 13,
+    "outside_scope_reason_and_item_specific": true,
+    "single_clarification_action": true,
+    "clarification_sources_retained": 8,
+    "clarification_original_reservations_retained": 5,
+    "full_solvent_quote_available_in_disclosure": true,
+    "independent_backpressure_warning_immediately_visible": true,
+    "partial_warning_never_folded": true,
+    "different_source_warning_never_folded": true,
+    "inherited_withdrawal_and_deadline_regressions": true
+  },
+  "browser_smoke_checks": [
+    {
+      "case": "outside-product cleaning and pressure",
+      "result": "Reason-specific summary and item-specific refusals visible; no procedure or citation."
+    },
+    {
+      "case": "family-unknown hydrophobic cleaning and pressure",
+      "result": "One edit action; all eight references and five Q09 reservations visible after opening the disclosure."
+    },
+    {
+      "case": "SuRe hydrophobic cleaning and pressure",
+      "result": "One repeated-passage disclosure; complete E167-E retained on opening; E167-W immediately visible. A browser-control locator wait expired before completion; a fresh observation confirmed the original request completed, without resubmission."
+    }
+  ],
+  "browser_console_errors_or_warnings": [],
+  "preservation": {
+    "preexisting_git_visible_files_unchanged": 754,
+    "baseline_trial_all_manifest_hashes_unchanged": true,
+    "private_registry_files_unchanged": 9,
+    "old_notes_unchanged": 16,
+    "original_checkout_files_unchanged": 636,
+    "pilots_unchanged": true,
+    "freezes": {
+      "v03": {
+        "id": "free-text-v03-corrected-runtime-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 36,
+        "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "prospective_trial_executed": false
+      },
+      "mabselect": {
+        "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 52,
+        "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "serving_activated": false,
+        "prospective_evaluation": false
+      }
+    }
+  },
+  "limitations": [
+    "Presentation v02 is opt-in; original entry point and accepted trial remain unchanged.",
+    "This is targeted regression and browser smoke coverage, not a new prospective UI acceptance score or full-suite run.",
+    "Source and selector payloads are unchanged; context byte size is not reduced by collapsing details.",
+    "New files are local; no commit, push, source/registry activation or freeze promotion."
+  ],
+  "original_raw_trial_preserved_locally": "experiments/cytiva/registry-ui-acceptance-trial-v01",
+  "versioning_dependency": "Lot A: compact reviewed UA01-UA08 package"
+}

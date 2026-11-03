@@ -1,0 +1,121 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MabSelect · Registry presentation v02</title>
+<style>body{font:16px/1.6 system-ui;color:#19343c;background:#f3f7f8;margin:0}main{max-width:1080px;margin:auto;padding:24px}h1{line-height:1.2}.badge{background:#fff0cf;border-left:5px solid #a64b00;padding:12px}form,article,.panel{background:white;border:1px solid #cddcde;border-radius:10px;padding:20px;margin:18px 0}label{display:block;margin:12px 0 4px}select,button{font:inherit;padding:10px;max-width:100%}select{width:100%}button{background:#096d72;color:white;border:0;border-radius:6px;cursor:pointer}button:disabled{opacity:.6}a{color:#08656d}pre,blockquote{white-space:pre-wrap;overflow-wrap:anywhere}blockquote{border-left:4px solid #16828a;padding-left:14px}.state{font-weight:700}.reservation{font-size:.9rem}#stale{background:#fff0cf;padding:10px}details{margin:12px 0}input{margin-right:8px}.grid{display:grid;grid-template-columns:330px 1fr;gap:24px;align-items:start}@media(max-width:800px){.grid{grid-template-columns:1fr}}</style>
+<main><p class="badge">LOCAL REGISTRY MODE · PRESENTATION v02 · NO MODEL / API COST · AUTHORITY CHECKED PER REQUEST</p><h1>MabSelect: documented guidance you can verify</h1><p>This opt-in path reads the configured local registry. Missing or invalid authority refuses service; there is no preview fallback. It preserves complete source passages and reservations, asks for missing context and abstains on information absent from the selected excerpts. No diagnosis or operational authorization.</p>
+<div class="grid"><form id="request"><label for="product">Exact product</label><select id="product"><option value="mabselect">MabSelect — exact unsuffixed product</option><option value="sure">MabSelect SuRe</option><option value="sure_lx">MabSelect SuRe LX</option><option value="family_unknown">MabSelect family — variant unknown</option><option value="unknown">Not specified</option><option value="other">Other product</option><option value="contradictory">Conflicting labels</option></select><label for="context">Context to explore</label><select id="context"><option value="precipitated_substances">Precipitated or denatured substances</option><option value="hydrophobic_deposits">Hydrophobic proteins, lipoproteins or lipids</option><option value="unknown">Unknown — help me clarify</option><option value="mixed_other">Mixed / uncertain / other</option></select><p><label><input id="cleaning" type="checkbox" checked>Ask for documented cleaning options</label></p><p><label><input id="pressure" type="checkbox">Ask for a numerical maximum pressure</label></p><button id="submit">Find documented guidance</button><p>Try a known product, then a family-unknown product, then hydrophobic context with the pressure question.</p><p id="stale" hidden>Inputs changed. The displayed result belongs to the previous request. Submit again.</p></form><section aria-live="polite"><h2>Request outcome</h2><p id="summary">Choose a product and a category, then submit.</p><div id="outcomes"></div><div id="bundles"></div><details id="audit" hidden><summary>Structured handoff and audit data</summary><pre id="json"></pre></details></section></div></main>
+<script>
+let revision=0;let activeRequest=null;const REQUEST_TIMEOUT_MS=15000;const $=id=>document.getElementById(id);const make=(tag,text)=>{let n=document.createElement(tag);n.textContent=text;return n;};
+const labels={supported:'Documented support',partial:'Partial answer — some information is not supplied',needs_clarification:'Clarification needed',abstained:'No supported answer to this requested item',quarantined:'Evidence held',unavailable:'Registry unavailable — no preview fallback',excluded:'Excluded from this request'};
+const itemLabels={cleaning_options:'Documented cleaning options',restricted_sequence:'Product-specific sequence',followup_buffer_pH:'Follow-up wash buffer pH',pressure_limit:'Numerical maximum pressure',solvent_hold_time:'Solvent holding time'};const productLabels={mabselect:'MabSelect',sure:'MabSelect SuRe',sure_lx:'MabSelect SuRe LX'};const failureLabels={release_not_activated:'No approved active release is configured',invalid_authority:'The current authority cannot be verified',authority_changed:'The authority changed while checking this request',item_outcomes:'Required support is unavailable'};
+function citation(pid,data){const p=data.context.passages.find(x=>x.source_id===pid),ref=data.citation_refs.find(x=>x.source_id===pid);if(!p||!ref)return make('p','Required source unavailable');let a=make('a',pid+' · PDF page '+p.pdf_page_1based);a.href=ref.href;return a;}
+function abstentionText(item){
+ if(item.reason==='outside_release_scope')return item.requested_item==='cleaning_options'
+  ?'This product is outside this documentary release. No cleaning procedure or substitute product is supplied. This does not establish incompatibility or prohibit use of the sample.'
+  :'This product is outside this documentary release. No numerical maximum pressure or substitute value is supplied. This does not mean the information is absent from the whole manual or manufacturer specifications.';
+ return item.requested_item==='pressure_limit'
+  ?'No numerical value or substitute is inferred. This absence is limited to the selected reviewed excerpts, not the whole manual.'
+  :'No documented procedure is supplied for this requested item within the selected reviewed excerpts. No substitute is inferred.';
+}
+const normalizeQuote=text=>text.replace(/\s+/g,' ').trim();
+function warningAlreadyShown(warning,steps){
+ return normalizeQuote(warning.wording)===normalizeQuote(steps.map(s=>s.wording).join(' '))
+  && warning.source_ids.every(id=>steps.some(s=>s.source_ids.includes(id)));
+}
+function render(data){
+ $('outcomes').replaceChildren();$('bundles').replaceChildren();$('audit').hidden=false;
+ $('json').textContent=JSON.stringify(data,null,2);
+ if(data.kind!=='reviewed_documentary_bundle/v1'){
+  $('summary').textContent='The structured request is invalid. No lookup was performed.';return;
+ }
+ $('summary').textContent=labels[data.status]||'Registry unavailable';
+ if(data.status==='abstained'&&data.items.length&&data.items.every(i=>i.reason==='outside_release_scope'))
+  $('summary').textContent='Product outside this documentary release — no supported answer';
+ if(data.status==='abstained'&&data.items.some(i=>i.state==='quarantined'))
+  $('summary').textContent='Evidence held — required support is withdrawn or unavailable for this scope';
+ if(data.status==='unavailable')$('summary').textContent+=' · '+(failureLabels[data.response_reason]||'Required support is unavailable')+'. No preview fallback or answer was generated.';
+ for(const item of data.items){
+  const a=make('article','');a.append(make('h3','Task '+item.task_id+' · '+(itemLabels[item.requested_item]||'Requested information')),make('p',labels[item.state]));
+  if(item.state==='abstained')a.append(make('p',abstentionText(item)));
+  else if(item.state==='unavailable'||item.state==='quarantined')
+   a.append(make('p','Required reviewed support is held or unavailable for this scope. No incomplete procedure is supplied.'));
+  $('outcomes').append(a);
+ }
+ const targets=[...new Set(data.items.filter(i=>i.state==='needs_clarification').flatMap(i=>i.clarification_targets))];
+ if(targets.length){
+  const panel=make('article','');panel.className='clarification-action';
+  panel.append(make('h3','Information to clarify'),make('p','Please specify: '+targets.map(x=>x==='product'?'the exact product label':'one context to explore').join(' and ')+'. A confirmed diagnosis is not required. Already supplied fields are retained; uncertainty may remain unknown.'));
+  const button=make('button','Edit missing fields');button.type='button';
+  button.onclick=()=>{$(targets[0]==='product'?'product':'context').focus();$('request').scrollIntoView();};
+  panel.append(button);$('outcomes').append(panel);
+ }
+ for(const [bundleIndex,bundle] of data.context.bundles.entries()){
+  const clarification=bundle.options.length>0&&bundle.options.every(o=>o.role==='clarification_context');
+  const a=make(clarification?'details':'article','');
+  if(clarification)a.append(make('summary','Why clarification is needed · citations and review limits'));
+  a.append(make('h3','Task '+[...new Set(data.items.filter(i=>(i.bundle_refs||[]).includes('/context/bundles/'+bundleIndex)).map(i=>i.task_id))].join(', ')+' · '+(productLabels[bundle.product]||'Product clarification')+' · Review '+bundle.review_scope),make('p',bundle.condition_explanation));
+  for(const option of bundle.options){
+   if(!clarification||option.wording!==bundle.condition_explanation)a.append(make('h4',option.wording));
+   for(const step of option.steps){a.append(make('blockquote',step.wording));for(const pid of step.source_ids)a.append(citation(pid,data));}
+   for(const warning of option.warnings){
+    const repeated=warningAlreadyShown(warning,option.steps);
+    const warningBox=repeated?make('details',''):a;
+    if(repeated){warningBox.className='repeated-source';warningBox.append(make('summary','Full original passage · '+warning.source_ids.join(', ')+' (also shown in steps)'));}
+    else warningBox.append(make('strong','Attached original precaution'));
+    warningBox.append(make('blockquote',warning.wording));
+    for(const pid of warning.source_ids)warningBox.append(citation(pid,data));
+    if(repeated)a.append(warningBox);
+   }
+  }
+  a.append(make('h4','Required scope, sources and reservations'));
+  for(const pid of bundle.required_source_ids){const line=make('p','');line.append(citation(pid,data));a.append(line);}
+  const ul=make('ul','');for(const s of bundle.visible_reservations){const li=make('li',s);li.className='reservation';ul.append(li);}a.append(ul);$('bundles').append(a);
+ }
+}
+function clearResult(){
+ $('outcomes').replaceChildren();$('bundles').replaceChildren();$('audit').hidden=true;
+}
+function cancelActive(message,stale=false){
+ const request=activeRequest;if(!request)return;
+ activeRequest=null;clearTimeout(request.timer);request.cancel();request.controller.abort();
+ clearResult();$('submit').disabled=false;$('summary').textContent=message;$('stale').hidden=!stale;
+}
+$('request').addEventListener('change',()=>{
+ revision++;
+ if(activeRequest)cancelActive('Inputs changed while checking. Submit again.',true);
+ else $('stale').hidden=$('audit').hidden;
+});
+$('request').addEventListener('submit',async e=>{
+ e.preventDefault();
+ cancelActive('Starting a new request.');
+ const submittedRevision=revision;
+ const requested=[];if($('cleaning').checked)requested.push('cleaning_options');if($('pressure').checked)requested.push('pressure_limit');
+ clearResult();$('stale').hidden=true;
+ if(!requested.length){$('summary').textContent='Select at least one question.';return;}
+ const request={controller:new AbortController(),timer:null,cancel:null,timedOut:false};
+ const cancelled=new Promise((_,reject)=>{request.cancel=()=>reject(new Error('Request cancelled'));});
+ activeRequest=request;$('submit').disabled=true;
+ $('summary').textContent='Checking current registered authority and reviewed support…';
+ request.timer=setTimeout(()=>{
+  request.timedOut=true;request.cancel();request.controller.abort();
+ },REQUEST_TIMEOUT_MS);
+ try{
+  const body={kind:'reviewed_serving_request/v1',request_id:'registry-ui-request',language:'en',tasks:[{task_id:'A',product:$('product').value,deposit_context:$('context').value,requested_items:requested,excluded_items:[]}]};
+  const work=(async()=>{
+   const response=await fetch('/api/reviewed/v1/evaluate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal:request.controller.signal});
+   return await response.json();
+  })();
+  // Include body parsing and recover even if a transport ignores AbortSignal.
+  const data=await Promise.race([work,cancelled]);
+  if(activeRequest!==request||revision!==submittedRevision)return;
+  render(data);
+ }catch(err){
+  if(activeRequest!==request)return;
+  clearResult();
+  $('summary').textContent=request.timedOut
+   ?'The local registry did not respond within 15 seconds. Try again. No preview fallback or answer was generated.'
+   :'Local registry unavailable. Try again. No preview fallback or answer was generated.';
+ }finally{
+  clearTimeout(request.timer);
+  if(activeRequest===request){activeRequest=null;$('submit').disabled=false;}
+ }
+});
+</script></html>

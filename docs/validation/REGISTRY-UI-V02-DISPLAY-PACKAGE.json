@@ -1,0 +1,32 @@
+{
+  "id": "registry-ui-lot-b-versioning-package",
+  "date": "2026-11-03",
+  "status": "prepared_no_commit_or_push",
+  "branch_proposed": "codex/mabselect-ui-v02-display",
+  "commit_message_proposed": "fix: clarify MabSelect registry UI presentation in opt-in v02",
+  "file_count": 9,
+  "files": [
+    "demo/registry_ui_v02.py",
+    "demo/static/registry-v02.html",
+    "tests/test_registry_ui_v02.py",
+    "tests/ui/registry-v02.cjs",
+    "docs/CYTIVA-REGISTRY-UI-V02.md",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.json",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.md",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-PACKAGE.md",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-PACKAGE.json"
+  ],
+  "depends_on_lot": "A",
+  "hash_convention": "sha256_lf",
+  "self_hash_excluded": true,
+  "files_sha256_lf": {
+    "demo/registry_ui_v02.py": "df633da5ebc61c163cce8b7214b739516af882f35cea659bcfd45bd236f36b4b",
+    "demo/static/registry-v02.html": "4b5633d1c8c090103501761fe04f69ecd0b58d7934666663f3326ede52e92dee",
+    "tests/test_registry_ui_v02.py": "22b06a4d4de746b583bb438f1e3bddf2bbe094feb1fc83ca8487b5a5af1db37b",
+    "tests/ui/registry-v02.cjs": "267d5c8b05a6abc0cd61963242ebdaa1b4d53ac07deae85662e73e187b5e3449",
+    "docs/CYTIVA-REGISTRY-UI-V02.md": "72ac4cd0f19330e47cbee7fa81de3c9e9c216856db91ad0aa6742a71c863f14e",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.json": "7454fb65d79f2b93cc52b7f0800f599128e93c4dd9129f97825b5577e16cf917",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.md": "49c667eb292eb4ba32d1be7d9686aa27711ef21548e7b721d3580d32bc68741b",
+    "docs/validation/REGISTRY-UI-V02-DISPLAY-PACKAGE.md": "f49ff2e28bd51cfe8855b208659cf1e10d0f8730859cf8d11b3a0344218d331a"
+  }
+}

@@ -1,0 +1,152 @@
+{
+  "id": "mabselect-registry-ui-acceptance-v01-human-review",
+  "status": "completed_with_reservations",
+  "decisions": [
+    {
+      "id": "UA01",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA01 avec les réserves indiquées. Enregistre ma décision et passons à UA02. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-02T23:46:46.756894+00:00",
+      "question_sha256_canonical": "276e4395a6375360859d3c1552502e70fcbc1738242ba14c9a1360c88d93682f",
+      "reference_sha256_canonical": "cce25d88ddd5c66dd75816f4a7d733c3704cc50e6c618397aa270c9b56541ebd",
+      "reservations": [
+        "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+        "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+        "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+        "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not select a concentration inside the range or turn either block into a mandatory next step of the other.",
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA01 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA02",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA02 avec les réserves indiquées. Enregistre ma décision et passons à UA03. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T00:06:59.517837+00:00",
+      "question_sha256_canonical": "1a5f40285f1324eeae9a5356d69546bb61a6c94e889eda5e4a82bac74aba750a",
+      "reference_sha256_canonical": "4daccc9de2983885a9b130fe7df3cb87bcc83732fcd00ed5a2089b294a28c7c1",
+      "reservations": [
+        "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+        "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+        "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+        "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not select a concentration inside the range or turn either block into a mandatory next step of the other.",
+        "No clarification is required with these supplied controls; the category is an explored context, not a confirmed diagnosis.",
+        "No pressure-limit refusal should be displayed because numerical pressure is not requested in UA02."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA02 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA03",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA03 avec les réserves indiquées. Enregistre ma décision et passons à UA04. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T00:08:52.589087+00:00",
+      "question_sha256_canonical": "a2630b5f85e72e55bd6006898be024ef886311819b2b11f59bb0ea42dd6e4362",
+      "reference_sha256_canonical": "f8cb10c851aaf8442b55a5cb10c97702f7db18dcd666ca840c8cc4d36ef200bd",
+      "reservations": [
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+        "Only pressure was requested: no cleaning procedure or source quotation is expected to be delivered for this unsupported-only item. The human reference passages below are not fictitious emitted citations.",
+        "The qualitative lower-flow recommendation in E167-W must not become a numerical flow rate or pressure limit.",
+        "No clarification is expected with this exact product and explored context supplied; no confirmed diagnosis or operational suitability is established."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA03 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA04",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA04 avec les réserves indiquées. Enregistre ma décision et passons à UA05. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T09:15:07.809066+00:00",
+      "question_sha256_canonical": "1158454eb2712b575499e6c0d6980284a08fa0caf86bb254708ef408ce8df787",
+      "reference_sha256_canonical": "bf667afdc9b6c41bc395a5b4069e87fa42dbfc881ef8806555e6363da9b16a88",
+      "reservations": [
+        "The detergent route uses 2 column volumes of a nonionic detergent; 0.1% is an example, not a universal required formulation. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "The solvent route is an alternative: 3 to 4 column volumes of 70% ethanol OR 30% 2-propanol, followed immediately by at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Increasing gradients address air-bubble formation at high organic-solvent concentrations. Lower flow addresses increased backpressure. Preserve these as distinct precautions; the original source warning wording remains verbatim.",
+        "Do not mix or sequence detergent and solvent alternatives automatically; do not treat the two solvents as a mixture or invent gradient shape, numeric flow, numeric pressure, temperature, contact time or a named detergent.",
+        "pH 7.0 to 8.0 belongs to the following binding buffer, not the detergent/solvent. Do not transfer a 12-hour hold from another block.",
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+        "No clarification is expected with this exact product and explored context supplied; no confirmed diagnosis or operational suitability is established."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA04 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA05",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA05 avec les réserves indiquées. Enregistre ma décision et passons à UA06. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T10:18:57.335577+00:00",
+      "question_sha256_canonical": "e21d48015a723d782e0b8dcba82b51b0a51afa8055df218ecb73d40b163d4f82",
+      "reference_sha256_canonical": "7a9b5c26ea70a258f2db1757654c96fbd60fc8bd199b31409f6a54b7255ced87",
+      "reservations": [
+        "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+        "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required.",
+        "Ask only for the exact product; retain the supplied hydrophobic context as explored, not a confirmed diagnosis. Do not choose a family variant by default.",
+        "Use the eight reviewed scope citations to explain documentary distinctions without transferring procedures between blocks; deliver no procedure or numerical pressure at this clarification stage.",
+        "Identifying the product does not guarantee that a numerical pressure limit will be available in the reviewed excerpts; documentary availability must still be checked."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA05 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA06",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA06 avec les réserves indiquées. Enregistre ma décision et passons à UA07. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T14:01:44.847170+00:00",
+      "question_sha256_canonical": "4d51dcb1fb689e2dc7ab29413f703e178f4733d28c74b3cfa26b31f85e3eeaea",
+      "reference_sha256_canonical": "2c9f9e8c1d0a2d976070de0385236c698c8d46d4b313f06f7fb4db8964817986",
+      "reservations": [
+        "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+        "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required.",
+        "Preserve MabSelect SuRe without asking for the product again. Ask for one context to explore without requiring a confirmed diagnosis; uncertainty may remain unknown and must not force an arbitrary choice.",
+        "Do not merge deposit categories, combine their procedures or deliver cleaning parameters before clarification. Keep the eight previously reviewed Q09 scope citations available.",
+        "Do not add a pressure-refusal block because pressure is not requested in UA06."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA06 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA07",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA07 avec les réserves indiquées. Enregistre ma décision et passons à UA08. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T14:17:47.501352+00:00",
+      "question_sha256_canonical": "c0ea3e5591118d2de75af037968551e0802bf386ec1990401aa074885af519b6",
+      "reference_sha256_canonical": "9cb26d72472f08806fe22b551a30426bd66b179cf7719aa732a42311e3e1651b",
+      "reservations": [
+        "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+        "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required.",
+        "Resolve the product-label conflict by asking for the exact product; never prioritize a label or resolve the contradiction automatically. Retain the supplied precipitated/denatured context without requiring a confirmed diagnosis.",
+        "Do not supply numerical pressure, conversion or substitute, and do not substitute a cleaning recipe for the pressure request. The eight Q09 scope citations explain clarification; they do not establish a numerical pressure limit.",
+        "Identifying the product does not guarantee a pressure value; availability in admissible excerpts must still be checked."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA07 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    },
+    {
+      "id": "UA08",
+      "decision": "validated_with_reservations",
+      "original_human_message": "Je valide UA08 avec les réserves indiquées. Enregistre ma décision et fais le bilan des huit fiches. Garde le registre privé, les deux gels, les 16 notes et les pilotes inchangés. Aucun essai, commit ni push.",
+      "reviewed_at_utc": "2026-11-03T14:19:40.802017+00:00",
+      "question_sha256_canonical": "973ed8d11bf98e16401718a138904114651dddca1814631102d1c0c6ffe75e9e",
+      "reference_sha256_canonical": "1ebc91bcec694a18a9f49ef96bb6f92d7b9f56fc14d41a04e46848a8c6036412",
+      "reservations": [
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+        "Both requested items are outside this release scope. Do not infer general incompatibility, unsafe sample use, a purification requirement or permission for another product. Do not demand a new scientific diagnosis to justify this scoped refusal.",
+        "Both cleaning and pressure requests abstain as outside release scope, with no procedure, numerical pressure, conversion or replacement value and no automatic selection of a supported product.",
+        "No clarification is expected: refining the uncertain deposit context alone cannot bring the other product within this release scope.",
+        "No emitted citation is expected. E167-H is a human-review scope reference only, not evidence for an unknown product. The three-product support boundary belongs to the application catalogue, not a universal manual claim."
+      ],
+      "timestamp_meaning": "Time this supplied human decision was recorded; not an independently verified message timestamp.",
+      "approval_scope": "UA08 proposed UI acceptance question/reference and stated reservations only. No trial, new source/scientific approval or Git operation authorized."
+    }
+  ],
+  "execution_authorized": false,
+  "trial_started": false,
+  "metrics": null,
+  "method_lock_sha256_lf": "6a0d415969a6799e739641f9596d068d3d8f73fcdc2375f12cfa862345c0f221"
+}

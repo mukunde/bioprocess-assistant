@@ -1,0 +1,513 @@
+{
+  "id": "mabselect-registry-ui-acceptance-v01-references",
+  "status": "proposed_pending_human_review",
+  "cases": [
+    {
+      "id": "UA01",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "partial",
+      "expected_item_states": {
+        "cleaning_options": "supported",
+        "pressure_limit": "abstained"
+      },
+      "expected_item_reasons": {
+        "cleaning_options": "documentary_support",
+        "pressure_limit": "not_in_selected_excerpts"
+      },
+      "expected_review_scopes": [
+        "Q05",
+        "Q06"
+      ],
+      "expected_clarification_targets": [],
+      "mandatory_reference_conditions": [
+        "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+        "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+        "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+        "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not select a concentration inside the range or turn either block into a mandatory next step of the other.",
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+      ],
+      "reference_source_ids": [
+        "E167-H",
+        "E167-P",
+        "E167-PH",
+        "E167-S",
+        "E167-SH"
+      ],
+      "expected_delivered_citation_source_ids": [
+        "E167-H",
+        "E167-P",
+        "E167-PH",
+        "E167-S",
+        "E167-SH"
+      ],
+      "expected_procedure_scope_ids": [
+        "Q05",
+        "Q06"
+      ],
+      "no_procedure_expected": false,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "General and product-restricted blocks remain separate; the pressure request must not suppress supported cleaning guidance."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [
+        "mabselect.precipitated.general",
+        "mabselect.precipitated.restricted"
+      ],
+      "expected_item_bundle_keys": {
+        "cleaning_options": [
+          "mabselect.precipitated.general",
+          "mabselect.precipitated.restricted"
+        ],
+        "pressure_limit": []
+      },
+      "expected_item_clarification_targets": {
+        "cleaning_options": [],
+        "pressure_limit": []
+      }
+    },
+    {
+      "id": "UA02",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "supported",
+      "expected_item_states": {
+        "cleaning_options": "supported"
+      },
+      "expected_item_reasons": {
+        "cleaning_options": "documentary_support"
+      },
+      "expected_review_scopes": [
+        "Q05",
+        "Q06"
+      ],
+      "expected_clarification_targets": [],
+      "mandatory_reference_conditions": [
+        "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+        "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+        "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+        "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not select a concentration inside the range or turn either block into a mandatory next step of the other."
+      ],
+      "reference_source_ids": [
+        "E167-H",
+        "E167-P",
+        "E167-PH",
+        "E167-S",
+        "E167-SH"
+      ],
+      "expected_delivered_citation_source_ids": [
+        "E167-H",
+        "E167-P",
+        "E167-PH",
+        "E167-S",
+        "E167-SH"
+      ],
+      "expected_procedure_scope_ids": [
+        "Q05",
+        "Q06"
+      ],
+      "no_procedure_expected": false,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "Preserve both kinds of support without making the restricted sequence a fifth general formulation or a mandatory next step."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [
+        "mabselect.precipitated.general",
+        "mabselect.precipitated.restricted"
+      ],
+      "expected_item_bundle_keys": {
+        "cleaning_options": [
+          "mabselect.precipitated.general",
+          "mabselect.precipitated.restricted"
+        ]
+      },
+      "expected_item_clarification_targets": {
+        "cleaning_options": []
+      }
+    },
+    {
+      "id": "UA03",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "abstained",
+      "expected_item_states": {
+        "pressure_limit": "abstained"
+      },
+      "expected_item_reasons": {
+        "pressure_limit": "not_in_selected_excerpts"
+      },
+      "expected_review_scopes": [],
+      "expected_clarification_targets": [],
+      "mandatory_reference_conditions": [
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+        "Only pressure was requested: no cleaning procedure or source quotation is expected to be delivered for this unsupported-only item. The human reference passages below are not fictitious emitted citations."
+      ],
+      "reference_source_ids": [
+        "E167-H",
+        "E167-LH",
+        "E167-D",
+        "E167-E",
+        "E167-W"
+      ],
+      "expected_delivered_citation_source_ids": [],
+      "expected_procedure_scope_ids": [],
+      "no_procedure_expected": true,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "A pressure-only request must not invent a number, transfer a value from another block or return an unrequested cleaning procedure."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [],
+      "expected_item_bundle_keys": {
+        "pressure_limit": []
+      },
+      "expected_item_clarification_targets": {
+        "pressure_limit": []
+      }
+    },
+    {
+      "id": "UA04",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "partial",
+      "expected_item_states": {
+        "cleaning_options": "supported",
+        "pressure_limit": "abstained"
+      },
+      "expected_item_reasons": {
+        "cleaning_options": "documentary_support",
+        "pressure_limit": "not_in_selected_excerpts"
+      },
+      "expected_review_scopes": [
+        "N06",
+        "N07"
+      ],
+      "expected_clarification_targets": [],
+      "mandatory_reference_conditions": [
+        "The detergent route uses 2 column volumes of a nonionic detergent; 0.1% is an example, not a universal required formulation. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "The solvent route is an alternative: 3 to 4 column volumes of 70% ethanol OR 30% 2-propanol, followed immediately by at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Increasing gradients address air-bubble formation at high organic-solvent concentrations. Lower flow addresses increased backpressure. Preserve these as distinct precautions; the original source warning wording remains verbatim.",
+        "Do not mix or sequence detergent and solvent alternatives automatically; do not treat the two solvents as a mixture or invent gradient shape, numeric flow, numeric pressure, temperature, contact time or a named detergent.",
+        "pH 7.0 to 8.0 belongs to the following binding buffer, not the detergent/solvent. Do not transfer a 12-hour hold from another block.",
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+      ],
+      "reference_source_ids": [
+        "E167-D",
+        "E167-E",
+        "E167-H",
+        "E167-LH",
+        "E167-W"
+      ],
+      "expected_delivered_citation_source_ids": [
+        "E167-D",
+        "E167-E",
+        "E167-H",
+        "E167-LH",
+        "E167-W"
+      ],
+      "expected_procedure_scope_ids": [
+        "N06",
+        "N07"
+      ],
+      "no_procedure_expected": false,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "Keep supported detergent/solvent routes and their conditions while abstaining only on the unsupported pressure value."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [
+        "mabselect.hydrophobic.detergent",
+        "mabselect.hydrophobic.solvent"
+      ],
+      "expected_item_bundle_keys": {
+        "cleaning_options": [
+          "mabselect.hydrophobic.detergent",
+          "mabselect.hydrophobic.solvent"
+        ],
+        "pressure_limit": []
+      },
+      "expected_item_clarification_targets": {
+        "cleaning_options": [],
+        "pressure_limit": []
+      }
+    },
+    {
+      "id": "UA05",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "needs_clarification",
+      "expected_item_states": {
+        "cleaning_options": "needs_clarification",
+        "pressure_limit": "needs_clarification"
+      },
+      "expected_item_reasons": {
+        "cleaning_options": "product_unknown",
+        "pressure_limit": "product_unknown"
+      },
+      "expected_review_scopes": [
+        "Q09"
+      ],
+      "expected_clarification_targets": [
+        "product"
+      ],
+      "mandatory_reference_conditions": [
+        "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+        "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+      ],
+      "reference_source_ids": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "expected_delivered_citation_source_ids": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "expected_procedure_scope_ids": [],
+      "no_procedure_expected": true,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "Retain the selected context but ask for the exact product; do not choose a family variant or infer a pressure limit."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [
+        "mabselect.context.clarify"
+      ],
+      "expected_item_bundle_keys": {
+        "cleaning_options": [],
+        "pressure_limit": []
+      },
+      "expected_item_clarification_targets": {
+        "cleaning_options": [
+          "product"
+        ],
+        "pressure_limit": [
+          "product"
+        ]
+      }
+    },
+    {
+      "id": "UA06",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "needs_clarification",
+      "expected_item_states": {
+        "cleaning_options": "needs_clarification"
+      },
+      "expected_item_reasons": {
+        "cleaning_options": "context_unknown"
+      },
+      "expected_review_scopes": [
+        "Q09"
+      ],
+      "expected_clarification_targets": [
+        "deposit_context"
+      ],
+      "mandatory_reference_conditions": [
+        "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+        "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+      ],
+      "reference_source_ids": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "expected_delivered_citation_source_ids": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "expected_procedure_scope_ids": [],
+      "no_procedure_expected": true,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "Preserve the known product, request one context to explore, and do not require a confirmed diagnosis or combine categories."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [
+        "mabselect.context.clarify"
+      ],
+      "expected_item_bundle_keys": {
+        "cleaning_options": []
+      },
+      "expected_item_clarification_targets": {
+        "cleaning_options": [
+          "deposit_context"
+        ]
+      }
+    },
+    {
+      "id": "UA07",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "needs_clarification",
+      "expected_item_states": {
+        "pressure_limit": "needs_clarification"
+      },
+      "expected_item_reasons": {
+        "pressure_limit": "product_unknown"
+      },
+      "expected_review_scopes": [
+        "Q09"
+      ],
+      "expected_clarification_targets": [
+        "product"
+      ],
+      "mandatory_reference_conditions": [
+        "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+        "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+      ],
+      "reference_source_ids": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "expected_delivered_citation_source_ids": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "expected_procedure_scope_ids": [],
+      "no_procedure_expected": true,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "Resolve the product-label conflict before answering the numeric request; do not pick a label arbitrarily or substitute a cleaning recipe."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [
+        "mabselect.context.clarify"
+      ],
+      "expected_item_bundle_keys": {
+        "pressure_limit": []
+      },
+      "expected_item_clarification_targets": {
+        "pressure_limit": [
+          "product"
+        ]
+      }
+    },
+    {
+      "id": "UA08",
+      "status": "proposed_pending_human_review",
+      "expected_aggregate_status": "abstained",
+      "expected_item_states": {
+        "cleaning_options": "abstained",
+        "pressure_limit": "abstained"
+      },
+      "expected_item_reasons": {
+        "cleaning_options": "outside_release_scope",
+        "pressure_limit": "outside_release_scope"
+      },
+      "expected_review_scopes": [],
+      "expected_clarification_targets": [],
+      "mandatory_reference_conditions": [
+        "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+        "Both requested items are outside this release scope. Do not infer general incompatibility, unsafe sample use, a purification requirement or permission for another product. Do not demand a new scientific diagnosis to justify this scoped refusal."
+      ],
+      "reference_source_ids": [
+        "E167-H"
+      ],
+      "expected_delivered_citation_source_ids": [],
+      "expected_procedure_scope_ids": [],
+      "no_procedure_expected": true,
+      "no_numeric_pressure_expected": true,
+      "no_operational_suitability_or_diagnosis_claim": true,
+      "source_delivery_rule": "Every delivered citation must resolve under current authority to the exact source object/quote and retain applicable scoped reservations. Reference-only passages for refusal are not mandatory emitted citations.",
+      "review_notes": [
+        "Abstain within the release scope without asserting incompatibility, banning use of the sample, selecting another medium or claiming whole-manual absence."
+      ],
+      "observed_result": null,
+      "expected_context_bundle_keys": [],
+      "expected_item_bundle_keys": {
+        "cleaning_options": [],
+        "pressure_limit": []
+      },
+      "expected_item_clarification_targets": {
+        "cleaning_options": [],
+        "pressure_limit": []
+      }
+    }
+  ],
+  "scope_limitations": [
+    "Same previously reviewed corpus and product/rule branches; new acceptance records and guided-control combinations, not new scientific knowledge.",
+    "Author inspected implementation for interface/precedence compatibility; this is not a blinded independent evaluator. No prospective quality score exists.",
+    "Expected prose is semantic content in supported source/option sections, not a requirement to generate a new narrative. Exact original source quotation/provenance remains inspectable."
+  ],
+  "application_policy_refs": [
+    {
+      "path": "docs/technical/REVIEWED-DOSSIER-SERVING-CONTRACT-V01.md",
+      "sha256_lf": "d01606ad38e9109a8205a76ea1a1f0ca81d883c689c8ed1a47ba04cea7ededaa",
+      "role": "design_material_bound_by_accepted_record"
+    },
+    {
+      "path": "docs/technical/REVIEWED-DOSSIER-SERVING-TECHNICAL-V01.md",
+      "sha256_lf": "eb823186e773267ff8ab441867b0a03d555e25604a2834559ba02fea50ec6e16",
+      "role": "design_material_bound_by_accepted_record"
+    },
+    {
+      "path": "docs/technical/reviewed-dossier-serving-decisions-v01.json",
+      "sha256_lf": "6dbe3937da292bf4cd9d10ef6ed58ee57fa13b8fff14188be02195728a0f9487",
+      "role": "accepted_design_record"
+    },
+    {
+      "path": "docs/technical/reviewed-dossier-serving-technical-decisions-v01.json",
+      "sha256_lf": "9f2545b6c50dae75de211fe478092ed64b6969849d97b13c6bb2eeddae915773",
+      "role": "accepted_design_record"
+    },
+    {
+      "path": "docs/technical/mabselect-cleaning-approved-contract-v01.md",
+      "sha256_lf": "1506c3e1d3045d97b0fa0ee53e81b4a4bb3dbad92093f00e2d0ac6752de61f9c",
+      "role": "design_material_bound_by_accepted_record"
+    },
+    {
+      "path": "docs/technical/mabselect-cleaning-review-v01.json",
+      "sha256_lf": "2386cb3d6d19e454a61c945a7946891e5f269fd133488b2e4335bbedea1627ed",
+      "role": "accepted_design_record"
+    }
+  ],
+  "policy_boundary": "Outside-catalog abstention, clarification precedence and no inferred numeric parameters are application policy. Do not attribute them as verbatim instructions or compatibility prohibitions from a handbook quote."
+}

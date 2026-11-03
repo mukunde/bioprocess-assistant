@@ -1,0 +1,1356 @@
+{
+  "initial": {
+    "id": "mabselect-registry-ui-acceptance-trial-v01",
+    "status": "completed_with_usability_findings",
+    "cases": [
+      {
+        "id": "UA01",
+        "expected_status": "partial",
+        "observed_status": "partial",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "003-request.body",
+        "response_file": "003-response.body",
+        "context_bytes": 14736,
+        "citation_ids": [
+          "E167-H",
+          "E167-P",
+          "E167-PH",
+          "E167-S",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+          "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+          "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+          "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not select a concentration inside the range or turn either block into a mandatory next step of the other.",
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+        ],
+        "ui_summary": "Partial answer — some information is not supplied"
+      },
+      {
+        "id": "UA02",
+        "expected_status": "supported",
+        "observed_status": "supported",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "004-request.body",
+        "response_file": "004-response.body",
+        "context_bytes": 14742,
+        "citation_ids": [
+          "E167-H",
+          "E167-P",
+          "E167-PH",
+          "E167-S",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+          "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+          "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+          "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not select a concentration inside the range or turn either block into a mandatory next step of the other."
+        ],
+        "ui_summary": "Documented support"
+      },
+      {
+        "id": "UA03",
+        "expected_status": "abstained",
+        "observed_status": "abstained",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "005-request.body",
+        "response_file": "005-response.body",
+        "context_bytes": 41,
+        "citation_ids": [],
+        "manual_reference_conditions": [
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+          "Only pressure was requested: no cleaning procedure or source quotation is expected to be delivered for this unsupported-only item. The human reference passages below are not fictitious emitted citations."
+        ],
+        "ui_summary": "No supported answer to this requested item"
+      },
+      {
+        "id": "UA04",
+        "expected_status": "partial",
+        "observed_status": "partial",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "006-request.body",
+        "response_file": "006-response.body",
+        "context_bytes": 14896,
+        "citation_ids": [
+          "E167-D",
+          "E167-E",
+          "E167-H",
+          "E167-LH",
+          "E167-W"
+        ],
+        "manual_reference_conditions": [
+          "The detergent route uses 2 column volumes of a nonionic detergent; 0.1% is an example, not a universal required formulation. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "The solvent route is an alternative: 3 to 4 column volumes of 70% ethanol OR 30% 2-propanol, followed immediately by at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "Increasing gradients address air-bubble formation at high organic-solvent concentrations. Lower flow addresses increased backpressure. Preserve these as distinct precautions; the original source warning wording remains verbatim.",
+          "Do not mix or sequence detergent and solvent alternatives automatically; do not treat the two solvents as a mixture or invent gradient shape, numeric flow, numeric pressure, temperature, contact time or a named detergent.",
+          "pH 7.0 to 8.0 belongs to the following binding buffer, not the detergent/solvent. Do not transfer a 12-hour hold from another block.",
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+        ],
+        "ui_summary": "Partial answer — some information is not supplied"
+      },
+      {
+        "id": "UA05",
+        "expected_status": "needs_clarification",
+        "observed_status": "needs_clarification",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": false,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": false,
+        "request_file": "007-request.body",
+        "response_file": "007-response.body",
+        "context_bytes": 11959,
+        "citation_ids": [
+          "E166-H",
+          "E166-LH",
+          "E166-PH",
+          "E166-T",
+          "E167-H",
+          "E167-LH",
+          "E167-PH",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+          "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+        ],
+        "ui_summary": "Clarification needed"
+      },
+      {
+        "id": "UA06",
+        "expected_status": "needs_clarification",
+        "observed_status": "needs_clarification",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": false,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": false,
+        "request_file": "008-request.body",
+        "response_file": "008-response.body",
+        "context_bytes": 12046,
+        "citation_ids": [
+          "E166-H",
+          "E166-LH",
+          "E166-PH",
+          "E166-T",
+          "E167-H",
+          "E167-LH",
+          "E167-PH",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+          "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+        ],
+        "ui_summary": "Clarification needed"
+      },
+      {
+        "id": "UA07",
+        "expected_status": "needs_clarification",
+        "observed_status": "needs_clarification",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": false,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": false,
+        "request_file": "009-request.body",
+        "response_file": "009-response.body",
+        "context_bytes": 11961,
+        "citation_ids": [
+          "E166-H",
+          "E166-LH",
+          "E166-PH",
+          "E166-T",
+          "E167-H",
+          "E167-LH",
+          "E167-PH",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+          "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+        ],
+        "ui_summary": "Clarification needed"
+      },
+      {
+        "id": "UA08",
+        "expected_status": "abstained",
+        "observed_status": "abstained",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "010-request.body",
+        "response_file": "010-response.body",
+        "context_bytes": 41,
+        "citation_ids": [],
+        "manual_reference_conditions": [
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+          "Both requested items are outside this release scope. Do not infer general incompatibility, unsafe sample use, a purification requirement or permission for another product. Do not demand a new scientific diagnosis to justify this scoped refusal."
+        ],
+        "ui_summary": "No supported answer to this requested item"
+      }
+    ],
+    "case_outcomes_passed": 5,
+    "case_count": 8,
+    "requests_executed": 8,
+    "automatic_retries": 0,
+    "source_pages_verified": 13,
+    "source_pages": {
+      "E167-P": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "011-response.body",
+        "review_ids": [
+          "Q05"
+        ]
+      },
+      "E167-H": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "012-response.body",
+        "review_ids": [
+          "Q05",
+          "Q06",
+          "Q09",
+          "N06",
+          "N07"
+        ]
+      },
+      "E167-PH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "013-response.body",
+        "review_ids": [
+          "Q05",
+          "Q06",
+          "Q09"
+        ]
+      },
+      "E167-S": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "014-response.body",
+        "review_ids": [
+          "Q06"
+        ]
+      },
+      "E167-SH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "015-response.body",
+        "review_ids": [
+          "Q06",
+          "Q09"
+        ]
+      },
+      "E167-D": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "016-response.body",
+        "review_ids": [
+          "N06"
+        ]
+      },
+      "E167-LH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "017-response.body",
+        "review_ids": [
+          "Q09",
+          "N06",
+          "N07"
+        ]
+      },
+      "E167-E": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "018-response.body",
+        "review_ids": [
+          "N07"
+        ]
+      },
+      "E167-W": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "019-response.body",
+        "review_ids": [
+          "N07"
+        ]
+      },
+      "E166-H": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "020-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      },
+      "E166-T": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "021-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      },
+      "E166-PH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "022-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      },
+      "E166-LH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "023-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      }
+    },
+    "critical_failures": [
+      {
+        "id": "UA05",
+        "failed_checks": [
+          "item_bindings_resolve"
+        ]
+      },
+      {
+        "id": "UA06",
+        "failed_checks": [
+          "item_bindings_resolve"
+        ]
+      },
+      {
+        "id": "UA07",
+        "failed_checks": [
+          "item_bindings_resolve"
+        ]
+      }
+    ],
+    "usability_findings": [
+      {
+        "id": "U01",
+        "case_ids": [
+          "UA08"
+        ],
+        "severity": "noncritical",
+        "finding": "The API correctly reports outside_release_scope, but the visible abstention uses generic selected-excerpt absence and numerical-value text for both cleaning and pressure. It does not explain the unsupported product boundary. The exact reason remains available in collapsed audit data.",
+        "proposed_followup": "In a separate variant, render reason-specific outside-release wording and item-specific abstention text."
+      },
+      {
+        "id": "U02",
+        "case_ids": [
+          "UA05",
+          "UA06",
+          "UA07"
+        ],
+        "severity": "noncritical",
+        "finding": "Clarification wording is repeated as the bundle explanation and its option heading; UA05 also repeats the same product clarification for two requested items. Eight scope citations and review reservations create a long result.",
+        "proposed_followup": "In a separate variant, show one focused clarification while preserving per-item outcomes and all required citations/reservations under clearly named sections."
+      },
+      {
+        "id": "U03",
+        "case_ids": [
+          "UA04"
+        ],
+        "severity": "noncritical",
+        "finding": "The solvent passage E167-E is displayed in steps and repeated as an attached original precaution. Conditions and distinct air-bubble/backpressure warnings remain intact.",
+        "proposed_followup": "Consider reducing repetition without dropping any original warning or source binding."
+      }
+    ],
+    "limitations": [
+      "Known reviewed evidence and guided control combinations; not a blinded retrieval benchmark.",
+      "No withdrawals or malformed-authority faults were introduced; the private active registry remains untouched.",
+      "No timing benchmark: HTTP recording and browser tool overhead prevent meaningful latency claims.",
+      "Machine quantities arrays are empty in these preserved textual steps; quantities were checked as source-bound text, not as normalized numeric fields.",
+      "No LLM, paid API, method retuning, commits or pushes."
+    ]
+  },
+  "corrected": {
+    "id": "mabselect-registry-ui-acceptance-trial-v01",
+    "status": "completed_with_usability_findings",
+    "assessment_correction": "The original offline checker incorrectly equated bundle_refs with procedural bundle_keys for clarification. The unchanged baseline explicitly includes Q09 clarification context refs while keeping procedural keys empty (demo/documentary.py:309-311). This v02 assessment fixes the checker only; original assessor/results and all HTTP observations remain preserved, with no rerun or runtime/reference change.",
+    "cases": [
+      {
+        "id": "UA01",
+        "expected_status": "partial",
+        "observed_status": "partial",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "003-request.body",
+        "response_file": "003-response.body",
+        "context_bytes": 14736,
+        "citation_ids": [
+          "E167-H",
+          "E167-P",
+          "E167-PH",
+          "E167-S",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+          "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+          "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+          "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not select a concentration inside the range or turn either block into a mandatory next step of the other.",
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+        ],
+        "ui_summary": "Partial answer — some information is not supplied"
+      },
+      {
+        "id": "UA02",
+        "expected_status": "supported",
+        "observed_status": "supported",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "004-request.body",
+        "response_file": "004-response.body",
+        "context_bytes": 14742,
+        "citation_ids": [
+          "E167-H",
+          "E167-P",
+          "E167-PH",
+          "E167-S",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Keep four separate alternatives; each uses 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide.",
+          "Contact time is at least 10 minutes, not exactly 10 minutes. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not combine alternatives, choose operational suitability, infer a lifetime/reuse guarantee or transfer the restricted block to plain MabSelect.",
+          "The additional sequence is restricted to SuRe/SuRe LX in this precipitated/denatured-substances context; it is separate from the four general alternatives.",
+          "Preserve order: 3 column volumes of binding buffer; then at least 2 column volumes of 100 mM to 500 mM sodium hydroxide with 10 to 15 minutes contact; then immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0 to 8.0.",
+          "Do not select a concentration inside the range or turn either block into a mandatory next step of the other."
+        ],
+        "ui_summary": "Documented support"
+      },
+      {
+        "id": "UA03",
+        "expected_status": "abstained",
+        "observed_status": "abstained",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "005-request.body",
+        "response_file": "005-response.body",
+        "context_bytes": 41,
+        "citation_ids": [],
+        "manual_reference_conditions": [
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+          "Only pressure was requested: no cleaning procedure or source quotation is expected to be delivered for this unsupported-only item. The human reference passages below are not fictitious emitted citations."
+        ],
+        "ui_summary": "No supported answer to this requested item"
+      },
+      {
+        "id": "UA04",
+        "expected_status": "partial",
+        "observed_status": "partial",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "006-request.body",
+        "response_file": "006-response.body",
+        "context_bytes": 14896,
+        "citation_ids": [
+          "E167-D",
+          "E167-E",
+          "E167-H",
+          "E167-LH",
+          "E167-W"
+        ],
+        "manual_reference_conditions": [
+          "The detergent route uses 2 column volumes of a nonionic detergent; 0.1% is an example, not a universal required formulation. Immediately follow with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "The solvent route is an alternative: 3 to 4 column volumes of 70% ethanol OR 30% 2-propanol, followed immediately by at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+          "Increasing gradients address air-bubble formation at high organic-solvent concentrations. Lower flow addresses increased backpressure. Preserve these as distinct precautions; the original source warning wording remains verbatim.",
+          "Do not mix or sequence detergent and solvent alternatives automatically; do not treat the two solvents as a mixture or invent gradient shape, numeric flow, numeric pressure, temperature, contact time or a named detergent.",
+          "pH 7.0 to 8.0 belongs to the following binding buffer, not the detergent/solvent. Do not transfer a 12-hour hold from another block.",
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product."
+        ],
+        "ui_summary": "Partial answer — some information is not supplied"
+      },
+      {
+        "id": "UA05",
+        "expected_status": "needs_clarification",
+        "observed_status": "needs_clarification",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "007-request.body",
+        "response_file": "007-response.body",
+        "context_bytes": 11959,
+        "citation_ids": [
+          "E166-H",
+          "E166-LH",
+          "E166-PH",
+          "E166-T",
+          "E167-H",
+          "E167-LH",
+          "E167-PH",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+          "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+        ],
+        "ui_summary": "Clarification needed"
+      },
+      {
+        "id": "UA06",
+        "expected_status": "needs_clarification",
+        "observed_status": "needs_clarification",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "008-request.body",
+        "response_file": "008-response.body",
+        "context_bytes": 12046,
+        "citation_ids": [
+          "E166-H",
+          "E166-LH",
+          "E166-PH",
+          "E166-T",
+          "E167-H",
+          "E167-LH",
+          "E167-PH",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+          "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+        ],
+        "ui_summary": "Clarification needed"
+      },
+      {
+        "id": "UA07",
+        "expected_status": "needs_clarification",
+        "observed_status": "needs_clarification",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "009-request.body",
+        "response_file": "009-response.body",
+        "context_bytes": 11961,
+        "citation_ids": [
+          "E166-H",
+          "E166-LH",
+          "E166-PH",
+          "E166-T",
+          "E167-H",
+          "E167-LH",
+          "E167-PH",
+          "E167-SH"
+        ],
+        "manual_reference_conditions": [
+          "Ask only for the missing/conflicting field(s) identified below. Preserve any already supplied product/context; never choose a recipe or numeric parameter before clarification.",
+          "Clarification is an application response policy supported by the manual distinctions and the Q09 review, not a verbatim manual instruction. A confirmed diagnosis is not required."
+        ],
+        "ui_summary": "Clarification needed"
+      },
+      {
+        "id": "UA08",
+        "expected_status": "abstained",
+        "observed_status": "abstained",
+        "checks": {
+          "request_projection_exact": true,
+          "http_200": true,
+          "aggregate_status": true,
+          "item_states": true,
+          "item_reasons": true,
+          "context_bundle_keys": true,
+          "item_bundle_keys": true,
+          "clarification_targets": true,
+          "citation_set": true,
+          "visible_citation_set": true,
+          "context_sources_exact": true,
+          "context_reviews_exact": true,
+          "review_scope_set": true,
+          "original_scoped_reservations_retained": true,
+          "steps_and_warnings_source_bound": true,
+          "no_procedure_before_clarification_or_abstention": true,
+          "visible_steps_unchanged": true,
+          "visible_reservations_unchanged": true,
+          "visible_conditions_unchanged": true,
+          "context_budget": true,
+          "authority_unchanged": true,
+          "all_delivered_citations_opened_and_verified": true,
+          "excluded_sources_absent": true,
+          "no_suitability_or_diagnosis": true,
+          "item_bindings_resolve": true,
+          "reviewed_product_context_preserved": true,
+          "no_numeric_pressure_support": true
+        },
+        "passed": true,
+        "request_file": "010-request.body",
+        "response_file": "010-response.body",
+        "context_bytes": 41,
+        "citation_ids": [],
+        "manual_reference_conditions": [
+          "No numerical maximum pressure or substitute may be supplied. The absence statement is bounded to the selected reviewed release excerpts, not the whole manual, manufacturer specifications or every use of the product.",
+          "Both requested items are outside this release scope. Do not infer general incompatibility, unsafe sample use, a purification requirement or permission for another product. Do not demand a new scientific diagnosis to justify this scoped refusal."
+        ],
+        "ui_summary": "No supported answer to this requested item"
+      }
+    ],
+    "case_outcomes_passed": 8,
+    "case_count": 8,
+    "requests_executed": 8,
+    "automatic_retries": 0,
+    "source_pages_verified": 13,
+    "source_pages": {
+      "E167-P": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "011-response.body",
+        "review_ids": [
+          "Q05"
+        ]
+      },
+      "E167-H": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "012-response.body",
+        "review_ids": [
+          "Q05",
+          "Q06",
+          "Q09",
+          "N06",
+          "N07"
+        ]
+      },
+      "E167-PH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "013-response.body",
+        "review_ids": [
+          "Q05",
+          "Q06",
+          "Q09"
+        ]
+      },
+      "E167-S": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "014-response.body",
+        "review_ids": [
+          "Q06"
+        ]
+      },
+      "E167-SH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "015-response.body",
+        "review_ids": [
+          "Q06",
+          "Q09"
+        ]
+      },
+      "E167-D": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "016-response.body",
+        "review_ids": [
+          "N06"
+        ]
+      },
+      "E167-LH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "017-response.body",
+        "review_ids": [
+          "Q09",
+          "N06",
+          "N07"
+        ]
+      },
+      "E167-E": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "018-response.body",
+        "review_ids": [
+          "N07"
+        ]
+      },
+      "E167-W": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "019-response.body",
+        "review_ids": [
+          "N07"
+        ]
+      },
+      "E166-H": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "020-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      },
+      "E166-T": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "021-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      },
+      "E166-PH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "022-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      },
+      "E166-LH": {
+        "checks": {
+          "http_200": true,
+          "exact_quote": true,
+          "exact_source_object": true,
+          "heading": true,
+          "visible_length": true,
+          "current_authority_banner": true,
+          "original_reviews_exact": true
+        },
+        "http_event": "023-response.body",
+        "review_ids": [
+          "Q09"
+        ]
+      }
+    },
+    "critical_failures": [],
+    "usability_findings": [
+      {
+        "id": "U01",
+        "case_ids": [
+          "UA08"
+        ],
+        "severity": "noncritical",
+        "finding": "The API correctly reports outside_release_scope, but the visible abstention uses generic selected-excerpt absence and numerical-value text for both cleaning and pressure. It does not explain the unsupported product boundary. The exact reason remains available in collapsed audit data.",
+        "proposed_followup": "In a separate variant, render reason-specific outside-release wording and item-specific abstention text."
+      },
+      {
+        "id": "U02",
+        "case_ids": [
+          "UA05",
+          "UA06",
+          "UA07"
+        ],
+        "severity": "noncritical",
+        "finding": "Clarification wording is repeated as the bundle explanation and its option heading; UA05 also repeats the same product clarification for two requested items. Eight scope citations and review reservations create a long result.",
+        "proposed_followup": "In a separate variant, show one focused clarification while preserving per-item outcomes and all required citations/reservations under clearly named sections."
+      },
+      {
+        "id": "U03",
+        "case_ids": [
+          "UA04"
+        ],
+        "severity": "noncritical",
+        "finding": "The solvent passage E167-E is displayed in steps and repeated as an attached original precaution. Conditions and distinct air-bubble/backpressure warnings remain intact.",
+        "proposed_followup": "Consider reducing repetition without dropping any original warning or source binding."
+      }
+    ],
+    "limitations": [
+      "Known reviewed evidence and guided control combinations; not a blinded retrieval benchmark.",
+      "No withdrawals or malformed-authority faults were introduced; the private active registry remains untouched.",
+      "No timing benchmark: HTTP recording and browser tool overhead prevent meaningful latency claims.",
+      "Machine quantities arrays are empty in these preserved textual steps; quantities were checked as source-bound text, not as normalized numeric fields.",
+      "No LLM, paid API, method retuning, commits or pushes."
+    ]
+  },
+  "correction_scope": "The original offline checker incorrectly equated bundle_refs with procedural bundle_keys for clarification. The unchanged baseline explicitly includes Q09 clarification context refs while keeping procedural keys empty (demo/documentary.py:309-311). This v02 assessment fixes the checker only; original assessor/results and all HTTP observations remain preserved, with no rerun or runtime/reference change.",
+  "no_case_rerun": true
+}

@@ -16,8 +16,10 @@ local preview are merged; PR72 adds its separate 52-file freeze and accepted-cas
 replay. PR74 adds the corrected local registry; PR76 records the explicitly
 approved local v02 activation and its replay. One private verification store is
 active; Git still ships the staged candidate. PR78 adds a separate explicit-root
-registry UI with citations, clarification, abstention and withdrawal checks; the
-original preview/launchers and legacy chat remain separate.
+registry UI with citations, clarification, abstention and withdrawal checks. PR80
+records the reviewed UA01-UA08 baseline trial (8/8 bounded functional outcomes);
+PR81 adds opt-in presentation v02 for the three display findings. The original
+preview/launchers and legacy chat remain separate.
 Portable telemetry, independent
 answer evaluation and the common-corpus retrieval comparison remain pending.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
@@ -54,8 +56,9 @@ Migration from the legacy dense template/review database is still pending.
   evaluation. Reviewed cleaning and contaminant sources/questions now extend the
   procedural sample; their retrieval results are summarized below. The separate
   handoff freeze/replay, registry, local activation record and opt-in registry UI
-  are now merged. Next: prepare reviewed held-out acceptance references, then
-  evaluate the integrated bounded path without retuning on the results.
+  are now merged. The UA01-UA08 review/trial and separate UI v02 are also merged.
+  Next: minimal metadata-only local OpenTelemetry tracing, preserving response
+  identities and keeping telemetry failure nonblocking.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
@@ -75,13 +78,43 @@ is published, while the executable Python application remains local.
 | 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI and 18 HTTP/DOM tests | Reviewed held-out acceptance test, second-machine validation and independent answer evaluation; fresh clones staged, no legacy chat integration |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged, no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest merged baseline: `main` at `c230f14`, including
+Latest merged baseline: `main` at `2f8ef3d`, including
+[PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
+and [PR81](https://github.com/mukunde/bioprocess-assistant/pull/81) (presentation v02).
+The complete maintained suite on that exact merged baseline ran **945 tests:
+944 passed and one optional PDFium preview skip**, no failures/errors, in
+418.456 seconds. Both original freezes remain valid: v03 (36 pins), MabSelect
+(52 pins); neither was expanded or replaced by these deliveries.
+
+The [compact UA01-UA08 trial](../experiments/cytiva/reviewed-registry-ui-acceptance-v01/README.md)
+contains eight literal human approvals/reservations and eight single baseline UI
+submissions. **8/8 functional outcomes matched** and thirteen opened source pages
+were verified. Four offline export integrity/portability checks pass. The initial
+checker mistake and corrected assessment remain visible; there was no case rerun
+or result-driven method retuning. This is known-source guided UI acceptance, not
+blinded retrieval, generated-answer evaluation or scientific validation.
+
+The [separate display v02](CYTIVA-REGISTRY-UI-V02.md) resolves the three usability
+findings with reason/item-specific outside-release text, one clarification action
+and conservative folding of duplicated solvent text. Twenty-seven targeted
+regressions passed, with exact JSON equality across the eight combinations and
+identical HTML for all thirteen source pages. Three browser smoke checks confirmed
+the changes; no second prospective trial score is claimed. Payload size is unchanged.
+
+V02 is explicit opt-in on port 8785; baseline 8784 and preview 8783 remain available.
+The private active store stays generation 1 with zero withdrawal events; Git ships
+staged data and fresh clones still require reviewed activation. Original launchers,
+legacy chat, tours, notes and pilots are unchanged. Next implementation priority:
+**minimal metadata-only local OpenTelemetry tracing**, with no model/paid service,
+no response/source changes and no answer failure when telemetry is unavailable.
+
+Earlier registry-UI baseline: `main` at `c230f14`, including
 [PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
 [nine-file registry UI package](validation/MABSELECT-REGISTRY-UI-PACKAGE.md) is
-integrated. Complete suite on merged `main`: **914 executed, 913 passed and one
+integrated. Complete suite at that checkpoint: **914 executed, 913 passed and one
 optional PDFium preview skip**, no failures/errors. Eighteen HTTP/DOM checks cover
 citations, clarification, scoped abstention, version-bound withdrawals and
 independent support, including six regressions for controlled source errors and
@@ -327,7 +360,8 @@ release/withdrawal registry, change source approvals or supply a prospective sco
 Original decisions, results, notes and pilots remain unchanged. Runtime integrity
 is complete for this frozen candidate; PR74 adds the nonactivated authority layer
 below. PR76 records the approved local activation, and PR78 adds a separate
-opt-in registry UI. Held-out acceptance of the integrated path is the next gate.
+opt-in registry UI. The bounded UA01-UA08 trial is now recorded in PR80;
+independent acceptance beyond these known sources remains open.
 
 ### Merged registry and approved private local activation
 
@@ -391,40 +425,56 @@ The original 8783 preview, Windows launchers, public tours and legacy chat remai
 separate. This closes the bounded UI integration gate, not independent quality,
 portability, public executable hosting or scientific validation.
 
+### Merged reviewed UI acceptance and presentation v02
+
+[Lot A / PR80](validation/REGISTRY-UI-ACCEPTANCE-PACKAGE.md) versions twenty files:
+eight-reference preparation and human decisions, a compact observation/result
+export, provenance, assessor history and four offline integrity regressions.
+Eight requests each ran once through the baseline UI, with all required conditions,
+source identities and scoped outcomes retained. The eight outcomes match the
+reviewed expectations. Withdrawal/corruption tests are separate disposable-store
+conformance checks; no live withdrawal was introduced during acceptance.
+
+[Lot B / PR81](validation/REGISTRY-UI-V02-DISPLAY-PACKAGE.md) adds nine files for
+an explicitly separate page/module, tests and documentation. Outside-release
+abstention is distinct from excerpt absence; repeated clarification uses one edit
+action with all citations/reservations available in a named disclosure; the complete
+repeated solvent passage is folded only with exact text coverage and source binding.
+Independent precautions remain expanded. The baseline UI and its results remain
+unchanged. V02's 27 targeted regressions and three browser checks do not constitute
+an independent prospective score; all source/retrieval behavior remains the same.
+
 ### Next delivery priorities
 
-1. **Prepare reviewed held-out acceptance references for the integrated UI.**
-   Start with a small set (for example six to eight new requests) over the existing
-   reviewed MabSelect corpus. Record the current merged code/UI/environment and
-   authority identities without copying the private store or altering either
-   freeze. Define expected answer content, necessary conditions/citations and
-   clarification/abstention outcomes before execution; review the references first.
-   Keep fault scenarios in disposable stores. Acceptance: an explicit bounded
-   protocol and reviewed references, distinct from the six development replays
-   and 18 regression tests. No new runtime-freeze machinery, ontology redesign,
-   whole-manual review or LLM is required to prepare this slice.
-2. **Consolidate the demonstrable baseline in parallel.** Gather a short usability
-   response to the merged Protein A/G and MabSelect entries; keep the published
-   screenshot tour distinct from live execution. Use the existing second-PC
-   protocol on another physical Windows PC when available. Acceptance: versions,
-   setup/readiness, citations, warnings and clarification/quarantine behavior are
-   recorded without treating documentary checks as scientific validation. Preserve
-   both freezes; later behavior changes require a new candidate/version.
-3. **Execute the fixed integrated acceptance trial after reference review.**
-   Exercise the UI/API against the recorded baseline without retuning after
-   results. Preserve all outputs and explain failures; keep withdrawal/corruption
-   simulations separate from the real store. New wording on the same bounded
-   corpus is not evidence of whole-manual or scientific generalization. Do not
-   reuse development replays as prospective quality scores. Legacy chat/graph
-   integration remains separate; preserve historical results and both freezes.
-4. **Instrument and evaluate the serving path incrementally.** Add OpenTelemetry
-   spans and portable latency/call accounting to the registry UI/service; model
-   calls/cost remain zero on this deterministic path. Model-call retry/cost/budget
-   enforcement, calibrated Ragas for later generated answers and Promptfoo attacks
-   with benign controls remain separate pending work. Deterministic citation and
-   abstention checks already exist; they do not complete telemetry or red teaming.
+1. **Implement minimal local OpenTelemetry tracing on the opt-in registry path.**
+   Start with HTTP evaluation and source-view boundaries, evaluation child spans,
+   generated trace IDs, release/operation identity, elapsed time, outcome and
+   controlled error categories. Source views are separate HTTP operations; do not
+   force a misleading parent relationship or change citation URLs for correlation.
+   Use metadata only by default: no quotations, PDFs, credentials, private paths
+   or user text. A free local sink and configurable OTLP export keep the backend
+   replaceable. Acceptance: deterministic request/child trace links, successful/
+   clarification/abstention/error fixtures, no response/source-body changes, and
+   an unavailable sink that cannot block answers or bypass the existing deadline.
+   This deterministic path makes no model calls; model tokens/cost are not inferred.
+   No new ontology, runtime freeze or whole-manual review is required for this slice.
+2. **Validate usability and portability without repeating completed reference work.**
+   Use a short v02 usability pass for the disclosures and edit action. Apply the
+   existing second-PC protocol when another physical Windows PC is available;
+   same-PC isolated setup is not that gate. Preserve the existing UA trial and
+   freezes. Keep installer, legacy chat and public screenshot/video tours separate
+   until their own integration change; do not relabel recorded screens as live UI.
+3. **Extend independent acceptance only for a declared new scope or behavior.**
+   Keep UA01-UA08 as known regression inputs once observed. New evidence, independent
+   authorship or additional fault coverage requires its own fixed references and
+   prospective record; never overwrite the first trial. Simulate withdrawals and
+   invalid authority in disposable stores, not the approved private store.
+4. **Extend model evaluation/accounting when the corresponding path exists.**
+   Model-call/retry budgets, versioned price/usage accounting, calibrated Ragas for
+   generated answers and Promptfoo attacks with benign controls remain pending.
+   Registry tracing is a first portable slice, not completion of phase 1 or red teaming.
 5. **Compare architectures after prerequisites.** Run graph/passages/LightRAG on a
-   common corpus and budget. Benchmark local answering separately; keep KAG and
+   common corpus and budget with declared adapters and references. Keep KAG and
    fine-tuning conditional on failures simpler approaches cannot address.
 
 No additional representative-page review is required by default. Reopen conversion
@@ -450,6 +500,11 @@ separate required check before deployment. Historical scores are not scores of
 this revised pipeline.
 
 ## Phase 1 — Portable observability (pending; next integration prerequisite)
+
+The next concrete slice is metadata-only local tracing of the deterministic
+registry UI/service described above, with optional OTLP export and nonblocking
+telemetry. No implementation is merged yet. Broader model/extraction/judge call
+accounting remains a later part of this workstream.
 
 Use a provider-neutral call wrapper with an optional Langfuse sink. Record a
 trace ID, operation (chat / extraction / judge), model, prompt/schema version,
@@ -811,6 +866,7 @@ OpenTelemetry instrumentation and Promptfoo testing remain pending. The minimal 
 handoff, its separate freeze/replay and corrected local release/withdrawal registry
 and the approved private local activation record are merged. One verification
 store is active; Git still ships staged data. The separate opt-in registry UI is
-merged in PR78. Held-out integrated acceptance and legacy-chat integration remain
-pending, as described in the current checkpoint above.
+merged in PR78; PR80 records bounded UA01-UA08 acceptance and PR81 adds the
+separate display v02. Independent acceptance beyond the known corpus, portable
+observability and legacy-chat integration remain pending, as described above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

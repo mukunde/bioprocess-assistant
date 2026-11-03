@@ -6,8 +6,8 @@
   "hash_convention": "SHA-256 after CRLF-to-LF normalization; this manifest is excluded to avoid self-reference.",
   "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
   "files_sha256_lf": {
-    "README.md": "3d1b3893f5d17f372013ffdf9e84a65e61f39f7f10bf729f65f99eedc9ab0f98",
-    "docs/ROADMAP.md": "71f4b113e3632be5118d4edf6fa4cad16faf4b142b0036ea5489b9dc70750ead",
+    "README.md": "fbc83d1b719d98f18bebbd8649d067fb4ae7bb0a8fc473edceacb37409fbda61",
+    "docs/ROADMAP.md": "63af0444ec8cfe79d4509dc8c162923a2aef44c051d05a9992f29bc079a00f0a",
     "docs/experiments/free-text-v02-comparison-v01-preparation.json": "ba570461f709c631def2a870d969c41bf98b344abcfc9fbd939f151fe0139ce5",
     "docs/experiments/free-text-v02-comparison-v01-preparation.md": "f60aa911cafed0cde387356586025b29052f7c62e8bb3c1fa283723f6c3f2aca",
     "docs/experiments/free-text-v02-comparison-v01-results-checks.json": "984a4ced15ab31aed4844f7a7718429002e1bca2704d7bf50e05630ab8d29f3c",

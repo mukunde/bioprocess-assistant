@@ -1,0 +1,70 @@
+{
+  "id": "mabselect-registry-ui-acceptance-v01-preparation-manifest",
+  "status": "human_review_completed_not_executed",
+  "prepared_on": "2026-11-03",
+  "hash_convention": "sha256_lf",
+  "files_sha256_lf": {
+    "README.md": "b7e8fa1bbe8e93468af6417ef758783105b3bccdabb6a93150ffe4279efdf375",
+    "REVIEW.md": "f8247cf9698e62f751ac1a8c4636808f2ed57469e9ad5bb946f2f30741067658",
+    "questions.json": "7b59a00138224151c4c2727323a90b9fb7b5e61571b07b81211348f9e5736f41",
+    "references.json": "4c444f67fdc807cf440a0cfc24f0bb334e691a2e423e6cdb4dcb452c97049684",
+    "evidence.json": "6d6eb226b67914e165e3e7d64c88ee126a664876d331a37c984a6cd92421fe24",
+    "review.json": "433824ccf83baff51416c85ba906938912137efc6eb10d21dbda6586a68ad400",
+    "method-lock.json": "6a0d415969a6799e739641f9596d068d3d8f73fcdc2375f12cfa862345c0f221",
+    "REVIEW-STATUS.md": "de414cac8c646162bfc9055ae62f7fdf3b356c0cd2736c064f7c871f7dfe4200"
+  },
+  "manifest_self_hash_excluded": true,
+  "total_package_files": 9,
+  "questions": 8,
+  "human_decisions_pending": 0,
+  "trial_executed": false,
+  "metrics": null,
+  "novelty_check": {
+    "scope": "new guided-control tuples vs declared SX task projections and registry-UI regression input list; not entire project or unseen source knowledge",
+    "source_sx_file": "docs/technical/reviewed-dossier-serving-interface-examples-v01.json",
+    "source_ui_test_files": [
+      "tests/test_registry_ui.py",
+      "tests/ui/registry.cjs"
+    ],
+    "source_ui_test_files_sha256_lf": {
+      "tests/test_registry_ui.py": "f6eb4b7cba316d5fa1e5cbf9266ffb7bd43363ba3893535b660825a41dfdfc00",
+      "tests/ui/registry.cjs": "dacdc2a342fd0285b87511e1e1c1cb6266d3421b077444d1234fc94e85a4e08f"
+    },
+    "declared_ui_regression_task_signatures": [
+      "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"mabselect\",\"requested_items\":[\"cleaning_options\"]}",
+      "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"mabselect\",\"requested_items\":[\"pressure_limit\"]}",
+      "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"family_unknown\",\"requested_items\":[\"cleaning_options\"]}",
+      "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"mabselect\",\"requested_items\":[\"cleaning_options\"]}",
+      "{\"deposit_context\":\"unknown\",\"excluded_items\":[],\"product\":\"family_unknown\",\"requested_items\":[\"cleaning_options\"]}"
+    ],
+    "sx_task_signatures": [
+      "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[\"pressure_limit\"],\"product\":\"sure\",\"requested_items\":[\"pressure_limit\"]}",
+      "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"sure\",\"requested_items\":[\"cleaning_options\"]}",
+      "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"sure_lx\",\"requested_items\":[\"cleaning_options\",\"pressure_limit\"]}",
+      "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"family_unknown\",\"requested_items\":[\"cleaning_options\"]}",
+      "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"mabselect\",\"requested_items\":[\"cleaning_options\"]}",
+      "{\"deposit_context\":\"unknown\",\"excluded_items\":[],\"product\":\"unknown\",\"requested_items\":[\"cleaning_options\"]}"
+    ],
+    "candidate_signatures": {
+      "UA01": "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"sure\",\"requested_items\":[\"cleaning_options\",\"pressure_limit\"]}",
+      "UA02": "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"sure_lx\",\"requested_items\":[\"cleaning_options\"]}",
+      "UA03": "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"sure_lx\",\"requested_items\":[\"pressure_limit\"]}",
+      "UA04": "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"sure\",\"requested_items\":[\"cleaning_options\",\"pressure_limit\"]}",
+      "UA05": "{\"deposit_context\":\"hydrophobic_deposits\",\"excluded_items\":[],\"product\":\"family_unknown\",\"requested_items\":[\"cleaning_options\",\"pressure_limit\"]}",
+      "UA06": "{\"deposit_context\":\"mixed_other\",\"excluded_items\":[],\"product\":\"sure\",\"requested_items\":[\"cleaning_options\"]}",
+      "UA07": "{\"deposit_context\":\"precipitated_substances\",\"excluded_items\":[],\"product\":\"contradictory\",\"requested_items\":[\"pressure_limit\"]}",
+      "UA08": "{\"deposit_context\":\"mixed_other\",\"excluded_items\":[],\"product\":\"other\",\"requested_items\":[\"cleaning_options\",\"pressure_limit\"]}"
+    },
+    "overlap_count": 0,
+    "no_claim_of_blinded_or_whole_project_novelty": true
+  },
+  "private_store_included": false,
+  "evaluation_runner_included": false,
+  "runtime_or_existing_freezes_changed": false,
+  "human_decisions_recorded": 8,
+  "current_review_status_file": "REVIEW-STATUS.md",
+  "original_proposal_snapshots": [
+    "README.md",
+    "REVIEW.md"
+  ]
+}

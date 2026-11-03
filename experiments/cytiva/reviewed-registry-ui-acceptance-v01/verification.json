@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "reviewed_cases": 8,
+  "preserved_case_outcomes_passed": 8,
+  "opened_sources_verified": 13,
+  "historical_case_checks": 216,
+  "historical_source_checks": 91,
+  "trial_reexecuted": false,
+  "network_or_registry_access": false,
+  "package_regressions": {
+    "passed": 4,
+    "errors": 0,
+    "skips": 0,
+    "seconds": 1.109,
+    "command": "python scripts/run_tests.py --temp-root \"$env:LOCALAPPDATA\\Temp\" tests.test_registry_ui_acceptance_package",
+    "initial_attempt_note": "Default sandbox temporary directory denied fixture creation; the unchanged tests passed through the existing project runner using its short Windows temporary workspace."
+  }
+}

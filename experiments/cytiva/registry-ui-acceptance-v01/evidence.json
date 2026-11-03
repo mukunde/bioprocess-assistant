@@ -1,0 +1,483 @@
+{
+  "id": "mabselect-registry-ui-acceptance-v01-evidence",
+  "status": "existing_reviewed_evidence_no_new_approval",
+  "source_index": {
+    "path": "serving-data/releases/mabselect-local-v02/source-index.json",
+    "sha256_lf": "025c3258398daee598e6d54c87e0ab280061c07927fee4b2f9915f6f57787eb5"
+  },
+  "passages": [
+    {
+      "source_id": "E166-H",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 0,
+      "page_text_end": 51,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote": "Cleaning of Protein G and Protein A Sepharose media",
+      "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E166-LH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 366,
+      "page_text_end": 437,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote": "To remove strongly bound hydrophobic proteins, lipoproteins and lipids:",
+      "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E166-PH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 320,
+      "page_text_end": 365,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote": "To remove precipitated or denatured proteins:",
+      "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E166-T",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 136,
+      "page_text_end": 319,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote": "When an increase in backpressure is seen, the medium should be cleaned. In some applications, substances like \ndenatured proteins or lipids do not elute in the regeneration procedure.",
+      "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-D",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 781,
+      "page_text_end": 960,
+      "scope": "MabSelect media",
+      "quote": "1. Wash with 2 column volumes of a nonionic detergent (e.g., 0.1% solution).\n2 Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+      "quote_sha256": "96bec6ca131f56609bd54960ff8518adc1525413ca791b8cb60b0402f5266e76",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-E",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 962,
+      "page_text_end": 1258,
+      "scope": "MabSelect media",
+      "quote": "2a. Alternatively, wash with 3 to 4 column volumes of 70% ethanol or 30% 2-propanol. Wash immediately with at \nleast 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0. Apply increasing gradients to avoid air \nbubble formation when using high concentrations of organic solvents.",
+      "quote_sha256": "4ae45301795ef8ed166f21d2c38622d013e781799c1ed6ebecba1cf50f4f5af7",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-H",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 0,
+      "page_text_end": 94,
+      "scope": "MabSelect media",
+      "quote": "Cleaning of MabSelect media\nAll MabSelect media can be cleaned using the following procedures:",
+      "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-LH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 1387,
+      "page_text_end": 1459,
+      "scope": "MabSelect media",
+      "quote": "To remove strongly bound hydrophobic proteins, lipoproteins, and lipids:",
+      "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-P",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 144,
+      "page_text_end": 515,
+      "scope": "MabSelect media",
+      "quote": "1.  Wash the medium with 2 column volumes of 50 mM sodium hydroxide in 500  mM sodium sulfate, or 50 mM   \nsodium hydroxide in 1 M sodium chloride, or 100 mM sodium phosphate, or 6 M guanidine hydrochloride in  \n10 mM sodium hydroxide. Contact time: at least 10 min. \n2. Immediately wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+      "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-PH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 96,
+      "page_text_end": 143,
+      "scope": "MabSelect media",
+      "quote": "To remove precipitated or denatured substances:",
+      "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-S",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 516,
+      "page_text_end": 780,
+      "scope": "MabSelect SuRe and MabSelect SuRe LX",
+      "quote": "1. Wash with 3 column volumes of binding buffer. \n2. Wash with at least 2 column volumes of 100 mM to 500 mM sodium hydroxide. Contact time: 10 to 15 min. \n3. Immediately wash with at least 5 column volumes of sterile and filtered binding buffer at  pH 7.0 to 8.0.",
+      "quote_sha256": "ba17e3092a7866df3756d0048b8005352480b7cfa9888261de356620dfa4be14",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-SH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 1259,
+      "page_text_end": 1386,
+      "scope": "MabSelect SuRe and MabSelect SuRe LX only for this stronger-alkali block",
+      "quote": "MabSelect SuRe and MabSelect SuRe LX are alkali-tolerant, allowing the use of more concentrated solutions of sodium \nhydroxide:",
+      "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-W",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 1461,
+      "page_text_end": 1605,
+      "scope": "MabSelect media",
+      "quote": "Washing with 70% ethanol and 30% 2-propanol will increase backpressure. Use a lower flow rate when cleaning \nwith 70% ethanol or 30% 2-propanol.",
+      "quote_sha256": "95d1c60e7132a6f0e08d252f8755661bb81b7bc35220e6013467357265427088",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    }
+  ],
+  "reviews": [
+    {
+      "review_id": "Q05",
+      "kind": "scoped_documentary_review",
+      "question_id": "Q05",
+      "event_id": "005-Q05",
+      "decision": "validated_with_reservation",
+      "original_decision_date": "2026-10-23T11:08:56.852582+00:00",
+      "original_human_message": "Je valide Q05 avec les limites indiquées, en conservant les quatre alternatives et leurs conditions, sans les combiner. Enregistre ma décision et passons à Q06. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q05 documentary fidelity only, requiring E167-H, E167-PH and E167-P together: MabSelect media and precipitated or denatured substances.",
+        "Keep four separate alternatives, each at 2 column volumes: 50 mM sodium hydroxide in 500 mM sodium sulfate; 50 mM sodium hydroxide in 1 M sodium chloride; 100 mM sodium phosphate; or 6 M guanidine hydrochloride in 10 mM sodium hydroxide. Do not combine them or turn them into successive steps.",
+        "Preserve each concentration pairing; do not add sodium hydroxide to the phosphate alternative. Preserve contact time of at least 10 minutes, not exactly 10 minutes.",
+        "Preserve the immediate follow-up wash with at least 5 column volumes of sterile filtered binding buffer at pH 7.0 to 8.0.",
+        "Do not infer which alternative is suitable for a real case. No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "evidence_record_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-P": "0763639136da4e71c403fef218209281114f2fd9810376f3d283a0cf2ac7b2bd"
+      },
+      "review_artifact": {
+        "artifact_id": "reviewed-cleaning-retrieval-review-json",
+        "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "review_id": "Q06",
+      "kind": "scoped_documentary_review",
+      "question_id": "Q06",
+      "event_id": "006-Q06",
+      "decision": "validated_with_reservation",
+      "original_decision_date": "2026-10-23T11:10:14.163187+00:00",
+      "original_human_message": "Je valide Q06 avec les limites indiquées, en conservant la restriction SuRe/SuRe LX et les trois étapes, sans garantie de réutilisation. Enregistre ma décision et passons à Q07. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q06 documentary fidelity only, requiring E167-H, E167-PH, E167-SH and E167-S together; preserve the precipitated/denatured-substances context without generalizing to every deposit.",
+        "The stronger-alkali block is explicitly restricted to MabSelect SuRe and MabSelect SuRe LX; do not extend it to all Protein A or MabSelect products. Recover this scope despite displaced native extraction order.",
+        "Preserve all three ordered steps: 3 column volumes of binding buffer; at least 2 column volumes of 100–500 mM sodium hydroxide with 10–15 minutes contact; immediately at least 5 column volumes of sterile and filtered binding buffer at pH 7.0–8.0.",
+        "Do not infer lifetime or reuse guarantees. No independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "evidence_record_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+        "E167-S": "42056ad1e4629894ed34bd5d60cddd856995009179acb07d9d9943d26520da7b"
+      },
+      "review_artifact": {
+        "artifact_id": "reviewed-cleaning-retrieval-review-json",
+        "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "review_id": "N06",
+      "kind": "scoped_documentary_review",
+      "question_id": "N06",
+      "event_id": "006-N06",
+      "decision": "validated_with_reservation",
+      "original_decision_date": "2026-10-23T15:01:38.446343+00:00",
+      "original_human_message": "Je valide N06 avec les limites indiquées, en réservant le pH au tampon du lavage suivant, sans règle automatique d’ajustement. Enregistre ma décision et passons à N07. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N06 documentary expected answer only; E167-H, E167-LH and E167-D are jointly indispensable, preserving MabSelect scope and the targeted hydrophobic proteins, lipoproteins and lipids.",
+        "The pH 7.0–8.0 applies to the binding buffer of the follow-up wash, not to the detergent solution. Do not convert that range into a unique target or automatic adjustment rule.",
+        "Preserve the preceding 2-column-volume nonionic-detergent wash and the example status of a 0.1% solution.",
+        "Preserve the immediate follow-up wash with at least 5 column volumes of sterile and filtered binding buffer; do not invent a specific detergent, temperature, duration or flow rate.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "evidence_record_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+        "E167-D": "ac364b229f1ca70a9c78288cf955daf21b288a60c162fbe15ae251d2e766da24"
+      },
+      "review_artifact": {
+        "artifact_id": "reviewed-section-questions-review-json",
+        "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "review_id": "N07",
+      "kind": "scoped_documentary_review",
+      "question_id": "N07",
+      "event_id": "007-N07",
+      "decision": "validated_with_reservation",
+      "original_decision_date": "2026-10-23T15:53:11.620052+00:00",
+      "original_human_message": "Je valide N07 avec les limites indiquées, en distinguant les deux précautions et sans limite de pression inventée. Enregistre ma décision et passons à N08. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers N07 documentary partial-answer/scoped-refusal behaviour only; E167-H, E167-LH, E167-E and E167-W are jointly indispensable, preserving MabSelect scope and the targeted deposit category.",
+        "Keep the two precautions distinct: increasing gradients to avoid air bubbles at high organic-solvent concentrations; lower flow because washing with 70% ethanol or 30% 2-propanol increases backpressure.",
+        "Do not state that increasing gradients are prescribed to reduce pressure; do not invent a numerical gradient profile, flow rate or pressure limit in bar.",
+        "Preserve the alternative ethanol OR 2-propanol route. Return the supported explanations while refusing only the unsupported numerical pressure limit.",
+        "Limit the absence conclusion to the selected block, without implying no product pressure limit exists elsewhere.",
+        "No independent scientific validation, operational authorization, benchmark-result approval or approval of other questions is implied."
+      ],
+      "evidence_record_sha256": {
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8",
+        "E167-E": "e781189daa71a13b3e534852ac1cf01a6cf787f0a55bdd34610144aa660fd827",
+        "E167-W": "f01e9ff331f834e882befdd1bc83e92f24c74adc1e7c3a61f80285258aa4b154"
+      },
+      "review_artifact": {
+        "artifact_id": "reviewed-section-questions-review-json",
+        "sha256": "ee60c319ae75a340e47b882acf85ee5f2ce3f66ad8c265dab414b9f71d419fd4",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "review_id": "Q09",
+      "kind": "scoped_documentary_review",
+      "question_id": "Q09",
+      "event_id": "009-Q09",
+      "decision": "validated_with_reservation",
+      "original_decision_date": "2026-10-23T11:49:07.597066+00:00",
+      "original_human_message": "Je valide Q09 avec les limites indiquées, en demandant le produit et le contexte sans supposer de dépôt ni choisir de recette. Enregistre ma décision et passons à Q10. Aucun LLM, API payante, commit ni push.",
+      "reservations": [
+        "Approval covers Q09 documentary expected clarification behaviour only, with E166-H, E166-T, E166-PH, E166-LH, E167-H, E167-PH, E167-SH and E167-LH jointly required.",
+        "Ask for the exact resin/product and available problem or deposit context before selecting treatment. Do not assume a protein or lipid deposit from increased backpressure alone.",
+        "Do not require an already confirmed scientific diagnosis; unknown context remains unknown. Do not automatically select a sodium hydroxide or ethanol recipe.",
+        "The clarification policy is an application response rule supported by the documentary distinctions, not a verbatim instruction from the manual.",
+        "Approval does not establish that clarification alone determines an operational procedure; no independent scientific validation, operational authorization or approval of other questions is implied."
+      ],
+      "evidence_record_sha256": {
+        "E166-H": "b1c30b721ef747eb90ddfb4402733e9d551df4cc39b60452c27a94068ad8328e",
+        "E166-T": "2f9d6e5f372b997a3c9c02e4e58cc39486aef5895000b01f1a57b575baa18a26",
+        "E166-PH": "51bb1be77b8c53203577b677af612732c12111b9d5cede64e94d94fcfb1ff5bb",
+        "E166-LH": "559933b8df51138c3a357ef0ee53bf53408473664cfe1f753926a633541f7c2f",
+        "E167-H": "ce6ba3457a5a790ade4ca34fa44a149e335d06a769fe48db2d06f60d0f1c6f25",
+        "E167-PH": "7a4c23b794114d4083e553d77073b5e0560814feeee71622b30766bb7117217d",
+        "E167-SH": "5d3597ac58f2ed20b270beaa6e3a8a2ae8d4e00bb249f01daeb6a752bc47ddc2",
+        "E167-LH": "db47a05106235ccda7ddd602d63e72c2dfee0480e1a2a6555befa56a3e5293e8"
+      },
+      "review_artifact": {
+        "artifact_id": "reviewed-cleaning-retrieval-review-json",
+        "sha256": "b395e6a4a904245d161dba2df85a779a1bdf1dd31722a55f9c2b4b9712d39a48",
+        "hash_convention": "sha256_lf"
+      }
+    }
+  ],
+  "source_object_sha256_canonical": {
+    "E166-H": "3f4f093da51f322eefb2fb2f8f1586cf735fd4c38c5296c71f7b0fbdd9ff1be2",
+    "E166-LH": "7926678ca75fe79b506e749479894db790079313c1e225c66fbe85f2e9f52001",
+    "E166-PH": "76ddc90d07cc5298bef7293304001aa4ba753a93a73a53d9f73d60d218ae364d",
+    "E166-T": "fba59321f824d33de8c225055a919faa330bc1353875d48f11778907094b624c",
+    "E167-D": "2815298ce09c227389b2650b6b82f59699202866b8ae1e16c4d2ff37ed6a7366",
+    "E167-E": "0a9f8248789c918efedd1d157d6b1aa9dcf572af4058b54476810d1ccc24ac2d",
+    "E167-H": "45ad2fc46003dc122b6f98d4b828251e11bd29b7e97eb70e0c18c369a2e39334",
+    "E167-LH": "53739778a3115b4978748e44341ef3060ddd7f6a4999556cc9ffc6ff8058a4be",
+    "E167-P": "2bff87d2cac0bec5cc110025d0d07a69c58dd14e25337b727831d5414a5acd66",
+    "E167-PH": "76093db65dc6f3f1ecfdbe9c4820e6a0a3b5c8f47a1b7d66ae346658a6122601",
+    "E167-S": "b8b88bbf862e52470b34bda6cefcbdda3d0efebe35de88f119d85638c40fbeae",
+    "E167-SH": "ee43322b08360b208614d033503013e61083e8143e1e5e58b4e1a1842979a0be",
+    "E167-W": "d07cb222bf0e45e2d3151e56d634cb02866c67b43ebbf1e4052c59ec30744a86"
+  },
+  "review_object_sha256_canonical": {
+    "Q05": "211ca99f20947f3449f7a5c6175c56e071856105f5bf6259fa0c27a86d70e314",
+    "Q06": "d3d3433655269cb8c6e2da6383c962284d29faf794a4c5e5b140f55145ecb9fd",
+    "N06": "dfd6d1691c4ac90688f2fed6a706f81ddb073cd27e41ebd5a2c2c54d1fc26d1b",
+    "N07": "ee4475c82dc035960bf5e35d1d13e2250591f105d59d3b1cce1f6ecee66865f0",
+    "Q09": "777575c131f7f943cda5fd515b19d7170fe667f6c510480edf511e008d5979ae"
+  }
+}

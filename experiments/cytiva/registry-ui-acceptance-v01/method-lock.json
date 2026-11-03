@@ -1,0 +1,67 @@
+{
+  "id": "mabselect-registry-ui-acceptance-v01-preparation-lock",
+  "status": "prepared_baseline_and_proposed_references_not_runtime_freeze",
+  "prepared_on": "2026-11-03",
+  "baseline_commit": "04e3bd3a62978a05b380dd0c16ab2ea020dcbd08",
+  "file_hash_convention": "sha256_lf",
+  "files_sha256_lf": {
+    "demo/registry_ui.py": "23675250f0dcd05ed3f2a053facdd2882246871458c7045697c5f83bb277a770",
+    "demo/static/registry.html": "b622fd2f83b0b95dcb46babdc2f0e07df6ba06740ac5ee3c06b7baa699497926",
+    "demo/documentary.py": "87bcb5527ed3070b0e227e9792bb4585e6a0fbfd29f435be97bbe7c9ab4fada8",
+    "demo/documentary_preview.py": "0e36e7d089014ef30bfc7a5e7e22d6e7e0849c997fad9d363b2952ad63ca8ccf",
+    "demo/mabselect.py": "7cf84c9a8c150dffb6d5e4530fa20af2cd8d4facd1f14e4cc391d9e1842e2807",
+    "serving/__init__.py": "01d848339406a0fd793329da85336639610e5a771a44f33458009e296c97cd3f",
+    "serving/local_registry.py": "0c5be9d00d72ca5034080c41668ab8fa967ef389fb97f1dfb13b2a015730db04",
+    "docs/CYTIVA-REGISTRY-UI.md": "c58787c1ef05ac20991a00e6784e6ec60bb2c2f64835f772fd8f0ede54775a50",
+    "docs/technical/reviewed-dossier-serving-interface-examples-v01.json": "9521e2cc028fdbb6d55b438ff6c5b9b83193f67572b7daa0214bef9d4f84fd1d",
+    "serving-data/releases/mabselect-local-v02/source-index.json": "025c3258398daee598e6d54c87e0ab280061c07927fee4b2f9915f6f57787eb5",
+    "serving-data/releases/mabselect-local-v02/mapping.json": "acd5861adc7d9ad5ddac6ce92264e98a0399629c004e371bfa304585f5379839",
+    "docs/validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.json": "a4d3d8b5046ead43a5e4bc5bffe21ff1fefd9d443e804aa5678cc6e9f2e60fa7",
+    "experiments/cytiva/free-text-v03-freeze-v01/method-lock.json": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+    "experiments/cytiva/mabselect-handoff-freeze-v01/method-lock.json": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+    "docs/technical/REVIEWED-DOSSIER-SERVING-CONTRACT-V01.md": "d01606ad38e9109a8205a76ea1a1f0ca81d883c689c8ed1a47ba04cea7ededaa",
+    "docs/technical/REVIEWED-DOSSIER-SERVING-TECHNICAL-V01.md": "eb823186e773267ff8ab441867b0a03d555e25604a2834559ba02fea50ec6e16",
+    "docs/technical/reviewed-dossier-serving-decisions-v01.json": "6dbe3937da292bf4cd9d10ef6ed58ee57fa13b8fff14188be02195728a0f9487",
+    "docs/technical/reviewed-dossier-serving-technical-decisions-v01.json": "9f2545b6c50dae75de211fe478092ed64b6969849d97b13c6bb2eeddae915773",
+    "docs/technical/mabselect-cleaning-approved-contract-v01.md": "1506c3e1d3045d97b0fa0ee53e81b4a4bb3dbad92093f00e2d0ac6752de61f9c",
+    "docs/technical/mabselect-cleaning-review-v01.json": "2386cb3d6d19e454a61c945a7946891e5f269fd133488b2e4335bbedea1627ed"
+  },
+  "proposed_reference_files_sha256_lf": {
+    "questions.json": "7b59a00138224151c4c2727323a90b9fb7b5e61571b07b81211348f9e5736f41",
+    "references.json": "4c444f67fdc807cf440a0cfc24f0bb334e691a2e423e6cdb4dcb452c97049684",
+    "evidence.json": "6d6eb226b67914e165e3e7d64c88ee126a664876d331a37c984a6cd92421fe24",
+    "README.md": "b7e8fa1bbe8e93468af6417ef758783105b3bccdabb6a93150ffe4279efdf375",
+    "REVIEW.md": "f8247cf9698e62f751ac1a8c4636808f2ed57469e9ad5bb946f2f30741067658"
+  },
+  "approved_local_authority_record": {
+    "release_id": "mabselect-local-v02",
+    "active_authority_digest": "6f3ab7eb77ed801941f3594a95b6832fd74a738b79c414c45a72b3922d46d96f",
+    "head_generation": 1,
+    "head_sha256_lf": "2b7fbb6697f8469265af62c1cdc4ffab928f4ec3433e3b44b643bfe150a1f8aa",
+    "withdrawal_version": 1,
+    "withdrawal_events": 0,
+    "private_root_not_copied": true
+  },
+  "ui_request_timeout_ms": 15000,
+  "max_case_response_wait_ms": 15000,
+  "expected_cases": 8,
+  "run_status": "not_started",
+  "case_execution_permitted": false,
+  "preconditions": [
+    "All eight question/reference records explicitly reviewed, including reservations and exact input mappings.",
+    "A later explicit instruction authorizes the trial.",
+    "Baseline code/UI/environment and source/authority identities still match; otherwise stop and review the changed baseline.",
+    "No retuning or reference editing after observing trial outcomes; preserve failures as results."
+  ],
+  "reference_update_policy": "Before any execution, record human-requested corrections with exact quotations and refresh only the proposed reference/review bindings. Preserve the original proposal as review history. No completed result exists to overwrite.",
+  "machine_gate_implemented": false,
+  "runner_included": false,
+  "request_items_supported_in_this_UI": [
+    "cleaning_options",
+    "pressure_limit"
+  ],
+  "excluded_source_ids": [
+    "E118-I",
+    "E121-EQ"
+  ]
+}

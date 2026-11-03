@@ -1,0 +1,29 @@
+{
+  "id": "mabselect-reviewed-ui-acceptance-v01-compact-manifest",
+  "status": "human_reviewed_trial_completed_compact_export",
+  "hash_convention": "sha256_lf",
+  "manifest_self_hash_excluded": true,
+  "files_sha256_lf": {
+    "assessment-history.json": "2311eafb4ef8b60c23b89493bb96b5084fb0cfb8d28962d917fd7cb529d3675f",
+    "observations.json": "7a16e34c80bb85bb3c3e7381985ac67f521cd0d96e63fb95fd469fc7e75b4a67",
+    "provenance.json": "1f934f981791983c030bdba4580c3deee7af5586d093207c936a427c34eb4964",
+    "README.md": "2c39b4fe93641e4ef7a9f2db8d00fa7665b7e92b22f094f47c9cc48ed2ea8b2b",
+    "results.json": "6dfc5f21276f8e58d30b08298d94e7a91edaa8247cceee41835904bf95554a92",
+    "verification.json": "8fdf6363b96c11c8745188d11d65b64bba7a072e7f6f9490ec54606df0ebf651",
+    "verify.py": "b0d269407ea90b14b3d1e8dc75b30ef75783974f18c55e30e2faede56a2c6488"
+  },
+  "preparation_files_sha256_lf": {
+    "evidence.json": "6d6eb226b67914e165e3e7d64c88ee126a664876d331a37c984a6cd92421fe24",
+    "manifest.json": "c71442a7b01b48037730a1c5c2437801774f6ea03712cec554b870f68b808eb5",
+    "method-lock.json": "6a0d415969a6799e739641f9596d068d3d8f73fcdc2375f12cfa862345c0f221",
+    "questions.json": "7b59a00138224151c4c2727323a90b9fb7b5e61571b07b81211348f9e5736f41",
+    "README.md": "b7e8fa1bbe8e93468af6417ef758783105b3bccdabb6a93150ffe4279efdf375",
+    "references.json": "4c444f67fdc807cf440a0cfc24f0bb334e691a2e423e6cdb4dcb452c97049684",
+    "REVIEW-STATUS.md": "de414cac8c646162bfc9055ae62f7fdf3b356c0cd2736c064f7c871f7dfe4200",
+    "review.json": "433824ccf83baff51416c85ba906938912137efc6eb10d21dbda6586a68ad400",
+    "REVIEW.md": "f8247cf9698e62f751ac1a8c4636808f2ed57469e9ad5bb946f2f30741067658"
+  },
+  "private_registry_included": false,
+  "raw_http_files_included": false,
+  "runtime_or_freezes_changed": false
+}

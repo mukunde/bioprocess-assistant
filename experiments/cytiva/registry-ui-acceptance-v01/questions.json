@@ -1,0 +1,244 @@
+{
+  "id": "mabselect-registry-ui-acceptance-v01-questions",
+  "status": "proposed_not_executed",
+  "prepared_on": "2026-11-03",
+  "interface": "guided_controls_not_free_text_interpretation",
+  "cases": [
+    {
+      "id": "UA01",
+      "user_intent_en": "For MabSelect SuRe, what cleaning options are documented for precipitated or denatured substances, and is a numerical maximum pressure supplied?",
+      "ui_controls": {
+        "product": "sure",
+        "context": "precipitated_substances",
+        "cleaning": true,
+        "pressure": true
+      },
+      "visible_product_label": "MabSelect SuRe",
+      "visible_context_label": "Precipitated or denatured substances",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "General and product-restricted blocks remain separate; the pressure request must not suppress supported cleaning guidance."
+    },
+    {
+      "id": "UA02",
+      "user_intent_en": "For MabSelect SuRe LX, what is documented for the precipitated/denatured-substances category? Keep the general alternatives distinct from the additional sequence.",
+      "ui_controls": {
+        "product": "sure_lx",
+        "context": "precipitated_substances",
+        "cleaning": true,
+        "pressure": false
+      },
+      "visible_product_label": "MabSelect SuRe LX",
+      "visible_context_label": "Precipitated or denatured substances",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure_lx",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "Preserve both kinds of support without making the restricted sequence a fifth general formulation or a mandatory next step."
+    },
+    {
+      "id": "UA03",
+      "user_intent_en": "For MabSelect SuRe LX in the hydrophobic-deposit category, is a numerical maximum pressure provided in the selected reviewed passages?",
+      "ui_controls": {
+        "product": "sure_lx",
+        "context": "hydrophobic_deposits",
+        "cleaning": false,
+        "pressure": true
+      },
+      "visible_product_label": "MabSelect SuRe LX",
+      "visible_context_label": "Hydrophobic proteins, lipoproteins or lipids",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure_lx",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "A pressure-only request must not invent a number, transfer a value from another block or return an unrequested cleaning procedure."
+    },
+    {
+      "id": "UA04",
+      "user_intent_en": "For MabSelect SuRe and a hydrophobic-deposit context, show the documented cleaning alternatives and tell me whether a numerical maximum pressure is available.",
+      "ui_controls": {
+        "product": "sure",
+        "context": "hydrophobic_deposits",
+        "cleaning": true,
+        "pressure": true
+      },
+      "visible_product_label": "MabSelect SuRe",
+      "visible_context_label": "Hydrophobic proteins, lipoproteins or lipids",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "Keep supported detergent/solvent routes and their conditions while abstaining only on the unsupported pressure value."
+    },
+    {
+      "id": "UA05",
+      "user_intent_en": "The label only says MabSelect family; I am exploring hydrophobic deposits. What needs clarifying before cleaning guidance or a numerical pressure limit can be supplied?",
+      "ui_controls": {
+        "product": "family_unknown",
+        "context": "hydrophobic_deposits",
+        "cleaning": true,
+        "pressure": true
+      },
+      "visible_product_label": "MabSelect family — variant unknown",
+      "visible_context_label": "Hydrophobic proteins, lipoproteins or lipids",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "family_unknown",
+            "deposit_context": "hydrophobic_deposits",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "Retain the selected context but ask for the exact product; do not choose a family variant or infer a pressure limit."
+    },
+    {
+      "id": "UA06",
+      "user_intent_en": "The product is MabSelect SuRe, but the deposit context is mixed or uncertain. Can you show cleaning guidance without choosing a combined procedure?",
+      "ui_controls": {
+        "product": "sure",
+        "context": "mixed_other",
+        "cleaning": true,
+        "pressure": false
+      },
+      "visible_product_label": "MabSelect SuRe",
+      "visible_context_label": "Mixed / uncertain / other",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "sure",
+            "deposit_context": "mixed_other",
+            "requested_items": [
+              "cleaning_options"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "Preserve the known product, request one context to explore, and do not require a confirmed diagnosis or combine categories."
+    },
+    {
+      "id": "UA07",
+      "user_intent_en": "My product records contain conflicting labels. In the precipitated/denatured-substances context, can you provide a numerical maximum pressure?",
+      "ui_controls": {
+        "product": "contradictory",
+        "context": "precipitated_substances",
+        "cleaning": false,
+        "pressure": true
+      },
+      "visible_product_label": "Conflicting labels",
+      "visible_context_label": "Precipitated or denatured substances",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "contradictory",
+            "deposit_context": "precipitated_substances",
+            "requested_items": [
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "Resolve the product-label conflict before answering the numeric request; do not pick a label arbitrarily or substitute a cleaning recipe."
+    },
+    {
+      "id": "UA08",
+      "user_intent_en": "My medium is outside the three supported MabSelect labels and its deposit category is uncertain. Can this bounded release supply cleaning options or a numerical maximum pressure?",
+      "ui_controls": {
+        "product": "other",
+        "context": "mixed_other",
+        "cleaning": true,
+        "pressure": true
+      },
+      "visible_product_label": "Other product",
+      "visible_context_label": "Mixed / uncertain / other",
+      "expected_request_payload": {
+        "kind": "reviewed_serving_request/v1",
+        "request_id": "registry-ui-request",
+        "language": "en",
+        "tasks": [
+          {
+            "task_id": "A",
+            "product": "other",
+            "deposit_context": "mixed_other",
+            "requested_items": [
+              "cleaning_options",
+              "pressure_limit"
+            ],
+            "excluded_items": []
+          }
+        ]
+      },
+      "test_focus": "Abstain within the release scope without asserting incompatibility, banning use of the sample, selecting another medium or claiming whole-manual absence."
+    }
+  ]
+}

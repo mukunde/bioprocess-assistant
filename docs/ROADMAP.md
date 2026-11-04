@@ -20,8 +20,9 @@ registry UI with citations, clarification, abstention and withdrawal checks. PR8
 records the reviewed UA01-UA08 baseline trial (8/8 bounded functional outcomes);
 PR81 adds opt-in presentation v02 for the three display findings. The original
 preview/launchers and legacy chat remain separate.
-Portable telemetry, independent
-answer evaluation and the common-corpus retrieval comparison remain pending.
+PR83 adds optional metadata-only local OpenTelemetry tracing to registry UI v02.
+Broader telemetry, independent answer evaluation and the common-corpus retrieval
+comparison remain pending; a real-UI trace walkthrough is the next priority.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
@@ -57,12 +58,13 @@ Migration from the legacy dense template/review database is still pending.
   procedural sample; their retrieval results are summarized below. The separate
   handoff freeze/replay, registry, local activation record and opt-in registry UI
   are now merged. The UA01-UA08 review/trial and separate UI v02 are also merged.
-  Next: minimal metadata-only local OpenTelemetry tracing, preserving response
-  identities and keeping telemetry failure nonblocking.
+  PR83 merges minimal metadata-only local OpenTelemetry tracing with unchanged
+  responses and nonblocking telemetry failures. Next: a short instrumented UI
+  walkthrough using disposable authority for withdrawal/failure cases.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Current checkpoint — 3 November 2026
+## Current checkpoint — 4 November 2026
 
 Phase numbers identify workstreams and acceptance gates, not a completed linear
 sequence. Documentary work advanced before telemetry; manifests and timings do
@@ -75,18 +77,21 @@ is published, while the executable Python application remains local.
 | Workstream | Merged/observed | Remaining gate |
 |---|---|---|
 | 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation |
-| 1 — Observability | Experiment manifests, context/token accounting and descriptive local timings | OpenTelemetry export, call/retry/cost accounting and enforcement |
+| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling | Instrumented real-UI walkthrough, broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
 | 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged, no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest merged baseline: `main` at `2f8ef3d`, including
-[PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
+Latest merged baseline: `main` at `a8272e9`, including
+[PR83](https://github.com/mukunde/bioprocess-assistant/pull/83) (corrected local tracing),
+after [PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
 and [PR81](https://github.com/mukunde/bioprocess-assistant/pull/81) (presentation v02).
-The complete maintained suite on that exact merged baseline ran **945 tests:
-944 passed and one optional PDFium preview skip**, no failures/errors, in
-418.456 seconds. Both original freezes remain valid: v03 (36 pins), MabSelect
+The complete maintained suite on that exact merged baseline ran **973 tests:
+972 passed and one optional PDFium preview skip**, no failures/errors, in
+529.242 seconds, including **28 tracing tests**. The earlier `2f8ef3d` checkpoint
+had 944 passed / one skip in 418.456 seconds; that remains historical evidence.
+Both original freezes remain valid: v03 (36 pins), MabSelect
 (52 pins); neither was expanded or replaced by these deliveries.
 
 The [compact UA01-UA08 trial](../experiments/cytiva/reviewed-registry-ui-acceptance-v01/README.md)
@@ -107,9 +112,21 @@ the changes; no second prospective trial score is claimed. Payload size is uncha
 V02 is explicit opt-in on port 8785; baseline 8784 and preview 8783 remain available.
 The private active store stays generation 1 with zero withdrawal events; Git ships
 staged data and fresh clones still require reviewed activation. Original launchers,
-legacy chat, tours, notes and pilots are unchanged. Next implementation priority:
-**minimal metadata-only local OpenTelemetry tracing**, with no model/paid service,
-no response/source changes and no answer failure when telemetry is unavailable.
+legacy chat, tours, notes and pilots are unchanged.
+
+The [12-file tracing delivery](validation/REGISTRY-TRACING-PACKAGE.md) is merged:
+dedicated provider, HTTP root/registry child spans, separate source-request traces,
+metadata allowlists, asynchronous local JSONL/loopback OTLP sinks, fixed-phase SDK
+diagnostics and bounded cleanup after partial initialization. Tests preserve exact
+responses/source HTML and cover failed sinks without blocking answers. The initial
+review and corrected suite results remain separately recorded. Tracing is disabled
+unless explicitly requested; no collector was deployed or model cost measured.
+
+Next priority: **rehearse the instrumented real-UI journey**, covering support,
+clarification, abstention and withdrawal with disposable authority for fault cases.
+Inspect trace/citation content and document a reproducible request → source → trace
+demo. No such merged-tracing browser walkthrough has executed yet; the known-case
+regressions do not establish a new independent acceptance score or latency benchmark.
 
 Earlier registry-UI baseline: `main` at `c230f14`, including
 [PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
@@ -446,18 +463,17 @@ an independent prospective score; all source/retrieval behavior remains the same
 
 ### Next delivery priorities
 
-1. **Implement minimal local OpenTelemetry tracing on the opt-in registry path.**
-   Start with HTTP evaluation and source-view boundaries, evaluation child spans,
-   generated trace IDs, release/operation identity, elapsed time, outcome and
-   controlled error categories. Source views are separate HTTP operations; do not
-   force a misleading parent relationship or change citation URLs for correlation.
-   Use metadata only by default: no quotations, PDFs, credentials, private paths
-   or user text. A free local sink and configurable OTLP export keep the backend
-   replaceable. Acceptance: deterministic request/child trace links, successful/
-   clarification/abstention/error fixtures, no response/source-body changes, and
-   an unavailable sink that cannot block answers or bypass the existing deadline.
-   This deterministic path makes no model calls; model tokens/cost are not inferred.
-   No new ontology, runtime freeze or whole-manual review is required for this slice.
+1. **Rehearse the merged tracing through the real registry UI v02.**
+   Run sourced support, clarification, abstention and withdrawal; use a disposable
+   registry for withdrawal/fault cases, never the approved private authority.
+   Write to a new ignored local JSONL file. Inspect the exact source text and
+   metadata-only traces, HTTP/registry parent links and separate source-request
+   traces. Verify that an unavailable sink does not change the response or bypass
+   the existing deadline. Record observations separately from UA01-UA08 and the
+   original tracing regressions; do not claim a new prospective acceptance score.
+   Then document a reproducible request → source → trace demo command and result.
+   No LLM, paid backend, collector deployment, new ontology, freeze or whole-manual
+   review is needed. Token/cost metrics remain inapplicable to this model-free path.
 2. **Validate usability and portability without repeating completed reference work.**
    Use a short v02 usability pass for the disclosures and edit action. Apply the
    existing second-PC protocol when another physical Windows PC is available;
@@ -499,11 +515,17 @@ Exit: offline regression tests pass. Live Neo4j/Anthropic evaluation remains a
 separate required check before deployment. Historical scores are not scores of
 this revised pipeline.
 
-## Phase 1 — Portable observability (pending; next integration prerequisite)
+## Phase 1 — Portable observability (local slice merged; broader integration pending)
 
-The next concrete slice is metadata-only local tracing of the deterministic
-registry UI/service described above, with optional OTLP export and nonblocking
-telemetry. No implementation is merged yet. Broader model/extraction/judge call
+PR83 implements metadata-only local tracing of the deterministic registry UI v02,
+with optional new-file JSONL and loopback OTLP export, nonblocking failures and
+28 passing tracing tests. The merged-main full suite has 972 passed / one skip.
+See the [usage/privacy guide](REGISTRY-TRACING.md) and
+[correction report](validation/REGISTRY-TRACING-CORRECTIONS.md).
+The next gate is a short instrumented real-UI walkthrough, not another runtime
+freeze. Best-effort queues may drop traces; bounded cleanup does not forcibly stop
+arbitrary blocked third-party code. This is not a durable audit journal, a production
+latency benchmark or completed phase 1. Broader model/extraction/judge call
 accounting remains a later part of this workstream.
 
 Use a provider-neutral call wrapper with an optional Langfuse sink. Record a
@@ -862,11 +884,13 @@ experiments are summarized above; the initial local extraction's limitations are
 retained in [its diagnostic](experiments/cytiva-local-extraction-diagnostic.md).
 Selected table repairs and conservation checks do not complete phase 3 extraction
 precision/recall, lifecycle or publication acceptance. Ragas evaluation,
-OpenTelemetry instrumentation and Promptfoo testing remain pending. The minimal MabSelect documentary
+broader OpenTelemetry instrumentation and Promptfoo testing remain pending; PR83
+implements the separate local registry UI tracing slice. The minimal MabSelect documentary
 handoff, its separate freeze/replay and corrected local release/withdrawal registry
 and the approved private local activation record are merged. One verification
 store is active; Git still ships staged data. The separate opt-in registry UI is
 merged in PR78; PR80 records bounded UA01-UA08 acceptance and PR81 adds the
-separate display v02. Independent acceptance beyond the known corpus, portable
-observability and legacy-chat integration remain pending, as described above.
+separate display v02; PR83 adds its optional local tracing. Independent acceptance
+beyond the known corpus, broader observability and legacy-chat integration remain
+pending, as described above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

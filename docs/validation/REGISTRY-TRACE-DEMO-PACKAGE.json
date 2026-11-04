@@ -1,0 +1,103 @@
+{
+  "id": "reusable-local-trace-demo-corrected-delivery-v01",
+  "prepared_on": "2026-11-04",
+  "status": "prepared_not_staged",
+  "base_commit": "f7ce8066c58a7ba4d17e86c64c8e2728409f16b8",
+  "proposed_branch": "codex/registry-trace-demo",
+  "proposed_commit": "feat(demo): add reusable local request-source-trace walkthrough",
+  "file_count": 9,
+  "files": [
+    "demo/registry_demo.py",
+    "demo/trace_summary.py",
+    "tests/test_trace_demo.py",
+    "docs/REGISTRY-TRACE-DEMO.md",
+    "docs/validation/REGISTRY-TRACE-DEMO-IMPLEMENTATION.md",
+    "docs/validation/REGISTRY-TRACE-DEMO-REVIEW.md",
+    "docs/validation/REGISTRY-TRACE-DEMO-CORRECTIONS.md",
+    "docs/validation/REGISTRY-TRACE-DEMO-PACKAGE.md",
+    "docs/validation/REGISTRY-TRACE-DEMO-PACKAGE.json"
+  ],
+  "hash_convention": "SHA-256 after CRLF-to-LF normalization; inventory itself excluded to avoid self-reference. Local evidence digests use raw file bytes.",
+  "files_sha256_lf": {
+    "demo/registry_demo.py": "55d7a1b293f0bc7b4fbf6f52055e138e16cb094fc0f78bd0279889d7e1fba62a",
+    "demo/trace_summary.py": "bfe8d5cfe61a503bcd9d40c59c26036acdd1e8de77c41a1ba42c59a4f362255f",
+    "tests/test_trace_demo.py": "f683f9e7a2aeb09e355d92a1333ec25109ea65c6969e4ca47dfbed4f8832fe70",
+    "docs/REGISTRY-TRACE-DEMO.md": "0eef52cab3714c51660faefbc37855abf0700a3f30bdb75201d1941cc79f78fb",
+    "docs/validation/REGISTRY-TRACE-DEMO-IMPLEMENTATION.md": "5a54c386c8f37df845799b4b1bfae1c6d93624f821bd4613dd2b06e5e54a4686",
+    "docs/validation/REGISTRY-TRACE-DEMO-REVIEW.md": "8a7f77d9c1ae60500c2ec780f8c0b085fd2c23f3cadd1b51b86ee747ad093190",
+    "docs/validation/REGISTRY-TRACE-DEMO-CORRECTIONS.md": "4ef76e5dbf193cea88be79dfad67bcfbb7245a57e31a1f57a085611881af9012",
+    "docs/validation/REGISTRY-TRACE-DEMO-PACKAGE.md": "de3deb25594632a8324469de174862f790f1c51c4749413f2840aa5decba6ee2"
+  },
+  "test_evidence": {
+    "full_suite": {
+      "executed": 991,
+      "passed": 990,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "demo_tests_passed": 18,
+      "new_regression_methods": 3,
+      "duration_seconds": 551.299
+    },
+    "existing_tracing_tests_passed": 28,
+    "targeted_module_tests_passed": 18,
+    "final_HTTP_regression_cases": 7,
+    "final_HTTP_regression_is_overlapping_coverage": true,
+    "raw_log_sha256": {
+      "reusable-demo-corrections-targeted.log": "f55988977aab54bfdc6e673887003f4aa36fe55a7012167e0404b7c20888fb40",
+      "reusable-demo-corrections-http-final.log": "e6a1cb39e2bbb34026038f39cc61ef1696d9de4aa33c5a3cc06f53d666d97069",
+      "reusable-demo-corrections-full.log": "f00ce9bfe2520d35c5016f205e4afba83b3ead26c776e4fb8962dbaf270deccf",
+      "reusable-demo-corrections-full-result.json": "97ad3cf6e86fc143237706659764654aee8259a684d90df9c9d38647610e5b44"
+    },
+    "code_raw_sha256_at_final_run": {
+      "demo/registry_demo.py": "55d7a1b293f0bc7b4fbf6f52055e138e16cb094fc0f78bd0279889d7e1fba62a",
+      "demo/trace_summary.py": "bfe8d5cfe61a503bcd9d40c59c26036acdd1e8de77c41a1ba42c59a4f362255f",
+      "tests/test_trace_demo.py": "f683f9e7a2aeb09e355d92a1333ec25109ea65c6969e4ca47dfbed4f8832fe70"
+    },
+    "no_new_complete_suite_or_browser_trial_during_packaging": true
+  },
+  "verification": {
+    "current_code_matches_successful_complete_run": true,
+    "local_markdown_links_checked": 12,
+    "private_registry_unchanged": true,
+    "old_notes_unchanged": 16,
+    "pilots_and_prior_raw_evidence_unchanged": true,
+    "all_preexisting_tracked_files_unchanged": true,
+    "freezes": [
+      {
+        "id": "free-text-v03-corrected-runtime-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 36,
+        "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "prospective_trial_executed": false
+      },
+      {
+        "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 52,
+        "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "serving_activated": false,
+        "prospective_evaluation": false
+      }
+    ],
+    "head_unchanged": true,
+    "index_empty": true
+  },
+  "excluded": [
+    "private registry",
+    "both frozen closures",
+    "16 old notes",
+    "both pilots",
+    "prior raw trials and walkthroughs",
+    "raw response/trace recordings",
+    "test-only smoke and probe runners",
+    "temporary controls and logs",
+    "dependencies and caches",
+    "PDF assets",
+    "README and roadmap"
+  ]
+}

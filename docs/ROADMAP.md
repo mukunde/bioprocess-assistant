@@ -23,8 +23,10 @@ preview/launchers and legacy chat remain separate.
 PR83 adds optional metadata-only local OpenTelemetry tracing to registry UI v02.
 PR85 records the completed four-case browser rehearsal and compact provenance.
 Broader telemetry, independent answer evaluation and the common-corpus retrieval
-comparison remain pending. Next: a reusable local request → source → trace demo
-with a readable metadata summary, reusing the existing explicit startup command.
+comparison remain pending. PR87 merges the reusable local request → source → trace
+demo and read-only metadata summary. Next: an explicit model-free MabSelect
+documentary mode in Chainlit, reusing guided controls and the existing registry
+service. The legacy graph chat remains unchanged until that separate delivery.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
@@ -62,8 +64,9 @@ Migration from the legacy dense template/review database is still pending.
   are now merged. The UA01-UA08 review/trial and separate UI v02 are also merged.
   PR83 merges minimal metadata-only local OpenTelemetry tracing with unchanged
   responses and nonblocking telemetry failures. PR85 merges the completed
-  instrumented UI walkthrough on disposable authority. Next: reusable demo
-  convenience and a read-only metadata summary, not another review cycle.
+  instrumented UI walkthrough on disposable authority. PR87 merges the reusable
+  demo and read-only metadata summary. Next: bounded Chainlit documentary integration,
+  not another review cycle or freeze.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
@@ -80,20 +83,25 @@ is published, while the executable Python application remains local.
 | Workstream | Merged/observed | Remaining gate |
 |---|---|---|
 | 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation |
-| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling. PR85 records four browser scenarios, nine source checks and 37 spans | Reusable local demo/trace summary, broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
+| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling. PR85 records four browser scenarios, nine source checks and 37 spans; PR87 adds the reusable local demo/read-only metadata summary | Broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
 | 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged, no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest verified merged baseline: `main` at `01f4758`, including
+Latest verified merged baseline: `main` at `44ccfcb`, including
+[PR87](https://github.com/mukunde/bioprocess-assistant/pull/87) (reusable trace demo),
 [PR85](https://github.com/mukunde/bioprocess-assistant/pull/85) (instrumented UI walkthrough)
 and [PR83](https://github.com/mukunde/bioprocess-assistant/pull/83) (corrected local tracing),
 after [PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
 and [PR81](https://github.com/mukunde/bioprocess-assistant/pull/81) (presentation v02).
-The complete maintained suite on that exact merged baseline ran **973 tests:
-972 passed and one optional PDFium preview skip**, no failures/errors, in
-1134.479 seconds, including **28 tracing tests**. The earlier `a8272e9` run took
+The final unchanged confirmation of the maintained suite on that merged baseline
+ran **991 tests: 990 passed and one optional PDFium preview skip**, no failures/errors,
+in 539.314 seconds, including **18 demo tests** and **28 tracing tests**.
+Earlier full attempts retained a Windows loopback 10053 error and a DOM timeout
+after a long interruption; both isolated diagnostics passed before confirmation.
+No code, timeouts or Windows protections changed between attempts. The earlier
+`01f4758` run had 972 passed / one skip in 1134.479 seconds. The earlier `a8272e9` run took
 529.242 seconds with the same counts; these suite timings are descriptive, not
 a controlled performance comparison. The earlier `2f8ef3d` checkpoint
 had 944 passed / one skip in 418.456 seconds; that remains historical evidence.
@@ -146,11 +154,28 @@ does not establish independent acceptance, scientific suitability, second-PC
 portability or production latency. The baseline comparison assertions were recorded
 live; untraced baseline bodies were not separately archived.
 
-Next priority: **make request → source → trace a reusable local demo**: reuse the
-explicit startup command, add a read-only metadata summary and a short operator
-guide. No new freeze, manual-review cycle or repeat of these four known cases is
-required by default. Fresh clones still need their own reviewed activation;
-synthetic fixture authorizations must never become a normal serving default.
+**The reusable local request → source → trace demo is merged in
+[PR #87](https://github.com/mukunde/bioprocess-assistant/pull/87).** The separate
+`demo.registry_demo` entry point on port 8786 reuses UI v02 and adds a read-only
+session summary. It accepts only allowlisted metadata, labels root-only HTTP
+rejections without inventing registry calls, and contains optional SDK failures.
+Refreshing the summary neither writes traces nor flushes exporters. Missing or
+invalid authority is refused; nothing is automatically approved or activated.
+See the [operator guide](REGISTRY-TRACE-DEMO.md) and
+[corrective review](validation/REGISTRY-TRACE-DEMO-CORRECTIONS.md).
+Eighteen demo tests cover the new behavior. A focused browser smoke followed a
+request, E167-P citation and summary on disposable synthetic authority: five HTTP
+requests and seven spans, with no new spans on summary refresh. It preceded the
+error-path fixes, which have HTTP/CLI regressions; it is not a new acceptance
+trial or fresh-install/second-PC validation.
+
+**Next priority: connect reviewed MabSelect support to the existing Chainlit UI
+through an explicit documentary mode.** Reuse the registry service and guided
+product/context controls before adding any free-text routing or generated answer.
+Keep citations, focused clarification, scoped abstention, withdrawals and
+metadata-only tracing. Start without an LLM or paid API; preserve the default
+legacy graph chat and require an existing approved authority. This integration
+is not implemented yet and is a separate delivery, not another runtime freeze.
 
 Earlier registry-UI baseline: `main` at `c230f14`, including
 [PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
@@ -487,21 +512,20 @@ an independent prospective score; all source/retrieval behavior remains the same
 
 ### Next delivery priorities
 
-1. **Deliver a reusable local request → source → trace demo.**
-   Reuse the explicit UI v02 startup command; add a read-only, human-readable
-   summary of allowlisted local spans and a short operator guide. Keep authority
-   selection explicit and refuse missing/invalid authority without auto-activation.
-   A fresh clone must not inherit synthetic fixture approvals. Keep traces in
-   ignored local storage and withdrawal/fault tests in disposable stores.
-   Exit: an operator can start the local UI with approved authority, make a request,
-   open its citation and inspect the corresponding metadata-only span summary.
-   Summary/launch failures must not change answers or authority. This convenience
-   layer is not implemented yet. Test its new behavior rather than rerunning the
-   completed PR85 rehearsal by default. No LLM, paid backend, new ontology, freeze
-   or whole-manual review is needed; no model token/cost measurements are inferred.
+1. **Integrate bounded MabSelect documentary support into Chainlit.**
+   Add an explicit documentary mode using existing guided product/context controls
+   and the registry service; keep the legacy graph chat default unchanged. Require
+   an existing approved authority. Do not add model generation, a new free-text
+   interpreter, automatic activation or a paid API in this first integration.
+   Exit: Chainlit can display sourced support, a focused clarification, scoped
+   abstention and withdrawn-support handling while independent warnings survive.
+   Citation views must check current authority; optional metadata tracing must not
+   block responses or expose content. Test withdrawals/faults in disposable stores.
+   This integration is not implemented yet. Preserve the working PR87 local demo,
+   both freezes and historical results; no new whole-manual review is required.
 2. **Validate usability and portability without repeating completed reference work.**
-   Verify usability of the new summary/launch path; retain the existing disclosure
-   and clarification observations from PR85. Apply the
+   Verify new Chainlit integration behavior without repeating completed PR87
+   summary/startup checks by default. Retain PR85/PR87 observations. Apply the
    existing second-PC protocol when another physical Windows PC is available;
    same-PC isolated setup is not that gate. Preserve the existing UA trial and
    freezes. Keep installer, legacy chat and public screenshot/video tours separate
@@ -551,8 +575,10 @@ See the [usage/privacy guide](REGISTRY-TRACING.md) and
 PR85 completes the four-case instrumented browser rehearsal on disposable authority,
 with nine supplemental source checks and 37 spans; see the
 [report and limits](validation/REGISTRY-TRACING-UI-WALKTHROUGH.md).
-The next delivery is reusable demo convenience and a readable local trace summary,
-not another runtime freeze or a repeat acceptance trial.
+PR87 merges reusable demo convenience and a readable, read-only local trace summary
+on separate port 8786; see the [operator guide](REGISTRY-TRACE-DEMO.md).
+Next: carry metadata-only tracing into the proposed explicit Chainlit documentary
+mode, without changing either freeze or repeating a completed acceptance trial.
 Best-effort queues may drop traces; bounded cleanup does not forcibly stop
 arbitrary blocked third-party code. This is not a durable audit journal, a production
 latency benchmark or completed phase 1. Broader model/extraction/judge call
@@ -921,7 +947,8 @@ and the approved private local activation record are merged. One verification
 store is active; Git still ships staged data. The separate opt-in registry UI is
 merged in PR78; PR80 records bounded UA01-UA08 acceptance and PR81 adds the
 separate display v02; PR83 adds its optional local tracing and PR85 records the
-completed instrumented UI rehearsal. A reusable trace summary remains pending.
+completed instrumented UI rehearsal. PR87 merges the reusable local trace demo
+and read-only metadata summary. Explicit Chainlit documentary integration is next.
 Independent acceptance
 beyond the known corpus, broader observability and legacy-chat integration remain
 pending, as described above.

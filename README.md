@@ -37,7 +37,8 @@ The optional MP4 download remains available. The same site now hosts the recorde
 ## Current status
 
 Status reviewed on 4 November 2026. Latest verified merged checkpoint:
-`main` at `01f4758`, including [PR #85](https://github.com/mukunde/bioprocess-assistant/pull/85)
+`main` at `44ccfcb`, including [PR #87](https://github.com/mukunde/bioprocess-assistant/pull/87)
+for the reusable local trace demo, [PR #85](https://github.com/mukunde/bioprocess-assistant/pull/85)
 for the instrumented UI walkthrough and [PR #83](https://github.com/mukunde/bioprocess-assistant/pull/83)
 for corrected local OpenTelemetry tracing, after the acceptance and display work
 in [PR #80](https://github.com/mukunde/bioprocess-assistant/pull/80)
@@ -68,9 +69,14 @@ have separate traces. SDK/export failures remain nonblocking, with fixed-phase
 diagnostics and bounded cleanup. Request content, quotations and exception details
 are excluded. Responses and source HTML retain their existing content.
 
-On merged `01f4758`, the complete maintained suite finished with **973 tests:
-972 passed and one optional PDFium preview skip**, no failures or errors
-(1134.479 seconds), including **28 tracing tests**. The [12-file delivery](docs/validation/REGISTRY-TRACING-PACKAGE.md)
+On merged `44ccfcb`, the final unchanged confirmation of the maintained suite
+finished with **991 tests: 990 passed and one optional PDFium preview skip**,
+no failures or errors (539.314 seconds), including **18 demo tests** and
+**28 tracing tests**. Earlier attempts retained a Windows loopback 10053 error
+and a DOM timeout after a long interruption; both isolated diagnostics passed
+before the full confirmation. No code, timeouts or Windows protections were
+changed between attempts. The earlier `01f4758` run had 972 passed / one skip
+in 1134.479 seconds. The [12-file delivery](docs/validation/REGISTRY-TRACING-PACKAGE.md)
 retains the initial review and corrective verification; its earlier `a8272e9`
 suite took 529.242 seconds with the same pass/skip counts. These descriptive
 suite timings are not a controlled performance comparison. The earlier `2f8ef3d`
@@ -94,11 +100,28 @@ unavailable OTLP collector did not block responses or JSONL export. The favicon
 404 and one automation wait limitation remain recorded. This is known-corpus
 diagnostic evidence, not independent acceptance or scientific validation.
 
-**Next priority:** make request → source → trace reusable as a local demo: reuse
-the explicit startup command, add a readable metadata-only trace summary and
-provide a short operator walkthrough. The disposable test harness and raw traces
-are not shipped. No LLM, paid backend, new freeze or additional manual-page review
-is required; do not repeat the completed four-case rehearsal by default.
+**The reusable local request → source → trace demo is merged in
+[PR #87](https://github.com/mukunde/bioprocess-assistant/pull/87).** The separate
+`demo.registry_demo` entry point on port 8786 reuses UI v02 and adds a read-only
+session summary. It accepts only allowlisted metadata, labels root-only HTTP
+rejections without inventing registry calls, and contains optional SDK failures.
+Refreshing the summary neither writes traces nor flushes exporters. Missing or
+invalid authority is refused; nothing is automatically approved or activated.
+See the [operator guide](docs/REGISTRY-TRACE-DEMO.md) and
+[corrective review](docs/validation/REGISTRY-TRACE-DEMO-CORRECTIONS.md).
+Eighteen demo tests cover the new behavior. A focused browser smoke followed a
+request, E167-P citation and summary on disposable synthetic authority: five HTTP
+requests and seven spans, with no new spans on summary refresh. It preceded the
+error-path fixes, which have HTTP/CLI regressions; it is not a new acceptance
+trial or fresh-install/second-PC validation.
+
+**Next priority: connect reviewed MabSelect support to the existing Chainlit UI
+through an explicit documentary mode.** Reuse the registry service and guided
+product/context controls before adding any free-text routing or generated answer.
+Keep citations, focused clarification, scoped abstention, withdrawals and
+metadata-only tracing. Start without an LLM or paid API; preserve the default
+legacy graph chat and require an existing approved authority. This integration
+is not implemented yet and is a separate delivery, not another runtime freeze.
 
 Earlier registry-UI checkpoint (3 November 2026):
 `main` at `c230f14`, including [PR #78](https://github.com/mukunde/bioprocess-assistant/pull/78).
@@ -281,7 +304,7 @@ and usability fixes were agent checks, not new human scientific approval.
 | Reviewed documentary handoff | Implementation merged in PR #70; separate 52-file freeze and accepted-case replay merged in PR #72. Typed task-bound support, citations/reservations, clarification, scoped abstention and contained failures. Preview plus separately activated private registry/UI; fresh clones staged, legacy chat/graph integration pending |
 | Local release/withdrawal registry | Implementation merged in PR #74; approved private v02 activation record merged in PR #76. Empty initial withdrawal inventory; Git ships staged data, no automatic activation in a fresh clone; local single-writer trust boundary |
 | Opt-in MabSelect registry UI | Baseline merged in PR #78; reviewed UA01–UA08 trial in PR #80 (8/8 bounded functional outcomes). Separate presentation v02 in PR #81: three display fixes and 27 regressions, unchanged structured responses/source pages; private authority required |
-| Observability and evaluation extensions | Minimal metadata-only local tracing merged in PR #83; PR #85 records four known UI scenarios, nine supplemental source checks and 37 spans. Reusable trace summary/demo, broader instrumentation, model usage/cost accounting, Ragas and Promptfoo pending. LightRAG is a comparison candidate and KAG remains conditional |
+| Observability and evaluation extensions | Minimal metadata-only local tracing merged in PR #83; PR #85 records four known UI scenarios, nine supplemental source checks and 37 spans. PR #87 adds the reusable local metadata summary/demo. Broader instrumentation, model usage/cost accounting, Ragas and Promptfoo pending. LightRAG is a comparison candidate and KAG remains conditional |
 
 The current chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
 
@@ -403,6 +426,19 @@ use the same approved authority through its separate entry point:
 Open [localhost:8785](http://127.0.0.1:8785/). The command does not create or activate
 a registry. [V02 usage and limits](docs/CYTIVA-REGISTRY-UI-V02.md) explain the
 clarification/source disclosures; the baseline 8784 UI remains available.
+
+For the merged **request → source → trace demo**, prepare a separate observation
+environment as described in the [short guide](docs/REGISTRY-TRACE-DEMO.md);
+do not install tracing dependencies into the frozen `.venv-demo`. Then run:
+
+```powershell
+.\.venv-observe\Scripts\python.exe -m demo.registry_demo --registry-root "C:\path\to\approved-registry"
+```
+
+Open [localhost:8786](http://127.0.0.1:8786/), make a guided request, open its
+citation, then follow **View the local trace summary**. No collector is needed.
+The command checks existing authority read-only and writes a new ignored trace
+session outside the registry; it does not create approvals or activate a store.
 
 Verify the new freeze or replay its accepted cases with the recorded CPython
 3.13.0 environment; no site packages, PDF, tokenizer cache or network is required:
@@ -546,7 +582,8 @@ does not establish general language understanding or generated-answer quality.
 | [UA01–UA08 acceptance](experiments/cytiva/reviewed-registry-ui-acceptance-v01/README.md) | Merged in PR #80: eight approved references, eight single submissions, 8/8 functional outcomes, thirteen source pages; four offline export tests | Known reviewed corpus and guided combinations, not blinded/general answer quality; three historical usability findings and original assessor correction preserved; live withdrawals not injected |
 | [Registry presentation v02](docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.md) | Merged in PR #81: three display fixes, 27 targeted regressions and three browser smoke checks; eight response comparisons and thirteen source HTML pages unchanged | Separate opt-in page, not a new prospective trial or runtime freeze; default visibility improves, serialized context size does not decrease |
 | [Local OpenTelemetry tracing](docs/validation/REGISTRY-TRACING-PACKAGE.md) | Merged in PR #83: 28 tracing tests; metadata allowlist, response/source equality, parent links, SDK/export failures and partial-initialization cleanup. Merged-main suite: 972 passed / one optional skip | Opt-in registry UI v02 only. Best-effort queues can drop spans; no durable audit, model token/cost accounting, production latency benchmark or new runtime freeze |
-| [Instrumented UI walkthrough](docs/validation/REGISTRY-TRACING-UI-PACKAGE.md) | Merged in PR #85: four browser scenarios, exact untraced-response comparisons, nine supplemental source checks, 37 metadata-only spans, unavailable-collector behavior and scoped withdrawal | Synthetic disposable authority over known reviewed evidence; no independent acceptance score. Narrow viewport, favicon 404 and an automation wait limitation retained. Raw logs/harness remain local; reusable trace summary pending |
+| [Instrumented UI walkthrough](docs/validation/REGISTRY-TRACING-UI-PACKAGE.md) | Merged in PR #85: four browser scenarios, exact untraced-response comparisons, nine supplemental source checks, 37 metadata-only spans, unavailable-collector behavior and scoped withdrawal | Synthetic disposable authority over known reviewed evidence; no independent acceptance score. Narrow viewport, favicon 404 and an automation wait limitation retained. Raw logs/harness remain local; the later PR #87 convenience layer is a separate delivery |
+| [Reusable local trace demo](docs/REGISTRY-TRACE-DEMO.md) | Merged in PR #87: separate port 8786, read-only metadata summary, controlled rejection labels, nonblocking optional SDK failures; 18 demo tests | Focused pre-correction browser smoke: five HTTP requests / seven spans on disposable synthetic authority; fixes covered by HTTP/CLI regressions. Best-effort telemetry, not a durable audit or independent acceptance |
 | [Opt-in registry UI](docs/validation/MABSELECT-REGISTRY-UI-PACKAGE.md) | Merged in PR #78: nine files, 18 HTTP/DOM checks, corrected source-error boundary and 15-second deadline/retry; merged-main suite 913 passed / one optional skip | Known-case conformance; faults only in disposable stores. Explicit authority root required, fresh clones staged; outside the two original freezes, no independent answer-quality score or legacy-chat dispatch |
 | [Local activation record](experiments/cytiva/mabselect-local-activation-v02/README.md) | Merged in PR #76: LA01–LA08, six active cases, 25 citations, 13 source views and compact provenance; merged-main suite 895 passed / one optional skip | One private local store only, zero withdrawals; at PR #76 no UI dispatch. PR #78 adds a separate opt-in UI; fresh clones remain staged, no independent answer-quality result or change to either freeze |
 | [Local registry review](docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md) | Merged in PR #74: corrected staged v02, 32 registry tests, six accepted-case replays and inventory-only reproduction; merged-main suite 895 passed / one optional skip | At PR #74: no activation. Later local activation is recorded separately in PR #76; no new source approval. Cooperative single-process writers; whole-directory rollback needs an external anchor and interrupted activation needs operator review |
@@ -572,21 +609,23 @@ excerpts, not the full manual. S's 2,048-token budget counts serialized context
 including bindings, not a future answer prompt or output. The source-reviewed
 claims have not been connected to the chatbot's serving path.
 
-**Next priority:** turn the completed rehearsal into a **reusable local
-request → source → trace demo**. Reuse the existing explicit registry startup
-command and add a read-only, human-readable summary of allowlisted local spans.
-Document prerequisites, the selected authority and the short operator path.
-Never activate a fresh clone automatically or expose synthetic test approvals as
-real approvals. Withdrawal/fault demonstrations stay in disposable stores.
-The summary/demo convenience is not implemented yet; broader model-call accounting,
+**Next priority: connect reviewed MabSelect support to the existing Chainlit UI
+through an explicit documentary mode.** Reuse the registry service and guided
+product/context controls before adding any free-text routing or generated answer.
+Keep citations, focused clarification, scoped abstention, withdrawals and
+metadata-only tracing. Start without an LLM or paid API; preserve the default
+legacy graph chat and require an existing approved authority. This integration
+is not implemented yet and is a separate delivery, not another runtime freeze.
+
+The reusable summary/demo is merged in PR #87. Broader model-call accounting,
 Ragas judges and Promptfoo attacks remain separate pending work.
 
 UA01–UA08 review and baseline execution are complete. Keep that trial immutable;
 use its requests as regression inputs for later instrumentation, not as a new
 independent score. No new ontology, runtime freeze or manual-review round is
 required for this delivery. The four known instrumented scenarios already passed;
-reopen them only for a changed behavior or measured failure. Legacy-chat integration
-is a later explicit change.
+reopen them only for a changed behavior or measured failure. The proposed Chainlit documentary mode
+is the next explicit integration change; no chat integration is claimed yet.
 
 Second-physical-PC validation remains a parallel portability check. The
 three-arm graph/passages/LightRAG comparison is unexecuted; current BM25 trials
@@ -601,9 +640,9 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Provide a reusable local request → source → trace demo using the existing explicit startup command, a read-only metadata summary and a short operator guide. Preserve both freezes/private authority and keep withdrawal tests in disposable stores; do not rerun the completed rehearsal without a new reason.
-2. Validate new summary/startup behavior and usability only; retain UA01–UA08 and the instrumented walkthrough as historical records. Second-physical-PC validation remains a separate portability gate when hardware is available.
-3. Extend fault and independent acceptance coverage only for new behavior or evidence, using disposable stores for withdrawals/corruption. Keep the legacy chat, installer and recorded tours separate until an explicit integration change.
+1. Add an explicit MabSelect documentary mode to Chainlit using the existing registry service and guided controls. Begin without an LLM, paid API, new interpreter or default-route change; require existing approved authority.
+2. Verify this integration's citations, clarification, abstention, withdrawal isolation and metadata-only traces on disposable stores. Preserve both freezes and historical UA/trace trials; do not present regressions as independent acceptance.
+3. Apply the second-physical-PC protocol when hardware is available. Keep the working local trace demo, installer and recorded tours separate; reopen completed work only for a changed behavior or measured failure.
 4. Add model-call budgets/accounting, calibrated Ragas for generated answers and Promptfoo with benign controls when those paths exist; deterministic registry tracing does not complete them.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.
 

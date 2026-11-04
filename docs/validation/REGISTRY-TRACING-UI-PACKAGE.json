@@ -1,0 +1,49 @@
+{
+  "id": "registry-ui-v02-instrumented-walkthrough-delivery-v01",
+  "prepared_on": "2026-11-04",
+  "status": "prepared_not_staged",
+  "base_commit": "875d3aec860cca320ce5cca3e412b8dfee4edac9",
+  "proposed_branch": "codex/registry-otel-ui-walkthrough",
+  "proposed_commit": "test(observability): record instrumented registry UI walkthrough",
+  "file_count": 5,
+  "files": [
+    "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.md",
+    "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.json",
+    "docs/validation/REGISTRY-TRACING-UI-PROVENANCE.json",
+    "docs/validation/REGISTRY-TRACING-UI-PACKAGE.md",
+    "docs/validation/REGISTRY-TRACING-UI-PACKAGE.json"
+  ],
+  "hash_convention": "SHA-256 after CRLF-to-LF normalization; this inventory excludes its own digest. Original local evidence retains raw SHA-256.",
+  "files_sha256_lf": {
+    "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.md": "260de8750ffe474fb0682a0f805786b7fbe698ac8a0a679c154083db57703851",
+    "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.json": "a99643229ec11923ebf494cb0bd754e37928e0ddd0114e4f952217a7c2cf1c6d",
+    "docs/validation/REGISTRY-TRACING-UI-PROVENANCE.json": "d0f094650a32a93ebc82975135b48c498ae89d15760a9d2ef03b56f86f6d246d",
+    "docs/validation/REGISTRY-TRACING-UI-PACKAGE.md": "1774d7602dae9ef5b592d93b7662ac2f9dd022f50b6793f7667160eb877697ef"
+  },
+  "verification": {
+    "original_record_bindings_verified": true,
+    "raw_local_evidence_digests_verified": 7,
+    "source_provenance_records": 9,
+    "known_browser_cases_retained": 4,
+    "spans_rechecked": 37,
+    "local_markdown_links_checked": 6,
+    "no_new_browser_trial_or_full_suite_run": true,
+    "metadata_only_compact_export": true,
+    "protected_files_unchanged": true,
+    "freezes_valid": true,
+    "no_stage_commit_or_push": true
+  },
+  "excluded": [
+    "raw response bodies",
+    "raw JSONL traces",
+    "test-only runner and temporary controls",
+    "private registry",
+    "both freezes",
+    "16 old notes",
+    "both pilots",
+    "previous raw acceptance trials",
+    "dependencies and caches",
+    "source PDF",
+    "README and roadmap"
+  ]
+}

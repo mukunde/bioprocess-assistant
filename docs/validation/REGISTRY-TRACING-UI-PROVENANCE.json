@@ -1,0 +1,293 @@
+{
+  "id": "registry-ui-v02-instrumented-walkthrough-provenance-v01",
+  "prepared_on": "2026-11-04",
+  "observed_run_date": "2026-11-04",
+  "base_commit": "875d3aec860cca320ce5cca3e412b8dfee4edac9",
+  "scope": "offline compact export of the completed known-case walkthrough; no new execution or approval",
+  "record_bindings_sha256_lf": {
+    "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.md": "260de8750ffe474fb0682a0f805786b7fbe698ac8a0a679c154083db57703851",
+    "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.json": "a99643229ec11923ebf494cb0bd754e37928e0ddd0114e4f952217a7c2cf1c6d"
+  },
+  "executed_code_sha256_lf": {
+    "demo/registry_ui_v02.py": "affbad4f838f2849fefd49bd50f53de1b67c3e4364a7b39d3763531a7bca7f46",
+    "demo/registry_ui.py": "23675250f0dcd05ed3f2a053facdd2882246871458c7045697c5f83bb277a770",
+    "demo/registry_tracing.py": "39ca3bdf0b489492ee69f125d49fdf107701b8bdf4f786f09d4855601616a4a9",
+    "serving/local_registry.py": "0c5be9d00d72ca5034080c41668ab8fa967ef389fb97f1dfb13b2a015730db04",
+    "tests/test_local_registry.py": "1793159d1cc0aeb5f57ba770f67470c06bc450a8d4dcce9256ed766640b49bed",
+    "requirements-observability.txt": "b7aa1130515d76f7d063ad8514e8c636b0a9feee01cdb626dad78b1e18c9ea17"
+  },
+  "code_identity_basis": "all pre-existing tracked files exactly match the original run snapshot and current HEAD",
+  "retained_local_harness": {
+    "path": ".local-tools/otel-ui-walkthrough/runner.py",
+    "sha256": "9d7c0262f5b8fa64a7c26943750917cf89fd948d47a19ee3b6e0e82b9e9dacd4",
+    "included_in_delivery": false,
+    "fixture_authorizations": "SYNTHETIC TEST ONLY; confined to TemporaryDirectory; not project human decisions"
+  },
+  "source_provenance": [
+    {
+      "source_id": "E166-H",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 0,
+      "page_text_end": 51,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote_sha256": "9c377870f071cbf78efa3866369ba65e24943eb518ec35a218bed3eef7996303",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E166-LH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 366,
+      "page_text_end": 437,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote_sha256": "2b463f3eb940435af38d361d8e5a6f0d6125ea0e603d167598e6ce9fb9f1e29b",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E166-PH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 320,
+      "page_text_end": 365,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote_sha256": "1cafb75b204fb1be74c0206abf8bf6fddd5f8461579fdbf759cd3bf908de8690",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E166-T",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "166",
+      "pdf_page_1based": 166,
+      "pdf_page_index_0based": 165,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "867d87166b20706c27382b16cb471c299e8f17a73885c265b1d8a79cb1ed3a4a",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 136,
+      "page_text_end": 319,
+      "scope": "Protein G and Protein A Sepharose media",
+      "quote_sha256": "709d368711e95ecb1d25b83cc57a0a6ecc6e0ba649a827b4b17a9ca4d93b4cfa",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-H",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 0,
+      "page_text_end": 94,
+      "scope": "MabSelect media",
+      "quote_sha256": "b97bfc5d75d19525af065dd160bfd37730991c009afff9fe00fb16bb54c9bc4b",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-LH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 1387,
+      "page_text_end": 1459,
+      "scope": "MabSelect media",
+      "quote_sha256": "044c9a1531cf0504a9af73fbe89c977c4e84115831e04543ef2a51e2ed80add6",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-P",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 144,
+      "page_text_end": 515,
+      "scope": "MabSelect media",
+      "quote_sha256": "05a708ed6ecc676b33c1fb4b2adca690cf7bdac305bb1fccf3dbaf1142728bc8",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-PH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 96,
+      "page_text_end": 143,
+      "scope": "MabSelect media",
+      "quote_sha256": "b0467c6bf952cf2af6400d5adf673bafd84d5b01887a42c4a231315015bf267a",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    },
+    {
+      "source_id": "E167-SH",
+      "corpus_id": "cytiva-cleaning-166-167-evidence-v01",
+      "pdf_sha256": "a6fd949e904ec0bafbcc7d85a3be1660f2bea8949098e86c57ae43d06492946a",
+      "document_reference": "CY13981-25Jan21-HB",
+      "edition_metadata_origin": "existing project registry; not newly certified",
+      "printed_page_label": "167",
+      "pdf_page_1based": 167,
+      "pdf_page_index_0based": 166,
+      "extraction_version": "pypdf-6.21.1",
+      "page_text_sha256": "79c61a59850892e0501eb03ce99ca8a475825405894a086ac51e7eee6086bcda",
+      "offset_unit": "unicode_code_points",
+      "interval": "start_inclusive_end_exclusive",
+      "page_text_start": 1259,
+      "page_text_end": 1386,
+      "scope": "MabSelect SuRe and MabSelect SuRe LX only for this stronger-alkali block",
+      "quote_sha256": "35f7b8c023bb807bd035078f4ba5090d4b4cd23d3d2395b9b3e1d4999ab4b3c7",
+      "source_artifact": {
+        "artifact_id": "retrieval-pilot-v01-evidence-json",
+        "sha256": "ef5d5f77f01f9b543c33b8e2a81d62c50b5fa3e92bb3b6a124bf7a70e6bb653c",
+        "hash_convention": "sha256_lf"
+      }
+    }
+  ],
+  "source_provenance_limits": "source metadata inherited from existing reviewed records; PDF/edition not newly certified; no quotations or source PDF exported",
+  "observed_outcome_counts": {
+    "browser_submissions": 4,
+    "supplemental_combined_submission": 1,
+    "unique_source_HTTP_comparisons": 9,
+    "spans": 37,
+    "HTTP_roots": 20,
+    "registry_children": 17,
+    "HTTP_status_counts": {
+      "200": 19,
+      "404": 1
+    },
+    "failed_OTLP_batches_expected": 20,
+    "SDK_failures": 0
+  },
+  "baseline_comparison_evidence": "original live comparison assertions in retained pre/post-withdrawal checks; untraced baseline response bodies were not separately archived",
+  "offline_packaging_checks": {
+    "original_local_evidence_raw_hashes_verified": 7,
+    "outcomes_and_withdrawal_scope_rechecked": true,
+    "source_quote_hashes_rechecked": 9,
+    "trace_parentage_headers_allowlists_and_privacy_rechecked": true,
+    "all_preexisting_tracked_files_unchanged": true,
+    "private_registry_unchanged": true,
+    "notes_unchanged": 16,
+    "pilots_and_prior_trial_unchanged": true,
+    "servers_stopped_and_authority_removed": true,
+    "freezes": [
+      {
+        "id": "free-text-v03-corrected-runtime-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 36,
+        "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "prospective_trial_executed": false
+      },
+      {
+        "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 52,
+        "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "serving_activated": false,
+        "prospective_evaluation": false
+      }
+    ],
+    "no_new_trial_or_full_suite_run": true
+  },
+  "raw_local_evidence_sha256": {
+    "before.json": "967d04becb3b88981f45e03268cdc7cd6f80996738e911cdeb46c4ff4bea48f6",
+    "responses.jsonl": "04a4acfae016b9da5d503833aa7d03969c3e3224b58694d71edf5571745fa508",
+    "traces.jsonl": "a29cf55a9780a5abba0c90e2792ae58c7b6ccdbc9393f1df7b31eec6372b5b1a",
+    "pre-withdrawal-checks.json": "7df6a0ff9605910e2f5d9eb38cbe63e9abe7c0c291542f2a1ae3eb0103369e20",
+    "post-withdrawal-checks.json": "47afc89185c8e986e6279c004f69e2ebdb181532deb33adb5951ee84e1d4dca7",
+    "trace-checks.json": "1ef42c5d51d01883508907c5357af93177eca142a87c8e1e06666aacf49ddc7a",
+    "shutdown.json": "7fb0eddf9c2a823210379c58b12b8d242dd8c82893f98cdc3504798b2ffa134a"
+  }
+}

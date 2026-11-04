@@ -21,8 +21,10 @@ records the reviewed UA01-UA08 baseline trial (8/8 bounded functional outcomes);
 PR81 adds opt-in presentation v02 for the three display findings. The original
 preview/launchers and legacy chat remain separate.
 PR83 adds optional metadata-only local OpenTelemetry tracing to registry UI v02.
+PR85 records the completed four-case browser rehearsal and compact provenance.
 Broader telemetry, independent answer evaluation and the common-corpus retrieval
-comparison remain pending; a real-UI trace walkthrough is the next priority.
+comparison remain pending. Next: a reusable local request → source → trace demo
+with a readable metadata summary, reusing the existing explicit startup command.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
@@ -59,8 +61,9 @@ Migration from the legacy dense template/review database is still pending.
   handoff freeze/replay, registry, local activation record and opt-in registry UI
   are now merged. The UA01-UA08 review/trial and separate UI v02 are also merged.
   PR83 merges minimal metadata-only local OpenTelemetry tracing with unchanged
-  responses and nonblocking telemetry failures. Next: a short instrumented UI
-  walkthrough using disposable authority for withdrawal/failure cases.
+  responses and nonblocking telemetry failures. PR85 merges the completed
+  instrumented UI walkthrough on disposable authority. Next: reusable demo
+  convenience and a read-only metadata summary, not another review cycle.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
@@ -77,19 +80,22 @@ is published, while the executable Python application remains local.
 | Workstream | Merged/observed | Remaining gate |
 |---|---|---|
 | 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation |
-| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling | Instrumented real-UI walkthrough, broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
+| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling. PR85 records four browser scenarios, nine source checks and 37 spans | Reusable local demo/trace summary, broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
 | 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged, no legacy chat integration |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest merged baseline: `main` at `a8272e9`, including
-[PR83](https://github.com/mukunde/bioprocess-assistant/pull/83) (corrected local tracing),
+Latest verified merged baseline: `main` at `01f4758`, including
+[PR85](https://github.com/mukunde/bioprocess-assistant/pull/85) (instrumented UI walkthrough)
+and [PR83](https://github.com/mukunde/bioprocess-assistant/pull/83) (corrected local tracing),
 after [PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
 and [PR81](https://github.com/mukunde/bioprocess-assistant/pull/81) (presentation v02).
 The complete maintained suite on that exact merged baseline ran **973 tests:
 972 passed and one optional PDFium preview skip**, no failures/errors, in
-529.242 seconds, including **28 tracing tests**. The earlier `2f8ef3d` checkpoint
+1134.479 seconds, including **28 tracing tests**. The earlier `a8272e9` run took
+529.242 seconds with the same counts; these suite timings are descriptive, not
+a controlled performance comparison. The earlier `2f8ef3d` checkpoint
 had 944 passed / one skip in 418.456 seconds; that remains historical evidence.
 Both original freezes remain valid: v03 (36 pins), MabSelect
 (52 pins); neither was expanded or replaced by these deliveries.
@@ -122,11 +128,29 @@ responses/source HTML and cover failed sinks without blocking answers. The initi
 review and corrected suite results remain separately recorded. Tracing is disabled
 unless explicitly requested; no collector was deployed or model cost measured.
 
-Next priority: **rehearse the instrumented real-UI journey**, covering support,
-clarification, abstention and withdrawal with disposable authority for fault cases.
-Inspect trace/citation content and document a reproducible request → source → trace
-demo. No such merged-tracing browser walkthrough has executed yet; the known-case
-regressions do not establish a new independent acceptance score or latency benchmark.
+The [instrumented UI delivery](validation/REGISTRY-TRACING-UI-PACKAGE.md) is merged
+in PR85. Four known browser cases ran once each on synthetic disposable authority:
+sourced support, clarification, pressure abstention and withdrawal. Their responses
+matched the untraced comparison. Supplemental HTTP checks covered nine source pages;
+37 JSONL spans had correct parentage, separate citation traces and metadata-only
+content. Twenty deliberately failed OTLP batch exports did not block answers or
+JSONL delivery; no SDK failures were observed. An old withdrawn citation refused
+its quote, while an independent task remained supported. The temporary authority
+was removed and both test servers stopped.
+
+The report retains the cosmetic favicon 404 and an automation wait expiry before
+the correct held state was observed without resubmission. Only E167-P was opened
+as a full browser citation page; the nine-source sweep is HTTP evidence. Raw
+responses, traces and harness stay local. Known-corpus synthetic-authority evidence
+does not establish independent acceptance, scientific suitability, second-PC
+portability or production latency. The baseline comparison assertions were recorded
+live; untraced baseline bodies were not separately archived.
+
+Next priority: **make request → source → trace a reusable local demo**: reuse the
+explicit startup command, add a read-only metadata summary and a short operator
+guide. No new freeze, manual-review cycle or repeat of these four known cases is
+required by default. Fresh clones still need their own reviewed activation;
+synthetic fixture authorizations must never become a normal serving default.
 
 Earlier registry-UI baseline: `main` at `c230f14`, including
 [PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
@@ -463,19 +487,21 @@ an independent prospective score; all source/retrieval behavior remains the same
 
 ### Next delivery priorities
 
-1. **Rehearse the merged tracing through the real registry UI v02.**
-   Run sourced support, clarification, abstention and withdrawal; use a disposable
-   registry for withdrawal/fault cases, never the approved private authority.
-   Write to a new ignored local JSONL file. Inspect the exact source text and
-   metadata-only traces, HTTP/registry parent links and separate source-request
-   traces. Verify that an unavailable sink does not change the response or bypass
-   the existing deadline. Record observations separately from UA01-UA08 and the
-   original tracing regressions; do not claim a new prospective acceptance score.
-   Then document a reproducible request → source → trace demo command and result.
-   No LLM, paid backend, collector deployment, new ontology, freeze or whole-manual
-   review is needed. Token/cost metrics remain inapplicable to this model-free path.
+1. **Deliver a reusable local request → source → trace demo.**
+   Reuse the explicit UI v02 startup command; add a read-only, human-readable
+   summary of allowlisted local spans and a short operator guide. Keep authority
+   selection explicit and refuse missing/invalid authority without auto-activation.
+   A fresh clone must not inherit synthetic fixture approvals. Keep traces in
+   ignored local storage and withdrawal/fault tests in disposable stores.
+   Exit: an operator can start the local UI with approved authority, make a request,
+   open its citation and inspect the corresponding metadata-only span summary.
+   Summary/launch failures must not change answers or authority. This convenience
+   layer is not implemented yet. Test its new behavior rather than rerunning the
+   completed PR85 rehearsal by default. No LLM, paid backend, new ontology, freeze
+   or whole-manual review is needed; no model token/cost measurements are inferred.
 2. **Validate usability and portability without repeating completed reference work.**
-   Use a short v02 usability pass for the disclosures and edit action. Apply the
+   Verify usability of the new summary/launch path; retain the existing disclosure
+   and clarification observations from PR85. Apply the
    existing second-PC protocol when another physical Windows PC is available;
    same-PC isolated setup is not that gate. Preserve the existing UA trial and
    freezes. Keep installer, legacy chat and public screenshot/video tours separate
@@ -522,8 +548,12 @@ with optional new-file JSONL and loopback OTLP export, nonblocking failures and
 28 passing tracing tests. The merged-main full suite has 972 passed / one skip.
 See the [usage/privacy guide](REGISTRY-TRACING.md) and
 [correction report](validation/REGISTRY-TRACING-CORRECTIONS.md).
-The next gate is a short instrumented real-UI walkthrough, not another runtime
-freeze. Best-effort queues may drop traces; bounded cleanup does not forcibly stop
+PR85 completes the four-case instrumented browser rehearsal on disposable authority,
+with nine supplemental source checks and 37 spans; see the
+[report and limits](validation/REGISTRY-TRACING-UI-WALKTHROUGH.md).
+The next delivery is reusable demo convenience and a readable local trace summary,
+not another runtime freeze or a repeat acceptance trial.
+Best-effort queues may drop traces; bounded cleanup does not forcibly stop
 arbitrary blocked third-party code. This is not a durable audit journal, a production
 latency benchmark or completed phase 1. Broader model/extraction/judge call
 accounting remains a later part of this workstream.
@@ -890,7 +920,9 @@ handoff, its separate freeze/replay and corrected local release/withdrawal regis
 and the approved private local activation record are merged. One verification
 store is active; Git still ships staged data. The separate opt-in registry UI is
 merged in PR78; PR80 records bounded UA01-UA08 acceptance and PR81 adds the
-separate display v02; PR83 adds its optional local tracing. Independent acceptance
+separate display v02; PR83 adds its optional local tracing and PR85 records the
+completed instrumented UI rehearsal. A reusable trace summary remains pending.
+Independent acceptance
 beyond the known corpus, broader observability and legacy-chat integration remain
 pending, as described above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

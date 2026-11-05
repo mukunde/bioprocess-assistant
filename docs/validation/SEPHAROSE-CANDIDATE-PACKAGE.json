@@ -1,0 +1,125 @@
+{
+  "id": "protein-ag-sepharose-corrected-candidate-delivery-v01",
+  "prepared_on": "2026-11-05",
+  "status": "prepared_not_staged",
+  "base_commit": "28775130a9500bf202f67c60151bac53f2c8027c",
+  "proposed_branch": "codex/chainlit-sepharose-candidate",
+  "proposed_commit": "feat(documentary): add reviewed Protein A/G Sepharose candidate",
+  "file_count": 11,
+  "files": [
+    "app.py",
+    "serving/sepharose_candidate.py",
+    "demo/chainlit_sepharose.py",
+    "tests/test_sepharose_candidate.py",
+    "tests/test_chainlit_sepharose.py",
+    "tests/test_registry_tracing.py",
+    "docs/CHAINLIT-SEPHAROSE-CANDIDATE.md",
+    "docs/validation/SEPHAROSE-CANDIDATE-IMPLEMENTATION.md",
+    "docs/validation/SEPHAROSE-CANDIDATE-CORRECTIONS.md",
+    "docs/validation/SEPHAROSE-CANDIDATE-PACKAGE.md",
+    "docs/validation/SEPHAROSE-CANDIDATE-PACKAGE.json"
+  ],
+  "hash_convention": "SHA-256 after CRLF-to-LF normalization; inventory itself excluded to avoid self-reference. Local evidence digests use raw bytes.",
+  "files_sha256_lf": {
+    "app.py": "f251774f30b935ae6238a77ea54feb754f57b03d313b11e399448eb30a0ce95e",
+    "serving/sepharose_candidate.py": "6b2a93aafb8ae8b3138eeabd27a3826cff249f03d6185d67b9b2e924481840ce",
+    "demo/chainlit_sepharose.py": "1e196047a5b2648506bc438be0b8265555f967d9a5bd798cba403464ea898ba4",
+    "tests/test_sepharose_candidate.py": "10b27ef2a4a7e888f7c11dcd234c5ea095fe8084e6d0878c677cfed708fccfc1",
+    "tests/test_chainlit_sepharose.py": "415783515f2d8add83408c675a7f37e21f651bfa3438308bcdb747e3d5de9e47",
+    "tests/test_registry_tracing.py": "3d035cf4f75f5dac01f101f1d5a4d1fb42099e3b53eddaa57101e73c64311f22",
+    "docs/CHAINLIT-SEPHAROSE-CANDIDATE.md": "9c8bbcc988fc6c314a667f69adafda8dc844119f1806135318f62cc8220df146",
+    "docs/validation/SEPHAROSE-CANDIDATE-IMPLEMENTATION.md": "6fd2d19e917cfd1124338f61ece0d685054b9f41ca4d6c3fa30c01c3c03b5bcb",
+    "docs/validation/SEPHAROSE-CANDIDATE-CORRECTIONS.md": "d87cbb2b32a31a49318dc680901cda7d4b3181dd0a17dd66daabb66e17813c79",
+    "docs/validation/SEPHAROSE-CANDIDATE-PACKAGE.md": "92f521b15dbf0eeaea3dc06e8dc5a8e117413d9e5f212656b4fdbce7c23b5b98"
+  },
+  "test_evidence": {
+    "red_regressions_failed_before_fix": 3,
+    "new_regression_methods": 6,
+    "focused": {
+      "executed": 64,
+      "passed": 64,
+      "seconds": 69.19
+    },
+    "full_suite": {
+      "executed": 1050,
+      "passed": 1049,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "seconds": 631.375
+    },
+    "corrected_candidate_control_combinations": 36,
+    "source_views_verified": true,
+    "no_new_browser_trial": true,
+    "raw_log_sha256": {
+      "sepharose-correction-red.log": "12ad5001ffbe445a745d4aa8db80d9aa8e0ae0f57a34ce9cf2c51f4a757c4b4f",
+      "sepharose-correction-focused.log": "8df0bb22f175a68b52f8658cb279747c848403ecede66705204f3959662e2bca",
+      "sepharose-corrected-full.log": "e92ff36ce44e75e26b7368e8f6a701cc8b2b5c1080fca447cb5cd5ad2abfed6b",
+      "sepharose-corrected-matrix.json": "8d022c45d9b6007a413908ab6d7cee7127afd41e500120cfdd459e03a4789950"
+    }
+  },
+  "verification": {
+    "private_registry": {
+      "files": 9,
+      "unchanged": true
+    },
+    "original_workspace_including_16_notes": {
+      "files": 636,
+      "unchanged": true
+    },
+    "pilots_and_previous_raw_trial": {
+      "files": 109,
+      "unchanged": true
+    },
+    "previous_candidate_v01": {
+      "files": 3,
+      "unchanged": true
+    },
+    "freezes": [
+      {
+        "id": "free-text-v03-corrected-runtime-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 36,
+        "method_lock_sha256_lf": "9c1cddca92b885ab03d7f68f012847f876ace62e6a5f32d8eaa042684aaf46f7",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "prospective_trial_executed": false
+      },
+      {
+        "id": "mabselect-documentary-handoff-corrected-freeze-v01",
+        "status": "frozen",
+        "pinned_files": 52,
+        "method_lock_sha256_lf": "055df054e7aa72036703e0899f85e02cef5332ab5a063fcba99a61ffe9bbfab4",
+        "environment_verified": true,
+        "runtime_instantiated": false,
+        "serving_activated": false,
+        "prospective_evaluation": false
+      }
+    ],
+    "local_markdown_links_checked": 11
+  },
+  "candidate": {
+    "release_id": "sepharose-backpressure-candidate-v02",
+    "stage": "staged",
+    "activation": "not_authorized",
+    "review_status": "awaiting_user_review",
+    "generated_local_artifacts_excluded": true,
+    "previous_candidate_preserved": true,
+    "previous_code_pins_refuse_delivery": true
+  },
+  "excluded": [
+    "private registry",
+    "both frozen closures",
+    "16 old notes",
+    "pilots",
+    "previous raw trials",
+    "local candidate directories",
+    "logs and probe runners",
+    "dependencies and caches",
+    "PDFs",
+    "README and roadmap"
+  ],
+  "head_unchanged": true,
+  "index_empty": true,
+  "no_commit_or_push": true
+}

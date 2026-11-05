@@ -1,0 +1,167 @@
+{
+  "docs/CYTIVA-FLOWSHOT-HOSTING.md": {
+    "internal-git-status:55eb1ae8ab9547253b90295bbd2871e0d2be5957d5d82e3834a477bb9ffa8913": 1,
+    "internal-git-status:8c50f4101912e277165ce46b3d5176b0f96da0dd37bdfceb90f792f67b472780": 1
+  },
+  "docs/CYTIVA-VIDEO-HOSTING.md": {
+    "internal-git-status:767d1aa4542b73662492ee536685fd673cdcc3dccb30c4df2cdd3086ac0c70d8": 1,
+    "internal-git-status:b98640f15bf626f6ddd38f0a8373b9b75b9d3fab847badc7a2ec0ac2b5b664a1": 1
+  },
+  "docs/experiments/cytiva-demo-installation-review.md": {
+    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1,
+    "proposed-git-action:e9e70c4535f7c39e5026a3040748bc1782fc5d4912e8071d01b606509e54978e": 1
+  },
+  "docs/experiments/cytiva-structured-control-s-package.md": {
+    "delivery-heading:35a744b8303f357cb5f4081e9b55b5e9a0758f6263ecfb107cd5e27e2b115fc2": 1,
+    "internal-git-status:2eca03e5ea8a8e5ef1fd9d64a56ad03f039b90192f7925707bb7ce0097a7f508": 1
+  },
+  "docs/experiments/free-text-design-package-v01.md": {
+    "delivery-heading:35a744b8303f357cb5f4081e9b55b5e9a0758f6263ecfb107cd5e27e2b115fc2": 1,
+    "internal-git-status:3a21bbe2a67804ddb187375383da3a991eae628a1454b8206eaf66e88365c14d": 1
+  },
+  "docs/experiments/free-text-group-review-package-v01.md": {
+    "delivery-heading:35a744b8303f357cb5f4081e9b55b5e9a0758f6263ecfb107cd5e27e2b115fc2": 1
+  },
+  "docs/experiments/free-text-v02-reviewed-package.md": {
+    "delivery-heading:35a744b8303f357cb5f4081e9b55b5e9a0758f6263ecfb107cd5e27e2b115fc2": 1
+  },
+  "docs/schemas/reviewed-serving-v1/README.md": {
+    "internal-git-status:4e535a2c75d57595a84d97ceea4ce4c69dbc9c349f9fda0a3e3ba0c6c2fe0a81": 1
+  },
+  "docs/technical/FREE-TEXT-RUNTIME-REVIEW-V02.md": {
+    "internal-git-status:f21bc68a6f90ae1e5855bb18c605d11b77d4ee66838e0e7ee2c36a2a1c66cb01": 1
+  },
+  "docs/technical/MABSELECT-CLEANING-IMPLEMENTATION-REVIEW-V01.md": {
+    "internal-git-status:5187954504be15cdc45b82a5d490ae4351d9a6635932b1b5b65613add1d566fe": 1
+  },
+  "docs/technical/MABSELECT-CLEANING-IMPLEMENTATION-REVIEW-V02.md": {
+    "internal-git-status:030fc197ce6b01f8d98217a223fc860b8ef6482e7dd0e092926238a81e206800": 1
+  },
+  "docs/technical/free-text-runtime-package-v01.md": {
+    "delivery-heading:35a744b8303f357cb5f4081e9b55b5e9a0758f6263ecfb107cd5e27e2b115fc2": 1
+  },
+  "docs/validation/CHAINLIT-MABSELECT-IMPLEMENTATION.md": {
+    "internal-git-status:ba8b75366742dee06a65a9fcba1124ab1a20d93ac837dd7902f479a10b983af9": 1
+  },
+  "docs/validation/MABSELECT-CLEANING-DEMO.md": {
+    "internal-git-status:280828e5b1fb777cfe768c96efcc36bf187bc783a5e699d214b5831fccd60e55": 1
+  },
+  "docs/validation/MABSELECT-CLEANING-PACKAGE.md": {
+    "delivery-heading:e7f11ee569e87a4225b376d5cd288f95b957ed29502d489637c6a335cc18d83b": 1,
+    "internal-git-status:b0ae7946bb7a30105b423c6c33fd4b91e7307c267dbbe43ea49f461a5826d5da": 1
+  },
+  "docs/validation/MABSELECT-DOCUMENTARY-HANDOFF-PACKAGE.md": {
+    "delivery-heading:e7f11ee569e87a4225b376d5cd288f95b957ed29502d489637c6a335cc18d83b": 1
+  },
+  "docs/validation/MABSELECT-LOCAL-REGISTRY-CANDIDATE.md": {
+    "internal-git-status:f42da1c00ea7eb6fad10a8778b575097ee15ad38db72ab6d515ab05e67d2c732": 1
+  },
+  "docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md": {
+    "internal-git-status:0c58335f6a56b3f2ae487bcbb23dd4b9fc69370a9846d836e302181257dab102": 1
+  },
+  "docs/validation/MABSELECT-REGISTRY-UI-PACKAGE.md": {
+    "internal-git-status:f84536629ab516a0925b95ddd5c1caeee569fd7544770c90eef0ee3c4193207f": 1,
+    "proposed-git-action:e7894e2753796c5afe873c13d7a307525060b8a09b0c25a97cbc603b8e0900ea": 1
+  },
+  "docs/validation/MABSELECT-REGISTRY-UI-REVIEW.md": {
+    "internal-git-status:92345712b792cb9a98f4bb169ee3adb33b7b1911f181a2fecbc9b6d3464eac2c": 1
+  },
+  "docs/validation/MABSELECT-REGISTRY-V02-LOCAL-ACTIVATION.md": {
+    "internal-git-status:0594ccc5e262780215e417af9acb878cd23ee43ee8d2f4a55b2bd196cfa5de1a": 1,
+    "internal-git-status:9e97ca1940466fae5884f7cb87c95d846a09014578a188b670e7354f23011883": 1
+  },
+  "docs/validation/MABSELECT-SUITE-REPAIR.md": {
+    "internal-git-status:a282a3196be3b0ccd6d08cecc43d613d25b648e4cfb6f6beaabb6d27ac8e68a2": 1
+  },
+  "docs/validation/REGISTRY-TRACE-DEMO-CORRECTIONS.md": {
+    "internal-git-status:35d1699910832332260a112e2b3ef2d4a96f1dd160b71cbf18c1cdb4a846fb0b": 1,
+    "internal-git-status:70c8e50a42c3c6dfa613ba2f9777360cd085ddc3015090446a85f67071e5f1b8": 1
+  },
+  "docs/validation/REGISTRY-TRACE-DEMO-IMPLEMENTATION.md": {
+    "internal-git-status:067cfde83a3511b16f0833eb2b2bee7764423a7e7c88ed4042092e1988d81328": 1,
+    "internal-git-status:b63b99ca7c92d39ea19ff64cab3a48d1ccd450a6c6406a871a0abbcecae53462": 1
+  },
+  "docs/validation/REGISTRY-TRACE-DEMO-PACKAGE.md": {
+    "delivery-heading:c3859d6c2f3587de182622c5054c6f39221e80f133b35ed596b76899319c1544": 1,
+    "internal-git-status:8ce881c3e5ecb0e71852c38d893a2ac01815cd7c0946148c7209d23d439f8e70": 1,
+    "internal-git-status:94af71c61c0f8d088491264ad5c952ca2244512114d49e98635ce2a03be5c640": 1
+  },
+  "docs/validation/REGISTRY-TRACE-DEMO-REVIEW.md": {
+    "internal-git-status:fb1741d845f45a3ebfa28be74d884ffc6151f921dbaa859f31b3de07395a769b": 1
+  },
+  "docs/validation/REGISTRY-TRACING-CORRECTIONS.md": {
+    "internal-git-status:a8d379c55f68021548060cc6e8e041570734fdf1bf7ea8e016353bfee17fcd3f": 1,
+    "internal-git-status:f4c97a15c35b903019128c4ec6dc3e46235d877e56160ebcac0a053109c190d8": 1
+  },
+  "docs/validation/REGISTRY-TRACING-PACKAGE.md": {
+    "delivery-heading:c3859d6c2f3587de182622c5054c6f39221e80f133b35ed596b76899319c1544": 1,
+    "internal-git-status:cd8d364913f0e2e82ef597a270319a209566e9729838943976ad9548a97bc016": 1,
+    "internal-git-status:f58c630d174bd4f77f63af58f5517f19a9b2427141745b3dad0a2fa90d41de4a": 1
+  },
+  "docs/validation/REGISTRY-TRACING-REVIEW.md": {
+    "internal-git-status:c7a0ce3bed489adcb443d0a5e6a95d5a4658392df86211a963472022ee122713": 1
+  },
+  "docs/validation/REGISTRY-TRACING-UI-PACKAGE.md": {
+    "delivery-heading:c3859d6c2f3587de182622c5054c6f39221e80f133b35ed596b76899319c1544": 1,
+    "internal-git-status:1ed2dfe9a0160fb603a922c478290becd33870b6b4c911c4f8a1ad9f8a811e17": 1,
+    "internal-git-status:497a7f702fced2642a23d709315921118940355ac6364f9181f0ab0fd8db0d59": 1
+  },
+  "docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.md": {
+    "internal-git-status:0bda6293484d4d3957cd54b63302072af4a5aced34edda2501cb286a54d8a845": 1
+  },
+  "docs/validation/REGISTRY-UI-ACCEPTANCE-PACKAGE.md": {
+    "internal-git-status:3d832cfc68ddefee941945df4cf799d8b80c893fce07df712bfc4246aa0d3a9d": 1,
+    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1,
+    "proposed-git-action:eb23d7537cf3365a836108a322c8a1b534bc208c903ae3a834b324f54cf424ba": 1
+  },
+  "docs/validation/REGISTRY-UI-V02-DISPLAY-PACKAGE.md": {
+    "internal-git-status:3d832cfc68ddefee941945df4cf799d8b80c893fce07df712bfc4246aa0d3a9d": 1,
+    "proposed-git-action:2b3dc3eb71164e1d0f73c6f5983815712f7d66b41f687fea6f95cec23f7ebb69": 1,
+    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1
+  },
+  "docs/validation/REGISTRY-UI-V02-DISPLAY-REVIEW.md": {
+    "internal-git-status:d6fa24b97095a809fd1264f559819e7507bb7c690a9d692419c788c7b140b765": 1
+  },
+  "docs/validation/SEPHAROSE-CANDIDATE-CORRECTIONS.md": {
+    "internal-git-status:a54ae5742a818d56f256fbe4c90811a976bdce7f4435b530d25fea138a8b4ace": 1
+  },
+  "docs/validation/SEPHAROSE-CANDIDATE-IMPLEMENTATION.md": {
+    "internal-git-status:25ed0efb03c2aa674480a5d5ec6a6a6ea45e8f8aa94a2824c0732d956d464d9e": 1,
+    "internal-git-status:b36578941f476a64e893681328331154d7655e74eb2ee58d7b0af5977f9d603e": 1
+  },
+  "docs/validation/SEPHAROSE-CANDIDATE-PACKAGE.md": {
+    "delivery-heading:c3859d6c2f3587de182622c5054c6f39221e80f133b35ed596b76899319c1544": 1,
+    "internal-git-status:e911887094b3173a3c541be0404fb18a95fb48a675371c684c7ca7df92fe1fbe": 1
+  },
+  "docs/validation/WINDOWS-SECOND-PC.md": {
+    "proposed-git-action:2a5c1128e782c9180996304f07aa4c2f9b46f230110bce2a72f6b9a706c3e4fd": 1,
+    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1
+  },
+  "experiments/cytiva/free-text-v02-comparison-v01/REVIEW-SUMMARY.md": {
+    "internal-git-status:8adbeb848971666ca6da62a60720cb5b8cf2fcd159b7393438a950a306914a78": 1
+  },
+  "experiments/cytiva/mabselect-handoff-freeze-v01/VERIFICATION.md": {
+    "internal-git-status:4238c9b2d5bd734e6f8bfb54735ea5bcfce686327ed3d7446ecd8120b0d29108": 1
+  },
+  "experiments/cytiva/mabselect-local-activation-v02/README.md": {
+    "proposed-git-action:93d1cf8e5de1fcc1c2a6e907d833e6de120388e635d24f4d9a4b778856b3ab11": 1
+  },
+  "experiments/cytiva/registry-ui-acceptance-v01/REVIEW-STATUS.md": {
+    "internal-git-status:c893d0cca2180fee50b29c1d142c59dc0da1e5e004cebe4fa64a13eb8ab4df27": 1
+  },
+  "experiments/cytiva/reviewed-pages-152-153-v2/README.md": {
+    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1
+  },
+  "experiments/cytiva/reviewed-pages-152-153/README.md": {
+    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1
+  },
+  "experiments/cytiva/reviewed-registry-ui-acceptance-v01/README.md": {
+    "internal-git-status:103d25470d009aea4ebe401d46a6b5f30886e0dec9e4662b55b12f5caf710d1d": 1
+  },
+  "media/cytiva-flowshot-pilot-v02/REVIEW.md": {
+    "internal-git-status:09d51aa271d0d3b1ad3ef6069b4f35ae76b082eed15b6018d5ef891e81c268fc": 1
+  },
+  "media/cytiva-onboarding-v05/REVIEW.md": {
+    "internal-git-status:9a7298ee6bbfab1a674763006d0148ef6b65402650a94d4a37ccdfe80ec70c5a": 1
+  }
+}

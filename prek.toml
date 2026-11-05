@@ -1,0 +1,18 @@
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "markdown-delivery-notes"
+name = "Check Markdown for internal delivery notes"
+entry = "python scripts/check_markdown_delivery.py"
+language = "system"
+files = '(?i)\.(md|markdown|mdx)$'
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "readme-style"
+name = "Check the project README structure and headings"
+entry = "python scripts/check_readme_style.py"
+language = "system"
+files = '^README\.md$'
+stages = ["pre-commit"]

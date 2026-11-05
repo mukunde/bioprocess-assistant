@@ -6,7 +6,6 @@ import os
 import chainlit as cl
 from chainlit.input_widget import Slider
 
-from agent import run_agent
 from tools import DEFAULT_MIN_MATCH_SCORE, resolve_min_score
 
 logger = logging.getLogger(__name__)
@@ -14,6 +13,18 @@ SERVICE_ERROR_MESSAGE = (
     "Le service est momentanément indisponible. "
     "Je ne peux pas fournir de réponse pour le moment. Vous pouvez réessayer plus tard."
 )
+
+
+def run_agent(*args, **kwargs):
+    # Documentary sessions never import or initialize the model client.
+    from agent import run_agent as graph_agent
+    return graph_agent(*args, **kwargs)
+
+
+def documentary_mode():
+    # This is server configuration, never a browser-controlled route selector.
+    # Unknown configurations fail closed instead of falling back to the agent.
+    return os.environ.get("BIOPROCESS_MODE", "graph") != "graph"
 
 
 @cl.password_auth_callback
@@ -30,6 +41,10 @@ def auth_callback(username: str, password: str):
 
 @cl.on_chat_start
 async def start():
+    if documentary_mode():
+        from demo import chainlit_mabselect
+        await chainlit_mabselect.start()
+        return
     await cl.ChatSettings(
         [
             Slider(
@@ -64,11 +79,19 @@ async def start():
 
 @cl.on_settings_update
 async def on_settings_update(settings):
+    if documentary_mode():
+        from demo import chainlit_mabselect
+        await chainlit_mabselect.settings_update(settings)
+        return
     cl.user_session.set("min_score", resolve_min_score(settings.get("min_score")))
 
 
 @cl.on_message
 async def on_message(message: cl.Message):
+    if documentary_mode():
+        from demo import chainlit_mabselect
+        await chainlit_mabselect.free_text()
+        return
     metadata: dict = {}
     try:
         min_score = resolve_min_score(cl.user_session.get("min_score"))
@@ -96,3 +119,17 @@ async def on_message(message: cl.Message):
         )
 
     await cl.Message(content=reply + footer).send()
+
+
+@cl.action_callback("mabselect_submit")
+async def mabselect_submit(action):
+    if documentary_mode():
+        from demo import chainlit_mabselect
+        await chainlit_mabselect.submit(action)
+
+
+@cl.action_callback("mabselect_source")
+async def mabselect_source(action):
+    if documentary_mode():
+        from demo import chainlit_mabselect
+        await chainlit_mabselect.source(action)

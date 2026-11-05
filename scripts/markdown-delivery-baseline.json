@@ -1,12 +1,4 @@
 {
-  "docs/CYTIVA-FLOWSHOT-HOSTING.md": {
-    "internal-git-status:55eb1ae8ab9547253b90295bbd2871e0d2be5957d5d82e3834a477bb9ffa8913": 1,
-    "internal-git-status:8c50f4101912e277165ce46b3d5176b0f96da0dd37bdfceb90f792f67b472780": 1
-  },
-  "docs/CYTIVA-VIDEO-HOSTING.md": {
-    "internal-git-status:767d1aa4542b73662492ee536685fd673cdcc3dccb30c4df2cdd3086ac0c70d8": 1,
-    "internal-git-status:b98640f15bf626f6ddd38f0a8373b9b75b9d3fab847badc7a2ec0ac2b5b664a1": 1
-  },
   "docs/experiments/cytiva-demo-installation-review.md": {
     "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1,
     "proposed-git-action:e9e70c4535f7c39e5026a3040748bc1782fc5d4912e8071d01b606509e54978e": 1
@@ -24,9 +16,6 @@
   },
   "docs/experiments/free-text-v02-reviewed-package.md": {
     "delivery-heading:35a744b8303f357cb5f4081e9b55b5e9a0758f6263ecfb107cd5e27e2b115fc2": 1
-  },
-  "docs/schemas/reviewed-serving-v1/README.md": {
-    "internal-git-status:4e535a2c75d57595a84d97ceea4ce4c69dbc9c349f9fda0a3e3ba0c6c2fe0a81": 1
   },
   "docs/technical/FREE-TEXT-RUNTIME-REVIEW-V02.md": {
     "internal-git-status:f21bc68a6f90ae1e5855bb18c605d11b77d4ee66838e0e7ee2c36a2a1c66cb01": 1
@@ -132,10 +121,6 @@
   "docs/validation/SEPHAROSE-CANDIDATE-PACKAGE.md": {
     "delivery-heading:c3859d6c2f3587de182622c5054c6f39221e80f133b35ed596b76899319c1544": 1,
     "internal-git-status:e911887094b3173a3c541be0404fb18a95fb48a675371c684c7ca7df92fe1fbe": 1
-  },
-  "docs/validation/WINDOWS-SECOND-PC.md": {
-    "proposed-git-action:2a5c1128e782c9180996304f07aa4c2f9b46f230110bce2a72f6b9a706c3e4fd": 1,
-    "proposed-git-action:748f9db01a198ec568a433f467124d73406574ed02bf084ce48c6594d676cbbf": 1
   },
   "experiments/cytiva/free-text-v02-comparison-v01/REVIEW-SUMMARY.md": {
     "internal-git-status:8adbeb848971666ca6da62a60720cb5b8cf2fcd159b7393438a950a306914a78": 1

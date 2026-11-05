@@ -62,7 +62,7 @@ Safe ASCII IDs are limited to 96 characters and optional input labels to 2,048 c
 - All nine schema documents pass the local Draft 2020-12 meta-schema check.
 - All local `$ref` targets resolve in the offline registry.
 - All 32 labelled structural cases match their declared validity, including the six original SX request shapes, missing/wrong-type product, unknown selectors, task/item limits, source-ID omission, restricted-product expansion, missing activation decision and authority-injection rejection.
-- Original decision messages, bound proposals, source facts, v03, sixteen old notes and the pilots remain unchanged. This is schema preparation validation, not an executed release or adapter-conformance result.
+- These checks verify the schema and its fixtures. Release and adapter conformance require separate checks.
 
 Reproduce structural checks with the already prepared environment's `jsonschema` and `referencing` development tools (no runtime dependency or automatic installation is introduced):
 

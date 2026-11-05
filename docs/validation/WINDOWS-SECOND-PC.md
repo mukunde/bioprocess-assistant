@@ -165,36 +165,10 @@ personal paths before returning them; use a machine alias, not a serial number.
   failures. After the second-PC result is reviewed, prioritize a short demonstration
   and concrete usability feedback, then a bounded troubleshooting workflow.
 
-## Preparation verification and delivery inventory
+## Preparation checks
 
-Preparation checkpoint: 28 October 2026. Local checks resolve 32 documentation
-links and the referenced heading anchor, confirm the pinned application commit
-exists, and parse all ten PowerShell command blocks in this protocol and the
-linked setup guide under PowerShell 5.1 and 7. Parsing does not execute the
-commands. The result sheet has twelve mandatory rows and two optional rows, all
-`NOT_RUN`, and its overall status remains `NOT_RUN`.
-
-The v03 runtime/environment check verifies all 36 pinned files and the unchanged
-method-lock digest. The sixteen excluded older local notes retain their original
-hashes. No new runtime behavior, full-suite run or second-PC result is claimed.
-
-The compact documentation delivery contains exactly four files:
-
-| File | Purpose |
-|---|---|
-| `docs/validation/WINDOWS-SECOND-PC.md` | Pinned commands, walkthrough, acceptance criteria and preparation checks |
-| `docs/validation/windows-second-pc-results-template.md` | Blank observations, evidence and retry sheet |
-| `docs/DEMO-FIRST.md` | Protocol links and aligned next-delivery priorities |
-| `docs/README.md` | Documentation-index entry |
-
-Proposed branch: `codex/cytiva-second-pc-protocol`.
-
-Proposed commit message:
-
-```text
-docs: prepare second-PC Windows validation protocol and result sheet
-```
-
-Completed results, raw logs, command extracts and local verification receipts
-remain outside this four-file inventory. The existing installer, launcher,
-frozen engine and historical decisions are unchanged.
+On 28 October 2026, the preparation checks resolved the protocol links,
+confirmed the pinned revision, and parsed all ten PowerShell blocks in
+PowerShell 5.1 and 7. The blank result sheet contains twelve mandatory and two
+optional checks. Record the second-PC outcomes in that sheet after running
+the protocol.

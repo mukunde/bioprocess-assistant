@@ -39,7 +39,6 @@ This is a captured tour of the separately developed MabSelect journey, not a liv
 - Three targeted tests passed: exact twelve-file allowlist and original assets, altered-capture rejection, and preservation of nonempty output. Tests used a workspace-local temporary directory because the managed environment's default temporary location denied access.
 - The assembled local site was exercised at the video root and `/flowshot/`: all four screens, three hotspots, Back, Restart and return-to-video navigation worked. No console warning or error was observed during the walkthrough.
 - At preparation time, only local output had been verified. The public verification below supersedes that pending status.
-- Frozen v03 and its environment were verified; prior pilots, sixteen excluded notes and unrelated local work were checked by hashes. No application suite or new retrieval experiment was run for this static hosting change.
 
 ## Public verification — 1 November 2026
 
@@ -47,5 +46,5 @@ This is a captured tour of the separately developed MabSelect journey, not a liv
 - Exercised problem → result → E167-W citation → clarification, using all three hotspots. The original product scope, PDF page 167 and pressure warning remained visible. Back and Restart worked.
 - Followed **Watch the video** to the existing root player, then its walkthrough link back to `/flowshot/`. This checks navigation; video playback was not re-evaluated in this session.
 - No console warnings or errors were observed during the walkthrough. This does not certify every browser or mobile display, accessibility, backend execution, retrieval accuracy or scientific suitability.
-- Build and deploy jobs succeeded. Three targeted publication tests passed on merged `main`; the full application suite was not rerun for this publication. Frozen v03 verified its 36 pins and environment. Sixteen excluded notes, the first pilot and unrelated local work retained their hashes.
+- Build and deploy jobs succeeded. Three targeted publication tests passed on the deployed revision.
 - The package manifest's preparation status, captured source hashes and original local HTML labels remain historical provenance. The deployment builder adapts the served HTML without editing those source assets. Subsequent documentation edits refresh only the affected documentation digests.

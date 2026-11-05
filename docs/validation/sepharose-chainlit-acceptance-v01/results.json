@@ -1,0 +1,193 @@
+{
+  "tested_commit": "85bf82e6006497efcde64778286dde83381255a7",
+  "run_date": "2026-11-05",
+  "plan_sha256_lf": "0965c1686110c71f36c5c318c31fe63a6e5e889764b9b0247297bfdfa7af41b2",
+  "original_plan_sha256": "ddeb1adf9491bbe5047be5ace13ad148e11a16168f6cef9f336c0105b08aff52",
+  "method": "Authenticated Chainlit server and client protocol on loopback",
+  "serving_activated": false,
+  "pass_count": 7,
+  "case_count": 7,
+  "cases": [
+    {
+      "id": "S01",
+      "status": "PASS",
+      "citations": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "source_check": null,
+      "candidate_files_identical": true,
+      "stale_source_rejected": null
+    },
+    {
+      "id": "S02",
+      "status": "PASS",
+      "citations": [
+        "E166-H",
+        "E166-P",
+        "E166-PH",
+        "E166-T"
+      ],
+      "source_check": {
+        "source": "E166-P",
+        "page": 166,
+        "scoped_reviews": [
+          "Q02"
+        ],
+        "quote_sha256": "8bf9ca16f1315804c4c845ee8c7525bce4d46ae059add2780ccf54f678ea294a"
+      },
+      "candidate_files_identical": true,
+      "stale_source_rejected": null
+    },
+    {
+      "id": "S03",
+      "status": "PASS",
+      "citations": [
+        "E166-D",
+        "E166-E",
+        "E166-H",
+        "E166-LH",
+        "E166-T",
+        "E166-W"
+      ],
+      "source_check": {
+        "source": "E166-W",
+        "page": 166,
+        "scoped_reviews": [
+          "Q04"
+        ],
+        "quote_sha256": "7797d4915199bbd9b171dbc9abe23b24d262772c81a45334be6cdeb87f8789a6"
+      },
+      "candidate_files_identical": true,
+      "stale_source_rejected": null
+    },
+    {
+      "id": "S04",
+      "status": "PASS",
+      "citations": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "source_check": null,
+      "candidate_files_identical": true,
+      "stale_source_rejected": null
+    },
+    {
+      "id": "S05",
+      "status": "PASS",
+      "citations": [
+        "E166-D",
+        "E166-H",
+        "E166-LH",
+        "E166-T"
+      ],
+      "source_check": {
+        "source": "E166-D",
+        "page": 166,
+        "scoped_reviews": [
+          "Q03"
+        ],
+        "quote_sha256": "bcbd79c41086a3e15e68eb72846f6e6d914aa1c3d273f3454eec2ecdcfc87704"
+      },
+      "candidate_files_identical": true,
+      "stale_source_rejected": null
+    },
+    {
+      "id": "S06",
+      "status": "PASS",
+      "citations": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "source_check": null,
+      "candidate_files_identical": true,
+      "stale_source_rejected": true
+    },
+    {
+      "id": "S07",
+      "status": "PASS",
+      "citations": [
+        "E166-E",
+        "E166-H",
+        "E166-LH",
+        "E166-T",
+        "E166-W"
+      ],
+      "source_check": {
+        "source": "E166-W",
+        "page": 166,
+        "scoped_reviews": [
+          "Q04"
+        ],
+        "quote_sha256": "7797d4915199bbd9b171dbc9abe23b24d262772c81a45334be6cdeb87f8789a6"
+      },
+      "candidate_files_identical": true,
+      "stale_source_rejected": null
+    }
+  ],
+  "attempts": [
+    {
+      "attempt": "nested_windows_root",
+      "raw_results_sha256": "9069c406f4aaf261f39acd2e8fa796815877a1b5f4db470634151e9a67825619",
+      "case_status": {
+        "S01": "PASS",
+        "S02": "ERROR",
+        "S03": "ERROR",
+        "S04": "PASS",
+        "S05": "ERROR",
+        "S06": "PASS",
+        "S07": "ERROR"
+      }
+    },
+    {
+      "attempt": "short_root_client_download_error",
+      "raw_results_sha256": "334ba5976083887b43c26412162c764bfa899923d958239dd7b41f25bb9e84d6",
+      "case_status": {
+        "S01": "PASS",
+        "S02": "ERROR",
+        "S03": "ERROR",
+        "S04": "PASS",
+        "S05": "ERROR",
+        "S06": "PASS",
+        "S07": "ERROR"
+      }
+    },
+    {
+      "attempt": "final_replay",
+      "raw_results_sha256": "66d0bcaa58cbf85dead4f893c496e4fcc2449ceca665a021edd39babe29ed444",
+      "case_status": {
+        "S01": "PASS",
+        "S02": "PASS",
+        "S03": "PASS",
+        "S04": "PASS",
+        "S05": "PASS",
+        "S06": "PASS",
+        "S07": "PASS"
+      }
+    }
+  ],
+  "windows_attachment_probe": {
+    "path_length_characters": 282,
+    "exception": "FileNotFoundError",
+    "errno": 2,
+    "final_replay_used_short_temporary_root": true
+  }
+}

@@ -26,9 +26,9 @@ Broader telemetry, independent answer evaluation and the common-corpus retrieval
 comparison remain pending. PR87 merges the reusable local request → source → trace
 demo and read-only metadata summary. PR89 merges the explicit model-free MabSelect
 mode in Chainlit, reusing guided controls and approved registry authority; the
-default graph route remains unchanged. Next: extend the already reviewed Protein
-A/G Sepharose backpressure journey through an additive documentary adapter and a
-separately staged release candidate, without expanding active MabSelect authority.
+default graph route remains unchanged. PR91 merges the reviewed Protein A/G
+Sepharose backpressure candidate and its explicit Chainlit preview. The next
+priority is focused acceptance of the staged candidate on new guided requests.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
@@ -90,17 +90,22 @@ is published, while the executable Python application remains local.
 | 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling. PR85 records four browser scenarios, nine source checks and 37 spans; PR87 adds the reusable local demo/read-only metadata summary; PR89 reuses registry-operation tracing in Chainlit | Compatible Chainlit trace-summary UI, broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions; PR89 adds corrected guided MabSelect support in Chainlit with 24 adapter tests | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged; backpressure registry handoff and legacy graph migration pending |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions; PR89 adds corrected guided MabSelect support in Chainlit with 24 adapter tests | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged; staged Protein A/G candidate acceptance and legacy graph migration pending |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest verified merged baseline: `main` at `053de44`, including
+Latest verified merged baseline is `main` at `73f2517`, including
+[PR91](https://github.com/mukunde/bioprocess-assistant/pull/91) (staged Protein A/G Sepharose candidate) and
 [PR89](https://github.com/mukunde/bioprocess-assistant/pull/89) (guided Chainlit documentary mode),
 [PR87](https://github.com/mukunde/bioprocess-assistant/pull/87) (reusable trace demo),
 [PR85](https://github.com/mukunde/bioprocess-assistant/pull/85) (instrumented UI walkthrough)
 and [PR83](https://github.com/mukunde/bioprocess-assistant/pull/83) (corrected local tracing),
 after [PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
 and [PR81](https://github.com/mukunde/bioprocess-assistant/pull/81) (presentation v02).
-The maintained suite on that merged baseline ran **1,015 tests: 1,014 passed and
+On merged `73f2517`, the maintained suite ran **1,050 tests** with **1,049
+passes and one optional PDFium preview skip**, with zero failures or errors
+(620.805 seconds). Both existing freezes verified after the run.
+
+The earlier merged baseline at `053de44` ran **1,015 tests: 1,014 passed and
 one optional PDFium preview skip**, no failures/errors, in 562.820 seconds. It
 includes **24 Chainlit adapter tests**, **18 trace-demo tests** and **28 tracing
 tests**. Both original freezes were verified again after execution. The earlier
@@ -194,15 +199,22 @@ These are known-source conformance checks, not a new independent acceptance scor
 Generic shell presentation and sign-in diagnostics remain documented. Existing
 messages are snapshots; withdrawals cannot erase text already displayed.
 
-**Next priority: bring the existing reviewed rising-backpressure journey into
-the documentary service and Chainlit.** Reuse Protein A/G Sepharose sources and
-review limits through an additive adapter and a separately staged release
-candidate. Keep that scope distinct from MabSelect cleaning: do not transfer
-recipes between products, diagnose a deposit from pressure alone or invent a
-numerical pressure limit. Verify citations, clarification, abstention and scoped
-withdrawals in disposable stores before any separately reviewed activation.
-This extension is not implemented; the active private registry remains unchanged.
-No LLM, paid API, new freeze or whole-manual review is needed by default.
+**The Protein A/G Sepharose backpressure candidate is merged and staged.**
+The explicit `BIOPROCESS_MODE=sepharose_candidate` workbench serves scoped
+Q01–Q04 and Q09 evidence for preview. It preserves separate cleaning options and
+their precautions, asks for missing product or context, and abstains from giving
+an unsupported numerical pressure limit. In withdrawal simulations, eligible
+clarification remains available when independent support is held. The candidate
+remains non-activated and uses separate local artifacts.
+See the [operator guide](CHAINLIT-SEPHAROSE-CANDIDATE.md) and the
+[corrected review](validation/SEPHAROSE-CANDIDATE-CORRECTIONS.md).
+
+**Next priority is a focused acceptance check of the staged candidate.**
+Define a small set of new guided requests with expected outcomes before running
+them in the explicit Chainlit preview on disposable candidate data. Cover
+product boundaries, clarification during a simulated withdrawal, complete
+citations and precautions, and abstention on numerical pressure. Record outcomes
+and gaps for a separate activation decision.
 
 Earlier registry-UI baseline: `main` at `c230f14`, including
 [PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
@@ -539,23 +551,18 @@ an independent prospective score; all source/retrieval behavior remains the same
 
 ### Next delivery priorities
 
-1. **Bring reviewed backpressure support into the documentary service and Chainlit.**
-   Reuse the existing Protein A/G Sepharose journey's reviewed sources and limits
-   through an additive adapter and separately staged release candidate. Preserve
-   product/category ownership, alternative versus sequential treatments and the
-   ethanol pressure precaution. No deposit diagnosis, numerical pressure limit,
-   missing volume or transfer of a Sepharose recipe to MabSelect may be inferred.
-   Exit: a guided pressure request can clarify unknown product/context, display
-   complete scoped options with live-checked citations, abstain or withhold
-   withdrawn support, and retain independent warnings. Verify faults/withdrawals
-   on disposable authority. Review the candidate release before activation; keep
-   the approved private MabSelect store unchanged. This extension is pending;
-   the existing standalone journey and merged MabSelect mode remain available.
-   No LLM, paid API, new freeze or whole-manual review is required by default.
+1. **Run focused acceptance of the staged Protein A/G Sepharose candidate.**
+   Specify a small set of new guided requests and expected outcomes before
+   running them in the explicit Chainlit preview. Use disposable candidate data
+   for simulated withdrawals. Check exact product scope, missing-field
+   clarification, separation of alternatives, complete citations and the ethanol
+   pressure precaution, and abstention on a numerical pressure limit. Include a
+   case where clarification survives a withdrawal and a case where a missing
+   warning blocks its entire option. Exit with a recorded outcome for each case,
+   including any blocking gap. Use the results for a separate activation decision.
 2. **Validate new behavior and portability without repeating completed work.**
-   Use PR89's passing adapter regressions and browser observations as the baseline;
-   add checks for the new pressure scope rather than another generic MabSelect
-   rehearsal. Retain PR85/PR87 observations and historical UA references. Apply the
+   Use the passing PR89 and PR91 adapter regressions as the baseline for their
+   respective scopes. Retain PR85/PR87 observations and historical UA references. Apply the
    existing second-PC protocol when another physical Windows PC is available;
    same-PC isolated setup is not that gate. Preserve the existing UA trial and
    freezes. Keep installer, legacy chat and public screenshot/video tours separate
@@ -982,8 +989,9 @@ merged in PR78; PR80 records bounded UA01-UA08 acceptance and PR81 adds the
 separate display v02; PR83 adds its optional local tracing and PR85 records the
 completed instrumented UI rehearsal. PR87 merges the reusable local trace demo
 and read-only metadata summary. PR89 merges the corrected guided MabSelect
-mode in Chainlit; the default graph route stays unchanged. Next is the reviewed
-Protein A/G Sepharose backpressure handoff through a separately staged candidate.
+mode in Chainlit; the default graph route stays unchanged. PR91 adds the
+separately staged Protein A/G Sepharose candidate. Focused acceptance in the
+explicit Chainlit preview is the next delivery priority.
 Independent acceptance beyond the known corpus, broader observability and legacy
 graph migration remain pending, as described above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

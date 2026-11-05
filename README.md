@@ -37,7 +37,8 @@ The optional MP4 download remains available. The same site now hosts the recorde
 ## Current status
 
 Status reviewed on 5 November 2026. Latest verified merged checkpoint:
-`main` at `053de44`, including [PR #89](https://github.com/mukunde/bioprocess-assistant/pull/89)
+`main` at `73f2517`, including [PR #91](https://github.com/mukunde/bioprocess-assistant/pull/91)
+for the staged Protein A/G Sepharose candidate, and [PR #89](https://github.com/mukunde/bioprocess-assistant/pull/89)
 for guided MabSelect support in Chainlit, [PR #87](https://github.com/mukunde/bioprocess-assistant/pull/87)
 for the reusable local trace demo, [PR #85](https://github.com/mukunde/bioprocess-assistant/pull/85)
 for the instrumented UI walkthrough and [PR #83](https://github.com/mukunde/bioprocess-assistant/pull/83)
@@ -70,7 +71,11 @@ have separate traces. SDK/export failures remain nonblocking, with fixed-phase
 diagnostics and bounded cleanup. Request content, quotations and exception details
 are excluded. Responses and source HTML retain their existing content.
 
-On merged `053de44`, the maintained suite finished with **1,015 tests:
+On merged `73f2517`, the maintained suite ran **1,050 tests** with **1,049
+passes and one optional PDFium preview skip**, with zero failures or errors
+(620.805 seconds). Both existing freezes verified after the run.
+
+At the earlier `053de44` checkpoint, the maintained suite finished with **1,015 tests:
 1,014 passed and one optional PDFium preview skip**, no failures or errors
 (562.820 seconds). This includes **24 Chainlit documentary adapter tests**,
 **18 local trace-demo tests** and **28 tracing tests**. Both original freezes
@@ -137,15 +142,22 @@ These are known-source conformance checks, not a new independent acceptance scor
 Generic shell presentation and sign-in diagnostics remain documented. Existing
 messages are snapshots; withdrawals cannot erase text already displayed.
 
-**Next priority: bring the existing reviewed rising-backpressure journey into
-the documentary service and Chainlit.** Reuse Protein A/G Sepharose sources and
-review limits through an additive adapter and a separately staged release
-candidate. Keep that scope distinct from MabSelect cleaning: do not transfer
-recipes between products, diagnose a deposit from pressure alone or invent a
-numerical pressure limit. Verify citations, clarification, abstention and scoped
-withdrawals in disposable stores before any separately reviewed activation.
-This extension is not implemented; the active private registry remains unchanged.
-No LLM, paid API, new freeze or whole-manual review is needed by default.
+**The Protein A/G Sepharose backpressure candidate is merged and staged.**
+The explicit `BIOPROCESS_MODE=sepharose_candidate` workbench serves scoped
+Q01–Q04 and Q09 evidence for preview. It preserves separate cleaning options and
+their precautions, asks for missing product or context, and abstains from giving
+an unsupported numerical pressure limit. In withdrawal simulations, eligible
+clarification remains available when independent support is held. The candidate
+remains non-activated and uses separate local artifacts.
+See the [operator guide](docs/CHAINLIT-SEPHAROSE-CANDIDATE.md) and the
+[corrected review](docs/validation/SEPHAROSE-CANDIDATE-CORRECTIONS.md).
+
+**Next priority is a focused acceptance check of the staged candidate.**
+Define a small set of new guided requests with expected outcomes before running
+them in the explicit Chainlit preview on disposable candidate data. Cover
+product boundaries, clarification during a simulated withdrawal, complete
+citations and precautions, and abstention on numerical pressure. Record outcomes
+and gaps for a separate activation decision.
 
 Earlier registry-UI checkpoint (3 November 2026):
 `main` at `c230f14`, including [PR #78](https://github.com/mukunde/bioprocess-assistant/pull/78).
@@ -663,11 +675,10 @@ including bindings, not a future answer prompt or output. The 33 r2-extracted
 claims still do not feed the default graph chat. The new Chainlit documentary
 mode serves separately reviewed cleaning excerpts, not those extracted claims.
 
-**Next delivery:** connect the existing
-[reviewed Protein A/G Sepharose backpressure journey](docs/validation/CYTIVA-TROUBLESHOOTING-DEMO.md)
-to the documentary service and Chainlit through a separately staged candidate.
-Preserve product boundaries and review activation before serving the new scope;
-the active private registry stays unchanged. See the [roadmap](docs/ROADMAP.md).
+The [staged Protein A/G Sepharose candidate](docs/CHAINLIT-SEPHAROSE-CANDIDATE.md)
+now brings the reviewed backpressure journey into the documentary service and
+Chainlit. The [roadmap](docs/ROADMAP.md) defines the focused acceptance check
+that will inform a separate activation decision.
 
 The reusable summary/demo is merged in PR #87. Broader model-call accounting,
 Ragas judges and Promptfoo attacks remain separate pending work.
@@ -693,8 +704,8 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Extend the existing reviewed Protein A/G Sepharose backpressure journey to the documentary service and Chainlit through an additive adapter and separately staged release candidate. Preserve exact product scope, conditions and essential warnings; keep the active MabSelect authority unchanged.
-2. Test the new scope's citations, focused clarification, abstention and withdrawals in disposable stores; retain MabSelect as a regression baseline. Review the new release before any activation. No model, paid API, new freeze or whole-manual review by default.
+1. Specify new Protein A/G Sepharose acceptance cases and their expected outcomes for the staged Chainlit preview.
+2. Run the cases with disposable candidate data and record evidence, failures and their impact. Review the results before making a separate activation decision.
 3. Apply the second-physical-PC protocol when hardware is available. Keep the working local trace demo, installer and recorded tours separate; reopen completed work only for a changed behavior or measured failure.
 4. Add model-call budgets/accounting, calibrated Ragas for generated answers and Promptfoo with benign controls when those paths exist; deterministic registry tracing does not complete them.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.

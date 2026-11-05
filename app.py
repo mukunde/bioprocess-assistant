@@ -41,6 +41,10 @@ def auth_callback(username: str, password: str):
 
 @cl.on_chat_start
 async def start():
+    if os.environ.get('BIOPROCESS_MODE') == 'sepharose_candidate':
+        from demo import chainlit_sepharose
+        await chainlit_sepharose.start()
+        return
     if documentary_mode():
         from demo import chainlit_mabselect
         await chainlit_mabselect.start()
@@ -79,6 +83,10 @@ async def start():
 
 @cl.on_settings_update
 async def on_settings_update(settings):
+    if os.environ.get('BIOPROCESS_MODE') == 'sepharose_candidate':
+        from demo import chainlit_sepharose
+        await chainlit_sepharose.settings_update(settings)
+        return
     if documentary_mode():
         from demo import chainlit_mabselect
         await chainlit_mabselect.settings_update(settings)
@@ -88,6 +96,10 @@ async def on_settings_update(settings):
 
 @cl.on_message
 async def on_message(message: cl.Message):
+    if os.environ.get('BIOPROCESS_MODE') == 'sepharose_candidate':
+        from demo import chainlit_sepharose
+        await chainlit_sepharose.free_text()
+        return
     if documentary_mode():
         from demo import chainlit_mabselect
         await chainlit_mabselect.free_text()
@@ -123,13 +135,27 @@ async def on_message(message: cl.Message):
 
 @cl.action_callback("mabselect_submit")
 async def mabselect_submit(action):
-    if documentary_mode():
+    if documentary_mode() and os.environ.get('BIOPROCESS_MODE') != 'sepharose_candidate':
         from demo import chainlit_mabselect
         await chainlit_mabselect.submit(action)
 
 
 @cl.action_callback("mabselect_source")
 async def mabselect_source(action):
-    if documentary_mode():
+    if documentary_mode() and os.environ.get('BIOPROCESS_MODE') != 'sepharose_candidate':
         from demo import chainlit_mabselect
         await chainlit_mabselect.source(action)
+
+
+@cl.action_callback('sepharose_submit')
+async def sepharose_submit(action):
+    if os.environ.get('BIOPROCESS_MODE') == 'sepharose_candidate':
+        from demo import chainlit_sepharose
+        await chainlit_sepharose.submit(action)
+
+
+@cl.action_callback('sepharose_source')
+async def sepharose_source(action):
+    if os.environ.get('BIOPROCESS_MODE') == 'sepharose_candidate':
+        from demo import chainlit_sepharose
+        await chainlit_sepharose.source(action)

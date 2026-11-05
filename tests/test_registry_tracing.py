@@ -22,6 +22,7 @@ from tests import test_registry_ui as baseline
 
 class RegistryTracingTests(unittest.TestCase):
     def setUp(self):
+        self.request_servers = []
         self.fixture = baseline.RegistryUIIntegrationTests(
             "test_clarification_and_scoped_pressure_abstention")
         self.addCleanup(self.fixture.doCleanups)
@@ -36,6 +37,22 @@ class RegistryTracingTests(unittest.TestCase):
 
     def start(self, tracing, root=None):
         server = ui.create_server(root or self.fixture.root, port=0, tracing=tracing)
+        # Reading Content-Length bytes does not imply do_POST's span finally ran.
+        # Synchronize test collection with handler completion, not exporter timing.
+        server.test_condition = threading.Condition()
+        server.test_pending = 0
+        original_finish = server.finish_request
+        def finish_request(*args):
+            with server.test_condition:
+                server.test_pending += 1
+            try:
+                original_finish(*args)
+            finally:
+                with server.test_condition:
+                    server.test_pending -= 1
+                    server.test_condition.notify_all()
+        server.finish_request = finish_request
+        self.request_servers.append(server)
         thread = threading.Thread(target=lambda: server.serve_forever(poll_interval=.02), daemon=True)
         thread.start()
         def stop():
@@ -47,6 +64,10 @@ class RegistryTracingTests(unittest.TestCase):
         return self.fixture.evaluate(value, server=server or self.server, headers=headers)
 
     def spans(self, tracing=None, exporter=None):
+        for server in self.request_servers:
+            with server.test_condition:
+                self.assertTrue(server.test_condition.wait_for(lambda: server.test_pending == 0, timeout=5),
+                                'HTTP handler did not finish before trace collection')
         self.assertTrue((tracing or self.tracing).flush())
         return (exporter or self.exporter).get_finished_spans()
 
@@ -70,6 +91,42 @@ class RegistryTracingTests(unittest.TestCase):
             self.assertEqual(span.status.status_code.name, "UNSET")
             self.assertFalse(span.events)
         self.assertEqual(parent.attributes["http.response.status_code"], 200)
+
+    def test_span_collection_waits_for_parent_end_after_response_bytes_arrive(self):
+        root_waiting, release_root = threading.Event(), threading.Event()
+        collecting, collected = threading.Event(), threading.Event()
+        result, errors = [], []
+        original = subject.Span.end
+        def delayed_end(span):
+            if span.raw is not None and span.raw.kind.name == 'SERVER':
+                root_waiting.set()
+                release_root.wait(timeout=5)
+            original(span)
+        def collect():
+            collecting.set()
+            try:
+                result.extend(self.spans())
+            except BaseException as error:
+                errors.append(error)
+            finally:
+                collected.set()
+        worker = threading.Thread(target=collect, daemon=True)
+        try:
+            with patch.object(subject.Span, 'end', delayed_end):
+                status, _, data = self.evaluate()
+                self.assertEqual((status, data['status']), (200, 'supported'))
+                self.assertTrue(root_waiting.wait(timeout=2))
+                worker.start()
+                self.assertTrue(collecting.wait(timeout=2))
+                self.assertFalse(collected.wait(timeout=.05), 'Collector must wait for the HTTP root to end')
+                release_root.set()
+                self.assertTrue(collected.wait(timeout=5))
+        finally:
+            release_root.set()
+            if worker.ident is not None:
+                worker.join(timeout=5)
+        self.assertEqual(errors, [])
+        self.assert_pair(result, 'registry.evaluate')
 
     def test_citation_is_a_separate_trace_and_exact_source_body_is_retained(self):
         _, _, data = self.evaluate()

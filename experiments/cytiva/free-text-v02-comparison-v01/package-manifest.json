@@ -7,7 +7,7 @@
   "method_lock_sha256_lf": "76a6e340d4fe9e82119a38c4ff263de2a2585ca474aac3613df20cc2d90722af",
   "files_sha256_lf": {
     "README.md": "ca730fb34c584ff6d7ea8a7aa6fa38dfba77589a1abcaf19c09b8e646f288eb6",
-    "docs/ROADMAP.md": "d580bcc922d5d156727cff2cf32c6d135e557916d66dc5022e0118bbb2d376a3",
+    "docs/ROADMAP.md": "7b82a7f8e069e09d5016094da87236e5673ac031f04a1c7c4e548fc3a8ab84e9",
     "docs/experiments/free-text-v02-comparison-v01-preparation.json": "ba570461f709c631def2a870d969c41bf98b344abcfc9fbd939f151fe0139ce5",
     "docs/experiments/free-text-v02-comparison-v01-preparation.md": "f60aa911cafed0cde387356586025b29052f7c62e8bb3c1fa283723f6c3f2aca",
     "docs/experiments/free-text-v02-comparison-v01-results-checks.json": "984a4ced15ab31aed4844f7a7718429002e1bca2704d7bf50e05630ab8d29f3c",
@@ -41,7 +41,7 @@
     "experiments/cytiva/free-text-v02-comparison-v01/review.json": "f22dcb2bbff636e612aee617544cc262a918fab1d5bd981587171a046fef9d3f",
     "experiments/cytiva/free-text-v02-comparison-v01/submissions.json": "3c977c97baea006eff8a387f7314f87b27e93c9b7f15937619a0b528876261b2",
     "experiments/cytiva/free_text_v02_evaluation.py": "1fc3229a3230b84297ab49413c4c9a1118569c3c9529b28cc65392eff471eccf",
-    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "caddc36b1f3e0b1acf6bca6c7215afeed919bf3a4e985e2923a854be37014f4b",
+    "experiments/cytiva/reviewed-v05-evaluation/manifest.json": "508cd0438c1b9f84f33f97eeb924d12178a0226ed44c40885b5772f071f6ec81",
     "tests/test_free_text_v02_evaluation.py": "3bff85e5a44967c1e6834b91f520a9d9dea33e9c46d323bcff3fd052f1b9780e"
   },
   "prior_merged_main": {

@@ -76,8 +76,7 @@ existing source/dependency manifests remain authoritative and unchanged.
   was 22.58 s after the controls check. Narrow-window layout was visually inspected.
 - Python syntax and YAML parsing pass; the only deployment trigger is manual.
   The builder rejects a nonempty output directory rather than replacing its files.
-- The reviewed video-package verifier passes. Frozen v03 verifies all 36 pins and
-  its environment; the 16 old notes and previous production files match their hashes.
+- The reviewed video package passed verification.
 - Hosted playback had not yet been tested at this preparation stage; the public
   verification below supersedes that pending status. The application suite was
   not rerun for this page.
@@ -95,10 +94,6 @@ existing source/dependency manifests remain authoritative and unchanged.
   manually downloading the MP4; the browser still transfers its data normally.
 - The deployed workflow verified the reviewed package and prepared only the
   three allowlisted files. The original exports and approval records were unchanged.
-- After the merge, local `main` matched `origin/main` at `497f0f1`. Frozen v03 and its
-  environment verified; the 16 old notes and previous production files retained
-  their hashes. No new model inference, application trial or application suite
-  run was part of this media-publication check.
 - GitHub emitted non-blocking runner notices about deprecated Node 20 action
   targets being forced onto Node 24, and the `ubuntu-latest` migration. Build and
   deployment both succeeded; action/runtime maintenance is separate follow-up work.

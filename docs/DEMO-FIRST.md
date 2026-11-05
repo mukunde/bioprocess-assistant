@@ -1,11 +1,8 @@
-# Demo-first delivery: local Cytiva evidence explorer
+# Run the local Cytiva evidence explorer
 
-## Priority and current slice
+## Explore the demo
 
-The user explicitly selected the local, free guided Cytiva route on 27 October
-2026. The first product checkpoint is a usable request-to-citation path. Do not
-gate it on another twelve-question review campaign, a new graph framework or a
-broader corpus.
+Use the guided demo to inspect reviewed Cytiva passages and their citations.
 
 Corrected v03 is [frozen separately](../experiments/cytiva/free-text-v03-freeze-v01/README.md).
 The first local UI is implemented in [demo/cytiva.py](../demo/cytiva.py). It calls
@@ -20,7 +17,7 @@ clarification behavior. Source quotations remain in their original English.
 
 ## Install from a fresh Windows clone
 
-The current local development checkout also includes a first bounded
+The demo includes a
 [backpressure troubleshooting journey](validation/CYTIVA-TROUBLESHOOTING-DEMO.md).
 Choose **Troubleshooting · rising backpressure** to explore the reviewed Protein
 A/G Sepharose cleaning context and its documentary alternatives. It is separate
@@ -154,7 +151,7 @@ units are missing. All admitted passages, required scope, conditions and warning
 remain visible. Each supported unit links to its bound source bundle. Absence is
 limited to the selected excerpts, not the entire Cytiva manual.
 
-## Next deliveries and stop rules
+## Further validation
 
 The approved [34-second video](https://mukunde.github.io/bioprocess-assistant/)
 is published on GitHub Pages (29 October 2026). Clicking the README poster and

@@ -4,7 +4,7 @@
 
 Source: *Affinity Chromatography Vol. 1: Antibodies*, CY13981-25Jan21-HB. Original/printed pages 97–99 correspond to excerpt pages 1–3.
 
-[Open the local pages 97–99 excerpt](<../../references/cytiva-hitrap-sure-pages-097-099.pdf>)
+[Open the Cytiva handbook at page 97 (distributor copy)](https://www.mz-at.de/media/fileadmin/user_upload/Downloads/cytiva/Technical-Support_Datasheets_Anwendungen/cytiva_affinity-chromatography-antibodies_hplc_technical-support.pdf#page=97)
 
 Proposed shared scope: **HiTrap MabSelect SuRe**. Check the heading/introduction on p.97; the sections on pp.98–99 continue until the new heading “MabSelect SuRe LX”. Evidence for this scope is stored separately in the JSON.
 

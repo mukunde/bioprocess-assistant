@@ -75,6 +75,34 @@ class ChainlitSepharoseTests(unittest.IsolatedAsyncioTestCase):
         self.assertTrue(view['reviews'][0]['original_human_message'])
         self.assertFalse(view['serving_activated'])
 
+    async def test_windows_long_path_sends_complete_provenance_in_one_message(self):
+        await app.start()
+        await self.run_request()
+        token = next(t for t, ref in self.state()['sources'].items() if ref[1] == 'E166-W')
+        before = len(self.messages)
+        long_dir = self.root / ('x' * 220)
+        context = SimpleNamespace(session=SimpleNamespace(files_dir=long_dir))
+        with patch.object(ui.sys, 'platform', 'win32'), patch.object(ui.cl, 'context', context):
+            await app.sepharose_source(SimpleNamespace(payload={'token': token}))
+        self.assertEqual(len(self.messages), before + 1)
+        msg = self.messages[-1]
+        self.assertNotIn('elements', msg)
+        self.assertIn(api.NOTICE, msg['content'])
+        view = json.loads(msg['content'].split('\n```json\n', 1)[1].rsplit('\n```', 1)[0])
+        self.assertIn(ui.text(view['passage']['quote']), msg['content'])
+        self.assertEqual(view['passage']['source_id'], 'E166-W')
+        self.assertEqual(view['passage']['pdf_page_1based'], 166)
+        self.assertIn('Q04', [review['question_id'] for review in view['reviews']])
+        self.assertFalse(view['serving_activated'])
+
+    def test_attachment_limit_counts_utf16_code_units(self):
+        filename = '0' * 36 + (ui.mimetypes.guess_extension('text/plain') or '')
+        base = Path(self.temp.name)
+        suffix_length = 259 - len(str(base / 'a' / filename).encode('utf-16-le')) // 2
+        boundary = base / ('a' * (suffix_length + 1))
+        self.assertFalse(ui.provenance_requires_inline(boundary))
+        self.assertTrue(ui.provenance_requires_inline(boundary.with_name(boundary.name[:-1] + '🧪')))
+
     async def test_precipitated_sequence_has_no_recipe_transfer_or_added_duration(self):
         await app.start()
         msg = await self.run_request(product='Protein G Sepharose', context='Precipitated or denatured proteins')

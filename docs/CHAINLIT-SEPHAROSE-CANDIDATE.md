@@ -63,6 +63,11 @@ remain available separately, with their existing behavior.
    digest, PDF identity and full scoped human decisions are retained. The PDF is
    not redistributed. Source actions recheck candidate integrity and dependencies.
 
+On Windows, the preview checks the path Chainlit would use for a provenance
+attachment. If it reaches the legacy Windows path limit, the source response
+includes the same provenance as inline JSON. Short paths still use the Chainlit
+attachment.
+
 Text input only explains the guided controls; no model or free-text lookup runs.
 Legacy extraction-level `pending` source flags remain verbatim in provenance;
 the separate Q01–Q04/Q09 decisions establish only their specific documentary

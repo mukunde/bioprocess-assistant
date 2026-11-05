@@ -1,0 +1,199 @@
+{
+  "method": "Authenticated Chainlit Socket.IO and HTTP actions on loopback; real server, disposable staged candidates; no browser rendering claim",
+  "common": [
+    "Each response announces non-activation",
+    "Exact source button set matches expected IDs",
+    "Source opens require original quotation, page 166, review and provenance",
+    "Stale source action returns no new quotation"
+  ],
+  "cases": [
+    {
+      "id": "S01",
+      "product": "Not specified",
+      "context": "Hydrophobic proteins, lipoproteins or lipids",
+      "pressure": true,
+      "expect": [
+        "Clarification needed",
+        "Please specify the exact product in Settings",
+        "No numerical pressure limit"
+      ],
+      "forbid": [
+        "conditional_option",
+        "recommends cleaning",
+        "ethanol and let"
+      ],
+      "sources": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ]
+    },
+    {
+      "id": "S02",
+      "product": "Protein G Sepharose",
+      "context": "Precipitated or denatured proteins",
+      "pressure": true,
+      "expect": [
+        "Partial answer",
+        "Q02",
+        "6 M guanidine",
+        "Immediately",
+        "No numerical pressure limit"
+      ],
+      "forbid": [
+        "ethanol and let"
+      ],
+      "sources": [
+        "E166-H",
+        "E166-P",
+        "E166-PH",
+        "E166-T"
+      ],
+      "inspect": "E166-P",
+      "sourceText": "6 M guanidine",
+      "review": "Q02"
+    },
+    {
+      "id": "S03",
+      "product": "Protein G Sepharose",
+      "context": "Hydrophobic proteins, lipoproteins or lipids",
+      "pressure": false,
+      "expect": [
+        "Q03",
+        "Q04",
+        "Nonionic detergent",
+        "Alternative ethanol route",
+        "70% ethanol",
+        "lower flow rate"
+      ],
+      "sources": [
+        "E166-D",
+        "E166-E",
+        "E166-H",
+        "E166-LH",
+        "E166-T",
+        "E166-W"
+      ],
+      "inspect": "E166-W",
+      "sourceText": "lower flow rate",
+      "review": "Q04"
+    },
+    {
+      "id": "S04",
+      "product": "MabSelect — outside this candidate",
+      "context": "Precipitated or denatured proteins",
+      "pressure": true,
+      "expect": [
+        "No cleaning procedure or substitute",
+        "No numerical pressure limit",
+        "Q09"
+      ],
+      "forbid": [
+        "6 M guanidine",
+        "conditional_option",
+        "recommends cleaning"
+      ],
+      "sources": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ]
+    },
+    {
+      "id": "S05",
+      "product": "Protein A Sepharose",
+      "context": "Hydrophobic proteins, lipoproteins or lipids",
+      "pressure": true,
+      "holdSources": [
+        "E166-W"
+      ],
+      "expect": [
+        "Held review scopes: Q04",
+        "Q03",
+        "Nonionic detergent",
+        "No numerical pressure limit"
+      ],
+      "forbid": [
+        "Alternative ethanol route",
+        "ethanol and let"
+      ],
+      "sources": [
+        "E166-D",
+        "E166-H",
+        "E166-LH",
+        "E166-T"
+      ],
+      "inspect": "E166-D",
+      "sourceText": "nonionic detergent",
+      "review": "Q03"
+    },
+    {
+      "id": "S06",
+      "product": "Protein A Sepharose",
+      "context": "Unknown — help me clarify",
+      "pressure": true,
+      "holdReviews": [
+        "Q01"
+      ],
+      "expect": [
+        "Clarification needed",
+        "Held review scopes: Q01",
+        "Please specify an available context to explore",
+        "No numerical pressure limit"
+      ],
+      "forbid": [
+        "recommends cleaning",
+        "conditional_option"
+      ],
+      "sources": [
+        "E166-H",
+        "E166-LH",
+        "E166-PH",
+        "E166-T",
+        "E167-H",
+        "E167-LH",
+        "E167-PH",
+        "E167-SH"
+      ],
+      "stale": "E166-H"
+    },
+    {
+      "id": "S07",
+      "product": "Protein A Sepharose",
+      "context": "Hydrophobic proteins, lipoproteins or lipids",
+      "pressure": false,
+      "holdReviews": [
+        "Q03"
+      ],
+      "expect": [
+        "Held review scopes: Q03",
+        "Alternative ethanol route",
+        "lower flow rate"
+      ],
+      "forbid": [
+        "Nonionic detergent",
+        "Triton X-100"
+      ],
+      "sources": [
+        "E166-E",
+        "E166-H",
+        "E166-LH",
+        "E166-T",
+        "E166-W"
+      ],
+      "inspect": "E166-W",
+      "sourceText": "lower flow rate",
+      "review": "Q04"
+    }
+  ]
+}

@@ -2,8 +2,10 @@
 import asyncio
 from functools import lru_cache
 import json
+import mimetypes
 import os
 from pathlib import Path
+import sys
 import uuid
 
 import chainlit as cl
@@ -164,6 +166,15 @@ async def submit(action):
         state['busy'] = False
 
 
+def provenance_requires_inline(files_dir):
+    # Chainlit stores Text elements using a UUID and the MIME type's extension.
+    # Reserve one UTF-16 code unit for the Windows path terminator.
+    extension = mimetypes.guess_extension('text/plain') or ''
+    filename = '0' * 36 + extension
+    path = str(files_dir.absolute() / filename)
+    return len(path.encode('utf-16-le')) // 2 >= 260
+
+
 async def source(action):
     state = cl.user_session.get(KEY)
     token = action.payload.get('token') if isinstance(action.payload, dict) else None
@@ -181,9 +192,16 @@ async def source(action):
             await cl.Message(content=NOTICE+'\n\nSource held or candidate unavailable; no new quotation supplied.').send()
             return
         p = view['passage']
-        await cl.Message(content=NOTICE+'\n\n**'+text(p['source_id'])+' · PDF page '+str(p['pdf_page_1based'])
-                         +'**\n\n'+text(p['scope'])+'\n\n'+text(p['quote']),
-                         elements=[cl.Text(name='Candidate source and scoped reviews',
-                                           content=json.dumps(view, ensure_ascii=False, indent=2), language='json', display='inline')]).send()
+        content = (NOTICE+'\n\n**'+text(p['source_id'])+' · PDF page '+str(p['pdf_page_1based'])
+                   +'**\n\n'+text(p['scope'])+'\n\n'+text(p['quote']))
+        provenance = json.dumps(view, ensure_ascii=False, indent=2)
+        if sys.platform == 'win32' and provenance_requires_inline(cl.context.session.files_dir):
+            content += '\n\n**Candidate source and scoped reviews**\n\n```json\n' + provenance + '\n```'
+            await cl.Message(content=content).send()
+        else:
+            await cl.Message(content=content, elements=[
+                cl.Text(name='Candidate source and scoped reviews', content=provenance,
+                        language='json', display='inline')
+            ]).send()
     except Exception:
         await cl.Message(content=UNAVAILABLE if current(state, revision) and state['sources'].get(token) == ref else STALE).send()

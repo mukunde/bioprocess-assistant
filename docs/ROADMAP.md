@@ -24,9 +24,11 @@ PR83 adds optional metadata-only local OpenTelemetry tracing to registry UI v02.
 PR85 records the completed four-case browser rehearsal and compact provenance.
 Broader telemetry, independent answer evaluation and the common-corpus retrieval
 comparison remain pending. PR87 merges the reusable local request → source → trace
-demo and read-only metadata summary. Next: an explicit model-free MabSelect
-documentary mode in Chainlit, reusing guided controls and the existing registry
-service. The legacy graph chat remains unchanged until that separate delivery.
+demo and read-only metadata summary. PR89 merges the explicit model-free MabSelect
+mode in Chainlit, reusing guided controls and approved registry authority; the
+default graph route remains unchanged. Next: extend the already reviewed Protein
+A/G Sepharose backpressure journey through an additive documentary adapter and a
+separately staged release candidate, without expanding active MabSelect authority.
 See [the ingestion guide](INGESTION.md) for the separate local pipeline.
 
 2026-10-19 extraction decision: provisionally retain GPT-6.1 Sol (medium) for rare
@@ -35,7 +37,7 @@ strong-model extraction. Claim contract v0.2 and per-claim quarantine are implem
 reviewed after one subscription generation on 59 source elements: 33 final claims,
 19 validated and 14 validated with reservations (20 October 2026). See the
 [curated review package](../experiments/cytiva/reviewed-r2/README.md).
-Publication, scientific validation and migration into the existing UI remain pending.
+For those 33 extracted claims, publication, scientific validation and serving migration remain pending.
 The 97–99 comparison remains a development result, not a general model ranking.
 Migration from the legacy dense template/review database is still pending.
 
@@ -65,40 +67,45 @@ Migration from the legacy dense template/review database is still pending.
   PR83 merges minimal metadata-only local OpenTelemetry tracing with unchanged
   responses and nonblocking telemetry failures. PR85 merges the completed
   instrumented UI walkthrough on disposable authority. PR87 merges the reusable
-  demo and read-only metadata summary. Next: bounded Chainlit documentary integration,
-  not another review cycle or freeze.
+  demo and read-only metadata summary. PR89 merges corrected Chainlit documentary
+  support. Next: the bounded backpressure handoff, not another generic review cycle
+  or freeze; any new release still requires its own activation review.
 - The earlier [methodology review](decisions/2026-10-roadmap-review.md) is an
   archive of the reasoning, not a second plan to maintain.
 
-## Current checkpoint — 4 November 2026
+## Current checkpoint — 5 November 2026
 
 Phase numbers identify workstreams and acceptance gates, not a completed linear
 sequence. Documentary work advanced before telemetry; manifests and timings do
 not complete phase 1. The legacy chatbot still uses its curated graph; the
 separate local guided/text demo serves a bounded set of 25 reviewed passages.
 Both local product/context journeys are merged and independent of that frozen
-interpreter; neither changes the legacy chat graph. The recorded Flowshot tour
+interpreter; neither changes the legacy chat graph. PR89 now connects the
+MabSelect documentary service to Chainlit through an explicit model-free mode. The recorded Flowshot tour
 is published, while the executable Python application remains local.
 
 | Workstream | Merged/observed | Remaining gate |
 |---|---|---|
 | 0 — Reliability | Constrained rendering, error handling, additive graph loading and offline regressions | Live end-to-end deployment evaluation |
-| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling. PR85 records four browser scenarios, nine source checks and 37 spans; PR87 adds the reusable local demo/read-only metadata summary | Broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
+| 1 — Observability | Experiment manifests and local timings; PR83 adds opt-in registry UI v02 metadata tracing, new-file JSONL, loopback OTLP and nonblocking SDK/export handling. PR85 records four browser scenarios, nine source checks and 37 spans; PR87 adds the reusable local demo/read-only metadata summary; PR89 reuses registry-operation tracing in Chainlit | Compatible Chainlit trace-summary UI, broader chat/extraction/judge tracing, call/retry/cost accounting and enforcement |
 | 2 — Model and references | Minimal ontology/claim contract and reviewed extraction/questions; S, FT and FV deliveries merged | Independent evaluation, exhaustive coverage and actual answer quality; documentary review is not scientific validation |
 | 3 — Ingestion/chunking | Docling Graph route, separate reviewed Docling → GPT extraction, selected table/figure reviews and repairs | Full lifecycle, real-manual precision/recall and serving migration |
-| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged, no legacy chat integration |
+| 4 — Retrieval/interpretation | BM25 trials, structured control, FT/FV comparisons, corrected opt-in v03 and its freeze/demo/Windows setup merged; bounded product journeys and safeguards merged. PR70 adds the documentary handoff; PR72 adds its 52-file freeze and identical SX01–SX06 replay; PR74 adds local release/withdrawal authority; PR76 records approved private v02 activation/replay; PR78 adds the explicit-root registry UI; PR80 records UA01-UA08 (8/8 bounded outcomes), and PR81 adds opt-in display v02 with 27 regressions; PR89 adds corrected guided MabSelect support in Chainlit with 24 adapter tests | Independent acceptance beyond known evidence, second-machine validation and answer evaluation; fresh clones staged; backpressure registry handoff and legacy graph migration pending |
 | 5 — KAG decision | Deferred; LightRAG remains a separate comparison candidate | A measured need beyond simpler retrieval and bounded reasoning |
 
-Latest verified merged baseline: `main` at `44ccfcb`, including
+Latest verified merged baseline: `main` at `053de44`, including
+[PR89](https://github.com/mukunde/bioprocess-assistant/pull/89) (guided Chainlit documentary mode),
 [PR87](https://github.com/mukunde/bioprocess-assistant/pull/87) (reusable trace demo),
 [PR85](https://github.com/mukunde/bioprocess-assistant/pull/85) (instrumented UI walkthrough)
 and [PR83](https://github.com/mukunde/bioprocess-assistant/pull/83) (corrected local tracing),
 after [PR80](https://github.com/mukunde/bioprocess-assistant/pull/80) (reviewed acceptance)
 and [PR81](https://github.com/mukunde/bioprocess-assistant/pull/81) (presentation v02).
-The final unchanged confirmation of the maintained suite on that merged baseline
-ran **991 tests: 990 passed and one optional PDFium preview skip**, no failures/errors,
-in 539.314 seconds, including **18 demo tests** and **28 tracing tests**.
-Earlier full attempts retained a Windows loopback 10053 error and a DOM timeout
+The maintained suite on that merged baseline ran **1,015 tests: 1,014 passed and
+one optional PDFium preview skip**, no failures/errors, in 562.820 seconds. It
+includes **24 Chainlit adapter tests**, **18 trace-demo tests** and **28 tracing
+tests**. Both original freezes were verified again after execution. The earlier
+`44ccfcb` confirmation had 990 passed / one skip in 539.314 seconds. Its preceding
+attempts retained a Windows loopback 10053 error and a DOM timeout
 after a long interruption; both isolated diagnostics passed before confirmation.
 No code, timeouts or Windows protections changed between attempts. The earlier
 `01f4758` run had 972 passed / one skip in 1134.479 seconds. The earlier `a8272e9` run took
@@ -169,13 +176,33 @@ requests and seven spans, with no new spans on summary refresh. It preceded the
 error-path fixes, which have HTTP/CLI regressions; it is not a new acceptance
 trial or fresh-install/second-PC validation.
 
-**Next priority: connect reviewed MabSelect support to the existing Chainlit UI
-through an explicit documentary mode.** Reuse the registry service and guided
-product/context controls before adding any free-text routing or generated answer.
-Keep citations, focused clarification, scoped abstention, withdrawals and
-metadata-only tracing. Start without an LLM or paid API; preserve the default
-legacy graph chat and require an existing approved authority. This integration
-is not implemented yet and is a separate delivery, not another runtime freeze.
+**The guided MabSelect documentary mode in Chainlit is merged in
+[PR #89](https://github.com/mukunde/bioprocess-assistant/pull/89).** Explicit
+`BIOPROCESS_MODE=mabselect` selects guided product/context controls backed by an
+existing approved registry. It displays the submitted scope, separate conditional
+options, precautions and reservations, with current-authority citation views,
+one focused clarification and scoped abstention. Withdrawn support supplies no
+new quotation; independent support remains available. Startup retry, strict
+control validation and stale-result guards have regression coverage. The default
+graph route remains unchanged; documentary free text never calls a model.
+See the [operator guide](CHAINLIT-MABSELECT.md) and
+[corrections/re-review](validation/CHAINLIT-MABSELECT-CORRECTIONS.md).
+The candidate passed **30 focused tests** (24 adapter + six legacy app tests).
+Browser checks on disposable synthetic authority covered combined clarification,
+SuRe LX partial support/pressure abstention and the E167-S source/provenance view.
+These are known-source conformance checks, not a new independent acceptance score.
+Generic shell presentation and sign-in diagnostics remain documented. Existing
+messages are snapshots; withdrawals cannot erase text already displayed.
+
+**Next priority: bring the existing reviewed rising-backpressure journey into
+the documentary service and Chainlit.** Reuse Protein A/G Sepharose sources and
+review limits through an additive adapter and a separately staged release
+candidate. Keep that scope distinct from MabSelect cleaning: do not transfer
+recipes between products, diagnose a deposit from pressure alone or invent a
+numerical pressure limit. Verify citations, clarification, abstention and scoped
+withdrawals in disposable stores before any separately reviewed activation.
+This extension is not implemented; the active private registry remains unchanged.
+No LLM, paid API, new freeze or whole-manual review is needed by default.
 
 Earlier registry-UI baseline: `main` at `c230f14`, including
 [PR78](https://github.com/mukunde/bioprocess-assistant/pull/78). The separate
@@ -512,20 +539,23 @@ an independent prospective score; all source/retrieval behavior remains the same
 
 ### Next delivery priorities
 
-1. **Integrate bounded MabSelect documentary support into Chainlit.**
-   Add an explicit documentary mode using existing guided product/context controls
-   and the registry service; keep the legacy graph chat default unchanged. Require
-   an existing approved authority. Do not add model generation, a new free-text
-   interpreter, automatic activation or a paid API in this first integration.
-   Exit: Chainlit can display sourced support, a focused clarification, scoped
-   abstention and withdrawn-support handling while independent warnings survive.
-   Citation views must check current authority; optional metadata tracing must not
-   block responses or expose content. Test withdrawals/faults in disposable stores.
-   This integration is not implemented yet. Preserve the working PR87 local demo,
-   both freezes and historical results; no new whole-manual review is required.
-2. **Validate usability and portability without repeating completed reference work.**
-   Verify new Chainlit integration behavior without repeating completed PR87
-   summary/startup checks by default. Retain PR85/PR87 observations. Apply the
+1. **Bring reviewed backpressure support into the documentary service and Chainlit.**
+   Reuse the existing Protein A/G Sepharose journey's reviewed sources and limits
+   through an additive adapter and separately staged release candidate. Preserve
+   product/category ownership, alternative versus sequential treatments and the
+   ethanol pressure precaution. No deposit diagnosis, numerical pressure limit,
+   missing volume or transfer of a Sepharose recipe to MabSelect may be inferred.
+   Exit: a guided pressure request can clarify unknown product/context, display
+   complete scoped options with live-checked citations, abstain or withhold
+   withdrawn support, and retain independent warnings. Verify faults/withdrawals
+   on disposable authority. Review the candidate release before activation; keep
+   the approved private MabSelect store unchanged. This extension is pending;
+   the existing standalone journey and merged MabSelect mode remain available.
+   No LLM, paid API, new freeze or whole-manual review is required by default.
+2. **Validate new behavior and portability without repeating completed work.**
+   Use PR89's passing adapter regressions and browser observations as the baseline;
+   add checks for the new pressure scope rather than another generic MabSelect
+   rehearsal. Retain PR85/PR87 observations and historical UA references. Apply the
    existing second-PC protocol when another physical Windows PC is available;
    same-PC isolated setup is not that gate. Preserve the existing UA trial and
    freezes. Keep installer, legacy chat and public screenshot/video tours separate
@@ -577,8 +607,11 @@ with nine supplemental source checks and 37 spans; see the
 [report and limits](validation/REGISTRY-TRACING-UI-WALKTHROUGH.md).
 PR87 merges reusable demo convenience and a readable, read-only local trace summary
 on separate port 8786; see the [operator guide](REGISTRY-TRACE-DEMO.md).
-Next: carry metadata-only tracing into the proposed explicit Chainlit documentary
-mode, without changing either freeze or repeating a completed acceptance trial.
+PR89 reuses the existing optional registry-operation tracing in its explicit
+Chainlit documentary mode. That operation-span path is not asserted compatible
+with the separate port-8786 HTTP trace summary. Broader model-backed graph-chat,
+extraction/judge tracing and a compatible Chainlit summary remain pending; preserve
+both freezes and existing acceptance records.
 Best-effort queues may drop traces; bounded cleanup does not forcibly stop
 arbitrary blocked third-party code. This is not a durable audit journal, a production
 latency benchmark or completed phase 1. Broader model/extraction/judge call
@@ -948,8 +981,9 @@ store is active; Git still ships staged data. The separate opt-in registry UI is
 merged in PR78; PR80 records bounded UA01-UA08 acceptance and PR81 adds the
 separate display v02; PR83 adds its optional local tracing and PR85 records the
 completed instrumented UI rehearsal. PR87 merges the reusable local trace demo
-and read-only metadata summary. Explicit Chainlit documentary integration is next.
-Independent acceptance
-beyond the known corpus, broader observability and legacy-chat integration remain
-pending, as described above.
+and read-only metadata summary. PR89 merges the corrected guided MabSelect
+mode in Chainlit; the default graph route stays unchanged. Next is the reviewed
+Protein A/G Sepharose backpressure handoff through a separately staged candidate.
+Independent acceptance beyond the known corpus, broader observability and legacy
+graph migration remain pending, as described above.
 See [INGESTION.md](INGESTION.md) for local commands and route-specific limitations.

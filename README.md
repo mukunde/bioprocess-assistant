@@ -36,8 +36,9 @@ The optional MP4 download remains available. The same site now hosts the recorde
 
 ## Current status
 
-Status reviewed on 4 November 2026. Latest verified merged checkpoint:
-`main` at `44ccfcb`, including [PR #87](https://github.com/mukunde/bioprocess-assistant/pull/87)
+Status reviewed on 5 November 2026. Latest verified merged checkpoint:
+`main` at `053de44`, including [PR #89](https://github.com/mukunde/bioprocess-assistant/pull/89)
+for guided MabSelect support in Chainlit, [PR #87](https://github.com/mukunde/bioprocess-assistant/pull/87)
 for the reusable local trace demo, [PR #85](https://github.com/mukunde/bioprocess-assistant/pull/85)
 for the instrumented UI walkthrough and [PR #83](https://github.com/mukunde/bioprocess-assistant/pull/83)
 for corrected local OpenTelemetry tracing, after the acceptance and display work
@@ -69,10 +70,13 @@ have separate traces. SDK/export failures remain nonblocking, with fixed-phase
 diagnostics and bounded cleanup. Request content, quotations and exception details
 are excluded. Responses and source HTML retain their existing content.
 
-On merged `44ccfcb`, the final unchanged confirmation of the maintained suite
-finished with **991 tests: 990 passed and one optional PDFium preview skip**,
-no failures or errors (539.314 seconds), including **18 demo tests** and
-**28 tracing tests**. Earlier attempts retained a Windows loopback 10053 error
+On merged `053de44`, the maintained suite finished with **1,015 tests:
+1,014 passed and one optional PDFium preview skip**, no failures or errors
+(562.820 seconds). This includes **24 Chainlit documentary adapter tests**,
+**18 local trace-demo tests** and **28 tracing tests**. Both original freezes
+were verified again after the run. At the earlier `44ccfcb` checkpoint, the final
+confirmation had 990 passed / one skip in 539.314 seconds. Its earlier attempts
+retained a Windows loopback 10053 error
 and a DOM timeout after a long interruption; both isolated diagnostics passed
 before the full confirmation. No code, timeouts or Windows protections were
 changed between attempts. The earlier `01f4758` run had 972 passed / one skip
@@ -83,13 +87,13 @@ suite timings are not a controlled performance comparison. The earlier `2f8ef3d`
 checkpoint had 944 passed / one skip; that result remains historical.
 Four offline compact-export checks cover integrity and LF/CRLF
 portability. Both original freezes remain valid: v03 (36 pins), MabSelect (52 pins).
-The registry UIs remain outside these historical closures; neither is a new freeze.
+The registry UIs and Chainlit adapter remain outside these historical closures; none is a new freeze.
 
 The original registry UI stays on explicit port 8784; presentation v02 is a separate
 opt-in module on 8785. Both require an existing approved local authority root.
 The private verification store remains generation 1 with zero withdrawals and is
 not shipped. Fresh clones still need their own reviewed activation. Preview 8783,
-Windows launchers, legacy chat and published video/Flowshot captures are unchanged;
+Windows launchers, default graph chat and published video/Flowshot captures are unchanged;
 this does not publish a live executable demo.
 
 **The instrumented UI walkthrough is merged.** [Four known scenarios](docs/validation/REGISTRY-TRACING-UI-WALKTHROUGH.md)
@@ -115,13 +119,33 @@ requests and seven spans, with no new spans on summary refresh. It preceded the
 error-path fixes, which have HTTP/CLI regressions; it is not a new acceptance
 trial or fresh-install/second-PC validation.
 
-**Next priority: connect reviewed MabSelect support to the existing Chainlit UI
-through an explicit documentary mode.** Reuse the registry service and guided
-product/context controls before adding any free-text routing or generated answer.
-Keep citations, focused clarification, scoped abstention, withdrawals and
-metadata-only tracing. Start without an LLM or paid API; preserve the default
-legacy graph chat and require an existing approved authority. This integration
-is not implemented yet and is a separate delivery, not another runtime freeze.
+**The guided MabSelect documentary mode in Chainlit is merged in
+[PR #89](https://github.com/mukunde/bioprocess-assistant/pull/89).** Explicit
+`BIOPROCESS_MODE=mabselect` selects guided product/context controls backed by an
+existing approved registry. It displays the submitted scope, separate conditional
+options, precautions and reservations, with current-authority citation views,
+one focused clarification and scoped abstention. Withdrawn support supplies no
+new quotation; independent support remains available. Startup retry, strict
+control validation and stale-result guards have regression coverage. The default
+graph route remains unchanged; documentary free text never calls a model.
+See the [operator guide](docs/CHAINLIT-MABSELECT.md) and
+[corrections/re-review](docs/validation/CHAINLIT-MABSELECT-CORRECTIONS.md).
+The candidate passed **30 focused tests** (24 adapter + six legacy app tests).
+Browser checks on disposable synthetic authority covered combined clarification,
+SuRe LX partial support/pressure abstention and the E167-S source/provenance view.
+These are known-source conformance checks, not a new independent acceptance score.
+Generic shell presentation and sign-in diagnostics remain documented. Existing
+messages are snapshots; withdrawals cannot erase text already displayed.
+
+**Next priority: bring the existing reviewed rising-backpressure journey into
+the documentary service and Chainlit.** Reuse Protein A/G Sepharose sources and
+review limits through an additive adapter and a separately staged release
+candidate. Keep that scope distinct from MabSelect cleaning: do not transfer
+recipes between products, diagnose a deposit from pressure alone or invent a
+numerical pressure limit. Verify citations, clarification, abstention and scoped
+withdrawals in disposable stores before any separately reviewed activation.
+This extension is not implemented; the active private registry remains unchanged.
+No LLM, paid API, new freeze or whole-manual review is needed by default.
 
 Earlier registry-UI checkpoint (3 November 2026):
 `main` at `c230f14`, including [PR #78](https://github.com/mukunde/bioprocess-assistant/pull/78).
@@ -301,12 +325,12 @@ and usability fixes were agent checks, not new human scientific approval.
 | Free-text interface and local demo | v01/v02, reviewed FT/FV trials, corrected opt-in v03, its runtime freeze, corrected guided/text demo, Windows installer and launcher merged. Same-PC fresh-clone setup verified; second-machine validation pending. Historical gates remain blocked |
 | Bounded backpressure journey | Merged: deterministic Protein A/G Sepharose product/context selection, clarification, separate alternatives and original citations; independent of frozen v03. MabSelect is outside scope |
 | MabSelect cleaning journey | Merged in PR #68: exact-product/context controls, source-linked general/restricted alternatives, warnings and no-recipe clarification; portable approval verification and DOM/API mutation checks; separate from v03 and the legacy chat |
-| Reviewed documentary handoff | Implementation merged in PR #70; separate 52-file freeze and accepted-case replay merged in PR #72. Typed task-bound support, citations/reservations, clarification, scoped abstention and contained failures. Preview plus separately activated private registry/UI; fresh clones staged, legacy chat/graph integration pending |
+| Reviewed documentary handoff | Implementation merged in PR #70; separate 52-file freeze and accepted-case replay merged in PR #72. Typed task-bound support, citations/reservations, clarification, scoped abstention and contained failures. Preview plus separately activated private registry/UI; fresh clones staged. PR #89 adds an explicit guided Chainlit documentary mode; legacy graph migration remains pending |
 | Local release/withdrawal registry | Implementation merged in PR #74; approved private v02 activation record merged in PR #76. Empty initial withdrawal inventory; Git ships staged data, no automatic activation in a fresh clone; local single-writer trust boundary |
 | Opt-in MabSelect registry UI | Baseline merged in PR #78; reviewed UA01–UA08 trial in PR #80 (8/8 bounded functional outcomes). Separate presentation v02 in PR #81: three display fixes and 27 regressions, unchanged structured responses/source pages; private authority required |
-| Observability and evaluation extensions | Minimal metadata-only local tracing merged in PR #83; PR #85 records four known UI scenarios, nine supplemental source checks and 37 spans. PR #87 adds the reusable local metadata summary/demo. Broader instrumentation, model usage/cost accounting, Ragas and Promptfoo pending. LightRAG is a comparison candidate and KAG remains conditional |
+| Observability and evaluation extensions | Minimal metadata-only local tracing merged in PR #83; PR #85 records four known UI scenarios, nine supplemental source checks and 37 spans. PR #87 adds the reusable local metadata summary/demo; PR #89 reuses optional registry-operation tracing in Chainlit. Broader instrumentation, model usage/cost accounting, Ragas and Promptfoo pending. LightRAG is a comparison candidate and KAG remains conditional |
 
-The current chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
+The default graph chat model is configured as `claude-sonnet-4-6` in [agent.py](agent.py). The separate reviewed extraction used GPT-6.1 Sol through a subscription interface; that subscription does not fund the chatbot's API calls.
 
 **MabSelect is also merged as a separate local entry:** choose **MabSelect · cleaning guidance**.
 Exact plain MabSelect, SuRe and SuRe LX retain their reviewed conditions and
@@ -334,7 +358,10 @@ it does not replace v03 or create an active release/withdrawal registry.
 ![Detailed architecture: separate local Docling Graph and reviewed GPT extraction routes above the Chainlit, agent and Neo4j serving loop. Structural chunking is shown for the local route. OpenTelemetry tracing, Ragas evaluation and Promptfoo adversarial testing have distinct roles.](docs/architecture/architecture-detailed.png)
 
 The diagram's observability roadmap extends beyond the implemented local registry
-UI slice: tracing of the legacy chat, extraction and judge calls remains pending.
+UI slice. PR #89 also reuses optional registry-operation tracing in the Chainlit
+documentary mode; tracing of model-backed graph chat, extraction and judge calls
+remains pending. The diagram predates that opt-in mode; the loop below describes
+the default graph chat.
 
 **Solid arrows** show implemented paths. **Dashed coral arrows** show planned connections. Read ingestion and storage at the top, then the serving loop below:
 
@@ -344,7 +371,7 @@ UI slice: tracing of the legacy chat, extraction and judge calls remains pending
 
 Free-form model advice is not displayed. This constrains generation, but does not guarantee relevant retrieval or scientifically correct source material. A Lucene score measures lexical relevance, not diagnostic confidence.
 
-Ingestion has two separate routes: **Docling → Docling Graph + local Ollama → review**, and the completed **Docling → GPT-6.1 Sol → checks and human review** experiment. Local chunking follows document structure and hierarchy, then token budgets; the reviewed three-page experiment used its full input without automatic chunking. Neither route currently feeds the chatbot.
+Ingestion has two separate routes: **Docling → Docling Graph + local Ollama → review**, and the completed **Docling → GPT-6.1 Sol → checks and human review** experiment. Local chunking follows document structure and hierarchy, then token budgets; the reviewed three-page experiment used its full input without automatic chunking. Neither extraction route currently feeds the default graph chat; the explicit documentary mode uses separately reviewed cleaning excerpts.
 
 [Full-size SVG](docs/architecture/architecture-detailed.svg) · [Diagram notes and logo sources](docs/architecture/README.md) · [Grounding decision](docs/ADR-001-knowledge-graph-grounding.md)
 
@@ -451,7 +478,32 @@ Verify the new freeze or replay its accepted cases with the recorded CPython
 The [frozen method and results](experiments/cytiva/mabselect-handoff-freeze-v01/README.md)
 document exact hashes, full saved responses and no-overwrite output handling.
 
-### Existing Chainlit/Neo4j chat
+### Guided MabSelect in Chainlit — no model
+
+Use an existing development/verification environment with Chainlit installed,
+separate from both frozen runtimes. With local login credentials and
+`CHAINLIT_AUTH_SECRET` configured as described in the
+[operator guide](docs/CHAINLIT-MABSELECT.md):
+
+```powershell
+$env:BIOPROCESS_MODE = 'mabselect'
+$env:MABSELECT_REGISTRY_ROOT = 'C:\path\to\your\approved-registry'
+.\.venv\Scripts\python.exe -m chainlit run app.py --host 127.0.0.1 --port 8787
+```
+
+Replace the Python path with your prepared development/verification environment
+if needed. Open [localhost:8787](http://127.0.0.1:8787/), sign in, choose Settings
+and press **Find documented guidance**. No model key or Neo4j connection is needed
+for this route. The root is server configuration, not a browser input; the command
+never prepares or activates authority. Fresh clones do not include the private
+store. Optional metadata tracing uses `MABSELECT_TRACE_FILE`; its operation spans
+are not asserted compatible with the port-8786 HTTP trace-summary schema.
+
+To use the existing graph route instead, stop the server and remove
+`BIOPROCESS_MODE` or set it to `graph` before relaunching. Unknown mode values
+refuse documentary service rather than silently calling the agent.
+
+### Existing Chainlit/Neo4j graph chat
 
 The reference workstation uses **Windows, Python 3.13 and Docker Desktop**. The application Dockerfile targets Python 3.11. These are documented configurations, not a cross-platform certification. PDF ingestion uses a separate optional environment.
 
@@ -478,7 +530,7 @@ NEO4J_PASSWORD=replace_with_a_local_password
 NEO4J_DATABASE=neo4j
 ```
 
-For real chat requests, set `ANTHROPIC_API_KEY`. Generate the Chainlit signing secret:
+For default graph-chat requests, set `ANTHROPIC_API_KEY`. Generate the Chainlit signing secret:
 
 ```powershell
 .\.venv\Scripts\chainlit.exe create-secret
@@ -584,6 +636,7 @@ does not establish general language understanding or generated-answer quality.
 | [Local OpenTelemetry tracing](docs/validation/REGISTRY-TRACING-PACKAGE.md) | Merged in PR #83: 28 tracing tests; metadata allowlist, response/source equality, parent links, SDK/export failures and partial-initialization cleanup. Merged-main suite: 972 passed / one optional skip | Opt-in registry UI v02 only. Best-effort queues can drop spans; no durable audit, model token/cost accounting, production latency benchmark or new runtime freeze |
 | [Instrumented UI walkthrough](docs/validation/REGISTRY-TRACING-UI-PACKAGE.md) | Merged in PR #85: four browser scenarios, exact untraced-response comparisons, nine supplemental source checks, 37 metadata-only spans, unavailable-collector behavior and scoped withdrawal | Synthetic disposable authority over known reviewed evidence; no independent acceptance score. Narrow viewport, favicon 404 and an automation wait limitation retained. Raw logs/harness remain local; the later PR #87 convenience layer is a separate delivery |
 | [Reusable local trace demo](docs/REGISTRY-TRACE-DEMO.md) | Merged in PR #87: separate port 8786, read-only metadata summary, controlled rejection labels, nonblocking optional SDK failures; 18 demo tests | Focused pre-correction browser smoke: five HTTP requests / seven spans on disposable synthetic authority; fixes covered by HTTP/CLI regressions. Best-effort telemetry, not a durable audit or independent acceptance |
+| [Chainlit MabSelect documentary mode](docs/CHAINLIT-MABSELECT.md) | Merged in PR #89: guided controls, explicit submitted scope, current-authority citations, one focused clarification, scoped abstention, withdrawals and retry/stale guards; 30 focused tests | Local opt-in mode; private approved authority required. Browser smoke uses synthetic disposable authority. Historical messages cannot be recalled; generic shell/sign-in diagnostics remain documented. No new acceptance score, freeze or graph migration |
 | [Opt-in registry UI](docs/validation/MABSELECT-REGISTRY-UI-PACKAGE.md) | Merged in PR #78: nine files, 18 HTTP/DOM checks, corrected source-error boundary and 15-second deadline/retry; merged-main suite 913 passed / one optional skip | Known-case conformance; faults only in disposable stores. Explicit authority root required, fresh clones staged; outside the two original freezes, no independent answer-quality score or legacy-chat dispatch |
 | [Local activation record](experiments/cytiva/mabselect-local-activation-v02/README.md) | Merged in PR #76: LA01–LA08, six active cases, 25 citations, 13 source views and compact provenance; merged-main suite 895 passed / one optional skip | One private local store only, zero withdrawals; at PR #76 no UI dispatch. PR #78 adds a separate opt-in UI; fresh clones remain staged, no independent answer-quality result or change to either freeze |
 | [Local registry review](docs/validation/MABSELECT-LOCAL-REGISTRY-REVIEW-FIXES.md) | Merged in PR #74: corrected staged v02, 32 registry tests, six accepted-case replays and inventory-only reproduction; merged-main suite 895 passed / one optional skip | At PR #74: no activation. Later local activation is recorded separately in PR #76; no new source approval. Cooperative single-process writers; whole-directory rollback needs an external anchor and interrupted activation needs operator review |
@@ -606,16 +659,15 @@ controlled before/after answer-quality comparison.
 
 E118-I and E121-EQ remain excluded. Pressure absence is bounded to 25 eligible
 excerpts, not the full manual. S's 2,048-token budget counts serialized context
-including bindings, not a future answer prompt or output. The source-reviewed
-claims have not been connected to the chatbot's serving path.
+including bindings, not a future answer prompt or output. The 33 r2-extracted
+claims still do not feed the default graph chat. The new Chainlit documentary
+mode serves separately reviewed cleaning excerpts, not those extracted claims.
 
-**Next priority: connect reviewed MabSelect support to the existing Chainlit UI
-through an explicit documentary mode.** Reuse the registry service and guided
-product/context controls before adding any free-text routing or generated answer.
-Keep citations, focused clarification, scoped abstention, withdrawals and
-metadata-only tracing. Start without an LLM or paid API; preserve the default
-legacy graph chat and require an existing approved authority. This integration
-is not implemented yet and is a separate delivery, not another runtime freeze.
+**Next delivery:** connect the existing
+[reviewed Protein A/G Sepharose backpressure journey](docs/validation/CYTIVA-TROUBLESHOOTING-DEMO.md)
+to the documentary service and Chainlit through a separately staged candidate.
+Preserve product boundaries and review activation before serving the new scope;
+the active private registry stays unchanged. See the [roadmap](docs/ROADMAP.md).
 
 The reusable summary/demo is merged in PR #87. Broader model-call accounting,
 Ragas judges and Promptfoo attacks remain separate pending work.
@@ -624,8 +676,9 @@ UA01–UA08 review and baseline execution are complete. Keep that trial immutabl
 use its requests as regression inputs for later instrumentation, not as a new
 independent score. No new ontology, runtime freeze or manual-review round is
 required for this delivery. The four known instrumented scenarios already passed;
-reopen them only for a changed behavior or measured failure. The proposed Chainlit documentary mode
-is the next explicit integration change; no chat integration is claimed yet.
+reopen them only for a changed behavior or measured failure. PR #89 completes the
+explicit Chainlit documentary integration with corrected tests and focused browser
+checks. Reuse that evidence; do not start another generic review/freeze cycle.
 
 Second-physical-PC validation remains a parallel portability check. The
 three-arm graph/passages/LightRAG comparison is unexecuted; current BM25 trials
@@ -640,8 +693,8 @@ Manuals and raw experiment outputs stay local and ignored. A fresh clone include
 
 ## Next steps
 
-1. Add an explicit MabSelect documentary mode to Chainlit using the existing registry service and guided controls. Begin without an LLM, paid API, new interpreter or default-route change; require existing approved authority.
-2. Verify this integration's citations, clarification, abstention, withdrawal isolation and metadata-only traces on disposable stores. Preserve both freezes and historical UA/trace trials; do not present regressions as independent acceptance.
+1. Extend the existing reviewed Protein A/G Sepharose backpressure journey to the documentary service and Chainlit through an additive adapter and separately staged release candidate. Preserve exact product scope, conditions and essential warnings; keep the active MabSelect authority unchanged.
+2. Test the new scope's citations, focused clarification, abstention and withdrawals in disposable stores; retain MabSelect as a regression baseline. Review the new release before any activation. No model, paid API, new freeze or whole-manual review by default.
 3. Apply the second-physical-PC protocol when hardware is available. Keep the working local trace demo, installer and recorded tours separate; reopen completed work only for a changed behavior or measured failure.
 4. Add model-call budgets/accounting, calibrated Ragas for generated answers and Promptfoo with benign controls when those paths exist; deterministic registry tracing does not complete them.
 5. Compare graph/passages/LightRAG on a common corpus and budget after adapters and references exist. Keep KAG and fine-tuning conditional on measured needs.

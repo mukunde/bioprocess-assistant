@@ -4,7 +4,8 @@ Local opt-in integration with the existing approved registry service. It uses
 guided product/context controls and deterministic reviewed bundles, without a
 model, paid API, Neo4j request, new interpreter or automatic activation. The
 default graph chat stays unchanged when `BIOPROCESS_MODE` is absent or `graph`.
-This working-tree candidate is not a new freeze or a published live service.
+Merged in [PR #89](https://github.com/mukunde/bioprocess-assistant/pull/89).
+This local integration is not a new freeze or a published live service.
 
 ## Start locally
 

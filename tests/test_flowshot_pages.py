@@ -19,7 +19,7 @@ class FlowshotPagesTests(unittest.TestCase):
             result = builder.prepare(output)
             actual = {p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}
             self.assertEqual(actual, set(result['files']))
-            self.assertEqual(len(actual), 12)
+            self.assertEqual(len(actual), 15)
             self.assertIn('href="flowshot/"', (output / 'index.html').read_text(encoding='utf-8'))
             html = (output / 'flowshot/index.html').read_text(encoding='utf-8')
             self.assertIn('href="../"', html)
@@ -32,6 +32,20 @@ class FlowshotPagesTests(unittest.TestCase):
             for name in ('onboarding.mp4', 'onboarding.jpg'):
                 self.assertEqual((output / 'assets' / name).read_bytes(),
                                  (ROOT / 'media/cytiva-onboarding-v05/exports' / name).read_bytes())
+
+    def test_sepharose_player_uses_the_approved_exports(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)
+            builder.prepare(output)
+            player = output / 'sepharose'
+            html = (player / 'index.html').read_text(encoding='utf-8')
+            self.assertIn('<video controls playsinline', html)
+            self.assertIn('poster="sepharose-chainlit-poster.jpg"', html)
+            self.assertIn('src="sepharose-chainlit-continuous.mp4"', html)
+            self.assertIn('staged candidate', html)
+            for name in builder.SEPHAROSE_EXPORTS:
+                original = ROOT / 'media/chainlit-sepharose-continuous/exports' / name
+                self.assertEqual((player / name).read_bytes(), original.read_bytes())
 
     def test_changed_capture_rejected_before_output_is_written(self):
         with tempfile.TemporaryDirectory() as tmp:

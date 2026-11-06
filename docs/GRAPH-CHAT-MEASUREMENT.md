@@ -101,3 +101,30 @@ USD 0.901296, leaving USD 0.098704 of the original ceiling. Use the same
 verified first-party client with standard-only billing. Check the new
 stop reason on each Anthropic span and compare the displayed citations
 with the seed. Earlier traces lack this field.
+
+## G01 with structured output
+
+A single G01 submission on 6 November 2026 used the structured JSON schema,
+a 1,536-token output limit per generation, and a two-generation limit. The
+Cytiva seed contained 30 expected nodes and 24 expected links. Its full-text
+index was online.
+
+The chat returned both expected paths. It suggested measuring the resin's
+dynamic binding capacity and considering replacement if it had degraded. It
+also suggested checking whether the loading flow allowed sufficient residence
+time. All five displayed citations matched the seed. They referenced the
+Cytiva MabSelect SuRe data file CY12754, pp. 1–3, figures 2–3, and table 2,
+and the Cytiva antibodies handbook CY13981, p. 58.
+
+Anthropic returned `tool_use` followed by `end_turn`. The final generation
+used 19 output tokens. Neo4j returned one match and one miss. The request
+took 9.01 seconds and used 3,515 input tokens and 124 output tokens. The
+estimated cost was USD 0.012405. Across the four live runs, estimated costs
+totaled USD 0.233286 and reserves totaled USD 0.984984 against the USD 1.00
+ceiling.
+
+The preceding G01 diagnostic run recorded an `invalid_json` rejection. This
+follow-up confirms one successful G01 result with the schema. It does not
+measure repeatability or assess the full question set with structured output.
+The report and trace remain local. The trace ID is
+`9293edd91fee2af830263c1f856cf83f`.

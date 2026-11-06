@@ -44,6 +44,7 @@ class GraphChatBudgetTests(unittest.TestCase):
         for count_call, create_call in zip(self.api.count_tokens.call_args_list,
                                            self.api.create.call_args_list):
             self.assertEqual(create_call.kwargs, {**count_call.kwargs, "max_tokens": 512})
+            self.assertEqual(count_call.kwargs["output_config"], agent.SELECTION_OUTPUT)
         self.assertEqual(self.budget.reserved_usd, Decimal("0.049896"))
 
     def test_invalid_or_oversize_count_never_creates_message(self):

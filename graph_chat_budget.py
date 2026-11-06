@@ -45,7 +45,7 @@ class _Submission:
         self.budget = budget
         self.calls = 0
 
-    def prepare(self, *, model, system, tools, messages):
+    def prepare(self, *, model, system, tools, messages, output_config):
         budget = self.budget
         if budget.stopped or self.calls >= budget.max_calls:
             raise BenchmarkLimitError("benchmark model call limit or stop")
@@ -56,7 +56,8 @@ class _Submission:
         if committed + budget.call_reserve_usd > budget.CEILING_USD:
             budget.stopped = True
             raise BenchmarkLimitError("benchmark spend ceiling")
-        payload = dict(model=model, system=system, tools=tools, messages=messages)
+        payload = dict(model=model, system=system, tools=tools, messages=messages,
+                       output_config=output_config)
         try:
             count = budget.messages.count_tokens(**payload).input_tokens
         except Exception as exc:

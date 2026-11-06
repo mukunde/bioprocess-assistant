@@ -16,6 +16,23 @@ PROJECT_ROOT = Path(__file__).resolve().parent
 MODEL = "claude-sonnet-4-6"
 MAX_TURNS = 5
 
+SELECTION_OUTPUT = {
+    "format": {
+        "type": "json_schema",
+        "schema": {
+            "type": "object",
+            "properties": {
+                "status": {"type": "string", "enum": ["answer", "refuse"]},
+                "language": {"type": "string", "enum": ["en", "fr"]},
+                "result_ids": {"type": "array", "items": {"type": "integer"}},
+            },
+            "required": ["status", "language", "result_ids"],
+            "additionalProperties": False,
+        },
+    },
+}
+
+
 SYSTEM_PROMPT = """You select grounded troubleshooting results for Protein A capture chromatography.
 Your only tool is query_graph(symptom), which searches an English knowledge graph.
 Translate the observed symptom to a short English search phrase. Preserve its
@@ -114,7 +131,8 @@ def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, r
     last_score: float | None = None
 
     for _ in range(MAX_TURNS):
-        payload = dict(model=MODEL, system=SYSTEM_PROMPT, tools=TOOLS, messages=messages)
+        payload = dict(model=MODEL, system=SYSTEM_PROMPT, tools=TOOLS, messages=messages,
+                       output_config=SELECTION_OUTPUT)
         if submission is not None:
             payload = submission.prepare(**payload)
         with span(tracer, "anthropic.messages.create", request) as call:

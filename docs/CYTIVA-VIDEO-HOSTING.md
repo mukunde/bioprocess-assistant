@@ -20,6 +20,23 @@ signed out. See [Flowshot hosting](CYTIVA-FLOWSHOT-HOSTING.md) for the twelve-fi
 output and exact limits. The three-file inventory below describes the historical
 video-only deployment, not the total current site.
 
+## Published Chainlit Sepharose video
+
+The [Sepharose player](https://mukunde.github.io/bioprocess-assistant/sepharose/)
+went live on 6 November 2026. [PR #98](https://github.com/mukunde/bioprocess-assistant/pull/98)
+added the README thumbnail and the player. The
+[deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/42145850738)
+succeeded from `65130cc`.
+
+The public README thumbnail loaded at 960 × 540 and opened the HTTPS player.
+Playback reached the end at 31.63 s in the integrated browser without a media
+error. The 1440 × 810 recording shows a staged, non-activated candidate and
+ends with citation E166-P. [Video review and credits](../media/chainlit-sepharose-continuous/REVIEW.md)
+
+The site build now serves 15 files. The three new files under `/sepharose/`
+are the player, the approved MP4, and its poster. The onboarding player and
+Flowshot walkthrough keep their existing URLs and assets.
+
 ## Choice
 
 Use [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages),
@@ -43,7 +60,9 @@ python -m http.server 8774 --bind 127.0.0.1 --directory .local-tools/cytiva-vide
 ```
 
 Open <http://127.0.0.1:8774/>. Check the poster, Play, 34-second duration, seek,
-pause, fullscreen and the project/credit links. Stop the server with Ctrl+C.
+pause, fullscreen and the project/credit links. Open
+<http://127.0.0.1:8774/sepharose/> and check the 32-second Chainlit recording.
+Stop the server with Ctrl+C.
 To build again, pass `--output` with a different empty directory; existing output
 is preserved. `.local-tools` is ignored by Git.
 

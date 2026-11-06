@@ -5,6 +5,10 @@ and Q09 sources on Cytiva PDF pages 166–167. It is a **staged candidate awaiti
 review**, not an activated release, scientific approval or operational procedure.
 It does not modify the private MabSelect registry or either frozen runtime.
 
+[Watch the published Chainlit recording](https://mukunde.github.io/bioprocess-assistant/sepharose/)
+to see the Protein G context selection, the documentary response, and citation
+E166-P. [Playback verification](CYTIVA-VIDEO-HOSTING.md#published-chainlit-sepharose-video)
+
 ## Prepare a separate candidate
 
 Use the existing development/verification environment at the repository root:

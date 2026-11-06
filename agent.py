@@ -6,10 +6,10 @@ import os
 from pathlib import Path
 
 from anthropic import Anthropic
-from dotenv import load_dotenv
 
-from tools import DEFAULT_MIN_MATCH_SCORE, query_graph, validate_min_score
+from tools import DEFAULT_MIN_MATCH_SCORE, load_graph_dotenv, query_graph, validate_min_score
 from grounding import GroundingError, refusal, render_selection
+from graph_chat_tracing import local_tracer, span, usage_metadata
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 MODEL = "claude-sonnet-4-6"
@@ -83,23 +83,41 @@ def run_agent(
     if answer_metadata is not None:
         answer_metadata.clear()
         answer_metadata.update(status="error", symptoms=[])
+    tracer = local_tracer()
+    metadata = answer_metadata if answer_metadata is not None else {"status": "error"}
+    with span(tracer, "graph_chat.request") as request:
+        answer = _run_agent(user_message, min_score, tool_outputs, metadata, tracer, request)
+        request.attributes(outcome=metadata["status"])
+        if metadata["status"] == "error":
+            request.failed()
+        return answer
+
+
+def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, request):
     results: list[dict] = []
     # override=True makes the local .env authoritative over any stray (possibly
     # empty) ANTHROPIC_API_KEY already in the shell. No-op on Render (no .env file).
-    load_dotenv(PROJECT_ROOT / ".env", override=True)
+    load_graph_dotenv(PROJECT_ROOT / ".env", override=True)
     client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     messages = [{"role": "user", "content": user_message}]
     last_score: float | None = None
 
     for _ in range(MAX_TURNS):
-        response = client.messages.create(
-            model=MODEL,
-            system=SYSTEM_PROMPT,
-            tools=TOOLS,
-            messages=messages,
-            max_tokens=2048,
-        )
+        with span(tracer, "anthropic.messages.create", request) as call:
+            call.attributes(**{"gen_ai.request.model": MODEL})
+            response = client.messages.create(
+                model=MODEL,
+                system=SYSTEM_PROMPT,
+                tools=TOOLS,
+                messages=messages,
+                max_tokens=2048,
+            )
+            if call.raw is not None:
+                try:
+                    call.attributes(**usage_metadata(response, MODEL))
+                except Exception:
+                    pass
 
         if response.stop_reason != "tool_use":
             text = "\n".join(b.text for b in response.content if b.type == "text").strip()
@@ -123,7 +141,13 @@ def run_agent(
                 if (not isinstance(block.input, dict)
                         or not isinstance(block.input.get("symptom"), str)):
                     return refusal("fr") + "\n\n" + refusal("en"), last_score, min_score
-                result = query_graph(block.input["symptom"], min_score=min_score)
+                with span(tracer, "neo4j.search", request) as search:
+                    result = query_graph(block.input["symptom"], min_score=min_score)
+                    if search.raw is not None:
+                        try:
+                            search.attributes(outcome="matched" if result.get("found") else "no_match")
+                        except Exception:
+                            pass
                 results.append(result)
                 if tool_outputs is not None:
                     tool_outputs.append(result)

@@ -114,7 +114,7 @@ class AgentBoundaryTests(unittest.TestCase):
         client.messages.create.side_effect = responses
         outputs, metadata = [], {}
         with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key"}), \
-                patch.object(agent, "load_dotenv"), \
+                patch.object(agent, "load_graph_dotenv"), \
                 patch.object(agent, "Anthropic", return_value=client), \
                 patch.object(agent, "query_graph", return_value=result or graph_result()) as query:
             text, _, _ = agent.run_agent("Test", tool_outputs=outputs, answer_metadata=metadata)

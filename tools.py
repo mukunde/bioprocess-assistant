@@ -5,8 +5,10 @@ import os
 import math
 from pathlib import Path
 
-from dotenv import load_dotenv
+from dotenv import dotenv_values
 from neo4j import Driver, GraphDatabase
+
+from graph_chat_tracing import TRACE_ENV
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 _driver: Driver | None = None
@@ -32,10 +34,17 @@ def resolve_min_score(value: float | None) -> float:
     return validate_min_score(DEFAULT_MIN_MATCH_SCORE if value is None else value)
 
 
+def load_graph_dotenv(path: Path, *, override: bool = False) -> None:
+    """Load app settings without changing the process-level tracing switch."""
+    for name, value in dotenv_values(path).items():
+        if name != TRACE_ENV and value is not None and (override or name not in os.environ):
+            os.environ[name] = value
+
+
 def _get_driver() -> Driver:
     global _driver
     if _driver is None:
-        load_dotenv(PROJECT_ROOT / ".env")
+        load_graph_dotenv(PROJECT_ROOT / ".env")
         _driver = GraphDatabase.driver(
             os.environ["NEO4J_URI"],
             auth=(os.environ["NEO4J_USERNAME"], os.environ["NEO4J_PASSWORD"]),

@@ -57,3 +57,38 @@ docker compose -f compose.neo4j.yaml stop
 ```
 
 For an application container, configure a database address reachable **from that container**: `127.0.0.1` would refer to the application container itself. The host-based setup above avoids that mismatch. See the [Dockerfile](../Dockerfile) for the application image. Configure credentials and network access for your deployment.
+
+## Optional local traces
+
+Install the optional OpenTelemetry dependencies in the chat environment. Set
+the flag in the shell before launching Chainlit. Use the shell, not `.env`, to control tracing.
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements-observability.txt
+$env:BIOPROCESS_GRAPH_CHAT_TRACE = "1"
+.\.venv\Scripts\chainlit.exe run app.py
+```
+
+After a graph chat request, look in `tmp/graph-chat-traces/` for the process's
+JSON Lines file. Group rows by trace ID to see the request, each Anthropic
+SDK call, and each Neo4j search. Durations are in milliseconds. A model span
+includes any SDK-internal retries in its elapsed time; it does not count or
+price those attempts separately.
+
+Traces contain only timing, outcomes, the configured model, provider-reported
+token counts, and an estimated USD cost when usage and pricing are known.
+The estimate uses the standard [Sonnet 4.6 API rates][sonnet-price] checked
+on 6 November 2026. It applies the US-only surcharge when reported, assumes
+standard routing when the SDK reports no geography, and omits cost for an
+unrecognized geography. If cache writes are reported without the duration
+breakdown, the cost is omitted. The estimate is neither a bill nor a spending
+cap. Prompts, answers, citations, queries, credentials, and exception text are
+excluded. Initialization and export are local and asynchronous. Requests
+that start before the exporter is ready proceed without a trace. If the SDK or file is unavailable,
+the chat still works; a full export queue can drop spans. Delete the local
+files when no longer needed and remove the flag to turn tracing off.
+
+Run the offline checks with `python -m unittest tests.test_graph_chat_tracing -v`.
+The integration checks use simulated clients and require the optional SDK.
+
+[sonnet-price]: https://platform.claude.com/docs/en/models/sonnet-4-6/overview

@@ -39,9 +39,9 @@ For model-assisted symptom search, set up Neo4j and Chainlit. Use
 [`.env.example`](.env.example) to configure the local database, Chainlit sign-in,
 and the Anthropic API key. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md)
 
-Optional local OpenTelemetry traces show request, Anthropic, and Neo4j latency,
-reported token use, and estimated model cost.
-[Enable local traces](docs/LOCAL-GRAPH-CHAT.md#optional-local-traces)
+Open the optional local trace viewer to see the Anthropic and Neo4j timeline,
+token counts, and estimated model cost.
+[Enable and view local traces](docs/LOCAL-GRAPH-CHAT.md#optional-local-traces)
 
 ## Architecture
 
@@ -70,7 +70,12 @@ after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md
 | --- | --- | --- |
 | Software regressions at `73f2517` | 1,049 passed, one optional PDF preview test skipped | [Merged checkpoint](https://github.com/mukunde/bioprocess-assistant/pull/91) |
 | Standalone backpressure demo | Four browser scenarios covered clarification, alternative treatments, product scope, and source navigation | [Dated validation record](docs/validation/CYTIVA-TROUBLESHOOTING-2026-10-30.md) |
+| Graph chat benchmark (G01) | One structured-output run returned both expected troubleshooting paths with five citations that matched the graph seed. It took 9.01 s and cost an estimated USD 0.012405. | [G01 result](docs/GRAPH-CHAT-MEASUREMENT.md#g01-with-structured-output) |
 | Graph retrieval | The evaluation separates lexical retrieval from model-assisted checks and records errors and abstentions | [Evaluation inputs and commands](eval/README.md) |
+
+Next: verify citation fidelity, abstention, and repeatability across the
+reviewed questions with structured output.
+[Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations
 

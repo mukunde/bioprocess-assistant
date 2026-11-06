@@ -120,6 +120,41 @@ class AgentBoundaryTests(unittest.TestCase):
             text, _, _ = agent.run_agent("Test", tool_outputs=outputs, answer_metadata=metadata)
         return text, outputs, metadata, query
 
+    def test_g01_requests_structured_json_and_cites_the_selected_graph_path(self):
+        question = ("My Protein A capture yield has dropped and antibody is appearing "
+                    "in the flow-through. What should I check?")
+        result = graph_result("Capture step yield drop")
+        result["symptom"]["source"] = "Cytiva CY12754, pp. 1–2"
+        cause = result["causes"][0]
+        cause.update(name="Degraded Protein A resin", source="Cytiva CY12754, Fig 2")
+        cause["actions"][0].update(name="Measure current DBC", source="Cytiva CY12754, Table 2")
+        turn = tool_response("capture yield drop")
+        miss = tool_response("unmatched symptom").content[0]
+        miss.id = "query-2"
+        turn.content.append(miss)
+        client = MagicMock()
+        client.messages.create.side_effect = [turn, final_response(ids=[0])]
+        metadata = {}
+        with patch.dict(os.environ, {"ANTHROPIC_API_KEY": "test-key"}), patch.object(
+            agent, "load_graph_dotenv"
+        ), patch.object(agent, "Anthropic", return_value=client), patch.object(
+            agent, "query_graph", side_effect=[result, {"found": False, "match_score": None}]
+        ):
+            answer, _, _ = agent.run_agent(question, answer_metadata=metadata)
+        self.assertEqual(metadata["status"], "answer")
+        self.assertIn("Degraded Protein A resin", answer)
+        self.assertIn("Measure current DBC", answer)
+        for reference in ("pp. 1–2", "Fig 2", "Table 2"):
+            self.assertIn(reference.replace(".", r"\."), answer)
+        self.assertEqual(answer.count("Source : Cytiva CY12754"), 3)
+        self.assertEqual(client.messages.create.call_count, 2)
+        for call in client.messages.create.call_args_list:
+            output = call.kwargs["output_config"]["format"]
+            self.assertEqual(output["type"], "json_schema")
+            self.assertFalse(output["schema"]["additionalProperties"])
+            self.assertEqual(set(output["schema"]["required"]), {"status", "language", "result_ids"})
+            self.assertEqual(output["schema"]["properties"]["result_ids"]["items"]["type"], "integer")
+
     def test_answer_without_lookup_is_blocked(self):
         text, _, metadata, query = self.run_mock([final_response()])
         self.assertNotIn("Possible cause", text)

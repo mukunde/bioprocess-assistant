@@ -181,6 +181,36 @@ class TraceIntegrationTests(unittest.TestCase):
         self.assertNotIn("private-", self.stream.getvalue())
         self.assertNotIn("Handbook", self.stream.getvalue())
 
+    def test_end_turn_rejection_exports_only_a_safe_reason(self):
+        from scripts.view_graph_chat_traces import page
+
+        incomplete = graph_result()
+        incomplete["symptom"].pop("source")
+        cases = [
+            (SimpleNamespace(stop_reason="end_turn", content=[]),
+             graph_result(), "empty_response"),
+            (SimpleNamespace(stop_reason="end_turn",
+                             content=[SimpleNamespace(type="text", text="secret raw prose")]),
+             graph_result(), "invalid_json"),
+            (final_response(ids=[9]), graph_result(), "invalid_result_id"),
+            (final_response(), {"found": False, "match_score": None}, "retrieval_miss"),
+            (final_response(), incomplete, "missing_graph_field"),
+        ]
+        for response, result, code in cases:
+            with self.subTest(code=code):
+                answer, _, _ = run_chat(self.tracer, [tool_response(), response],
+                                        Mock(return_value=result))
+                model, root = self.rows()[-2:]
+                self.assertEqual(model["attributes"]["gen_ai.response.stop_reason"], "end_turn")
+                self.assertEqual(root["status"], "ERROR")
+                self.assertEqual(root["attributes"], {
+                    "outcome": "error", "grounding.rejection_reason": code,
+                })
+                self.assertIn(code, page([(root["trace_id"], [root])], root["trace_id"], 0))
+                self.assertNotIn("secret raw prose", answer)
+        self.assertNotIn("secret raw prose", self.stream.getvalue())
+        self.assertFalse(tracing._permitted("grounding.rejection_reason", "secret raw prose"))
+
     def test_neo4j_and_anthropic_failures_are_recorded_without_exception_text(self):
         for source, responses, search in (
             ("anthropic.messages.create", [RuntimeError("private-provider-error")], None),

@@ -7,6 +7,9 @@ from pathlib import Path
 import tempfile
 import threading
 
+from grounding import RejectionReason
+
+
 LOGGER = logging.getLogger(__name__)
 PRICE_DATE = "2026-11-06"
 TRACE_ENV = "BIOPROCESS_GRAPH_CHAT_TRACE"
@@ -16,6 +19,11 @@ TOKEN_FIELDS = (
     "cache_creation_input_tokens",
 )
 SPAN_NAMES = {"graph_chat.request", "anthropic.messages.create", "neo4j.search"}
+STOP_REASONS = frozenset({
+    "end_turn", "max_tokens", "stop_sequence", "tool_use", "pause_turn",
+    "refusal", "model_context_window_exceeded",
+})
+REJECTION_REASONS = frozenset(reason.value for reason in RejectionReason)
 OUTCOMES = {"answer", "refuse", "error", "matched", "no_match"}
 
 
@@ -34,6 +42,9 @@ def usage_metadata(response, model):
     usage = getattr(response, "usage", None)
     values = {field: getattr(usage, field, None) for field in TOKEN_FIELDS}
     metadata = {f"usage.{field}": value for field, value in values.items() if _count(value)}
+    reason = getattr(response, "stop_reason", None)
+    if type(reason) is str and reason in STOP_REASONS:
+        metadata["gen_ai.response.stop_reason"] = reason
     if model not in PRICES or not all(_count(values[f]) for f in TOKEN_FIELDS[:2]):
         return metadata
     cache_read, cache_write = (0 if values[f] is None else values[f] for f in TOKEN_FIELDS[2:])
@@ -60,6 +71,10 @@ def usage_metadata(response, model):
 
 
 def _permitted(key, value):
+    if key == "grounding.rejection_reason":
+        return type(value) is str and value in REJECTION_REASONS
+    if key == "gen_ai.response.stop_reason":
+        return type(value) is str and value in STOP_REASONS
     if key == "usage.inference_geo":
         return type(value) is str and value in ("global", "us")
     if key.startswith("usage."):

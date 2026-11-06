@@ -92,3 +92,14 @@ Run the offline checks with `python -m unittest tests.test_graph_chat_tracing -v
 The integration checks use simulated clients and require the optional SDK.
 
 [sonnet-price]: https://platform.claude.com/docs/en/models/sonnet-4-6/overview
+
+Open the local trace viewer in a separate shell from the repository root.
+
+```powershell
+python scripts/view_graph_chat_traces.py
+```
+
+Open [the trace viewer](http://127.0.0.1:8765/), select a request, and refresh
+after the exporter has written new spans. The viewer shows the timeline,
+outcome, token counts, and estimated cost for each span. It reads existing
+local traces and listens on loopback.

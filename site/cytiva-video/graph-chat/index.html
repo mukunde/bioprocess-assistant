@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Watch the Bioprocess Assistant graph chat trace a high column pressure question to Cytiva references.">
+  <title>Graph chat demo | Bioprocess Troubleshooting Assistant</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #192d34; background: #f4f7f8; }
+    body { margin: 0; }
+    main { max-width: 960px; margin: auto; padding: 32px 20px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.15; }
+    p { line-height: 1.6; max-width: 72ch; }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #17272d; border-radius: 12px; }
+    a { color: #12576a; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid #a54200; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Follow a graph chat answer to its sources</h1>
+    <p>Watch a high column pressure question go through the local Chainlit chat.
+      Anthropic selects Neo4j results, and the app displays the graph's citations.</p>
+    <video controls playsinline preload="metadata" poster="poster.png"
+      aria-label="Graph chat demo, 27 seconds, no audio">
+      <source src="demo.mp4" type="video/mp4">
+      <a href="demo.mp4">Open the MP4</a>
+    </video>
+    <p><a href="https://github.com/mukunde/bioprocess-assistant#run-locally">Run the graph chat locally</a></p>
+  </main>
+</body>
+</html>

@@ -19,7 +19,7 @@ class FlowshotPagesTests(unittest.TestCase):
             result = builder.prepare(output)
             actual = {p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}
             self.assertEqual(actual, set(result['files']))
-            self.assertEqual(len(actual), 15)
+            self.assertEqual(len(actual), 18)
             self.assertIn('href="flowshot/"', (output / 'index.html').read_text(encoding='utf-8'))
             html = (output / 'flowshot/index.html').read_text(encoding='utf-8')
             self.assertIn('href="../"', html)
@@ -46,6 +46,26 @@ class FlowshotPagesTests(unittest.TestCase):
             for name in builder.SEPHAROSE_EXPORTS:
                 original = ROOT / 'media/chainlit-sepharose-continuous/exports' / name
                 self.assertEqual((player / name).read_bytes(), original.read_bytes())
+
+    def test_graph_chat_player_and_readme_use_the_1080p_recording(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)
+            builder.prepare(output)
+            player = output / 'graph-chat'
+            html = (player / 'index.html').read_text(encoding='utf-8')
+            self.assertIn('<video controls playsinline', html)
+            self.assertIn('poster="poster.png"', html)
+            self.assertIn('src="demo.mp4"', html)
+            for name in ('demo.mp4', 'poster.png'):
+                self.assertEqual((player / name).read_bytes(),
+                                 (ROOT / 'media/chainlit-graph-1080p' / name).read_bytes())
+            readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+            showcase = readme.split('## Watch the demo', 1)[1].split('## Run locally', 1)[0]
+            self.assertIn('media/chainlit-graph-1080p/poster.png', showcase)
+            self.assertIn('/bioprocess-assistant/graph-chat/', showcase)
+            self.assertNotIn('flowshot/', showcase)
+            self.assertNotIn('sepharose/', showcase)
+            self.assertNotIn('onboarding.jpg', showcase)
 
     def test_changed_capture_rejected_before_output_is_written(self):
         with tempfile.TemporaryDirectory() as tmp:

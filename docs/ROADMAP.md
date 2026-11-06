@@ -12,7 +12,7 @@ Keep source review, documentary previews, and operational decisions separate.
 | MabSelect | The guided Chainlit mode uses an approved local registry. Citations and withdrawal checks follow the current registry authority. [Operator guide](CHAINLIT-MABSELECT.md) |
 | Protein A/G Sepharose | The merged candidate provides a separate Chainlit preview with scoped sources, clarification, and simulated withdrawals. Release v03 was verified in one approved local installation. The public recording shows the preview; it does not provide access to that installation. [Candidate guide](CHAINLIT-SEPHAROSE-CANDIDATE.md) · [PR #91](https://github.com/mukunde/bioprocess-assistant/pull/91) |
 | Evidence preparation | Local Docling Graph extraction and a separate reviewed model extraction have produced development evidence. [Ingestion guide](INGESTION.md) · [Reviewed extraction](../experiments/cytiva/reviewed-r2/README.md) |
-| Observability | The registry UI has optional local metadata tracing and a read-only trace summary. [Tracing guide](REGISTRY-TRACING.md) · [Trace demo](REGISTRY-TRACE-DEMO.md) |
+| Observability | Graph chat has opt-in local OpenTelemetry traces for request, Anthropic, and Neo4j latency, plus reported tokens and estimated model cost. The registry UI has its own local metadata traces and read-only summary. [Graph chat traces](LOCAL-GRAPH-CHAT.md#optional-local-traces) · [Registry trace demo](REGISTRY-TRACE-DEMO.md) |
 
 The [README thumbnail](../README.md#watch-the-demo) opens the
 [1080p graph chat demo](https://mukunde.github.io/bioprocess-assistant/graph-chat/).
@@ -28,14 +28,14 @@ and the [history of this roadmap through 5 November 2026](https://github.com/muk
 
 ## Next priority
 
-Measure the model-backed graph chat end to end. Add opt-in local OpenTelemetry
-spans for the Anthropic call and Neo4j retrieval. Record per-stage latency,
-retries, outcomes, and provider-reported tokens. Keep prompts, retrieved text,
-and credentials out of traces. Label cost estimates with the pricing date.
+Establish a measured baseline for the model-backed graph chat. Define a
+reviewed question set and a spending cap before running live requests.
+Include a sourced answer, an unsupported request, and a simulated retrieval
+failure. Wait for local tracing to initialize before measuring.
 
-Run a small set of reviewed questions with a fixed spending cap. Include a
-sourced answer, an unsupported request, and a retrieval failure. Check citation
-fidelity and abstention alongside latency and cost before expanding coverage.
+Check citation fidelity and abstention. Summarize request and stage latency,
+reported tokens, and estimated cost. Report trace coverage and note that
+Anthropic SDK retries contribute to latency without separate usage records.
 
 ## Follow-up work
 

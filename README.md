@@ -39,6 +39,10 @@ For model-assisted symptom search, set up Neo4j and Chainlit. Use
 [`.env.example`](.env.example) to configure the local database, Chainlit sign-in,
 and the Anthropic API key. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md)
 
+Optional local OpenTelemetry traces show request, Anthropic, and Neo4j latency,
+reported token use, and estimated model cost.
+[Enable local traces](docs/LOCAL-GRAPH-CHAT.md#optional-local-traces)
+
 ## Architecture
 
 ![Architecture diagram showing separate ingestion, review, and graph chat paths](docs/architecture/architecture-detailed.png)

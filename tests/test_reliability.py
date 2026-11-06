@@ -43,6 +43,13 @@ class GroundingTests(unittest.TestCase):
     def render(self, **kwargs):
         return render_selection(final_response(**kwargs).content[0].text, [graph_result()])
 
+    def test_graph_apostrophes_remain_literal_text(self):
+        data = graph_result()
+        data["causes"][0]["description"] = "Check the supplier's specification."
+        rendered, _ = render_selection(final_response().content[0].text, [data])
+        self.assertIn("supplier's specification", rendered)
+        self.assertNotIn("&#x27;", rendered)
+
     def test_valid_answer_cites_every_graph_node(self):
         text, metadata = self.render()
         for source in ("Handbook p\\.1", "Handbook p\\.2", "Handbook p\\.3"):

@@ -21,7 +21,7 @@ def _text(node: dict, field: str) -> str:
     if not isinstance(value, str) or not value.strip():
         raise GroundingError(f"Missing graph field: {field}")
     # Graph content is data, including any Markdown/HTML it may contain.
-    return re.sub(r"([\\`*_{}\[\]()#+.!|>~-])", r"\\\1", html.escape(value))
+    return re.sub(r"([\\`*_{}\[\]()#+.!|>~-])", r"\\\1", html.escape(value, quote=False))
 
 
 def render_selection(raw: str, results: list[dict]) -> tuple[str, dict]:

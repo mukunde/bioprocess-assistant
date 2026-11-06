@@ -7,21 +7,13 @@ check.
 
 ## Watch the demo
 
-[Explore the four-screen walkthrough](https://mukunde.github.io/bioprocess-assistant/flowshot/)
-to see a MabSelect request, a documented result, its citation, and a request for
-missing context. The walkthrough uses recorded screens.
+See the graph chat answer “High column pressure” with references to the Cytiva
+handbook. The local demo uses Anthropic to select results from Neo4j. Chainlit
+renders the selected graph facts and their citations.
 
-[![Watch the 34-second demo](media/cytiva-onboarding-v05/exports/onboarding.jpg)](https://mukunde.github.io/bioprocess-assistant/)
+[![Play the graph chat demo in 1080p](media/chainlit-graph-1080p/poster.png)](https://mukunde.github.io/bioprocess-assistant/graph-chat/)
 
-### Protein G Sepharose in Chainlit
-
-Watch a 32-second recording of the staged preview. Choose a product and context,
-inspect the documented response, and open citation E166-P on page 166.
-The video plays on GitHub Pages. [Playback verification](docs/CYTIVA-VIDEO-HOSTING.md#published-chainlit-sepharose-video)
-
-[![Play the Chainlit Sepharose demo](media/chainlit-sepharose-continuous/exports/sepharose-chainlit-poster.jpg)](https://mukunde.github.io/bioprocess-assistant/sepharose/)
-
-[Play the Chainlit Sepharose demo](https://mukunde.github.io/bioprocess-assistant/sepharose/)
+[Play the 27-second graph chat demo](https://mukunde.github.io/bioprocess-assistant/graph-chat/)
 
 ## Run locally
 
@@ -97,4 +89,4 @@ after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md
 Gaël Mukunde maintains this project. [GitHub profile](https://github.com/mukunde)
 
 [MIT license](LICENSE) for the project code. Cytiva manuals and third-party
-assets retain their respective rights. [Video credits](media/cytiva-onboarding-v05/README.md) · [Diagram credits](docs/architecture/README.md)
+assets retain their respective rights. [Graph demo recording](media/chainlit-graph-1080p/README.md) · [Diagram credits](docs/architecture/README.md)

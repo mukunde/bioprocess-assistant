@@ -16,6 +16,12 @@ SEPHAROSE_EXPORTS = {
 }
 
 
+GRAPH_CHAT_EXPORTS = {
+    'demo.mp4': 'f5fe525bb5293a9eed36869fa6ec303510439cb4fbad6ffde8eb41cbca92c13a',
+    'poster.png': '0a4a91dd94a6397de90a2aab19577a000715e8545174312170e06d4a19e0708b',
+}
+
+
 def flowshot_assets():
     package = ROOT / 'media/cytiva-flowshot-pilot-v02'
     manifest = json.loads((package / 'package-manifest.json').read_text(encoding='utf-8'))
@@ -51,6 +57,12 @@ def prepare(output):
         if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
             raise ValueError('Sepharose export hash mismatch: ' + name)
         sepharose_files[name] = source
+    graph_chat_files = {'index.html': ROOT / 'site/cytiva-video/graph-chat/index.html'}
+    for name, digest in GRAPH_CHAT_EXPORTS.items():
+        source = ROOT / 'media/chainlit-graph-1080p' / name
+        if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
+            raise ValueError('Graph chat export hash mismatch: ' + name)
+        graph_chat_files[name] = source
     (output / 'assets').mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / 'site/cytiva-video/index.html', output / 'index.html')
     for source in exports:
@@ -66,12 +78,13 @@ def prepare(output):
             destination.write_text(html, encoding='utf-8')
         else:
             shutil.copyfile(flowshot / name, destination)
-    (output / 'sepharose').mkdir()
-    for name, source in sepharose_files.items():
-        shutil.copyfile(source, output / 'sepharose' / name)
     files = ['index.html', 'assets/onboarding.mp4', 'assets/onboarding.jpg']
     files += ['flowshot/' + name for name in FLOW_FILES]
-    files += ['sepharose/' + name for name in sepharose_files]
+    for route, assets in (('sepharose', sepharose_files), ('graph-chat', graph_chat_files)):
+        (output / route).mkdir()
+        for name, source in assets.items():
+            shutil.copyfile(source, output / route / name)
+            files.append(f'{route}/{name}')
     return {'status': 'prepared', 'files': files,
             'bytes': sum(p.stat().st_size for p in output.rglob('*') if p.is_file())}
 

@@ -17,6 +17,7 @@ missing context. The walkthrough uses recorded screens.
 
 Watch a 32-second recording of the staged preview. Choose a product and context,
 inspect the documented response, and open citation E166-P on page 166.
+The video plays on GitHub Pages. [Playback verification](docs/CYTIVA-VIDEO-HOSTING.md#published-chainlit-sepharose-video)
 
 [![Play the Chainlit Sepharose demo](media/chainlit-sepharose-continuous/exports/sepharose-chainlit-poster.jpg)](https://mukunde.github.io/bioprocess-assistant/sepharose/)
 
@@ -64,8 +65,8 @@ The guided demo uses **25 reviewed Cytiva excerpts**. The public repository
 includes selected excerpts and review records. [Cytiva experiment index](experiments/cytiva/README.md)
 
 Two additional documentary modes have separate evidence and authority rules.
-MabSelect uses an approved local registry. Protein A/G Sepharose has a staged
-Chainlit preview awaiting focused acceptance. [MabSelect guide](docs/CHAINLIT-MABSELECT.md) · [Sepharose preview](docs/CHAINLIT-SEPHAROSE-CANDIDATE.md)
+MabSelect uses an approved local registry. Protein A/G Sepharose remains staged
+after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md) · [Sepharose preview](docs/CHAINLIT-SEPHAROSE-CANDIDATE.md)
 
 ## Validation and results
 

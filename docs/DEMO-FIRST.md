@@ -156,6 +156,11 @@ limited to the selected excerpts, not the entire Cytiva manual.
 The approved [34-second video](https://mukunde.github.io/bioprocess-assistant/)
 is published on GitHub Pages (29 October 2026). Clicking the README poster and
 playing the video was verified publicly; see [hosting and verification](CYTIVA-VIDEO-HOSTING.md).
+The [Chainlit Sepharose recording](https://mukunde.github.io/bioprocess-assistant/sepharose/)
+is also published. Playback from its README thumbnail was verified through to
+the end. It shows the staged candidate opening citation E166-P.
+[Publication record](CYTIVA-VIDEO-HOSTING.md#published-chainlit-sepharose-video)
+
 The interactive demo still runs locally using the installation steps above.
 
 1. **Validate on a second Windows PC.** The installer, launcher and corrected

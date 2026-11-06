@@ -13,6 +13,15 @@ missing context. The walkthrough uses recorded screens.
 
 [![Watch the 34-second demo](media/cytiva-onboarding-v05/exports/onboarding.jpg)](https://mukunde.github.io/bioprocess-assistant/)
 
+### Protein G Sepharose in Chainlit
+
+Watch a 32-second recording of the staged preview. Choose a product and context,
+inspect the documented response, and open citation E166-P on page 166.
+
+[![Play the Chainlit Sepharose demo](media/chainlit-sepharose-continuous/exports/sepharose-chainlit-poster.jpg)](https://mukunde.github.io/bioprocess-assistant/sepharose/)
+
+[Play the Chainlit Sepharose demo](https://mukunde.github.io/bioprocess-assistant/sepharose/)
+
 ## Run locally
 
 For the guided Cytiva demo, install Git and **CPython 3.13.0 x64** on Windows.

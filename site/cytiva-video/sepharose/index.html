@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Watch the staged Chainlit preview for Protein G Sepharose and follow its response to citation E166-P.">
+  <title>Chainlit Sepharose demo | Bioprocess Troubleshooting Assistant</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #192d34; background: #f4f7f8; }
+    body { margin: 0; }
+    main { max-width: 960px; margin: auto; padding: 32px 20px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.15; }
+    p { line-height: 1.6; max-width: 72ch; }
+    video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #17272d; border-radius: 12px; }
+    a { color: #12576a; text-underline-offset: .2em; }
+    a:focus-visible { outline: 3px solid #a54200; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <p><a href="../">Back to the Cytiva demo</a></p>
+    <h1>Follow a Chainlit answer to its source</h1>
+    <p>Choose Protein G Sepharose and a context, inspect the documented response,
+      then open citation E166-P on page 166 of the Cytiva handbook.</p>
+    <video controls playsinline preload="metadata" poster="sepharose-chainlit-poster.jpg"
+      aria-label="Chainlit Sepharose demo, 32 seconds, no audio">
+      <source src="sepharose-chainlit-continuous.mp4" type="video/mp4">
+      <a href="sepharose-chainlit-continuous.mp4">Open the MP4</a>
+    </video>
+    <p>This silent recording shows a staged candidate. The response supports
+      documentary review and does not authorize laboratory use.</p>
+    <p><a href="https://github.com/mukunde/bioprocess-assistant/blob/main/media/chainlit-sepharose-continuous/ATTRIBUTION.md">Credits and source provenance</a></p>
+  </main>
+</body>
+</html>

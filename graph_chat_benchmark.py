@@ -14,6 +14,7 @@ PROTOCOL = ROOT / "docs" / "GRAPH-CHAT-MEASUREMENT.md"
 CASE_IDS = ("G01", "G02", "G03", "G04")
 FIRST_RUN_RESERVE_USD = Decimal("0.399168")
 RETRY_MAX_OUTPUT = 1536
+STRUCTURED_REPLAY_CEILING_USD = Decimal("1.01")
 
 
 def run_targeted_retry(client, *, output_dir=None, simulated=False):
@@ -21,6 +22,12 @@ def run_targeted_retry(client, *, output_dir=None, simulated=False):
     return run_benchmark(client, output_dir=output_dir, simulated=simulated,
                          case_ids=("G01", "G02"), max_output=RETRY_MAX_OUTPUT,
                          prior_reserved_usd=FIRST_RUN_RESERVE_USD)
+
+
+def run_structured_replay(client, *, output_dir=None, simulated=False):
+    """Run both G01–G04 passes under the separate structured-output budget."""
+    return run_benchmark(client, output_dir=output_dir, simulated=simulated,
+                         max_output=RETRY_MAX_OUTPUT, ceiling_usd=STRUCTURED_REPLAY_CEILING_USD)
 
 
 def reviewed_questions():
@@ -37,7 +44,7 @@ def reviewed_questions():
 
 def run_benchmark(client, *, output_dir=None, simulated=False, case_ids=CASE_IDS,
                   max_output=GraphChatBudget.MAX_OUTPUT, prior_reserved_usd=Decimal("0"), passes=2,
-                  max_calls=GraphChatBudget.MAX_CALLS):
+                  max_calls=GraphChatBudget.MAX_CALLS, ceiling_usd=GraphChatBudget.CEILING_USD):
     """Use one budget and one initialized local trace exporter for the selected passes."""
     if type(passes) is not int or not 1 <= passes <= 2:
         raise ValueError("Invalid benchmark pass count")
@@ -46,9 +53,9 @@ def run_benchmark(client, *, output_dir=None, simulated=False, case_ids=CASE_IDS
         raise ValueError("Invalid reviewed case selection")
     questions = [(case, reviewed[case]) for case in case_ids]
     budget = GraphChatBudget(client, max_output=max_output, prior_reserved_usd=prior_reserved_usd,
-                            max_calls=max_calls)
+                            max_calls=max_calls, ceiling_usd=ceiling_usd)
     worst_case = passes * len(questions) * budget.max_calls * budget.call_reserve_usd
-    if prior_reserved_usd + worst_case > budget.CEILING_USD:
+    if prior_reserved_usd + worst_case > budget.ceiling_usd:
         raise BenchmarkLimitError("planned benchmark exceeds cumulative spend ceiling")
     output_dir = Path(output_dir) if output_dir is not None else ROOT / "tmp" / "graph-chat-traces"
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -109,10 +116,10 @@ def run_benchmark(client, *, output_dir=None, simulated=False, case_ids=CASE_IDS
         )
     report = {
         "mode": mode, "run_id": run_id, "halt": halt,
-        "ceiling_usd": str(budget.CEILING_USD), "reserved_usd": str(budget.reserved_usd),
+        "ceiling_usd": str(budget.ceiling_usd), "reserved_usd": str(budget.reserved_usd),
         "max_output_tokens": budget.max_output, "max_calls_per_case": budget.max_calls, "prior_reserved_usd": str(prior_reserved_usd),
         "planned_maximum_usd": str(worst_case),
-        "unreserved_usd": str(budget.CEILING_USD - prior_reserved_usd - budget.reserved_usd),
+        "unreserved_usd": str(budget.ceiling_usd - prior_reserved_usd - budget.reserved_usd),
         "trace_flush_ok": flushed, "trace_file": trace_file.name, "results": results,
     }
     with report_file.open("x", encoding="utf-8") as stream:

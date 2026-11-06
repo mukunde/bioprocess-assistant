@@ -14,11 +14,15 @@ class GraphChatBudget:
     MAX_ESTIMATED_INPUT = 4500
     MAX_OUTPUT = 512
     CEILING_USD = Decimal("1.00")
+
     def __init__(self, client, *, max_output=MAX_OUTPUT, prior_reserved_usd=Decimal("0"),
-                 max_calls=MAX_CALLS):
+                 max_calls=MAX_CALLS, ceiling_usd=CEILING_USD):
+        if not isinstance(ceiling_usd, Decimal) or not ceiling_usd.is_finite() or ceiling_usd <= 0:
+            raise ValueError("Invalid benchmark ceiling")
+        self.ceiling_usd = ceiling_usd
         if type(max_output) is not int or not 1 <= max_output <= 2048:
             raise ValueError("Invalid benchmark output limit")
-        if not prior_reserved_usd.is_finite() or not 0 <= prior_reserved_usd <= self.CEILING_USD:
+        if not prior_reserved_usd.is_finite() or not 0 <= prior_reserved_usd <= self.ceiling_usd:
             raise ValueError("Invalid prior reserve")
         if type(max_calls) is not int or not 1 <= max_calls <= self.MAX_CALLS:
             raise ValueError("Invalid model call limit")
@@ -53,7 +57,7 @@ class _Submission:
             budget.stopped = True
             raise BenchmarkLimitError("unpriced benchmark model")
         committed = budget.prior_reserved_usd + budget.reserved_usd
-        if committed + budget.call_reserve_usd > budget.CEILING_USD:
+        if committed + budget.call_reserve_usd > budget.ceiling_usd:
             budget.stopped = True
             raise BenchmarkLimitError("benchmark spend ceiling")
         payload = dict(model=model, system=system, tools=tools, messages=messages,

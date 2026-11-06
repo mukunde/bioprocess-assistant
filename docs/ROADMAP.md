@@ -28,22 +28,19 @@ and the [history of this roadmap through 5 November 2026](https://github.com/muk
 
 ## Latest graph chat result
 
-On 6 November 2026, one structured-output run of G01 returned both expected
-paths with five citations that matched the Neo4j seed. It took 9.01 s and used
-3,515 input and 124 output tokens, at an estimated USD 0.012405.
-[Result and limits](GRAPH-CHAT-MEASUREMENT.md#g01-with-structured-output)
+Two structured-output passes of G01–G04 matched all eight expected outcomes.
+G01 and G02 returned sourced answers, and G03 and G04 abstained. All 20
+displayed citation entries matched the seed. G05 passed offline with an
+injected Neo4j outage. The live replay had a median request latency of 3.97 s
+and an estimated total model cost of USD 0.089622.
+[Replay results](GRAPH-CHAT-MEASUREMENT.md#structured-output-replay)
 
 ## Next priority
 
-Complete the structured-output baseline. Verify the simulated retrieval
-failure offline first. Then propose a separate budget for a repeatable run
-of G01–G04. Check citation fidelity, abstention, and consistency between
-passes. Report trace coverage, request and stage latency, token use, and
-estimated cost.
-
-The first successful G01 run does not establish repeatability or coverage of
-the other questions. The prior runs reserved USD 0.984984 of the USD 1.00
-ceiling. Get approval for a new ceiling before making live calls.
+Prepare a held-out graph chat set with unseen questions, including ambiguous
+and out-of-scope requests. Fix expected outcomes, source requirements, and
+failure criteria before running the set. Compare citation fidelity, abstention,
+latency, and cost with the G01–G04 baseline.
 
 ## Follow-up work
 

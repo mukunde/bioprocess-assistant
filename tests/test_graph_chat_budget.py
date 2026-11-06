@@ -102,6 +102,17 @@ class GraphChatBudgetTests(unittest.TestCase):
         self.assertEqual(self.api.count_tokens.call_count, 3)
         self.assertEqual(self.api.create.call_count, 3)
 
+    def test_explicit_ceiling_applies_to_each_reservation(self):
+        self.budget = GraphChatBudget(self.client, max_output=1536,
+                                      ceiling_usd=Decimal("1.01"))
+        self.budget.reserved_usd = Decimal("0.962412")
+        self.run_chat()
+        self.assertEqual(self.budget.reserved_usd, Decimal("1.004256"))
+        with self.assertRaisesRegex(BenchmarkLimitError, "spend ceiling"):
+            self.run_chat()
+        self.api.count_tokens.assert_called_once()
+        self.api.create.assert_called_once()
+
     def test_spend_ceiling_blocks_before_count_or_generation(self):
         self.budget.reserved_usd = Decimal("0.99")
         with self.assertRaisesRegex(BenchmarkLimitError, "spend ceiling"):

@@ -7,13 +7,14 @@ import unittest
 from unittest.mock import Mock, patch
 
 import agent
-from graph_chat_benchmark import FIRST_RUN_RESERVE_USD, run_benchmark, run_targeted_retry
+from graph_chat_benchmark import (FIRST_RUN_RESERVE_USD, run_benchmark,
+                                  run_structured_replay, run_targeted_retry)
 from graph_chat_budget import BenchmarkLimitError
 from scripts.view_graph_chat_traces import page, read_traces
 from tests.test_reliability import final_response, graph_result, tool_response
 
 
-def simulate(output_dir=None, *, oversized=False):
+def simulate(output_dir=None, *, oversized=False, runner=run_benchmark):
     client = Mock()
     api = client.with_options.return_value.messages
     api.count_tokens.return_value.input_tokens = 4501 if oversized else 1200
@@ -28,7 +29,7 @@ def simulate(output_dir=None, *, oversized=False):
             {"yield": "Capture step yield drop", "pressure": "High column pressure"}[symptom]
         )
     ):
-        path, report = run_benchmark(client, output_dir=output_dir, simulated=True)
+        path, report = runner(client, output_dir=output_dir, simulated=True)
     return path, report, api
 
 
@@ -53,6 +54,37 @@ class GraphChatBenchmarkTests(unittest.TestCase):
             names = [row["name"] for row in rows if row["trace_id"] == result["trace_id"]]
             self.assertEqual(names.count("graph_chat.request"), 1)
             self.assertEqual(names.count("neo4j.search"), int(result["outcome"] == "answer"))
+
+    def test_structured_replay_uses_separate_budget_for_both_passes(self):
+        with TemporaryDirectory() as tmp:
+            _, report, api = simulate(tmp, runner=run_structured_replay)
+        results = report["results"]
+        self.assertEqual([(r["pass"], r["case"], r["outcome"]) for r in results], [
+            (n, case, outcome)
+            for n in (1, 2)
+            for case, outcome in (("G01", "answer"), ("G02", "answer"),
+                                  ("G03", "refuse"), ("G04", "refuse"))
+        ])
+        self.assertTrue(all(r["trace_exported"] for r in results))
+        self.assertEqual(len({r["trace_id"] for r in results}), 8)
+        self.assertIsNone(report["halt"])
+        self.assertEqual(Decimal(report["ceiling_usd"]), Decimal("1.01"))
+        self.assertEqual(Decimal(report["prior_reserved_usd"]), 0)
+        self.assertEqual(Decimal(report["planned_maximum_usd"]), Decimal("1.004256"))
+        self.assertEqual(Decimal(report["reserved_usd"]), Decimal("0.502128"))
+        self.assertEqual(report["max_calls_per_case"], 3)
+        self.assertEqual(api.create.call_count, 12)
+        self.assertEqual(api.count_tokens.call_count, 12)
+        for count, create in zip(api.count_tokens.call_args_list, api.create.call_args_list):
+            self.assertEqual(count.kwargs["output_config"], agent.SELECTION_OUTPUT)
+            self.assertEqual(create.kwargs, {**count.kwargs, "max_tokens": 1536})
+
+    def test_structured_plan_under_original_ceiling_aborts_before_preflight(self):
+        client = Mock()
+        with self.assertRaisesRegex(BenchmarkLimitError, "cumulative spend ceiling"):
+            run_benchmark(client, simulated=True, max_output=1536)
+        client.with_options.return_value.messages.count_tokens.assert_not_called()
+        client.with_options.return_value.messages.create.assert_not_called()
 
     def test_failed_preflight_preserves_failure_trace_and_halts_both_passes(self):
         with TemporaryDirectory() as tmp:

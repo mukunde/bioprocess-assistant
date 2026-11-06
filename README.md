@@ -70,11 +70,11 @@ after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md
 | --- | --- | --- |
 | Software regressions at `73f2517` | 1,049 passed, one optional PDF preview test skipped | [Merged checkpoint](https://github.com/mukunde/bioprocess-assistant/pull/91) |
 | Standalone backpressure demo | Four browser scenarios covered clarification, alternative treatments, product scope, and source navigation | [Dated validation record](docs/validation/CYTIVA-TROUBLESHOOTING-2026-10-30.md) |
-| Graph chat benchmark (G01) | One structured-output run returned both expected troubleshooting paths with five citations that matched the graph seed. It took 9.01 s and cost an estimated USD 0.012405. | [G01 result](docs/GRAPH-CHAT-MEASUREMENT.md#g01-with-structured-output) |
+| Graph chat benchmark | Two G01–G04 passes matched all eight expected outcomes. Median request latency was 3.97 s, and estimated total model cost was USD 0.089622. | [Replay results](docs/GRAPH-CHAT-MEASUREMENT.md#structured-output-replay) |
 | Graph retrieval | The evaluation separates lexical retrieval from model-assisted checks and records errors and abstentions | [Evaluation inputs and commands](eval/README.md) |
 
-Next: verify citation fidelity, abstention, and repeatability across the
-reviewed questions with structured output.
+Next, prepare a held-out question set to check citations and abstention on
+unseen requests.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

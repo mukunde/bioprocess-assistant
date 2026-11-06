@@ -1,7 +1,8 @@
 # Graph chat measurement protocol
 
-The question set and USD 1.00 ceiling have been approved. The guard has
-been tested offline. A live run requires separate approval.
+The original measurement used a USD 1.00 ceiling. The structured-output
+replay used a separately approved USD 1.01 ceiling. A new live run requires
+separate approval.
 
 ## Question set
 
@@ -44,9 +45,9 @@ each displayed claim keeps the corresponding graph citation, and G05 returns
 the expected service error. Report trace coverage separately. The sample is
 too small to establish a tail-latency target.
 
-## Approved spend ceiling
+## Original spend ceiling
 
-The whole run has a USD 1.00 ceiling, including failed calls. The live preflight
+The original run had a USD 1.00 ceiling, including failed calls. The live preflight
 must enforce eight submissions total, at most three Anthropic calls per
 submission, zero SDK retries, a verified input limit of 5,000 tokens per call,
 and a maximum of 512 output tokens per call. The input limit includes system
@@ -128,3 +129,57 @@ follow-up confirms one successful G01 result with the schema. It does not
 measure repeatability or assess the full question set with structured output.
 The report and trace remain local. The trace ID is
 `9293edd91fee2af830263c1f856cf83f`.
+
+## Structured-output replay
+
+On 6 November 2026, two passes of G01–G04 used Claude Sonnet 4.6, Anthropic
+SDK 2.6.0, standard billing, and the structured JSON schema. The local Neo4j
+fixture matched the 30 expected nodes and 24 expected links. The full-text
+index was online, and the retrieval threshold was 2.5. The LF-normalized
+SHA-256 of the seed was
+`9d95f426fb92cc718712bca99694c886201a32c124838f4a2351bf75b942d6ed`.
+
+The `run_structured_replay` entry point uses the separate USD 1.01 ceiling.
+It allows up to three generations per request, 1,536 output tokens per
+generation, and zero SDK retries. The input preflight and reserve remain at
+4,500 and 5,000 tokens respectively. The planned reserve was USD 1.004256
+for up to 24 generations.
+
+| Pass | Case | Result | Citations | Request (s) | Input tokens | Output tokens | Estimated USD |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | G01 | Sourced answer | 5 | 4.70 | 4,248 | 128 | 0.014664 |
+| 1 | G02 | Sourced answer | 5 | 3.98 | 3,448 | 85 | 0.011619 |
+| 1 | G03 | Abstention | 0 | 4.30 | 2,671 | 85 | 0.009288 |
+| 1 | G04 | Abstention | 0 | 2.90 | 2,655 | 85 | 0.009240 |
+| 2 | G01 | Sourced answer | 5 | 3.88 | 4,248 | 128 | 0.014664 |
+| 2 | G02 | Sourced answer | 5 | 4.12 | 3,448 | 85 | 0.011619 |
+| 2 | G03 | Abstention | 0 | 3.96 | 2,671 | 85 | 0.009288 |
+| 2 | G04 | Abstention | 0 | 3.03 | 2,655 | 85 | 0.009240 |
+
+All eight requests exported a trace and matched their expected outcomes.
+Each used two generations with `tool_use` followed by `end_turn`. The final
+JSON selection passed validation each time. The 16 generations used
+26,044 input and 766 output tokens. Estimated model cost was USD 0.089622,
+and the guard reserved USD 0.669504.
+
+| Stage | Observations | Median (ms) | Range (ms) |
+| --- | --- | --- | --- |
+| Request | 8 | 3,970 | 2,897–4,699 |
+| Anthropic generation | 16 | 1,585 | 1,168–2,502 |
+| Neo4j search | 10 | 32 | 18–223 |
+
+G01 returned both the degraded-resin and loading-flow paths in each pass.
+Its citations point to Cytiva CY12754, pp. 1–3, figures 2–3 and table 2, and
+CY13981, p. 58. G02 returned the bed-efficiency and resin-specific cleaning
+paths in each pass. Its citations point to CY13981, pp. 162–164 and 166–167,
+and CY12754, pp. 4–5 and figure 11. All 20 displayed citation entries
+matched the seed. G03 and G04 had no eligible match and abstained without
+citations in both passes.
+
+The separate G05 offline check injected a Neo4j availability error. Chainlit
+returned the generic service error, and the request and search spans recorded
+the failure. The agent stopped after one simulated model call.
+
+These results measure repeatability on four known questions and citation
+fidelity to the seed. Independent source review and performance on unseen
+questions are separate checks.

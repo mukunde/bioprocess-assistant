@@ -8,6 +8,7 @@ from pathlib import Path
 from anthropic import Anthropic
 
 from tools import DEFAULT_MIN_MATCH_SCORE, load_graph_dotenv, query_graph, validate_min_score
+from graph_chat_budget import GraphChatBudget
 from grounding import GroundingError, refusal, render_selection
 from graph_chat_tracing import local_tracer, span, usage_metadata
 
@@ -68,6 +69,9 @@ def run_agent(
     min_score: float = DEFAULT_MIN_MATCH_SCORE,
     tool_outputs: list | None = None,
     answer_metadata: dict | None = None,
+    *,
+    benchmark_budget: GraphChatBudget | None = None,
+    benchmark_tracer=None,
 ) -> tuple[str, float | None, float]:
     """Run the agent and return (text, last_match_score, threshold_used).
 
@@ -83,36 +87,42 @@ def run_agent(
     if answer_metadata is not None:
         answer_metadata.clear()
         answer_metadata.update(status="error", symptoms=[])
-    tracer = local_tracer()
+    tracer = benchmark_tracer if benchmark_tracer is not None else local_tracer()
     metadata = answer_metadata if answer_metadata is not None else {"status": "error"}
     with span(tracer, "graph_chat.request") as request:
-        answer = _run_agent(user_message, min_score, tool_outputs, metadata, tracer, request)
+        if benchmark_budget is not None and request.raw is not None:
+            metadata["trace_id"] = f"{request.raw.get_span_context().trace_id:032x}"
+        answer = _run_agent(user_message, min_score, tool_outputs, metadata, tracer, request,
+                            benchmark_budget)
         request.attributes(outcome=metadata["status"])
         if metadata["status"] == "error":
             request.failed()
         return answer
 
 
-def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, request):
+def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, request,
+               benchmark_budget):
     results: list[dict] = []
     # override=True makes the local .env authoritative over any stray (possibly
     # empty) ANTHROPIC_API_KEY already in the shell. No-op on Render (no .env file).
-    load_graph_dotenv(PROJECT_ROOT / ".env", override=True)
-    client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    submission = benchmark_budget.start_submission() if benchmark_budget is not None else None
+    if submission is None:
+        load_graph_dotenv(PROJECT_ROOT / ".env", override=True)
+        client = Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
     messages = [{"role": "user", "content": user_message}]
     last_score: float | None = None
 
     for _ in range(MAX_TURNS):
+        payload = dict(model=MODEL, system=SYSTEM_PROMPT, tools=TOOLS, messages=messages)
+        if submission is not None:
+            payload = submission.prepare(**payload)
         with span(tracer, "anthropic.messages.create", request) as call:
             call.attributes(**{"gen_ai.request.model": MODEL})
-            response = client.messages.create(
-                model=MODEL,
-                system=SYSTEM_PROMPT,
-                tools=TOOLS,
-                messages=messages,
-                max_tokens=2048,
-            )
+            if submission is None:
+                response = client.messages.create(**payload, max_tokens=2048)
+            else:
+                response = submission.send(payload)
             if call.raw is not None:
                 try:
                     call.attributes(**usage_metadata(response, MODEL))
@@ -124,8 +134,8 @@ def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, r
             if response.stop_reason == "end_turn":
                 try:
                     rendered, metadata = render_selection(text, results)
-                except GroundingError:
-                    pass
+                except GroundingError as exc:
+                    request.attributes(**{"grounding.rejection_reason": exc.reason.value})
                 else:
                     if answer_metadata is not None:
                         answer_metadata.update(metadata)

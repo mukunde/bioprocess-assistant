@@ -109,7 +109,7 @@ class GroundingTests(unittest.TestCase):
 
 
 class AgentBoundaryTests(unittest.TestCase):
-    def run_mock(self, responses, result=None):
+    def run_mock(self, responses, result=None, *, question="Test"):
         client = MagicMock()
         client.messages.create.side_effect = responses
         outputs, metadata = [], {}
@@ -117,7 +117,7 @@ class AgentBoundaryTests(unittest.TestCase):
                 patch.object(agent, "load_graph_dotenv"), \
                 patch.object(agent, "Anthropic", return_value=client), \
                 patch.object(agent, "query_graph", return_value=result or graph_result()) as query:
-            text, _, _ = agent.run_agent("Test", tool_outputs=outputs, answer_metadata=metadata)
+            text, _, _ = agent.run_agent(question, tool_outputs=outputs, answer_metadata=metadata)
         return text, outputs, metadata, query
 
     def test_g01_requests_structured_json_and_cites_the_selected_graph_path(self):
@@ -154,6 +154,51 @@ class AgentBoundaryTests(unittest.TestCase):
             self.assertFalse(output["schema"]["additionalProperties"])
             self.assertEqual(set(output["schema"]["required"]), {"status", "language", "result_ids"})
             self.assertEqual(output["schema"]["properties"]["result_ids"]["items"]["type"], "integer")
+
+    def test_pressure_match_cannot_turn_unconfirmed_alarm_into_sourced_answer(self):
+        for language, question in (
+            ("en", "The capture dashboard shows a pressure alarm, but we cannot tell whether "
+                   "it was a sensor fault or a measured column pressure increase. Should we "
+                   "repack the Protein A column now?"),
+            ("en", "The column showed an alarm, but the pressure rise is not confirmed. "
+                   "Should we clean the column?"),
+            ("fr", "L’alarme de pression s’est déclenchée, mais on ne sait pas si c’est "
+                   "une panne du capteur. Faut-il reconditionner la colonne ?"),
+        ):
+            with self.subTest(question=question):
+                answer, outputs, metadata, query = self.run_mock(
+                    [tool_response(), final_response(language=language)], question=question
+                )
+                query.assert_called_once()
+                self.assertTrue(outputs[0]["found"])
+                self.assertEqual(metadata, {"status": "refuse", "language": language, "symptoms": []})
+                self.assertNotIn("Source :", answer)
+                self.assertNotIn("Fouling", answer)
+
+    def test_reported_pressure_increase_still_returns_citations(self):
+        for question in (
+            "La pression de ma colonne augmente pendant la capture Protein A. "
+            "Quelles causes dois-je vérifier ?",
+            "The alarm was verified with a second gauge. Measured column pressure rose. "
+            "What should I check?",
+        ):
+            with self.subTest(question=question):
+                answer, _, metadata, _ = self.run_mock(
+                    [tool_response(), final_response()], question=question
+                )
+                self.assertEqual(metadata["status"], "answer")
+                self.assertIn("Fouling", answer)
+                self.assertEqual(answer.count("Source :"), 3)
+
+    def test_pressure_uncertainty_does_not_suppress_a_separate_yield_result(self):
+        question = ("There is no confirmed rise in pressure. Capture yield dropped, "
+                    "and I only want help with yield.")
+        answer, _, metadata, _ = self.run_mock(
+            [tool_response("capture yield drop"), final_response()],
+            graph_result("Capture step yield drop"), question=question,
+        )
+        self.assertEqual(metadata["status"], "answer")
+        self.assertIn("Capture step yield drop", answer)
 
     def test_answer_without_lookup_is_blocked(self):
         text, _, metadata, query = self.run_mock([final_response()])

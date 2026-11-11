@@ -35,12 +35,18 @@ injected Neo4j outage. The live replay had a median request latency of 3.97 s
 and an estimated total model cost of USD 0.089622.
 [Replay results](GRAPH-CHAT-MEASUREMENT.md#structured-output-replay)
 
+The targeted pressure validation matched all six expected outcomes. H08 and
+two new alarm cases abstained, and the three reported or measured increases
+returned both pressure paths with their citations. Median request latency was
+3.89 s, and estimated total model cost was USD 0.075246.
+[Pressure validation](validation/GRAPH-CHAT-PRESSURE-VALIDATION.md#live-result)
+
 ## Next priority
 
-Prepare a held-out graph chat set with unseen questions, including ambiguous
-and out-of-scope requests. Fix expected outcomes, source requirements, and
-failure criteria before running the set. Compare citation fidelity, abstention,
-latency, and cost with the G01–G04 baseline.
+Prepare the retrieval comparison on a common reviewed corpus and question
+set. Start by aligning the graph and simple passage runs on citation,
+abstention, latency, and cost criteria, then apply the same protocol to
+LightRAG. [Three-arm protocol](experiments/retrieval-comparison-protocol.md)
 
 ## Follow-up work
 

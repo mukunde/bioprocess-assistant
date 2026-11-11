@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 from pathlib import Path
 
 from anthropic import Anthropic
@@ -15,6 +16,19 @@ from graph_chat_tracing import local_tracer, span, usage_metadata
 PROJECT_ROOT = Path(__file__).resolve().parent
 MODEL = "claude-sonnet-4-6"
 MAX_TURNS = 5
+
+_PRESSURE_TOPIC = re.compile(r"\b(?:pressure|pression)\b", re.IGNORECASE)
+_UNCONFIRMED_MEASUREMENT = re.compile(
+    r"\b(?:cannot|can['’]t)\s+(?:tell|confirm|verify)\s+(?:whether|if)\b"
+    r"[^.!?;]*\b(?:sensor fault|false alarm|pressure (?:rose|increase|rise))\b"
+    r"|\b(?:pressure (?:rise|increase)|hausse de pression)\b"
+    r"[^.!?;]{0,35}\b(?:not confirmed|unconfirmed|non confirm[ée]e?|pas confirm[ée]e?)\b"
+    r"|\b(?:no confirmed (?:rise|increase) in pressure|no confirmed pressure (?:rise|increase)"
+    r"|aucune hausse de pression confirm[ée]e?)\b"
+    r"|\b(?:impossible de savoir|on ne sait pas|nous ne savons pas)\s+si\b"
+    r"[^.!?;]*\b(?:panne (?:du|de) capteur|faux signal|fausse alarme|pression a (?:augmenté|monté))\b",
+    re.IGNORECASE,
+)
 
 SELECTION_OUTPUT = {
     "format": {
@@ -45,7 +59,11 @@ Return ONLY a JSON object with exactly these fields:
 Result IDs are zero-based indices of query_graph results in this turn, in order.
 Use "answer" only for relevant found=true results, and select their IDs. Use
 "refuse" with an empty result_ids list for out-of-scope, irrelevant or missing
-information. A high score alone does not establish relevance. Refuse questions
+information. A high score alone does not establish relevance. An alarm alone
+does not establish a measured pressure increase. If the request leaves a
+pressure rise unresolved, for example because a sensor fault could explain
+the alarm, abstain from recommending checks, cleaning, or repacking based on
+a high-pressure match. Refuse questions
 about other unit operations or non-troubleshooting topics without calling a tool.
 Never provide causes/actions from general knowledge. Emit no prose or Markdown.
 The application renders graph facts and citations verbatim, localizing headings
@@ -155,8 +173,12 @@ def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, r
                 except GroundingError as exc:
                     request.attributes(**{"grounding.rejection_reason": exc.reason.value})
                 else:
-                    if answer_metadata is not None:
-                        answer_metadata.update(metadata)
+                    if ("High column pressure" in metadata["symptoms"]
+                            and _PRESSURE_TOPIC.search(user_message)
+                            and _UNCONFIRMED_MEASUREMENT.search(user_message)):
+                        metadata.update(status="refuse", symptoms=[])
+                        rendered = refusal(metadata["language"])
+                    answer_metadata.update(metadata)
                     return rendered, last_score, min_score
             return refusal("fr") + "\n\n" + refusal("en"), last_score, min_score
 

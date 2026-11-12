@@ -73,8 +73,11 @@ after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md
 | Graph chat benchmark | Two G01–G04 passes matched all eight expected outcomes. Median request latency was 3.97 s, and estimated total model cost was USD 0.089622. | [Replay results](docs/GRAPH-CHAT-MEASUREMENT.md#structured-output-replay) |
 | Pressure validation | All six targeted cases conformed, including three abstentions for unconfirmed pressure. Estimated total model cost was USD 0.075246. | [Pressure results](docs/validation/GRAPH-CHAT-PRESSURE-VALIDATION.md#live-result) |
 | Graph retrieval | The evaluation separates lexical retrieval from model-assisted checks and records errors and abstentions | [Evaluation inputs and commands](eval/README.md) |
+| Cytiva XC01–XC12 | Expanded Neo4j covered 11/12 at 16 passages and 12/12 at 32. At 32, vector passage search reached 12/12 and LightRAG reached 11/12. | [Results and depth trade-off](docs/experiments/cytiva-expanded-heldout-results-v01.md) |
 
-Next, compare graph and passage retrieval on the same reviewed questions.
+For expanded Neo4j, moving from 16 to 32 passages raised median total latency
+from 26.75 to 71.28 ms and median evidence tokens from 1,295 to 2,720.5.
+Next, evaluate when to expand from 16 to 32 on fresh reviewed questions.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

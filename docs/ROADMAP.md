@@ -41,12 +41,34 @@ returned both pressure paths with their citations. Median request latency was
 3.89 s, and estimated total model cost was USD 0.075246.
 [Pressure validation](validation/GRAPH-CHAT-PRESSURE-VALIDATION.md#live-result)
 
+## Cytiva retrieval results
+
+The frozen XC01–XC12 comparison used the same 42 reviewed passages for
+expanded Neo4j, vector passage search, and LightRAG. All 432 local requests
+completed. Full coverage means the final context contains every required
+passage for a question.
+
+| Method | Full coverage at 16 and 32 | Median total latency at 16 and 32 | Median evidence tokens at 16 and 32 |
+| --- | ---: | ---: | ---: |
+| Expanded Neo4j | 11/12 → 12/12 | 26.75 → 71.28 ms | 1,295 → 2,720.5 |
+| Vector passage search | 10/12 → 12/12 | 28.32 → 75.89 ms | 1,242 → 2,597.5 |
+| LightRAG | 9/12 → 11/12 | 77.81 → 137.17 ms | 1,183.5 → 2,579 |
+
+At 32 passages, LightRAG still lost one required passage for XC06 during
+assembly. The experiment measured evidence retrieval. The historical
+comparison with the narrower Neo4j projection remains non-conclusive.
+[XC results and provenance](experiments/cytiva-expanded-heldout-results-v01.md)
+· [Reviewed questions and evidence](experiments/cytiva-expanded-heldout-questions-v01.md)
+
 ## Next priority
 
-Prepare the retrieval comparison on a common reviewed corpus and question
-set. Start by aligning the graph and simple passage runs on citation,
-abstention, latency, and cost criteria, then apply the same protocol to
-LightRAG. [Three-arm protocol](experiments/retrieval-comparison-protocol.md)
+Evaluate a policy for expanded Neo4j that starts at 16 passages and
+expands to 32 when the retrieved context lacks evidence for the requested
+scope. Define that trigger before evaluation using signals available at
+query time, such as missing product or procedure evidence. Compare the
+policy with both fixed depths on fresh reviewed questions. Measure
+complete evidence coverage, expansion rate, latency, and evidence tokens.
+Use XC06 as a regression case.
 
 ## Follow-up work
 
@@ -57,7 +79,7 @@ LightRAG. [Three-arm protocol](experiments/retrieval-comparison-protocol.md)
 | Wider model observability | After the chat baseline, apply the same metadata and budget rules to extraction and judge calls. [Tracing guide](REGISTRY-TRACING.md) |
 | Generated-answer evaluation | Calibrate Ragas judges and run Promptfoo attacks with benign controls once the corresponding answering path is in scope. |
 | Evidence publication | Measure extraction precision and recall on annotated claims. Check source identity, quotations, quantities, and applicability. Exercise review, idempotent import, and rollback before publishing claims to Neo4j. [Claim contract](CLAIM-CONTRACT-V02.md) · [Ingestion guide](INGESTION.md) |
-| Retrieval comparison | Compare graph retrieval, passage retrieval, and LightRAG on the same reviewed corpus, inputs, and budget. Measure evidence quality and resource use before choosing a serving approach. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
+| Retrieval integration | After the depth policy evaluation, measure citation fidelity, clarification, and abstention in the answer layer before choosing a serving approach. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
 
 Consider OpenSPG KAG only if measured reasoning failures justify a separate
 comparison. Consider fine-tuning only after an evaluation identifies a gap it

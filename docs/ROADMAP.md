@@ -60,15 +60,27 @@ comparison with the narrower Neo4j projection remains non-conclusive.
 [XC results and provenance](experiments/cytiva-expanded-heldout-results-v01.md)
 · [Reviewed questions and evidence](experiments/cytiva-expanded-heldout-questions-v01.md)
 
+## Neo4j adaptive-depth result
+
+On AD01–AD10, fixed 16 covered 8/10 questions. Fixed 32 and adaptive 16→32
+each covered 9/10. The adaptive rule expanded on 10/10 questions against
+a limit of five. Its median total latency rose from 87.37 to 118.58 ms
+relative to fixed 32. Both returned a median of 2,705.5 evidence tokens.
+The separate XC06 regression recovered both missing passages after
+expansion. [Adaptive-depth results](experiments/cytiva-neo4j-adaptive-depth-results-v01.md)
+
 ## Next priority
 
-Evaluate a policy for expanded Neo4j that starts at 16 passages and
-expands to 32 when the retrieved context lacks evidence for the requested
-scope. Define that trigger before evaluation using signals available at
-query time, such as missing product or procedure evidence. Compare the
-policy with both fixed depths on fresh reviewed questions. Measure
-complete evidence coverage, expansion rate, latency, and evidence tokens.
-Use XC06 as a regression case.
+Test whether using the requested product and procedure scopes improves
+candidate selection and assembly. Use AD01 to diagnose both failure
+points. At depth 32, the MabSelect solvent passage was absent from the
+ranking, and the passage cap excluded its warning. Track these losses
+separately and keep source dependencies with each retained passage.
+
+Use AD01 and XC06 as regression cases. Define and freeze any new
+candidate before comparing it with fixed 32 on fresh reviewed questions.
+Measure complete evidence coverage, latency, and evidence tokens.
+[Reviewed AD questions](experiments/cytiva-neo4j-adaptive-depth-protocol-v01.md)
 
 ## Follow-up work
 
@@ -79,7 +91,7 @@ Use XC06 as a regression case.
 | Wider model observability | After the chat baseline, apply the same metadata and budget rules to extraction and judge calls. [Tracing guide](REGISTRY-TRACING.md) |
 | Generated-answer evaluation | Calibrate Ragas judges and run Promptfoo attacks with benign controls once the corresponding answering path is in scope. |
 | Evidence publication | Measure extraction precision and recall on annotated claims. Check source identity, quotations, quantities, and applicability. Exercise review, idempotent import, and rollback before publishing claims to Neo4j. [Claim contract](CLAIM-CONTRACT-V02.md) · [Ingestion guide](INGESTION.md) |
-| Retrieval integration | After the depth policy evaluation, measure citation fidelity, clarification, and abstention in the answer layer before choosing a serving approach. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
+| Retrieval integration | After the scope-aware retrieval evaluation, measure citation fidelity, clarification, and abstention in the answer layer before choosing a serving approach. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
 
 Consider OpenSPG KAG only if measured reasoning failures justify a separate
 comparison. Consider fine-tuning only after an evaluation identifies a gap it

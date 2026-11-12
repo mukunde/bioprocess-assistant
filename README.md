@@ -77,7 +77,14 @@ after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md
 
 For expanded Neo4j, moving from 16 to 32 passages raised median total latency
 from 26.75 to 71.28 ms and median evidence tokens from 1,295 to 2,720.5.
-Next, evaluate when to expand from 16 to 32 on fresh reviewed questions.
+On AD01–AD10, the adaptive trigger expanded on all ten questions and
+matched fixed 32 at 9/10 complete, with 118.58 versus 87.37 ms median total
+latency and 2,705.5 median evidence tokens for both. XC06 recovered both
+missing passages after expansion.
+[Adaptive-depth results](docs/experiments/cytiva-neo4j-adaptive-depth-results-v01.md)
+
+Next, evaluate retrieval and assembly that preserve the requested product
+and procedure scopes.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

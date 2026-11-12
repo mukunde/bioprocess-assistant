@@ -83,8 +83,13 @@ latency and 2,705.5 median evidence tokens for both. XC06 recovered both
 missing passages after expansion.
 [Adaptive-depth results](docs/experiments/cytiva-neo4j-adaptive-depth-results-v01.md)
 
-Next, evaluate retrieval and assembly that preserve the requested product
-and procedure scopes.
+On SP01–SP08, product–procedure retrieval and fixed 32 both covered 8/8,
+with median total latency of 129.83 and 125.07 ms, respectively. The
+candidate recovered AD01 and preserved XC06, including its SuRe/SuRe LX
+restriction. [Product and procedure results](docs/experiments/cytiva-neo4j-product-procedure-results-v01.md)
+
+Next, verify that the answer layer preserves citation scope, asks for
+clarification, and abstains when evidence is insufficient.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

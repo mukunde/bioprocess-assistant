@@ -88,8 +88,14 @@ with median total latency of 129.83 and 125.07 ms, respectively. The
 candidate recovered AD01 and preserved XC06, including its SuRe/SuRe LX
 restriction. [Product and procedure results](docs/experiments/cytiva-neo4j-product-procedure-results-v01.md)
 
-Next, verify that the answer layer preserves citation scope, asks for
-clarification, and abstains when evidence is insufficient.
+The offline answer-layer replay passed all 50 checks across both variants,
+including AR01–AR06 and F01–F07. On AD01, product–procedure retrieval
+supported both branches and fixed 32 abstained for MabSelect. Both
+preserved the SuRe/SuRe LX restriction on XC06.
+[Offline replay results](docs/experiments/cytiva-answer-layer-offline-results-v01.md)
+
+Next, validate the full documentary workflow with fresh questions and
+locally produced response proposals.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

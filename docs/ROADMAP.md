@@ -82,14 +82,29 @@ XC06, and the candidate preserved the distinction between the common wash
 and the restricted SuRe/SuRe LX option.
 [Results and regressions](experiments/cytiva-neo4j-product-procedure-results-v01.md)
 
+## Offline answer-layer result
+
+The replay passed all 50 checks. Both variants passed AR01–AR06 with
+full evidence and with paired retrieval snapshots. Each produced three
+answers, one clarification, and two abstentions on the paired snapshots.
+Both also passed all seven fault groups, covering 11 subcases each.
+
+On AD01, fixed 32 answered for Protein A Sepharose and abstained for
+MabSelect. Product–procedure retrieval supported both branches. On XC06,
+both variants preserved the SuRe/SuRe LX restriction. The replay measured
+validation and rendering of reviewed proposals.
+[Offline replay results](experiments/cytiva-answer-layer-offline-results-v01.md)
+
 ## Next priority
 
-Define a reviewed acceptance protocol for the answer layer using the
-frozen retrieval outputs. Compare fixed 32 and product–procedure evidence
-with the same answer rules. Start with offline fixtures for citation
-fidelity, product and stage boundaries, clarification, and abstention
-when the retrieved evidence is insufficient. Include AD01 and XC06 as
-regressions and use fresh reviewed questions for acceptance.
+Prepare a local end-to-end acceptance test for the documentary workflow.
+Define how to produce a response proposal from a fresh question and its
+retrieved evidence, then test retrieval, proposal creation, validation,
+and rendering together. Keep the expected answers in the evaluator.
+Check citation fidelity, product and stage boundaries, clarification,
+and abstention on fresh reviewed questions. Reuse AD01 and XC06 as
+regressions. Use the results to decide whether to integrate the workflow
+into Chainlit.
 
 ## Follow-up work
 
@@ -100,7 +115,7 @@ regressions and use fresh reviewed questions for acceptance.
 | Wider model observability | After the chat baseline, apply the same metadata and budget rules to extraction and judge calls. [Tracing guide](REGISTRY-TRACING.md) |
 | Generated-answer evaluation | Calibrate Ragas judges and run Promptfoo attacks with benign controls once the corresponding answering path is in scope. |
 | Evidence publication | Measure extraction precision and recall on annotated claims. Check source identity, quotations, quantities, and applicability. Exercise review, idempotent import, and rollback before publishing claims to Neo4j. [Claim contract](CLAIM-CONTRACT-V02.md) · [Ingestion guide](INGESTION.md) |
-| Retrieval integration | Use the answer-layer acceptance results to choose a serving approach and verify it in the intended interface. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
+| Retrieval integration | Use the end-to-end acceptance results to choose a serving approach and verify it in the intended interface. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
 
 Consider OpenSPG KAG only if measured reasoning failures justify a separate
 comparison. Consider fine-tuning only after an evaluation identifies a gap it

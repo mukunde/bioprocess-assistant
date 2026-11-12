@@ -69,18 +69,27 @@ relative to fixed 32. Both returned a median of 2,705.5 evidence tokens.
 The separate XC06 regression recovered both missing passages after
 expansion. [Adaptive-depth results](experiments/cytiva-neo4j-adaptive-depth-results-v01.md)
 
+## Product and procedure retrieval result
+
+Fixed 32 and product–procedure retrieval both covered 8/8 SP questions
+on the same 42 passages. Median warm total latency was 125.07 ms for
+fixed 32 and 129.83 ms for the candidate, within the 1.25 ratio limit.
+Both returned 2,661.5 median evidence tokens.
+
+In separate regressions, the candidate recovered the MabSelect solvent
+passage and warning missing from fixed 32 on AD01. Both variants covered
+XC06, and the candidate preserved the distinction between the common wash
+and the restricted SuRe/SuRe LX option.
+[Results and regressions](experiments/cytiva-neo4j-product-procedure-results-v01.md)
+
 ## Next priority
 
-Test whether using the requested product and procedure scopes improves
-candidate selection and assembly. Use AD01 to diagnose both failure
-points. At depth 32, the MabSelect solvent passage was absent from the
-ranking, and the passage cap excluded its warning. Track these losses
-separately and keep source dependencies with each retained passage.
-
-Use AD01 and XC06 as regression cases. Define and freeze any new
-candidate before comparing it with fixed 32 on fresh reviewed questions.
-Measure complete evidence coverage, latency, and evidence tokens.
-[Reviewed AD questions](experiments/cytiva-neo4j-adaptive-depth-protocol-v01.md)
+Define a reviewed acceptance protocol for the answer layer using the
+frozen retrieval outputs. Compare fixed 32 and product–procedure evidence
+with the same answer rules. Start with offline fixtures for citation
+fidelity, product and stage boundaries, clarification, and abstention
+when the retrieved evidence is insufficient. Include AD01 and XC06 as
+regressions and use fresh reviewed questions for acceptance.
 
 ## Follow-up work
 
@@ -91,7 +100,7 @@ Measure complete evidence coverage, latency, and evidence tokens.
 | Wider model observability | After the chat baseline, apply the same metadata and budget rules to extraction and judge calls. [Tracing guide](REGISTRY-TRACING.md) |
 | Generated-answer evaluation | Calibrate Ragas judges and run Promptfoo attacks with benign controls once the corresponding answering path is in scope. |
 | Evidence publication | Measure extraction precision and recall on annotated claims. Check source identity, quotations, quantities, and applicability. Exercise review, idempotent import, and rollback before publishing claims to Neo4j. [Claim contract](CLAIM-CONTRACT-V02.md) · [Ingestion guide](INGESTION.md) |
-| Retrieval integration | After the scope-aware retrieval evaluation, measure citation fidelity, clarification, and abstention in the answer layer before choosing a serving approach. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
+| Retrieval integration | Use the answer-layer acceptance results to choose a serving approach and verify it in the intended interface. [Three-arm protocol](experiments/retrieval-comparison-protocol.md) |
 
 Consider OpenSPG KAG only if measured reasoning failures justify a separate
 comparison. Consider fine-tuning only after an evaluation identifies a gap it

@@ -94,14 +94,15 @@ supported both branches and fixed 32 abstained for MabSelect. Both
 preserved the SuRe/SuRe LX restriction on XC06.
 [Offline replay results](docs/experiments/cytiva-answer-layer-offline-results-v01.md)
 
-The v02 documentary workflow passed 8/8 reviewed cases with both
-retrieval variants, up from 5/8. In separate regressions, product–procedure
-retrieval answered both AD01 branches. Fixed 32 answered Protein A and
-abstained on MabSelect. Both preserved the SuRe/SuRe LX restriction in XC06.
-[End-to-end results](docs/experiments/cytiva-documentary-end-to-end-results-v02.md)
+The v02 documentary workflow scored 1/8 per retrieval variant on new
+questions with full evidence coverage, after an 8/8 regression replay.
+The v03 correction passed PE03 on all four repetitions per variant.
+AD01 and XC06 met their separate regression criteria.
+[Prospective v02 results](docs/experiments/cytiva-documentary-v02-prospective-results.md) · [Targeted v03 replay](docs/experiments/cytiva-documentary-v03-pe03-results.md)
 
-Next, test the frozen v02 on new questions with criteria fixed in advance
-before deciding whether to pilot it in Chainlit.
+Next, fix how the response layer handles separate procedures, conditional
+instructions, and partial answers, then test on fresh questions before
+considering a Chainlit pilot.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

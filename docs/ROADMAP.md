@@ -110,14 +110,35 @@ restriction. The EE cases informed the v02 corrections and measure regression
 recovery on this corpus.
 [End-to-end results and provenance](experiments/cytiva-documentary-end-to-end-results-v02.md)
 
+## Prospective documentary results
+
+The frozen v02 scored 1/8 per variant on PE01–PE08, below the 7/8
+threshold. Both variants assembled every required passage. PE03 exposed
+a safety failure in the shared response layer. It accepted the common
+MabSelect wash parameters for a question about the stronger alkali route.
+[Prospective results](experiments/cytiva-documentary-v02-prospective-results.md)
+
+In the targeted v03 replay, PE03 passed all four repetitions per variant.
+The answer used the stronger-route parameters and retained the SuRe/SuRe LX
+restriction. The 1/8 remains the v02 prospective score.
+[Targeted v03 replay](experiments/cytiva-documentary-v03-pe03-results.md)
+
+AD01 and XC06 met the regression criteria outside the score in both runs.
+On AD01, product–procedure retrieval answered both branches, while fixed 32
+answered Protein A Sepharose and abstained on MabSelect. On XC06, both
+variants kept the common and stronger rinses separate and retained the
+SuRe/SuRe LX restriction.
+
 ## Next priority
 
-Run a prospective local acceptance test on new questions with the frozen v02
-and both retrieval variants. Review expected outcomes and required citations
-before the run. Include product and stage boundaries, missing context,
-unsupported quantities, and multi-part requests. Check citation fidelity,
-clarification, and abstention. Keep AD01 and XC06 outside the new score.
-Use the results to decide whether to pilot the documentary workflow in Chainlit.
+Keep v03 as the PE03 regression reference. Improve the shared response
+layer's handling of product and procedure scope, requested facts, and
+independent items. Require explicit abstention when a condition does
+not apply or the evidence lacks a requested value.
+
+Use PE01–PE08 as regression checks, with AD01 and XC06 reported separately.
+Then evaluate a frozen candidate on fresh reviewed questions using the
+approved safety and outcome criteria before deciding on a Chainlit pilot.
 
 ## Follow-up work
 

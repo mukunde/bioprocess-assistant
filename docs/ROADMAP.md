@@ -95,16 +95,29 @@ both variants preserved the SuRe/SuRe LX restriction. The replay measured
 validation and rendering of reviewed proposals.
 [Offline replay results](experiments/cytiva-answer-layer-offline-results-v01.md)
 
+## End-to-end documentary response result
+
+The corrected v02 passed 8/8 reviewed EE cases with both retrieval variants,
+up from 5/8 each in the initial run. Both used the same 42 reviewed passages.
+Warm median latency was 157.84 ms for fixed 32 and 161.00 ms for
+product–procedure retrieval. The run used zero paid calls.
+
+In separate regressions, product–procedure retrieval answered both AD01
+branches. Fixed 32 answered Protein A Sepharose and abstained on MabSelect
+because its context lacked E167-E and E167-W. Both variants kept the common
+wash and stronger alkali rinse distinct in XC06, with the SuRe/SuRe LX
+restriction. The EE cases informed the v02 corrections and measure regression
+recovery on this corpus.
+[End-to-end results and provenance](experiments/cytiva-documentary-end-to-end-results-v02.md)
+
 ## Next priority
 
-Prepare a local end-to-end acceptance test for the documentary workflow.
-Define how to produce a response proposal from a fresh question and its
-retrieved evidence, then test retrieval, proposal creation, validation,
-and rendering together. Keep the expected answers in the evaluator.
-Check citation fidelity, product and stage boundaries, clarification,
-and abstention on fresh reviewed questions. Reuse AD01 and XC06 as
-regressions. Use the results to decide whether to integrate the workflow
-into Chainlit.
+Run a prospective local acceptance test on new questions with the frozen v02
+and both retrieval variants. Review expected outcomes and required citations
+before the run. Include product and stage boundaries, missing context,
+unsupported quantities, and multi-part requests. Check citation fidelity,
+clarification, and abstention. Keep AD01 and XC06 outside the new score.
+Use the results to decide whether to pilot the documentary workflow in Chainlit.
 
 ## Follow-up work
 

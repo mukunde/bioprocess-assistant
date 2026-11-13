@@ -94,14 +94,15 @@ supported both branches and fixed 32 abstained for MabSelect. Both
 preserved the SuRe/SuRe LX restriction on XC06.
 [Offline replay results](docs/experiments/cytiva-answer-layer-offline-results-v01.md)
 
-The v04 documentary workflow passed 8/8 per retrieval variant on the
-PE01–PE08 regression replay. The earlier v02 prospective trial scored
-1/8 per variant on those questions. AD01 and XC06 passed their separate
-regression checks and stayed outside both scores.
-[v04 replay](docs/experiments/cytiva-documentary-v04-replay-results.md) · [v02 prospective results](docs/experiments/cytiva-documentary-v02-prospective-results.md)
+The frozen v04 scored 1/8 per retrieval variant on the new VP01–VP08
+questions. The v05 targeted replay restored the Blue Sepharose
+contraindication on all four VP06 repetitions per variant.
+PE01–PE08 retained 8/8 as regressions. AD01 and XC06 also met their
+regression criteria. All ten regression cases stayed outside the score.
+[v04 prospective results](docs/experiments/cytiva-documentary-v04-prospective-results.md) · [v05 VP06 replay](docs/experiments/cytiva-documentary-v05-vp06-results.md)
 
-Next, evaluate the frozen v04 on fresh questions with criteria fixed
-before the run. [Roadmap](docs/ROADMAP.md#next-priority)
+Next, improve how the response layer binds each requested item to its
+procedure and evidence. [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations
 

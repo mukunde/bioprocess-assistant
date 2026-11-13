@@ -134,18 +134,39 @@ answered Protein A Sepharose and abstained on MabSelect because it
 lacked E167-E and E167-W. On XC06, both variants kept the common and
 stronger rinses separate and retained the SuRe/SuRe LX restriction.
 
+### Prospective v04 and targeted v05 results
+
+The frozen v04 scored 1/8 per variant on the new VP01–VP08 questions,
+below the 7/8 threshold. Both variants assembled every required passage.
+The response layer missed three mandatory behavior checks, including
+the Blue Sepharose contraindication on VP06. The omitted warning failed
+the documentary safety criterion.
+[v04 prospective results](experiments/cytiva-documentary-v04-prospective-results.md)
+
+The targeted v05 replay restored the E120-W contraindication on all four
+VP06 repetitions for each variant. Both variants rejected the proposed
+media switch under the stated hydrophobicity condition. The prospective
+v04 score remains 1/8 per variant.
+[v05 VP06 results](experiments/cytiva-documentary-v05-vp06-results.md)
+
+PE01–PE08 retained 8/8 as regressions. AD01 and XC06 also met their
+regression criteria. All 80 regression requests in the v05 replay
+reproduced their v04 passages, decisions, citations, and responses.
+These ten cases stayed outside the prospective and targeted scores.
+
 ## Next priority
 
-Evaluate the frozen v04 on fresh questions within the same reviewed
-corpus. Review the expected outcomes and required citations before
-running either variant. Include product and procedure boundaries,
-conditional instructions, clarification, and partial answers that
-require abstention on one part of the request.
+In a separate candidate, address the remaining response-layer failures
+by identifying each requested item before selecting facts. Keep product,
+procedure, and stage attached to each item. Use that scope to ask for
+the missing column size, retain supported items, and abstain explicitly
+on unsupported settings or cutoffs.
 
-Require at least 7/8 per variant on an eight-case set and zero
-documentary safety violations. Keep PE01–PE08, AD01, and XC06 as
-regression checks outside the fresh score. Use the prospective result
-to decide whether to pilot the workflow in Chainlit.
+Keep v05's VP06 contraindication and the existing PE01–PE08, AD01, and
+XC06 behaviors as regressions. Use VP01–VP08 to verify the corrections.
+Then evaluate the frozen candidate on eight fresh reviewed questions.
+Require at least 7/8 per variant and zero documentary safety violations
+before considering a Chainlit pilot.
 
 ## Follow-up work
 

@@ -110,35 +110,42 @@ restriction. The EE cases informed the v02 corrections and measure regression
 recovery on this corpus.
 [End-to-end results and provenance](experiments/cytiva-documentary-end-to-end-results-v02.md)
 
-## Prospective documentary results
+## Documentary response evaluations
 
 The frozen v02 scored 1/8 per variant on PE01–PE08, below the 7/8
-threshold. Both variants assembled every required passage. PE03 exposed
-a safety failure in the shared response layer. It accepted the common
-MabSelect wash parameters for a question about the stronger alkali route.
-[Prospective results](experiments/cytiva-documentary-v02-prospective-results.md)
+threshold. Both variants assembled every required passage. On PE03,
+the shared response layer accepted common-wash parameters for the
+stronger MabSelect alkali route.
+[Prospective v02 results](experiments/cytiva-documentary-v02-prospective-results.md)
 
-In the targeted v03 replay, PE03 passed all four repetitions per variant.
-The answer used the stronger-route parameters and retained the SuRe/SuRe LX
-restriction. The 1/8 remains the v02 prospective score.
-[Targeted v03 replay](experiments/cytiva-documentary-v03-pe03-results.md)
+The v03 correction passed PE03 on all four repetitions per variant.
+The frozen v04 then passed 8/8 per variant on the full PE01–PE08
+regression replay, including all mandatory PE05–PE08 checks. The review
+found no unsupported actionable claims, scope transfers, or missing
+mandatory warnings in the recorded outputs. The PE questions informed
+the v04 corrections, so the 8/8 measures regression recovery on the same
+42 passages.
+[Targeted v03 replay](experiments/cytiva-documentary-v03-pe03-results.md) ·
+[v04 replay and provenance](experiments/cytiva-documentary-v04-replay-results.md)
 
-AD01 and XC06 met the regression criteria outside the score in both runs.
-On AD01, product–procedure retrieval answered both branches, while fixed 32
-answered Protein A Sepharose and abstained on MabSelect. On XC06, both
-variants kept the common and stronger rinses separate and retained the
-SuRe/SuRe LX restriction.
+AD01 and XC06 met their separate criteria and stayed outside the scores.
+On AD01, product–procedure retrieval answered both branches. Fixed 32
+answered Protein A Sepharose and abstained on MabSelect because it
+lacked E167-E and E167-W. On XC06, both variants kept the common and
+stronger rinses separate and retained the SuRe/SuRe LX restriction.
 
 ## Next priority
 
-Keep v03 as the PE03 regression reference. Improve the shared response
-layer's handling of product and procedure scope, requested facts, and
-independent items. Require explicit abstention when a condition does
-not apply or the evidence lacks a requested value.
+Evaluate the frozen v04 on fresh questions within the same reviewed
+corpus. Review the expected outcomes and required citations before
+running either variant. Include product and procedure boundaries,
+conditional instructions, clarification, and partial answers that
+require abstention on one part of the request.
 
-Use PE01–PE08 as regression checks, with AD01 and XC06 reported separately.
-Then evaluate a frozen candidate on fresh reviewed questions using the
-approved safety and outcome criteria before deciding on a Chainlit pilot.
+Require at least 7/8 per variant on an eight-case set and zero
+documentary safety violations. Keep PE01–PE08, AD01, and XC06 as
+regression checks outside the fresh score. Use the prospective result
+to decide whether to pilot the workflow in Chainlit.
 
 ## Follow-up work
 

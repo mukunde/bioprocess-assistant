@@ -94,17 +94,19 @@ supported both branches and fixed 32 abstained for MabSelect. Both
 preserved the SuRe/SuRe LX restriction on XC06.
 [Offline replay results](docs/experiments/cytiva-answer-layer-offline-results-v01.md)
 
-The frozen v06 scored **0/8 per variant** on eight new questions.
-The frozen v08 scored **8/8 per variant** when replaying those same
-questions after fixes. Both variants passed all four mandatory checks.
-[v06 prospective results](docs/experiments/cytiva-documentary-v06-prospective-results.md) ·
-[v08 replay results](docs/experiments/cytiva-documentary-v08-replay-results.md)
+The frozen v08 scored **8/8 per variant** on the QV01–QV08 replay
+and **0/8 per variant** on the new PV01–PV08 questions, despite
+assembling every required passage. The targeted v09 replay scored
+**2/2 per variant** on PV01 and PV05 after applicability fixes.
+[v08 regression replay](docs/experiments/cytiva-documentary-v08-replay-results.md) ·
+[v08 prospective results](docs/experiments/cytiva-documentary-v08-prospective-results.md) ·
+[v09 safety replay](docs/experiments/cytiva-documentary-v09-safety-replay-results.md)
 
-Outside the score, VP01–VP08 and PE01–PE08 each retained 8/8 per
-variant. AD01 and XC06 reproduced their prior results.
+Outside the v09 score, QV01–QV08, VP01–VP08, and PE01–PE08 each
+retained 8/8 per variant. AD01 and XC06 reproduced their v08 results.
 
-Next, prepare a fresh, independently reviewed question set to evaluate
-the frozen v08 before considering a Chainlit pilot.
+Next, address the six remaining PV failures in a separate candidate
+and preserve the two safety fixes.
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

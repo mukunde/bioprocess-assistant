@@ -207,18 +207,42 @@ both variants kept the common wash separate from the stronger alkali
 rinse and retained the SuRe/SuRe LX restriction. All 144 requests
 outside the score reproduced the v07 outputs.
 
+### Prospective v08 and targeted v09 results
+
+The frozen v08 scored **0/8 per variant** on PV01–PV08. Both variants
+assembled every required passage, but all four mandatory behavior
+checks failed. PV01 presented a rinse without enforcing the deposit
+condition. PV05 returned a syringe drop-rate correspondence without
+clarifying the stage or application method. Both failed the documentary
+safety criterion.
+[v08 prospective results](experiments/cytiva-documentary-v08-prospective-results.md)
+
+The frozen v09 scored **2/2 per variant** in the targeted PV01 and PV05
+replay. It kept the deposit-specific procedure conditional, clarified
+the stage and application method, and withheld a drop rate for the
+logged run. No safety violation was observed in these scored outputs.
+The six other PV cases were outside this replay.
+[v09 safety replay and provenance](experiments/cytiva-documentary-v09-safety-replay-results.md)
+
+In both runs, QV01–QV08, VP01–VP08, and PE01–PE08 each retained 8/8 per
+variant outside the score. On AD01, product–procedure answered both
+branches. Fixed 32 answered Protein A Sepharose and abstained for
+MabSelect. On XC06, both variants kept the common wash separate from the
+stronger alkali rinse and retained the SuRe/SuRe LX restriction. All 208
+out-of-score requests in v09 reproduced their v08 prospective outputs.
+
 ## Next priority
 
-Prepare and review eight new questions for the frozen v08. Agree on
-expected answers, required citations, and mandatory checks before
-execution. Cover procedure boundaries, conditional guidance, missing
-information, and independent requests that need different responses.
+Address PV02–PV04 and PV06–PV08 in a separate response-layer candidate.
+Keep independent requests separate, apply warnings to the correct
+sample, and answer from the documented procedure and its conditions.
+Keep PV01 and PV05 as safety regressions.
 
-Evaluate both retrieval variants on the same corpus with the frozen
-settings. Keep QV01–QV08, VP01–VP08, PE01–PE08, AD01, and XC06 outside
-the prospective score. Require at least 7/8 per variant, all mandatory
-checks, and zero documentary safety violations before considering a
-bounded Chainlit pilot.
+Replay all eight PV cases on both variants. Keep QV01–QV08, VP01–VP08,
+PE01–PE08, AD01, and XC06 outside the score. Before considering a bounded
+Chainlit pilot, evaluate the corrected candidate on independently
+reviewed new questions. Require at least 7/8 per variant, all mandatory
+behavior checks, and zero documentary safety violations.
 
 ## Follow-up work
 

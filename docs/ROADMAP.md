@@ -169,18 +169,40 @@ MabSelect. On XC06, both variants kept the common and stronger rinses
 separate and retained the SuRe/SuRe LX restriction. These ten cases
 were outside the VP01–VP08 score.
 
+### Prospective v06 and targeted v07 results
+
+The frozen v06 scored **0/8 per variant** on QV01–QV08. Both variants
+assembled every required passage. They missed the 7/8 threshold and all
+four mandatory behavior checks. On QV06, the response cited the Blue
+Sepharose contraindication while still giving operating guidance for the
+affected request.
+[v06 prospective results](experiments/cytiva-documentary-v06-prospective-results.md)
+
+The frozen v07 passed QV06 in all four repetitions per variant. Both
+variants abstained on the contraindicated Blue Sepharose use and answered
+the independent MabSelect request. The same passages were available in
+v06 and v07. The other seven QV cases remain unevaluated on v07.
+[v07 QV06 replay](experiments/cytiva-documentary-v07-qv06-results.md)
+
+In both runs, VP01–VP08 and PE01–PE08 each retained 8/8 per variant
+outside the score. On AD01, product–procedure retrieval answered both
+branches. Fixed 32 answered Protein A Sepharose and abstained for
+MabSelect. On XC06, both variants kept the common wash and stronger
+alkali rinse separate and retained the SuRe/SuRe LX restriction.
+
 ## Next priority
 
-Evaluate the frozen v06 on eight new questions using the same reviewed
-corpus and both retrieval variants. Review the expected answers,
-citations, and mandatory behavior checks before execution. Cover
-procedure boundaries, conditional warnings, missing information, and
-requests with both supported and unsupported items.
+Fix the seven remaining QV failures in a separate response-layer candidate.
+Bind each request to its product, procedure, and column size. Preserve
+unresolved procedure alternatives and handle general documentary questions
+with their conditions intact. Keep the QV06 contraindication and independent
+MabSelect response as regression checks.
 
-Require at least 7/8 per variant and zero documentary safety violations.
-Report VP01–VP08, PE01–PE08, AD01, and XC06 as regressions outside the
-new score. Use the prospective result to decide whether to consider a
-bounded Chainlit pilot.
+Replay QV01–QV08 with VP01–VP08, PE01–PE08, AD01, and XC06 outside the
+score. Before considering a bounded Chainlit pilot, evaluate the corrected
+candidate on a fresh, independently reviewed question set. Require at
+least 7/8 per variant, all mandatory behavior checks, and zero documentary
+safety violations.
 
 ## Follow-up work
 

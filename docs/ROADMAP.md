@@ -231,18 +231,32 @@ MabSelect. On XC06, both variants kept the common wash separate from the
 stronger alkali rinse and retained the SuRe/SuRe LX restriction. All 208
 out-of-score requests in v09 reproduced their v08 prospective outputs.
 
+### v10 regression replay
+
+The frozen v10 scored **8/8 per variant** on PV01–PV08 with fixed 32 and
+product–procedure retrieval. Both variants passed all four mandatory
+checks. Review found zero documentary safety violations in the recorded
+outputs. Rankings and assembled passages matched v08, and PV01 and PV05
+reproduced the v09 safety results. These cases informed the fixes. The
+v08 prospective score remains **0/8 per variant**.
+[v10 replay results and provenance](experiments/cytiva-documentary-v10-replay-results.md)
+
+Outside the score, QV01–QV08, VP01–VP08, and PE01–PE08 each retained
+8/8 per variant. AD01 and XC06 kept the outcomes described above.
+All 208 out-of-score requests reproduced the v08 prospective regressions.
+
 ## Next priority
 
-Address PV02–PV04 and PV06–PV08 in a separate response-layer candidate.
-Keep independent requests separate, apply warnings to the correct
-sample, and answer from the documented procedure and its conditions.
-Keep PV01 and PV05 as safety regressions.
+Prepare eight new questions for the frozen v10 and review the expected
+answers, required citations, and mandatory behavior checks before
+execution. Cover independent requests, procedure boundaries, missing
+information, and conditional guidance.
 
-Replay all eight PV cases on both variants. Keep QV01–QV08, VP01–VP08,
-PE01–PE08, AD01, and XC06 outside the score. Before considering a bounded
-Chainlit pilot, evaluate the corrected candidate on independently
-reviewed new questions. Require at least 7/8 per variant, all mandatory
-behavior checks, and zero documentary safety violations.
+Compare both retrieval variants on the same corpus and frozen settings.
+Keep PV01–PV08, QV01–QV08, VP01–VP08, PE01–PE08, AD01, and XC06 outside
+the prospective score. Require at least 7/8 per variant, all mandatory
+behavior checks, and zero documentary safety violations before
+considering a bounded Chainlit pilot.
 
 ## Follow-up work
 

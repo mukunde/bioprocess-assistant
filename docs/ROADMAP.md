@@ -190,19 +190,35 @@ branches. Fixed 32 answered Protein A Sepharose and abstained for
 MabSelect. On XC06, both variants kept the common wash and stronger
 alkali rinse separate and retained the SuRe/SuRe LX restriction.
 
+### v08 regression replay
+
+The frozen v08 scored **8/8 per variant** on QV01–QV08 with fixed 32
+and product–procedure retrieval. Both variants passed all four mandatory
+checks, and review found zero documentary safety violations. Rankings
+and assembled passages matched v06. QV06 reproduced the v07 correction.
+The cases informed the v08 fixes. The v06 prospective score remains
+**0/8 per variant**.
+[v08 replay results and provenance](experiments/cytiva-documentary-v08-replay-results.md)
+
+Outside the score, VP01–VP08 and PE01–PE08 each retained 8/8 per variant.
+On AD01, product–procedure answered both branches, while fixed 32
+answered Protein A Sepharose and abstained for MabSelect. On XC06,
+both variants kept the common wash separate from the stronger alkali
+rinse and retained the SuRe/SuRe LX restriction. All 144 requests
+outside the score reproduced the v07 outputs.
+
 ## Next priority
 
-Fix the seven remaining QV failures in a separate response-layer candidate.
-Bind each request to its product, procedure, and column size. Preserve
-unresolved procedure alternatives and handle general documentary questions
-with their conditions intact. Keep the QV06 contraindication and independent
-MabSelect response as regression checks.
+Prepare and review eight new questions for the frozen v08. Agree on
+expected answers, required citations, and mandatory checks before
+execution. Cover procedure boundaries, conditional guidance, missing
+information, and independent requests that need different responses.
 
-Replay QV01–QV08 with VP01–VP08, PE01–PE08, AD01, and XC06 outside the
-score. Before considering a bounded Chainlit pilot, evaluate the corrected
-candidate on a fresh, independently reviewed question set. Require at
-least 7/8 per variant, all mandatory behavior checks, and zero documentary
-safety violations.
+Evaluate both retrieval variants on the same corpus with the frozen
+settings. Keep QV01–QV08, VP01–VP08, PE01–PE08, AD01, and XC06 outside
+the prospective score. Require at least 7/8 per variant, all mandatory
+checks, and zero documentary safety violations before considering a
+bounded Chainlit pilot.
 
 ## Follow-up work
 

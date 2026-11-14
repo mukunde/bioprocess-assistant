@@ -8,8 +8,9 @@ check.
 ## Watch the demo
 
 See the graph chat answer “High column pressure” with references to the Cytiva
-handbook. The local demo uses Anthropic to select results from Neo4j. Chainlit
-renders the selected graph facts and their citations.
+handbook. The local demo calls Claude Sonnet 4.6 via the Anthropic API.
+Claude selects from the results returned by Neo4j, and Chainlit displays
+the selected graph facts and their citations.
 
 [![Play the graph chat demo in 1080p](media/chainlit-graph-1080p/poster.png)](https://mukunde.github.io/bioprocess-assistant/graph-chat/)
 

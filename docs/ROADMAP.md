@@ -154,19 +154,33 @@ regression criteria. All 80 regression requests in the v05 replay
 reproduced their v04 passages, decisions, citations, and responses.
 These ten cases stayed outside the prospective and targeted scores.
 
+### v06 regression replay
+
+The frozen v06 scored 8/8 per variant on the VP01–VP08 replay and passed
+all mandatory VP05–VP08 checks. Review found no documentary safety
+violations in the recorded outputs. The questions informed the v06
+corrections. The prospective v04 result remains 1/8 per variant.
+[v06 replay results and provenance](experiments/cytiva-documentary-v06-replay-results.md)
+
+All 80 requests on PE01–PE08, AD01, and XC06 matched the v05 replay.
+PE01–PE08 retained 8/8. On AD01, product–procedure retrieval answered
+both branches. Fixed 32 answered Protein A Sepharose and abstained on
+MabSelect. On XC06, both variants kept the common and stronger rinses
+separate and retained the SuRe/SuRe LX restriction. These ten cases
+were outside the VP01–VP08 score.
+
 ## Next priority
 
-In a separate candidate, address the remaining response-layer failures
-by identifying each requested item before selecting facts. Keep product,
-procedure, and stage attached to each item. Use that scope to ask for
-the missing column size, retain supported items, and abstain explicitly
-on unsupported settings or cutoffs.
+Evaluate the frozen v06 on eight new questions using the same reviewed
+corpus and both retrieval variants. Review the expected answers,
+citations, and mandatory behavior checks before execution. Cover
+procedure boundaries, conditional warnings, missing information, and
+requests with both supported and unsupported items.
 
-Keep v05's VP06 contraindication and the existing PE01–PE08, AD01, and
-XC06 behaviors as regressions. Use VP01–VP08 to verify the corrections.
-Then evaluate the frozen candidate on eight fresh reviewed questions.
-Require at least 7/8 per variant and zero documentary safety violations
-before considering a Chainlit pilot.
+Require at least 7/8 per variant and zero documentary safety violations.
+Report VP01–VP08, PE01–PE08, AD01, and XC06 as regressions outside the
+new score. Use the prospective result to decide whether to consider a
+bounded Chainlit pilot.
 
 ## Follow-up work
 

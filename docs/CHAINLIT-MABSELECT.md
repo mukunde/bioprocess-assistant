@@ -9,6 +9,8 @@ This local integration is not a new freeze or a published live service.
 
 ## Start locally
 
+[Test the guided pilot on Windows from a fresh clone](CHAINLIT-GUIDED-PILOT.md) with disposable data.
+
 Use the existing development/verification environment with Chainlit installed,
 not either frozen runtime. No dependencies are installed automatically. An
 already reviewed, approved active registry is required; a fresh clone does not

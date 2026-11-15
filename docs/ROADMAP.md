@@ -18,7 +18,7 @@ The [README thumbnail](../README.md#watch-the-demo) opens the
 [1080p graph chat demo](https://mukunde.github.io/bioprocess-assistant/graph-chat/).
 Browser verification confirmed that the 27-second video plays inline at
 1920 × 1080 without signing in or downloading the file.
-[Pages deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/42224594186)
+[Published player and attribution](https://github.com/mukunde/bioprocess-assistant/actions/runs/43712108704)
 
 The [Chainlit Sepharose recording](https://mukunde.github.io/bioprocess-assistant/sepharose/)
 remains available separately.
@@ -245,25 +245,52 @@ Outside the score, QV01–QV08, VP01–VP08, and PE01–PE08 each retained
 8/8 per variant. AD01 and XC06 kept the outcomes described above.
 All 208 out-of-score requests reproduced the v08 prospective regressions.
 
+### Prospective v10 and v11 regression replay
+
+The frozen v10 scored **0/8 per variant** on TV01–TV08. Both variants
+assembled all required passages, and the first failures were in
+proposal. The frozen v11 scored **8/8 per variant** when replaying the
+same questions and passed all four mandatory checks. No documentary
+safety violation was observed in the replay. Transfer to new questions
+remains unmeasured for v11.
+The detailed v10 and v11 records are pending publication.
+
+Outside the score, PV01–PV08, QV01–QV08, VP01–VP08, and PE01–PE08
+retained 8/8 per set and variant. AD01 and XC06 reproduced their prior
+outcomes. All 272 historical requests matched the v10 outputs.
+
 ## Next priority
 
-Prepare eight new questions for the frozen v10 and review the expected
-answers, required citations, and mandatory behavior checks before
-execution. Cover independent requests, procedure boundaries, missing
-information, and conditional guidance.
+The guided Chainlit pilot is ready for an independent operator test.
+PR #140 merged the `prek` checks and the UI changes that open guided
+settings on entry and show a documentary scope notice. On 15 November 2026,
+a fresh Windows clone of merged `main` started MabSelect and both
+Sepharose previews with disposable data. All 40 focused tests passed.
+Browser checks confirmed citation access, pressure abstention, and the
+simulated Sepharose withdrawal.
+[PR #140](https://github.com/mukunde/bioprocess-assistant/pull/140) ·
+[Windows setup](https://github.com/mukunde/bioprocess-assistant/blob/main/docs/CHAINLIT-GUIDED-PILOT.md)
 
-Compare both retrieval variants on the same corpus and frozen settings.
-Keep PV01–PV08, QV01–QV08, VP01–VP08, PE01–PE08, AD01, and XC06 outside
-the prospective score. Require at least 7/8 per variant, all mandatory
-behavior checks, and zero documentary safety violations before
-considering a bounded Chainlit pilot.
+**Pending:** observe a first-time operator complete GC01–GC04 without
+assistance and explain their outcomes, including the difference between
+an explored context and a confirmed diagnosis. Record the outcomes.
+If the test reveals a blocker, fix it and recheck the affected tasks
+before closing the public showcase and local pilot milestone.
+[Finalization results](FINALIZATION-PLAN.md#finalization-results) · [Operator acceptance criteria](FINALIZATION-PLAN.md#before-closing)
+
+For free text, compare the same new requests in two forms using the
+same evidence. Run the original text through interpretation and compare
+it with manually structured tasks. Use the difference to decide
+whether to improve interpretation or the response layer. Before a
+free-text pilot, retain the prospective threshold of 7/8 per variant,
+all mandatory behavior checks, and zero documentary safety violations.
 
 ## Follow-up work
 
 | Work | When it is ready to advance |
 | --- | --- |
 | Windows portability | Run the pinned protocol on a second physical PC and record the mandatory checks and any retries. [Second-PC protocol](validation/WINDOWS-SECOND-PC.md) |
-| Independent acceptance | Define a held-out set for new evidence or behavior. Cover missing context, conflicting sources, negation, and unsupported quantities. Record false acceptances, abstentions, latency, and cost. [Evaluation guide](../eval/README.md) |
+| Held-out answer evaluation | Define a held-out set for new evidence or behavior. Cover missing context, conflicting sources, negation, and unsupported quantities. Record false acceptances, abstentions, latency, and cost. [Evaluation guide](../eval/README.md) |
 | Wider model observability | After the chat baseline, apply the same metadata and budget rules to extraction and judge calls. [Tracing guide](REGISTRY-TRACING.md) |
 | Generated-answer evaluation | Calibrate Ragas judges and run Promptfoo attacks with benign controls once the corresponding answering path is in scope. |
 | Evidence publication | Measure extraction precision and recall on annotated claims. Check source identity, quotations, quantities, and applicability. Exercise review, idempotent import, and rollback before publishing claims to Neo4j. [Claim contract](CLAIM-CONTRACT-V02.md) · [Ingestion guide](INGESTION.md) |

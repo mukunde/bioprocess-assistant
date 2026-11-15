@@ -4,6 +4,7 @@ import logging
 import os
 
 import chainlit as cl
+from chainlit.config import config
 from chainlit.input_widget import Slider
 
 from tools import DEFAULT_MIN_MATCH_SCORE, resolve_min_score
@@ -25,6 +26,12 @@ def documentary_mode():
     # This is server configuration, never a browser-controlled route selector.
     # Unknown configurations fail closed instead of falling back to the agent.
     return os.environ.get("BIOPROCESS_MODE", "graph") != "graph"
+
+
+if documentary_mode():
+    config.ui.chat_settings_location = "sidebar"
+    config.ui.default_chat_settings_open = True
+    config.ui.custom_css = "/public/documentary.css"
 
 
 @cl.password_auth_callback

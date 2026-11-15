@@ -1,0 +1,6 @@
+@import url("./custom.css");
+
+/* Documentary chat messages carry their own source and scope notice. */
+.watermark {
+  display: none !important;
+}

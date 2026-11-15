@@ -70,7 +70,7 @@ async def start():
         await cl.Message(content=UNAVAILABLE, actions=[button(state)]).send()
         return
     await cl.Message(content=NOTICE+'\n\n**Rising backpressure · Protein A/G Sepharose**\n\n'
-                     'Choose product and context in Settings, then inspect the staged candidate. '
+                     'Choose the product and context in the Settings panel. Confirm the settings, then select Inspect candidate guidance. '
                      'No cause is diagnosed. No live serving authority or approval is created. '
                      'Messages are snapshots; source clicks recheck this candidate. Free text is not interpreted.',
                      actions=[button(state)]).send()

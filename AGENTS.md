@@ -22,12 +22,20 @@ documentation is covered by a manifest, update only its documentation digest;
 preserve all source, claim and human-decision hashes. Keep historical results and
 their dates distinct from current implementation status.
 
-## Markdown checks
+## Git checks
 
-Install [prek](https://prek.j178.dev/installation/) and run `prek install` from
-the repository root. The hook uses Python 3 from PATH. Run `prek run --all-files`
-to check the tracked Markdown files manually. Keep delivery and approval notes
-in pull requests or local work logs.
+Install [prek](https://prek.j178.dev/installation/) and
+[Gitleaks](https://github.com/gitleaks/gitleaks/releases) 8.30.1 or a compatible
+release. Put both tools and Python 3 on PATH. From the repository root, run
+`prek install --hook-type pre-commit --hook-type commit-msg`.
+
+The pre-commit hook scans staged changes for secrets with redacted output and
+checks Markdown. Use `prek run markdown-delivery-notes --all-files` and
+`prek run readme-style --all-files` to check tracked Markdown manually.
+Keep delivery and approval notes in pull requests or local work logs.
+
+Use `type(scope): subject` for commit subjects. The scope is optional.
+Git-generated merge, revert, and autosquash subjects are accepted.
 
 The Markdown delivery baseline records existing occurrences by file, exact
 trimmed line and count. Remove entries as the corresponding text is cleaned up.

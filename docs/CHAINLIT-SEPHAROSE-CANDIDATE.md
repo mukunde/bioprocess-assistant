@@ -11,6 +11,8 @@ E166-P. [Playback verification](CYTIVA-VIDEO-HOSTING.md#published-chainlit-sepha
 
 ## Prepare a separate candidate
 
+[Test both previews on Windows from a fresh clone](CHAINLIT-GUIDED-PILOT.md) with disposable data.
+
 Use the existing development/verification environment at the repository root:
 
 ```powershell

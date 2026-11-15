@@ -16,3 +16,18 @@ entry = "python scripts/check_readme_style.py"
 language = "system"
 files = '^README\.md$'
 stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "gitleaks-staged"
+name = "Scan staged changes for secrets"
+entry = "gitleaks git --pre-commit --staged --redact=100 --no-banner"
+language = "system"
+pass_filenames = false
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "commit-message-style"
+name = "Check commit message subject"
+entry = "python scripts/check_commit_message.py"
+language = "system"
+stages = ["commit-msg"]

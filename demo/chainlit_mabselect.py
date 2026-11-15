@@ -109,7 +109,7 @@ async def start():
         await cl.Message(content=UNAVAILABLE, actions=[submit_button(state)]).send()
         return
     await cl.Message(content='**MabSelect · guided documentary mode · no LLM / paid API**\n\n'
-                     'Choose controls in Settings, then press Find documented guidance. '
+                     'Choose the product and context in the Settings panel. Confirm the settings, then select Find documented guidance. '
                      'Unknown fields remain unknown. Free text is not interpreted.\n\n' + NOTICE,
                      actions=[submit_button(state)]).send()
 

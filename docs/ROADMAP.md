@@ -261,7 +261,7 @@ outcomes. All 272 historical requests matched the v10 outputs.
 
 ## Next priority
 
-The guided Chainlit pilot is ready for an independent operator test.
+The guided Chainlit pilot passed the independent operator test on 16 November 2026.
 PR #140 merged the `prek` checks and the UI changes that open guided
 settings on entry and show a documentary scope notice. On 15 November 2026,
 a fresh Windows clone of merged `main` started MabSelect and both
@@ -271,12 +271,14 @@ simulated Sepharose withdrawal.
 [PR #140](https://github.com/mukunde/bioprocess-assistant/pull/140) ·
 [Windows setup](https://github.com/mukunde/bioprocess-assistant/blob/main/docs/CHAINLIT-GUIDED-PILOT.md)
 
-**Pending:** observe a first-time operator complete GC01–GC04 without
-assistance and explain their outcomes, including the difference between
-an explored context and a confirmed diagnosis. Record the outcomes.
-If the test reveals a blocker, fix it and recheck the affected tasks
-before closing the public showcase and local pilot milestone.
-[Finalization results](FINALIZATION-PLAN.md#finalization-results) · [Operator acceptance criteria](FINALIZATION-PLAN.md#before-closing)
+One participant passed GC01–GC04 without assistance on the successful
+attempts. GC01 passed after the interface fixes. GC02 passed on a retry
+with the intended context selected. The tested local interface showed
+one current submit button and displayed the cited passage in the chat.
+The operator test is complete. Close the milestone after merging the
+reviewed UI and documentation and rechecking the published revisions.
+[Operator results](FINALIZATION-PLAN.md#independent-operator-results) ·
+[Tested interface](FINALIZATION-PLAN.md#tested-interface)
 
 For free text, compare the same new requests in two forms using the
 same evidence. Run the original text through interpretation and compare

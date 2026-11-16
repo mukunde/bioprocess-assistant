@@ -71,8 +71,7 @@ remain available separately, with their existing behavior.
 
 On Windows, the preview checks the path Chainlit would use for a provenance
 attachment. If it reaches the legacy Windows path limit, the source response
-includes the same provenance as inline JSON. Short paths still use the Chainlit
-attachment.
+includes the same provenance as inline JSON. On short paths the excerpt appears in the chat and the full provenance is available as a JSON download.
 
 Text input only explains the guided controls; no model or free-text lookup runs.
 Legacy extraction-level `pending` source flags remain verbatim in provenance;

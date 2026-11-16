@@ -50,7 +50,7 @@ Chainlit's own session/display data is separate from this telemetry guarantee.
 
 ## Five-minute operator check
 
-1. Open **Settings** beside the message composer. Choose the exact unsuffixed
+1. Use the **Settings** panel. Reopen it from the chat header if needed. Choose the exact unsuffixed
    MabSelect product and precipitated/denatured context. Keep cleaning enabled;
    submit with **Find documented guidance**. The response identifies the submitted
    product, explored context and questions independently of later Settings changes.
@@ -58,8 +58,8 @@ Chainlit's own session/display data is separate from this telemetry guarantee.
    original precautions and review reservations. Product/context selections are
    a context to explore, not a diagnosis.
 2. Click a source button. Check the complete original quotation and PDF page.
-   The inline JSON element retains original text, offsets, source hashes and
-   scoped review decisions. The PDF itself is not served. Every click rereads
+   Download the optional provenance JSON for the original text, offsets,
+   source hashes, and scoped review decisions. The PDF itself is not served. Every click rereads
    current authority, including old-release withdrawals.
 3. Change the product to family/variant unknown. Submit again: clarification
    identifies missing fields once across both questions and asks you to edit Settings. Supplied fields stay

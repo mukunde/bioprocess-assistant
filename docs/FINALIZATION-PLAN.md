@@ -97,7 +97,46 @@ installation below.
 | Public showcase | Verified | The README thumbnail opens the 27-second graph-chat recording in GitHub Pages. Playback reached the end at 1080p with readable Cytiva citations. The player credits Claude Sonnet 4.6 via the Anthropic API, and the repository description describes the prototype and its sources. [Public demo](https://mukunde.github.io/bioprocess-assistant/graph-chat/) · [PR #139](https://github.com/mukunde/bioprocess-assistant/pull/139) |
 | Guided journeys and Git checks | Merged and verified | The maintainer walkthrough passed all four documentary checks. PR #140 merged the Chainlit UI corrections, staged secret scanning, and commit-subject checks. [PR #140](https://github.com/mukunde/bioprocess-assistant/pull/140) |
 | Windows pilot setup | Verified on the reference PC | Fresh clone of merged `main` at `2bbacc1`, with CPython 3.13.0 x64 and Chainlit 2.12.0 in a new virtual environment. The documented launcher started all three disposable instances. All 40 focused tests passed. The browser recheck opened E167-S, confirmed the pressure abstention, and verified that E166-D remained accessible after the simulated withdrawal. The initial readiness probe expired during cold startup. All three instances then responded. [Windows setup](https://github.com/mukunde/bioprocess-assistant/blob/main/docs/CHAINLIT-GUIDED-PILOT.md) |
-| Independent operator | Pending | The operator receives a running pilot and the four task prompts. Record unaided completion, source access, and the operator's own explanation before scoring. [Operator acceptance criteria](#before-closing) |
+| Independent operator | Passed on 16 November 2026 | One participant completed all four tasks without assistance on their successful attempts. GC01 and GC02 required retries. [Operator results](#independent-operator-results) |
+
+## Independent operator results
+
+The participant used the running local pilot with disposable data. They
+completed all four tasks without assistance on their successful attempts.
+
+| Task | Outcome | What the participant demonstrated |
+| --- | --- | --- |
+| GC01 | Pass on retry | Identified the missing product variant, opened E167-S, and explained its scope for SuRe LX. The observer read the column label on request as specified in the scenario. |
+| GC02 | Pass on retry | Opened E167-S and explained that the absence of a numerical pressure limit applies to the selected excerpts. |
+| GC03 | Pass | Opened E166-P and distinguished the explored deposit scenario from a confirmed diagnosis. |
+| GC04 | Pass | Opened E166-D in the second preview and explained that the ethanol option and its warning disappeared while the detergent option remained available. |
+
+Early GC01 attempts exposed duplicate submit buttons and a citation view
+that drew attention to JSON. The revised interface addressed both issues.
+The first GC02 submission left the context unspecified and the pilot
+asked for clarification. The evaluation involved one participant. The
+result includes retries and no task timings were recorded.
+
+## Tested interface
+
+The operator used the uncommitted local UI changes on top of local Git
+revision `e12d225` with CPython 3.13.0 x64 and Chainlit 2.12.0. The
+MabSelect fixture was `chat-ui-demo`. The staged Sepharose fixtures were
+`chat-ui-candidate-final` and `chat-ui-withdrawal-final`. The prepared UI
+changes apply to `main` at `267fa37`. Both Sepharose fixture manifests match
+the code and source files in that checkout.
+
+Hashes use SHA-256 after CRLF-to-LF normalization.
+
+| Interface file | Tested SHA-256 |
+| --- | --- |
+| `app.py` | `9ca43e9496d560c55cdf41326ad8ea5ebe298067d69a0fb287b4207602068f7b` |
+| `demo/chainlit_mabselect.py` | `fdc02dc538398f609a9cee82604011b421fcf01ea567f2572175792906f54a30` |
+| `demo/chainlit_sepharose.py` | `06c4307fb9f4c9edd7e71b6107612a537b724e26e2c9279cc8b5037ce8968e6c` |
+| `public/custom.css` | `4f8f7801fb202f08f1223f54fab69076718f60844cc4a2f63746a98f8b798a09` |
+| `public/documentary.css` | `57f867e92e45e4ce5f6ff2f89f7ce261595f66ce6b24353f8a69efde012f5251` |
+| `.chainlit/config.toml` | `745ee77edda7921b226b17cc40c3afd68880cb604b30ff8c81864623a37a6fae` |
+| `public/login.js` | `f94a6dcfc35290dae3ff7a4e6adf596f3e559bbe8ee0d07953bb25435363004a` |
 
 ## Before closing
 
@@ -108,13 +147,11 @@ installation below.
 | GC03 | Open E166-P for Protein G Sepharose and explain the distinction between the explored deposit and a diagnosis. |
 | GC04 | Compare fresh Sepharose previews, identify the withheld option, and open E166-D for the remaining option. |
 
-1. Observe an independent operator on GC01–GC04. Require completion
-   without assistance and correct interpretation on all four tasks.
-2. If a task reveals a blocker, record it, fix the smallest affected
-   part, and recheck the task and its dependent checks.
-3. Record the operator results and close the milestone once the
-   agreed checks pass. The verified scope is the public showcase and
-   the local guided documentary pilot.
+The operator test is complete. Merge the reviewed UI and documentation,
+then compare the interface on `main` with the hashes above and confirm
+the disposable pilot starts from the published setup. Record the release
+revision when closing the milestone. The verified scope is the public
+showcase and the local guided documentary pilot.
 
 A local pilot uses local credentials and reviewed data. External access or
 operational use would require a separate decision about audience, data,

@@ -36,6 +36,10 @@ missing or withheld evidence. For Protein A/G Sepharose, try
 The guided demo runs without model calls or a database. The installer downloads
 verified Python packages and tokenizer data. [Setup and offline options](docs/DEMO-FIRST.md)
 
+To try the separate Chainlit pilot for MabSelect and Sepharose, follow
+the [Windows pilot guide](docs/CHAINLIT-GUIDED-PILOT.md). It starts three
+local instances with disposable data.
+
 For model-assisted symptom search, set up Neo4j and Chainlit. Use
 [`.env.example`](.env.example) to configure the local database, Chainlit sign-in,
 and the Anthropic API key. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md)
@@ -105,8 +109,12 @@ mandatory checks. PV01 and PV05 reproduced the v09 safety fixes.
 Outside the v10 score, QV01–QV08, VP01–VP08, and PE01–PE08 each
 retained 8/8 per variant. AD01 and XC06 reproduced their v08 results.
 
-Next, prepare eight new questions for an independently reviewed
-prospective evaluation of the frozen v10.
+The public showcase and guided Chainlit pilot milestone closed on
+16 November 2026. One operator completed **4/4 tasks without help on
+the successful attempts**, with retries on two tasks. A fresh Windows
+clone of `main` at `7fc251f` matched all seven tested interface hashes
+and started all three disposable instances.
+[Finalization results](docs/FINALIZATION-PLAN.md#closure-verification) ·
 [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

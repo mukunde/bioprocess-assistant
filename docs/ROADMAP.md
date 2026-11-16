@@ -259,28 +259,24 @@ Outside the score, PV01–PV08, QV01–QV08, VP01–VP08, and PE01–PE08
 retained 8/8 per set and variant. AD01 and XC06 reproduced their prior
 outcomes. All 272 historical requests matched the v10 outputs.
 
+## Guided pilot milestone
+
+The public showcase and local guided Chainlit pilot closed on 16 November
+2026. One participant completed **GC01–GC04 without help on the successful
+attempts**. GC01 and GC02 required retries. The tested interface exposes
+one current submit button and opens cited excerpts directly in the chat.
+
+After the UI and documentation merges, a fresh Windows clone of `main`
+at `7fc251f` matched all seven interface hashes. The documented launcher
+started MabSelect and both Sepharose previews with disposable data. All
+three responded and their data snapshots passed validation.
+[Operator results](FINALIZATION-PLAN.md#independent-operator-results) ·
+[Closure verification](FINALIZATION-PLAN.md#closure-verification) ·
+[Windows setup](CHAINLIT-GUIDED-PILOT.md)
+
 ## Next priority
 
-The guided Chainlit pilot passed the independent operator test on 16 November 2026.
-PR #140 merged the `prek` checks and the UI changes that open guided
-settings on entry and show a documentary scope notice. On 15 November 2026,
-a fresh Windows clone of merged `main` started MabSelect and both
-Sepharose previews with disposable data. All 40 focused tests passed.
-Browser checks confirmed citation access, pressure abstention, and the
-simulated Sepharose withdrawal.
-[PR #140](https://github.com/mukunde/bioprocess-assistant/pull/140) ·
-[Windows setup](https://github.com/mukunde/bioprocess-assistant/blob/main/docs/CHAINLIT-GUIDED-PILOT.md)
-
-One participant passed GC01–GC04 without assistance on the successful
-attempts. GC01 passed after the interface fixes. GC02 passed on a retry
-with the intended context selected. The tested local interface showed
-one current submit button and displayed the cited passage in the chat.
-The operator test is complete. Close the milestone after merging the
-reviewed UI and documentation and rechecking the published revisions.
-[Operator results](FINALIZATION-PLAN.md#independent-operator-results) ·
-[Tested interface](FINALIZATION-PLAN.md#tested-interface)
-
-For free text, compare the same new requests in two forms using the
+If free-text expansion becomes a release requirement, compare the same new requests in two forms using the
 same evidence. Run the original text through interpretation and compare
 it with manually structured tasks. Use the difference to decide
 whether to improve interpretation or the response layer. Before a

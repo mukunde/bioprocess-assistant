@@ -8,9 +8,8 @@ check.
 ## Watch the demo
 
 See the graph chat answer “High column pressure” with references to the Cytiva
-handbook. The local demo calls Claude Sonnet 4.6 via the Anthropic API.
-Claude selects from the results returned by Neo4j, and Chainlit displays
-the selected graph facts and their citations.
+handbook. In the recording, Claude Sonnet 4.6 selects Neo4j results via
+the Anthropic API, and Chainlit displays the selected facts and citations.
 
 [![Play the graph chat demo in 1080p](media/chainlit-graph-1080p/poster.png)](https://mukunde.github.io/bioprocess-assistant/graph-chat/)
 
@@ -40,9 +39,10 @@ To try the separate Chainlit pilot for MabSelect and Sepharose, follow
 the [Windows pilot guide](docs/CHAINLIT-GUIDED-PILOT.md). It starts three
 local instances with disposable data.
 
-For model-assisted symptom search, set up Neo4j and Chainlit. Use
-[`.env.example`](.env.example) to configure the local database, Chainlit sign-in,
-and the Anthropic API key. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md)
+For graph chat, set up Neo4j and Chainlit. Use Claude Sonnet 4.6 via the
+Anthropic API or opt in to **Ministral 3 3B Instruct 2512** through local
+Ollama. Ministral uses compact context for selection and needs no Anthropic
+key. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md) · [Ministral setup](docs/LOCAL-GRAPH-CHAT.md#use-ministral-on-the-host)
 
 Open the optional local trace viewer to see the Anthropic and Neo4j timeline,
 token counts, and estimated model cost.
@@ -76,6 +76,7 @@ after a seven-case Chainlit replay. [MabSelect guide](docs/CHAINLIT-MABSELECT.md
 | Software regressions at `73f2517` | 1,049 passed, one optional PDF preview test skipped | [Merged checkpoint](https://github.com/mukunde/bioprocess-assistant/pull/91) |
 | Standalone backpressure demo | Four browser scenarios covered clarification, alternative treatments, product scope, and source navigation | [Dated validation record](docs/validation/CYTIVA-TROUBLESHOOTING-2026-10-30.md) |
 | Graph chat benchmark | Two G01–G04 passes matched all eight expected outcomes. Median request latency was 3.97 s, and estimated total model cost was USD 0.089622. | [Replay results](docs/GRAPH-CHAT-MEASUREMENT.md#structured-output-replay) |
+| Local Ministral in Chainlit | G02–G04 and M01 passed 4/4. On M01 with the model loaded, compact context lowered median latency from 79.97 s to 30.96 s, with identical searches, JSON, and citations. | [Acceptance results](docs/LOCAL-GRAPH-CHAT.md#local-acceptance-results) · [Latency measurements](docs/ROADMAP.md#local-ministral-result) |
 | Pressure validation | All six targeted cases conformed, including three abstentions for unconfirmed pressure. Estimated total model cost was USD 0.075246. | [Pressure results](docs/validation/GRAPH-CHAT-PRESSURE-VALIDATION.md#live-result) |
 | Graph retrieval | The evaluation separates lexical retrieval from model-assisted checks and records errors and abstentions | [Evaluation inputs and commands](eval/README.md) |
 | Cytiva XC01–XC12 | Expanded Neo4j covered 11/12 at 16 passages and 12/12 at 32. At 32, vector passage search reached 12/12 and LightRAG reached 11/12. | [Results and depth trade-off](docs/experiments/cytiva-expanded-heldout-results-v01.md) |
@@ -114,8 +115,10 @@ The public showcase and guided Chainlit pilot milestone closed on
 the successful attempts**, with retries on two tasks. A fresh Windows
 clone of `main` at `7fc251f` matched all seven tested interface hashes
 and started all three disposable instances.
-[Finalization results](docs/FINALIZATION-PLAN.md#closure-verification) ·
-[Roadmap](docs/ROADMAP.md#next-priority)
+[Finalization results](docs/FINALIZATION-PLAN.md#closure-verification)
+
+Next, test the local graph chat on new French and English requests and
+measure cold and warm response times. [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations
 

@@ -39,6 +39,7 @@ class ChainlitMabSelectTests(unittest.IsolatedAsyncioTestCase):
         local_registry.Registry(self.root).activate('release-v01')
         self.session = Session()
         self.messages = []
+        self.remove_action = patch.object(ui.cl.Action, 'remove', autospec=True).start()
         def message(**kwargs):
             self.messages.append(kwargs)
             return SimpleNamespace(send=AsyncMock())
@@ -77,7 +78,7 @@ class ChainlitMabSelectTests(unittest.IsolatedAsyncioTestCase):
         before = self.hashes()
         await app.start()
         self.assertEqual(self.state()['settings'], ui.DEFAULTS)
-        self.assertIn('no LLM / paid API', self.messages[-1]['content'])
+        self.assertIn('MabSelect documentary guidance', self.messages[-1]['content'])
         self.assertEqual(before, self.hashes())
         self.agent.assert_not_called()
 
@@ -86,7 +87,11 @@ class ChainlitMabSelectTests(unittest.IsolatedAsyncioTestCase):
         msg = await self.run_request(pressure=True)
         self.assertIn('Partial answer', msg['content'])
         expected = local_registry.Registry(self.root).evaluate(ui.request(self.settings(pressure=True)))
-        self.assertEqual(msg['content'], ui.render(expected, self.settings(pressure=True)))
+        self.assertEqual(
+            msg['content'],
+            ui.render(expected, self.settings(pressure=True))
+            + '\n\n**Open a source to read the original passage**',
+        )
         for bundle in expected['context']['bundles']:
             self.assertIn(ui.text(bundle['condition_explanation']), msg['content'])
             for option in bundle['options']:
@@ -107,10 +112,18 @@ class ChainlitMabSelectTests(unittest.IsolatedAsyncioTestCase):
         before = self.hashes()
         await app.mabselect_source(action)
         msg = self.messages[-1]
-        self.assertIn(ui.text(expected['passage']['quote']), msg['content'])
-        self.assertIn('PDF page '+str(expected['passage']['pdf_page_1based']), msg['content'])
+        passage = expected['passage']
+        quote = '\n'.join('> ' + ui.text(line) for line in passage['quote'].splitlines())
+        self.assertIn(quote, msg['content'])
+        self.assertIn('**Original passage**', msg['content'])
+        self.assertIn('PDF page '+str(passage['pdf_page_1based']), msg['content'])
+        self.assertIn('Printed page '+passage['printed_page_label'], msg['content'])
+        attachment, = msg['elements']
+        self.assertIsInstance(attachment, ui.cl.File)
+        self.assertEqual(attachment.name, pid + '-provenance.json')
+        self.assertEqual(attachment.mime, 'application/json')
         import json
-        self.assertEqual(json.loads(msg['elements'][0].content), expected)
+        self.assertEqual(json.loads(attachment.content), expected)
         self.assertEqual(before, self.hashes())
 
     async def test_unknown_fields_request_focused_clarification_without_recipe(self):
@@ -178,6 +191,24 @@ class ChainlitMabSelectTests(unittest.IsolatedAsyncioTestCase):
         msg = await self.run_request()
         self.assertEqual(msg['content'], ui.UNAVAILABLE)
         self.assertEqual(self.state()['sources'], {})
+
+    async def test_settings_change_replaces_the_visible_submit_action(self):
+        await app.start()
+        await self.run_request(product='MabSelect family — variant unknown')
+        old_button = self.state()['submit_action']
+        self.remove_action.reset_mock()
+
+        await ui.settings_update(self.settings(product='MabSelect SuRe LX'))
+
+        self.remove_action.assert_awaited_once_with(old_button)
+        new_button, = self.messages[-1]['actions']
+        self.assertEqual(new_button.label, 'Find documented guidance')
+        self.assertEqual(new_button.icon, 'search')
+        self.assertNotEqual(old_button.id, new_button.id)
+        self.assertIn('to continue', self.messages[-1]['content'])
+        await app.mabselect_submit(new_button)
+        self.assertIn('Submitted product', self.messages[-1]['content'])
+        self.assertIn('MabSelect SuRe LX', self.messages[-1]['content'])
 
     async def test_settings_change_invalidates_old_actions_and_retains_controls(self):
         await app.start()

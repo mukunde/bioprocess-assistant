@@ -3,10 +3,10 @@
 Agreed destination: a public portfolio demo and a local guided Chainlit
 pilot. The public demo shows graph chat with citations. The local pilot
 lets a first-time operator use the reviewed MabSelect and Sepharose
-documentary paths. Keep the scope limited to documentary guidance and
-record any task that still needs assistance.
+documentary paths. The milestone closed on 16 November 2026.
+[Closure verification](#closure-verification)
 
-[Roadmap](ROADMAP.md#next-priority) · [Operator acceptance criteria](#before-closing)
+[Roadmap](ROADMAP.md#next-priority) · [Operator acceptance criteria](#operator-acceptance-criteria)
 
 ## Challenge the roadmap
 
@@ -123,8 +123,9 @@ The operator used the uncommitted local UI changes on top of local Git
 revision `e12d225` with CPython 3.13.0 x64 and Chainlit 2.12.0. The
 MabSelect fixture was `chat-ui-demo`. The staged Sepharose fixtures were
 `chat-ui-candidate-final` and `chat-ui-withdrawal-final`. The prepared UI
-changes apply to `main` at `267fa37`. Both Sepharose fixture manifests match
-the code and source files in that checkout.
+changes were merged in PR #142. The fixture manifests matched the
+review checkout, and a fresh clone of `main` at `7fc251f` matched all
+seven interface hashes below. [PR #142](https://github.com/mukunde/bioprocess-assistant/pull/142)
 
 Hashes use SHA-256 after CRLF-to-LF normalization.
 
@@ -138,7 +139,7 @@ Hashes use SHA-256 after CRLF-to-LF normalization.
 | `.chainlit/config.toml` | `745ee77edda7921b226b17cc40c3afd68880cb604b30ff8c81864623a37a6fae` |
 | `public/login.js` | `f94a6dcfc35290dae3ff7a4e6adf596f3e559bbe8ee0d07953bb25435363004a` |
 
-## Before closing
+## Operator acceptance criteria
 
 | Task | What the operator must demonstrate |
 | --- | --- |
@@ -147,11 +148,22 @@ Hashes use SHA-256 after CRLF-to-LF normalization.
 | GC03 | Open E166-P for Protein G Sepharose and explain the distinction between the explored deposit and a diagnosis. |
 | GC04 | Compare fresh Sepharose previews, identify the withheld option, and open E166-D for the remaining option. |
 
-The operator test is complete. Merge the reviewed UI and documentation,
-then compare the interface on `main` with the hashes above and confirm
-the disposable pilot starts from the published setup. Record the release
-revision when closing the milestone. The verified scope is the public
-showcase and the local guided documentary pilot.
+## Closure verification
+
+On 16 November 2026, the UI and documentation merged in order.
+A fresh Windows clone of `main` at
+[`7fc251f`](https://github.com/mukunde/bioprocess-assistant/commit/7fc251f4b0f9701864f82af25ae6f4faf141c7e0)
+matched all seven interface hashes. The published launcher started MabSelect,
+the staged Sepharose baseline, and the staged Sepharose withdrawal preview.
+All three loopback endpoints returned HTTP 200 and their disposable data
+snapshots validated. This check used CPython 3.13.0 x64 and Chainlit 2.12.0.
+[PR #142](https://github.com/mukunde/bioprocess-assistant/pull/142) ·
+[PR #143](https://github.com/mukunde/bioprocess-assistant/pull/143) ·
+[Windows pilot guide](CHAINLIT-GUIDED-PILOT.md)
+
+The public showcase and local guided documentary pilot milestone is closed.
+The operator result covers one participant and four successful unassisted
+tasks, including two retries.
 
 A local pilot uses local credentials and reviewed data. External access or
 operational use would require a separate decision about audience, data,

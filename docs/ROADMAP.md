@@ -7,7 +7,7 @@ Keep source review, documentary previews, and operational decisions separate.
 
 | Area | Available now |
 | --- | --- |
-| Graph chat | Claude Sonnet 4.6 selects from curated results returned by Neo4j. The app validates the model's structured JSON selection and renders graph facts with citations. [Grounding decision](ADR-001-knowledge-graph-grounding.md) |
+| Graph chat | Chainlit supports Claude Sonnet 4.6 via the Anthropic API by default and local Ministral 3 3B Instruct 2512 through Ollama on opt-in. Both select Neo4j result IDs. The app validates the selection and renders graph facts with citations. [Grounding decision](ADR-001-knowledge-graph-grounding.md) · [Local mode](LOCAL-GRAPH-CHAT.md#use-ministral-on-the-host) |
 | Local demo | Guided and bounded English and French requests use reviewed Cytiva excerpts. The Windows setup has same-PC evidence. [Demo guide](DEMO-FIRST.md) |
 | MabSelect | The guided Chainlit mode uses an approved local registry. Citations and withdrawal checks follow the current registry authority. [Operator guide](CHAINLIT-MABSELECT.md) |
 | Protein A/G Sepharose | The merged candidate provides a separate Chainlit preview with scoped sources, clarification, and simulated withdrawals. Release v03 was verified in one approved local installation. The public recording shows the preview; it does not provide access to that installation. [Candidate guide](CHAINLIT-SEPHAROSE-CANDIDATE.md) · [PR #91](https://github.com/mukunde/bioprocess-assistant/pull/91) |
@@ -40,6 +40,30 @@ two new alarm cases abstained, and the three reported or measured increases
 returned both pressure paths with their citations. Median request latency was
 3.89 s, and estimated total model cost was USD 0.075246.
 [Pressure validation](validation/GRAPH-CHAT-PRESSURE-VALIDATION.md#live-result)
+
+### Local Ministral result
+
+The merged local mode passed four known cases in an authenticated Chainlit
+session with disposable Neo4j. G02 gave a sourced answer with French
+headings and five citation entries. G03 abstained without a search. G04
+abstained after a below-threshold lookup. Neither abstention displayed
+citations. M01 returned both symptom paths and ten citation entries.
+[Acceptance results](LOCAL-GRAPH-CHAT.md#local-acceptance-results)
+
+A separate M01 benchmark measured the effect of compact context with
+Ministral already loaded. All six runs made the same two Neo4j searches
+and produced the same JSON selection and citation-bearing output. One
+pair was excluded from timing because Windows entered sleep during the
+full-context run. Medians use the two remaining runs per variant.
+
+| M01 measurement | Full context | Compact context |
+| --- | ---: | ---: |
+| End-to-end median | 79.97 s | 30.96 s |
+| Final JSON selection median | 65.89 s | 14.87 s |
+| Input tokens for final selection | 2,046 | 632 |
+
+The 61% latency reduction applies to this question on the test machine.
+The Chainlit acceptance replay checked functional behavior separately.
 
 ## Cytiva retrieval results
 
@@ -276,8 +300,15 @@ three responded and their data snapshots passed validation.
 
 ## Next priority
 
-If free-text expansion becomes a release requirement, compare the same new requests in two forms using the
-same evidence. Run the original text through interpretation and compare
+Evaluate the merged local graph chat on a small set of new French and
+English requests. Include a combined symptom question and cases that
+require abstention. Agree on a latency target before the run, then measure
+cold and warm requests separately. Check JSON validity, search coverage,
+citation fidelity, and abstention before recommending the local mode for
+routine use.
+
+If broader documentary free text becomes a release requirement, compare
+the same new requests in two forms using the same evidence. Run the original text through interpretation and compare
 it with manually structured tasks. Use the difference to decide
 whether to improve interpretation or the response layer. Before a
 free-text pilot, retain the prospective threshold of 7/8 per variant,

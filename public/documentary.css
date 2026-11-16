@@ -4,3 +4,54 @@
 .watermark {
   display: none !important;
 }
+
+/* The native Lucide icons identify submit actions and source buttons. */
+button:has(> svg.lucide-search),
+button:has(> svg.lucide-file-text),
+#chat-settings-header-button {
+  min-block-size: 44px;
+  max-inline-size: 100%;
+  block-size: auto;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  touch-action: manipulation;
+}
+
+button:has(> svg.lucide-search) {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  font-weight: 600;
+}
+
+button:has(> svg.lucide-search):hover:not(:disabled) {
+  background: hsl(var(--primary) / 0.88);
+  color: hsl(var(--primary-foreground));
+}
+
+button:has(> svg.lucide-file-text) {
+  border: 1px solid hsl(var(--primary));
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+}
+
+button:has(> svg.lucide-file-text):hover:not(:disabled) {
+  background: hsl(var(--muted));
+  color: hsl(var(--foreground));
+}
+
+#chat-settings-header-button {
+  inline-size: auto;
+  padding-inline: 0.75rem;
+  color: hsl(var(--foreground));
+}
+
+#chat-settings-header-button::after {
+  content: "Settings";
+}
+
+:is(button:has(> svg.lucide-search),
+    button:has(> svg.lucide-file-text),
+    #chat-settings-header-button):focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}

@@ -27,6 +27,7 @@ class ChainlitSepharoseTests(unittest.IsolatedAsyncioTestCase):
         ui._candidate.cache_clear()
         self.addCleanup(ui._candidate.cache_clear)
         self.session, self.messages = Session(), []
+        self.remove_action = patch.object(ui.cl.Action, 'remove', autospec=True).start()
         def message(**kwargs):
             self.messages.append(kwargs)
             return SimpleNamespace(send=AsyncMock())
@@ -68,8 +69,13 @@ class ChainlitSepharoseTests(unittest.IsolatedAsyncioTestCase):
         token = next(t for t, ref in self.state()['sources'].items() if ref[1] == 'E166-W')
         await app.sepharose_source(SimpleNamespace(payload={'token': token}))
         msg = self.messages[-1]
-        view = json.loads(msg['elements'][0].content)
-        self.assertIn(ui.text(view['passage']['quote']), msg['content'])
+        attachment, = msg['elements']
+        self.assertIsInstance(attachment, ui.cl.File)
+        self.assertEqual(attachment.name, 'E166-W-provenance.json')
+        self.assertEqual(attachment.mime, 'application/json')
+        view = json.loads(attachment.content)
+        for line in view['passage']['quote'].splitlines():
+            self.assertIn('> ' + ui.text(line), msg['content'])
         self.assertIn('PDF page 166', msg['content'])
         self.assertIn(api.NOTICE, msg['content'])
         self.assertTrue(view['reviews'][0]['original_human_message'])
@@ -89,14 +95,15 @@ class ChainlitSepharoseTests(unittest.IsolatedAsyncioTestCase):
         self.assertNotIn('elements', msg)
         self.assertIn(api.NOTICE, msg['content'])
         view = json.loads(msg['content'].split('\n```json\n', 1)[1].rsplit('\n```', 1)[0])
-        self.assertIn(ui.text(view['passage']['quote']), msg['content'])
+        for line in view['passage']['quote'].splitlines():
+            self.assertIn('> ' + ui.text(line), msg['content'])
         self.assertEqual(view['passage']['source_id'], 'E166-W')
         self.assertEqual(view['passage']['pdf_page_1based'], 166)
         self.assertIn('Q04', [review['question_id'] for review in view['reviews']])
         self.assertFalse(view['serving_activated'])
 
     def test_attachment_limit_counts_utf16_code_units(self):
-        filename = '0' * 36 + (ui.mimetypes.guess_extension('text/plain') or '')
+        filename = '0' * 36 + (ui.mimetypes.guess_extension('application/json') or '')
         base = Path(self.temp.name)
         suffix_length = 259 - len(str(base / 'a' / filename).encode('utf-16-le')) // 2
         boundary = base / ('a' * (suffix_length + 1))
@@ -208,6 +215,18 @@ class ChainlitSepharoseTests(unittest.IsolatedAsyncioTestCase):
         await app.sepharose_source(SimpleNamespace(payload={'token': token}))
         self.assertIn('no new quotation', self.messages[-1]['content'])
         self.assertNotIn('elements', self.messages[-1])
+
+    async def test_settings_change_replaces_the_candidate_submit_action(self):
+        await app.start()
+        previous = self.state()['submit_action']
+        settings = dict(ui.DEFAULTS, product='Protein G Sepharose')
+        await ui.settings_update(settings)
+
+        self.remove_action.assert_awaited_once_with(previous)
+        current, = self.messages[-1]['actions']
+        self.assertEqual(current.label, 'Inspect candidate guidance')
+        self.assertEqual(current.icon, 'search')
+        self.assertNotEqual(previous.id, current.id)
 
     async def test_settings_change_revokes_old_tokens_and_rejects_late_results(self):
         await app.start()

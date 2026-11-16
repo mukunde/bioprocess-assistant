@@ -78,12 +78,11 @@ async def start():
     cl.user_session.set("min_score", DEFAULT_MIN_MATCH_SCORE)
     await cl.Message(
         content=(
-            "**Bioprocess Troubleshooting Assistant** - capture Protein A.\n\n"
-            "Décris un symptôme observé sur ton étape de capture (par ex. "
-            "*« mon rendement de capture a chuté »*) et je te propose les causes "
-            "probables et les actions correctives, chacune sourcée sur un handbook.\n\n"
-            "*Le seuil de match du knowledge graph est ajustable via l'icône ⚙️ "
-            "Settings dans la boîte de saisie.*"
+            "### Dépannage de la capture Protein A\n\n"
+            "Décris ce que tu observes, par exemple « Le rendement de capture a chuté ». "
+            "Le chat recherche dans le graphe des causes possibles et des actions documentées. "
+            "Utilise les références de la réponse pour vérifier les passages cités.\n\n"
+            "Tu peux ajuster le seuil de recherche dans les paramètres de la zone de saisie."
         )
     ).send()
 

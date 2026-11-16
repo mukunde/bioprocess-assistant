@@ -85,15 +85,51 @@ def service():
     return registry_tracing.ObservedRegistry(Registry(Path(root).resolve()), _tracing)
 
 
-def submit_button(state):
-    state['submit_token'] = uuid.uuid4().hex
-    return cl.Action(name='mabselect_submit', label='Find documented guidance',
-                     payload={'token': state['submit_token']})
+def source_message(passage):
+    quote = "\n".join("> " + text(line) for line in passage['quote'].splitlines())
+    return (
+        f"### {text(passage['source_id'])} · PDF page {passage['pdf_page_1based']}\n\n"
+        f"**Cytiva handbook** · {text(passage['document_reference'])}"
+        f" · Printed page {text(passage['printed_page_label'])}\n\n"
+        f"{text(passage['scope'])}\n\n**Original passage**\n\n{quote}"
+    )
+
+
+def provenance_file(source_id, view):
+    return cl.File(
+        name=source_id + '-provenance.json',
+        content=json.dumps(view, ensure_ascii=False, indent=2).encode('utf-8'),
+        mime='application/json',
+    )
+
+
+async def send_controls(
+    state, revision, content, citations=(), *, can_submit=True,
+    session_key=KEY, action_name='mabselect_submit', label='Find documented guidance',
+):
+    # Serialize button replacement with delivery so an older send cannot
+    # leave a button behind after a newer settings update.
+    async with state['button_lock']:
+        if not current(state, revision, session_key):
+            return
+        previous = state.pop('submit_action', None)
+        if previous is not None:
+            await previous.remove()
+        if not current(state, revision, session_key):
+            return
+        actions = list(citations)
+        if can_submit:
+            state['submit_token'] = uuid.uuid4().hex
+            action = cl.Action(name=action_name, label=label, icon='search',
+                               payload={'token': state['submit_token']})
+            state['submit_action'] = action
+            actions.append(action)
+        await cl.Message(content=content, actions=actions).send()
 
 
 async def start():
     state = {'settings': dict(DEFAULTS), 'revision': 0, 'sources': {}, 'busy': False,
-             'submit_token': None}
+             'submit_token': None, 'button_lock': asyncio.Lock()}
     cl.user_session.set(KEY, state)
     # Controls and an explicit retry remain available during an authority outage.
     # Showing controls grants no authority and performs no lookup or activation.
@@ -106,12 +142,15 @@ async def start():
     try:
         await asyncio.wait_for(asyncio.to_thread(_check), timeout=15)
     except Exception:
-        await cl.Message(content=UNAVAILABLE, actions=[submit_button(state)]).send()
+        await send_controls(state, 0, UNAVAILABLE)
         return
-    await cl.Message(content='**MabSelect · guided documentary mode · no LLM / paid API**\n\n'
-                     'Choose the product and context in the Settings panel. Confirm the settings, then select Find documented guidance. '
-                     'Unknown fields remain unknown. Free text is not interpreted.\n\n' + NOTICE,
-                     actions=[submit_button(state)]).send()
+    await send_controls(
+        state, 0,
+        '### MabSelect documentary guidance\n\n'
+        '1. Choose the product and context in **Settings**.\n'
+        '2. Confirm your selections and choose **Find documented guidance**.\n'
+        '3. Open a citation to read the original passage.\n\n' + NOTICE,
+    )
 
 
 def _check():
@@ -131,11 +170,15 @@ async def settings_update(settings):
     try:
         request(settings)
     except (ValueError, TypeError):
-        await cl.Message(content='Choose valid controls and select at least one question in Settings.').send()
+        await send_controls(
+            state, state['revision'],
+            'Choose valid controls and select at least one question in Settings.',
+            can_submit=False,
+        )
         return
     state['settings'] = dict(settings)
-    await cl.Message(content='Controls updated. Previous results are snapshots; submit these controls.',
-                     actions=[submit_button(state)]).send()
+    await send_controls(state, state['revision'],
+                        'Controls updated. Select Find documented guidance to continue.')
 
 
 async def free_text():
@@ -145,7 +188,7 @@ async def free_text():
 
 def render(out, submitted):
     """Keep alternatives, conditions, original warnings and reservations separate."""
-    lines = ['**Request outcome: ' + text(STATUS_LABELS[out['status']]) + '**',
+    lines = ['### Request outcome: ' + text(STATUS_LABELS[out['status']]),
              '**Submitted product**: ' + text(submitted['product']),
              '**Context explored**: ' + text(submitted['context']),
              '**Questions**: ' + ', '.join(ITEM_LABELS[v] for v in request(submitted)['tasks'][0]['requested_items']),
@@ -170,12 +213,16 @@ def render(out, submitted):
                   'context': 'one context to explore'}
         lines.append('Please specify: ' + ', '.join(labels[t] for t in targets)
                      + '. Edit these fields in Settings; retain supplied fields. A confirmed diagnosis is not required.')
+    displayed_conditions = set()
     for bundle in out['context']['bundles']:
         if bundle['options'] and all(o['role'] == 'clarification_context' for o in bundle['options']):
             lines.append('**Clarification context — not a selected procedure**')
-        lines += ['**Scope / conditions**', text(bundle['condition_explanation'])]
+        condition = bundle['condition_explanation']
+        if condition not in displayed_conditions:
+            lines += ['**Scope and conditions**', text(condition)]
+            displayed_conditions.add(condition)
         for option in bundle['options']:
-            lines.append('**Separate option / documentary context**: ' + text(option['wording']))
+            lines.append('#### ' + text(option['wording']))
             for step in option['steps']:
                 lines.append(text(step['wording']) + '\nSources: ' + ', '.join(text(s) for s in step['source_ids']))
             for warning in option['warnings']:
@@ -187,8 +234,8 @@ def render(out, submitted):
     return '\n\n'.join(lines)
 
 
-def current(state, revision):
-    return cl.user_session.get(KEY) is state and state['revision'] == revision
+def current(state, revision, session_key=KEY):
+    return cl.user_session.get(session_key) is state and state['revision'] == revision
 
 
 async def submit(action):
@@ -219,13 +266,14 @@ async def submit(action):
                 state['sources'][token] = (ref['release_id'], ref['source_id'])
                 page = passages[ref['source_id']]['pdf_page_1based']
                 actions.append(cl.Action(name='mabselect_source', payload={'token': token},
-                                         label=ref['source_id'] + ' · PDF page ' + str(page)))
-        actions.append(submit_button(state))
-        await cl.Message(content=body, actions=actions).send()
+                                         label=ref['source_id'] + ' · PDF page ' + str(page), icon='file-text'))
+        if actions:
+            body += '\n\n**Open a source to read the original passage**'
+        await send_controls(state, revision, body, actions)
     except Exception:
-        state['sources'] = {}
         if current(state, revision):
-            await cl.Message(content=UNAVAILABLE, actions=[submit_button(state)]).send()
+            state['sources'] = {}
+            await send_controls(state, revision, UNAVAILABLE)
     finally:
         state['busy'] = False
 
@@ -248,13 +296,8 @@ async def source(action):
                              'Resubmit the request; earlier messages remain historical snapshots.').send()
             return
         p = view['passage']
-        body = '**' + text(p['source_id']) + ' · PDF page ' + str(p['pdf_page_1based']) + '**\n\n'
-        body += text(p['scope']) + '\n\n' + text(p['quote']) + '\n\n' + NOTICE
-        # Original quotation, offsets, digest and all scoped review decisions remain inspectable.
-        attachment = cl.Text(name='Source provenance and scoped reviews',
-                             content=json.dumps(view, ensure_ascii=False, indent=2),
-                             language='json', display='inline')
-        await cl.Message(content=body, elements=[attachment]).send()
+        body = source_message(p) + '\n\n' + NOTICE
+        await cl.Message(content=body, elements=[provenance_file(p['source_id'], view)]).send()
     except Exception:
         await cl.Message(content=UNAVAILABLE if current(state, revision)
                          and state['sources'].get(token) == ref else STALE).send()

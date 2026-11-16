@@ -1,6 +1,6 @@
 """Explicit, non-activated Chainlit workbench for the separate Sepharose candidate."""
 import asyncio
-from functools import lru_cache
+from functools import lru_cache, partial
 import json
 import mimetypes
 import os
@@ -11,7 +11,7 @@ import uuid
 import chainlit as cl
 from chainlit.input_widget import Select, Switch
 
-from demo.chainlit_mabselect import text, STATUS_LABELS
+from demo.chainlit_mabselect import provenance_file, send_controls, source_message, text, STATUS_LABELS
 from serving.sepharose_candidate import Candidate, NOTICE, request
 
 KEY = 'sepharose_candidate_ui'
@@ -46,9 +46,9 @@ def service():
     return _candidate(str(Path(root).resolve()))
 
 
-def button(state):
-    state['submit_token'] = uuid.uuid4().hex
-    return cl.Action(name='sepharose_submit', label='Inspect candidate guidance', payload={'token': state['submit_token']})
+send_candidate_controls = partial(
+    send_controls, session_key=KEY, action_name='sepharose_submit', label='Inspect candidate guidance',
+)
 
 
 def current(state, revision):
@@ -56,7 +56,8 @@ def current(state, revision):
 
 
 async def start():
-    state = {'settings': dict(DEFAULTS), 'revision': 0, 'submit_token': None, 'sources': {}, 'busy': False}
+    state = {'settings': dict(DEFAULTS), 'revision': 0, 'submit_token': None, 'sources': {}, 'busy': False,
+             'button_lock': asyncio.Lock()}
     cl.user_session.set(KEY, state)
     await cl.ChatSettings([
         Select(id='product', label='Exact product', values=list(PRODUCTS), initial_index=0),
@@ -67,13 +68,17 @@ async def start():
     try:
         await asyncio.wait_for(asyncio.to_thread(lambda: service()._snapshot()), timeout=15)
     except Exception:
-        await cl.Message(content=UNAVAILABLE, actions=[button(state)]).send()
+        await send_candidate_controls(state, 0, UNAVAILABLE)
         return
-    await cl.Message(content=NOTICE+'\n\n**Rising backpressure · Protein A/G Sepharose**\n\n'
-                     'Choose the product and context in the Settings panel. Confirm the settings, then select Inspect candidate guidance. '
-                     'No cause is diagnosed. No live serving authority or approval is created. '
-                     'Messages are snapshots; source clicks recheck this candidate. Free text is not interpreted.',
-                     actions=[button(state)]).send()
+    await send_candidate_controls(
+        state, 0,
+        '### Rising backpressure · Protein A/G Sepharose\n\n'
+        + NOTICE + '\n\n'
+        '1. Choose the product and context in **Settings**.\n'
+        '2. Confirm your selections and choose **Inspect candidate guidance**.\n'
+        '3. Open a citation to read the original passage.\n\n'
+        'The selected context is a scenario to explore. Source clicks recheck this candidate.',
+    )
 
 
 async def settings_update(settings):
@@ -87,10 +92,15 @@ async def settings_update(settings):
     try:
         controls(settings)
     except (TypeError, ValueError):
-        await cl.Message(content='Choose valid candidate controls and at least one question.').send()
+        await send_candidate_controls(
+            state, state['revision'], 'Choose valid candidate controls and at least one question.',
+            can_submit=False,
+        )
         return
     state['settings'] = dict(settings)
-    await cl.Message(content=NOTICE+'\n\nControls updated; earlier messages remain snapshots.', actions=[button(state)]).send()
+    await send_candidate_controls(
+        state, state['revision'], 'Controls updated. Select Inspect candidate guidance to continue.',
+    )
 
 
 async def free_text():
@@ -102,7 +112,7 @@ def render(out, submitted):
         return UNAVAILABLE
     lines = [NOTICE, '**Submitted product**: '+text(submitted['product']),
              '**Context explored**: '+text(submitted['context']),
-             '**Request outcome**: '+text(STATUS_LABELS[out['status']])]
+             '### Request outcome: '+text(STATUS_LABELS[out['status']])]
     for item in out['items']:
         label = 'Cleaning indication and conditional options' if item['question'] == 'guidance' else 'Numerical maximum pressure'
         lines.append('**'+label+': '+text(STATUS_LABELS[item['state']])+'**')
@@ -124,7 +134,7 @@ def render(out, submitted):
                          'No numerical pressure limit is supplied by this candidate. Absence is limited to the reviewed excerpts, '
                          'not the whole manual. No recipe is transferred to a different product.')
     for bundle in out['bundles']:
-        lines += ['**'+text(bundle['role'])+' · '+text(bundle['scope'])+'**', text(bundle['wording'])]
+        lines.append('#### ' + text(bundle['wording']))
         passages = {p['source_id']: p for p in bundle['passages']}
         for pid in bundle['quote_ids']:
             lines.append(text(passages[pid]['quote'])+'\nSource: '+text(pid))
@@ -156,20 +166,24 @@ async def submit(action):
             token = uuid.uuid4().hex
             state['sources'][token] = (ref['release_id'], ref['source_id'])
             actions.append(cl.Action(name='sepharose_source', payload={'token': token},
-                                     label=ref['source_id']+' · PDF page '+str(ref['pdf_page_1based'])))
-        await cl.Message(content=render(out, submitted), actions=actions+[button(state)]).send()
+                                     label=ref['source_id']+' · PDF page '+str(ref['pdf_page_1based']),
+                                     icon='file-text'))
+        body = render(out, submitted)
+        if actions:
+            body += '\n\n**Open a source to read the original passage**'
+        await send_candidate_controls(state, revision, body, actions)
     except Exception:
-        state['sources'] = {}
         if current(state, revision):
-            await cl.Message(content=UNAVAILABLE, actions=[button(state)]).send()
+            state['sources'] = {}
+            await send_candidate_controls(state, revision, UNAVAILABLE)
     finally:
         state['busy'] = False
 
 
 def provenance_requires_inline(files_dir):
-    # Chainlit stores Text elements using a UUID and the MIME type's extension.
+    # Chainlit stores attachments using a UUID and the MIME type's extension.
     # Reserve one UTF-16 code unit for the Windows path terminator.
-    extension = mimetypes.guess_extension('text/plain') or ''
+    extension = mimetypes.guess_extension('application/json') or ''
     filename = '0' * 36 + extension
     path = str(files_dir.absolute() / filename)
     return len(path.encode('utf-16-le')) // 2 >= 260
@@ -192,16 +206,12 @@ async def source(action):
             await cl.Message(content=NOTICE+'\n\nSource held or candidate unavailable; no new quotation supplied.').send()
             return
         p = view['passage']
-        content = (NOTICE+'\n\n**'+text(p['source_id'])+' · PDF page '+str(p['pdf_page_1based'])
-                   +'**\n\n'+text(p['scope'])+'\n\n'+text(p['quote']))
-        provenance = json.dumps(view, ensure_ascii=False, indent=2)
+        content = NOTICE + '\n\n' + source_message(p)
         if sys.platform == 'win32' and provenance_requires_inline(cl.context.session.files_dir):
+            provenance = json.dumps(view, ensure_ascii=False, indent=2)
             content += '\n\n**Candidate source and scoped reviews**\n\n```json\n' + provenance + '\n```'
             await cl.Message(content=content).send()
         else:
-            await cl.Message(content=content, elements=[
-                cl.Text(name='Candidate source and scoped reviews', content=provenance,
-                        language='json', display='inline')
-            ]).send()
+            await cl.Message(content=content, elements=[provenance_file(p['source_id'], view)]).send()
     except Exception:
         await cl.Message(content=UNAVAILABLE if current(state, revision) and state['sources'].get(token) == ref else STALE).send()

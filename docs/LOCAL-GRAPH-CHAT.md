@@ -58,9 +58,59 @@ docker compose -f compose.neo4j.yaml stop
 
 For an application container, configure a database address reachable **from that container**: `127.0.0.1` would refer to the application container itself. The host-based setup above avoids that mismatch. See the [Dockerfile](../Dockerfile) for the application image. Configure credentials and network access for your deployment.
 
+## Use Ministral on the host
+
+Start Ollama with the installed `bioprocess-local:latest` model available.
+This option uses Ministral 3 3B Instruct 2512 (Q4_K_M). Keep Neo4j on a
+direct loopback Bolt connection as configured above. Ollama must listen on
+`127.0.0.1:11434`.
+
+```powershell
+$env:BIOPROCESS_MODE = "graph"
+$env:BIOPROCESS_GRAPH_BACKEND = "ministral"
+.\.venv\Scripts\chainlit.exe run app.py --host 127.0.0.1
+```
+
+Check for **Mode local · Ministral 3 3B Instruct** in the welcome message.
+In the composer settings, choose the language for headings and abstentions.
+The technical descriptions and citations come from Neo4j. The model sees
+compact result labels when selecting IDs. The renderer validates that
+selection and uses the complete graph results for citations.
+
+This mode requires no Anthropic key. If Ollama or Neo4j is unavailable,
+Chainlit shows a service error. To return to the default Claude backend,
+remove `BIOPROCESS_GRAPH_BACKEND` from the shell and restart Chainlit.
+
+### Local acceptance results
+
+On 16 November 2026, an authenticated Chainlit session ran all four cases
+with Ministral and a disposable Neo4j instance loaded from the benchmark
+seed. The lexical threshold was 2.5. The session used the explicit
+French or English setting and ran without an Anthropic key.
+
+| Case | Result | Citation entries |
+| --- | --- | ---: |
+| G02 | Valid selection for high column pressure. French headings, bed efficiency, and resin-specific cleaning. | 5 |
+| G03 | Abstention on upstream cell viability. No Neo4j lookup. | 0 |
+| G04 | Abstention on endotoxins after a lookup below the threshold. | 0 |
+| M01 | Valid selection for high column pressure and capture yield drop after two searches. | 10 |
+
+This replay checks selection, citations, and abstention on four known
+questions. G02–G04 are defined in the
+[graph chat measurement protocol](GRAPH-CHAT-MEASUREMENT.md#question-set).
+M01 combines a measured increase in column pressure with declining capture
+yield and antibody in the flow-through.
+
+Run the targeted offline regressions from the repo root with the chat and
+evaluation test dependencies installed.
+
+```powershell
+python -m unittest tests.test_graph_chat_ministral tests.test_reliability tests.test_graph_chat_tracing tests.test_graph_chat_benchmark
+```
+
 ## Optional local traces
 
-Install the optional OpenTelemetry dependencies in the chat environment. Set
+These instructions cover the default Claude backend. Install the optional OpenTelemetry dependencies in the chat environment. Set
 the flag in the shell before launching Chainlit. Use the shell, not `.env`, to control tracing.
 
 ```powershell

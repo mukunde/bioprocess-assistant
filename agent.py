@@ -99,6 +99,15 @@ TOOLS = [
 ]
 
 
+def apply_pressure_guard(user_message, rendered, metadata):
+    if ("High column pressure" in metadata["symptoms"]
+            and _PRESSURE_TOPIC.search(user_message)
+            and _UNCONFIRMED_MEASUREMENT.search(user_message)):
+        metadata.update(status="refuse", symptoms=[])
+        return refusal(metadata["language"])
+    return rendered
+
+
 def run_agent(
     user_message: str,
     min_score: float = DEFAULT_MIN_MATCH_SCORE,
@@ -173,11 +182,7 @@ def _run_agent(user_message, min_score, tool_outputs, answer_metadata, tracer, r
                 except GroundingError as exc:
                     request.attributes(**{"grounding.rejection_reason": exc.reason.value})
                 else:
-                    if ("High column pressure" in metadata["symptoms"]
-                            and _PRESSURE_TOPIC.search(user_message)
-                            and _UNCONFIRMED_MEASUREMENT.search(user_message)):
-                        metadata.update(status="refuse", symptoms=[])
-                        rendered = refusal(metadata["language"])
+                    rendered = apply_pressure_guard(user_message, rendered, metadata)
                     answer_metadata.update(metadata)
                     return rendered, last_score, min_score
             return refusal("fr") + "\n\n" + refusal("en"), last_score, min_score

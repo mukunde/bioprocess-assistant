@@ -60,10 +60,61 @@ For an application container, configure a database address reachable **from that
 
 ## Use Ministral on the host
 
-Start Ollama with the installed `bioprocess-local:latest` model available.
-This option uses Ministral 3 3B Instruct 2512 (Q4_K_M). Keep Neo4j on a
-direct loopback Bolt connection as configured above. Ollama must listen on
-`127.0.0.1:11434`.
+Complete steps 1–3 above, including the local Neo4j seed and Chainlit login
+settings. Install Ollama for Windows and put `ollama` on PATH. The launcher
+expects the text model `bioprocess-local:latest` (Ministral 3 3B Instruct 2512,
+Q4_K_M) in Ollama's local model store. Check with `ollama list`. To install
+the model, download the [official Q4_K_M GGUF][ministral-gguf]. Open PowerShell
+in its folder outside the repository. Verify the hash, then import it while
+your regular Ollama service is running.
+
+```powershell
+$expected = '9ed150d4367e68df0ac8e1540f6ddc65b42d0ee26378329d1ecbca60f93fc5f8'
+$weights = '.\Ministral-3-3B-Instruct-2512-Q4_K_M.gguf'
+if ((Get-FileHash -Algorithm SHA256 -LiteralPath $weights).Hash -ne $expected) {
+    throw 'Ministral GGUF checksum mismatch.'
+}
+@(
+    'FROM ./Ministral-3-3B-Instruct-2512-Q4_K_M.gguf'
+    'PARAMETER num_ctx 8192'
+    'PARAMETER temperature 0'
+) | Set-Content -Encoding ascii Modelfile.ministral
+ollama create bioprocess-local -f Modelfile.ministral
+```
+
+[ministral-gguf]: https://huggingface.co/mistralai/Ministral-3-3B-Instruct-2512-GGUF/blob/main/Ministral-3-3B-Instruct-2512-Q4_K_M.gguf
+
+Keep weights and the generated Modelfile outside version control. The launcher
+uses the installed alias and keeps model calls local. It does not fetch weights.
+
+Run the launcher from the repo root in PowerShell:
+
+```powershell
+.\Start-LocalGraphChat.ps1
+.\Start-LocalGraphChat.ps1 -Profile IrisXe
+```
+
+| Profile | Behavior |
+| --- | --- |
+| CPU (default) | Starts Ollama with GPU acceleration disabled and confirms CPU-only model residency. |
+| IrisXe | Enables Vulkan and verifies full offload to an Intel Iris Xe device. Use CPU if the device or RAM check fails. |
+
+Each command starts one temporary Ollama server on `127.0.0.1:11435` and
+Chainlit on `127.0.0.1:8000`. The regular Ollama service can stay on port
+11434. Use `-OllamaPort` or `-Port` to resolve a port conflict. The launcher
+verifies access to the seeded local graph, preloads Ministral, and requires
+1,024 MiB available physical RAM after the model loads and again once Chainlit
+is ready. It prints both readings. Add `-CheckOnly` to either command to check
+startup and exit. For a live session, press Ctrl+C to stop Chainlit and its
+temporary Ollama process. The database remains running for reuse.
+
+Open the printed address and sign in. Look for
+**Mode local · Ministral 3 3B Instruct**. Choose the language for headings
+and abstentions in the composer settings. Ministral selects IDs from compact
+search results. The renderer validates the selection and displays the
+complete graph facts and citations. The local launcher needs no Anthropic key.
+
+For an existing Ollama server on port 11434, the manual launch remains available:
 
 ```powershell
 $env:BIOPROCESS_MODE = "graph"
@@ -71,15 +122,29 @@ $env:BIOPROCESS_GRAPH_BACKEND = "ministral"
 .\.venv\Scripts\chainlit.exe run app.py --host 127.0.0.1
 ```
 
-Check for **Mode local · Ministral 3 3B Instruct** in the welcome message.
-In the composer settings, choose the language for headings and abstentions.
-The technical descriptions and citations come from Neo4j. The model sees
-compact result labels when selecting IDs. The renderer validates that
-selection and uses the complete graph results for citations.
+### Windows launcher verification
 
-This mode requires no Anthropic key. If Ollama or Neo4j is unavailable,
-Chainlit shows a service error. To return to the default Claude backend,
-remove `BIOPROCESS_GRAPH_BACKEND` from the shell and restart Chainlit.
+On 24 November 2026, a fresh checkout of GitHub main at `1d01d53` with
+the launcher changes used a new Python 3.13 virtual environment, Chainlit
+2.12.0, and a newly seeded Neo4j database. The reference PC used its existing
+Ollama installation and Ministral weights.
+
+| Startup check | Result |
+| --- | --- |
+| Default CPU | Chainlit answered on loopback. Available RAM was 1,572 MiB with all three services ready. |
+| Iris Xe | Ollama confirmed full GPU offload. The launcher stopped before opening Chainlit because only 50 MiB of RAM remained. It directed the operator to the CPU profile. |
+
+Both checks stopped their temporary listeners on exit. The regular Ollama
+process remained available.
+
+A follow-up imported the verified GGUF into an empty Ollama store and checked
+the resulting weights, template, and parameters against the reference model.
+With that store and the PowerShell launcher, an authenticated CPU session
+returned both M01 symptom paths with ten exact citation entries in 21.58 s.
+ML06 abstained with no citations in 9.83 s. Both requests used the dedicated
+Ollama process. A Windows Ctrl+C event stopped the launcher and released ports
+8000 and 11435. The launcher restarted on the same ports, and a second Ctrl+C
+released them again. The regular Ollama process remained available throughout.
 
 ### Local acceptance results
 

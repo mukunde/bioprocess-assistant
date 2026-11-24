@@ -40,6 +40,27 @@ class MinistralTests(unittest.TestCase):
         self.env.start()
         self.addCleanup(self.env.stop)
 
+    def test_chat_uses_the_configured_loopback_port(self):
+        with patch.dict(os.environ, {}, clear=True), patch.object(local, "build_opener") as opener:
+            opener.return_value.open.return_value.__enter__.return_value.read.return_value = (
+                b'{"done_reason":"stop","message":{"content":"ok"}}'
+            )
+            self.assertEqual(local._chat([]), {"content": "ok"})
+            self.assertEqual(opener.return_value.open.call_args.args[0].full_url,
+                             "http://127.0.0.1:11434/api/chat")
+            os.environ["BIOPROCESS_LOCAL_OLLAMA_PORT"] = "11435"
+            self.assertEqual(local._chat([]), {"content": "ok"})
+            self.assertEqual(opener.return_value.open.call_args.args[0].full_url,
+                             "http://127.0.0.1:11435/api/chat")
+
+    def test_chat_rejects_invalid_ports_before_opening_a_connection(self):
+        for port in ("http://example.com:11435", "0", "65536", "11435/path"):
+            with self.subTest(port=port), patch.dict(os.environ, {"BIOPROCESS_LOCAL_OLLAMA_PORT": port}), \
+                    patch.object(local, "build_opener") as opener:
+                with self.assertRaisesRegex(ValueError, "Invalid local Ollama port"):
+                    local._chat([])
+                opener.assert_not_called()
+
     def test_selected_ids_render_full_sources_while_model_gets_compact_results(self):
         pressure, yield_drop = found("High column pressure"), found("Capture step yield drop")
         miss = {"found": False, "match_score": 1.2, "symptom": None, "causes": []}

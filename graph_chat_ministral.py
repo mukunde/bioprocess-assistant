@@ -19,6 +19,13 @@ class _NoRedirect(HTTPRedirectHandler):
         return None
 
 
+def _ollama_chat_url():
+    port = os.environ.get("BIOPROCESS_LOCAL_OLLAMA_PORT", "11434")
+    if not port.isascii() or not port.isdecimal() or len(port) > 5 or not 1024 <= int(port) <= 65535:
+        raise ValueError("Invalid local Ollama port")
+    return f"http://127.0.0.1:{int(port)}/api/chat"
+
+
 def _chat(messages, **options):
     payload = {
         "model": MODEL,
@@ -29,7 +36,7 @@ def _chat(messages, **options):
         **options,
     }
     request = Request(
-        "http://127.0.0.1:11434/api/chat",
+        _ollama_chat_url(),
         data=json.dumps(payload).encode("utf-8"),
         headers={"Content-Type": "application/json"},
     )

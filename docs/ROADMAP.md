@@ -298,14 +298,28 @@ three responded and their data snapshots passed validation.
 [Closure verification](FINALIZATION-PLAN.md#closure-verification) ·
 [Windows setup](CHAINLIT-GUIDED-PILOT.md)
 
+## Windows CPU graph chat milestone
+
+The Windows CPU graph chat milestone closed on 24 November 2026.
+[PR #147](https://github.com/mukunde/bioprocess-assistant/pull/147) added the
+PowerShell launcher with Ministral on CPU by default and Iris Xe on request.
+
+On the reference Windows PC, the launcher confirmed CPU-only inference and
+Chainlit responded on loopback from merged `main` at `6e343fb`. Available RAM
+was 1,338 MiB after model load and 2,130 MiB with the full stack ready, above
+the 1,024 MiB startup threshold. An earlier run paused at the memory gate.
+The launcher validation also covered exact citations on M01, abstention on
+ML06, model import into an empty Ollama store, and restart on the same ports
+after Ctrl+C. The Iris Xe check confirmed GPU offload and stopped at the
+memory gate before opening Chainlit.
+[Setup and validation](LOCAL-GRAPH-CHAT.md#windows-launcher-verification)
+
 ## Next priority
 
-Evaluate the merged local graph chat on a small set of new French and
-English requests. Include a combined symptom question and cases that
-require abstention. Agree on a latency target before the run, then measure
-cold and warm requests separately. Check JSON validity, search coverage,
-citation fidelity, and abstention before recommending the local mode for
-routine use.
+Verify Windows portability on a second physical PC when one is available.
+The frozen LX01–LX12 comparison of Ministral, Qwen, and Gemma remains
+pending until the full stack can meet its memory requirement. It is a
+separate evaluation from the completed CPU milestone.
 
 If broader documentary free text becomes a release requirement, compare
 the same new requests in two forms using the same evidence. Run the original text through interpretation and compare

@@ -39,10 +39,10 @@ To try the separate Chainlit pilot for MabSelect and Sepharose, follow
 the [Windows pilot guide](docs/CHAINLIT-GUIDED-PILOT.md). It starts three
 local instances with disposable data.
 
-For graph chat, set up Neo4j and Chainlit. Use Claude Sonnet 4.6 via the
-Anthropic API or opt in to **Ministral 3 3B Instruct 2512** through local
-Ollama. Ministral uses compact context for selection and needs no Anthropic
-key. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md) · [Ministral setup](docs/LOCAL-GRAPH-CHAT.md#use-ministral-on-the-host)
+For local graph chat on Windows, use `Start-LocalGraphChat.ps1` with Neo4j,
+Chainlit, and Ollama. It runs Ministral 3 3B Instruct 2512 on CPU by default.
+Intel Iris Xe is optional. Claude Sonnet 4.6 remains available via the
+Anthropic API. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md#use-ministral-on-the-host)
 
 Open the optional local trace viewer to see the Anthropic and Neo4j timeline,
 token counts, and estimated model cost.
@@ -117,8 +117,10 @@ clone of `main` at `7fc251f` matched all seven tested interface hashes
 and started all three disposable instances.
 [Finalization results](docs/FINALIZATION-PLAN.md#closure-verification)
 
-Next, test the local graph chat on new French and English requests and
-measure cold and warm response times. [Roadmap](docs/ROADMAP.md#next-priority)
+The Windows CPU graph chat milestone closed on 24 November 2026.
+Startup was verified on `main` at `6e343fb` with 2,130 MiB of RAM available
+once all services were ready. The three-model LX comparison remains pending.
+[Milestone and follow-up](docs/ROADMAP.md#windows-cpu-graph-chat-milestone)
 
 ## Limitations
 

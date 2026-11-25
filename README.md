@@ -119,8 +119,10 @@ and started all three disposable instances.
 
 The Windows CPU graph chat milestone closed on 24 November 2026.
 Startup was verified on `main` at `6e343fb` with 2,130 MiB of RAM available
-once all services were ready. The three-model LX comparison remains pending.
-[Milestone and follow-up](docs/ROADMAP.md#windows-cpu-graph-chat-milestone)
+once all services were ready. The next priority is to run the published CPU
+protocol on a second Windows PC once one is available. That test and the frozen
+LX01–LX12 model comparison are pending.
+[CPU protocol](docs/validation/WINDOWS-GRAPH-CHAT-SECOND-PC.md) · [Results sheet](docs/validation/windows-graph-chat-second-pc-results.md) · [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations
 

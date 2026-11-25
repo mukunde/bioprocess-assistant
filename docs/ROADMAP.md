@@ -316,10 +316,16 @@ memory gate before opening Chainlit.
 
 ## Next priority
 
-Verify Windows portability on a second physical PC when one is available.
-The frozen LX01–LX12 comparison of Ministral, Qwen, and Gemma remains
-pending until the full stack can meet its memory requirement. It is a
-separate evaluation from the completed CPU milestone.
+[PR #149](https://github.com/mukunde/bioprocess-assistant/pull/149) added the
+[pinned CPU protocol](validation/WINDOWS-GRAPH-CHAT-SECOND-PC.md) and its
+[blank results sheet](validation/windows-graph-chat-second-pc-results.md).
+The next priority is to run the eight checks on a second physical Windows PC
+when one is available. Record CPU residency, memory at startup, citation and
+abstention behavior, and restart on the same ports. The second-PC run is pending.
+
+The frozen LX01–LX12 comparison of Ministral, Qwen, and Gemma remains pending
+until the full stack can meet the protocol's memory requirement. It has its own
+acceptance criteria.
 
 If broader documentary free text becomes a release requirement, compare
 the same new requests in two forms using the same evidence. Run the original text through interpretation and compare
@@ -332,7 +338,7 @@ all mandatory behavior checks, and zero documentary safety violations.
 
 | Work | When it is ready to advance |
 | --- | --- |
-| Windows portability | Run the pinned protocol on a second physical PC and record the mandatory checks and any retries. [Second-PC protocol](validation/WINDOWS-SECOND-PC.md) |
+| Model-free Cytiva demo portability | Run its separate Windows protocol when a second physical PC is available. [Cytiva demo protocol](validation/WINDOWS-SECOND-PC.md) |
 | Held-out answer evaluation | Define a held-out set for new evidence or behavior. Cover missing context, conflicting sources, negation, and unsupported quantities. Record false acceptances, abstentions, latency, and cost. [Evaluation guide](../eval/README.md) |
 | Wider model observability | After the chat baseline, apply the same metadata and budget rules to extraction and judge calls. [Tracing guide](REGISTRY-TRACING.md) |
 | Generated-answer evaluation | Calibrate Ragas judges and run Promptfoo attacks with benign controls once the corresponding answering path is in scope. |

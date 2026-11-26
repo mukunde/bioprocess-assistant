@@ -50,8 +50,9 @@ local instances with disposable data.
 
 For local graph chat on Windows, use `Start-LocalGraphChat.ps1` with Neo4j,
 Chainlit, and Ollama. It runs Ministral 3 3B Instruct 2512 on CPU by default.
-Intel Iris Xe is optional. Claude Sonnet 4.6 remains available via the
-Anthropic API. [Graph chat setup](docs/LOCAL-GRAPH-CHAT.md#use-ministral-on-the-host)
+On Windows, `-Profile Hybrid` uses 13 layers on Intel Iris Xe and a 4,096-token
+context. Claude Sonnet 4.6 remains available via the Anthropic API.
+[Graph chat setup](docs/LOCAL-GRAPH-CHAT.md#use-ministral-on-the-host)
 
 Open the optional local trace viewer to see the Anthropic and Neo4j timeline,
 token counts, and estimated model cost.
@@ -128,9 +129,9 @@ and started all three disposable instances.
 
 The Windows CPU graph chat milestone closed on 24 November 2026.
 Startup was verified on `main` at `6e343fb` with 2,130 MiB of RAM available
-once all services were ready. The second-PC run and the frozen LX01–LX12 model
-comparison are pending. The next task is to check citations, abstention, and
-invalid model output across the chat path using offline fixtures.
+once all services were ready. On M01, hybrid reduced warm median latency from
+15.80 s to 12.31 s with the same ten citations and less available RAM.
+The second-PC run and the frozen LX01–LX12 comparison remain pending.
 [CPU protocol](docs/validation/WINDOWS-GRAPH-CHAT-SECOND-PC.md) · [Results sheet](docs/validation/windows-graph-chat-second-pc-results.md) · [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

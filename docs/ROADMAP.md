@@ -314,6 +314,19 @@ after Ctrl+C. The Iris Xe check confirmed GPU offload and stopped at the
 memory gate before opening Chainlit.
 [Setup and validation](LOCAL-GRAPH-CHAT.md#windows-launcher-verification)
 
+### Windows hybrid profile
+
+[PR #155](https://github.com/mukunde/bioprocess-assistant/pull/155) added
+`-Profile Hybrid` with 13 of 27 Ministral layers on Intel Iris Xe and a
+4,096-token context. CPU remains the default.
+
+Across three warm M01 runs per profile, median latency was 15.80 s on
+CPU and 12.31 s in hybrid mode. Minimum available RAM during M01 was
+2,831 MiB on CPU and 1,289 MiB in hybrid mode. All six runs produced the same
+accepted JSON and ten exact citations. A live M01 run through the Hybrid
+launcher confirmed the placement and returned the same citations in 19.74 s.
+[Hybrid measurements](LOCAL-GRAPH-CHAT.md#hybrid-profile-measurements)
+
 ### Published graph chat recordings
 
 [PR #152](https://github.com/mukunde/bioprocess-assistant/pull/152) added the
@@ -325,13 +338,11 @@ Chrome verified 1080p playback and seeking on both recordings.
 
 ## Next priority
 
-Check the gaps in the existing graph chat tests and cover them with a short
-offline replay. Use fixed Neo4j results and simulated model responses to
-exercise the chat path in French and English. Cover a sourced answer, a
-two-symptom answer with distinct citations, an unsupported pressure limit,
-and invalid JSON or an unknown result ID. Provide one rerunnable command.
-This checks application behavior without loading a model or starting Docker.
-[Existing tests](../tests/test_graph_chat_ministral.py)
+Run the second-PC protocol when hardware is available, or resume LX when
+the frozen Iris Xe setup meets its memory gate. The six offline Chainlit
+regressions are on main and cover French and English citations, separate
+symptom paths, pressure abstention, and invalid model output.
+[Offline tests](../tests/test_graph_chat_offline.py)
 
 ## Pending validation
 
@@ -343,8 +354,9 @@ eight checks and record CPU residency, memory at startup, citation and
 abstention behavior, and restart on the same ports.
 
 The frozen LX01–LX12 comparison of Ministral, Qwen, and Gemma remains pending
-until the full stack can meet the protocol's memory requirement. It has its own
-acceptance criteria.
+until the full stack meets the 1,024 MiB gate after loading. The latest
+attempt stopped before LX01 with 353.4 MiB available and sent no scored
+question.
 
 ## Follow-up work
 

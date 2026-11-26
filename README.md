@@ -15,6 +15,14 @@ the Anthropic API, and Chainlit displays the selected facts and citations.
 
 [Play the 27-second graph chat demo](https://mukunde.github.io/bioprocess-assistant/graph-chat/)
 
+### Local CPU demo
+
+Watch Ministral 3 3B Instruct answer French and English questions with Neo4j citations.
+
+<a href="https://mukunde.github.io/bioprocess-assistant/ministral/"><img src="media/chainlit-ministral-cpu/exports/brag.jpg" width="440" alt="Play the 25-second Ministral CPU demo"></a>
+
+[Play the local Ministral demo](https://mukunde.github.io/bioprocess-assistant/ministral/)
+
 ## Run locally
 
 For the guided Cytiva demo, install Git and **CPython 3.13.0 x64** on Windows.

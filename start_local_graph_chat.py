@@ -16,12 +16,13 @@ import tempfile
 import time
 from urllib.parse import urlsplit
 
-from graph_chat_ministral import MODEL
+from graph_chat_ministral import HYBRID_GPU_LAYERS, MODEL
 from tools import load_graph_dotenv, query_graph
 
 
 ROOT = Path(__file__).resolve().parent
 MIN_AVAILABLE_MIB = 1024
+PROFILES = {"cpu": "CPU", "hybrid": "Hybrid", "irisxe": "IrisXe"}
 
 
 class StartupError(RuntimeError):
@@ -84,7 +85,7 @@ def check_memory(profile, phase):
     available = status.available_physical // (1024 * 1024)
     print(f"{phase}: {available:,} MiB RAM available.", flush=True)
     if available < MIN_AVAILABLE_MIB:
-        remedy = " Relaunch with -Profile CPU." if profile == "IrisXe" else " Free RAM and retry."
+        remedy = " Relaunch with -Profile CPU." if profile != "CPU" else " Free RAM and retry."
         raise StartupError(f"Startup requires {MIN_AVAILABLE_MIB:,} MiB available RAM.{remedy}")
 
 
@@ -110,12 +111,12 @@ def check_graph():
 
 def ollama_environment(profile, port):
     environment = os.environ.copy()
+    enable_gpu = "0" if profile == "CPU" else "1"
     environment.update(
         OLLAMA_HOST=f"127.0.0.1:{port}",
         OLLAMA_NO_CLOUD="1", OLLAMA_NOHISTORY="1", OLLAMA_NOPRUNE="1",
         OLLAMA_MAX_LOADED_MODELS="1", OLLAMA_NUM_PARALLEL="1",
-        OLLAMA_IGPU_ENABLE="1" if profile == "IrisXe" else "0",
-        OLLAMA_VULKAN="1" if profile == "IrisXe" else "0",
+        OLLAMA_IGPU_ENABLE=enable_gpu, OLLAMA_VULKAN=enable_gpu,
         CUDA_VISIBLE_DEVICES="-1", ROCR_VISIBLE_DEVICES="-1", HIP_VISIBLE_DEVICES="-1",
         OLLAMA_DEBUG="INFO",
     )
@@ -130,22 +131,33 @@ def load_model(args, log_path):
         request(args.ollama_port, "/api/show", {"model": MODEL})
     except StartupError:
         raise StartupError(f"Install the local model {MODEL} as described in the setup guide.") from None
+    options = {"num_ctx": 4096}
+    if args.profile == "Hybrid":
+        options["num_gpu"] = HYBRID_GPU_LAYERS
     request(args.ollama_port, "/api/generate", {
         "model": MODEL,
         "stream": False,
         "keep_alive": "15m",
-        "options": {"num_ctx": 4096},
+        "options": options,
     }, timeout=180)
     resident = request(args.ollama_port, "/api/ps")["models"]
     loaded = next((entry for entry in resident if entry.get("name") == MODEL), None)
     vram = loaded.get("size_vram") if loaded else None
     if args.profile == "CPU" and vram != 0:
         raise StartupError("Ollama did not confirm CPU-only residency.")
-    if args.profile == "IrisXe":
+    if args.profile != "CPU":
         log = log_path.read_text(encoding="utf-8", errors="replace")
         offload = re.search(r"offloaded (\d+)/(\d+) layers to GPU", log)
         iris = re.search(r"using device Vulkan\d+ \(Intel.*Iris.*Xe", log, re.IGNORECASE)
-        if not (vram and iris and offload and int(offload[1]) > 0 and offload[1] == offload[2]):
+        count, total = map(int, offload.groups()) if offload else (0, 0)
+        if args.profile == "Hybrid":
+            if not (iris and vram and vram < loaded.get("size", 0) and count == HYBRID_GPU_LAYERS < total):
+                raise StartupError(
+                    f"Hybrid offload of {HYBRID_GPU_LAYERS} layers to Intel Iris Xe could not be verified. "
+                    "Relaunch with -Profile CPU."
+                )
+            print(f"Hybrid placement verified: {count}/{total} layers on Iris Xe.", flush=True)
+        elif not (vram and iris and count > 0 and count == total):
             raise StartupError("Full offload to Intel Iris Xe could not be verified. Relaunch with -Profile CPU.")
     print(f"Ministral loaded on {args.profile} (Ollama GPU allocation {vram} bytes).", flush=True)
 
@@ -187,6 +199,7 @@ def run(args):
         environment.update(
             BIOPROCESS_MODE="graph", BIOPROCESS_GRAPH_BACKEND="ministral",
             BIOPROCESS_LOCAL_OLLAMA_PORT=str(args.ollama_port), BIOPROCESS_GRAPH_CHAT_TRACE="0",
+            BIOPROCESS_LOCAL_OLLAMA_PROFILE=args.profile,
             ANTHROPIC_API_KEY="", ANTHROPIC_AUTH_TOKEN="",
         )
         chainlit = subprocess.Popen(
@@ -219,7 +232,7 @@ def run(args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--profile", type=str.casefold, choices=("cpu", "irisxe"), default="cpu")
+    parser.add_argument("--profile", type=str.casefold, choices=tuple(PROFILES), default="cpu")
     parser.add_argument("--port", type=int, default=8000)
     parser.add_argument("--ollama-port", type=int, default=11435)
     parser.add_argument("--check-only", action="store_true")
@@ -228,7 +241,7 @@ def main():
         parser.error("This launcher requires Windows.")
     if not all(1024 <= port <= 65535 for port in (args.port, args.ollama_port)):
         parser.error("Ports must be between 1024 and 65535.")
-    args.profile = {"cpu": "CPU", "irisxe": "IrisXe"}[args.profile]
+    args.profile = PROFILES[args.profile]
     signal.signal(signal.SIGBREAK, signal.getsignal(signal.SIGINT))
     try:
         return run(args)

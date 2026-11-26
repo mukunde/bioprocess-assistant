@@ -91,12 +91,14 @@ Run the launcher from the repo root in PowerShell:
 
 ```powershell
 .\Start-LocalGraphChat.ps1
+.\Start-LocalGraphChat.ps1 -Profile Hybrid
 .\Start-LocalGraphChat.ps1 -Profile IrisXe
 ```
 
 | Profile | Behavior |
 | --- | --- |
 | CPU (default) | Starts Ollama with GPU acceleration disabled and confirms CPU-only model residency. |
+| Hybrid | Verifies 13 layers on Intel Iris Xe via Vulkan and runs the rest on CPU. Uses a 4,096-token context. Use CPU if the device or RAM check fails. |
 | IrisXe | Enables Vulkan and verifies full offload to an Intel Iris Xe device. Use CPU if the device or RAM check fails. |
 
 Each command starts one temporary Ollama server on `127.0.0.1:11435` and
@@ -104,7 +106,7 @@ Chainlit on `127.0.0.1:8000`. The regular Ollama service can stay on port
 11434. Use `-OllamaPort` or `-Port` to resolve a port conflict. The launcher
 verifies access to the seeded local graph, preloads Ministral, and requires
 1,024 MiB available physical RAM after the model loads and again once Chainlit
-is ready. It prints both readings. Add `-CheckOnly` to either command to check
+is ready. It prints both readings. Add `-CheckOnly` to any profile command to check
 startup and exit. For a live session, press Ctrl+C to stop Chainlit and its
 temporary Ollama process. The database remains running for reuse.
 
@@ -145,6 +147,32 @@ ML06 abstained with no citations in 9.83 s. Both requests used the dedicated
 Ollama process. A Windows Ctrl+C event stopped the launcher and released ports
 8000 and 11435. The launcher restarted on the same ports, and a second Ctrl+C
 released them again. The regular Ollama process remained available throughout.
+
+### Hybrid profile measurements
+
+On 26 November 2026, one Windows PC ran the same Ministral Q4_K_M weights
+with Ollama 0.40.17 through Chainlit and disposable Neo4j. M01 combines a
+measured pressure increase and a capture yield drop. Across three warm
+passes per profile at 4,096 tokens, median response time was 15.80 s on CPU
+and 12.31 s in hybrid mode. Minimum available RAM during responses was
+2,831 MiB on CPU and 1,289 MiB in hybrid mode. All six selections passed
+JSON validation and displayed the same ten citations.
+
+A separate hybrid check ran M01 and a longer combined question once at
+each context size. Both sizes returned the same validated selections and
+citations for each question. The largest input was 933 tokens, and Ollama
+reported no truncation.
+
+| Hybrid context | KV cache | Minimum available RAM during requests | M01 | Longer question |
+| --- | ---: | ---: | ---: | ---: |
+| 2,048 tokens | 208 MiB | 1,965 MiB | 21.60 s | 25.00 s |
+| 4,096 tokens | 416 MiB | 1,822 MiB | 19.40 s | 23.40 s |
+
+The hybrid profile uses 4,096 tokens to retain context headroom. The
+two-question check provides one timing per setting and question. A live
+M01 check through the PowerShell launcher confirmed 13 of 27 layers on
+Iris Xe, 1,835 MiB available when ready, and ten exact citations in 19.74 s.
+The default check confirmed CPU-only residency.
 
 ### Local acceptance results
 

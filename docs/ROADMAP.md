@@ -314,18 +314,39 @@ after Ctrl+C. The Iris Xe check confirmed GPU offload and stopped at the
 memory gate before opening Chainlit.
 [Setup and validation](LOCAL-GRAPH-CHAT.md#windows-launcher-verification)
 
+### Published graph chat recordings
+
+[PR #152](https://github.com/mukunde/bioprocess-assistant/pull/152) added the
+[Ministral CPU recording](https://mukunde.github.io/bioprocess-assistant/ministral/)
+below the main [Claude Sonnet 4.6 showcase](https://mukunde.github.io/bioprocess-assistant/graph-chat/).
+Both thumbnails in the public README opened their GitHub Pages players.
+Chrome verified 1080p playback and seeking on both recordings.
+[Pages deployment](https://github.com/mukunde/bioprocess-assistant/actions/runs/45852692904)
+
 ## Next priority
+
+Check the gaps in the existing graph chat tests and cover them with a short
+offline replay. Use fixed Neo4j results and simulated model responses to
+exercise the chat path in French and English. Cover a sourced answer, a
+two-symptom answer with distinct citations, an unsupported pressure limit,
+and invalid JSON or an unknown result ID. Provide one rerunnable command.
+This checks application behavior without loading a model or starting Docker.
+[Existing tests](../tests/test_graph_chat_ministral.py)
+
+## Pending validation
 
 [PR #149](https://github.com/mukunde/bioprocess-assistant/pull/149) added the
 [pinned CPU protocol](validation/WINDOWS-GRAPH-CHAT-SECOND-PC.md) and its
 [blank results sheet](validation/windows-graph-chat-second-pc-results.md).
-The next priority is to run the eight checks on a second physical Windows PC
-when one is available. Record CPU residency, memory at startup, citation and
-abstention behavior, and restart on the same ports. The second-PC run is pending.
+The run is pending until a second physical Windows PC is available. Run the
+eight checks and record CPU residency, memory at startup, citation and
+abstention behavior, and restart on the same ports.
 
 The frozen LX01–LX12 comparison of Ministral, Qwen, and Gemma remains pending
 until the full stack can meet the protocol's memory requirement. It has its own
 acceptance criteria.
+
+## Follow-up work
 
 If broader documentary free text becomes a release requirement, compare
 the same new requests in two forms using the same evidence. Run the original text through interpretation and compare
@@ -333,8 +354,6 @@ it with manually structured tasks. Use the difference to decide
 whether to improve interpretation or the response layer. Before a
 free-text pilot, retain the prospective threshold of 7/8 per variant,
 all mandatory behavior checks, and zero documentary safety violations.
-
-## Follow-up work
 
 | Work | When it is ready to advance |
 | --- | --- |

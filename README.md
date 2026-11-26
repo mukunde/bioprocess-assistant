@@ -7,7 +7,7 @@ check.
 
 ## Watch the demo
 
-See the graph chat answer “High column pressure” with references to the Cytiva
+In the main showcase, see the graph chat answer “High column pressure” with references to the Cytiva
 handbook. In the recording, Claude Sonnet 4.6 selects Neo4j results via
 the Anthropic API, and Chainlit displays the selected facts and citations.
 
@@ -18,6 +18,7 @@ the Anthropic API, and Chainlit displays the selected facts and citations.
 ### Local CPU demo
 
 Watch Ministral 3 3B Instruct answer French and English questions with Neo4j citations.
+Playback was verified from this README on [GitHub Pages](https://mukunde.github.io/bioprocess-assistant/ministral/).
 
 <a href="https://mukunde.github.io/bioprocess-assistant/ministral/"><img src="media/chainlit-ministral-cpu/exports/brag.jpg" width="440" alt="Play the 25-second Ministral CPU demo"></a>
 
@@ -127,9 +128,9 @@ and started all three disposable instances.
 
 The Windows CPU graph chat milestone closed on 24 November 2026.
 Startup was verified on `main` at `6e343fb` with 2,130 MiB of RAM available
-once all services were ready. The next priority is to run the published CPU
-protocol on a second Windows PC once one is available. That test and the frozen
-LX01–LX12 model comparison are pending.
+once all services were ready. The second-PC run and the frozen LX01–LX12 model
+comparison are pending. The next task is to check citations, abstention, and
+invalid model output across the chat path using offline fixtures.
 [CPU protocol](docs/validation/WINDOWS-GRAPH-CHAT-SECOND-PC.md) · [Results sheet](docs/validation/windows-graph-chat-second-pc-results.md) · [Roadmap](docs/ROADMAP.md#next-priority)
 
 ## Limitations

@@ -2,9 +2,12 @@
 import json
 import os
 import unittest
+from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import graph_chat_ministral as local
+import start_local_graph_chat as launcher
 from grounding import render_selection
 
 
@@ -52,6 +55,43 @@ class MinistralTests(unittest.TestCase):
             self.assertEqual(local._chat([]), {"content": "ok"})
             self.assertEqual(opener.return_value.open.call_args.args[0].full_url,
                              "http://127.0.0.1:11435/api/chat")
+
+    def test_chat_keeps_the_hybrid_layer_count_for_each_model_call(self):
+        for profile, layers in (("CPU", None), ("Hybrid", 13), ("IrisXe", None)):
+            with self.subTest(profile=profile), patch.dict(os.environ, {"BIOPROCESS_LOCAL_OLLAMA_PROFILE": profile}), \
+                    patch.object(local, "build_opener") as opener:
+                connection = opener.return_value.open
+                connection.return_value.__enter__.return_value.read.return_value = (
+                    b'{"done_reason":"stop","message":{"content":"ok"}}'
+                )
+                local._chat([], tools=[])
+                local._chat([], format={})
+                for entry in connection.call_args_list:
+                    payload = json.loads(entry.args[0].data)
+                    self.assertEqual(payload["options"].get("num_gpu"), layers)
+
+    def test_hybrid_startup_requires_exact_partial_offload_on_iris_xe(self):
+        args = SimpleNamespace(profile="Hybrid", ollama_port=11435)
+        for device, count, vram, accepted in (
+            ("Intel(R) Iris(R) Xe Graphics", 13, 130, True),
+            ("Intel(R) Iris(R) Xe Graphics", 27, 270, False),
+            ("Intel(R) Iris(R) Xe Graphics", 12, 120, False),
+            ("Intel(R) Iris(R) Xe Graphics", 13, 0, False),
+            ("Other GPU", 13, 130, False),
+        ):
+            with self.subTest(device=device, count=count, vram=vram), \
+                    patch.object(Path, "read_text", return_value=(
+                        f"using device Vulkan0 ({device})\n"
+                        f"offloaded {count}/27 layers to GPU\n"
+                    )), patch.object(launcher, "request", side_effect=[
+                        {}, {}, {"models": [{"name": local.MODEL, "size": 270, "size_vram": vram}]},
+                    ]) as request, patch("builtins.print"):
+                if accepted:
+                    launcher.load_model(args, Path("ollama.log"))
+                else:
+                    with self.assertRaisesRegex(launcher.StartupError, "Hybrid offload of 13 layers"):
+                        launcher.load_model(args, Path("ollama.log"))
+                self.assertEqual(request.call_args_list[1].args[2]["options"], {"num_ctx": 4096, "num_gpu": 13})
 
     def test_chat_rejects_invalid_ports_before_opening_a_connection(self):
         for port in ("http://example.com:11435", "0", "65536", "11435/path"):

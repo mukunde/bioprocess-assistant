@@ -12,6 +12,7 @@ from tools import DEFAULT_MIN_MATCH_SCORE, PROJECT_ROOT, load_graph_dotenv, quer
 MODEL = "bioprocess-local:latest"
 LOCAL_LANGUAGES = {"fr": "Français", "en": "English"}
 MAX_TOOL_CALLS = 5
+HYBRID_GPU_LAYERS = 13
 
 
 class _NoRedirect(HTTPRedirectHandler):
@@ -35,6 +36,8 @@ def _chat(messages, **options):
         "options": {"temperature": 0, "num_ctx": 4096, "num_predict": 160},
         **options,
     }
+    if os.environ.get("BIOPROCESS_LOCAL_OLLAMA_PROFILE") == "Hybrid":
+        payload["options"]["num_gpu"] = HYBRID_GPU_LAYERS
     request = Request(
         _ollama_chat_url(),
         data=json.dumps(payload).encode("utf-8"),

@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('CPU', 'IrisXe')][string]$Profile = 'CPU',
+    [ValidateSet('CPU', 'Hybrid', 'IrisXe')][string]$Profile = 'CPU',
     [ValidateRange(1024, 65535)][int]$Port = 8000,
     [ValidateRange(1024, 65535)][int]$OllamaPort = 11435,
     [switch]$CheckOnly

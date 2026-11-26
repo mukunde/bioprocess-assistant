@@ -19,7 +19,7 @@ class FlowshotPagesTests(unittest.TestCase):
             result = builder.prepare(output)
             actual = {p.relative_to(output).as_posix() for p in output.rglob('*') if p.is_file()}
             self.assertEqual(actual, set(result['files']))
-            self.assertEqual(len(actual), 18)
+            self.assertEqual(len(actual), 21)
             self.assertIn('href="flowshot/"', (output / 'index.html').read_text(encoding='utf-8'))
             html = (output / 'flowshot/index.html').read_text(encoding='utf-8')
             self.assertIn('href="../"', html)
@@ -66,6 +66,33 @@ class FlowshotPagesTests(unittest.TestCase):
             self.assertNotIn('flowshot/', showcase)
             self.assertNotIn('sepharose/', showcase)
             self.assertNotIn('onboarding.jpg', showcase)
+
+    def test_ministral_player_is_secondary_and_uses_the_original_exports(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)
+            builder.prepare(output)
+            player = output / 'ministral'
+            html = (player / 'index.html').read_text(encoding='utf-8')
+            self.assertIn('<video controls playsinline', html)
+            self.assertIn('poster="brag.jpg"', html)
+            self.assertIn('src="brag.mp4"', html)
+            self.assertIn('chainlit-ministral-cpu/CREDITS.md', html)
+            for name in ('brag.mp4', 'brag.jpg'):
+                self.assertEqual((player / name).read_bytes(),
+                                 (ROOT / 'media/chainlit-ministral-cpu/exports' / name).read_bytes())
+            readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+            showcase = readme.split('## Watch the demo', 1)[1].split('## Run locally', 1)[0]
+            self.assertIn('media/chainlit-ministral-cpu/exports/brag.jpg', showcase)
+            self.assertLess(showcase.index('/bioprocess-assistant/graph-chat/'),
+                            showcase.index('/bioprocess-assistant/ministral/'))
+
+    def test_ministral_hash_mismatch_is_rejected_before_output_is_written(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / 'site'
+            with patch.dict(builder.MINISTRAL_EXPORTS, {'brag.mp4': '0' * 64}):
+                with self.assertRaisesRegex(ValueError, 'Ministral export hash mismatch: brag.mp4'):
+                    builder.prepare(output)
+            self.assertFalse(output.exists())
 
     def test_changed_capture_rejected_before_output_is_written(self):
         with tempfile.TemporaryDirectory() as tmp:

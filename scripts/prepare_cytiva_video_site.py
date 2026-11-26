@@ -22,6 +22,12 @@ GRAPH_CHAT_EXPORTS = {
 }
 
 
+MINISTRAL_EXPORTS = {
+    'brag.mp4': '89c5198bc21cbe3a780543bd28ed6fa23a3081ffaf46614e7242b21db968c88c',
+    'brag.jpg': 'a6b82d37caa553d7fd16a0300befd06057ea266777307f7a20eb87aba9691404',
+}
+
+
 def flowshot_assets():
     package = ROOT / 'media/cytiva-flowshot-pilot-v02'
     manifest = json.loads((package / 'package-manifest.json').read_text(encoding='utf-8'))
@@ -63,6 +69,12 @@ def prepare(output):
         if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
             raise ValueError('Graph chat export hash mismatch: ' + name)
         graph_chat_files[name] = source
+    ministral_files = {'index.html': ROOT / 'site/cytiva-video/ministral/index.html'}
+    for name, digest in MINISTRAL_EXPORTS.items():
+        source = ROOT / 'media/chainlit-ministral-cpu/exports' / name
+        if hashlib.sha256(source.read_bytes()).hexdigest() != digest:
+            raise ValueError('Ministral export hash mismatch: ' + name)
+        ministral_files[name] = source
     (output / 'assets').mkdir(parents=True, exist_ok=True)
     shutil.copyfile(ROOT / 'site/cytiva-video/index.html', output / 'index.html')
     for source in exports:
@@ -80,7 +92,9 @@ def prepare(output):
             shutil.copyfile(flowshot / name, destination)
     files = ['index.html', 'assets/onboarding.mp4', 'assets/onboarding.jpg']
     files += ['flowshot/' + name for name in FLOW_FILES]
-    for route, assets in (('sepharose', sepharose_files), ('graph-chat', graph_chat_files)):
+    for route, assets in (('sepharose', sepharose_files),
+                          ('graph-chat', graph_chat_files),
+                          ('ministral', ministral_files)):
         (output / route).mkdir()
         for name, source in assets.items():
             shutil.copyfile(source, output / route / name)

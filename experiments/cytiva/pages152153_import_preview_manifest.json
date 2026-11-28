@@ -1,0 +1,7 @@
+{
+  "source_package_canonical_sha256": "8d6753df5517ea7176f4be0bc31bda9a891d08b367a0ae974b4ff1aaa8fef715",
+  "output_sha256_utf8_lf": {
+    "import_preview.json": "a591dee5a5b66443784deaeecc3d26328bb6952f93a91d5069a88c4d87403f1c",
+    "quarantine.json": "b99c00f02a1e4020f44fdf431a267fe71fb93d5a43538b6b8c6049cfe9e76b8c"
+  }
+}
